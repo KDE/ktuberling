@@ -6,20 +6,15 @@
 
 #include <kapplication.h>
 #include <kmessagebox.h>
-#include <ktoolbarbutton.h>
-#include <kmenubar.h>
-#include <kstdaccel.h>
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kconfig.h>
 #include <kio/netaccess.h>
 #include <kaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
 
 #include <kprinter.h>
-#include <qprintdialog.h>
 #include <qclipboard.h>
 
 #include <stdlib.h>
