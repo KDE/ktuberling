@@ -12,6 +12,7 @@
 #include <qprintdialog.h>
 #include <qprinter.h>
 
+#include <kicontheme.h>
 #include <kiconloader.h>
 #include <kfiledialog.h>
 #include <kstdaccel.h>
@@ -21,6 +22,7 @@
 #include <kmessagebox.h>
 #include <ktoolbarbutton.h>
 #include <kglobal.h>
+#include <kaudioplayer.h>
 
 #include <kio/netaccess.h>
 
@@ -39,7 +41,6 @@ TopLevel::TopLevel()
 {
   setBackgroundColor(white);
   readOptions();
-  setupSound();
   objectsLayout = shapesLayout = 0;
   textsList = soundsList = 0;
 
@@ -68,23 +69,11 @@ TopLevel::TopLevel()
 // Destructor
 TopLevel::~TopLevel()
 {
-  if (audioServer) delete audioServer;
   if (soundsList) delete soundsList;
   if (textsList) delete textsList;
   if (objectsLayout) delete objectsLayout;
   if (shapesLayout) delete shapesLayout;
   if (draggedCursor) delete draggedCursor;
-}
-
-// Set up sound
-void TopLevel::setupSound()
-{
-  audioServer = new KAudio;
-  if (audioServer->serverStatus())
-  {
-    delete audioServer;
-    audioServer = NULL;
-  }
 }
 
 // Read options from preferences file
@@ -115,8 +104,6 @@ void TopLevel::writeOptions()
 // Menubar initialization
 void TopLevel::setupMenuBar()
 {
-  KConfig *config = KApplication::kApplication()->config();
-
   menubar = menuBar();
   menubar->setGeometry(0, 0, width(), 24);
 
@@ -167,7 +154,6 @@ void TopLevel::setupMenuBar()
 
   soundID = optionsMenu->insertItem(i18n("&Sound"));
   optionsMenu->setItemChecked(soundID, soundEnabled);
-  if (!audioServer) optionsMenu->setItemEnabled(soundID, false);
   optionsMenu->connectItem(soundID, this, SLOT(optionsSound()));
 
   QString about = i18n("A program by Eric Bischoff (ebisch@cybercable.tm.fr)\n"
@@ -190,14 +176,14 @@ void TopLevel::setupToolBar()
   toolbar = toolBar();
   toolbar->setGeometry(0, 24, width(), 24);
 
-  toolbar->insertButton(iconLoader.loadIcon("filenew"), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
-  toolbar->insertButton(iconLoader.loadIcon("fileopen"), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
-  toolbar->insertButton(iconLoader.loadIcon("filefloppy"), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
-  toolbar->insertButton(iconLoader.loadIcon("fileprint"), ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
+  toolbar->insertButton(iconLoader.loadIcon("filenew",KIcon::Toolbar), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
+  toolbar->insertButton(iconLoader.loadIcon("fileopen",KIcon::Toolbar), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
+  toolbar->insertButton(iconLoader.loadIcon("filefloppy",KIcon::Toolbar), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
+  toolbar->insertButton(iconLoader.loadIcon("fileprint",KIcon::Toolbar), ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
   toolbar->insertSeparator();
 
-  toolbar->insertButton(iconLoader.loadIcon("undo"), ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
-  toolbar->insertButton(iconLoader.loadIcon("redo"), ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
+  toolbar->insertButton(iconLoader.loadIcon("undo",KIcon::Toolbar), ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
+  toolbar->insertButton(iconLoader.loadIcon("redo",KIcon::Toolbar), ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
 }
 
 // Load background and draggable objects masks
@@ -811,7 +797,6 @@ void TopLevel::playSound(int soundNumber) const
   QString soundName;
 
   if (!soundEnabled) return;
-  if (!audioServer) return;
   switch (soundNumber)
   {
     case SOUND_TUBERLING:
@@ -866,7 +851,7 @@ void TopLevel::playSound(int soundNumber) const
 	return;
   }
 
-  audioServer->play(locate("data", "ktuberling/sounds/" + soundName));
+  KAudioPlayer::play(locate("data", "ktuberling/sounds/" + soundName));
 }
 
 // Repaint all the editable area

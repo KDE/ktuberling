@@ -12,8 +12,6 @@
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <ktoolbar.h>
-#include <mediatool.h>
-#include <kaudio.h>
 
 #include <qpopmenu.h>
 #include <qaccel.h>
@@ -35,7 +33,6 @@ protected:
 
   void readOptions();
   void writeOptions();
-  void setupSound();
   void setupMenuBar();
   void setupToolBar();
   bool loadBitmaps();
@@ -87,7 +84,6 @@ private:
       ID_UNDO, ID_REDO,
       ID_HELP;
 
-  KAudio *audioServer;		// Audio server used to play sounds
   bool soundEnabled;		// true if the sound is enabled by user, even if there is no audio server
 
   QBitmap gameboard, masks;	// Bitmaps of the game board and the objects' shapes
