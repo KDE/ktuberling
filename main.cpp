@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication app;
+  KGlobal::locale()->insertCatalogue("libkdegames");
   KImageIO::registerFormats();
 
   TopLevel *toplevel=0;
