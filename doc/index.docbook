@@ -1,9 +1,9 @@
 <!DOCTYPE book PUBLIC  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
- <!ENTITY kappname "&ktuberling;">
- <!ENTITY % addindex "IGNORE">
- <!ENTITY % addindex "IGNORE">
- <!ENTITY % English "INCLUDE" -- change language only here -->
- <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
+  <!ENTITY kappname "&ktuberling;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE" -- change language only here -->
+  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
   %ents;
 ]>
 
@@ -38,7 +38,7 @@
 
 </authorgroup>
 
-<date>23/2/2001</date>
+<date>23/02/2001</date>
 <releaseinfo>0.01.00</releaseinfo>
 
 <copyright>
