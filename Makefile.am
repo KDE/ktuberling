@@ -19,8 +19,8 @@ bin_PROGRAMS = ktuberling
 ktuberling_SOURCES = action.cpp main.cpp toplevel.cpp playground.cpp todraw.cpp
 
 ktuberling_METASOURCES = USE_AUTOMOC
-ktuberling_LDFLAGS = -L$(top_builddir)/libkdegames $(all_libraries) $(KDE_RPATH)
-ktuberling_LDADD = -lkdegames $(LIB_KFILE) -lkdeprint 
+ktuberling_LDFLAGS =  $(all_libraries) $(KDE_RPATH)
+ktuberling_LDADD = $(top_builddir)/libkdegames/libkdegames.la $(LIB_KFILE) -lkdeprint 
 
 KDE_ICON = ktuberling
 
