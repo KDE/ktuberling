@@ -98,9 +98,9 @@ time.
 </para>
 
 <para>
-KTuberling can also <quote>speak</quote>. It will spell out the name of the objects
+&ktuberling; can also <quote>speak</quote>. It will spell out the name of the objects
 you drag and drop. It will <quote>speak</quote> in your own language, or English if
-the sounds for your language do not exist. Currently, KTuberling can <quote>speak</quote>
+the sounds for your language do not exist. Currently, &ktuberling; can <quote>speak</quote>
 Danish, German, English, French, Dutch, Romanian, Slovenian and Swedish.
 </para>
 </chapter>
