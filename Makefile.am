@@ -30,8 +30,8 @@ apps_DATA = ktuberling.desktop
 appsrc_DATA = ktuberlingui.rc
 appsrcdir = $(kde_datadir)/ktuberling
 
-messages:
-	$(XGETTEXT) -C -ki18n -kI18N_NOOP $(ktuberling_SOURCES) pics/layout.i18n -o $(podir)/ktuberling.pot
+messages: rc.cpp
+	$(XGETTEXT) rc.cpp $(ktuberling_SOURCES) pics/layout.i18n -o $(podir)/ktuberling.pot
 
 install-data-local:
 	rm -rf $(kde_appsdir)/Games/ktuberling.desktop
