@@ -668,7 +668,7 @@ whitespace, followed by a comment.
  242  34  283  66      70  34  111  66      1 Eye #2
  242  68  283 100      70  68  111 100      1 Eye #3
   :
-  :  <!---cut--->
+  :  <!-- cut -->
 </screen>
 </screenco>
 
