@@ -176,6 +176,7 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
+  playground->repaint(true);
   QPixmap picture(playGround->grabWindow());
 
   KURL url = KFileDialog::getSaveURL
@@ -230,6 +231,7 @@ void TopLevel::filePrint()
 
   ok = printer.setup(this);
   if (!ok) return;
+
   playGround->repaint(true);
   if (!playGround->printPicture(printer))
     KMessageBox::error(this,
