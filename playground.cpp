@@ -119,8 +119,7 @@ bool PlayGround::undo()
   if (zOrder != -1)
   {
     // Undo a "delete" or a "move" action
-    if (!(newObject = new ToDraw(undone->DrawnBefore())))
-      return false;
+    newObject = new ToDraw(undone->DrawnBefore());
     if (!toDraw.insert(zOrder, newObject))
       return false;
   }
@@ -150,8 +149,7 @@ bool PlayGround::redo()
   if (zOrder != -1)
   {
     // Redo an "add" or a "move" action
-    if (!(newObject = new ToDraw(undone->DrawnAfter())))
-      return false;
+    newObject = new ToDraw(undone->DrawnAfter());
     if (!toDraw.insert(zOrder, newObject))
       return false;
   }
@@ -262,8 +260,7 @@ void PlayGround::mousePressEvent( QMouseEvent *event )
   bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber], Qt::CopyROP);
   object.setMask(shape);
 
-  if (!(draggedCursor = new QCursor
-       (object, position.x(), position.y()))) return;
+  draggedCursor = new QCursor(object, position.x(), position.y());
   setCursor(*draggedCursor);
 
   topLevel->playSound(soundsList[draggedNumber]);
@@ -302,7 +299,7 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
     if (draggedZOrder == -1) return;
 
     while (history.count() > currentAction) history.removeLast();
-    if (!(newAction = new Action(&draggedObject, draggedZOrder, 0, -1))) return;
+    newAction = new Action(&draggedObject, draggedZOrder, 0, -1);
     history.append(newAction);
     currentAction++;
     topLevel->enableUndo(true);
@@ -311,12 +308,12 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
   }
 
   // Register that we have one more object to draw
-  if (!(newObject = new ToDraw(draggedNumber, position))) return;
+  newObject = new ToDraw(draggedNumber, position);
   toDraw.append(newObject);
 
   // Forget all subsequent actions in the undo buffer, and register object's addition (or its move)
   while (history.count() > currentAction) history.removeLast();
-  if (!(newAction = new Action(&draggedObject, draggedZOrder, newObject, toDraw.count()-1))) return;
+  newAction = new Action(&draggedObject, draggedZOrder, newObject, toDraw.count()-1);
   history.append(newAction);
   currentAction++;
   topLevel->enableUndo(true);
@@ -424,11 +421,9 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
     return false;
 
   delete[] textsLayout;
-  if (!(textsLayout = new QRect[texts]))
-    return false;
+  textsLayout = new QRect[texts];
   delete[] textsList;
-  if (!(textsList = new QString[texts]))
-    return false;
+  textsList = new QString[texts];
 
   for (int text = 0; text < texts; text++)
   {
@@ -465,11 +460,9 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
     return false;
 
   delete[] objectsLayout;
-  if (!(objectsLayout = new QRect[decorations]))
-    return false;
+  objectsLayout = new QRect[decorations];
   delete[] soundsList;
-  if (!(soundsList = new QString[decorations]))
-    return false;
+  soundsList = new QString[decorations];
 
   for (int decoration = 0; decoration < decorations; decoration++)
   {
@@ -606,9 +599,9 @@ bool PlayGround::loadFrom(const QString &name)
     {
       return !fclose(fp);
     }
-    if (!(newObject = new ToDraw(readObject))) return false;
+    newObject = new ToDraw(readObject);
     toDraw.append(newObject);
-    if (!(newAction = new Action(0, -1, newObject, toDraw.count()-1))) return false;
+    newAction = new Action(0, -1, newObject, toDraw.count()-1);
     history.append(newAction);
     currentAction++;
 
