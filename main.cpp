@@ -16,7 +16,7 @@
 static const char *description = I18N_NOOP("Potato game for kids");
 static const char *text = I18N_NOOP("A program by Eric Bischoff <e.bischoff@noos.fr>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
 
-static const char *version = "0.3.2";
+static const char *version = "0.3.3";
 
 // Main function
 int main(int argc, char *argv[])
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
   aboutData.addAuthor("Eric Bischoff", I18N_NOOP("Developer"), "e.bischoff@noos.fr");
   aboutData.addAuthor("John Calhoun", I18N_NOOP("Original concept and artwork"));
   aboutData.addCredit("Agnieszka Czajkowska", I18N_NOOP("New artwork"), "agnieszka@imagegalaxy.de");
-  aboutData.addCredit("Bas Willems", I18N_NOOP("New artwork"), "next@euronet.nl");
+  aboutData.addCredit("Bas Willems", I18N_NOOP("New artwork"), "cybersurfer@euronet.nl");
   aboutData.addCredit("Roger Larsson", I18N_NOOP("Sounds tuning"), "roger.larsson@norran.net");
   KCmdLineArgs::init(argc, argv, &aboutData);
 
