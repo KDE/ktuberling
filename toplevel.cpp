@@ -19,7 +19,6 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kstddirs.h>
-#include <kmessagebox.h>
 #include <ktoolbarbutton.h>
 #include <kglobal.h>
 #include <kaudioplayer.h>
@@ -34,8 +33,6 @@
 
 #define XMARGIN 5
 #define YMARGIN 5
-#define XORIGIN 0
-#define YORIGIN 0
 
 // Constructor
 TopLevel::TopLevel()
@@ -106,7 +103,6 @@ void TopLevel::writeOptions()
 void TopLevel::setupMenuBar()
 {
   menubar = menuBar();
-//  menubar->setGeometry(0, 0, width(), 24);
 
   fileMenu = new QPopupMenu( this );
   editMenu = new QPopupMenu( this );
@@ -173,7 +169,6 @@ void TopLevel::setupMenuBar()
 void TopLevel::setupToolBar()
 {
   toolbar = toolBar();
-//  toolbar->setGeometry(0, 24, width(), 24);
 
   toolbar->insertButton("filenew", ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
   toolbar->insertButton("fileopen", ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
@@ -212,10 +207,10 @@ bool TopLevel::loadBitmaps()
   if (!fgets(comment, sizeof(comment), layoutFile))
         { fclose(layoutFile); return false; }
   editableArea.setCoords
-        (XMARGIN + XORIGIN + editableLeft,
-         YMARGIN + YORIGIN + editableTop,
-         XMARGIN + XORIGIN + editableRight,
-         YMARGIN + YORIGIN + editableBottom);
+        (XMARGIN + editableLeft,
+         YMARGIN + editableTop,
+         XMARGIN + editableRight,
+         YMARGIN + editableBottom);
 
   if (fscanf(layoutFile, "%d", &texts) != 1)
         { fclose(layoutFile); return false; }
@@ -272,8 +267,8 @@ bool TopLevel::loadBitmaps()
 // Set up top level window's geometry
 void TopLevel::setupGeometry()
 {
-  int width = gameboard.width() + XORIGIN + 2 * XMARGIN,
-      height = gameboard.height() + YORIGIN + 2 * YMARGIN;
+  int width = gameboard.width() + 2 * XMARGIN,
+      height = gameboard.height() + 2 * YMARGIN;
   mainWidget->setFixedWidth( width );
   mainWidget->setFixedHeight( height );
   /*
@@ -521,16 +516,16 @@ void TopLevel::optionsSound()
 void TopLevel::doPaintEvent(QPaintEvent *event)
 {
   QPoint destination(event->rect().topLeft()),
-         position(destination.x() - XMARGIN - XORIGIN,
-                  destination.y() - YMARGIN - YORIGIN);
+         position(destination.x() - XMARGIN,
+                  destination.y() - YMARGIN);
   QRect area(position, QSize(event->rect().size()));
   QBitmap cache(gameboard.size());
   QPainter artist(&cache);
   const ToDraw *currentObject;
   int text;
 
-  if (destination.x() < XMARGIN + XORIGIN) destination.setX(XMARGIN + XORIGIN);
-  if (destination.y() < YMARGIN + YORIGIN) destination.setY(YMARGIN + YORIGIN);
+  if (destination.x() < XMARGIN) destination.setX(XMARGIN);
+  if (destination.y() < YMARGIN) destination.setY(YMARGIN);
   area = QRect(0, 0, gameboard.width(), gameboard.height()).intersect(area);
   if (area.isEmpty()) return;
 
@@ -551,8 +546,8 @@ void TopLevel::doMousePressEvent(QMouseEvent *event)
 {
   if (draggedCursor) return;
 
-  QPoint position(event->x() - XMARGIN - XORIGIN,
-                  event->y() - YMARGIN - YORIGIN);
+  QPoint position(event->x() - XMARGIN,
+                  event->y() - YMARGIN);
   if (!zone(position)) return;
 
   int draggedNumber = draggedObject.getNumber();
@@ -577,8 +572,8 @@ void TopLevel::doMouseReleaseEvent(QMouseEvent *event)
   QCursor arrow;
   int draggedNumber = draggedObject.getNumber();
   QRect position(
-    event->x() - XMARGIN - XORIGIN - draggedCursor->hotSpot().x(),
-    event->y() - YMARGIN - YORIGIN - draggedCursor->hotSpot().y(),
+    event->x() - XMARGIN - draggedCursor->hotSpot().x(),
+    event->y() - YMARGIN - draggedCursor->hotSpot().y(),
     objectsLayout[draggedNumber].width(),
     objectsLayout[draggedNumber].height());
   QRect dirtyArea
@@ -618,10 +613,11 @@ void TopLevel::doMouseReleaseEvent(QMouseEvent *event)
   if (!(newAction = new Action(&draggedObject, draggedZOrder, newObject, toDraw.count()-1))) return;
   history.append(newAction);
   currentAction++;
+KMessageBox::error(this, i18n("Yeap"));
   enableUndo(true);
 
   // Repaint the editable area
-  position.moveBy(XMARGIN + XORIGIN, YMARGIN + YORIGIN);
+  position.moveBy(XMARGIN, YMARGIN);
   mainWidget->repaint(position, false);
 
 }
@@ -665,7 +661,7 @@ bool TopLevel::zone(QPoint &position)
     if (!shape.convertToImage().pixelIndex(relative.x(), relative.y())) continue;
 
     toDraw.remove(draggedZOrder);
-    toUpdate.moveBy(XMARGIN + XORIGIN, YMARGIN + YORIGIN);
+    toUpdate.moveBy(XMARGIN, YMARGIN);
     mainWidget->repaint(toUpdate, false);
 
     position = relative;

@@ -80,10 +80,10 @@ private:
       newID, openID, saveID, pictureID, printID, quitID,
       copyID, undoID, redoID,
       soundID;
-  int                           // Tool bar buttons identificators
+  enum {                        // Tool bar buttons identificators
       ID_NEW, ID_OPEN, ID_SAVE, ID_PRINT,
       ID_UNDO, ID_REDO,
-      ID_HELP;
+      ID_HELP};
 
   bool soundEnabled;            // true if the sound is enabled by user, even if there is no audio server
 
@@ -106,21 +106,24 @@ private:
   QList<Action> history;        // List of actions in chronological order
   unsigned int currentAction;   // Number of current action (not the last one if used "undo" button!)
 
-    MainWidget *mainWidget;
+  MainWidget *mainWidget;
 };
 
 class MainWidget : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
+
 public:
-    MainWidget( TopLevel *parent, const char *name );
+
+  MainWidget( TopLevel *parent, const char *name );
 
 protected:
-    virtual void paintEvent( QPaintEvent *event );
-    virtual void mousePressEvent( QMouseEvent *event );
-    virtual void mouseReleaseEvent( QMouseEvent *event );
 
-    TopLevel *topLevel;
+  virtual void paintEvent( QPaintEvent *event );
+  virtual void mousePressEvent( QMouseEvent *event );
+  virtual void mouseReleaseEvent( QMouseEvent *event );
+
+  TopLevel *topLevel;
 };
 
 #endif
