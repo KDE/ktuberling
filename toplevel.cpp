@@ -148,7 +148,7 @@ void TopLevel::changeGameboard(uint newGameboard)
     return;
   }
 
-  // Unselect preceeding gameboard
+  // Unselect preceding gameboard
   ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->setChecked(false);
 
   // Change gameboard in the remembered options
@@ -172,7 +172,7 @@ void TopLevel::changeLanguage(uint newLanguage)
     return;
   }
 
-  // Unselect preceeding language
+  // Unselect preceding language
   if (!soundEnabled) ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(false);
   ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage].latin1()))->setChecked(false);
 
