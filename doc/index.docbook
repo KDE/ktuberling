@@ -789,10 +789,23 @@ The KDE Translation HOWTO</ulink>.
 </listitem>
 </varlistentry>
 <varlistentry>
+<term>PlayGround</term>
+<listitem>
+<para>Play ground widget and more in-depth game management</para>
+</listitem>
+</varlistentry>
+<varlistentry>
 <term>ToDraw</term>
 <listitem>
 <para>Description of one of the graphical <quote>objects</quote> to be
-drawn</para> </listitem>
+drawn</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Action</term>
+<listitem>
+<para>One of the actions stored in the Undo/Redo buffer</para>
+</listitem>
 </varlistentry>
 </variablelist>
 </para>
