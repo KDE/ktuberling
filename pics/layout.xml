@@ -753,7 +753,7 @@
       <label>&amp;Romanian</label>
     </menuitem>
 
-    <sound name="tuberling" file="ro/tuberling.wav" />
+    <sound name="tuberling" file="ro/domnul-cartof.wav" />
     <sound name="eye" file="ro/ochi.wav" />
     <sound name="eyebrow" file="ro/sprinceana.wav" />
     <sound name="nose" file="ro/nas.wav" />
@@ -763,17 +763,17 @@
     <sound name="moustache" file="ro/mustata.wav" />
     <sound name="cigar" file="ro/tigara.wav" />
     <sound name="bow" file="ro/papion.wav" />
-    <sound name="sunglasses" file="ro/ochelaridesoare.wav" />
+    <sound name="sunglasses" file="ro/ochelari-de-soare.wav" />
     <sound name="spectacles" file="ro/ochelari.wav" />
     <sound name="earring" file="ro/cercel.wav" />
     <sound name="badge" file="ro/insigna.wav" />
     <sound name="watch" file="ro/ceas.wav" />
-    <sound name="penguin" file="ro/cercel.wav" />
-    <sound name="tie" file="ro/funda.wav" />
-    <sound name="hair" file="ro/palarie.wav" />
-    <sound name="horn" file="ro/papion.wav" />
-    <sound name="necklace" file="ro/ochelari.wav" />
-    <sound name="scarf" file="ro/tigara.wav" />
+    <sound name="penguin" file="ro/pinguin.wav" />
+    <sound name="tie" file="ro/cravata.wav" />
+    <sound name="hair" file="ro/par.wav" />
+    <sound name="horn" file="ro/corn.wav" />
+    <sound name="necklace" file="ro/colier.wav" />
+    <sound name="scarf" file="ro/fular.wav" />
 
   </language>
 
