@@ -5,7 +5,7 @@
  ------------------------------------------------------------- */
 
 #include <kapp.h>
-#include <ktopwidget.h>
+#include <ktmainwindow.h>
 #include <kimgio.h>
 
 #include "toplevel.h"
