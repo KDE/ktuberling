@@ -4,6 +4,8 @@
    mailto:ebisch@cybercable.tm.fr
  ------------------------------------------------------------- */
 
+#include <libgen.h>
+
 #include <qmessagebox.h>
 #include <qpainter.h>
 #include <qimage.h>
@@ -18,6 +20,7 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kstddirs.h>
+#include <kglobal.h>
 
 #include "toplevel.h"
 #include "categories.h"
@@ -312,9 +315,13 @@ void TopLevel::fileNew()
 void TopLevel::fileOpen()
 {
   QString name;
+  char dir[512], *p;
 
-  name = KFileDialog::getOpenFileName((const char *)
-	locate("data", "ktuberling/museum"), "*.tuberling");
+  sprintf(dir, "%.512s", (const char *) locate("data", "ktuberling/museum/miss.tuberling"));
+  for (p = dir + strlen(dir) - 1; p >= dir; p--)
+    if (*p == '/') { *p = '\0'; break; }
+
+  name = KFileDialog::getOpenFileName(dir, "*.tuberling");
   toolbar->getButton(ID_OPEN)->setDown(false);
   if (!name.isEmpty())
   {
@@ -339,9 +346,13 @@ void TopLevel::fileOpen()
 void TopLevel::fileSave()
 {
   QString name;
+  char dir[512], *p;
 
-  name = KFileDialog::getSaveFileName((const char *)
-	locate("data", "ktuberling/museum"), "*.tuberling");
+  sprintf(dir, "%.512s", (const char *) locate("data", "ktuberling/museum/miss.tuberling"));
+  for (p = dir + strlen(dir) - 1; p >= dir; p--)
+    if (*p == '/') { *p = '\0'; break; }
+
+  name = KFileDialog::getSaveFileName(dir, "*.tuberling");
   toolbar->getButton(ID_SAVE)->setDown(false);
   if (!name.isEmpty())
   {
@@ -849,8 +860,7 @@ void TopLevel::playSound(int soundNumber) const
 	return;
   }
 
-  audioServer->play
-	(locate("data", "ktuberling/sounds/") + soundName);
+  audioServer->play(locate("data", "ktuberling/sounds/" + soundName));
 }
 
 // Repaint all the editable area
