@@ -39,7 +39,7 @@
 
 </authorgroup>
 
-<date>2002-04-09</date>
+<date>2002-04-15</date>
 <releaseinfo>0.03.02</releaseinfo>
 
 <copyright>
@@ -71,11 +71,14 @@
 <keyword>aquarium</keyword>
 </keywordset>
 </bookinfo>
-	     
+
 <chapter id="introduction">
 <title>Introduction</title>
 
 <para>
+<inlinemediaobject><imageobject>
+<imagedata fileref="ktuberling.png" format="PNG"/></imageobject>
+</inlinemediaobject>
 &ktuberling; is a game intended for small children. Of course, it may be
 suitable for adults who have remained young at heart.
 </para>
@@ -191,12 +194,13 @@ The toolbar provides buttons for the commonly used functions.
 
 <table>
 <title>Toolbar Buttons</title>
-<tgroup cols="3">
+<tgroup cols="4">
 
 <thead>
 <row>
 <entry>Button</entry>
 <entry>Name</entry>
+<entry>Menu Equivalent</entry>
 <entry>Action</entry>
 </row>
 </thead>
@@ -204,18 +208,23 @@ The toolbar provides buttons for the commonly used functions.
 
 <row>
 <entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button.new.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.new.eps"/>
-</imageobject>
-</inlinemediaobject>
-
-</entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button.new.png"/>
+  </imageobject>
+  <imageobject>
+  <imagedata format="EPS" fileref="button.new.eps"/>
+  </imageobject>
+	<textobject><phrase>New Game Button</phrase></textobject>
+  </inlinemediaobject>
+  </entry>
 <entry>
-<guiicon>New</guiicon></entry>
+  <guiicon>New</guiicon></entry>
+<entry>
+  <link linkend="game-new"><menuchoice>
+  <guimenu>Game</guimenu> <guimenuitem>New</guimenuitem></menuchoice>
+  </link>
+  </entry>
 <entry>
 Resets the <quote>playground</quote> area. This cleans all parts off the
 playground so a new decoration may be created.
@@ -225,16 +234,22 @@ playground so a new decoration may be created.
 
 <row>
 <entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button.open.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.open.eps"/>
-</imageobject>
-</inlinemediaobject>
-</entry>
-<entry><guiicon>Open</guiicon></entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button.open.png"/>
+  </imageobject>
+  <imageobject>
+  <imagedata format="EPS" fileref="button.open.eps"/>
+  </imageobject>
+	<textobject><phrase>Load Button</phrase></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry><guiicon>Load</guiicon></entry>
+<entry>
+  <link linkend="game-load"><menuchoice>
+  <guimenu>Game</guimenu> <guimenuitem>Load</guimenuitem></menuchoice>
+  </link>
+  </entry>
 <entry>
 Opens an existing tuberling file from the museum or from other folders.
 </entry>
@@ -242,17 +257,22 @@ Opens an existing tuberling file from the museum or from other folders.
 
 <row>
 <entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button.save.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.save.eps"/>
-</imageobject>
-<textobject><phrase>Save Button</phrase></textobject>
-</inlinemediaobject>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button.save.png"/>
+  </imageobject>
+  <imageobject>
+  <imagedata format="EPS" fileref="button.save.eps"/>
+  </imageobject>
+  <textobject><phrase>Save Button</phrase></textobject>
+  </inlinemediaobject>
 </entry>
 <entry><guiicon>Save</guiicon></entry>
+<entry>
+  <link linkend="game-save"><menuchoice>
+  <guimenu>Game</guimenu> <guimenuitem>Save</guimenuitem></menuchoice>
+  </link>
+  </entry>
 <entry>
 Saves your creation to your home folder, or to some other folder like
 the museum if you wish. The tuberling is saved to a small file where only the
@@ -263,19 +283,24 @@ position of objects are saved.
 
 <row>
 <entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button.print.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.print.eps"/>
-</imageobject>
-<textobject><phrase>Print Button</phrase></textobject>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button.print.png"/>
+  </imageobject>
+  <imageobject>
+  <imagedata format="EPS" fileref="button.print.eps"/>
+  </imageobject>
+  <textobject><phrase>Print Button</phrase></textobject>
 </inlinemediaobject>
 </entry>
 <entry>
 <guiicon>Print</guiicon>
 </entry>
+<entry>
+  <link linkend="game-print"><menuchoice>
+  <guimenu>Game</guimenu> <guimenuitem>Print</guimenuitem></menuchoice>
+  </link>
+  </entry>
 <entry>
 Prints your picture (&PostScript; format).
 </entry>
@@ -283,37 +308,47 @@ Prints your picture (&PostScript; format).
 
 <row>
 <entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button.undo.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.undo.eps"/>
-</imageobject>
-<textobject><phrase>Undo Button</phrase></textobject>
-</inlinemediaobject>
-</entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button.undo.png"/>
+  </imageobject>
+  <imageobject>
+  <imagedata format="EPS" fileref="button.undo.eps"/>
+  </imageobject>
+  <textobject><phrase>Undo Button</phrase></textobject>
+  </inlinemediaobject>
+  </entry>
 <entry>
-<guiicon>Undo</guiicon>
-</entry>
+  <guiicon>Undo</guiicon>
+  </entry>
+<entry>
+  <link linkend="edit-undo"><menuchoice>
+  <guimenu>Edit</guimenu> <guimenuitem>Undo</guimenuitem></menuchoice>
+  </link>
+  </entry>
 <entry>Undoes last operation.</entry>
 </row>
 
 <row>
 <entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button.redo.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.redo.eps"/>
-</imageobject>
-<textobject><phrase>Redo Button</phrase></textobject>
-</inlinemediaobject>
-</entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button.redo.png"/>
+  </imageobject>
+  <imageobject>
+  <imagedata format="EPS" fileref="button.redo.eps"/>
+  </imageobject>
+  <textobject><phrase>Redo Button</phrase></textobject>
+  </inlinemediaobject>
+  </entry>
 <entry>
 <guiicon>Redo</guiicon>
 </entry>
+<entry>
+  <link linkend="edit-redo"><menuchoice>
+  <guimenu>Edit</guimenu> <guimenuitem>Redo</guimenuitem></menuchoice>
+  </link>
+  </entry>
 <entry>
 Re-does last operation.</entry>
 </row>
@@ -357,49 +392,49 @@ Help
 </mediaobject>
 
 <sect2>
-<title>The <guimenu>File</guimenu> Menu</title>
+<title>The <guimenu>Game</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.file.png"/>
+<imagedata format="PNG" fileref="menu.game.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="menu.file.eps"/>
+<imagedata format="EPS" fileref="menu.game.eps"/>
 </imageobject>
 <textobject><phrase><guimenu>File</guimenu> Menu</phrase></textobject>
 </mediaobject>
 
 <variablelist>
 
-<varlistentry>
+<varlistentry id="game-new">
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
  </shortcut>
-<guimenu>File</guimenu>
+<guimenu>Game</guimenu>
  <guimenuitem>New</guimenuitem>
  </menuchoice></term>
 <listitem><para><action>Clears</action> the <quote>playground</quote>
 area </para></listitem>
 </varlistentry>
 
-<varlistentry>
+<varlistentry id="game-load">
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
  </shortcut>
-<guimenu>File</guimenu>
- <guimenuitem>Open</guimenuitem>
+<guimenu>Game</guimenu>
+ <guimenuitem>Load</guimenuitem>
  </menuchoice></term>
  <listitem><para><action>Opens an existing tuberling file</action> from
 the museum or from somewhere else if you wish.</para></listitem>
 </varlistentry>
 
-<varlistentry>
+<varlistentry id="game-save">
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
 </shortcut>
-<guimenu>File</guimenu>
+<guimenu>Game</guimenu>
 <guimenuitem>Save</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Saves</action> your creation. The tuberling is
@@ -409,7 +444,7 @@ saved to a small file where only the position of objects are saved.
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>File</guimenu>
+<guimenu>Game</guimenu>
 <guimenuitem>Save as picture...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Creates a graphics file</action>
@@ -418,12 +453,12 @@ are XPM, JPEG, PNG and BMP.
 </para></listitem>
 </varlistentry>
 
-<varlistentry>
+<varlistentry id="game-print">
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
 </shortcut>
-<guimenu>File</guimenu>
+<guimenu>Game</guimenu>
 <guimenuitem>Print</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Print</action> your tuberling picture using
@@ -436,7 +471,7 @@ are XPM, JPEG, PNG and BMP.
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
-<guimenu>File</guimenu>
+<guimenu>Game</guimenu>
 <guimenuitem>Quit</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Quit</action> &ktuberling;.
@@ -461,19 +496,7 @@ are XPM, JPEG, PNG and BMP.
 
 <variablelist>
 
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
-</shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Copy</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Copy</action> the <quote>playground</quote> area to the
-clipboard.</para></listitem>
-</varlistentry>
-
-<varlistentry>
+<varlistentry id="edit-undo">
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
@@ -486,7 +509,7 @@ clipboard.</para></listitem>
 </para></listitem>
 </varlistentry>
 
-<varlistentry>
+<varlistentry id="edit-redo">
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>Shift</keycap>
@@ -500,13 +523,35 @@ placement.  This menu option is active only if you have previously used
 <guilabel>Undo</guilabel>.
 </para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Copy</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Copy</action> the <quote>playground</quote> area to the
+clipboard.</para></listitem>
+</varlistentry>
+
 </variablelist>
 
 </sect2>
 
 <sect2>
 <title>The <guimenu>Playground</guimenu> Menu</title>
-<!-- screnshots to be taken again -->
+
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="menu.playground.png"/>
+</imageobject>
+<imageobject>
+<imagedata format="EPS" fileref="menu.playground.eps"/>
+</imageobject>
+<textobject><phrase><guimenu>Playground</guimenu> Menu</phrase></textobject>
+</mediaobject>
 
 <variablelist>
 
@@ -544,7 +589,16 @@ time it starts up.</para></listitem>
 
 <sect2>
 <title>The <guimenu>Speech</guimenu> Menu</title>
-<!-- screnshots to be taken again -->
+
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="menu.speech.png"/>
+</imageobject>
+<imageobject>
+<imagedata format="EPS" fileref="menu.speech.eps"/>
+</imageobject>
+<textobject><phrase><guimenu>Speech</guimenu> Menu</phrase></textobject>
+</mediaobject>
 
 <para>
 Please note that you need to have kdemultimedia installed
