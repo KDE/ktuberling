@@ -1,8 +1,8 @@
 
 # add here all files
-data_DATA = badge.ogg bow.ogg cigar.ogg ear.ogg earring.ogg eye.ogg eyebrow.ogg\
-	    hat.ogg moustache.ogg mouth.ogg nose.ogg spectacles.ogg \
-	    sunglasses.ogg tuberling.ogg watch.ogg
+data_DATA = badge.wav bow.wav cigar.wav ear.wav earring.wav eye.wav eyebrow.wav\
+	    hat.wav moustache.wav mouth.wav nose.wav spectacles.wav \
+	    sunglasses.wav tuberling.wav watch.wav
 
 # this is the directory, where all datas are installed
 # you have given the datas in data_DATA
