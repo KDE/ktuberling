@@ -1,3 +1,5 @@
+//#define EXPERIMENTAL
+
 /* -------------------------------------------------------------
    KDE Tuberling
    Play ground widget
@@ -272,7 +274,7 @@ void PlayGround::paintEvent( QPaintEvent *event )
          position(destination.x() - XMARGIN,
                   destination.y() - YMARGIN);
   QRect area(position, QSize(event->rect().size()));
-  QBitmap cache(gameboard.size());
+  QPixmap cache(gameboard.size());
   QPainter artist(&cache);
   const ToDraw *currentObject;
   int text;
@@ -283,14 +285,15 @@ void PlayGround::paintEvent( QPaintEvent *event )
   if (area.isEmpty()) return;
 
   artist.drawPixmap(area.topLeft(), gameboard, area);
+
   artist.setPen(color0);
   for (text = 0; text < texts; text++)
     drawText(artist, textsLayout[text], textsList[text]);
-
   artist.setPen(color1);
 
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
     currentObject->draw(artist, area, objectsLayout, shapesLayout, &gameboard, &masks);
+
   bitBlt(this, destination, &cache, area, Qt::CopyROP);
 }
 
@@ -304,13 +307,14 @@ void PlayGround::mousePressEvent( QMouseEvent *event )
   if (!zone(position)) return;
 
   int draggedNumber = draggedObject.getNumber();
-  QBitmap object(objectsLayout[draggedNumber].size()),
-          shape(shapesLayout[draggedNumber].size());
+  QPixmap object(objectsLayout[draggedNumber].size());
+  QBitmap shape(shapesLayout[draggedNumber].size());
   bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber], Qt::CopyROP);
   bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], Qt::CopyROP);
+  object.setMask(shape);
 
   if (!(draggedCursor = new QCursor
-       (object, shape, position.x(), position.y()))) return;
+       (object, position.x(), position.y()))) return;
   setCursor(*draggedCursor);
 
   playSound(soundsList[draggedNumber]);
@@ -386,10 +390,18 @@ bool PlayGround::loadBitmaps()
   QRect *text, *object, *shape;
   int *label, *sound;
 
+#ifdef EXPERIMENTAL
+  if (!gameboard.load("pics/gameboard.png"))
+#else
   if (!gameboard.load(locate("data", "ktuberling/pics/gameboard.xpm")))
-        return false;
+#endif
+  	  return false;
 
+#ifdef EXPERIMENTAL
+  if (!masks.load("pics/masks.png"))
+#else
   if (!masks.load(locate("data", "ktuberling/pics/masks.xpm")))
+#endif
         return false;
 
   if (!(layoutFile = fopen(QFile::encodeName(locate("data", "ktuberling/pics/layout.txt")), "r")))
@@ -463,8 +475,8 @@ void PlayGround::setupGeometry()
 {
   int width = gameboard.width() + 2 * XMARGIN,
       height = gameboard.height() + 2 * YMARGIN;
-  setFixedWidth( width );
-  setFixedHeight( height );
+  setFixedWidth(width);
+  setFixedHeight(height);
 }
 
 // In which decorative object are we?

@@ -60,7 +60,8 @@ private:
 
 private:
 
-  QBitmap gameboard, masks;     // Bitmaps of the game board and the objects' shapes
+  QPixmap gameboard;		// Picture of the game board
+  QBitmap masks;		// Pictures of the objects' shapes
   QRect editableArea;           // Part of the gameboard where the player can lay down objects
   int editableSound;            // Sound associated with this area
   int texts,                    // Number of categories of objects names
