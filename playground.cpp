@@ -379,19 +379,19 @@ bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
 
   for (uint i = 0; i < playGroundsList.count(); i++)
   {
-    playGroundElement = (const QDomElement &) playGroundsList.item(i);
+    playGroundElement = (const QDomElement &) playGroundsList.item(i).toElement();
 
     menuItemsList = playGroundElement.elementsByTagName("menuitem");
     if (menuItemsList.count() != 1)
       return false;
 
-    menuItemElement = (const QDomElement &) menuItemsList.item(0);
+    menuItemElement = (const QDomElement &) menuItemsList.item(0).toElement();
 
     labelsList = menuItemElement.elementsByTagName("label");
     if (labelsList.count() != 1)
       return false;
 
-    labelElement = (const QDomElement &) labelsList.item(0);
+    labelElement = (const QDomElement &) labelsList.item(0).toElement();
     actionAttribute = menuItemElement.attributeNode("action");
     topLevel->registerGameboard(labelElement.text(), actionAttribute.value().latin1()); 
   }
@@ -415,7 +415,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (toLoad >= playGroundsList.count())
     return false;
 
-  playGroundElement = (const QDomElement &) playGroundsList.item(toLoad);
+  playGroundElement = (const QDomElement &) playGroundsList.item(toLoad).toElement();
 
   gameboardAttribute = playGroundElement.attributeNode("gameboard");
   if (!gameboard.load(locate("data", "ktuberling/pics/" + gameboardAttribute.value())))
@@ -429,13 +429,13 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (editableAreasList.count() != 1)
     return false;
 
-  editableAreaElement = (const QDomElement &) editableAreasList.item(0);
+  editableAreaElement = (const QDomElement &) editableAreasList.item(0).toElement();
 
   gameAreasList = editableAreaElement.elementsByTagName("position");
   if (gameAreasList.count() != 1)
     return false;
 
-  gameAreaElement = (const QDomElement &) gameAreasList.item(0);
+  gameAreaElement = (const QDomElement &) gameAreasList.item(0).toElement();
   leftAttribute = gameAreaElement.attributeNode("left");
   topAttribute = gameAreaElement.attributeNode("top");
   rightAttribute = gameAreaElement.attributeNode("right");
@@ -451,7 +451,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (soundNamesList.count() != 1)
     return false;
 
-  soundNameElement = (const QDomElement &) soundNamesList.item(0);
+  soundNameElement = (const QDomElement &) soundNamesList.item(0).toElement();
 
   editableSound = soundNameElement.text();
 
@@ -467,13 +467,13 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 
   for (uint text = 0; text < texts; text++)
   {
-    categoryElement = (const QDomElement &) categoriesList.item(text);
+    categoryElement = (const QDomElement &) categoriesList.item(text).toElement();
 
     gameAreasList = categoryElement.elementsByTagName("position");
     if (gameAreasList.count() != 1)
       return false;
 
-    gameAreaElement = (const QDomElement &) gameAreasList.item(0);
+    gameAreaElement = (const QDomElement &) gameAreasList.item(0).toElement();
     leftAttribute = gameAreaElement.attributeNode("left");
     topAttribute = gameAreaElement.attributeNode("top");
     rightAttribute = gameAreaElement.attributeNode("right");
@@ -489,7 +489,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
     if (labelsList.count() != 1)
       return false;
 
-    labelElement = (const QDomElement &) labelsList.item(0);
+    labelElement = (const QDomElement &) labelsList.item(0).toElement();
 
     textsList[text] = labelElement.text();
   }
@@ -506,13 +506,13 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 
   for (uint decoration = 0; decoration < decorations; decoration++)
   {
-    objectElement = (const QDomElement &) objectsList.item(decoration);
+    objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
 
     gameAreasList = objectElement.elementsByTagName("position");
     if (gameAreasList.count() != 1)
       return false;
 
-    gameAreaElement = (const QDomElement &) gameAreasList.item(0);
+    gameAreaElement = (const QDomElement &) gameAreasList.item(0).toElement();
     leftAttribute = gameAreaElement.attributeNode("left");
     topAttribute = gameAreaElement.attributeNode("top");
     rightAttribute = gameAreaElement.attributeNode("right");
@@ -528,7 +528,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
     if (soundNamesList.count() != 1)
       return false;
 
-    soundNameElement = (const QDomElement &) soundNamesList.item(0);
+    soundNameElement = (const QDomElement &) soundNamesList.item(0).toElement();
 
     soundsList[decoration] = soundNameElement.text();
   }
