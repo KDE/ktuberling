@@ -13,7 +13,7 @@
 #include "toplevel.h"
 
 static KCmdLineOptions options[] = {
-   { "+<tuberling-file>", I18N_NOOP("Potato to open."), 0 },
+   { "+<tuberling-file>", I18N_NOOP("Potato to open"), 0 },
    KCmdLineLastOption
 };
                   
