@@ -9,6 +9,7 @@
 #include <kimgio.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
+#include <kaboutdata.h>
 
 #include "toplevel.h"
 
@@ -20,7 +21,13 @@ static const char *version = "v0.0.1";
 
 int main(int argc, char *argv[])
 {
-  KCmdLineArgs::init(argc, argv, "ktuberling", description, version);
+
+  KAboutData aboutData( "ktuberling", I18N_NOOP("KTuberling"), 
+    version, description, KAboutData::GPL, 
+    "(c) 1999, The KTuberling Developers");
+  aboutData.addAuthor("Eric Bischoff",0, "ebisch@cybercable.tm.fr");
+  aboutData.addAuthor("John Calhoun");
+  KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication app;
   kimgioRegister();
