@@ -30,6 +30,8 @@
 #include "categories.h"
 #include <kconfig.h>
 
+#include <stdlib.h>
+
 #define XMARGIN 5
 #define YMARGIN 5
 #define XORIGIN 0
