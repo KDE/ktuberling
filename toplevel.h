@@ -77,8 +77,7 @@ private:
   KToolBar *toolbar;		// Task window's tool bar
   QPopupMenu *fileMenu,		// Various menus
 	     *editMenu,
-	     *optionsMenu,
-	     *helpMenu;
+	     *optionsMenu;
   int				// Menu items identificators
       newID, openID, saveID, pictureID, printID, quitID,
       copyID, undoID, redoID,

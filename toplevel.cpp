@@ -170,13 +170,12 @@ void TopLevel::setupMenuBar()
   QString about = i18n("A program by Eric Bischoff (ebisch@cybercable.tm.fr)\n"
 	               "and John Calhoun.\n\n"
 	               "This program is dedicated to my daughter Sunniva.");
-  helpMenu = kapp->helpMenu(false, about);
 
   menubar->insertItem(i18n("&File"), fileMenu);
   menubar->insertItem(i18n("&Edit"), editMenu);
   menubar->insertItem(i18n("&Options"), optionsMenu);
   menubar->insertSeparator(-1);
-  menubar->insertItem(i18n("&Help"), helpMenu);
+  menubar->insertItem(i18n("&Help"), helpMenu(about));
 
 }
 
