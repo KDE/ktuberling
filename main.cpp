@@ -7,12 +7,22 @@
 #include <kapp.h>
 #include <ktmainwindow.h>
 #include <kimgio.h>
+#include <klocale.h>
+#include <kcmdlineargs.h>
 
 #include "toplevel.h"
 
+
+static const char *description = I18N_NOOP("KDE Game for kids");
+
+static const char *version = "v0.0.1";
+
+
 int main(int argc, char *argv[])
 {
-  KApplication app(argc, argv, "ktuberling");
+  KCmdLineArgs::init(argc, argv, "ktuberling", description, version);
+
+  KApplication app;
   kimgioRegister();
 
   TopLevel *toplevel=0;
