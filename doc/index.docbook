@@ -39,8 +39,8 @@
 
 </authorgroup>
 
-<date>2002-02-18</date>
-<releaseinfo>0.03</releaseinfo>
+<date>2002-03-08</date>
+<releaseinfo>0.03.01</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year>
@@ -521,7 +521,7 @@ placement.  This menu option is active only if you have previously used
 </menuchoice></term>
 <listitem><para><action>Toggles sound on/off</action>.
 If <filename>artsd</filename> is not running, this menu item is
-disabled. You need to have kdemultimedia and OGG Vorbis rc3 installed
+disabled. You need to have kdemultimedia installed
 to be able to hear sounds. &ktuberling; remembers last setting
 of this option the next time it starts up.</para></listitem>
 </varlistentry>
@@ -646,8 +646,7 @@ All required libraries as well as &ktuberling; itself can be found on
 &kde-ftp;.</para>
 
 <para>
-To be able to hear the sounds, you need to have kdemultimedia and OGG
-Vorbis rc3 installed.
+To be able to hear the sounds, you need to have kdemultimedia installed.
 </para>
 </sect1>
 
