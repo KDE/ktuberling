@@ -24,15 +24,10 @@ ktuberling_LDADD = $(LIB_KDEGAMES) $(LIB_KFILE) -lkdeprint
 
 KDE_ICON = ktuberling
 
-appsdir = $(kde_appsdir)/Games/Kidsgames
-apps_DATA = ktuberling.desktop
+xdg_apps_DATA = ktuberling.desktop
 
 appsrc_DATA = ktuberlingui.rc
 appsrcdir = $(kde_datadir)/ktuberling
-
-install-data-local: uninstall.desktop
-	$(mkinstalldirs) $(DESTDIR)$(kde_appsdir)/Toys
-	$(INSTALL_DATA) $(srcdir)/uninstall.desktop $(DESTDIR)$(kde_appsdir)/Toys/ktuberling.desktop
 
 messages: rc.cpp
 	$(XGETTEXT) rc.cpp $(ktuberling_SOURCES) pics/layout.i18n -o $(podir)/ktuberling.pot
