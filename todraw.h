@@ -18,11 +18,13 @@ class ToDraw
     ToDraw();
     ToDraw(const ToDraw &);
     ToDraw(int, const QRect &);
+    ToDraw &operator=(const ToDraw &);
     void draw(QPainter &, const QRect &, const QRect *, const QRect *, const QBitmap *, const QBitmap *) const;
     bool save(FILE *) const;
     bool load(FILE *, int, bool &);
 
     inline int getNumber() const { return number; }
+    inline void setNumber(int newValue) { number = newValue; }
     inline const QRect &getPosition() const { return position; }
 
   private:

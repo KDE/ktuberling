@@ -15,10 +15,10 @@
 #include <kiconloader.h>
 #include <kfiledialog.h>
 #include <kstdaccel.h>
+#include <klocale.h>
 
 #include "toplevel.h"
 #include "categories.h"
-#include <klocale.h>
 
 #define XMARGIN 5
 #define YMARGIN 5
@@ -36,17 +36,23 @@ TopLevel::TopLevel()
   setupToolBar();
   objectsLayout = shapesLayout = 0;
   textsList = soundsList = 0;
+
   toDraw.setAutoDelete(true);
+  history.setAutoDelete(true);
+
   if (!loadBitmaps())
   {
     QMessageBox::critical
 	(this,
-         i18n("Fatal error"), 
-         i18n("I could not load the pictures. I'll quit")); 
+         "Ktuberling",
+	 i18n("Fatal error :\n" 
+              "I could not load the pictures. I'll quit")); 
     exit(-1);
   }
+
   setupGeometry();
   draggedCursor = 0;
+  currentAction = 0;
 }
 
 // Destructor
@@ -139,10 +145,12 @@ void TopLevel::setupMenuBar()
   editMenu->insertSeparator();
 
   undoID = editMenu->insertItem(i18n("&Undo"));
+  editMenu->setItemEnabled(undoID, false);
   editMenu->connectItem(undoID, this, SLOT(editUndo()));
   editMenu->setAccel(acc.undo(), undoID);
 
   redoID = editMenu->insertItem(i18n("&Redo"));
+  editMenu->setItemEnabled(redoID, false);
   editMenu->connectItem(redoID, this, SLOT(editRedo()));
   editMenu->setAccel(CTRL | Key_A, redoID);
 
@@ -186,7 +194,9 @@ void TopLevel::setupToolBar()
   toolbar->insertSeparator();
 
   toolbar->insertButton(iconLoader.loadIcon("undo.xpm"), ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()));
+  toolbar->setItemEnabled(ID_UNDO, false);
   toolbar->insertButton(iconLoader.loadIcon("redo.xpm"), ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()));
+  toolbar->setItemEnabled(ID_REDO, false);
   toolbar->insertSeparator();
 
   toolbar->insertButton(iconLoader.loadIcon("help.xpm"), ID_HELP, SIGNAL(pressed()), kapp, SLOT(appHelpActivated()));
@@ -291,13 +301,12 @@ void TopLevel::setupGeometry()
 void TopLevel::fileNew()
 {
   toDraw.clear();
+  history.clear();
+  currentAction = 0;
 
-  QRect dirtyArea
-	(editableArea.left() - 10,
-         editableArea.top() - 10,
-         editableArea.width() + 20,
-         editableArea.height() + 20);
-  repaint(dirtyArea, false);
+  enableUndo(false);
+  enableRedo(false);
+  repaintAll();
 }
 
 // Load gameboard
@@ -310,18 +319,19 @@ void TopLevel::fileOpen()
   toolbar->getButton(ID_OPEN)->setDown(false);
   if (!name.isEmpty())
   {
-    QRect dirtyArea
-	(editableArea.left() - 10,
-         editableArea.top() - 10,
-         editableArea.width() + 20,
-         editableArea.height() + 20);
     toDraw.clear();
+    history.clear();
+    currentAction = 0;
+
     if (!loadFrom(name))
       QMessageBox::warning
         (this,
          "KTuberling",
          i18n("Could not load file"));
-    repaint(dirtyArea, false);
+
+    enableUndo(currentAction != 0);
+    enableRedo(false);
+    repaintAll();
   }
 
 }
@@ -415,7 +425,6 @@ void TopLevel::filePrint()
         (this,
          "KTuberling",
          i18n("Picture successfully printed"));
-
 }
 
 // Copy modified area to clipboard
@@ -435,11 +444,67 @@ void TopLevel::editCopy()
 // Undo last action
 void TopLevel::editUndo()
 {
+  ToDraw *newObject;
+  Action *undone;
+  int zOrder;
+
+  if (!currentAction) return;
+  if (!(undone = history.at(--currentAction)))
+    return;
+
+  zOrder = undone->ZOrderAfter();
+  if (zOrder != -1)
+  {
+    // Undo an "add" or a "move" action
+    if (!toDraw.remove(zOrder)) return;
+  }
+
+  zOrder = undone->ZOrderBefore();
+  if (zOrder != -1)
+  {
+    // Undo a "delete" or a "move" action
+    if (!(newObject = new ToDraw(undone->DrawnBefore())))
+      return;
+    if (!toDraw.insert(zOrder, newObject))
+      return;
+  }
+
+  if (!currentAction) enableUndo(false);
+  enableRedo(true);
+  repaintAll();
 }
 
 // Redo last action
 void TopLevel::editRedo()
 {
+  ToDraw *newObject;
+  Action *undone;
+  int zOrder;
+
+  if (currentAction >= history.count()) return;
+  if (!(undone = history.at(currentAction++)))
+    return;
+
+  zOrder = undone->ZOrderBefore();
+  if (zOrder != -1)
+  {
+    // Redo a "delete" or a "move" action
+    if (!toDraw.remove(zOrder)) return;
+  }
+
+  zOrder = undone->ZOrderAfter();
+  if (zOrder != -1)
+  {
+    // Redo an "add" or a "move" action
+    if (!(newObject = new ToDraw(undone->DrawnAfter())))
+      return;
+    if (!toDraw.insert(zOrder, newObject))
+      return;
+  }
+
+  if (currentAction >= history.count()) enableRedo(false);
+  enableUndo(true);
+  repaintAll();
 }
 
 // Toggle sound on/off
@@ -487,7 +552,7 @@ void TopLevel::paintEvent(QPaintEvent *event)
 
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
     currentObject->draw(artist, area, objectsLayout, shapesLayout, &gameboard, &masks);
-  bitBlt(this, destination, &cache, area, CopyROP);
+  bitBlt(this, destination, &cache, area, Qt::CopyROP);
 }
 
 // Top level window close box interaction handling
@@ -505,10 +570,11 @@ void TopLevel::mousePressEvent(QMouseEvent *event)
                   event->y() - YMARGIN - YORIGIN);
   if (!zone(position)) return;
 
+  int draggedNumber = draggedObject.getNumber();
   QBitmap object(objectsLayout[draggedNumber].size()),
           shape(shapesLayout[draggedNumber].size());
-  bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber], CopyROP);
-  bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], CopyROP);
+  bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber], Qt::CopyROP);
+  bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], Qt::CopyROP);
 
   if (!(draggedCursor = new QCursor
        (object, shape, position.x(), position.y()))) return;
@@ -520,9 +586,11 @@ void TopLevel::mousePressEvent(QMouseEvent *event)
 // Mouse button up event
 void TopLevel::mouseReleaseEvent(QMouseEvent *event)
 {
+  // If we are not dragging an object, ignore the event
   if (!draggedCursor) return;
 
   QCursor arrow;
+  int draggedNumber = draggedObject.getNumber();
   QRect position(
     event->x() - XMARGIN - XORIGIN - draggedCursor->hotSpot().x(),
     event->y() - YMARGIN - YORIGIN - draggedCursor->hotSpot().y(),
@@ -534,16 +602,40 @@ void TopLevel::mouseReleaseEvent(QMouseEvent *event)
          editableArea.width() + 20,
          editableArea.height() + 20);
   ToDraw *newObject;
+  Action *newAction;
 
+  // We are not anymore dragging an object
   delete draggedCursor;
   draggedCursor = 0;
   setCursor(arrow);
 
-  if (!dirtyArea.contains(event->pos())) return; 
+  // If we are not moving the object to the editable area
+  if (!dirtyArea.contains(event->pos()))
+  {
+    // ... then register its deletion (if coming from the editable area), and return
+    if (draggedZOrder == -1) return;
 
+    while (history.count() > currentAction) history.removeLast();
+    if (!(newAction = new Action(&draggedObject, draggedZOrder, 0, -1))) return;
+    history.append(newAction);
+    currentAction++;
+    enableUndo(true);
+
+    return; 
+  }
+
+  // Register that we have one more object to draw
   if (!(newObject = new ToDraw(draggedNumber, position))) return;
   toDraw.append(newObject);
 
+  // Forget all subsequent actions in the undo buffer, and register object's addition (or its move)
+  while (history.count() > currentAction) history.removeLast();
+  if (!(newAction = new Action(&draggedObject, draggedZOrder, newObject, toDraw.count()-1))) return;
+  history.append(newAction);
+  currentAction++;
+  enableUndo(true);
+
+  // Repaint the editable area
   position.moveBy(XMARGIN + XORIGIN, YMARGIN + YORIGIN);
   repaint(position, false);
 
@@ -554,6 +646,8 @@ void TopLevel::mouseReleaseEvent(QMouseEvent *event)
 // Returns false if we aren't in any zone
 bool TopLevel::zone(QPoint &position)
 {
+  // Scan all available decorative objects on right side because we may be adding one
+  int draggedNumber;
   for (draggedNumber = 0;
        draggedNumber < decorations;
        draggedNumber++) if (objectsLayout[draggedNumber].contains(position))
@@ -561,25 +655,31 @@ bool TopLevel::zone(QPoint &position)
      position.setX(position.x() - objectsLayout[draggedNumber].x());
      position.setY(position.y() - objectsLayout[draggedNumber].y());
 
+     draggedObject.setNumber(draggedNumber);
+     draggedZOrder = -1;
+
      return true;
   }
 
+  // Scan all decorative objects already layed down on editable are because we may be moving or removing one
   const ToDraw *currentObject;
 
-  for (currentObject = toDraw.last(); currentObject; currentObject = toDraw.prev())
+  for (draggedZOrder = toDraw.count()-1; draggedZOrder >= 0; draggedZOrder--)
   {
+    currentObject = toDraw.at(draggedZOrder);
     if (!currentObject->getPosition().contains(position)) continue;
 
     QRect toUpdate(currentObject->getPosition());
-    draggedNumber = currentObject->getNumber();
+    draggedObject = *currentObject;
+    draggedNumber = draggedObject.getNumber();
 
     QBitmap shape(shapesLayout[draggedNumber].size());
     QPoint relative(position.x() - toUpdate.x(),
                     position.y() - toUpdate.y());
-    bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], CopyROP);
+    bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], Qt::CopyROP);
     if (!shape.convertToImage().pixelIndex(relative.x(), relative.y())) continue;
 
-    toDraw.remove(); 
+    toDraw.remove(draggedZOrder); 
     toUpdate.moveBy(XMARGIN + XORIGIN, YMARGIN + YORIGIN);
     repaint(toUpdate, false);
 
@@ -588,18 +688,20 @@ bool TopLevel::zone(QPoint &position)
     return true;
   }
 
+  // If we are on the gameboard itself, then play "tuberling" sound 
   if (editableArea.contains(position))
 	playSound(editableSound);
 
   return false;
 }
 
-// Load objects and lay them down on the gameboard
+// Load objects and lay them down on the editable area
 bool TopLevel::loadFrom(const char *name)
 {
   FILE *fp;
   bool eof = false;
-  ToDraw readObject, *currentObject;
+  ToDraw readObject, *newObject;
+  Action *newAction;
 
   if (!(fp = fopen(name, "r"))) return false;
   for (;;)
@@ -613,12 +715,16 @@ bool TopLevel::loadFrom(const char *name)
     {
       return !fclose(fp);
     }
-    if (!(currentObject = new ToDraw(readObject))) return false;
-    toDraw.append(currentObject);
+    if (!(newObject = new ToDraw(readObject))) return false;
+    toDraw.append(newObject);
+    if (!(newAction = new Action(0, -1, newObject, toDraw.count()-1))) return false;
+    history.append(newAction);
+    currentAction++;
+    
   } 
 }
 
-// Save objects laid down on the gameboard 
+// Save objects laid down on the editable area
 bool TopLevel::saveAs(const char *name)
 {
   FILE *fp;
@@ -748,3 +854,28 @@ void TopLevel::playSound(int soundNumber) const
 	(KApplication::kde_datadir() + "/ktuberling/sounds/" + soundName);
 }
 
+// Repaint all the editable area
+void TopLevel::repaintAll()
+{
+  QRect dirtyArea
+	(editableArea.left() - 10,
+         editableArea.top() - 10,
+         editableArea.width() + 20,
+         editableArea.height() + 20);
+
+  repaint(dirtyArea, false);
+}
+
+// Enable or disable "undo" button and menu item
+void TopLevel::enableUndo(bool enable) const
+{
+  editMenu->setItemEnabled(undoID, enable);
+  toolbar->setItemEnabled(ID_UNDO, enable);
+}
+
+// Enable or disable "redo" button and menu item
+void TopLevel::enableRedo(bool enable) const
+{
+  editMenu->setItemEnabled(redoID, enable);
+  toolbar->setItemEnabled(ID_REDO, enable);
+}

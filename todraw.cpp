@@ -30,6 +30,17 @@ ToDraw::ToDraw(int declaredNumber, const QRect &declaredPosition)
   number = declaredNumber;
 }
 
+// Affectation operator
+ToDraw &ToDraw::operator=(const ToDraw &model)
+{
+  if (&model == this) return *this;
+
+  position = model.position;
+  number = model.number;
+
+  return *this;
+}
+
 // Draw an object previously laid down on the game board
 void ToDraw::draw(QPainter &artist, const QRect &area,
                   const QRect *objectsLayout, const QRect *shapesLayout,
