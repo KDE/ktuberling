@@ -8,3 +8,4 @@ data_DATA = badge.wav bow.wav cigar.wav ear.wav earring.wav eye.wav eyebrow.wav\
 # you have given the datas in data_DATA
 datadir = $(kde_datadir)/ktuberling/sounds/en
 
+SUBDIRS = . ro
