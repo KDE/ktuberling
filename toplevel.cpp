@@ -91,15 +91,15 @@ void TopLevel::setupMenuBar()
   editMenu = new QPopupMenu( this );
   optionsMenu = new QPopupMenu( this );
 
-  newID = fileMenu->insertItem(i18n("&New"));
+  newID = fileMenu->insertItem(SmallIcon("filenew"), i18n("&New"));
   fileMenu->connectItem(newID, this, SLOT(fileNew()));
   fileMenu->setAccel(KStdAccel::key(KStdAccel::New), newID);
 
-  openID = fileMenu->insertItem(i18n("&Open..."));
+  openID = fileMenu->insertItem(SmallIcon("fileopen"), i18n("&Open..."));
   fileMenu->connectItem(openID, this, SLOT(fileOpen()));
   fileMenu->setAccel(KStdAccel::key(KStdAccel::Open), openID);
 
-  saveID = fileMenu->insertItem(i18n("&Save..."));
+  saveID = fileMenu->insertItem(SmallIcon("filesave"), i18n("&Save..."));
   fileMenu->connectItem(saveID, this, SLOT(fileSave()));
   fileMenu->setAccel(KStdAccel::key(KStdAccel::Save), saveID);
 
@@ -107,27 +107,27 @@ void TopLevel::setupMenuBar()
   fileMenu->connectItem(pictureID, this, SLOT(filePicture()));
   fileMenu->insertSeparator();
 
-  printID = fileMenu->insertItem(i18n("&Print"));
+  printID = fileMenu->insertItem(SmallIcon("fileprint"), i18n("&Print"));
   fileMenu->connectItem(printID, this, SLOT(filePrint()));
   fileMenu->setAccel(KStdAccel::key(KStdAccel::Print), printID);
   fileMenu->insertSeparator();
 
-  quitID = fileMenu->insertItem(i18n("&Quit"));
+  quitID = fileMenu->insertItem(SmallIcon("exit"), i18n("&Quit"));
   fileMenu->connectItem(quitID, kapp, SLOT(quit()));
   fileMenu->setAccel(KStdAccel::key(KStdAccel::Quit), quitID);
 
-  copyID = editMenu->insertItem(i18n("&Copy"));
+  copyID = editMenu->insertItem(SmallIcon("editcopy"), i18n("&Copy"));
   editMenu->connectItem(copyID, this, SLOT(editCopy()));
   editMenu->setAccel(KStdAccel::key(KStdAccel::Copy), copyID);
   editMenu->insertSeparator();
 
-  undoID = editMenu->insertItem(i18n("&Undo"));
+  undoID = editMenu->insertItem(SmallIcon("undo"), i18n("&Undo"));
   editMenu->setItemEnabled(undoID, false);
   editMenu->connectItem(undoID, this, SLOT(editUndo()));
   editMenu->setAccel(KStdAccel::key(KStdAccel::Undo), undoID);
 
 
-  redoID = editMenu->insertItem(i18n("&Redo"));
+  redoID = editMenu->insertItem(SmallIcon("redo"), i18n("&Redo"));
   editMenu->setItemEnabled(redoID, false);
   editMenu->connectItem(redoID, this, SLOT(editRedo()));
   editMenu->setAccel(KStdAccel::key(KStdAccel::Redo), redoID);
