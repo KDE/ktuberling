@@ -187,18 +187,14 @@ void TopLevel::setupToolBar()
   toolbar = toolBar();
   toolbar->setGeometry(0, 24, width(), 24);
 
-  toolbar->insertButton(iconLoader.loadIcon("filenew.xpm"), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
-  toolbar->insertButton(iconLoader.loadIcon("fileopen.xpm"), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
-  toolbar->insertButton(iconLoader.loadIcon("filefloppy.xpm"), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
-  toolbar->insertButton(iconLoader.loadIcon("fileprint.xpm"), ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
+  toolbar->insertButton(iconLoader.loadIcon("filenew"), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
+  toolbar->insertButton(iconLoader.loadIcon("fileopen"), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
+  toolbar->insertButton(iconLoader.loadIcon("filefloppy"), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
+  toolbar->insertButton(iconLoader.loadIcon("fileprint"), ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
   toolbar->insertSeparator();
 
-  toolbar->insertButton(iconLoader.loadIcon("undo.xpm"), ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
-  toolbar->insertButton(iconLoader.loadIcon("redo.xpm"), ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
-  toolbar->insertSeparator();
-
-  toolbar->insertButton(iconLoader.loadIcon("help.xpm"), ID_HELP, SIGNAL(pressed()), kapp, SLOT(appHelpActivated()), true, i18n("Help"));
-
+  toolbar->insertButton(iconLoader.loadIcon("undo"), ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
+  toolbar->insertButton(iconLoader.loadIcon("redo"), ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
 }
 
 // Load background and draggable objects masks
