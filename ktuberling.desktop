@@ -85,4 +85,4 @@ DocPath=ktuberling/index.html
 Terminal=0
 Icon=ktuberling
 MimeType=application/x-tuberling
-KDE-X-StartupNotify=true
+X-KDE-StartupNotify=true
