@@ -48,8 +48,8 @@
     </category>
 
     <category>
-       <game left="241" top="307" right="511" bottom="321" />
-       <label>Goodies</label>
+      <game left="241" top="307" right="511" bottom="321" />
+      <label>Goodies</label>
     </category>
 
     <object>
@@ -77,8 +77,8 @@
     </object>
 
     <object>
-       <game left="285" top=" 34" right="326" bottom=" 66" />
-       <mask left="113" top=" 34" right="154" bottom=" 66" />
+      <game left="285" top=" 34" right="326" bottom=" 66" />
+      <mask left="113" top=" 34" right="154" bottom=" 66" />
       <sound>en/eye.wav</sound>
     </object>
 
@@ -312,7 +312,7 @@
 
   </playground>
 
-  <playground gameboard="penguin-game.png" masks="potato-mask.png">
+  <playground gameboard="penguin-game.png" masks="penguin-mask.png">
 
     <menuitem action="options_penguin">
       <label>Penguin</label>
@@ -320,295 +320,168 @@
 
     <editablearea>
       <game left="  0" top="  0" right="240" bottom="320" />
-      <sound>en/tuberling.wav</sound>
+      <sound>en/penguin.wav</sound>
     </editablearea>
 
     <category>
-      <game left="241" top="101" right="413" bottom="115" />
+      <game left="241" top=" 66" right="413" bottom=" 80" />
       <label>Eyes</label>
     </category>
 
     <category>
       <game left="415" top="123" right="511" bottom="137" />
-      <label>Eyesbrows</label>
+      <label>Tie</label>
     </category>
 
     <category>
-      <game left="241" top="179" right="394" bottom="193" />
-      <label>Noses</label>
+      <game left="241" top="180" right="511" bottom="194" />
+      <label>Hair</label>
     </category>
 
     <category>
-      <game left="395" top="179" right="511" bottom="193" />
-      <label>Ears</label>
+      <game left="241" top="259" right="377" bottom="273" />
+      <label>Necklaces</label>
     </category>
 
     <category>
-      <game left="241" top="259" right="445" bottom="273" />
-      <label>Mouths</label>
+      <game left="379" top="259" right="511" bottom="273" />
+      <label>Hats</label>
     </category>
 
     <category>
-       <game left="241" top="307" right="511" bottom="321" />
-       <label>Goodies</label>
+      <game left="241" top="307" right="400" bottom="321" />
+      <label>Glasses</label>
+    </category>
+
+    <category>
+      <game left="402" top="307" right="511" bottom="321" />
+      <label>Scarf</label>
     </category>
 
     <object>
-      <game left="242" top="  0" right="283" bottom=" 32" />
-      <mask left=" 70" top="  0" right="111" bottom=" 32" />
+      <game left="243" top="  1" right="283" bottom=" 32" />
+      <mask left="  0" top="  1" right=" 40" bottom=" 32" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="242" top=" 34" right="283" bottom=" 66" />
-      <mask left=" 70" top=" 34" right="111" bottom=" 66" />
+      <game left="243" top=" 35" right="283" bottom=" 65" />
+      <mask left="  0" top=" 35" right=" 40" bottom=" 65" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="242" top=" 68" right="283" bottom="100" />
-      <mask left=" 70" top=" 68" right="111" bottom="100" />
+      <game left="286" top="  1" right="326" bottom=" 32" />
+      <mask left=" 43" top="  1" right=" 83" bottom=" 32" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="285" top="  0" right="326" bottom=" 32" />
-      <mask left="113" top="  0" right="154" bottom=" 32" />
+      <game left="286" top=" 35" right="326" bottom=" 65" />
+      <mask left=" 43" top=" 35" right=" 83" bottom=" 65" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-       <game left="285" top=" 34" right="326" bottom=" 66" />
-       <mask left="113" top=" 34" right="154" bottom=" 66" />
+      <game left="329" top="  1" right="369" bottom=" 32" />
+      <mask left=" 86" top="  1" right="126" bottom=" 32" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="285" top=" 68" right="326" bottom="100" />
-      <mask left="113" top=" 68" right="154" bottom="100" />
+      <game left="329" top=" 35" right="369" bottom=" 65" />
+      <mask left=" 86" top=" 35" right="126" bottom=" 65" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="328" top="  0" right="369" bottom=" 32" />
-      <mask left="156" top="  0" right="197" bottom=" 32" />
+      <game left="372" top="  1" right="412" bottom=" 32" />
+      <mask left="129" top="  1" right="169" bottom=" 32" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="328" top=" 34" right="369" bottom=" 66" />
-      <mask left="156" top=" 34" right="197" bottom=" 66" />
+      <game left="372" top=" 35" right="412" bottom=" 65" />
+      <mask left="129" top=" 35" right="169" bottom=" 65" />
       <sound>en/eye.wav</sound>
     </object>
 
     <object>
-      <game left="328" top=" 68" right="369" bottom="100" />
-      <mask left="156" top=" 68" right="197" bottom="100" />
-      <sound>en/eye.wav</sound>
+      <game left="416" top="  1" right="511" bottom="120" />
+      <mask left="  1" top=" 67" right=" 96" bottom="186" />
+      <sound>en/tie.wav</sound>
     </object>
 
     <object>
-      <game left="371" top="  0" right="412" bottom=" 32" />
-      <mask left="199" top="  0" right="240" bottom=" 32" />
-      <sound>en/eye.wav</sound>
-    </object>
-
-    <object>
-      <game left="371" top=" 34" right="412" bottom=" 66" />
-      <mask left="199" top=" 34" right="240" bottom=" 66" />
-      <sound>en/eye.wav</sound>
-    </object>
-
-    <object>
-      <game left="371" top=" 68" right="412" bottom="100" />
-      <mask left="199" top=" 68" right="240" bottom="100" />
-      <sound>en/eye.wav</sound>
-    </object>
-
-    <object>
-      <game left="415" top="  0" right="462" bottom=" 29" />
-      <mask left="415" top="  0" right="462" bottom=" 29" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="415" top=" 31" right="462" bottom=" 60" />
-      <mask left="415" top=" 31" right="462" bottom=" 60" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="415" top=" 62" right="462" bottom=" 91" />
-      <mask left="415" top=" 62" right="462" bottom=" 91" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="415" top=" 93" right="462" bottom="122" />
-      <mask left="415" top=" 93" right="462" bottom="122" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="464" top="  0" right="511" bottom=" 29" />
-      <mask left="464" top="  0" right="511" bottom=" 29" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="464" top=" 31" right="511" bottom=" 60" />
-      <mask left="464" top=" 31" right="511" bottom=" 60" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="464" top=" 62" right="511" bottom=" 91" />
-      <mask left="464" top=" 62" right="511" bottom=" 91" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="464" top=" 93" right="511" bottom="122" />
-      <mask left="464" top=" 93" right="511" bottom="122" />
-      <sound>en/eyebrow.wav</sound>
-    </object>
-
-    <object>
-      <game left="242" top="116" right="291" bottom="178" />
-      <mask left="  1" top="  1" right=" 50" bottom=" 63" />
-      <sound>en/nose.wav</sound>
-    </object>
-
-    <object>
-      <game left="293" top="116" right="342" bottom="178" />
-      <mask left="  1" top=" 65" right=" 50" bottom="127" />
-      <sound>en/nose.wav</sound>
-    </object>
-
-    <object>
-      <game left="344" top="116" right="393" bottom="178" />
-      <mask left="  1" top="129" right=" 50" bottom="191" />
-      <sound>en/nose.wav</sound>
-    </object>
-
-    <object>
-      <game left="397" top="138" right="424" bottom="178" />
-      <mask left=" 52" top="152" right=" 79" bottom="192" />
-      <sound>en/ear.wav</sound>
-    </object>
-
-    <object>
-      <game left="426" top="138" right="453" bottom="178" />
-      <mask left=" 81" top="152" right="108" bottom="192" />
-      <sound>en/ear.wav</sound>
-    </object>
-
-    <object>
-      <game left="455" top="138" right="482" bottom="178" />
-      <mask left="110" top="152" right="137" bottom="192" />
-      <sound>en/ear.wav</sound>
-    </object>
-
-    <object>
-      <game left="484" top="138" right="511" bottom="178" />
-      <mask left="139" top="152" right="166" bottom="192" />
-      <sound>en/ear.wav</sound>
-    </object>
-
-    <object>
-      <game left="242" top="195" right="308" bottom="225" />
-      <mask left="  1" top="195" right=" 67" bottom="225" />
-      <sound>en/mouth.wav</sound>
-    </object>
-
-    <object>
-      <game left="242" top="227" right="308" bottom="257" />
-      <mask left="  1" top="227" right=" 67" bottom="257" />
-      <sound>en/mouth.wav</sound>
-    </object>
-
-    <object>
-      <game left="310" top="195" right="376" bottom="225" />
-      <mask left=" 69" top="195" right="135" bottom="225" />
-      <sound>en/mouth.wav</sound>
-    </object>
-
-    <object>
-      <game left="310" top="227" right="376" bottom="257" />
-      <mask left=" 69" top="227" right="135" bottom="257" />
-      <sound>en/mouth.wav</sound>
-    </object>
-
-    <object>
-      <game left="378" top="195" right="444" bottom="225" />
-      <mask left="137" top="195" right="203" bottom="225" />
-      <sound>en/mouth.wav</sound>
-    </object>
-
-    <object>
-      <game left="378" top="227" right="444" bottom="257" />
-      <mask left="378" top="227" right="444" bottom="257" />
-      <sound>en/mouth.wav</sound>
-    </object>
-
-    <object>
-      <game left="447" top="195" right="511" bottom="225" />
-      <mask left="137" top="227" right="201" bottom="257" />
+      <game left="244" top=" 81" right="390" bottom="116" />
+      <mask left=" 91" top="222" right="237" bottom="257" />
       <sound>en/hat.wav</sound>
     </object>
 
     <object>
-      <game left="447" top="227" right="511" bottom="249" />
-      <mask left=" 67" top="265" right="131" bottom="287" />
-      <sound>en/moustache.wav</sound>
+      <game left="243" top="119" right="341" bottom="178" />
+      <mask left=" 90" top="260" right="188" bottom="319" />
+      <sound>en/hair.wav</sound>
     </object>
 
     <object>
-      <game left="447" top="251" right="475" bottom="272" />
-      <mask left="  1" top="266" right=" 29" bottom="287" />
-      <sound>en/cigar.wav</sound>
+      <game left="345" top="119" right="390" bottom="178" />
+      <mask left="192" top="260" right="237" bottom="319" />
+      <sound>en/hair.wav</sound>
     </object>
 
     <object>
-      <game left="477" top="251" right="511" bottom="272" />
-      <mask left=" 31" top="266" right=" 65" bottom="287" />
-      <sound>en/bow.wav</sound>
+      <game left="397" top="140" right="452" bottom="178" />
+      <mask left="123" top=" 70" right="178" bottom="108" />
+      <sound>en/horn.wav</sound>
     </object>
 
     <object>
-      <game left="242" top="274" right="322" bottom="306" />
-      <mask left="  1" top="289" right=" 81" bottom="321" />
-      <sound>en/sunglasses.wav</sound>
+      <game left="455" top="140" right="509" bottom="178" />
+      <mask left="181" top=" 70" right="235" bottom="108" />
+      <sound>en/horn.wav</sound>
     </object>
 
     <object>
-      <game left="324" top="274" right="399" bottom="306" />
-      <mask left=" 83" top="289" right="158" bottom="321" />
+      <game left="243" top="195" right="376" bottom="225" />
+      <mask left="101" top="152" right="234" bottom="182" />
+      <sound>en/necklace.wav</sound>
+    </object>
+
+    <object>
+      <game left="243" top="228" right="376" bottom="258" />
+      <mask left="101" top="185" right="234" bottom="215" />
+      <sound>en/necklace.wav</sound>
+    </object>
+
+    <object>
+      <game left="379" top="195" right="444" bottom="258" />
+      <mask left="  1" top="190" right=" 66" bottom="253" />
+      <sound>en/hat.wav</sound>
+    </object>
+
+    <object>
+      <game left="448" top="195" right="511" bottom="258" />
+      <mask left="174" top="  1" right="237" bottom=" 64" />
+      <sound>en/hat.wav</sound>
+    </object>
+
+    <object>
+      <game left="244" top="275" right="322" bottom="305" />
+      <mask left="  0" top="256" right=" 78" bottom="286" />
       <sound>en/spectacles.wav</sound>
     </object>
 
     <object>
-      <game left="401" top="274" right="445" bottom="306" />
-      <mask left="160" top="289" right="204" bottom="321" />
-      <sound>en/bow.wav</sound>
+      <game left="325" top="275" right="398" bottom="305" />
+      <mask left="  0" top="289" right=" 73" bottom="319" />
+      <sound>en/spectacles.wav</sound>
     </object>
 
     <object>
-      <game left="447" top="274" right="462" bottom="306" />
-      <mask left="206" top="289" right="221" bottom="321" />
-      <sound>en/earring.wav</sound>
-    </object>
-
-    <object>
-      <game left="464" top="274" right="491" bottom="306" />
-      <mask left="213" top="255" right="240" bottom="287" />
-      <sound>en/badge.wav</sound>
-    </object>
-
-    <object>
-      <game left="493" top="274" right="511" bottom="306" />
-      <mask left="222" top="221" right="240" bottom="253" />
-      <sound>en/watch.wav</sound>
+      <game left="402" top="275" right="511" bottom="305" />
+      <mask left="101" top="115" right="210" bottom="145" />
+      <sound>en/ear.wav</sound>
     </object>
 
   </playground>
