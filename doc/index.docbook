@@ -9,6 +9,7 @@
 <bookinfo>
 <title>The &ktuberling; Handbook</title>
 <authorgroup>
+
 <author>
 <firstname>Eric</firstname>
 <surname>Bischoff</surname>
@@ -21,8 +22,6 @@
 <othername>E.</othername>
 <surname>Ahlquist</surname>
 <lineage>Jr.</lineage>
-
-
 <affiliation>
 <address><email>pea@ahlquist.org</email></address>
 </affiliation>
@@ -38,8 +37,8 @@
 
 </authorgroup>
 
-<date>2001-02-23</date>
-<releaseinfo>0.01.00</releaseinfo>
+<date>2001-09-16</date>
+<releaseinfo>0.02.00</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year>
@@ -801,25 +800,34 @@ separated by whitespaces.</para>
 
 <itemizedlist>
 <listitem>
-<para>John Calhoun - Original idea, pictures and english
+<para>John Calhoun - Original idea, pictures and English
 sounds</para>
 </listitem>
+
 <listitem>
 <para>Eric Bischoff <email>ebisch@cybercable.tm.fr</email> - &kde;
 Programming</para>
 </listitem>
+
 <listitem>
 <para>Fran&ccedil;ois-xavier Duranceau <email>duranceau@free.fr</email> - Tests,
 advice and help</para>
 </listitem>
+
+<listitem>
+<para>Bass Willems <email>next@euronet.nl</email> - Colour graphics</para>
+</listitem>
+
 <listitem>
 <para>Peter Silva <email>peter.silva@videotron.ca</email> - Proofreading of
 the documentation</para>
 </listitem>
+
 <listitem>
 <para>Paul Ahlquist <email>pea@ahlquist.org</email> -
 Reformated and added screenshots for &kde; 2.1.  Expanded the
-graphics section of the technical reference.</para> </listitem>
+graphics section of the technical reference.</para>
+</listitem>
 </itemizedlist> 
 
 <para>This game is dedicated to my little daughter Sunniva Bischoff</para>
@@ -880,5 +888,3 @@ in the base directory of the &ktuberling; distribution:</para>
 </appendix>
 
 </book>
-
-
