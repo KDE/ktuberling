@@ -19,10 +19,10 @@ static KCmdLineOptions options[] = {
                   
 
 
-static const char *description = I18N_NOOP("Potato game for kids");
-static const char *text = I18N_NOOP("A program by Eric Bischoff <e.bischoff@noos.fr>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
+static const char description[] = I18N_NOOP("Potato game for kids");
+static const char text[] = I18N_NOOP("A program by Eric Bischoff <e.bischoff@noos.fr>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
 
-static const char *version = "0.4";
+static const char version[] = "0.4";
 
 // Main function
 int main(int argc, char *argv[])
