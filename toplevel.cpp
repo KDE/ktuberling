@@ -35,13 +35,12 @@
 #define XMARGIN 5
 #define YMARGIN 5
 #define XORIGIN 0
-#define YORIGIN 50
+#define YORIGIN 0
 
 // Constructor
 TopLevel::TopLevel()
   : KTMainWindow()
 {
-  setBackgroundColor(white);
   readOptions();
   objectsLayout = shapesLayout = 0;
   textsList = soundsList = 0;
@@ -52,13 +51,16 @@ TopLevel::TopLevel()
   if (!loadBitmaps())
   {
     KMessageBox::error(this,
-		       i18n("Fatal error:\n" 
-			    "I could not load the pictures. I'll quit."));
+                       i18n("Fatal error:\n"
+                            "I could not load the pictures. I'll quit."));
     exit(-1);
   }
 
   draggedCursor = 0;
   currentAction = 0;
+
+  mainWidget = new MainWidget( this, "mainwidget" );
+  setCentralWidget( mainWidget );
 
   setupGeometry();
   setupMenuBar();
@@ -104,11 +106,11 @@ void TopLevel::writeOptions()
 void TopLevel::setupMenuBar()
 {
   menubar = menuBar();
-  menubar->setGeometry(0, 0, width(), 24);
+//  menubar->setGeometry(0, 0, width(), 24);
 
-  fileMenu = new QPopupMenu();
-  editMenu = new QPopupMenu();
-  optionsMenu = new QPopupMenu();
+  fileMenu = new QPopupMenu( this );
+  editMenu = new QPopupMenu( this );
+  optionsMenu = new QPopupMenu( this );
 
   newID = fileMenu->insertItem(i18n("&New"));
   fileMenu->connectItem(newID, this, SLOT(fileNew()));
@@ -156,8 +158,8 @@ void TopLevel::setupMenuBar()
   optionsMenu->connectItem(soundID, this, SLOT(optionsSound()));
 
   QString about = i18n("A program by Eric Bischoff (ebisch@cybercable.tm.fr)\n"
-	               "and John Calhoun.\n\n"
-	               "This program is dedicated to my daughter Sunniva.");
+                       "and John Calhoun.\n\n"
+                       "This program is dedicated to my daughter Sunniva.");
 
   menubar->insertItem(i18n("&File"), fileMenu);
   menubar->insertItem(i18n("&Edit"), editMenu);
@@ -171,7 +173,7 @@ void TopLevel::setupMenuBar()
 void TopLevel::setupToolBar()
 {
   toolbar = toolBar();
-  toolbar->setGeometry(0, 24, width(), 24);
+//  toolbar->setGeometry(0, 24, width(), 24);
 
   toolbar->insertButton("filenew", ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
   toolbar->insertButton("fileopen", ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
@@ -196,31 +198,31 @@ bool TopLevel::loadBitmaps()
   int *label, *sound;
 
   if (!gameboard.load(locate("data", "ktuberling/pics/gameboard.xpm")))
-	return false;
+        return false;
 
   if (!masks.load(locate("data", "ktuberling/pics/masks.xpm")))
-	return false;
+        return false;
 
   if (!(layoutFile = fopen(QFile::encodeName(locate("data", "ktuberling/pics/layout.txt")), "r")))
-	return false;
+        return false;
 
   if (fscanf(layoutFile, "%d %d %d %d %d",
-	     &editableLeft, &editableTop, &editableRight, &editableBottom,
+             &editableLeft, &editableTop, &editableRight, &editableBottom,
              &editableSound) != 5) { fclose(layoutFile); return false; }
   if (!fgets(comment, sizeof(comment), layoutFile))
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
   editableArea.setCoords
-	(XMARGIN + XORIGIN + editableLeft,
+        (XMARGIN + XORIGIN + editableLeft,
          YMARGIN + YORIGIN + editableTop,
          XMARGIN + XORIGIN + editableRight,
          YMARGIN + YORIGIN + editableBottom);
 
   if (fscanf(layoutFile, "%d", &texts) != 1)
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
   if (!fgets(comment, sizeof(comment), layoutFile))
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
   if (texts < 1)
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
 
   if (!(textsLayout = new QRect[texts])) { fclose(layoutFile); return false; }
   if (!(textsList = new int[texts])) { fclose(layoutFile); return false; }
@@ -231,18 +233,18 @@ bool TopLevel::loadBitmaps()
     if (fscanf(layoutFile,
                "%d %d %d %d %d",
                &textLeft, &textTop, &textRight, &textBottom,
-	       label) != 5) { fclose(layoutFile); return false; }
+               label) != 5) { fclose(layoutFile); return false; }
     if (!fgets(comment, sizeof(comment), layoutFile))
-		 { fclose(layoutFile); return false; }
+                 { fclose(layoutFile); return false; }
     text->setCoords(textLeft, textTop, textRight, textBottom);
   }
- 
+
   if (fscanf(layoutFile, "%d", &decorations) != 1)
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
   if (!fgets(comment, sizeof(comment), layoutFile))
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
   if (decorations < 1)
-	{ fclose(layoutFile); return false; }
+        { fclose(layoutFile); return false; }
 
   if (!(objectsLayout = new QRect[decorations])) { fclose(layoutFile); return false; }
   if (!(shapesLayout = new QRect[decorations])) { fclose(layoutFile); return false; }
@@ -255,10 +257,10 @@ bool TopLevel::loadBitmaps()
                "%d %d %d %d  %d %d %d %d  %d",
                &objectLeft, &objectTop, &objectRight, &objectBottom,
                &shapeLeft, &shapeTop, &shapeRight, &shapeBottom,
-	       sound) != 9)
-		{ fclose(layoutFile); return false; }
+               sound) != 9)
+                { fclose(layoutFile); return false; }
     if (!fgets(comment, sizeof(comment), layoutFile))
-		{ fclose(layoutFile); return false; }
+                { fclose(layoutFile); return false; }
     object->setCoords(objectLeft, objectTop, objectRight, objectBottom);
     shape->setCoords(shapeLeft, shapeTop, shapeRight, shapeBottom);
   }
@@ -272,10 +274,14 @@ void TopLevel::setupGeometry()
 {
   int width = gameboard.width() + XORIGIN + 2 * XMARGIN,
       height = gameboard.height() + YORIGIN + 2 * YMARGIN;
-  setMinimumWidth(width);
-  setMaximumWidth(width);
-  setMinimumHeight(height);
-  setMaximumHeight(height);
+  mainWidget->setFixedWidth( width );
+  mainWidget->setFixedHeight( height );
+  /*
+  mainWidget->setMinimumWidth(width);
+  mainWidget->setMaximumWidth(width);
+  mainWidget->setMinimumHeight(height);
+  mainWidget->setMaximumHeight(height);
+  */
 }
 
 // Reset gameboard
@@ -299,14 +305,14 @@ void TopLevel::fileOpen()
   dir.truncate(dir.findRev('/') + 1);
 
   KURL url = KFileDialog::getOpenURL(dir, "*.tuberling");
-  
+
   toolbar->getButton(ID_OPEN)->setDown(false);
 
   if (url.isEmpty())
     return;
-  
+
   KIO::NetAccess::download( url, name );
-  
+
   toDraw.clear();
   history.clear();
   currentAction = 0;
@@ -330,21 +336,21 @@ void TopLevel::fileSave()
   dir.truncate(dir.find('/') + 1);
 
   KURL url = KFileDialog::getSaveURL(dir, "*.tuberling");
-  
+
   toolbar->getButton(ID_SAVE)->setDown(false);
-  
+
   if (url.isEmpty())
     return;
-  
- 
+
+
   if( !url.isLocalFile() )
   {
     KMessageBox::sorry(this,
-		       i18n("Only saving to local files currently "
-			    "supported."));
+                       i18n("Only saving to local files currently "
+                            "supported."));
     return;
   }
- 
+
   if( !saveAs( url.path() ) )
     KMessageBox::error(this, i18n("Could not save file."));
 }
@@ -353,28 +359,28 @@ void TopLevel::fileSave()
 void TopLevel::filePicture()
 {
   QPixmap picture(QPixmap::grabWindow
-	(winId(),
+        (winId(),
          editableArea.left(),
          editableArea.top(),
          editableArea.width(),
          editableArea.height()));
 
   KURL url = KFileDialog::getSaveURL
-		(getenv("HOME"),
-		 i18n(	"*.xpm|Unix pixmaps (*.xpm)\n"
-			"*.jpg|JPEG compressed files (*.jpg)\n"
-			"*.png|Next generation pictures (*.png)\n"
-			"*.bmp|Windows bitmaps (*.bmp)\n"
-		 	"*|All picture formats"));
+                (getenv("HOME"),
+                 i18n(  "*.xpm|Unix pixmaps (*.xpm)\n"
+                        "*.jpg|JPEG compressed files (*.jpg)\n"
+                        "*.png|Next generation pictures (*.png)\n"
+                        "*.bmp|Windows bitmaps (*.bmp)\n"
+                        "*|All picture formats"));
   if( url.isEmpty() )
     return;
-  
+
   if( !url.isLocalFile() )
   {
     KMessageBox::sorry( 0L, i18n( "Only saving to local files supported yet." ) );
     return;
   }
-  
+
   QString name = url.path();
   const char *format;
   int suffix;
@@ -412,13 +418,13 @@ void TopLevel::filePrint()
   ok = QPrintDialog::getPrinterSetup(&printer);
   toolbar->getButton(ID_PRINT)->setDown(false);
   if (!ok) return;
-  repaint(true);
+  mainWidget->repaint(true);
   if (!printPicture(printer))
     KMessageBox::error(this,
-			 i18n("Could not print picture."));
+                         i18n("Could not print picture."));
   else
     KMessageBox::information(this,
-			     i18n("Picture successfully printed."));
+                             i18n("Picture successfully printed."));
 }
 
 // Copy modified area to clipboard
@@ -426,7 +432,7 @@ void TopLevel::editCopy()
 {
   QClipboard *clipboard = QApplication::clipboard();
   QPixmap picture(QPixmap::grabWindow
-	(winId(),
+        (winId(),
          editableArea.left(),
          editableArea.top(),
          editableArea.width(),
@@ -512,7 +518,7 @@ void TopLevel::optionsSound()
 }
 
 // Repaint event handling
-void TopLevel::paintEvent(QPaintEvent *event)
+void TopLevel::doPaintEvent(QPaintEvent *event)
 {
   QPoint destination(event->rect().topLeft()),
          position(destination.x() - XMARGIN - XORIGIN,
@@ -537,7 +543,7 @@ void TopLevel::paintEvent(QPaintEvent *event)
 
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
     currentObject->draw(artist, area, objectsLayout, shapesLayout, &gameboard, &masks);
-  bitBlt(this, destination, &cache, area, Qt::CopyROP);
+  bitBlt(mainWidget, destination, &cache, area, Qt::CopyROP);
 }
 
 // Top level window close box interaction handling
@@ -547,7 +553,7 @@ void TopLevel::closeEvent(QCloseEvent *)
 }
 
 // Mouse button down event
-void TopLevel::mousePressEvent(QMouseEvent *event)
+void TopLevel::doMousePressEvent(QMouseEvent *event)
 {
   if (draggedCursor) return;
 
@@ -569,7 +575,7 @@ void TopLevel::mousePressEvent(QMouseEvent *event)
 }
 
 // Mouse button up event
-void TopLevel::mouseReleaseEvent(QMouseEvent *event)
+void TopLevel::doMouseReleaseEvent(QMouseEvent *event)
 {
   // If we are not dragging an object, ignore the event
   if (!draggedCursor) return;
@@ -580,9 +586,9 @@ void TopLevel::mouseReleaseEvent(QMouseEvent *event)
     event->x() - XMARGIN - XORIGIN - draggedCursor->hotSpot().x(),
     event->y() - YMARGIN - YORIGIN - draggedCursor->hotSpot().y(),
     objectsLayout[draggedNumber].width(),
-    objectsLayout[draggedNumber].height()); 
+    objectsLayout[draggedNumber].height());
   QRect dirtyArea
-	(editableArea.left() - 10,
+        (editableArea.left() - 10,
          editableArea.top() - 10,
          editableArea.width() + 20,
          editableArea.height() + 20);
@@ -606,7 +612,7 @@ void TopLevel::mouseReleaseEvent(QMouseEvent *event)
     currentAction++;
     enableUndo(true);
 
-    return; 
+    return;
   }
 
   // Register that we have one more object to draw
@@ -622,7 +628,7 @@ void TopLevel::mouseReleaseEvent(QMouseEvent *event)
 
   // Repaint the editable area
   position.moveBy(XMARGIN + XORIGIN, YMARGIN + YORIGIN);
-  repaint(position, false);
+  mainWidget->repaint(position, false);
 
 }
 
@@ -664,18 +670,18 @@ bool TopLevel::zone(QPoint &position)
     bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], Qt::CopyROP);
     if (!shape.convertToImage().pixelIndex(relative.x(), relative.y())) continue;
 
-    toDraw.remove(draggedZOrder); 
+    toDraw.remove(draggedZOrder);
     toUpdate.moveBy(XMARGIN + XORIGIN, YMARGIN + YORIGIN);
-    repaint(toUpdate, false);
+    mainWidget->repaint(toUpdate, false);
 
     position = relative;
 
     return true;
   }
 
-  // If we are on the gameboard itself, then play "tuberling" sound 
+  // If we are on the gameboard itself, then play "tuberling" sound
   if (editableArea.contains(position))
-	playSound(editableSound);
+        playSound(editableSound);
 
   return false;
 }
@@ -705,8 +711,8 @@ bool TopLevel::loadFrom(const QString & name)
     if (!(newAction = new Action(0, -1, newObject, toDraw.count()-1))) return false;
     history.append(newAction);
     currentAction++;
-    
-  } 
+
+  }
 }
 
 // Save objects laid down on the editable area
@@ -730,7 +736,7 @@ bool TopLevel::printPicture(QPrinter &printer) const
 {
   QPainter artist;
   QPixmap picture(QPixmap::grabWindow
-	(winId(),
+        (winId(),
          editableArea.left(),
          editableArea.top(),
          editableArea.width(),
@@ -750,25 +756,25 @@ void TopLevel::drawText(QPainter &artist, QRect &area, int textNumber) const
   switch (textNumber)
   {
       case TEXT_EYES:
-	label = i18n("Eyes");
-	break;
+        label = i18n("Eyes");
+        break;
       case TEXT_EYEBROWS:
-	label = i18n("Eyesbrows");
-	break;
+        label = i18n("Eyesbrows");
+        break;
       case TEXT_NOSES:
-	label = i18n("Noses");
-	break;
+        label = i18n("Noses");
+        break;
       case TEXT_EARS:
-	label = i18n("Ears");
-	break;
+        label = i18n("Ears");
+        break;
       case TEXT_MOUTHS:
-	label = i18n("Mouths");
-	break;
+        label = i18n("Mouths");
+        break;
       case TEXT_GOODIES:
-	label = i18n("Goodies");
-	break;
+        label = i18n("Goodies");
+        break;
       default:
-	return;
+        return;
   }
   artist.drawText(area, AlignCenter, label);
 }
@@ -782,55 +788,55 @@ void TopLevel::playSound(int soundNumber) const
   switch (soundNumber)
   {
     case SOUND_TUBERLING:
-	soundName = i18n("en/tuberling.wav");
+        soundName = i18n("en/tuberling.wav");
         break;
     case SOUND_EYE:
-	soundName = i18n("en/eye.wav");
+        soundName = i18n("en/eye.wav");
         break;
     case SOUND_EYEBROW:
-	soundName = i18n("en/eyebrow.wav");
+        soundName = i18n("en/eyebrow.wav");
         break;
     case SOUND_NOSE:
-	soundName = i18n("en/nose.wav");
+        soundName = i18n("en/nose.wav");
         break;
     case SOUND_EAR:
-	soundName = i18n("en/ear.wav");
+        soundName = i18n("en/ear.wav");
         break;
     case SOUND_MOUTH:
-	soundName = i18n("en/mouth.wav");
+        soundName = i18n("en/mouth.wav");
         break;
     case SOUND_HAT:
-	soundName = i18n("en/hat.wav");
+        soundName = i18n("en/hat.wav");
         break;
     case SOUND_MOUSTACHE:
-	soundName = i18n("en/moustache.wav");
+        soundName = i18n("en/moustache.wav");
         break;
     case SOUND_CIGAR:
-	soundName = i18n("en/cigar.wav");
+        soundName = i18n("en/cigar.wav");
         break;
     case SOUND_TIE:
-	soundName = i18n("en/tie.wav");
+        soundName = i18n("en/tie.wav");
         break;
     case SOUND_SUNGLASSES:
-	soundName = i18n("en/sunglasses.wav");
+        soundName = i18n("en/sunglasses.wav");
         break;
     case SOUND_SPECTACLES:
-	soundName = i18n("en/spectacles.wav");
+        soundName = i18n("en/spectacles.wav");
         break;
     case SOUND_BOW:
-	soundName = i18n("en/bow.wav");
+        soundName = i18n("en/bow.wav");
         break;
     case SOUND_EARRING:
-	soundName = i18n("en/earring.wav");
+        soundName = i18n("en/earring.wav");
         break;
     case SOUND_BADGE:
-	soundName = i18n("en/badge.wav");
+        soundName = i18n("en/badge.wav");
         break;
     case SOUND_WATCH:
-	soundName = i18n("en/watch.wav");
+        soundName = i18n("en/watch.wav");
         break;
     default:
-	return;
+        return;
   }
 
   KAudioPlayer::play(locate("data", "ktuberling/sounds/" + soundName));
@@ -840,12 +846,12 @@ void TopLevel::playSound(int soundNumber) const
 void TopLevel::repaintAll()
 {
   QRect dirtyArea
-	(editableArea.left() - 10,
+        (editableArea.left() - 10,
          editableArea.top() - 10,
          editableArea.width() + 20,
          editableArea.height() + 20);
 
-  repaint(dirtyArea, false);
+  mainWidget->repaint(dirtyArea, false);
 }
 
 // Enable or disable "undo" button and menu item
@@ -860,4 +866,26 @@ void TopLevel::enableRedo(bool enable) const
 {
   editMenu->setItemEnabled(redoID, enable);
   toolbar->setItemEnabled(ID_REDO, enable);
+}
+
+MainWidget::MainWidget( TopLevel *parent, const char *name )
+    : QWidget( parent, name )
+{
+    setBackgroundColor(white);
+    topLevel = parent;
+}
+
+void MainWidget::paintEvent( QPaintEvent *event )
+{
+    topLevel->doPaintEvent( event );
+}
+
+void MainWidget::mousePressEvent( QMouseEvent *event )
+{
+    topLevel->doMousePressEvent( event );
+}
+
+void MainWidget::mouseReleaseEvent( QMouseEvent *event )
+{
+    topLevel->doMouseReleaseEvent( event );
 }
