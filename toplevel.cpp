@@ -17,9 +17,6 @@
 #include <kprinter.h>
 #include <qclipboard.h>
 
-#include <stdlib.h>
-#include <unistd.h>
-
 #include "toplevel.moc"
 #include "playground.h"
 #include "soundfactory.h"
@@ -326,7 +323,7 @@ void TopLevel::open(const KURL &url)
 void TopLevel::fileSave()
 {
   KURL url = KFileDialog::getSaveURL
-                (getenv("HOME"),
+                ( QString::null,
 		 "*.tuberling");
 
   if (url.isEmpty())
@@ -359,7 +356,7 @@ void TopLevel::filePicture()
   QPixmap picture(playGround->getPicture());
 
   KURL url = KFileDialog::getSaveURL
-                (getenv("HOME"),
+                ( QString::null,
                  i18n(  "*.xpm|UNIX pixmaps (*.xpm)\n"
                         "*.jpg|JPEG compressed files (*.jpg)\n"
                         "*.png|Next generation pictures (*.png)\n"
