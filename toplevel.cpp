@@ -23,10 +23,10 @@
 #include <qclipboard.h>
 
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "toplevel.moc"
 #include "playground.h"
-#include "categories.h"
 
 // Constructor
 TopLevel::TopLevel()
@@ -57,6 +57,12 @@ void TopLevel::enableRedo(bool enable) const
   actionCollection()->action(KStdAction::stdName(KStdAction::Redo))->setEnabled(enable);
 }
 
+// Register an available gameboard
+void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
+{
+  (void) new KAction(i18n(menuItem.latin1()), 0, this, /*SLOT(selectGameboard())*/0, actionCollection(), actionId);
+}
+
 // Read options from preferences file
 void TopLevel::readOptions()
 {
@@ -82,7 +88,7 @@ void TopLevel::writeOptions()
   config->sync();
 }
 
-// KAction initialization (aka menuba + toolbar init)
+// KAction initialization (aka menubar + toolbar init)
 void TopLevel::setupKAction()
 {
 //Game
@@ -91,7 +97,7 @@ void TopLevel::setupKAction()
   KStdGameAction::save(this, SLOT(fileSave()), actionCollection());
   KStdGameAction::print(this, SLOT(filePrint()), actionCollection());
   KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
-  (void)new KAction(i18n("Save &as picture..."), 0, this, SLOT(filePicture()), actionCollection(), "game_save_picture");
+  (void) new KAction(i18n("Save &as picture..."), 0, this, SLOT(filePicture()), actionCollection(), "game_save_picture");
 
 //Edit
   KStdAction::copy(this, SLOT(editCopy()), actionCollection());
@@ -100,7 +106,6 @@ void TopLevel::setupKAction()
   enableUndo(false);
   enableRedo(false);
   
-
 //Settings
   KToggleAction* t = new KToggleAction(i18n("&Sound"), 0, this, SLOT(optionsSound()), actionCollection(), "options_sound");
   t->setChecked(soundEnabled);
@@ -176,7 +181,8 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  playground->repaint(true);
+  playGround->repaint(true);
+
   QPixmap picture(playGround->grabWindow());
 
   KURL url = KFileDialog::getSaveURL
@@ -186,6 +192,7 @@ void TopLevel::filePicture()
                         "*.png|Next generation pictures (*.png)\n"
                         "*.bmp|Windows bitmaps (*.bmp)\n"
                         "*|All picture formats"));
+
   if( url.isEmpty() )
     return;
 
@@ -231,7 +238,6 @@ void TopLevel::filePrint()
 
   ok = printer.setup(this);
   if (!ok) return;
-
   playGround->repaint(true);
   if (!playGround->printPicture(printer))
     KMessageBox::error(this,

@@ -23,6 +23,7 @@ public:
 
   void enableUndo(bool) const;
   void enableRedo(bool) const;
+  void registerGameboard(const QString &, const char *);
 
   inline bool isSoundEnabled() const {return soundEnabled;}
 

@@ -1,5 +1,3 @@
-//#define EXPERIMENTAL
-
 /* -------------------------------------------------------------
    KDE Tuberling
    Play ground widget
@@ -16,12 +14,10 @@
 #include <qpainter.h>
 #include <qimage.h>
 #include <qcursor.h>
-
-#include <stdlib.h>
+#include <qdom.h>
 
 #include "playground.moc"
 #include "toplevel.h"
-#include "categories.h"
 
 #define XMARGIN 5
 #define YMARGIN 5
@@ -175,92 +171,23 @@ bool PlayGround::printPicture(KPrinter &printer) const
 }
 
 // Draw some text
-void PlayGround::drawText(QPainter &artist, QRect &area, int textNumber) const
+void PlayGround::drawText(QPainter &artist, QRect &area, QString &textId) const
 {
   QString label;
 
-  switch (textNumber)
-  {
-      case TEXT_EYES:
-        label = i18n("Eyes");
-        break;
-      case TEXT_EYEBROWS:
-        label = i18n("Eyesbrows");
-        break;
-      case TEXT_NOSES:
-        label = i18n("Noses");
-        break;
-      case TEXT_EARS:
-        label = i18n("Ears");
-        break;
-      case TEXT_MOUTHS:
-        label = i18n("Mouths");
-        break;
-      case TEXT_GOODIES:
-        label = i18n("Goodies");
-        break;
-      default:
-        return;
-  }
+  label=i18n(textId.latin1());
+
   artist.drawText(area, AlignCenter, label);
 }
 
 // Play some sound
-void PlayGround::playSound(int soundNumber) const
+void PlayGround::playSound(QString &soundId) const
 {
   QString soundName;
 
   if (!topLevel->isSoundEnabled()) return;
-  switch (soundNumber)
-  {
-    case SOUND_TUBERLING:
-        soundName = i18n("en/tuberling.wav");
-        break;
-    case SOUND_EYE:
-        soundName = i18n("en/eye.wav");
-        break;
-    case SOUND_EYEBROW:
-        soundName = i18n("en/eyebrow.wav");
-        break;
-    case SOUND_NOSE:
-        soundName = i18n("en/nose.wav");
-        break;
-    case SOUND_EAR:
-        soundName = i18n("en/ear.wav");
-        break;
-    case SOUND_MOUTH:
-        soundName = i18n("en/mouth.wav");
-        break;
-    case SOUND_HAT:
-        soundName = i18n("en/hat.wav");
-        break;
-    case SOUND_MOUSTACHE:
-        soundName = i18n("en/moustache.wav");
-        break;
-    case SOUND_CIGAR:
-        soundName = i18n("en/cigar.wav");
-        break;
-    case SOUND_BOW:
-        soundName = i18n("en/bow.wav");
-        break;
-    case SOUND_SUNGLASSES:
-        soundName = i18n("en/sunglasses.wav");
-        break;
-    case SOUND_SPECTACLES:
-        soundName = i18n("en/spectacles.wav");
-        break;
-    case SOUND_EARRING:
-        soundName = i18n("en/earring.wav");
-        break;
-    case SOUND_BADGE:
-        soundName = i18n("en/badge.wav");
-        break;
-    case SOUND_WATCH:
-        soundName = i18n("en/watch.wav");
-        break;
-    default:
-        return;
-  }
+
+  soundName=i18n(soundId.latin1());
 
   KAudioPlayer::play(locate("data", "ktuberling/sounds/" + soundName));
 }
@@ -379,91 +306,180 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
 // Load background and draggable objects masks
 bool PlayGround::loadBitmaps()
 {
-  FILE *layoutFile;
-  char comment[512];
-  int editableLeft, editableTop, editableRight, editableBottom;
-  int textLeft, textTop, textRight, textBottom;
-  int objectLeft, objectTop, objectRight, objectBottom;
-  int shapeLeft, shapeTop, shapeRight, shapeBottom;
-  QRect *text, *object, *shape;
-  int *label, *sound;
+  QDomDocument layoutDocument("layout");
+  QDomNodeList playGroundsList,
+               menuItemsList, editableAreasList, categoriesList, objectsList,
+               gameAreasList, maskAreasList, soundNamesList, labelsList;
+  QDomElement playGroundElement,
+              menuItemElement, editableAreaElement, categoryElement, objectElement,
+              gameAreaElement, maskAreaElement, soundNameElement, labelElement;
+  QDomAttr gameboardAttribute, masksAttribute, actionAttribute,
+           leftAttribute, topAttribute, rightAttribute, bottomAttribute;
 
-#ifdef EXPERIMENTAL
-  if (!gameboard.load("pics/gameboard.png"))
-#else
-  if (!gameboard.load(locate("data", "ktuberling/pics/gameboard.xpm")))
-#endif
-  	  return false;
+  QFile layoutFile(QFile::encodeName(locate("data", "ktuberling/pics/layout.xml")));
+  if (!layoutFile.open(IO_ReadOnly))
+     return false;
 
-#ifdef EXPERIMENTAL
-  if (!masks.load("pics/masks.png"))
-#else
-  if (!masks.load(locate("data", "ktuberling/pics/masks.xpm")))
-#endif
-        return false;
+  if (!layoutDocument.setContent(&layoutFile)) {
+     layoutFile.close();
+     return false;
+  }
+  layoutFile.close();
 
-  if (!(layoutFile = fopen(QFile::encodeName(locate("data", "ktuberling/pics/layout.txt")), "r")))
-        return false;
+  playGroundsList = layoutDocument.elementsByTagName("playground");
+  if (playGroundsList.count() < 1)
+    return false;
 
-  if (fscanf(layoutFile, "%d %d %d %d %d",
-             &editableLeft, &editableTop, &editableRight, &editableBottom,
-             &editableSound) != 5) { fclose(layoutFile); return false; }
-  if (!fgets(comment, sizeof(comment), layoutFile))
-        { fclose(layoutFile); return false; }
+  playGroundElement = (const QDomElement &) playGroundsList.item(0);
+ 			 // Someday we'll support several playgrounds
+
+  gameboardAttribute = playGroundElement.attributeNode("gameboard");
+  if (!gameboard.load(locate("data", "ktuberling/pics/" + gameboardAttribute.value())))
+    return false;
+
+  masksAttribute = playGroundElement.attributeNode("masks");
+  if (!masks.load(locate("data", "ktuberling/pics/" + masksAttribute.value())))
+    return false;
+
+  menuItemsList = playGroundElement.elementsByTagName("menuitem");
+  if (menuItemsList.count() != 1)
+    return false;
+
+  menuItemElement = (const QDomElement &) menuItemsList.item(0);
+
+  labelsList = menuItemElement.elementsByTagName("label");
+  if (labelsList.count() != 1)
+    return false;
+
+  labelElement = (const QDomElement &) labelsList.item(0);
+  actionAttribute = menuItemElement.attributeNode("action");
+  topLevel->registerGameboard(labelElement.text(), actionAttribute.value().latin1()); 
+ 
+  editableAreasList = playGroundElement.elementsByTagName("editablearea");
+  if (editableAreasList.count() != 1)
+    return false;
+
+  editableAreaElement = (const QDomElement &) editableAreasList.item(0);
+
+  gameAreasList = editableAreaElement.elementsByTagName("game");
+  if (gameAreasList.count() != 1)
+    return false;
+
+  gameAreaElement = (const QDomElement &) gameAreasList.item(0);
+  leftAttribute = gameAreaElement.attributeNode("left");
+  topAttribute = gameAreaElement.attributeNode("top");
+  rightAttribute = gameAreaElement.attributeNode("right");
+  bottomAttribute = gameAreaElement.attributeNode("bottom");
+
   editableArea.setCoords
-        (XMARGIN + editableLeft,
-         YMARGIN + editableTop,
-         XMARGIN + editableRight,
-         YMARGIN + editableBottom);
+        (XMARGIN + leftAttribute.value().toInt(),
+         YMARGIN + topAttribute.value().toInt(),
+         XMARGIN + rightAttribute.value().toInt(),
+         YMARGIN + bottomAttribute.value().toInt());
 
-  if (fscanf(layoutFile, "%d", &texts) != 1)
-        { fclose(layoutFile); return false; }
-  if (!fgets(comment, sizeof(comment), layoutFile))
-        { fclose(layoutFile); return false; }
+  soundNamesList = editableAreaElement.elementsByTagName("sound");
+  if (soundNamesList.count() != 1)
+    return false;
+
+  soundNameElement = (const QDomElement &) soundNamesList.item(0);
+
+  editableSound = soundNameElement.text();
+
+  categoriesList = playGroundElement.elementsByTagName("category");
+  texts = categoriesList.count();
   if (texts < 1)
-        { fclose(layoutFile); return false; }
+    return false;
 
-  if (!(textsLayout = new QRect[texts])) { fclose(layoutFile); return false; }
-  if (!(textsList = new int[texts])) { fclose(layoutFile); return false; }
-  for (text = textsLayout, label = textsList;
-       text < textsLayout + texts;
-       text++, label++)
+  if (!(textsLayout = new QRect[texts]))
+    return false;
+  if (!(textsList = new QString[texts]))
+    return false;
+
+  for (uint text = 0; text < texts; text++)
   {
-    if (fscanf(layoutFile,
-               "%d %d %d %d %d",
-               &textLeft, &textTop, &textRight, &textBottom,
-               label) != 5) { fclose(layoutFile); return false; }
-    if (!fgets(comment, sizeof(comment), layoutFile))
-                 { fclose(layoutFile); return false; }
-    text->setCoords(textLeft, textTop, textRight, textBottom);
+    categoryElement = (const QDomElement &) categoriesList.item(text);
+
+    gameAreasList = categoryElement.elementsByTagName("game");
+    if (gameAreasList.count() != 1)
+      return false;
+
+    gameAreaElement = (const QDomElement &) gameAreasList.item(0);
+    leftAttribute = gameAreaElement.attributeNode("left");
+    topAttribute = gameAreaElement.attributeNode("top");
+    rightAttribute = gameAreaElement.attributeNode("right");
+    bottomAttribute = gameAreaElement.attributeNode("bottom");
+
+    textsLayout[text].setCoords
+	    (leftAttribute.value().toInt(),
+	     topAttribute.value().toInt(),
+	     rightAttribute.value().toInt(),
+	     bottomAttribute.value().toInt());
+
+    labelsList = categoryElement.elementsByTagName("label");
+    if (labelsList.count() != 1)
+      return false;
+
+    labelElement = (const QDomElement &) labelsList.item(0);
+
+    textsList[text] = labelElement.text();
   }
 
-  if (fscanf(layoutFile, "%d", &decorations) != 1)
-        { fclose(layoutFile); return false; }
-  if (!fgets(comment, sizeof(comment), layoutFile))
-        { fclose(layoutFile); return false; }
+  objectsList = playGroundElement.elementsByTagName("object");
+  decorations = objectsList.count();
   if (decorations < 1)
-        { fclose(layoutFile); return false; }
+    return false;
 
-  if (!(objectsLayout = new QRect[decorations])) { fclose(layoutFile); return false; }
-  if (!(shapesLayout = new QRect[decorations])) { fclose(layoutFile); return false; }
-  if (!(soundsList = new int[decorations])) { fclose(layoutFile); return false; }
-  for (object = objectsLayout, shape = shapesLayout, sound = soundsList;
-       object < objectsLayout + decorations;
-       object++, shape++, sound++)
+  if (!(objectsLayout = new QRect[decorations]))
+    return false;
+  if (!(shapesLayout = new QRect[decorations]))
+    return false;
+  if (!(soundsList = new QString[decorations]))
+    return false;
+
+  for (uint decoration = 0; decoration < decorations; decoration++)
   {
-    if (fscanf(layoutFile,
-               "%d %d %d %d  %d %d %d %d  %d",
-               &objectLeft, &objectTop, &objectRight, &objectBottom,
-               &shapeLeft, &shapeTop, &shapeRight, &shapeBottom,
-               sound) != 9)
-                { fclose(layoutFile); return false; }
-    if (!fgets(comment, sizeof(comment), layoutFile))
-                { fclose(layoutFile); return false; }
-    object->setCoords(objectLeft, objectTop, objectRight, objectBottom);
-    shape->setCoords(shapeLeft, shapeTop, shapeRight, shapeBottom);
+    objectElement = (const QDomElement &) objectsList.item(decoration);
+
+    gameAreasList = objectElement.elementsByTagName("game");
+    if (gameAreasList.count() != 1)
+      return false;
+
+    gameAreaElement = (const QDomElement &) gameAreasList.item(0);
+    leftAttribute = gameAreaElement.attributeNode("left");
+    topAttribute = gameAreaElement.attributeNode("top");
+    rightAttribute = gameAreaElement.attributeNode("right");
+    bottomAttribute = gameAreaElement.attributeNode("bottom");
+
+    objectsLayout[decoration].setCoords
+	    (leftAttribute.value().toInt(),
+	     topAttribute.value().toInt(),
+	     rightAttribute.value().toInt(),
+	     bottomAttribute.value().toInt());
+
+    maskAreasList = objectElement.elementsByTagName("mask");
+    if (maskAreasList.count() != 1)
+      return false;
+
+    maskAreaElement = (const QDomElement &) maskAreasList.item(0);
+    leftAttribute = maskAreaElement.attributeNode("left");
+    topAttribute = maskAreaElement.attributeNode("top");
+    rightAttribute = maskAreaElement.attributeNode("right");
+    bottomAttribute = maskAreaElement.attributeNode("bottom");
+
+    shapesLayout[decoration].setCoords
+	    (leftAttribute.value().toInt(),
+	     topAttribute.value().toInt(),
+	     rightAttribute.value().toInt(),
+	     bottomAttribute.value().toInt());
+
+    soundNamesList = objectElement.elementsByTagName("sound");
+    if (soundNamesList.count() != 1)
+      return false;
+
+    soundNameElement = (const QDomElement &) soundNamesList.item(0);
+
+    soundsList[decoration] = soundNameElement.text();
   }
-  if (fclose(layoutFile)) return false;
 
   return true;
 }
