@@ -33,3 +33,11 @@ i18n("&Portuguese");
 i18n("&Romanian");
 i18n("&Slovenian");
 i18n("S&wedish");
+
+i18n("NOTE_TO_THE_TRANSLATORS",
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)");
