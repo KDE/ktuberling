@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-  KApplication app(argc, argv);
+  KApplication app(argc, argv, "ktuberling");
   kimgioRegister();
 
   TopLevel *toplevel=0;
