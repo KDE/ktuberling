@@ -622,7 +622,7 @@ remembers of this option the next time it starts up.</para></listitem>
 <guimenuitem>Danish</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles sound on and speaks Danish</action>.
-If Danish sounds are not installed then this option is greyed out. &ktuberling;
+If Danish sounds are not installed then this option is grayed out. &ktuberling;
 remembers of this option the next time it starts up.</para></listitem>
 </varlistentry>
 
@@ -632,7 +632,7 @@ remembers of this option the next time it starts up.</para></listitem>
 <guimenuitem>German</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles sound on and speaks German</action>.
-If German sounds are not installed then this option is greyed out. &ktuberling;
+If German sounds are not installed then this option is grayed out. &ktuberling;
 remembers of this option the next time it starts up.</para></listitem>
 </varlistentry>
 
@@ -642,7 +642,7 @@ remembers of this option the next time it starts up.</para></listitem>
 <guimenuitem>English</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles sound on and speaks English</action>.
-If English sounds are not installed then this option is greyed out. &ktuberling;
+If English sounds are not installed then this option is grayed out. &ktuberling;
 remembers of this option the next time it starts up.</para></listitem>
 </varlistentry>
 
