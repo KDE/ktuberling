@@ -22,6 +22,7 @@
 
 #include "toplevel.h"
 #include "categories.h"
+#include <kconfig.h>
 
 #define XMARGIN 5
 #define YMARGIN 5
