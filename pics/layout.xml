@@ -19,7 +19,7 @@
 
     <editablearea>
       <position left="  0" top="  0" right="240" bottom="320" />
-      <sound>en/tuberling.ogg</sound>
+      <sound>en/tuberling.wav</sound>
     </editablearea>
 
     <category>
@@ -54,217 +54,217 @@
 
     <object>
       <position left="242" top="  0" right="283" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="242" top=" 34" right="283" bottom=" 66" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="242" top=" 68" right="283" bottom="100" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="285" top="  0" right="326" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="285" top=" 34" right="326" bottom=" 66" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="285" top=" 68" right="326" bottom="100" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="328" top="  0" right="369" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="328" top=" 34" right="369" bottom=" 66" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="328" top=" 68" right="369" bottom="100" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="371" top="  0" right="412" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="371" top=" 34" right="412" bottom=" 66" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="371" top=" 68" right="412" bottom="100" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="415" top="  0" right="462" bottom=" 29" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="415" top=" 31" right="462" bottom=" 60" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="415" top=" 62" right="462" bottom=" 91" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="415" top=" 93" right="462" bottom="122" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="464" top="  0" right="511" bottom=" 29" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="464" top=" 31" right="511" bottom=" 60" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="464" top=" 62" right="511" bottom=" 91" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="464" top=" 93" right="511" bottom="122" />
-      <sound>en/eyebrow.ogg</sound>
+      <sound>en/eyebrow.wav</sound>
     </object>
 
     <object>
       <position left="242" top="116" right="291" bottom="178" />
-      <sound>en/nose.ogg</sound>
+      <sound>en/nose.wav</sound>
     </object>
 
     <object>
       <position left="293" top="116" right="342" bottom="178" />
-      <sound>en/nose.ogg</sound>
+      <sound>en/nose.wav</sound>
     </object>
 
     <object>
       <position left="344" top="116" right="393" bottom="178" />
-      <sound>en/nose.ogg</sound>
+      <sound>en/nose.wav</sound>
     </object>
 
     <object>
       <position left="397" top="138" right="423" bottom="178" />
-      <sound>en/ear.ogg</sound>
+      <sound>en/ear.wav</sound>
     </object>
 
     <object>
       <position left="426" top="138" right="452" bottom="178" />
-      <sound>en/ear.ogg</sound>
+      <sound>en/ear.wav</sound>
     </object>
 
     <object>
       <position left="455" top="138" right="481" bottom="178" />
-      <sound>en/ear.ogg</sound>
+      <sound>en/ear.wav</sound>
     </object>
 
     <object>
       <position left="484" top="138" right="510" bottom="178" />
-      <sound>en/ear.ogg</sound>
+      <sound>en/ear.wav</sound>
     </object>
 
     <object>
       <position left="242" top="195" right="308" bottom="225" />
-      <sound>en/mouth.ogg</sound>
+      <sound>en/mouth.wav</sound>
     </object>
 
     <object>
       <position left="242" top="227" right="308" bottom="257" />
-      <sound>en/mouth.ogg</sound>
+      <sound>en/mouth.wav</sound>
     </object>
 
     <object>
       <position left="310" top="195" right="376" bottom="225" />
-      <sound>en/mouth.ogg</sound>
+      <sound>en/mouth.wav</sound>
     </object>
 
     <object>
       <position left="310" top="227" right="376" bottom="257" />
-      <sound>en/mouth.ogg</sound>
+      <sound>en/mouth.wav</sound>
     </object>
 
     <object>
       <position left="378" top="195" right="444" bottom="225" />
-      <sound>en/mouth.ogg</sound>
+      <sound>en/mouth.wav</sound>
     </object>
 
     <object>
       <position left="378" top="227" right="444" bottom="257" />
-      <sound>en/mouth.ogg</sound>
+      <sound>en/mouth.wav</sound>
     </object>
 
     <object>
       <position left="447" top="195" right="511" bottom="225" />
-      <sound>en/hat.ogg</sound>
+      <sound>en/hat.wav</sound>
     </object>
 
     <object>
       <position left="447" top="227" right="511" bottom="249" />
-      <sound>en/moustache.ogg</sound>
+      <sound>en/moustache.wav</sound>
     </object>
 
     <object>
       <position left="447" top="251" right="475" bottom="272" />
-      <sound>en/cigar.ogg</sound>
+      <sound>en/cigar.wav</sound>
     </object>
 
     <object>
       <position left="477" top="251" right="511" bottom="272" />
-      <sound>en/bow.ogg</sound>
+      <sound>en/bow.wav</sound>
     </object>
 
     <object>
       <position left="242" top="274" right="322" bottom="306" />
-      <sound>en/sunglasses.ogg</sound>
+      <sound>en/sunglasses.wav</sound>
     </object>
 
     <object>
       <position left="324" top="274" right="399" bottom="306" />
-      <sound>en/spectacles.ogg</sound>
+      <sound>en/spectacles.wav</sound>
     </object>
 
     <object>
       <position left="401" top="274" right="445" bottom="306" />
-      <sound>en/bow.ogg</sound>
+      <sound>en/bow.wav</sound>
     </object>
 
     <object>
       <position left="447" top="274" right="462" bottom="306" />
-      <sound>en/earring.ogg</sound>
+      <sound>en/earring.wav</sound>
     </object>
 
     <object>
       <position left="464" top="274" right="491" bottom="306" />
-      <sound>en/badge.ogg</sound>
+      <sound>en/badge.wav</sound>
     </object>
 
     <object>
       <position left="493" top="274" right="511" bottom="306" />
-      <sound>en/watch.ogg</sound>
+      <sound>en/watch.wav</sound>
     </object>
 
   </playground>
@@ -277,7 +277,7 @@
 
     <editablearea>
       <position left="  0" top="  0" right="240" bottom="320" />
-      <sound>en/penguin.ogg</sound>
+      <sound>en/penguin.wav</sound>
     </editablearea>
 
     <category>
@@ -317,107 +317,107 @@
 
     <object>
       <position left="243" top="  1" right="283" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="243" top=" 35" right="283" bottom=" 65" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="286" top="  1" right="326" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="286" top=" 35" right="326" bottom=" 65" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="329" top="  1" right="369" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="329" top=" 35" right="369" bottom=" 65" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="372" top="  1" right="412" bottom=" 32" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="372" top=" 35" right="412" bottom=" 65" />
-      <sound>en/eye.ogg</sound>
+      <sound>en/eye.wav</sound>
     </object>
 
     <object>
       <position left="416" top="  1" right="511" bottom="120" />
-      <sound>en/tie.ogg</sound>
+      <sound>en/tie.wav</sound>
     </object>
 
     <object>
       <position left="244" top=" 81" right="390" bottom="116" />
-      <sound>en/hat.ogg</sound>
+      <sound>en/hat.wav</sound>
     </object>
 
     <object>
       <position left="243" top="119" right="341" bottom="178" />
-      <sound>en/hair.ogg</sound>
+      <sound>en/hair.wav</sound>
     </object>
 
     <object>
       <position left="345" top="119" right="390" bottom="178" />
-      <sound>en/hair.ogg</sound>
+      <sound>en/hair.wav</sound>
     </object>
 
     <object>
       <position left="397" top="140" right="452" bottom="178" />
-      <sound>en/horn.ogg</sound>
+      <sound>en/horn.wav</sound>
     </object>
 
     <object>
       <position left="455" top="140" right="509" bottom="178" />
-      <sound>en/horn.ogg</sound>
+      <sound>en/horn.wav</sound>
     </object>
 
     <object>
       <position left="243" top="195" right="376" bottom="225" />
-      <sound>en/necklace.ogg</sound>
+      <sound>en/necklace.wav</sound>
     </object>
 
     <object>
       <position left="243" top="228" right="376" bottom="258" />
-      <sound>en/necklace.ogg</sound>
+      <sound>en/necklace.wav</sound>
     </object>
 
     <object>
       <position left="379" top="195" right="444" bottom="258" />
-      <sound>en/hat.ogg</sound>
+      <sound>en/hat.wav</sound>
     </object>
 
     <object>
       <position left="448" top="195" right="511" bottom="258" />
-      <sound>en/hat.ogg</sound>
+      <sound>en/hat.wav</sound>
     </object>
 
     <object>
       <position left="244" top="275" right="322" bottom="305" />
-      <sound>en/spectacles.ogg</sound>
+      <sound>en/spectacles.wav</sound>
     </object>
 
     <object>
       <position left="325" top="275" right="398" bottom="305" />
-      <sound>en/sunglasses.ogg</sound>
+      <sound>en/sunglasses.wav</sound>
     </object>
 
     <object>
       <position left="402" top="275" right="511" bottom="305" />
-      <sound>en/scarf.ogg</sound>
+      <sound>en/scarf.wav</sound>
     </object>
 
   </playground>
