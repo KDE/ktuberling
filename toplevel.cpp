@@ -177,7 +177,7 @@ void TopLevel::setupToolBar()
 
   toolbar->insertButton(iconLoader.loadIcon("filenew",KIcon::Toolbar), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
   toolbar->insertButton(iconLoader.loadIcon("fileopen",KIcon::Toolbar), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
-  toolbar->insertButton(iconLoader.loadIcon("filefloppy",KIcon::Toolbar), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
+  toolbar->insertButton(iconLoader.loadIcon("filesave",KIcon::Toolbar), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
   toolbar->insertButton(iconLoader.loadIcon("fileprint",KIcon::Toolbar), ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
   toolbar->insertSeparator();
 
