@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Categories of texts and sounds used in the "layout.txt" file
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 #ifndef _CATEGORIES_H_

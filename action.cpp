@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Action stored in the undo buffer
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 #include "action.h"

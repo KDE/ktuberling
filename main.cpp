@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Main program
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 #include <kapp.h>
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
   KAboutData aboutData( "ktuberling", I18N_NOOP("KTuberling"), 
     version, description, KAboutData::License_GPL, 
     "(c) 1999, The KTuberling Developers");
-  aboutData.addAuthor("Eric Bischoff",0, "ebisch@cybercable.tm.fr");
+  aboutData.addAuthor("Eric Bischoff",0, "e.bischoff@noos.fr");
   aboutData.addAuthor("John Calhoun");
   KCmdLineArgs::init( argc, argv, &aboutData );
 

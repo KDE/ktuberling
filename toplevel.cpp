@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Top level window
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 #include <kapp.h>
@@ -136,7 +136,7 @@ void TopLevel::setupMenuBar()
   optionsMenu->setItemChecked(soundID, soundEnabled);
   optionsMenu->connectItem(soundID, this, SLOT(optionsSound()));
 
-  QString about = i18n("A program by Eric Bischoff (ebisch@cybercable.tm.fr)\n"
+  QString about = i18n("A program by Eric Bischoff <e.bischoff@noos.fr>\n"
                        "and John Calhoun.\n\n"
                        "This program is dedicated to my daughter Sunniva.");
 

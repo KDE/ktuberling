@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Play ground widget
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 

@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Top level window
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 

@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Object to draw on the game board
-   mailto:ebisch@cybercable.tm.fr
+   mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
 #include <qbitmap.h>
