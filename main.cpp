@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
   KAboutData aboutData( "ktuberling", I18N_NOOP("KTuberling"), 
     version, description, KAboutData::License_GPL, 
-    "(c) 1999-2002, The KTuberling Developers", text);
+    "(c) 1999-2003, The KTuberling Developers", text);
   aboutData.addAuthor("Eric Bischoff", I18N_NOOP("Developer"), "e.bischoff@noos.fr");
   aboutData.addAuthor("John Calhoun", I18N_NOOP("Original concept and artwork"));
   aboutData.addCredit("Agnieszka Czajkowska", I18N_NOOP("New artwork"), "agnieszka@imagegalaxy.de");

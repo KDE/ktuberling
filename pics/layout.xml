@@ -603,6 +603,30 @@
 
   </language>
 
+  <language code="fi">
+
+    <menuitem action="speech_finnish">
+      <label>Fi&amp;nnish</label>
+    </menuitem>
+
+    <sound name="tuberling" file="fi/perunamies.wav" />
+    <sound name="eye" file="fi/silma.wav" />
+    <sound name="eyebrow" file="fi/kulmakarva.wav" />
+    <sound name="nose" file="fi/nena.wav" />
+    <sound name="ear" file="fi/korva.wav" />
+    <sound name="mouth" file="fi/suu.wav" />
+    <sound name="hat" file="fi/hattu.wav" />
+    <sound name="moustache" file="fi/viikset.wav" />
+    <sound name="cigar" file="fi/sikari.wav" />
+    <sound name="bow" file="fi/rusetti.wav" />
+    <sound name="sunglasses" file="fi/aurinkolasit.wav" />
+    <sound name="spectacles" file="fi/silmalasit.wav" />
+    <sound name="earring" file="fi/korvakoru.wav" />
+    <sound name="badge" file="fi/merkki.wav" />
+    <sound name="watch" file="fi/kello.wav" />
+
+  </language>
+
   <language code="fr">
 
     <menuitem action="speech_french">

@@ -1,17 +1,40 @@
+- Allow point and click instead of drag and drop (KDE bug #68779)
 
 - Better format for .tuberling files (object names instead of numbers, XML)
+
+- Split layout.xml in two parts : layout and sounds. The sounds.xml part would
+  be distributed in the ktuberling-sounds package
 
 - Draw a small hand when grabbing objects
 
 - Write title of tuberling last opened / saved on top of the window
 
-- Chose the current language accordingly to locale settings
+- Choose the current language accordingly to locale settings
 
-============== things for which I need help from other people : ==================
+- Add a "man" page for KTuberling
+
+- See what's wrong with wide cursors on old Tektronix X terminals and if
+  there's a workaround (KDE bug #68786)
+
+============= Things for which I need help from other people : ================
 
 - More and better localized sounds (German, Spanish, etc)
 
-- More and better colour gameboards and objects
-  (for example : farm with animals, criminal identification portrait, clown with accessories, etc)
+- More and better colour gameboards and objects (KDE bug #63211)
+  For example : Farm with animals
+                Criminal identification portrait
+                Clown with accessories
+                Lizard 
+                Dragon 
+                Gogo (the animal) 
+                Iguana (the animal) 
+                Boy-Barbie 
+                Girl-Barbie 
+                Money (different kind of) 
+                House 
+                Dogs 
+                Cats
 
-- Sounds in OGG Vorbis format
+- Sounds in OGG Vorbis format (KDE bug #37251)
+
+- Text above, not below images (KDE bug #53402)

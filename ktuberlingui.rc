@@ -16,6 +16,7 @@
     <Action name="speech_german"/>
     <Action name="speech_english"/>
     <Action name="speech_spanish"/>
+    <Action name="speech_finnish"/>
     <Action name="speech_french"/>
     <Action name="speech_italian"/>
     <Action name="speech_dutch"/>
