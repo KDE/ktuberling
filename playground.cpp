@@ -6,6 +6,7 @@
 
 #include <stdlib.h>
 
+#include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kprinter.h>
@@ -503,8 +504,8 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 // Report a load failure
 void PlayGround::loadFailure()
 {
-  topLevel->error(i18n("Fatal error:\n"
-                       "I could not load the pictures. I'll quit."));
+  KMessageBox::error(topLevel, i18n("Fatal error:\n"
+				    "I could not load the pictures. I'll quit."));
   exit(-1);
 }
 

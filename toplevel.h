@@ -31,7 +31,6 @@ public:
   void changeLanguage(uint newLanguage);
   bool loadLayout(QDomDocument &layoutDocument);
   void playSound(const QString &ref) const;
-  void error(const QString &message) const;
 
   inline bool isSoundEnabled() const {return soundEnabled;}
   inline uint getSelectedGameboard() const {return selectedGameboard;}

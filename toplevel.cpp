@@ -198,12 +198,6 @@ void TopLevel::playSound(const QString &ref) const
   soundFactory->playSound(ref);
 }
 
-// Display an error message
-void TopLevel::error(const QString &message) const
-{
-  KMessageBox::error(playGround, message);
-}
-
 // Read options from preferences file
 void TopLevel::readOptions()
 {

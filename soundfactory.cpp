@@ -6,6 +6,7 @@
 
 #include <stdlib.h>
 
+#include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kaudioplayer.h>
@@ -68,8 +69,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 // Report a load failure
 void SoundFactory::loadFailure()
 {
-  topLevel->error(i18n("Error:\n"
-                       "I could not load the sound names."));
+	KMessageBox::error(topLevel, i18n("Error while loading the sound names."));
 }
 
 // Register the various languages
