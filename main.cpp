@@ -16,7 +16,7 @@
 
 static const char *description = I18N_NOOP("Potato game for kids");
 
-static const char *version = "v0.0.1";
+static const char *version = "v0.1";
 
 
 int main(int argc, char *argv[])
