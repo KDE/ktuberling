@@ -265,9 +265,9 @@ void TopLevel::setupKAction()
   KStdAction::redo(this, SLOT(editRedo()), actionCollection());
   enableUndo(false);
   enableRedo(false);
-  
+
 //Speech
-  KToggleAction* t = new KToggleAction(i18n("&No sound"), 0, this, SLOT(soundOff()), actionCollection(), "speech_no_sound");
+  KToggleAction* t = new KToggleAction(i18n("&No Sound"), 0, this, SLOT(soundOff()), actionCollection(), "speech_no_sound");
   if (!soundEnabled) t->setChecked(true);
 
   createGUI("ktuberlingui.rc");
