@@ -18,7 +18,7 @@ static const char *text = I18N_NOOP("A program by Eric Bischoff <e.bischoff@noos
 
 static const char *version = "v0.2.4";
 
-
+// Main function
 int main(int argc, char *argv[])
 {
 
@@ -27,8 +27,9 @@ int main(int argc, char *argv[])
     "(c) 1999-2001, The KTuberling Developers", text);
   aboutData.addAuthor("Eric Bischoff", I18N_NOOP("Developer"), "e.bischoff@noos.fr");
   aboutData.addAuthor("John Calhoun", I18N_NOOP("Original concept and artwork"));
+  aboutData.addCredit("Agnieszka Czajkowska", I18N_NOOP("New artwork"), "agnieszka@imagegalaxy.de");
   aboutData.addCredit("Bas Willems", I18N_NOOP("New artwork"), "next@euronet.nl");
-  KCmdLineArgs::init( argc, argv, &aboutData );
+  KCmdLineArgs::init(argc, argv, &aboutData);
 
   KApplication app;
   KGlobal::locale()->insertCatalogue("libkdegames");
