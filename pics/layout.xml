@@ -443,6 +443,12 @@
     <sound name="earring" file="da/oerering.wav" />
     <sound name="badge" file="da/politiskilt.wav" />
     <sound name="watch" file="da/ur.wav" />
+    <sound name="penguin" file="da/pingvin.wav" />
+    <sound name="tie" file="da/slips.wav" />
+    <sound name="hair" file="da/haar.wav" />
+    <sound name="horn" file="da/horn.wav" />
+    <sound name="necklace" file="da/halsbaand.wav" />
+    <sound name="scarf" file="da/halstoerklaede.wav" />
 
   </language>
 
