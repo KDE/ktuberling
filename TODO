@@ -1,0 +1,23 @@
+
+- Add help balloons to the toolbar buttons
+
+- Better format for .tuberling files (object names instead of numbers)
+
+- Ability to choose other gameboards (for example : farm with animals)
+
+- Draw a small hand when grabbing objects
+
+- Write title of tuberling last opened / saved on top of the window
+
+============== things for which I need help from other people : ==================
+
+- In the doc, I say that a few things don't work
+  (copy image to clipboard, printer selection fuction)
+  Maybe it works now with Qt 2.0 ?
+
+- Have the doc proofread once again
+
+- French sounds
+
+- Colorized gameboard and objects
+
