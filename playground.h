@@ -78,8 +78,8 @@ private:
   ToDraw draggedObject;         // Object currently dragged
   int draggedZOrder;            // Z-order (in to-draw buffer) of this object
 
-  QList<ToDraw> toDraw;         // List of objects in z-order
-  QList<Action> history;        // List of actions in chronological order
+  QPtrList<ToDraw> toDraw;         // List of objects in z-order
+  QPtrList<Action> history;        // List of actions in chronological order
   unsigned int currentAction;   // Number of current action (not the last one if used "undo" button!)
 
   TopLevel *topLevel;		// Top-level window
