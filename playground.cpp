@@ -10,11 +10,12 @@
 #include <klocale.h>
 #include <kstddirs.h>
 #include <kaudioplayer.h>
+#include <kprinter.h>
 
 #include <qfile.h>
 #include <qpainter.h>
 #include <qimage.h>
-#include <kprinter.h>
+#include <qcursor.h>
 
 #include <stdlib.h>
 
