@@ -52,12 +52,12 @@ PlayGround::PlayGround( TopLevel *parent, const char *name, uint selectedGameboa
 // Destructor
 PlayGround::~PlayGround()
 {
-  if (textsLayout) delete textsLayout;
-  if (objectsLayout) delete objectsLayout;
-  if (shapesLayout) delete shapesLayout;
+  if (textsLayout) delete [] textsLayout;
+  if (objectsLayout) delete [] objectsLayout;
+  if (shapesLayout) delete [] shapesLayout;
 
-  if (textsList) delete textsList;
-  if (soundsList) delete soundsList;
+  if (textsList) delete [] textsList;
+  if (soundsList) delete [] soundsList;
 
   if (draggedCursor) delete draggedCursor;
 }
