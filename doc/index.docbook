@@ -867,7 +867,7 @@ url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>.
 </sect1>
 
 <sect1 id="compilation-and-installation">
-<title>Compilation and installation</title>
+<title>Compilation and Installation</title>
 
 <para>
 In order to compile and install &ktuberling; on your system, type the following
