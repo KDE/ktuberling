@@ -21,6 +21,7 @@ ktuberling_SOURCES = action.cpp main.cpp toplevel.cpp playground.cpp todraw.cpp 
 ktuberling_METASOURCES = AUTO
 ktuberling_LDFLAGS =  $(all_libraries) $(KDE_RPATH)
 ktuberling_LDADD = $(LIB_KDEGAMES) $(LIB_KFILE) -lkdeprint 
+ktuberling_la_DEPENDENCIES = $(LIB_KDEGAMES_DEP)
 
 KDE_ICON = ktuberling
 
