@@ -487,12 +487,6 @@
     <sound name="earring" file="en/earring.wav" />
     <sound name="badge" file="en/badge.wav" />
     <sound name="watch" file="en/watch.wav" />
-    <sound name="penguin" file="en/penguin.wav" />
-    <sound name="tie" file="en/tie.wav" />
-    <sound name="hair" file="en/hair.wav" />
-    <sound name="horn" file="en/horn.wav" />
-    <sound name="necklace" file="en/necklace.wav" />
-    <sound name="scarf" file="en/scarf.wav" />
 
   </language>
 
