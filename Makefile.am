@@ -26,7 +26,7 @@ ktuberling_LDADD   = $(LIB_KFILE) -lmediatool $(LIB_KIMGIO)
 kde_icon_DATA = ktuberling.xpm
 
 appsdir = $(kde_appsdir)/Games
-apps_DATA = ktuberlink.desktop
+apps_DATA = ktuberling.desktop
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
