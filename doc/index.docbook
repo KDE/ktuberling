@@ -1,10 +1,12 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
- <!ENTITY ktuberling "<application>KTuberling</application>">
+ <!ENTITY kappname "&ktuberling;">
+ <!ENTITY % English "INCLUDE">
  <!ENTITY % addindex "IGNORE">
- <![ %addindex; [ <!ENTITY docindex SYSTEM "docindex.docbook"> ]]>
+ <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
+ %ents;
 ]>
 
-<book lang="en">
+<book lang="&language;">
 <bookinfo>
 <title>The KTuberling Handbook</title>
 <authorgroup>
@@ -19,12 +21,7 @@
 </authorgroup>
 <date>28/06/1999</date>
 <releaseinfo>0.01.01</releaseinfo>
-<revhistory>
-<revision>
-<revnumber></revnumber>
-<date></date>
-</revision>
-</revhistory>
+
 <abstract>
 <para>This document was last updated for ktuberling version 0.1.1.
 Please make any comments and additions to the author.</para>
