@@ -17,6 +17,7 @@
 #include <kstdaccel.h>
 #include <kapp.h>
 #include <klocale.h>
+#include <kstddirs.h>
 
 #include "toplevel.h"
 #include "categories.h"
@@ -51,9 +52,10 @@ TopLevel::TopLevel()
     exit(-1);
   }
 
-  setupGeometry();
   draggedCursor = 0;
   currentAction = 0;
+
+  setupGeometry();
 }
 
 // Destructor
@@ -184,9 +186,7 @@ void TopLevel::setupMenuBar()
 void TopLevel::setupToolBar()
 {
   KIconLoader iconLoader;
-  toolbar = new KToolBar(this);
-
-  addToolBar(toolbar);
+  toolbar = toolBar(-1);
 
   toolbar->insertButton(iconLoader.loadIcon("filenew.xpm"), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
   toolbar->insertButton(iconLoader.loadIcon("fileopen.xpm"), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
@@ -213,13 +213,13 @@ bool TopLevel::loadBitmaps()
   QRect *text, *object, *shape;
   int *label, *sound;
 
-  if (!gameboard.load((const char *) (KApplication::kde_datadir() + "/ktuberling/pics/gameboard.xpm")))
+  if (!gameboard.load((const char *) locate("data", "ktuberling/pics/gameboard.xpm")))
 	return false;
 
-  if (!masks.load((const char *) (KApplication::kde_datadir() + "/ktuberling/pics/masks.xpm")))
+  if (!masks.load((const char *) locate("data", "ktuberling/pics/masks.xpm")))
 	return false;
 
-  if (!(layoutFile = fopen((const char *) (KApplication::kde_datadir() + "/ktuberling/pics/layout.txt"), "r")))
+  if (!(layoutFile = fopen((const char *) locate("data", "ktuberling/pics/layout.txt"), "r")))
 	return false;
 
   if (fscanf(layoutFile, "%d %d %d %d %d",
@@ -314,7 +314,7 @@ void TopLevel::fileOpen()
   QString name;
 
   name = KFileDialog::getOpenFileName((const char *)
-	(KApplication::kde_datadir() + "/ktuberling/museum"), "*.tuberling");
+	locate("data", "/ktuberling/museum"), "*.tuberling");
   toolbar->getButton(ID_OPEN)->setDown(false);
   if (!name.isEmpty())
   {
@@ -341,7 +341,7 @@ void TopLevel::fileSave()
   QString name;
 
   name = KFileDialog::getSaveFileName((const char *)
-	(KApplication::kde_datadir() + "/ktuberling/museum"), "*.tuberling");
+	locate("data", "/ktuberling/museum"), "*.tuberling");
   toolbar->getButton(ID_SAVE)->setDown(false);
   if (!name.isEmpty())
   {
@@ -850,7 +850,7 @@ void TopLevel::playSound(int soundNumber) const
   }
 
   audioServer->play
-	(KApplication::kde_datadir() + "/ktuberling/sounds/" + soundName);
+	(locate("data", "/ktuberling/sounds/") + soundName);
 }
 
 // Repaint all the editable area
