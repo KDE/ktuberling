@@ -492,7 +492,7 @@ void TopLevel::soundOff()
   if (!soundEnabled) return;
 
   soundEnabled = false;
-  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage]))->setChecked(false);
+  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage].latin1()))->setChecked(false);
   ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(true);
 
   writeOptions();

@@ -142,5 +142,6 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, uint toLoad)
     fileAttribute = soundNameElement.attributeNode("file");
     filesList[sound] = fileAttribute.value();
   }
+  return true;
 }
 
