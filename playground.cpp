@@ -163,12 +163,7 @@ bool PlayGround::saveAs(const QString & name)
 bool PlayGround::printPicture(QPrinter &printer) const
 {
   QPainter artist;
-  QPixmap picture(QPixmap::grabWindow
-        (winId(),
-         editableArea.left(),
-         editableArea.top(),
-         editableArea.width(),
-         editableArea.height()));
+  QPixmap picture(grabWindow());
 
   if (!artist.begin(&printer)) return false;
   artist.drawPixmap(QPoint(32, 32), picture);
