@@ -1,10 +1,11 @@
 [Desktop Entry]
-Exec=ktuberling -caption "%c"
-Name=KTuberling
+Exec=ktuberling %i %m -caption "%c"
+Name=Potato Guy
 Name[eo]=Tuberlingo
 Name[sv]=Potatis
 Comment=A Potato Editor
 Comment[ca]=Un editor de patates
+Comment[de]=Ein "Kartoffel"-Editor
 Comment[eo]=Terpomredaktilo
 Comment[fi]=Perunamuokkain
 Comment[hu]=Egy krumpli szerkesztõ
