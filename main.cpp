@@ -25,9 +25,9 @@ int main(int argc, char *argv[])
   KAboutData aboutData( "ktuberling", I18N_NOOP("KTuberling"), 
     version, description, KAboutData::License_GPL, 
     "(c) 1999-2001, The KTuberling Developers", text);
-  aboutData.addAuthor("Eric Bischoff", i18n("Developer"), "e.bischoff@noos.fr");
-  aboutData.addAuthor("John Calhoun", i18n("Original concept and artwork"));
-  aboutData.addAuthor("Bas Willems", i18n("New artwork"), "next@euronet.nl");
+  aboutData.addAuthor("Eric Bischoff", "Developer", "e.bischoff@noos.fr");
+  aboutData.addAuthor("John Calhoun", "Original concept and artwork");
+  aboutData.addAuthor("Bas Willems", "New artwork"), "next@euronet.nl";
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication app;
