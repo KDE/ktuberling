@@ -25,7 +25,7 @@ ktuberling_LDADD   = $(LIB_KFILE) -lmediatool $(LIB_KIMGIO)
 
 KDE_ICON = ktuberling
 
-appsdir = $(kde_appsdir)/Programs/Games
+appsdir = $(kde_appsdir)/Games
 apps_DATA = ktuberling.desktop
 
 messages:
