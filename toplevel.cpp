@@ -27,6 +27,7 @@
 
 #include "toplevel.moc"
 #include "playground.h"
+#include "soundfactory.h"
 
 // Constructor
 TopLevel::TopLevel()
@@ -35,7 +36,9 @@ TopLevel::TopLevel()
   readOptions();
 
   gameboards = 0;
+  languages = 0;
   playGround = new PlayGround(this, "playground", selectedGameboard);
+  soundFactory = new SoundFactory(this, "sounds", selectedLanguage);
 
   setCentralWidget(playGround);
 
@@ -66,26 +69,72 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 
   switch (gameboards)
   {
-  	case 0: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard0()), actionCollection(), actionId);
+  	case 0: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard0()), actionCollection(), actionId);
 		break;
-  	case 1: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard1()), actionCollection(), actionId);
+  	case 1: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard1()), actionCollection(), actionId);
 		break;
-  	case 2: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard2()), actionCollection(), actionId);
+  	case 2: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard2()), actionCollection(), actionId);
 		break;
-  	case 3: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard3()), actionCollection(), actionId);
+  	case 3: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard3()), actionCollection(), actionId);
 		break;
-  	case 4: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard4()), actionCollection(), actionId);
+  	case 4: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard4()), actionCollection(), actionId);
 		break;
-  	case 5: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard5()), actionCollection(), actionId);
+  	case 5: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard5()), actionCollection(), actionId);
 		break;
-  	case 6: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard6()), actionCollection(), actionId);
+  	case 6: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard6()), actionCollection(), actionId);
 		break;
-  	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard7()), actionCollection(), actionId);
+  	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard7()), actionCollection(), actionId);
 		break;
   }
   if (gameboards == selectedGameboard) t->setChecked(true);
   gameboardActions[gameboards] = actionId;
   gameboards++;
+}
+
+// Register an available language
+void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, bool enabled)
+{
+  KToggleAction *t;
+
+  switch (languages)
+  {
+  	case 0: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language0()), actionCollection(), actionId);
+		break;
+  	case 1: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language1()), actionCollection(), actionId);
+		break;
+  	case 2: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language2()), actionCollection(), actionId);
+		break;
+  	case 3: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language3()), actionCollection(), actionId);
+		break;
+  	case 4: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language4()), actionCollection(), actionId);
+		break;
+  	case 5: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language5()), actionCollection(), actionId);
+		break;
+  	case 6: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language6()), actionCollection(), actionId);
+		break;
+  	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language7()), actionCollection(), actionId);
+		break;
+  	case 8: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language8()), actionCollection(), actionId);
+		break;
+  	case 9: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language9()), actionCollection(), actionId);
+		break;
+  	case 10: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language10()), actionCollection(), actionId);
+		break;
+  	case 11: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language11()), actionCollection(), actionId);
+		break;
+  	case 12: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language12()), actionCollection(), actionId);
+		break;
+  	case 13: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language13()), actionCollection(), actionId);
+		break;
+  	case 14: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language14()), actionCollection(), actionId);
+		break;
+  	case 15: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language15()), actionCollection(), actionId);
+		break;
+  }
+  if (languages == selectedLanguage) t->setChecked(true);
+  t->setEnabled(enabled);
+  languageActions[languages] = actionId;
+  languages++;
 }
 
 // Switch to another gameboard
@@ -106,6 +155,55 @@ void TopLevel::changeGameboard(uint newGameboard)
   playGround->change(newGameboard);
 }
 
+// Switch to another language
+void TopLevel::changeLanguage(uint newLanguage)
+{
+  // Do not accept to switch to same language
+  if (newLanguage == selectedLanguage && soundEnabled)
+    return;
+
+  // Unselect preceeding language
+  if (!soundEnabled) ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(false);
+  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage].latin1()))->setChecked(false);
+
+  // Change language in the remembered options
+  soundEnabled = true;
+  selectedLanguage = newLanguage;
+  writeOptions();
+
+  // Change language effectively
+  soundFactory->change(newLanguage);
+}
+
+// Load the layouts file
+bool TopLevel::loadLayout(QDomDocument &layoutDocument)
+{
+  QFile layoutFile(QFile::encodeName(locate("data", "ktuberling/pics/layout.xml")));
+  if (!layoutFile.open(IO_ReadOnly))
+     return false;
+
+  if (!layoutDocument.setContent(&layoutFile))
+  {
+     layoutFile.close();
+     return false;
+  }
+  layoutFile.close();
+
+  return true;
+}
+
+// Play a sound
+void TopLevel::playSound(const QString &ref) const
+{
+  soundFactory->playSound(ref);
+}
+
+// Display an error message
+void TopLevel::error(const QString &message) const
+{
+  KMessageBox::error(playGround, message);
+}
+
 // Read options from preferences file
 void TopLevel::readOptions()
 {
@@ -122,6 +220,12 @@ void TopLevel::readOptions()
   selectedGameboard = option.toInt();
   if (selectedGameboard < 0) selectedGameboard = 0;
   if (selectedGameboard > 7) selectedGameboard = 7;
+
+  option = config->readEntry("LanguageNumber", "2");
+  selectedLanguage = option.toInt();
+  if (selectedLanguage < 0) selectedLanguage = 0;
+  if (selectedLanguage > 15) selectedLanguage = 15;
+
 }
 
 // Write options to preferences file
@@ -135,6 +239,8 @@ void TopLevel::writeOptions()
   config->writeEntry("Sound", soundEnabled? "on": "off");
 
   config->writeEntry("GameboardNumber", selectedGameboard);
+
+  config->writeEntry("LanguageNumber", selectedLanguage);
 
   config->sync();
 }
@@ -157,9 +263,9 @@ void TopLevel::setupKAction()
   enableUndo(false);
   enableRedo(false);
   
-//Settings
-  KToggleAction* t = new KToggleAction(i18n("&Sound"), 0, this, SLOT(optionsSound()), actionCollection(), "options_sound");
-  t->setChecked(soundEnabled);
+//Speech
+  KToggleAction* t = new KToggleAction(i18n("&No sound"), 0, this, SLOT(soundOff()), actionCollection(), "speech_no_sound");
+  if (!soundEnabled) t->setChecked(true);
 
   createGUI("ktuberlingui.rc");
 }
@@ -188,7 +294,7 @@ void TopLevel::fileOpen()
   if (url.isEmpty())
     return;
 
-  KIO::NetAccess::download( url, name );
+  KIO::NetAccess::download(url, name);
 
   playGround->reset();
 
@@ -338,59 +444,158 @@ void TopLevel::editRedo()
   playGround->repaintAll();
 }
 
-// Toggle sound on/off
-void TopLevel::optionsSound()
-{
-  soundEnabled = !soundEnabled;
-  ((KToggleAction*) actionCollection()->action("options_sound"))->setChecked(soundEnabled);
-
-  writeOptions();
-}
-
 // Switch to gameboard #0
-void TopLevel::optionsGameboard0()
+void TopLevel::gameboard0()
 {
   changeGameboard(0);
 }
 
 // Switch to gameboard #1
-void TopLevel::optionsGameboard1()
+void TopLevel::gameboard1()
 {
   changeGameboard(1);
 }
 
 // Switch to gameboard #2
-void TopLevel::optionsGameboard2()
+void TopLevel::gameboard2()
 {
   changeGameboard(2);
 }
 
 // Switch to gameboard #3
-void TopLevel::optionsGameboard3()
+void TopLevel::gameboard3()
 {
   changeGameboard(3);
 }
 
 // Switch to gameboard #4
-void TopLevel::optionsGameboard4()
+void TopLevel::gameboard4()
 {
   changeGameboard(4);
 }
 
 // Switch to gameboard #5
-void TopLevel::optionsGameboard5()
+void TopLevel::gameboard5()
 {
   changeGameboard(5);
 }
 
 // Switch to gameboard #6
-void TopLevel::optionsGameboard6()
+void TopLevel::gameboard6()
 {
   changeGameboard(6);
 }
 
 // Switch to gameboard #7
-void TopLevel::optionsGameboard7()
+void TopLevel::gameboard7()
 {
   changeGameboard(7);
+}
+
+// Toggle sound off
+void TopLevel::soundOff()
+{
+  if (!soundEnabled) return;
+
+  soundEnabled = false;
+  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage]))->setChecked(false);
+  ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(true);
+
+  writeOptions();
+}
+
+// Switch to language #0
+void TopLevel::language0()
+{
+  changeLanguage(0);
+}
+
+// Switch to language #1
+void TopLevel::language1()
+{
+  changeLanguage(1);
+}
+
+// Switch to language #2
+void TopLevel::language2()
+{
+  changeLanguage(2);
+}
+
+// Switch to language #3
+void TopLevel::language3()
+{
+  changeLanguage(3);
+}
+
+// Switch to language #4
+void TopLevel::language4()
+{
+  changeLanguage(4);
+}
+
+// Switch to language #5
+void TopLevel::language5()
+{
+  changeLanguage(5);
+}
+
+// Switch to language #6
+void TopLevel::language6()
+{
+  changeLanguage(6);
+}
+
+// Switch to language #7
+void TopLevel::language7()
+{
+  changeLanguage(7);
+}
+
+// Switch to language #8
+void TopLevel::language8()
+{
+  changeLanguage(8);
+}
+
+// Switch to language #9
+void TopLevel::language9()
+{
+  changeLanguage(9);
+}
+
+// Switch to language #10
+void TopLevel::language10()
+{
+  changeLanguage(10);
+}
+
+// Switch to language #11
+void TopLevel::language11()
+{
+  changeLanguage(11);
+}
+
+// Switch to language #12
+void TopLevel::language12()
+{
+  changeLanguage(12);
+}
+
+// Switch to language #13
+void TopLevel::language13()
+{
+  changeLanguage(13);
+}
+
+// Switch to language #14
+void TopLevel::language14()
+{
+  changeLanguage(14);
+}
+
+// Switch to language #15
+void TopLevel::language15()
+{
+  changeLanguage(15);
 }

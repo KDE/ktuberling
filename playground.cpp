@@ -6,10 +6,8 @@
 
 #include <stdlib.h>
 
-#include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kaudioplayer.h>
 #include <kprinter.h>
 
 #include <qfile.h>
@@ -25,8 +23,8 @@
 #define YMARGIN 5
 
 // Constructor
-PlayGround::PlayGround( TopLevel *parent, const char *name, uint selectedGameboard )
-    : QWidget( parent, name )
+PlayGround::PlayGround(TopLevel *parent, const char *name, uint selectedGameboard)
+    : QWidget(parent, name)
 {
   topLevel = parent;
 
@@ -40,7 +38,7 @@ PlayGround::PlayGround( TopLevel *parent, const char *name, uint selectedGameboa
   setBackgroundColor(white);
 
   QDomDocument layoutsDocument;
-  bool ok = loadLayout(layoutsDocument);
+  bool ok = topLevel->loadLayout(layoutsDocument);
   if (ok) ok = registerPlayGrounds(layoutsDocument);
   if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
   if (!ok) loadFailure();
@@ -70,10 +68,10 @@ void PlayGround::reset()
 }
 
 // Change the gameboard
-void PlayGround::change( uint selectedGameboard )
+void PlayGround::change(uint selectedGameboard)
 {
   QDomDocument layoutsDocument;
-  bool ok = loadLayout(layoutsDocument);
+  bool ok = topLevel->loadLayout(layoutsDocument);
   if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
   if (!ok) loadFailure();
 
@@ -84,15 +82,6 @@ void PlayGround::change( uint selectedGameboard )
   setupGeometry();
 
   update();
-}
-
-// Report a load failure
-void PlayGround::loadFailure()
-{
-  KMessageBox::error(this,
-                     i18n("Fatal error:\n"
-                          "I could not load the pictures. I'll quit."));
-  exit(-1);
 }
 
 // Repaint all the editable area
@@ -220,18 +209,6 @@ void PlayGround::drawText(QPainter &artist, QRect &area, QString &textId) const
   artist.drawText(area, AlignCenter, label);
 }
 
-// Play some sound
-void PlayGround::playSound(QString &soundId) const
-{
-  QString soundName;
-
-  if (!topLevel->isSoundEnabled()) return;
-
-  soundName=i18n(soundId.latin1());
-
-  KAudioPlayer::play(locate("data", "ktuberling/sounds/" + soundName));
-}
-
 // Paint the current picture to the given device
 void PlayGround::drawGameboard( QPainter &artist, const QRect &area ) const
 {
@@ -288,7 +265,7 @@ void PlayGround::mousePressEvent( QMouseEvent *event )
        (object, position.x(), position.y()))) return;
   setCursor(*draggedCursor);
 
-  playSound(soundsList[draggedNumber]);
+  topLevel->playSound(soundsList[draggedNumber]);
 }
 
 // Mouse released event
@@ -349,23 +326,6 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
 
 }
 
-// Load the layouts file
-bool PlayGround::loadLayout(QDomDocument &layoutDocument)
-{
-  QFile layoutFile(QFile::encodeName(locate("data", "ktuberling/pics/layout.xml")));
-  if (!layoutFile.open(IO_ReadOnly))
-     return false;
-
-  if (!layoutDocument.setContent(&layoutFile))
-  {
-     layoutFile.close();
-     return false;
-  }
-  layoutFile.close();
-
-  return true;
-}
-
 // Register the various playgrounds
 bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
 {
@@ -409,7 +369,8 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
               editableAreaElement, categoryElement, objectElement,
               gameAreaElement, maskAreaElement, soundNameElement, labelElement;
   QDomAttr gameboardAttribute, masksAttribute,
-           leftAttribute, topAttribute, rightAttribute, bottomAttribute;
+           leftAttribute, topAttribute, rightAttribute, bottomAttribute,
+	   refAttribute;
 
   playGroundsList = layoutDocument.elementsByTagName("playground");
   if (toLoad >= playGroundsList.count())
@@ -452,8 +413,9 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
     return false;
 
   soundNameElement = (const QDomElement &) soundNamesList.item(0).toElement();
+  refAttribute = soundNameElement.attributeNode("ref");
 
-  editableSound = soundNameElement.text();
+  editableSound = refAttribute.value();
 
   categoriesList = playGroundElement.elementsByTagName("category");
   texts = categoriesList.count();
@@ -530,10 +492,20 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 
     soundNameElement = (const QDomElement &) soundNamesList.item(0).toElement();
 
-    soundsList[decoration] = soundNameElement.text();
+    refAttribute = soundNameElement.attributeNode("ref");
+
+    soundsList[decoration] = refAttribute.value();
   }
 
   return true;
+}
+
+// Report a load failure
+void PlayGround::loadFailure()
+{
+  topLevel->error(i18n("Fatal error:\n"
+                       "I could not load the pictures. I'll quit."));
+  exit(-1);
 }
 
 // Set up play ground's geometry
@@ -594,13 +566,13 @@ bool PlayGround::zone(QPoint &position)
 
   // If we are on the gameboard itself, then play "tuberling" sound
   if (editableArea.contains(position))
-        playSound(editableSound);
+        topLevel->playSound(editableSound);
 
   return false;
 }
 
 // Load objects and lay them down on the editable area
-bool PlayGround::loadFrom(const QString & name)
+bool PlayGround::loadFrom(const QString &name)
 {
   FILE *fp;
   bool eof = false;

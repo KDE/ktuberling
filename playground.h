@@ -17,8 +17,8 @@
 #include "todraw.h"
 #include "action.h"
 
-class TopLevel;
 class QDomDocument;
+class TopLevel;
 
 class PlayGround : public QWidget
 {
@@ -26,18 +26,17 @@ class PlayGround : public QWidget
 
 public:
 
-  PlayGround( TopLevel *parent, const char *name, uint selectedGameboard );
+  PlayGround(TopLevel *parent, const char *name, uint selectedGameboard);
   ~PlayGround();
 
   void reset();
-  void change( uint selectedGameboard );
-  void loadFailure();
+  void change(uint selectedGameboard);
   void repaintAll();
   bool undo();
   bool redo();
-  bool loadFrom(const QString &);
-  bool saveAs(const QString &);
-  bool printPicture(KPrinter &) const;
+  bool loadFrom(const QString &name);
+  bool saveAs(const QString &name);
+  bool printPicture(KPrinter &printer) const;
   QPixmap getPicture() const;
 
   inline bool isFirstAction() const { return currentAction == 0; }
@@ -45,21 +44,19 @@ public:
 
 protected:
 
-  virtual void paintEvent( QPaintEvent *event );
-  virtual void mousePressEvent( QMouseEvent *event );
-  virtual void mouseReleaseEvent( QMouseEvent *event );
-
-  bool loadLayout(QDomDocument &);
-  bool registerPlayGrounds(QDomDocument &);
-  bool loadPlayGround(QDomDocument &, uint toLoad);
-  void setupGeometry();
+  virtual void paintEvent(QPaintEvent *event);
+  virtual void mousePressEvent(QMouseEvent *event);
+  virtual void mouseReleaseEvent(QMouseEvent *event);
 
 private:
 
-  bool zone(QPoint &);
-  void drawText(QPainter &, QRect &, QString &) const;
-  void drawGameboard(QPainter &, const QRect &) const;
-  void playSound(QString &) const;
+  bool registerPlayGrounds(QDomDocument &layoutDocument);
+  bool loadPlayGround(QDomDocument &layoutDocument, uint toLoad);
+  void loadFailure();
+  void setupGeometry();
+  bool zone(QPoint &position);
+  void drawText(QPainter &artist, QRect &area, QString &textId) const;
+  void drawGameboard(QPainter &artist, const QRect &area) const;
 
 private:
 

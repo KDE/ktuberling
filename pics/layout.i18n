@@ -4,7 +4,7 @@
    mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
-i18n("Potato Guy");
+i18n("Potato &Guy");
 
 i18n("Eyes");
 i18n("Eyesbrows");
@@ -13,23 +13,7 @@ i18n("Ears");
 i18n("Mouths");
 i18n("Goodies");
 
-i18n("en/tuberling.wav");
-i18n("en/eye.wav");
-i18n("en/eyebrow.wav");
-i18n("en/nose.wav");
-i18n("en/ear.wav");
-i18n("en/mouth.wav");
-i18n("en/hat.wav");
-i18n("en/moustache.wav");
-i18n("en/cigar.wav");
-i18n("en/bow.wav");
-i18n("en/sunglasses.wav");
-i18n("en/spectacles.wav");
-i18n("en/earring.wav");
-i18n("en/badge.wav");
-i18n("en/watch.wav");
-
-i18n("Penguin");
+i18n("&Penguin");
 
 i18n("Eyes");
 i18n("Tie");
@@ -39,12 +23,13 @@ i18n("Hats");
 i18n("Glasses");
 i18n("Scarf");
 
-i18n("en/penguin.wav");
-i18n("en/eye.wav");
-i18n("en/tie.wav");
-i18n("en/hat.wav");
-i18n("en/hair.wav");
-i18n("en/horn.wav");
-i18n("en/necklace.wav");
-i18n("en/spectacles.wav");
-i18n("en/scarf.wav");
+i18n("&Danish");
+i18n("&German");
+i18n("&English");
+i18n("&French");
+i18n("&Italian");
+i18n("D&utch");
+i18n("&Portuguese");
+i18n("&Romanian");
+i18n("&Slovenian");
+i18n("S&wedish");

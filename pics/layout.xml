@@ -3,8 +3,8 @@
    Description of the playgrounds
    mailto:e.bischoff@noos.fr
 
-   Modify this file if you want to add new playgrounds or modify existing
-   ones. If you do that, don't forget to update:
+   Modify this file if you want to add new playgrounds, new sounds,
+   or modify existing ones. If you do that, don't forget to update:
    - layout.i18n (strings that might be translated)
    - ktuberlingui.rc (actions associated with menu items).
 -->
@@ -13,13 +13,13 @@
 
   <playground gameboard="potato-game.png" masks="potato-mask.png">
 
-    <menuitem action="options_potato_guy">
-      <label>Potato Guy</label>
+    <menuitem action="playground_potato_guy">
+      <label>Potato &amp;Guy</label>
     </menuitem>
 
     <editablearea>
       <position left="  0" top="  0" right="240" bottom="320" />
-      <sound>en/tuberling.wav</sound>
+      <sound ref="tuberling" />
     </editablearea>
 
     <category>
@@ -54,230 +54,230 @@
 
     <object>
       <position left="242" top="  0" right="283" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="242" top=" 34" right="283" bottom=" 66" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="242" top=" 68" right="283" bottom="100" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="285" top="  0" right="326" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="285" top=" 34" right="326" bottom=" 66" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="285" top=" 68" right="326" bottom="100" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="328" top="  0" right="369" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="328" top=" 34" right="369" bottom=" 66" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="328" top=" 68" right="369" bottom="100" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="371" top="  0" right="412" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="371" top=" 34" right="412" bottom=" 66" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="371" top=" 68" right="412" bottom="100" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="415" top="  0" right="462" bottom=" 29" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="415" top=" 31" right="462" bottom=" 60" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="415" top=" 62" right="462" bottom=" 91" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="415" top=" 93" right="462" bottom="122" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="464" top="  0" right="511" bottom=" 29" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="464" top=" 31" right="511" bottom=" 60" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="464" top=" 62" right="511" bottom=" 91" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="464" top=" 93" right="511" bottom="122" />
-      <sound>en/eyebrow.wav</sound>
+      <sound ref="eyebrow" />
     </object>
 
     <object>
       <position left="242" top="116" right="291" bottom="178" />
-      <sound>en/nose.wav</sound>
+      <sound ref="nose" />
     </object>
 
     <object>
       <position left="293" top="116" right="342" bottom="178" />
-      <sound>en/nose.wav</sound>
+      <sound ref="nose" />
     </object>
 
     <object>
       <position left="344" top="116" right="393" bottom="178" />
-      <sound>en/nose.wav</sound>
+      <sound ref="nose" />
     </object>
 
     <object>
       <position left="397" top="138" right="423" bottom="178" />
-      <sound>en/ear.wav</sound>
+      <sound ref="ear" />
     </object>
 
     <object>
       <position left="426" top="138" right="452" bottom="178" />
-      <sound>en/ear.wav</sound>
+      <sound ref="ear" />
     </object>
 
     <object>
       <position left="455" top="138" right="481" bottom="178" />
-      <sound>en/ear.wav</sound>
+      <sound ref="ear" />
     </object>
 
     <object>
       <position left="484" top="138" right="510" bottom="178" />
-      <sound>en/ear.wav</sound>
+      <sound ref="ear" />
     </object>
 
     <object>
       <position left="242" top="195" right="308" bottom="225" />
-      <sound>en/mouth.wav</sound>
+      <sound ref="mouth" />
     </object>
 
     <object>
       <position left="242" top="227" right="308" bottom="257" />
-      <sound>en/mouth.wav</sound>
+      <sound ref="mouth" />
     </object>
 
     <object>
       <position left="310" top="195" right="376" bottom="225" />
-      <sound>en/mouth.wav</sound>
+      <sound ref="mouth" />
     </object>
 
     <object>
       <position left="310" top="227" right="376" bottom="257" />
-      <sound>en/mouth.wav</sound>
+      <sound ref="mouth" />
     </object>
 
     <object>
       <position left="378" top="195" right="444" bottom="225" />
-      <sound>en/mouth.wav</sound>
+      <sound ref="mouth" />
     </object>
 
     <object>
       <position left="378" top="227" right="444" bottom="257" />
-      <sound>en/mouth.wav</sound>
+      <sound ref="mouth" />
     </object>
 
     <object>
       <position left="447" top="195" right="511" bottom="225" />
-      <sound>en/hat.wav</sound>
+      <sound ref="hat" />
     </object>
 
     <object>
       <position left="447" top="227" right="511" bottom="249" />
-      <sound>en/moustache.wav</sound>
+      <sound ref="moustache" />
     </object>
 
     <object>
       <position left="447" top="251" right="475" bottom="272" />
-      <sound>en/cigar.wav</sound>
+      <sound ref="cigar" />
     </object>
 
     <object>
       <position left="477" top="251" right="511" bottom="272" />
-      <sound>en/bow.wav</sound>
+      <sound ref="bow" />
     </object>
 
     <object>
       <position left="242" top="274" right="322" bottom="306" />
-      <sound>en/sunglasses.wav</sound>
+      <sound ref="sunglasses" />
     </object>
 
     <object>
       <position left="324" top="274" right="399" bottom="306" />
-      <sound>en/spectacles.wav</sound>
+      <sound ref="spectacles" />
     </object>
 
     <object>
       <position left="401" top="274" right="445" bottom="306" />
-      <sound>en/bow.wav</sound>
+      <sound ref="bow" />
     </object>
 
     <object>
       <position left="447" top="274" right="462" bottom="306" />
-      <sound>en/earring.wav</sound>
+      <sound ref="earring" />
     </object>
 
     <object>
       <position left="464" top="274" right="491" bottom="306" />
-      <sound>en/badge.wav</sound>
+      <sound ref="badge" />
     </object>
 
     <object>
       <position left="493" top="274" right="511" bottom="306" />
-      <sound>en/watch.wav</sound>
+      <sound ref="watch" />
     </object>
 
   </playground>
 
   <playground gameboard="penguin-game.png" masks="penguin-mask.png">
 
-    <menuitem action="options_penguin">
-      <label>Penguin</label>
+    <menuitem action="playground_penguin">
+      <label>&amp;Penguin</label>
     </menuitem>
 
     <editablearea>
       <position left="  0" top="  0" right="240" bottom="320" />
-      <sound>en/penguin.wav</sound>
+      <sound ref="penguin" />
     </editablearea>
 
     <category>
@@ -317,109 +317,387 @@
 
     <object>
       <position left="243" top="  1" right="283" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="243" top=" 35" right="283" bottom=" 65" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="286" top="  1" right="326" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="286" top=" 35" right="326" bottom=" 65" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="329" top="  1" right="369" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="329" top=" 35" right="369" bottom=" 65" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="372" top="  1" right="412" bottom=" 32" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="372" top=" 35" right="412" bottom=" 65" />
-      <sound>en/eye.wav</sound>
+      <sound ref="eye" />
     </object>
 
     <object>
       <position left="416" top="  1" right="511" bottom="120" />
-      <sound>en/tie.wav</sound>
+      <sound ref="tie" />
     </object>
 
     <object>
       <position left="244" top=" 81" right="390" bottom="116" />
-      <sound>en/hat.wav</sound>
+      <sound ref="hat" />
     </object>
 
     <object>
       <position left="243" top="119" right="341" bottom="178" />
-      <sound>en/hair.wav</sound>
+      <sound ref="hair" />
     </object>
 
     <object>
       <position left="345" top="119" right="390" bottom="178" />
-      <sound>en/hair.wav</sound>
+      <sound ref="hair" />
     </object>
 
     <object>
       <position left="397" top="140" right="452" bottom="178" />
-      <sound>en/horn.wav</sound>
+      <sound ref="horn" />
     </object>
 
     <object>
       <position left="455" top="140" right="509" bottom="178" />
-      <sound>en/horn.wav</sound>
+      <sound ref="horn" />
     </object>
 
     <object>
       <position left="243" top="195" right="376" bottom="225" />
-      <sound>en/necklace.wav</sound>
+      <sound ref="necklace" />
     </object>
 
     <object>
       <position left="243" top="228" right="376" bottom="258" />
-      <sound>en/necklace.wav</sound>
+      <sound ref="necklace" />
     </object>
 
     <object>
       <position left="379" top="195" right="444" bottom="258" />
-      <sound>en/hat.wav</sound>
+      <sound ref="hat" />
     </object>
 
     <object>
       <position left="448" top="195" right="511" bottom="258" />
-      <sound>en/hat.wav</sound>
+      <sound ref="hat" />
     </object>
 
     <object>
       <position left="244" top="275" right="322" bottom="305" />
-      <sound>en/spectacles.wav</sound>
+      <sound ref="spectacles" />
     </object>
 
     <object>
       <position left="325" top="275" right="398" bottom="305" />
-      <sound>en/sunglasses.wav</sound>
+      <sound ref="sunglasses" />
     </object>
 
     <object>
       <position left="402" top="275" right="511" bottom="305" />
-      <sound>en/scarf.wav</sound>
+      <sound ref="scarf" />
     </object>
 
   </playground>
+
+  <language code="da">
+
+    <menuitem action="speech_danish">
+      <label>&amp;Danish</label>
+    </menuitem>
+
+    <sound name="tuberling" file="da/kartoffelfyr.wav" />
+    <sound name="eye" file="da/oeje.wav" />
+    <sound name="eyebrow" file="da/oejenbryn.wav" />
+    <sound name="nose" file="da/naese.wav" />
+    <sound name="ear" file="da/oere.wav" />
+    <sound name="mouth" file="da/mund.wav" />
+    <sound name="hat" file="da/hat.wav" />
+    <sound name="moustache" file="da/overskaeg.wav" />
+    <sound name="cigar" file="da/cigar.wav" />
+    <sound name="bow" file="da/sloejfe.wav" />
+    <sound name="sunglasses" file="da/solbriller.wav" />
+    <sound name="spectacles" file="da/briller.wav" />
+    <sound name="earring" file="da/oerering.wav" />
+    <sound name="badge" file="da/politiskilt.wav" />
+    <sound name="watch" file="da/ur.wav" />
+
+  </language>
+
+  <language code="de">
+
+    <menuitem action="speech_german">
+      <label>&amp;German</label>
+    </menuitem>
+
+    <sound name="eye" file="de/auge.wav" />
+    <sound name="eyebrow" file="de/augenbraue.wav" />
+    <sound name="ear" file="de/ohr.wav" />
+    <sound name="hat" file="de/hut.wav" />
+    <sound name="moustache" file="de/schnurrbart.wav" />
+    <sound name="bow" file="de/fliege.wav" />
+    <sound name="spectacles" file="de/brille.wav" />
+    <sound name="earring" file="de/ohrring.wav" />
+    <sound name="badge" file="de/abzeichen.wav" />
+    <sound name="watch" file="de/uhr.wav" />
+    <sound name="hair" file="de/haare.wav" />
+
+  </language>
+
+  <language code="en">
+
+    <menuitem action="speech_english">
+      <label>&amp;English</label>
+    </menuitem>
+
+    <sound name="tuberling" file="en/tuberling.wav" />
+    <sound name="eye" file="en/eye.wav" />
+    <sound name="eyebrow" file="en/eyebrow.wav" />
+    <sound name="nose" file="en/nose.wav" />
+    <sound name="ear" file="en/ear.wav" />
+    <sound name="mouth" file="en/mouth.wav" />
+    <sound name="hat" file="en/hat.wav" />
+    <sound name="moustache" file="en/moustache.wav" />
+    <sound name="cigar" file="en/cigar.wav" />
+    <sound name="bow" file="en/bow.wav" />
+    <sound name="sunglasses" file="en/sunglasses.wav" />
+    <sound name="spectacles" file="en/spectacles.wav" />
+    <sound name="earring" file="en/earring.wav" />
+    <sound name="badge" file="en/badge.wav" />
+    <sound name="watch" file="en/watch.wav" />
+    <sound name="penguin" file="en/penguin.wav" />
+    <sound name="tie" file="en/tie.wav" />
+    <sound name="hair" file="en/hair.wav" />
+    <sound name="horn" file="en/horn.wav" />
+    <sound name="necklace" file="en/necklace.wav" />
+    <sound name="scarf" file="en/scarf.wav" />
+
+  </language>
+
+  <language code="fr">
+
+    <menuitem action="speech_french">
+      <label>&amp;French</label>
+    </menuitem>
+
+    <sound name="tuberling" file="fr/monsieur-patate.wav" />
+    <sound name="eye" file="fr/oeil.wav" />
+    <sound name="eyebrow" file="fr/sourcil.wav" />
+    <sound name="nose" file="fr/nez.wav" />
+    <sound name="ear" file="fr/oreille.wav" />
+    <sound name="mouth" file="fr/bouche.wav" />
+    <sound name="hat" file="fr/chapeau.wav" />
+    <sound name="moustache" file="fr/moustache.wav" />
+    <sound name="cigar" file="fr/cigare.wav" />
+    <sound name="bow" file="fr/noeud-papillon.wav" />
+    <sound name="sunglasses" file="fr/lunettes-de-soleil.wav" />
+    <sound name="spectacles" file="fr/lunettes.wav" />
+    <sound name="earring" file="fr/boucle-d-oreille.wav" />
+    <sound name="badge" file="fr/medaille.wav" />
+    <sound name="watch" file="fr/montre.wav" />
+    <sound name="penguin" file="fr/pingouin.wav" />
+    <sound name="tie" file="fr/cravate.wav" />
+    <sound name="hair" file="fr/cheveux.wav" />
+    <sound name="horn" file="fr/corne.wav" />
+    <sound name="necklace" file="fr/collier.wav" />
+    <sound name="scarf" file="fr/foulard.wav" />
+
+  </language>
+
+  <language code="it">
+
+    <menuitem action="speech_italian">
+      <label>&amp;Italian</label>
+    </menuitem>
+
+    <sound name="tuberling" file="it/patatone.wav" />
+    <sound name="eye" file="it/occhio.wav" />
+    <sound name="eyebrow" file="it/sopracciglio.wav" />
+    <sound name="nose" file="it/naso.wav" />
+    <sound name="ear" file="it/orecchio.wav" />
+    <sound name="mouth" file="it/bocca.wav" />
+    <sound name="hat" file="it/cappello.wav" />
+    <sound name="moustache" file="it/baffi.wav" />
+    <sound name="cigar" file="it/sigaro.wav" />
+    <sound name="bow" file="it/cravattino.wav" />
+    <sound name="sunglasses" file="it/occhialidasole.wav" />
+    <sound name="spectacles" file="it/occhiali.wav" />
+    <sound name="earring" file="it/orecchino.wav" />
+    <sound name="badge" file="it/distintivo.wav" />
+    <sound name="watch" file="it/orologio.wav" />
+    <sound name="penguin" file="it/pinguino.wav" />
+    <sound name="tie" file="it/cravatta.wav" />
+    <sound name="hair" file="it/capelli.wav" />
+    <sound name="horn" file="it/corno.wav" />
+    <sound name="necklace" file="it/collana.wav" />
+    <sound name="scarf" file="it/sciarpina.wav" />
+
+  </language>
+
+  <language code="nl">
+
+    <menuitem action="speech_dutch">
+      <label>D&amp;utch</label>
+    </menuitem>
+
+    <sound name="tuberling" file="nl/aardappelmannetje.wav" />
+    <sound name="eye" file="nl/oog.wav" />
+    <sound name="eyebrow" file="nl/wenkbrauw.wav" />
+    <sound name="nose" file="nl/neus.wav" />
+    <sound name="ear" file="nl/oor.wav" />
+    <sound name="mouth" file="nl/mond.wav" />
+    <sound name="hat" file="nl/hoed.wav" />
+    <sound name="moustache" file="nl/snor.wav" />
+    <sound name="cigar" file="nl/sigaar.wav" />
+    <sound name="bow" file="nl/strik.wav" />
+    <sound name="sunglasses" file="nl/zonnebril.wav" />
+    <sound name="spectacles" file="nl/bril.wav" />
+    <sound name="earring" file="nl/oorbel.wav" />
+    <sound name="badge" file="nl/ster.wav" />
+    <sound name="watch" file="nl/horloge.wav" />
+    <sound name="penguin" file="nl/pinguin.wav" />
+    <sound name="tie" file="nl/stropdas.wav" />
+    <sound name="hair" file="nl/haar.wav" />
+    <sound name="horn" file="nl/horens.wav" />
+    <sound name="necklace" file="nl/ketting.wav" />
+    <sound name="scarf" file="nl/sjaal.wav" />
+
+  </language>
+
+  <language code="pt">
+
+    <menuitem action="speech_portuguese">
+      <label>&amp;Portuguese</label>
+    </menuitem>
+
+    <sound name="tuberling" file="pt/senhor-batata.ogg" />
+    <sound name="eye" file="pt/olho.ogg" />
+    <sound name="eyebrow" file="pt/sobrancelha.ogg" />
+    <sound name="nose" file="pt/nariz.ogg" />
+    <sound name="ear" file="pt/orelha.ogg" />
+    <sound name="mouth" file="pt/boca.ogg" />
+    <sound name="hat" file="pt/chapeu.ogg" />
+    <sound name="moustache" file="pt/bigode.ogg" />
+    <sound name="cigar" file="pt/cigarro.ogg" />
+    <sound name="bow" file="pt/laco.ogg" />
+    <sound name="sunglasses" file="pt/oculos-de-sol.ogg" />
+    <sound name="spectacles" file="pt/oculos.ogg" />
+    <sound name="earring" file="pt/brincos.ogg" />
+    <sound name="badge" file="pt/medalha.ogg" />
+    <sound name="watch" file="pt/relogio.ogg" />
+
+  </language>
+
+  <language code="ro">
+
+    <menuitem action="speech_romanian">
+      <label>&amp;Romanian</label>
+    </menuitem>
+
+    <sound name="tuberling" file="ro/tuberling.wav" />
+    <sound name="eye" file="ro/ochi.wav" />
+    <sound name="eyebrow" file="ro/sprinceana.wav" />
+    <sound name="nose" file="ro/nas.wav" />
+    <sound name="ear" file="ro/ureche.wav" />
+    <sound name="mouth" file="ro/gura.wav" />
+    <sound name="hat" file="ro/palarie.wav" />
+    <sound name="moustache" file="ro/mustata.wav" />
+    <sound name="cigar" file="ro/tigara.wav" />
+    <sound name="bow" file="ro/papion.wav" />
+    <sound name="sunglasses" file="ro/ochelaridesoare.wav" />
+    <sound name="spectacles" file="ro/ochelari.wav" />
+    <sound name="earring" file="ro/cercel.wav" />
+    <sound name="badge" file="ro/insigna.wav" />
+    <sound name="watch" file="ro/ceas.wav" />
+    <sound name="penguin" file="ro/cercel.wav" />
+    <sound name="tie" file="ro/funda.wav" />
+    <sound name="hair" file="ro/palarie.wav" />
+    <sound name="horn" file="ro/papion.wav" />
+    <sound name="necklace" file="ro/ochelari.wav" />
+    <sound name="scarf" file="ro/tigara.wav" />
+
+  </language>
+
+  <language code="sl">
+
+    <menuitem action="speech_slovenian">
+      <label>&amp;Slovenian</label>
+    </menuitem>
+
+    <sound name="tuberling" file="sl/krompircek.wav" />
+    <sound name="eye" file="sl/oko.wav" />
+    <sound name="eyebrow" file="sl/obrvi.wav" />
+    <sound name="nose" file="sl/nos.wav" />
+    <sound name="ear" file="sl/uho.wav" />
+    <sound name="mouth" file="sl/usta.wav" />
+    <sound name="hat" file="sl/klobuk.wav" />
+    <sound name="moustache" file="sl/brki.wav" />
+    <sound name="cigar" file="sl/cigara.wav" />
+    <sound name="bow" file="sl/metuljcek.wav" />
+    <sound name="sunglasses" file="sl/soncna_ocala.wav" />
+    <sound name="spectacles" file="sl/naocniki.wav" />
+    <sound name="earring" file="sl/uhan.wav" />
+    <sound name="badge" file="sl/znacka.wav" />
+    <sound name="watch" file="sl/ura.wav" />
+    <sound name="penguin" file="sl/pingvin.wav" />
+    <sound name="tie" file="sl/kravata.wav" />
+    <sound name="hair" file="sl/lasje.wav" />
+    <sound name="horn" file="sl/rog.wav" />
+    <sound name="necklace" file="sl/naocniki.wav" />
+    <sound name="scarf" file="sl/sal.wav" />
+
+  </language>
+
+  <language code="sw">
+
+    <menuitem action="speech_swedish">
+      <label>S&amp;wedish</label>
+    </menuitem>
+
+    <sound name="tuberling" file="sv/potatismannen.wav" />
+    <sound name="eye" file="sv/oga.wav" />
+    <sound name="eyebrow" file="sv/ogonbryn.wav" />
+    <sound name="nose" file="sv/nasa.wav" />
+    <sound name="ear" file="sv/ora.wav" />
+    <sound name="mouth" file="sv/mun.wav" />
+    <sound name="hat" file="sv/hatt.wav" />
+    <sound name="moustache" file="sv/mustasch.wav" />
+    <sound name="cigar" file="sv/cigarr.wav" />
+    <sound name="bow" file="sv/rosett.wav" />
+    <sound name="sunglasses" file="sv/solglasogon.wav" />
+    <sound name="spectacles" file="sv/glasogon.wav" />
+    <sound name="earring" file="sv/orhange.wav" />
+    <sound name="badge" file="sv/brosch.wav" />
+    <sound name="watch" file="sv/klocka.wav" />
+    <sound name="penguin" file="sv/pingvin.wav" />
+    <sound name="tie" file="sv/slips.wav" />
+    <sound name="hair" file="sv/har.wav" />
+    <sound name="horn" file="sv/horn.wav" />
+    <sound name="necklace" file="sv/halsband.wav" />
+    <sound name="scarf" file="sv/halsduk.wav" />
+
+  </language>
 
 </ktuberling>

@@ -16,7 +16,7 @@ SUBDIRS = . museum sounds pics
 
 bin_PROGRAMS = ktuberling
 
-ktuberling_SOURCES = action.cpp main.cpp toplevel.cpp playground.cpp todraw.cpp
+ktuberling_SOURCES = action.cpp main.cpp toplevel.cpp playground.cpp todraw.cpp soundfactory.cpp
 
 ktuberling_METASOURCES = USE_AUTOMOC
 ktuberling_LDFLAGS =  $(all_libraries) $(KDE_RPATH)
