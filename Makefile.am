@@ -30,11 +30,11 @@ DISTCLEANFILES = $()
 
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
-#	$(INSTALL_DATA) ktuberling.kdelnk $(APPSDIR)
+	$(INSTALL_DATA) ktuberling.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-ktuberling.xpm $(kde_minidir)/ktuberling.xpm
 
 uninstall-local:
-#	-rm -f $(APPSDIR)/ktuberling.kdelnk
+	-rm -f $(APPSDIR)/ktuberling.kdelnk
 	-rm -f $(kde_minidir)/ktuberling.xpm
 
