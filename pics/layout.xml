@@ -422,6 +422,89 @@
 
   </playground>
 
+  <playground gameboard="aquarium-game.png" masks="aquarium-mask.png">
+
+    <menuitem action="playground_aquarium">
+      <label>&amp;Aquarium</label>
+    </menuitem>
+
+    <editablearea>
+      <position left="  0" top="  0" right="280" bottom="320" />
+      <sound ref="aquarium" />
+    </editablearea>
+
+    <category>
+      <position left=" 92" top=" 46" right="736" bottom="359" />
+      <label>Fishes</label>
+    </category>
+
+    <category>
+      <position left=" 92" top=" 46" right="736" bottom="559" />
+      <label>Others</label>
+    </category>
+
+    <object>
+      <position left=" 92" top=" 46" right="236" bottom=" 32" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="325" top=" 5" right="388" bottom=" 52" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="395" top=" 5" right="444" bottom=" 52" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="454" top=" 5" right="501" bottom=" 52" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="325" top=" 62" right="415" bottom="124" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="423" top=" 62" right="511" bottom="124" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="330" top="130" right="357" bottom="184" />
+      <sound ref="seahorse" />
+    </object>
+
+    <object>
+      <position left="370" top="130" right="405" bottom="184" />
+      <sound ref="seahorse" />
+    </object>
+
+    <object>
+      <position left="410" top="130" right="500" bottom="184" />
+      <sound ref="fish" />
+    </object>
+
+    <object>
+      <position left="325" top="225" right="378" bottom="290" />
+      <sound ref="jellyfish" />
+    </object>
+
+    <object>
+      <position left="386" top="215" right="439" bottom="290" />
+      <sound ref="helmet" />
+    </object>
+
+    <object>
+      <position left="452" top="215" right="508" bottom="290" />
+      <sound ref="treasure" />
+    </object>
+
+  </playground>
+
   <language code="da">
 
     <menuitem action="speech_danish">

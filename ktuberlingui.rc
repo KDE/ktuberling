@@ -7,6 +7,7 @@
   <Menu name="playground"><text>&amp;Playground</text>
     <Action name="playground_potato_guy"/>
     <Action name="playground_penguin"/>
+    <Action name="playground_aquarium"/>
   </Menu>
   <Menu name="speech"><text>&amp;Speech</text>
     <Action name="speech_no_sound"/>

@@ -23,6 +23,11 @@ i18n("Hats");
 i18n("Glasses");
 i18n("Scarf");
 
+i18n("&Aquarium");
+
+i18n("Fishes");
+i18n("Others");
+
 i18n("&Danish");
 i18n("&German");
 i18n("&English");
