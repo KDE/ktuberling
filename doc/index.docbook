@@ -126,7 +126,7 @@ place on your playground.
 </itemizedlist>
 
 <screenshot>
-<screeninfo>Main Window of &ktuberling; main window:</screeninfo>
+<screeninfo>Main Window of &ktuberling;</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata format="PNG" fileref="gameboard.png"/>
@@ -586,7 +586,7 @@ Programming</para>
 </listitem>
 
 <listitem>
-<para>Fran&ccedil;ois-xavier Duranceau <email>duranceau@free.fr</email> - Tests,
+<para>Fran&ccedil;ois-Xavier Duranceau <email>duranceau@free.fr</email> - Tests,
 advice and help</para>
 </listitem>
 
