@@ -1,0 +1,30 @@
+/* -------------------------------------------------------------
+   KDE Tuberling
+   List of strings in layout.xml that are translatable
+   mailto:e.bischoff@noos.fr
+ ------------------------------------------------------------- */
+
+i18n("Potato guy");
+
+i18n("Eyes");
+i18n("Eyesbrows");
+i18n("Noses");
+i18n("Ears");
+i18n("Mouths");
+i18n("Goodies");
+
+i18n("en/tuberling.wav");
+i18n("en/eye.wav");
+i18n("en/eyebrow.wav");
+i18n("en/nose.wav");
+i18n("en/ear.wav");
+i18n("en/mouth.wav");
+i18n("en/hat.wav");
+i18n("en/moustache.wav");
+i18n("en/cigar.wav");
+i18n("en/bow.wav");
+i18n("en/sunglasses.wav");
+i18n("en/spectacles.wav");
+i18n("en/earring.wav");
+i18n("en/badge.wav");
+i18n("en/watch.wav");

@@ -1,5 +1,5 @@
 
 # add here all files
-data_DATA = gameboard.xpm layout.txt masks.xpm
+data_DATA = potato-game.png potato-mask.png layout.xml
 
 datadir = $(kde_datadir)/ktuberling/pics
