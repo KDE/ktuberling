@@ -1,71 +1,413 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
-<HEAD>
-<TITLE>The KTuberling Handbook: Epilogue</TITLE>
-<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="KDE, KTuberling, Game, Toy, Potato, Tuberling">
-<META NAME="description" CONTENT="The KTuberling Handbook">
-</HEAD>
-<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
-<FONT FACE="Helvetica">
-<A HREF="http://www.kde.org/"><IMG SRC="logotp3.png" BORDER="0" ALT="The K Desktop Environment"></A>
-<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN">
+<book lang="en">
+<bookinfo>
+<title>The KTuberling Handbook</title>
+<authorgroup>
+<author>
+<surname>Eric Bischoff </surname><affiliation>
+<address><email><ulink url="mailto:ebisch@cybercable.tm.fr">\|urlnam\|</ulink></email></address>
+</affiliation>
 
- 
-<P ALIGN="RIGHT">
-
-Next <A HREF="index-4.html">Previous</A>
- <A HREF="index.html#toc5">Table of Contents</A>
-</P>
-<H3><A NAME="s5">5. Epilogue</A></H3>
-
-<P>
-<P>
-<H3><A NAME="ss5.1">5.1 Developers</A>
-</H3>
-
-<P>
-<UL>
-<LI><CODE>
-<A HREF="">John Calhoun</A></CODE> - Original idea, pictures and english sounds</LI>
-<LI><CODE>
-<A HREF="mailto:ebisch@cybercable.tm.fr">Eric Bischoff</A></CODE> - KDE Programming</LI>
-<LI><CODE>
-<A HREF="mailto:Francois-Xavier.Duranceau@loria.fr">François-Xavier Duranceau</A></CODE> - Tests, advice and help</LI>
-</UL>
-<P>This game is dedicated to my little daughter Sunniva Bischoff
-<P>Thanks to Apple Computer and to the Linux PPC project for having made ports of Linux to the Macintosh.
-KTuberling would never have existed without that!
-<H3><A NAME="ss5.2">5.2 Credits</A>
-</H3>
-
-<P>
-<UL>
-<LI><CODE>
-<A HREF="mailto:ebisch@cybercable.tm.fr">Eric Bischoff</A></CODE> - Author</LI>
-<LI><CODE>
-<A HREF="mailto:peter.silva@videotron.ca">Peter Silva</A></CODE> - Proofreading</LI>
-</UL>
-<H3><A NAME="ss5.3">5.3 License</A>
-</H3>
-
-<P><EM>ktuberling</EM> is published under the terms of the 
-<A HREF="#GPL">GNU  General Public License</A> (GPL). There is 
-<A HREF="#warranty">no warranty</A> that this program works or for whatever.
-<H4>The GNU General Public License</H4>
-
-<P>
-<A NAME="GPL"></A> 
-<PRE>
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 2, June 1991
+</author>
+</authorgroup>
+<date>Version 0.1.1, 28 June 1999</date>
+<releaseinfo><!-- information about this particular version --></releaseinfo>
+<revhistory>
+<revision>
+<revnumber></revnumber>
+<date></date>
+</revision>
+</revhistory>
+<abstract>
+<para>This document was last updated for ktuberling version 0.1. Please make any comments and additions to the author.</para>
+<para>The KTuberling Handbook</para><!-- Merge this with the previous paragraph; it comes from <META NAME="description" CONTENT="..."> --></abstract>
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KTuberling</keyword>
+<keyword>Game</keyword>
+<keyword>Toy</keyword>
+<keyword>Potato</keyword>
+<keyword>Tuberling</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="Introduction">
+<title>Introduction</title>
+<para>KTuberling is a game intended for small children. Of course, it may be suitable
+for adults who have remained young at heart.</para>
+<para>It is a potato editor. That means that you can drag and drop eyes, mouths, moustache,
+and other parts of face and goodies onto a potato-like guy.</para>
+<para>There is no winner for the game. The only purpose is to make the funniest faces you can.</para>
+<para>There is a museum (like a "Madame Tusseau" gallery) where you can
+find many funny examples of decorated potatoes. Of course, you can send your own creations
+to the programmer, <ulink url="mailto:ebisch@cybercable.tm.fr">Eric Bischoff</ulink>, who
+will include them in the museum if he gets some spare time.</para>
+</chapter>
+<chapter id="Installation">
+<title>Installation</title>
+<sect1>
+<title>How to obtain <emphasis>ktuberling</emphasis></title>
+<para><emphasis>ktuberling</emphasis> is a toy application for the KDE project <ulink url="http://www.kde.org">http://www.kde.org</ulink>.
+Ktuberling  can be found on <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the main ftp site
+of the KDE project.</para>
+</sect1>
+<sect1>
+<title>Requirements</title>
+<para>In order to successfully compile <emphasis>ktuberling</emphasis>, you need the latest versions of <literal remap="tt">libkdecore</literal>,
+<literal remap="tt">libkdeui</literal>, <literal remap="tt">libkfile</literal>, <literal remap="tt">libkfm</literal>, and <literal remap="tt">libmediatooli</literal>. All required libraries
+as well as <emphasis>ktuberling</emphasis> itself can be found on <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>. </para>
+</sect1>
+<sect1>
+<title>Compilation and installation</title>
+<para>In order to compile and install <emphasis>ktuberling</emphasis> on your system, type the following in the base 
+directory of the <emphasis>ktuberling</emphasis> distribution:
+<screen>% ./configure
+% make
+% make install
+</screen>
+</para>
+</sect1>
+</chapter>
+<chapter id="OnscreenFundamentals">
+<title>Onscreen Fundamentals</title>
+<sect1>
+<title>Mouse Operation</title>
+<para>There are two parts in the main window : on the left side, there is the "potato" area where
+you can drop objects (eyebrows, noses, spectacles, ...) from the part on the right side, the "objects" area.</para>
+<para>To drag an object, move the mouse pointer to the "objects" area, click on the object you want to drag,
+but do not release the mouse button until you have moved the mouse pointer to the location in the
+"potato" area where you want to drop the object.</para>
+<para>Once dropped in the "potato" area, an object can be moved around in that area. Just click on it to select it for further drag and drop.
+When you click on it, it goes on top of other objects that were partially hiding it.</para>
+<para>To remove an object that has been dropped in the "potato" area, drag it back from the "potato" area to the "objects" area.</para>
+</sect1>
+<sect1>
+<title>The Menu Items</title>
+<sect2>
+<title>The File Menu</title>
+<para><variablelist>
+<varlistentry>
+<term>New</term>
+<listitem>
+<para>Resets the "potato" area.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Open</term>
+<listitem>
+<para>Opens an existing tuberling file from the museum or from somewhere else if you wish.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Save</term>
+<listitem>
+<para>Saves your creation to the museum, or to somewhere else if you wish.
+The tuberling is saved to a low weight file where only the position of objects are saved.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Save as picture</term>
+<listitem>
+<para>Creates a file holding the picture of your tuberling.
+Available file formats are XPM, JPEG, PNG and BMP.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Print</term>
+<listitem>
+<para>Prints your picture (PostScript (TM) format).</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Quit</term>
+<listitem>
+<para>Quits KTuberling.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2>
+<title>The Edit Menu</title>
+<para><variablelist>
+<varlistentry>
+<term>Copy</term>
+<listitem>
+<para>Copies the potato area as a picture to the clipboard.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Undo</term>
+<listitem>
+<para>Undoes last operation.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Redo</term>
+<listitem>
+<para>Re-does last operation.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2>
+<title>The Options Menu</title>
+<para><variablelist>
+<varlistentry>
+<term>Sound</term>
+<listitem>
+<para>Toggles sound on/off.
+If kaudioplayer isn't running, this menu item is greyed out.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2>
+<title>The Help Menu</title>
+<para><variablelist>
+<varlistentry>
+<term>Contents</term>
+<listitem>
+<para>Displays this handbook.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>About KTuberling</term>
+<listitem>
+<para>Satisfies ego of authors.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>About KDE</term>
+<listitem>
+<para>Tells about one of the greatest Linux-related projects.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+</sect1>
+<sect1>
+<title>The Tool Bar</title>
+<sect2>
+<title>"New" Button</title>
+<para>Resets the "potato" area.</para>
+</sect2>
+<sect2>
+<title>"Open" Button</title>
+<para>Opens an existing tuberling file from the museum or from somewhere else if you wish.</para>
+</sect2>
+<sect2>
+<title>"Save" Button</title>
+<para>Saves your creation to the museum, or to somewhere else if you wish.
+The tuberling is saved to a low weight file where only the position of objects are saved.</para>
+</sect2>
+<sect2>
+<title>"Print" Button</title>
+<para>Prints your picture (PostScript (TM) format).</para>
+</sect2>
+<sect2>
+<title>"Undo" Button</title>
+<para>Undoes last operation.</para>
+</sect2>
+<sect2>
+<title>"Redo" Button</title>
+<para>Redoes last operation.</para>
+</sect2>
+<sect2>
+<title>"Help" Button</title>
+<para>Displays this handbook.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>Keyboard usage</title>
+<para>You can redefine nearly all keyboard bindings, but the following defaults are just fine :</para>
+<para><variablelist>
+<varlistentry>
+<term>Ctrl-N</term>
+<listitem>
+<para>Resets the "Potato" area</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-O</term>
+<listitem>
+<para>Opens an existing tuberling file from the museum or from somewhere else if you wish.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-S</term>
+<listitem>
+<para>Saves your creation to the museum, or to somewhere else if you wish.
+The tuberling is saved to a low weight file where only the position of objects are saved.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-P</term>
+<listitem>
+<para>Prints your picture (PostScript (TM) format).</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-Q</term>
+<listitem>
+<para>Quits KTuberling.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-C</term>
+<listitem>
+<para>Copies the potato area as a picture to the clipboard.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-Z</term>
+<listitem>
+<para>Undoes last operation.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Ctrl-A</term>
+<listitem>
+<para>Re-does last operation.
+(This key binding is not redefinable).</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>F1</term>
+<listitem>
+<para>Displays this handbook.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect1>
+</chapter>
+<chapter id="Technicalreference">
+<title>Technical reference</title>
+<sect1>
+<title>For graphists</title>
+<para>KTuberling allows many changes in the graphical appearance: the gamebard's size and shape, the number of
+objects that can be moved onto it, their size and the category they belong to can be redefined. But
+the labels of the various groups of objects (noses, eyes, goodies...) can't be changed. Neither can the
+sounds associated to objects be changed.</para>
+<para>The pictures are located in the 'pics' directory. There are two pictures, named
+'gameboard.xpm' and the other one 'masks.xpm'. The first one holds the gameboard
+and the grid where the user can pick objects. The second one contains the masks of those pictures,
+used to delimitate their borders and, sometimes, to give them some transparency (spectacles).
+There is also a text file in this directory, named 'layout.txt'. One can find there - and change -
+all information related to the positions of the pictures and masks of objects, define new objects,
+and assign sounds to objects. The program needs not beeing recompiled when changing the number
+and position of objects.</para>
+<para>Here comes the structure of layout.txt. It only contains integer numbers in decimal form,
+separated by whitespace, and followed by comments. The comments are ignored.</para>
+<para>The first line describes the area (gameboard) where objects can be dropped to.
+The first four numbers indicate the position of the 'landing area' (left, top, right, bottom),
+whereas the fifth number indicates the sound associated with it (defined in source file
+'categories.h').</para>
+<para>The second line indicates the number of texts that follow on the next lines.
+Those texts cannot be modified, but they can be drawn somewhere else on the gameboard.</para>
+<para>The next lines describe the position of the texts describing the categories of objects, one text per line.
+The first four numbers indicate the position of the text (left, top, right, bottom),
+whereas the fifth number indicates the number of the text to draw (defined in source file
+'categories.h').</para>
+<para>Then comes the number of objects described in the next lines.
+Change this number if you want to add or remove objects.</para>
+<para>The last lines describe the position of the pictures (in 'gameboard.xpm') and masks (in 'masks.xpm')
+of the objects, and the sound associated with them. The first four numbers are the coordinates of
+the rectangle (left, top, bottom, right) of the picture, the next four one are the coordinates of
+the rectangle (same order) of the mask, and the last one is the sound number (defined in source file
+'categories.h').  Several objects can be associated with the same sound.</para>
+</sect1>
+<sect1>
+<title>For translators</title>
+<para>Besides the usual .po files mechanism, translators have to know that the sounds can be localized too.
+If the various translators have recording devices, they can register their voice and store it into .wav
+files in a new subdirectory of the sounds directory. Then they can translate the sound file name in the
+.po file.</para>
+<para>For example, if destination language is italian, translators can register their voice in .wav files located
+in /opt/kde/share/apps/ktuberling/sounds/it. Then they can translate file names like "en/hat.wav" to
+names like "it/capello.wav".</para>
+</sect1>
+<sect1>
+<title>For programmers</title>
+<para>KTuberling isn't really difficult to extend for programmers.</para>
+<sect2>
+<title>C++ classes</title>
+<para><variablelist>
+<varlistentry>
+<term>TopLevel</term>
+<listitem>
+<para>Top-level window and basic program management</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>ToDraw</term>
+<listitem>
+<para>Description of one of the graphical "objects" to be drawn</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2>
+<title>.tuberling files structure</title>
+<para>A .tuberling file holds all the necessary data to redraw a tuberling.
+It can be edited with an ordinary text editor.</para>
+<para>There is one graphical object per line, in the order that is used to draw them.
+Each line contains 5 numbers: the identifier of the object, and the rectangle where it should be drawn
+(left, top, right, bottom). The numbers are separated by whitespaces.</para>
+</sect2>
+</sect1>
+</chapter>
+<chapter id="Epilogue">
+<title>Epilogue</title>
+<sect1>
+<title>Developers</title>
+<para><itemizedlist>
+<listitem>
+<para><literal remap="tt"><ulink url="">John Calhoun</ulink></literal> - Original idea, pictures and english sounds</para>
+</listitem>
+<listitem>
+<para><literal remap="tt"><ulink url="mailto:ebisch@cybercable.tm.fr">Eric Bischoff</ulink></literal> - KDE Programming</para>
+</listitem>
+<listitem>
+<para><literal remap="tt"><ulink url="mailto:Francois-Xavier.Duranceau@loria.fr">François-Xavier Duranceau</ulink></literal> - Tests, advice and help</para>
+</listitem>
+</itemizedlist>
+</para>
+<para>This game is dedicated to my little daughter Sunniva Bischoff</para>
+<para>Thanks to Apple Computer and to the Linux PPC project for having made ports of Linux to the Macintosh.
+KTuberling would never have existed without that!</para>
+</sect1>
+<sect1>
+<title>Credits</title>
+<para><itemizedlist>
+<listitem>
+<para><literal remap="tt"><ulink url="mailto:ebisch@cybercable.tm.fr">Eric Bischoff</ulink></literal> - Author</para>
+</listitem>
+<listitem>
+<para><literal remap="tt"><ulink url="mailto:peter.silva@videotron.ca">Peter Silva</ulink></literal> - Proofreading</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect1>
+<sect1>
+<title>License</title>
+<para><emphasis>ktuberling</emphasis> is published under the terms of the <link linkend="GPL">GNU  General Public License</link> (GPL). There is <link linkend="GPL">no warranty</link> that this program works or for whatever.</para>
+<sect2 id="GPL">
+<title>The GNU General Public License</title>
+<para>
+<programlisting>		    GNU GENERAL PUBLIC LICENSE
+		       Version 2, June 1991
 
  Copyright (C) 1989, 1991 Free Software Foundation, Inc.
                           675 Mass Ave, Cambridge, MA 02139, USA
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
-                            Preamble
+			    Preamble
 
   The licenses for most software are designed to take away your
 freedom to share and change it.  By contrast, the GNU General Public
@@ -115,7 +457,7 @@ patent must be licensed for everyone's free use or not licensed at all.
   The precise terms and conditions for copying, distribution and
 modification follow.
 
-                    GNU GENERAL PUBLIC LICENSE
+		    GNU GENERAL PUBLIC LICENSE
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. This License applies to any program or other work which contains
@@ -313,11 +655,10 @@ Software Foundation, write to the Free Software Foundation; we sometimes
 make exceptions for this.  Our decision will be guided by the two goals
 of preserving the free status of all derivatives of our free software and
 of promoting the sharing and reuse of software generally.
-</PRE>
+</programlisting>
 
-<A NAME="warranty"></A> 
-<PRE>
-                            NO WARRANTY
+
+<programlisting>			    NO WARRANTY
 
   11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
 FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
@@ -339,18 +680,16 @@ YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
 PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
-                     END OF TERMS AND CONDITIONS
-</PRE>
-<P ALIGN="RIGHT">
-
-Next <A HREF="index-4.html">Previous</A>
- <A HREF="index.html#toc5">Table of Contents</A>
-</P>
-<CENTER>
-<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
-</CENTER>    
-</FONT>
-
- 
-</BODY>
-</HTML>
+		     END OF TERMS AND CONDITIONS</programlisting>
+</para>
+</sect2>
+</sect1>
+</chapter>
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->
