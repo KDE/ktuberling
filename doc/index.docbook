@@ -107,8 +107,8 @@ include them in the museum if he gets some spare time.
 the objects you drag and drop. It will <quote>speak</quote> in a language
 that you can chose. You can even use it to learn a bit of vocabulary
 in foreign languages. Currently, &ktuberling; can <quote>speak</quote>
-Danish, German, English, French, Italian, Dutch, Portuguese, Romanian,
-Slovenian and Swedish.
+Danish, German, English, Spanish, French, Italian, Dutch, Portuguese, Romanian,
+Slovak, Slovenian and Swedish.
 </para>
 </chapter>
 
@@ -247,7 +247,7 @@ playground so a new decoration may be created.
 <entry><guiicon>Load</guiicon></entry>
 <entry>
   <link linkend="game-load"><menuchoice>
-  <guimenu>Game</guimenu> <guimenuitem>Load</guimenuitem></menuchoice>
+  <guimenu>Game</guimenu> <guimenuitem>Load...</guimenuitem></menuchoice>
   </link>
   </entry>
 <entry>
@@ -423,7 +423,7 @@ area </para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
  </shortcut>
 <guimenu>Game</guimenu>
- <guimenuitem>Load</guimenuitem>
+ <guimenuitem>Load...</guimenuitem>
  </menuchoice></term>
  <listitem><para><action>Opens an existing tuberling file</action> from
 the museum or from somewhere else if you wish.</para></listitem>
@@ -445,7 +445,7 @@ saved to a small file where only the position of objects are saved.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Game</guimenu>
-<guimenuitem>Save as picture...</guimenuitem>
+<guimenuitem>Save as Picture...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Creates a graphics file</action>
 containing a picture of your tuberling.  Available file formats
@@ -459,7 +459,7 @@ are XPM, JPEG, PNG and BMP.
 <keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Print</guimenuitem>
+<guimenuitem>Print...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Print</action> your tuberling picture using
  &PostScript; format.
@@ -610,7 +610,7 @@ and <command>artsd</command> running to be able to hear sounds.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Speech</guimenu>
-<guimenuitem>No sound</guimenuitem>
+<guimenuitem>No Sound</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles sound off</action>. &ktuberling;
 remembers of this option the next time it starts up.</para></listitem>
