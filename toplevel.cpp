@@ -18,6 +18,7 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kstddirs.h>
+#include <ktoolbarbutton.h>
 #include <kglobal.h>
 
 #include "toplevel.h"
