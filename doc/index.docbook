@@ -36,6 +36,8 @@
 <contrib>Reviewer</contrib>
 </othercredit>
 
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
 </authorgroup>
 
 <date>23/02/2001</date>
@@ -827,6 +829,8 @@ graphics section of the technical reference.</para> </listitem>
 <para>Thanks to Apple Computer and to the &LinuxPPC; project for having made
 ports of &Linux; to the &Mac;.  &ktuberling; would never have existed without
 that!</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
 &underGPL;
