@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 {
 
   KAboutData aboutData( "ktuberling", I18N_NOOP("KTuberling"), 
-    version, description, KAboutData::GPL, 
+    version, description, KAboutData::License_GPL, 
     "(c) 1999, The KTuberling Developers");
   aboutData.addAuthor("Eric Bischoff",0, "ebisch@cybercable.tm.fr");
   aboutData.addAuthor("John Calhoun");
