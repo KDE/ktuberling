@@ -589,7 +589,7 @@ bool PlayGround::loadFrom(const QString &name)
     fclose(fp);
     return false;
   }
-  change(newGameboard);
+  topLevel->changeGameboard(newGameboard);
 
   for (;;)
   {

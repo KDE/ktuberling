@@ -150,8 +150,11 @@ void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, b
 void TopLevel::changeGameboard(uint newGameboard)
 {
   // Do not accept to switch to same gameboard
-  if (newGameboard == selectedGameboard)
+  if (newGameboard == selectedGameboard) {
+    // select this gameboard again
+    ((KToggleAction*) actionCollection()->action(gameboardActions[newGameboard].latin1()))->setChecked(true);
     return;
+  }
 
   // Unselect preceeding gameboard
   ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->setChecked(false);
@@ -160,6 +163,9 @@ void TopLevel::changeGameboard(uint newGameboard)
   selectedGameboard = newGameboard;
   writeOptions();
 
+  if( !((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->isChecked() )
+    ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->setChecked(true);
+  
   // Change gameboard effectively
   playGround->change(newGameboard);
 }
@@ -168,8 +174,11 @@ void TopLevel::changeGameboard(uint newGameboard)
 void TopLevel::changeLanguage(uint newLanguage)
 {
   // Do not accept to switch to same language
-  if (newLanguage == selectedLanguage && soundEnabled)
+  if (newLanguage == selectedLanguage && soundEnabled) {
+    // newLanguage should stay checked
+    ((KToggleAction*) actionCollection()->action(languageActions[newLanguage].latin1()))->setChecked(true);
     return;
+  }
 
   // Unselect preceeding language
   if (!soundEnabled) ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(false);
