@@ -350,7 +350,7 @@ void TopLevel::filePicture()
 
   KURL url = KFileDialog::getSaveURL
                 (getenv("HOME"),
-                 i18n(  "*.xpm|Unix pixmaps (*.xpm)\n"
+                 i18n(  "*.xpm|UNIX pixmaps (*.xpm)\n"
                         "*.jpg|JPEG compressed files (*.jpg)\n"
                         "*.png|Next generation pictures (*.png)\n"
                         "*.bmp|Windows bitmaps (*.bmp)\n"
