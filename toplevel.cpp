@@ -18,8 +18,11 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kstddirs.h>
+#include <kmessagebox.h>
 #include <ktoolbarbutton.h>
 #include <kglobal.h>
+
+#include <kio/netaccess.h>
 
 #include "toplevel.h"
 #include "categories.h"
@@ -314,26 +317,27 @@ void TopLevel::fileOpen()
   for (p = dir + strlen(dir) - 1; p >= dir; p--)
     if (*p == '/') { *p = '\0'; break; }
 
-  name = KFileDialog::getOpenFileName(dir, "*.tuberling");
+  KURL url = KFileDialog::getOpenURL(dir, "*.tuberling");
+  
   toolbar->getButton(ID_OPEN)->setDown(false);
-  if (!name.isEmpty())
-  {
-    toDraw.clear();
-    history.clear();
-    currentAction = 0;
 
-    if (!loadFrom(name))
-      QMessageBox::warning
-        (this,
-         i18n("Tuberling"),
-         i18n("Could not load file"),
-	 i18n("OK"));
+  if (url.isEmpty())
+    return;
+  
+  KIO::NetAccess::download( url, name );
+  
+  toDraw.clear();
+  history.clear();
+  currentAction = 0;
 
-    enableUndo(currentAction != 0);
-    enableRedo(false);
-    repaintAll();
-  }
+  if (!loadFrom(name))
+    QMessageBox::warning(this,i18n("Tuberling"),i18n("Could not load file"),i18n("OK"));
 
+  enableUndo(currentAction != 0);
+  enableRedo(false);
+  repaintAll();
+
+  KIO::NetAccess::removeTempFile( name );
 }
 
 // Save gameboard
@@ -346,23 +350,27 @@ void TopLevel::fileSave()
   for (p = dir + strlen(dir) - 1; p >= dir; p--)
     if (*p == '/') { *p = '\0'; break; }
 
-  name = KFileDialog::getSaveFileName(dir, "*.tuberling");
+  KURL url = KFileDialog::getSaveURL(dir, "*.tuberling");
+  
   toolbar->getButton(ID_SAVE)->setDown(false);
-  if (!name.isEmpty())
+  
+  if (url.isEmpty())
+    return;
+  
+ 
+  if( !url.isLocalFile() )
   {
-    if (!saveAs(name))
-      QMessageBox::warning
-        (this,
-         i18n("Tuberling"),
-         i18n("Could not save file"),
-	 i18n("OK"));
+    KMessageBox::sorry( 0L, i18n( "Only saving to local files currently supported." ) );
+    return;
   }
+ 
+  if( !saveAs( url.path() ) )
+    QMessageBox::warning(this,i18n("Tuberling"),i18n("Could not save file"),i18n("OK"));
 }
 
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  QString name;
   QPixmap picture(QPixmap::grabWindow
 	(winId(),
          editableArea.left(),
@@ -370,48 +378,55 @@ void TopLevel::filePicture()
          editableArea.width(),
          editableArea.height()));
 
-  name = KFileDialog::getSaveFileName
+  KURL url = KFileDialog::getSaveURL
 		(getenv("HOME"),
 		 i18n(	"*.xpm|Unix pixmaps (*.xpm)\n"
 			"*.jpg|JPEG compressed files (*.jpg)\n"
 			"*.png|Next generation pictures (*.png)\n"
 			"*.bmp|Windows bitmaps (*.bmp)\n"
 		 	"*|All picture formats"));
-  if (!name.isEmpty())
+  if( url.isEmpty() )
+    return;
+  
+  if( !url.isLocalFile() )
   {
-    const char *format;
-    int suffix;
-    QString end;
-
-    suffix = name.findRev('.');
-    if (suffix == -1)
-    {
-      name += ".xpm";
-      end = "xpm";
-    }
-    else end = name.mid(suffix + 1, name.length());
-
-    if (end == "xpm") format = "XPM";
-    else if (end == "jpg") format = "JPEG";
-    else if (end == "png") format = "PNG";
-    else if (end == "bmp") format = "BMP";
-    else
-    {
-      QMessageBox::warning
-        (this,
-         i18n("Tuberling"),
-         i18n("Unknown picture format"),
-	 i18n("OK"));
-      return;
-    }
-
-    if (!picture.save(name, format))
-      QMessageBox::warning
-        (this,
-         i18n("Tuberling"),
-         i18n("Could not save file"),
-	 i18n("OK"));
+    KMessageBox::sorry( 0L, i18n( "Only saving to local files supported yet." ) );
+    return;
   }
+  
+  QString name = url.path();
+  const char *format;
+  int suffix;
+  QString end;
+
+  suffix = name.findRev('.');
+  if (suffix == -1)
+  {
+    name += ".xpm";
+    end = "xpm";
+  }
+  else end = name.mid(suffix + 1, name.length());
+
+  if (end == "xpm") format = "XPM";
+  else if (end == "jpg") format = "JPEG";
+  else if (end == "png") format = "PNG";
+  else if (end == "bmp") format = "BMP";
+  else
+  {
+    QMessageBox::warning
+      (this,
+       i18n("Tuberling"),
+       i18n("Unknown picture format"),
+       i18n("OK"));
+    return;
+  }
+
+  if (!picture.save(name, format))
+    QMessageBox::warning
+      (this,
+       i18n("Tuberling"),
+       i18n("Could not save file"),
+       i18n("OK"));
 }
 
 // Save gameboard as picture
