@@ -20,7 +20,7 @@ ktuberling_SOURCES = action.cpp main.cpp toplevel.cpp todraw.cpp
 
 ktuberling_METASOURCES = USE_AUTOMOC
 ktuberling_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-ktuberling_LDADD = $(LIB_KFILE) $(LIB_KIMGIO)
+ktuberling_LDADD = $(LIB_KFILE) $(LIB_KSYCOCA)
 
 KDE_ICON = ktuberling
 
