@@ -29,4 +29,4 @@ appsdir = $(kde_appsdir)/Games
 apps_DATA = ktuberling.desktop
 
 messages:
-	$(XGETTEXT) -C -kI18N_NOOP -ki18n -x $(includedir)/kde.pot $(ktuberling_SOURCES) && mv messages.po $(podir)/ktuberling.pot
+	$(XGETTEXT) $(ktuberling_SOURCES) -o $(podir)/ktuberling.pot
