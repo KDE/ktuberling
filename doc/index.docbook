@@ -25,7 +25,7 @@ V1.0//EN" [   <!ENTITY ktuberling
 
 <!--rewritten to conform to the KDE2 documentation template -->
 
-<date>06/02/2001</date>
+<date>21/02/2001</date>
 <releaseinfo>0.01.00</releaseinfo>
 <!--release level pulled from main.cpp, 12/11/2000 cvs head -->
 
