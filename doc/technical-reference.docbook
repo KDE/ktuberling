@@ -9,8 +9,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2002-01-14</date>
-<releaseinfo>0.02.08</releaseinfo>
+<date>2002-04-10</date>
+<releaseinfo>0.03.02</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -42,14 +42,15 @@ inclusion in future releases.
 The size and shape of the playground and the number of objects can be
 changed.  New playgrounds can be added.  Only two image files need to be
 created for each playground: a gameboard and a mask. A maximum of 8
-playgrounds is allowed, out of which only 2 are currently used.
+playgrounds is allowed, out of which only 3 are currently used.
 </para>
 
 <para>
-Four images are used in &ktuberling;: <filename>potato-game.png</filename>,
-<filename>potato-mask.png</filename>, <filename>penguin-game.png</filename> and
-<filename>penguin-mask.png</filename>.  The standard location for these files is the
-directory <filename
+Six images are used in &ktuberling;: <filename>potato-game.png</filename>,
+<filename>potato-mask.png</filename>, <filename>penguin-game.png</filename>,
+<filename>penguin-mask.png</filename>, <filename>aquarium-game.png</filename>
+and <filename>aquarium-mask.png</filename>. The standard location
+for these files is the directory <filename
 class="directory">$KDEDIR/share/apps/ktuberling/pics/</filename>.
 </para>
 
@@ -72,8 +73,9 @@ In the same directory, a file named <filename>layout.xml</filename>.
 (<filename>$KDEDIR/share/apps/ktuberling/pics/layout.xml</filename>) tells
 which images to use and links them to menu entries.  It also contains the
 position parameters of the playground and the objects in the gameboard and
-in the masks.  It finally assigns the sounds to objects and places the
-objects in groups.  It follows standard XML syntax (see details
+in the masks.  It assigns the sounds to objects and places the
+objects in groups.  It finally declares languages as sets of translated sounds.
+It follows standard XML syntax (see details
 <link linkend="layout-details">below</link>).
 </para>
 
@@ -83,12 +85,8 @@ Still in the same directory, a file named <filename>layout.i18n</filename>
 recapitulates the strings in <filename>layout.xml</filename> that can be
 translated:
 <itemizedlist>
-<listitem><para>The menu entries that allow to choose the gameboards</para></listitem>
+<listitem><para>The menu entries that allow to choose the playground and the language</para></listitem>
 <listitem><para>The names of the categories of objects</para></listitem>
-<listitem><para>The names of the sound files. This is a programming trick
-that permits that the translation teams record someone saying the names of
-objects in their own languages, and to reference the names of these sound
-files when they exist.</para></listitem>
 </itemizedlist>
 </para>
 
@@ -96,9 +94,9 @@ files when they exist.</para></listitem>
 One directory above, a file named <filename>ktuberlingui.rc</filename>
 (<filename>$KDEDIR/share/apps/ktuberling/ktuberlingui.rc</filename>) is a
 second XML file describing the menus of &ktuberling;. It should contain
-one <markup>&lt;action&gt;</markup> tag per playground. The symbolic name of the 
-action in this file should be identical to the symbolic name of the action 
-in <filename>layout.xml</filename>.
+one <markup>&lt;action&gt;</markup> tag per playground and language.
+The symbolic name of the action in this file should be identical to
+the symbolic name of the action in <filename>layout.xml</filename>.
 </para>
 
 </sect1>
@@ -115,12 +113,12 @@ translating program labels and prompts, the sounds can be localized too.
 If the various
 translators can record their voice to a <literal role="extension">.wav</literal>
 file, they can store that file to the language-specific subdirectory of the
-sounds directory.  The name of the sound file is then translated in the <literal
-role="extension">.po</literal> file. For example, if destination language is
+sounds directory.  The name of the sound is then assigned to a file in the
+<filename>layout.xml</filename> file.  For example, if destination language is
 Italian, translators can record their voice in <literal
 role="extension">.wav</literal> files located in
 <filename>$KDEDIR/share/apps/ktuberling/sounds/it</filename>. Then they can
-translate file names like <filename>en/hat.wav</filename> to names like
+assign the sound named <quote>hat</quote> to the filename
 <filename>it/cappello.wav</filename>.
 </para>
 
@@ -156,11 +154,30 @@ KDE Translation HOWTO</ulink>.
 <para>Top-level window and basic program management</para>
 </listitem>
 </varlistentry>
+
+<varlistentry>
+<term><classname>PlayGround</classname></term>
+<listitem>
+<para>Description of one of the game levels</para> </listitem>
+</varlistentry>
+
 <varlistentry>
 <term><classname>ToDraw</classname></term>
 <listitem>
 <para>Description of one of the graphical <quote>objects</quote> to be
 drawn</para> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term><classname>SoundFactory</classname></term>
+<listitem>
+<para>Description of one of the languages and its sounds</para> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term><classname>Action</classname></term>
+<listitem>
+<para>One of the user's manipulation in the undo/redo stack</para> </listitem>
 </varlistentry>
 </variablelist>
 
@@ -189,7 +206,7 @@ separated by whitespaces.</para>
 <para>
 The top-level tag is unique and is named <markup>&lt;ktuberling&gt;</markup>.
 It contains several <markup>&lt;playground&gt;</markup> tags, one per
-playground.
+playground, and several <markup>&lt;language&gt;</markup> tags, one per language.
 </para>
 
 <para>
@@ -211,7 +228,7 @@ This action identifier should be identical to the one in
 
 <para>
 The <markup>&lt;editablearea&gt;</markup> tag describes the position of the
-area where you can drop objects, and the sound associated with it.
+area where you can drop objects, and the name of the sound associated with it.
 </para>
 
 <para>
@@ -222,8 +239,16 @@ can describe the position and the text of the group of <quote>goodies</quote>.
 
 <para>
 The <markup>&lt;object&gt;</markup> tag describes the position (in the
-gameboard and in the masks) of an object, as well as the English sound
+gameboard and in the masks) of an object, as well as the name of the sound
 associated with it.
+</para>
+
+<para>
+The <markup>&lt;language&gt;</markup> tag has one attribute: <markup>code</markup>
+This attribute give the code of the locale for that language.
+The <markup>&lt;language&gt;</markup> tag also contains one
+<markup>&lt;menuitem&gt;</markup> tag and several
+<markup>&lt;sound&gt;</markup> tags.
 </para>
 
 <para>

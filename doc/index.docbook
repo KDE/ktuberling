@@ -39,8 +39,8 @@
 
 </authorgroup>
 
-<date>2002-03-08</date>
-<releaseinfo>0.03.01</releaseinfo>
+<date>2002-04-09</date>
+<releaseinfo>0.03.02</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year>
@@ -64,10 +64,11 @@
 <keyword>KDE</keyword>
 <keyword>KTuberling</keyword>
 <keyword>game</keyword>
+<keyword>children</keyword>
+<keyword>tuberling</keyword>
 <keyword>potato</keyword>
 <keyword>penguin</keyword>
-<keyword>tuberling</keyword>
-<keyword>children</keyword>
+<keyword>aquarium</keyword>
 </keywordset>
 </bookinfo>
 	     
@@ -82,7 +83,7 @@ suitable for adults who have remained young at heart.
 <para>
 It is a <quote>potato editor</quote>. That means that you can drag and drop
 eyes, mouths, mustache, and other parts of face and goodies onto a potato-like
-guy. Similarly, you have a penguin on which you can drop other stuff.
+guy. Similarly, you have a penguin and an aquarium on which you can drop other stuff.
 </para>
 
 <para>
@@ -91,18 +92,20 @@ you can.
 </para>
 
 <para>
-There is a museum (like a <quote>Madame Tusseau</quote> gallery) where you can
-find many funny examples of decorated potatoes and penguins. Of course, you can
-send your own creations to the programmer, <ulink url="mailto:e.bischoff@noos.fr">Eric
-Bischoff</ulink>, who will include them in the museum if he gets some spare
-time.
+There is a museum (like a <quote>Madame Tusseau</quote> gallery) where
+you can find many funny examples of decorated potatoes, penguins and
+aquariums. Of course, you can send your own creations to the programmer,
+<ulink url="mailto:e.bischoff@noos.fr">Eric Bischoff</ulink>, who will
+include them in the museum if he gets some spare time.
 </para>
 
 <para>
-&ktuberling; can also <quote>speak</quote>. It will spell out the name of the objects
-you drag and drop. It will <quote>speak</quote> in your own language, or English if
-the sounds for your language do not exist. Currently, &ktuberling; can <quote>speak</quote>
-Danish, German, English, French, Dutch, Portuguese, Romanian, Slovenian and Swedish.
+&ktuberling; can also <quote>speak</quote>. It will spell out the
+name of the objects you drag and drop. It will <quote>speak</quote>
+in your own language, or English if the sounds for your language do not
+exist. Currently, &ktuberling; can <quote>speak</quote> Danish, German,
+English, French, Italian, Dutch, Portuguese, Romanian, Slovenian and
+Swedish.
 </para>
 </chapter>
 
@@ -120,7 +123,7 @@ There are two areas in the main window:
 <listitem><para><quote>Playground</quote> area, on the left side.
 </para></listitem>
 <listitem><para>
-<quote>Objects</quote> area, on the right side, where you select Objects to
+<quote>Objects</quote> area, on the right side, where you select objects to
 place on your playground.
 </para></listitem>
 </itemizedlist>
@@ -216,7 +219,7 @@ The toolbar provides buttons for the commonly used functions.
 <entry>
 Resets the <quote>playground</quote> area. This cleans all parts off the
 playground so a new decoration may be created.
- </entry>
+</entry>
 </row>
 
 
@@ -502,33 +505,14 @@ placement.  This menu option is active only if you have previously used
 </sect2>
 
 <sect2>
-<title>The <guimenu>Options</guimenu> Menu</title>
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu.option.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.option.eps"/>
-</imageobject>
-<textobject><phrase>Options Menu</phrase></textobject>
-</mediaobject>
+<title>The <guimenu>Playground</guimenu> Menu</title>
+<!-- screnshots to be taken again -->
 
-<para><variablelist>
-<varlistentry>
-<term><menuchoice>
-<guimenu>Options</guimenu>
-<guimenuitem>Sound</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles sound on/off</action>.
-If <filename>artsd</filename> is not running, this menu item is
-disabled. You need to have kdemultimedia installed
-to be able to hear sounds. &ktuberling; remembers last setting
-of this option the next time it starts up.</para></listitem>
-</varlistentry>
+<variablelist>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Options</guimenu>
+<guimenu>Playground</guimenu>
 <guimenuitem>Potato Guy</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Switches to potato playground</action>.
@@ -538,15 +522,81 @@ time it starts up.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Options</guimenu>
+<guimenu>Playground</guimenu>
 <guimenuitem>Penguin</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Switches to penguin playground</action>.
 &ktuberling; remembers the last chosen playground the next
 time it starts up.</para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Playground</guimenu>
+<guimenuitem>Aquarium</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Switches to aquarium playground</action>.
+&ktuberling; remembers the last chosen playground the next
+time it starts up.</para></listitem>
+</varlistentry>
 </variablelist>
+</sect2>
+
+<sect2>
+<title>The <guimenu>Speech</guimenu> Menu</title>
+<!-- screnshots to be taken again -->
+
+<para>
+Please note that you need to have kdemultimedia installed
+and <command>artsd</command> running to be able to hear sounds.
 </para>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Speech</guimenu>
+<guimenuitem>No sound</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles sound off</action>. &ktuberling;
+remembers of this option the next time it starts up.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Speech</guimenu>
+<guimenuitem>Danish</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles sound on and speaks Danish</action>.
+If Danish sounds are not installed then this option is greyed out. &ktuberling;
+remembers of this option the next time it starts up.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Speech</guimenu>
+<guimenuitem>German</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles sound on and speaks German</action>.
+If German sounds are not installed then this option is greyed out. &ktuberling;
+remembers of this option the next time it starts up.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Speech</guimenu>
+<guimenuitem>English</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles sound on and speaks English</action>.
+If English sounds are not installed then this option is greyed out. &ktuberling;
+remembers of this option the next time it starts up.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>etc...</term>
+<listitem><para>Same for the other languages.</para></listitem>
+</varlistentry>
+</variablelist>
 </sect2>
 
 <sect2>
@@ -595,7 +645,7 @@ advice and help</para>
 </listitem>
 
 <listitem>
-<para>Bas Willems <email>next@euronet.nl</email> - Graphics reworks</para>
+<para>Bas Willems <email>next@euronet.nl</email> - Graphics reworks and aquarium theme</para>
 </listitem>
 
 <listitem>
