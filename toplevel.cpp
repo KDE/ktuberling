@@ -314,7 +314,7 @@ void TopLevel::fileOpen()
   QString name;
 
   name = KFileDialog::getOpenFileName((const char *)
-	locate("data", "/ktuberling/museum"), "*.tuberling");
+	locate("data", "ktuberling/museum"), "*.tuberling");
   toolbar->getButton(ID_OPEN)->setDown(false);
   if (!name.isEmpty())
   {
@@ -341,7 +341,7 @@ void TopLevel::fileSave()
   QString name;
 
   name = KFileDialog::getSaveFileName((const char *)
-	locate("data", "/ktuberling/museum"), "*.tuberling");
+	locate("data", "ktuberling/museum"), "*.tuberling");
   toolbar->getButton(ID_SAVE)->setDown(false);
   if (!name.isEmpty())
   {
@@ -850,7 +850,7 @@ void TopLevel::playSound(int soundNumber) const
   }
 
   audioServer->play
-	(locate("data", "/ktuberling/sounds/") + soundName);
+	(locate("data", "ktuberling/sounds/") + soundName);
 }
 
 // Repaint all the editable area
