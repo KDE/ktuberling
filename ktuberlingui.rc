@@ -1,9 +1,8 @@
 <!DOCTYPE kpartgui>
 <kpartgui name="ktuberling" version="1">
 <MenuBar>
-  <Menu name="game" noMerge="0"><text>&amp;Game</text>
-    <Action name="game_print"/>
-    <Action name="game_save_picture"/>
+  <Menu name="game"><text>&amp;Game</text>
+    <Action name="game_save_picture" append="save_merge"/>
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="options_sound"/>

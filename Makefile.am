@@ -11,7 +11,7 @@
 # kde_toolbardir    Where general toolbar icons should go to.
 # kde_wallpaperdir  Where general wallpapers should go to.
 
-INCLUDES= $(all_includes)
+INCLUDES= -I$(top_srcdir)/libkdegames $(all_includes)
 SUBDIRS = . museum sounds pics
 
 bin_PROGRAMS = ktuberling
@@ -19,8 +19,8 @@ bin_PROGRAMS = ktuberling
 ktuberling_SOURCES = action.cpp main.cpp toplevel.cpp playground.cpp todraw.cpp
 
 ktuberling_METASOURCES = USE_AUTOMOC
-ktuberling_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-ktuberling_LDADD = $(LIB_KFILE) -lkdeprint
+ktuberling_LDFLAGS = -L$(top_builddir)/libkdegames $(all_libraries) $(KDE_RPATH)
+ktuberling_LDADD = -lkdegames $(LIB_KFILE) -lkdeprint 
 
 KDE_ICON = ktuberling
 

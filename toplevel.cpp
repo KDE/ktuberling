@@ -16,6 +16,7 @@
 #include <kio/netaccess.h>
 #include <kaction.h>
 #include <kstdaction.h>
+#include <kstdgameaction.h>
 
 #include <kprinter.h>
 #include <qprintdialog.h>
@@ -85,17 +86,20 @@ void TopLevel::writeOptions()
 void TopLevel::setupKAction()
 {
 //Game
-  KStdAction::openNew(this, SLOT(fileNew()), actionCollection(), "game_new");
-  KStdAction::open(this, SLOT(fileOpen()), actionCollection(), "game_load");
-  KStdAction::save(this, SLOT(fileSave()), actionCollection(), "game_save");
-  KStdAction::print(this, SLOT(filePrint()), actionCollection(), "game_print");
-  KStdAction::quit(kapp, SLOT(quit()), actionCollection(), "game_quit");
+  KStdGameAction::gameNew(this, SLOT(fileNew()), actionCollection());
+  KStdGameAction::load(this, SLOT(fileOpen()), actionCollection());
+  KStdGameAction::save(this, SLOT(fileSave()), actionCollection());
+  KStdGameAction::print(this, SLOT(filePrint()), actionCollection());
+  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
   (void)new KAction(i18n("Save &as picture..."), 0, this, SLOT(filePicture()), actionCollection(), "game_save_picture");
 
 //Edit
   KStdAction::copy(this, SLOT(editCopy()), actionCollection());
   KStdAction::undo(this, SLOT(editUndo()), actionCollection());
   KStdAction::redo(this, SLOT(editRedo()), actionCollection());
+  enableUndo(false);
+  enableRedo(false);
+  
 
 //Settings
   KToggleAction* t = new KToggleAction(i18n("&Sound"), 0, this, SLOT(optionsSound()), actionCollection(), "options_sound");
