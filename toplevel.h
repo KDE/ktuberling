@@ -44,8 +44,6 @@ protected:
   bool loadBitmaps();
   void setupGeometry();
 
-  virtual void closeEvent(QCloseEvent *);
-
 private:
 
   bool zone(QPoint &);

@@ -546,12 +546,6 @@ void TopLevel::doPaintEvent(QPaintEvent *event)
   bitBlt(mainWidget, destination, &cache, area, Qt::CopyROP);
 }
 
-// Top level window close box interaction handling
-void TopLevel::closeEvent(QCloseEvent *)
-{
-  kapp->quit();
-}
-
 // Mouse button down event
 void TopLevel::doMousePressEvent(QMouseEvent *event)
 {
