@@ -1,7 +1,7 @@
 
-- Better format for .tuberling files (object names instead of numbers)
+- Better format for .tuberling files (object names instead of numbers, XML?)
 
-- Ability to choose other gameboards (for example : farm with animals)
+- Ability to choose other gameboards (for example : farm with animals, ocean with fishes, clown with accessories, etc)
 
 - Draw a small hand when grabbing objects
 
@@ -9,13 +9,11 @@
 
 ============== things for which I need help from other people : ==================
 
-- In the doc, I say that a few things don't work
-  (copy image to clipboard, printer selection fuction)
-  Maybe it works now with Qt 2.0 ?
-
 - Have the doc proofread once again
 
 - French sounds
 
-- Colorized gameboard and objects
+- Better graphics with colorized gameboard and objects
+
+- Testing of clipboard, printing and sounds on other machines. You always have surprises
 

@@ -37,8 +37,6 @@ TopLevel::TopLevel()
   setBackgroundColor(white);
   readOptions();
   setupSound();
-  setupMenuBar();
-  setupToolBar();
   objectsLayout = shapesLayout = 0;
   textsList = soundsList = 0;
 
@@ -59,6 +57,8 @@ TopLevel::TopLevel()
   currentAction = 0;
 
   setupGeometry();
+  setupMenuBar();
+  setupToolBar();
 }
 
 // Destructor
@@ -114,7 +114,9 @@ void TopLevel::setupMenuBar()
   KConfig *config = KApplication::getKApplication()->getConfig();
   KStdAccel acc(config);
 
-  menubar = new KMenuBar(this);
+  menubar = menuBar();
+  menubar->setGeometry(0, 0, width(), 24);
+
   fileMenu = new QPopupMenu();
   editMenu = new QPopupMenu();
   optionsMenu = new QPopupMenu();
@@ -182,14 +184,15 @@ void TopLevel::setupMenuBar()
   menubar->insertSeparator(-1);
   menubar->insertItem(i18n("&Help"), helpMenu);
 
-  setMenu(menubar);
 }
 
 // Toolbar initialization
 void TopLevel::setupToolBar()
 {
   KIconLoader iconLoader;
-  toolbar = toolBar(-1);
+
+  toolbar = toolBar();
+  toolbar->setGeometry(0, 24, width(), 24);
 
   toolbar->insertButton(iconLoader.loadIcon("filenew.xpm"), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
   toolbar->insertButton(iconLoader.loadIcon("fileopen.xpm"), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
@@ -202,6 +205,7 @@ void TopLevel::setupToolBar()
   toolbar->insertSeparator();
 
   toolbar->insertButton(iconLoader.loadIcon("help.xpm"), ID_HELP, SIGNAL(pressed()), kapp, SLOT(appHelpActivated()), true, i18n("Help"));
+
 }
 
 // Load background and draggable objects masks
@@ -420,12 +424,14 @@ void TopLevel::filePicture()
 // Save gameboard as picture
 void TopLevel::filePrint()
 {
-//  bool ok;
+  QPrinter printer;
+  bool ok;
 
-//  ok = QPrintDialog::getPrinterSetup(&printer);
+  ok = QPrintDialog::getPrinterSetup(&printer);
   toolbar->getButton(ID_PRINT)->setDown(false);
-//  if (!ok) return;
-  if (!printPicture())
+  if (!ok) return;
+  repaint(true);
+  if (!printPicture(printer))
     QMessageBox::warning
         (this,
          "KTuberling",
@@ -530,7 +536,7 @@ void TopLevel::aboutApp()
 {
   QMessageBox::about
     (this,
-     i18n("About ktuberling 0.1"),
+     i18n("About ktuberling 0.1.1"),
      i18n("A program by Eric Bischoff (mailto:ebisch@cybercable.tm.fr)\n"
 	  "and John Calhoun.\n\n"
 	  "This program is dedicated to my daughter Sunniva."));
@@ -751,9 +757,8 @@ bool TopLevel::saveAs(const char *name)
 }
 
 // Print gameboard's picture
-bool TopLevel::printPicture() const
+bool TopLevel::printPicture(QPrinter &printer) const
 {
-  QPrinter printer;
   QPainter artist;
   QPixmap picture(QPixmap::grabWindow
 	(winId(),
@@ -763,7 +768,7 @@ bool TopLevel::printPicture() const
          editableArea.height()));
 
   if (!artist.begin(&printer)) return false;
-  artist.drawPixmap(QPoint(0, 0), picture);
+  artist.drawPixmap(QPoint(32, 32), picture);
   if (!artist.end()) return false;
   return true;
 }

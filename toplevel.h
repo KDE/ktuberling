@@ -51,7 +51,7 @@ private:
   bool zone(QPoint &);
   bool loadFrom(const char *);
   bool saveAs(const char *);
-  bool printPicture() const;
+  bool printPicture(QPrinter &) const;
   void drawText(QPainter &, QRect &, int) const;
   void playSound(int) const;
   void repaintAll();
