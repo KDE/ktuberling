@@ -45,6 +45,20 @@ TopLevel::~TopLevel()
 {
 }
 
+// Session management - read properties
+void TopLevel::readProperties(KConfig *config)
+{
+  // Nothing to do, the settings have already been restored,
+  // even when there is no session management
+}
+
+// Session management - write properties
+void TopLevel::saveProperties(KConfig *config)
+{
+  // Nothing to do, the setting have already been saved
+  // each time the user changed them
+}
+
 // Enable or disable "undo" button and menu item
 void TopLevel::enableUndo(bool enable) const
 {
