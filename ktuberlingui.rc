@@ -6,6 +6,9 @@
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="options_sound"/>
+    <Separator/>
+    <Action name="options_potato_guy"/>
+    <Action name="options_penguin"/>
   </Menu>
 </MenuBar>
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
