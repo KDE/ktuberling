@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+MimeType=application/x-tuberling
+Comment=Funny Potato
+DefaultApp=ktuberling
+Icon=ktuberling.xpm
+Type=MimeType
+Patterns=*.tuberling;

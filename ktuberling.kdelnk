@@ -3,11 +3,10 @@
 [KDE Desktop Entry]
 Exec=ktuberling -caption "%c"
 Name=KTuberling
-Name[pt_BR]=KTurberling
 Comment=A Potato Editor
 Comment[de]=Ein "Kartoffel"-Editor
 Type=Application
 DocPath=ktuberling/index.html
 Terminal=0
 Icon=ktuberling.xpm
-MimeType=application/x-ktuberling
+MimeType=application/x-tuberling
