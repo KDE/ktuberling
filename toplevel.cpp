@@ -90,7 +90,7 @@ void TopLevel::readOptions()
   KConfig *config;
   QString option;
 
-  config = KApplication::getKApplication()->getConfig();
+  config = KApplication::kApplication()->config();
 
   config->setGroup("General");
   option = config->readEntry("Sound", "on");
@@ -102,7 +102,7 @@ void TopLevel::writeOptions()
 {
   KConfig *config;
 
-  config = KApplication::getKApplication()->getConfig();
+  config = KApplication::kApplication()->config();
 
   config->setGroup("General");
   config->writeEntry("Sound", soundEnabled? "on": "off");
@@ -112,7 +112,7 @@ void TopLevel::writeOptions()
 // Menubar initialization
 void TopLevel::setupMenuBar()
 {
-  KConfig *config = KApplication::getKApplication()->getConfig();
+  KConfig *config = KApplication::kApplication()->config();
   KStdAccel acc(config);
 
   menubar = menuBar();
@@ -170,7 +170,7 @@ void TopLevel::setupMenuBar()
   QString about = i18n("A program by Eric Bischoff (ebisch@cybercable.tm.fr)\n"
 	               "and John Calhoun.\n\n"
 	               "This program is dedicated to my daughter Sunniva.");
-  helpMenu = kapp->getHelpMenu(false, about);
+  helpMenu = kapp->helpMenu(false, about);
 
   menubar->insertItem(i18n("&File"), fileMenu);
   menubar->insertItem(i18n("&Edit"), editMenu);
