@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     "(c) 1999-2001, The KTuberling Developers", text);
   aboutData.addAuthor("Eric Bischoff", I18N_NOOP("Developer"), "e.bischoff@noos.fr");
   aboutData.addAuthor("John Calhoun", I18N_NOOP("Original concept and artwork"));
-  aboutData.addAuthor("Bas Willems", I18N_NOOP("New artwork"), "next@euronet.nl");
+  aboutData.addCredit("Bas Willems", I18N_NOOP("New artwork"), "next@euronet.nl");
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication app;
