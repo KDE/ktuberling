@@ -24,7 +24,7 @@
 <para>
 &ktuberling; offers a gentle and rewarding introduction to &kde; customization
 and programming.  The application can be extended.  For example, without any
-coding, new vegetable characters can be added by changing the graphics files. By
+coding, new playgrounds can be added by changing the graphics files. By
 adding appropriate sound files, translators can change the sounds to their
 native tongue!
 </para>
@@ -35,119 +35,72 @@ developer <ulink url="mailto:e.bischoff@noos.fr">Eric Bischoff</ulink> for
 inclusion in future releases.
 </para>
 
-<sect1 id="graphics">
-<title>Graphics</title>
+<sect1 id="for-artists">
+<title>For artists</title>
 
 <para>
-The size and shape of the gameboard and the number of objects can be
-changed.  Only two files need to be created: a gameboard and a mask.
+The size and shape of the playground and the number of objects can be
+changed.  New playgrounds can be added.  Only two image files need to be
+created for each playground: a gameboard and a mask. A maximum of 8
+playgrounds is allowed, out of which only 2 are currently used.
 </para>
 
 <para>
-Two images are used in &ktuberling;: <filename>gameboard.xpm</filename> and
-<filename>masks.xpm</filename>.  The standard location for these files is the
+Four images are used in &ktuberling;: <filename>potato-game.png</filename>,
+<filename>potato-mask.png</filename>, <filename>penguin-game.png</filename> and
+<filename>penguin-mask.png</filename>.  The standard location for these files is the
 directory <filename
-class="directory">$KDE/share/apps/ktuberling/pics/</filename>.
-<filename>gameboard.xpm</filename> holds the gameboard and the objects that the
-user selects.  This is the graphic that the user sees when playing the game.
+class="directory">$KDEDIR/share/apps/ktuberling/pics/</filename>.
 </para>
 
 <para>
-The second file, <filename>masks.xpm</filename>, contains only masks of the
+The first type of images, <filename>*-game.png</filename> holds the playground
+and the objects that the user selects.  This is the graphic that the user sees
+when playing the game.
+</para>
+
+<para>
+The second type of images, <filename>*-mask.xpm</filename>, contains only masks of the
 objects.  The masks are used to delimit the borders of the objects and, in some
-cases, give the object some transparancy (for example, the spectacles).  In the
-distributed <filename>masks.xpm</filename> the objects are duplicated from
-<filename>gameboard.xpm</filename>.  This is an artifact of the original
-artist's technique.  Only the masks, the stencil-like images, in
-<filename>masks.xpm</filename> are used by the program.
+cases, give the object some transparancy (for example, the spectacles).  It is
+recommended, but not mandatory, to put the objects at the same position in
+the gameboard file as in the mask file.
 </para>
 
 <para>
-The third file in the directory, <filename>layout.txt</filename>.
-(<filename>$KDE/share/apps/ktuberling/pics/layout.txt</filename>) contains the
-position parameters of the objects and the masks.  It also assigns the sounds to
-objects and places the objects in groups. This file is changed to describe the
-graphic to the program.  It contains only decimal integers, separated by
-whitespace, followed by a comment.
+In the same directory, a file named <filename>layout.xml</filename>.
+(<filename>$KDEDIR/share/apps/ktuberling/pics/layout.xml</filename>) tells
+which images to use and links them to menu entries.  It also contains the
+position parameters of the playground and the objects in the gameboard and
+in the masks.  It finally assigns the sounds to objects and places the
+objects in groups.  It follows standard XML syntax (see details
+<link linkend="layout-details">below</link>).
 </para>
 
-<screenco>
-        <areaspec>
-          <area coords="1 65" id="one"/>
-          <area coords="2 65" id="two"/>
-          <area coords="5 50" id="three"/>
-          <area coords="9 66" id="four"/>
-          <area coords="11 58" id="five"/>
-         </areaspec>
-<screen>
-   0   0  240 320          0 Area where objects can be dropped
-                6             Number of texts described here
- 241 101  413 115          0 "Eyes" text
- 415 123  511 137          1 "Eyebrows" text
- 241 179  394 193          2 "Noses" text
- 395 179  511 193          3 "Ears" text
- 241 259  445 273          4 "Mouths" text
- 241 307  511 321          5 "Goodies" text
-                   43         Number of objects described here
- 242   0  283  32      70   0  111  32      1 Eye #1
- 242  34  283  66      70  34  111  66      1 Eye #2
- 242  68  283 100      70  68  111 100      1 Eye #3
-  :
-  :  <!-- cut -->
-</screen>
-</screenco>
-
-
-<calloutlist>
-<callout arearefs="one">
-<para>Layout header line.</para>
 <para>
- This line describes the area of the gameboard where objects are
-placed (the potato area).  The first four numbers are the coordinates
-of the area: left, top, right, bottom.  The fifth number is the index
-number of the associated sound.  The sounds are defined in the source
-file <filename class="headerfile">categories.h</filename>.
+Still in the same directory, a file named <filename>layout.i18n</filename>
+(<filename>$KDEDIR/share/apps/ktuberling/pics/layout.xml</filename>)
+recapitulates the strings in <filename>layout.xml</filename> that can be
+translated:
+<itemizedlist>
+<listitem><para>The menu entries that allow to choose the gameboards</para></listitem>
+<listitem><para>The names of the categories of objects</para></listitem>
+<listitem><para>The names of the sound files. This is a programming trick
+that permits that the translation teams record someone saying the names of
+objects in their own languages, and to reference the names of these sound
+files when they exist.</para></listitem>
+</itemizedlist>
 </para>
-</callout>
 
-<callout arearefs="two">
-<para>Quantity of group labels</para>
 <para>
-This, the second line, is the number of group text labels defined in
-the next section of this file.
+One directory above, a file named <filename>ktuberlingui.rc</filename>
+(<filename>$KDEDIR/share/apps/ktuberling/ktuberlingui.rc</filename>) is a
+second XML file describing the menus of &ktuberling;. It should contain
+one <markup>&lt;action&gt;</markup> tag per playground. The symbolic name of the 
+action in this file should be identical to the symbolic name of the action 
+in <filename>layout.xml</filename>.
 </para>
-</callout>
 
-<callout arearefs="three">
-<para>Label positions</para>
-<para>
-These lines describe the position of the text labeling the groups or categories
-of objects.  The text of the labels can only be changed in the source code
-(<filename class="headerfile">categories.h</filename>).  Only the position of
-the labels can be changed here.
-</para>
-</callout>
-
-<callout arearefs="four">
-<para>Quantity of objects</para>
-<para>
-This line is the number of objects described in the next section of the
-file.  Adjust this number if you add or remove objects.
-</para>
-</callout>
-
-<callout arearefs="five">
-<para>Individual objects</para>
-<para>
-In this section each of the individual objects are described.  The
-position of the objects in <filename>gameboard.xpm</filename> and the
-positions of the masks in <filename>masks.xpm</filename>. The first four
-numbers are the coordinates of the object rectangle on the gameboard: left,
-top, right, bottom. The fifth through eighth are the coordinates of the
-object's mask, same ordering.  The ninth number is the index of the
-associated sound. Several objects can be associated with the same sound.
-</para> </callout>
-</calloutlist>
 </sect1>
 
 <sect1 id="for-translators">
@@ -158,26 +111,36 @@ Besides the usual <literal role="extension">.po</literal> files mechanism for
 translating program labels and prompts, the sounds can be localized too.
 </para>
 
-<para> <!-- "language-specific" needs a proper dash_entity --> If the various
-translators can record their voice to a <literal role="extension">.wav</literal>
+<para>
+If the various
+translators can record their voice to a <literal role="extension">.ogg</literal>
 file, they can store that file to the language-specific subdirectory of the
 sounds directory.  The name of the sound file is then translated in the <literal
 role="extension">.po</literal> file. For example, if destination language is
 Italian, translators can record their voice in <literal
-role="extension">.wav</literal> files located in
-<filename>$KDE/share/apps/ktuberling/sounds/it</filename>. Then they can
-translate file names like <filename>en/hat.wav</filename> to names like
-<filename>it/capello.wav</filename>.
+role="extension">.ogg</literal> files located in
+<filename>$KDEDIR/share/apps/ktuberling/sounds/it</filename>. Then they can
+translate file names like <filename>en/hat.ogg</filename> to names like
+<filename>it/capello.ogg</filename>.
+</para>
+
+<para>
+If the sound recording tools the translators use can produce only .WAV files,
+then these files can be converted to OGG Vorbis rc3 through the
+following command line:
+<screen>
+<prompt>$</prompt> <userinput>oggenc_rc3 -o <replaceable>sound.ogg</replaceable> <replaceable>sound.wav</replaceable></userinput>
+</screen>
 </para>
 
 <para>
 Information on how to work with the translation mechanisms in &kde; is available
-in
-<ulink url="http://i18n.kde.org/translation-howto/index.html">
-The KDE Translation HOWTO</ulink>.
+in <ulink url="http://i18n.kde.org/translation-howto/index.html">The
+KDE Translation HOWTO</ulink>.
 </para>
 
 </sect1>
+
 <sect1 id="for-programmers">
 
 <title>For programmers</title>
@@ -210,11 +173,65 @@ drawn</para> </listitem>
 necessary data to redraw a tuberling.  It can be edited with an ordinary text
 editor.</para>
 
-<para>There is one graphical object per line, in the order that is used to draw
-them.  Each line contains 5 numbers: the identifier of the object, and the
-rectangle where it should be drawn (left, top, right, bottom). The numbers are
+<para>The first line holds the number of the playground.</para>
+
+<para>On all other lines, there is one graphical object per line, in the order
+that is used to draw them.  Each line contains 5 numbers: the identifier of the object,
+and the rectangle where it should be drawn (left, top, right, bottom). The numbers are
 separated by whitespaces.</para>
 
 </sect2>
+</sect1>
+
+<sect1 id="layout-details">
+<title>Structure of the layout file (<filename>layout.xml</filename>)</title>
+
+<para>
+The top-level tag is unique and is named <markup>&lt;ktuberling&gt;</markup>.
+It contains several <markup>&lt;playground&gt;</markup> tags, one per
+playground.
+</para>
+
+<para>
+The <markup>&lt;playground&gt;</markup> tag has two attributes: <markup>gameboard</markup>
+and <markup>masks</markup>. These attributes give the name of the files holding the
+pictures. The <markup>&lt;playground&gt;</markup> tag also contains one
+<markup>&lt;menuitem&gt;</markup> tag, one <markup>&lt;editablearea&gt;</markup>
+tag, several <markup>&lt;category&gt;</markup> tags, and several
+<markup>&lt;object&gt;</markup> tags.
+</para>
+
+<para>
+The <markup>&lt;menuitem&gt;</markup> tag describes the action identifier
+of the menu item allowing to select position of the
+area where you can drop objects, and the label of this menu item.
+This action identifier should be identical to the one in
+<filename>ktuberlingui.rc</filename>.
+</para>
+
+<para>
+The <markup>&lt;editablearea&gt;</markup> tag describes the position of the
+area where you can drop objects, and the sound associated with it.
+</para>
+
+<para>
+The <markup>&lt;category&gt;</markup> tag describes the position and
+the label of a text describing a group of objects. For example, it
+can describe the position and the text of the group of <quote>goodies</quote>.
+</para>
+
+<para>
+The <markup>&lt;object&gt;</markup> tag describes the position (in the
+gameboard and in the masks) of an object, as well as the English sound
+associated with it.
+</para>
+
+<para>
+The lower level tags are not explained here, since their meaning is
+quite straightforward. If you modify <filename>layout.xml</filename>,
+don't forget to modify <filename>layout.i18n</filename> and
+<filename>ktuberlingui.rc</filename> accordingly.
+</para>
+
 </sect1>
 </chapter>

@@ -39,11 +39,11 @@
 
 </authorgroup>
 
-<date>2001-09-16</date>
-<releaseinfo>0.02.00</releaseinfo>
+<date>2002-01-14</date>
+<releaseinfo>0.02.08</releaseinfo>
 
 <copyright>
-<year>1999</year><year>2000</year>
+<year>1999</year><year>2000</year><year>2002</year>
 <holder>Eric Bischoff</holder>
 </copyright>
 
@@ -79,8 +79,9 @@ suitable for adults who have remained young at heart.
 </para>
 
 <para>
-It is a potato editor. That means that you can drag and drop eyes, mouths,
-mustache, and other parts of face and goodies onto a potato-like guy.
+It is a <quote>potato editor</quote>. That means that you can drag and drop
+eyes, mouths, mustache, and other parts of face and goodies onto a potato-like
+guy. Similarly, you have a penguin on which you can drop other stuff.
 </para>
 
 <para>
@@ -90,10 +91,17 @@ you can.
 
 <para>
 There is a museum (like a <quote>Madame Tusseau</quote> gallery) where you can
-find many funny examples of decorated potatoes. Of course, you can send your own
-creations to the programmer, <ulink url="mailto:e.bischoff@noos.fr">Eric
+find many funny examples of decorated potatoes and penguins. Of course, you can
+send your own creations to the programmer, <ulink url="mailto:e.bischoff@noos.fr">Eric
 Bischoff</ulink>, who will include them in the museum if he gets some spare
 time.
+</para>
+
+<para>
+KTuberling can also <quote>speak</quote>. It will spell out the name of the objects
+you drag and drop. It will <quote>speak</quote> in your own language, or English if
+the sounds for your language do not exist. Currently, KTuberling can <quote>speak</quote>
+Danish, German, English, French, Dutch, Romanian, Slovenian and Swedish.
 </para>
 </chapter>
 
@@ -108,15 +116,13 @@ There are two areas in the main window:
 </para>
 
 <itemizedlist>
-<listitem><para><quote>Potato</quote> area, on the left side.
+<listitem><para><quote>Playground</quote> area, on the left side.
 </para></listitem>
 <listitem><para>
 <quote>Objects</quote> area, on the right side, where you select Objects to
-place on your potato!
+place on your playground.
 </para></listitem>
 </itemizedlist>
-
-<!-- original gameboard.xpm, needs more compression -->
 
 <screenshot>
 <screeninfo>Main Window of &ktuberling; main window:</screeninfo>
@@ -138,14 +144,14 @@ place on your potato!
 To drag an object, move the mouse pointer to the <quote>objects</quote>
 area on the right. Click on the object you want to drag, but do not release
 the mouse button until you have moved the mouse pointer to the location in
-the <quote>potato</quote> area where you want to drop the object.
+the <quote>playground</quote> area where you want to drop the object.
 </para>
 </sect2>
 
 <sect2 id="move-object">
 <title>Moving an Object</title>
 <para>
-Once dropped in the <quote>potato</quote> area, an object can be moved.
+Once dropped in the <quote>playground</quote> area, an object can be moved.
 Just click on the object to select it for further drag and drop. When you
 click on it, it goes on top of other objects that were partially hiding it.
 This trick is useful for getting the glasses and eyes placed correctly.
@@ -155,8 +161,8 @@ This trick is useful for getting the glasses and eyes placed correctly.
 <sect2 id="remove-object">
 <title>Removing an Object</title>
 <para>
-To remove an object that has been dropped in the <quote>potato</quote>
-area, drag it back from the <quote>potato</quote> area to the
+To remove an object that has been dropped in the <quote>playground</quote>
+area, drag it back from the <quote>playground</quote> area to the
 <quote>objects</quote> area.
 </para>
 </sect2>
@@ -207,8 +213,8 @@ The toolbar provides buttons for the commonly used functions.
 <entry>
 <guiicon>New</guiicon></entry>
 <entry>
-Resets the <quote>potato</quote> area. This cleans all parts off the
-potato so a new character may be created.
+Resets the <quote>playground</quote> area. This cleans all parts off the
+playground so a new decoration may be created.
  </entry>
 </row>
 
@@ -244,8 +250,8 @@ Opens an existing tuberling file from the museum or from other folders.
 </entry>
 <entry><guiicon>Save</guiicon></entry>
 <entry>
-Saves your creation to the museum, or to some other folder if you
-wish. The tuberling is saved to a small file where only the
+Saves your creation to your home folder, or to some other folder like
+the museum if you wish. The tuberling is saved to a small file where only the
 position of objects are saved.
 </entry>
 </row>
@@ -368,7 +374,7 @@ Help
 <guimenu>File</guimenu>
  <guimenuitem>New</guimenuitem>
  </menuchoice></term>
-<listitem><para><action>Clears</action> the <quote>potato</quote>
+<listitem><para><action>Clears</action> the <quote>playground</quote>
 area </para></listitem>
 </varlistentry>
 
@@ -459,7 +465,7 @@ are XPM, JPEG, PNG and BMP.
 <guimenu>Edit</guimenu>
 <guimenuitem>Copy</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Copy</action> the <quote>potato</quote> area to the
+<listitem><para><action>Copy</action> the <quote>playground</quote> area to the
 clipboard.</para></listitem>
 </varlistentry>
 
@@ -514,7 +520,29 @@ placement.  This menu option is active only if you have previously used
 </menuchoice></term>
 <listitem><para><action>Toggles sound on/off</action>.
 If <filename>artsd</filename> is not running, this menu item is
-disabled. </para></listitem>
+disabled. You need to have kdemultimedia and OGG Vorbis rc3 installed
+to be able to hear sounds. &ktuberling; remembers last setting
+of this option the next time it starts up.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Options</guimenu>
+<guimenuitem>Potato Guy</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Switches to potato playground</action>.
+&ktuberling; remembers the last chosen playground the next
+time it starts up.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Options</guimenu>
+<guimenuitem>Penguin</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Switches to penguin playground</action>.
+&ktuberling; remembers the last chosen playground the next
+time it starts up.</para></listitem>
 </varlistentry>
 </variablelist>
 </para>
@@ -547,7 +575,7 @@ disabled. </para></listitem>
 
 <itemizedlist>
 <listitem>
-<para>John Calhoun - Original idea, pictures and English
+<para>John Calhoun - Original idea, original pictures and English
 sounds</para>
 </listitem>
 
@@ -567,6 +595,10 @@ advice and help</para>
 
 <listitem>
 <para>Bas Willems <email>next@euronet.nl</email> - Graphics reworks</para>
+</listitem>
+
+<listitem>
+<para>Roger Larsson <email>roger.larsson@norran.net</email> - Sounds tuning</para>
 </listitem>
 
 <listitem>
@@ -614,6 +646,11 @@ In order to successfully compile &ktuberling;, you need the latest versions of
 <filename>libmediatooli</filename>.  All required libraries as well as
 &ktuberling; itself can be found on <ulink
 url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>.
+</para>
+
+<para>
+To be able to hear the sounds, you need to have kdemultimedia and OGG
+Vorbis rc3 installed.
 </para>
 </sect1>
 
