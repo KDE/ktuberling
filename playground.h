@@ -8,6 +8,8 @@
 #ifndef _PLAYGROUND_H_
 #define _PLAYGROUND_H_
 
+#include <kprinter.h>
+
 #include <qwidget.h>
 #include <qbitmap.h>
 #include <qlist.h>
@@ -32,7 +34,7 @@ public:
   bool redo();
   bool loadFrom(const QString &);
   bool saveAs(const QString &);
-  bool printPicture(QPrinter &) const;
+  bool printPicture(KPrinter &) const;
 
   inline bool isFirstAction() const { return currentAction == 0; }
   inline bool isLastAction() const { return currentAction >= history.count(); }

@@ -14,11 +14,11 @@
 #include <qfile.h>
 #include <qpainter.h>
 #include <qimage.h>
-#include <qprinter.h>
+#include <kprinter.h>
 
 #include <stdlib.h>
 
-#include "playground.h"
+#include "playground.moc"
 #include "toplevel.h"
 #include "categories.h"
 
@@ -162,7 +162,7 @@ bool PlayGround::saveAs(const QString & name)
 }
 
 // Print gameboard's picture
-bool PlayGround::printPicture(QPrinter &printer) const
+bool PlayGround::printPicture(KPrinter &printer) const
 {
   QPainter artist;
   QPixmap picture(grabWindow());

@@ -15,13 +15,13 @@
 #include <kconfig.h>
 #include <kio/netaccess.h>
 
-#include <qprinter.h>
+#include <kprinter.h>
 #include <qprintdialog.h>
 #include <qclipboard.h>
 
 #include <stdlib.h>
 
-#include "toplevel.h"
+#include "toplevel.moc"
 #include "playground.h"
 #include "categories.h"
 
@@ -284,10 +284,10 @@ void TopLevel::filePicture()
 // Save gameboard as picture
 void TopLevel::filePrint()
 {
-  QPrinter printer;
+  KPrinter printer;
   bool ok;
 
-  ok = QPrintDialog::getPrinterSetup(&printer);
+  ok = printer.setup(this);
   toolbar->getButton(ID_PRINT)->setDown(false);
   if (!ok) return;
   playGround->repaint(true);
