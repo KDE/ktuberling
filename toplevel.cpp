@@ -45,20 +45,6 @@ TopLevel::~TopLevel()
 {
 }
 
-// Session management - read properties
-void TopLevel::readProperties(KConfig *config)
-{
-  // Nothing to do, the settings have already been restored,
-  // even when there is no session management
-}
-
-// Session management - write properties
-void TopLevel::saveProperties(KConfig *config)
-{
-  // Nothing to do, the setting have already been saved
-  // each time the user changed them
-}
-
 // Enable or disable "undo" button and menu item
 void TopLevel::enableUndo(bool enable) const
 {
@@ -74,7 +60,7 @@ void TopLevel::enableRedo(bool enable) const
 // Register an available gameboard
 void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 {
-  KToggleAction *t;
+  KToggleAction *t = 0;
 
   switch (gameboards)
   {
@@ -95,15 +81,18 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
   	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard7()), actionCollection(), actionId);
 		break;
   }
-  if (gameboards == selectedGameboard) t->setChecked(true);
-  gameboardActions[gameboards] = actionId;
-  gameboards++;
+
+  if( t ) {
+      if (gameboards == selectedGameboard) t->setChecked(true);
+      gameboardActions[gameboards] = actionId;
+      gameboards++;
+  }
 }
 
 // Register an available language
 void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, bool enabled)
 {
-  KToggleAction *t;
+  KToggleAction *t = 0;
 
   switch (languages)
   {
@@ -140,10 +129,13 @@ void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, b
   	case 15: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language15()), actionCollection(), actionId);
 		break;
   }
-  if (languages == selectedLanguage) t->setChecked(true);
-  t->setEnabled(enabled);
-  languageActions[languages] = actionId;
-  languages++;
+
+  if( t ) {
+      if (languages == selectedLanguage) t->setChecked(true);
+      t->setEnabled(enabled);
+      languageActions[languages] = actionId;
+      languages++;
+  }
 }
 
 // Switch to another gameboard
@@ -230,12 +222,12 @@ void TopLevel::readOptions()
 
   option = config->readEntry("GameboardNumber", "0");
   selectedGameboard = option.toInt();
-  if (selectedGameboard < 0) selectedGameboard = 0;
+  if (selectedGameboard <= 0) selectedGameboard = 0;
   if (selectedGameboard > 7) selectedGameboard = 7;
 
   option = config->readEntry("LanguageNumber", "2");
   selectedLanguage = option.toInt();
-  if (selectedLanguage < 0) selectedLanguage = 0;
+  if (selectedLanguage <= 0) selectedLanguage = 0;
   if (selectedLanguage > 15) selectedLanguage = 15;
 
 }
