@@ -4,8 +4,6 @@
    mailto:ebisch@cybercable.tm.fr
  ------------------------------------------------------------- */
 
-#include <libgen.h>
-
 #include <qmessagebox.h>
 #include <qpainter.h>
 #include <qimage.h>
@@ -47,9 +45,10 @@ TopLevel::TopLevel()
   {
     QMessageBox::critical
 	(this,
-         "Ktuberling",
+         i18n("Tuberling"),
 	 i18n("Fatal error :\n" 
-              "I could not load the pictures. I'll quit")); 
+              "I could not load the pictures. I'll quit"),
+	 i18n("OK")); 
     exit(-1);
   }
 
@@ -120,7 +119,6 @@ void TopLevel::setupMenuBar()
   fileMenu = new QPopupMenu();
   editMenu = new QPopupMenu();
   optionsMenu = new QPopupMenu();
-  helpMenu = new QPopupMenu();
 
   newID = fileMenu->insertItem(i18n("&New"));
   fileMenu->connectItem(newID, this, SLOT(fileNew()));
@@ -167,16 +165,10 @@ void TopLevel::setupMenuBar()
   if (!audioServer) optionsMenu->setItemEnabled(soundID, false);
   optionsMenu->connectItem(soundID, this, SLOT(optionsSound()));
 
-  contentsID = helpMenu->insertItem(i18n("&Contents"));
-  helpMenu->connectItem(contentsID, kapp, SLOT(appHelpActivated()));
-  helpMenu->setAccel(acc.help(), contentsID);
-  helpMenu->insertSeparator();
-
-  aboutID = helpMenu->insertItem(i18n("&About ktuberling ..."));
-  helpMenu->connectItem(aboutID, this, SLOT(aboutApp()));
-
-  aboutKDEID = helpMenu->insertItem(i18n("About &KDE..."));
-  helpMenu->connectItem(aboutKDEID, kapp, SLOT(aboutKDE()));
+  QString about = i18n("A program by Eric Bischoff (ebisch@cybercable.tm.fr)\n"
+	               "and John Calhoun.\n\n"
+	               "This program is dedicated to my daughter Sunniva.");
+  helpMenu = kapp->getHelpMenu(false, about);
 
   menubar->insertItem(i18n("&File"), fileMenu);
   menubar->insertItem(i18n("&Edit"), editMenu);
@@ -336,8 +328,9 @@ void TopLevel::fileOpen()
     if (!loadFrom(name))
       QMessageBox::warning
         (this,
-         "KTuberling",
-         i18n("Could not load file"));
+         i18n("Tuberling"),
+         i18n("Could not load file"),
+	 i18n("OK"));
 
     enableUndo(currentAction != 0);
     enableRedo(false);
@@ -363,8 +356,9 @@ void TopLevel::fileSave()
     if (!saveAs(name))
       QMessageBox::warning
         (this,
-         "KTuberling",
-         i18n("Could not save file"));
+         i18n("Tuberling"),
+         i18n("Could not save file"),
+	 i18n("OK"));
   }
 }
 
@@ -408,16 +402,18 @@ void TopLevel::filePicture()
     {
       QMessageBox::warning
         (this,
-         "KTuberling",
-         i18n("Unknown picture format"));
+         i18n("Tuberling"),
+         i18n("Unknown picture format"),
+	 i18n("OK"));
       return;
     }
 
     if (!picture.save(name, format))
       QMessageBox::warning
         (this,
-         "KTuberling",
-         i18n("Could not save file"));
+         i18n("Tuberling"),
+         i18n("Could not save file"),
+	 i18n("OK"));
   }
 }
 
@@ -434,13 +430,15 @@ void TopLevel::filePrint()
   if (!printPicture(printer))
     QMessageBox::warning
         (this,
-         "KTuberling",
-         i18n("Could not print picture"));
+         i18n("Tuberling"),
+         i18n("Could not print picture"),
+	 i18n("OK"));
   else
     QMessageBox::information
         (this,
-         "KTuberling",
-         i18n("Picture successfully printed"));
+         i18n("Tuberling"),
+         i18n("Picture successfully printed"),
+	 i18n("OK"));
 }
 
 // Copy modified area to clipboard
@@ -531,17 +529,6 @@ void TopLevel::optionsSound()
   soundEnabled = !soundEnabled;
   optionsMenu->setItemChecked( soundID, soundEnabled);
   writeOptions();
-}
-
-// Display about box
-void TopLevel::aboutApp()
-{
-  QMessageBox::about
-    (this,
-     i18n("About ktuberling 0.1.1"),
-     i18n("A program by Eric Bischoff (mailto:ebisch@cybercable.tm.fr)\n"
-	  "and John Calhoun.\n\n"
-	  "This program is dedicated to my daughter Sunniva."));
 }
 
 // Repaint event handling

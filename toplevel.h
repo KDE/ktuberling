@@ -69,7 +69,7 @@ private slots:
   void editUndo();
   void editRedo();
   void optionsSound();
-  void aboutApp();
+//  void aboutApp();
 
 private:
 
@@ -82,8 +82,7 @@ private:
   int				// Menu items identificators
       newID, openID, saveID, pictureID, printID, quitID,
       copyID, undoID, redoID,
-      soundID,
-      contentsID, aboutID, aboutKDEID;
+      soundID;
   int				// Tool bar buttons identificators
       ID_NEW, ID_OPEN, ID_SAVE, ID_PRINT,
       ID_UNDO, ID_REDO,
