@@ -18,295 +18,252 @@
     </menuitem>
 
     <editablearea>
-      <game left="  0" top="  0" right="240" bottom="320" />
+      <position left="  0" top="  0" right="240" bottom="320" />
       <sound>en/tuberling.ogg</sound>
     </editablearea>
 
     <category>
-      <game left="241" top="101" right="413" bottom="115" />
+      <position left="241" top="101" right="413" bottom="115" />
       <label>Eyes</label>
     </category>
 
     <category>
-      <game left="415" top="123" right="511" bottom="137" />
+      <position left="415" top="123" right="511" bottom="137" />
       <label>Eyesbrows</label>
     </category>
 
     <category>
-      <game left="241" top="179" right="394" bottom="193" />
+      <position left="241" top="179" right="394" bottom="193" />
       <label>Noses</label>
     </category>
 
     <category>
-      <game left="395" top="179" right="511" bottom="193" />
+      <position left="395" top="179" right="511" bottom="193" />
       <label>Ears</label>
     </category>
 
     <category>
-      <game left="241" top="259" right="445" bottom="273" />
+      <position left="241" top="259" right="445" bottom="273" />
       <label>Mouths</label>
     </category>
 
     <category>
-      <game left="241" top="307" right="511" bottom="321" />
+      <position left="241" top="307" right="511" bottom="321" />
       <label>Goodies</label>
     </category>
 
     <object>
-      <game left="242" top="  0" right="283" bottom=" 32" />
-      <mask left=" 70" top="  0" right="111" bottom=" 32" />
+      <position left="242" top="  0" right="283" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="242" top=" 34" right="283" bottom=" 66" />
-      <mask left=" 70" top=" 34" right="111" bottom=" 66" />
+      <position left="242" top=" 34" right="283" bottom=" 66" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="242" top=" 68" right="283" bottom="100" />
-      <mask left=" 70" top=" 68" right="111" bottom="100" />
+      <position left="242" top=" 68" right="283" bottom="100" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="285" top="  0" right="326" bottom=" 32" />
-      <mask left="113" top="  0" right="154" bottom=" 32" />
+      <position left="285" top="  0" right="326" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="285" top=" 34" right="326" bottom=" 66" />
-      <mask left="113" top=" 34" right="154" bottom=" 66" />
+      <position left="285" top=" 34" right="326" bottom=" 66" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="285" top=" 68" right="326" bottom="100" />
-      <mask left="113" top=" 68" right="154" bottom="100" />
+      <position left="285" top=" 68" right="326" bottom="100" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="328" top="  0" right="369" bottom=" 32" />
-      <mask left="156" top="  0" right="197" bottom=" 32" />
+      <position left="328" top="  0" right="369" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="328" top=" 34" right="369" bottom=" 66" />
-      <mask left="156" top=" 34" right="197" bottom=" 66" />
+      <position left="328" top=" 34" right="369" bottom=" 66" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="328" top=" 68" right="369" bottom="100" />
-      <mask left="156" top=" 68" right="197" bottom="100" />
+      <position left="328" top=" 68" right="369" bottom="100" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="371" top="  0" right="412" bottom=" 32" />
-      <mask left="199" top="  0" right="240" bottom=" 32" />
+      <position left="371" top="  0" right="412" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="371" top=" 34" right="412" bottom=" 66" />
-      <mask left="199" top=" 34" right="240" bottom=" 66" />
+      <position left="371" top=" 34" right="412" bottom=" 66" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="371" top=" 68" right="412" bottom="100" />
-      <mask left="199" top=" 68" right="240" bottom="100" />
+      <position left="371" top=" 68" right="412" bottom="100" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="415" top="  0" right="462" bottom=" 29" />
-      <mask left="415" top="  0" right="462" bottom=" 29" />
+      <position left="415" top="  0" right="462" bottom=" 29" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="415" top=" 31" right="462" bottom=" 60" />
-      <mask left="415" top=" 31" right="462" bottom=" 60" />
+      <position left="415" top=" 31" right="462" bottom=" 60" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="415" top=" 62" right="462" bottom=" 91" />
-      <mask left="415" top=" 62" right="462" bottom=" 91" />
+      <position left="415" top=" 62" right="462" bottom=" 91" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="415" top=" 93" right="462" bottom="122" />
-      <mask left="415" top=" 93" right="462" bottom="122" />
+      <position left="415" top=" 93" right="462" bottom="122" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="464" top="  0" right="511" bottom=" 29" />
-      <mask left="464" top="  0" right="511" bottom=" 29" />
+      <position left="464" top="  0" right="511" bottom=" 29" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="464" top=" 31" right="511" bottom=" 60" />
-      <mask left="464" top=" 31" right="511" bottom=" 60" />
+      <position left="464" top=" 31" right="511" bottom=" 60" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="464" top=" 62" right="511" bottom=" 91" />
-      <mask left="464" top=" 62" right="511" bottom=" 91" />
+      <position left="464" top=" 62" right="511" bottom=" 91" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="464" top=" 93" right="511" bottom="122" />
-      <mask left="464" top=" 93" right="511" bottom="122" />
+      <position left="464" top=" 93" right="511" bottom="122" />
       <sound>en/eyebrow.ogg</sound>
     </object>
 
     <object>
-      <game left="242" top="116" right="291" bottom="178" />
-      <mask left="  1" top="  1" right=" 50" bottom=" 63" />
+      <position left="242" top="116" right="291" bottom="178" />
       <sound>en/nose.ogg</sound>
     </object>
 
     <object>
-      <game left="293" top="116" right="342" bottom="178" />
-      <mask left="  1" top=" 65" right=" 50" bottom="127" />
+      <position left="293" top="116" right="342" bottom="178" />
       <sound>en/nose.ogg</sound>
     </object>
 
     <object>
-      <game left="344" top="116" right="393" bottom="178" />
-      <mask left="  1" top="129" right=" 50" bottom="191" />
+      <position left="344" top="116" right="393" bottom="178" />
       <sound>en/nose.ogg</sound>
     </object>
 
     <object>
-      <game left="397" top="138" right="424" bottom="178" />
-      <mask left=" 52" top="152" right=" 79" bottom="192" />
+      <position left="397" top="138" right="423" bottom="178" />
       <sound>en/ear.ogg</sound>
     </object>
 
     <object>
-      <game left="426" top="138" right="453" bottom="178" />
-      <mask left=" 81" top="152" right="108" bottom="192" />
+      <position left="426" top="138" right="452" bottom="178" />
       <sound>en/ear.ogg</sound>
     </object>
 
     <object>
-      <game left="455" top="138" right="482" bottom="178" />
-      <mask left="110" top="152" right="137" bottom="192" />
+      <position left="455" top="138" right="481" bottom="178" />
       <sound>en/ear.ogg</sound>
     </object>
 
     <object>
-      <game left="484" top="138" right="511" bottom="178" />
-      <mask left="139" top="152" right="166" bottom="192" />
+      <position left="484" top="138" right="510" bottom="178" />
       <sound>en/ear.ogg</sound>
     </object>
 
     <object>
-      <game left="242" top="195" right="308" bottom="225" />
-      <mask left="  1" top="195" right=" 67" bottom="225" />
+      <position left="242" top="195" right="308" bottom="225" />
       <sound>en/mouth.ogg</sound>
     </object>
 
     <object>
-      <game left="242" top="227" right="308" bottom="257" />
-      <mask left="  1" top="227" right=" 67" bottom="257" />
+      <position left="242" top="227" right="308" bottom="257" />
       <sound>en/mouth.ogg</sound>
     </object>
 
     <object>
-      <game left="310" top="195" right="376" bottom="225" />
-      <mask left=" 69" top="195" right="135" bottom="225" />
+      <position left="310" top="195" right="376" bottom="225" />
       <sound>en/mouth.ogg</sound>
     </object>
 
     <object>
-      <game left="310" top="227" right="376" bottom="257" />
-      <mask left=" 69" top="227" right="135" bottom="257" />
+      <position left="310" top="227" right="376" bottom="257" />
       <sound>en/mouth.ogg</sound>
     </object>
 
     <object>
-      <game left="378" top="195" right="444" bottom="225" />
-      <mask left="137" top="195" right="203" bottom="225" />
+      <position left="378" top="195" right="444" bottom="225" />
       <sound>en/mouth.ogg</sound>
     </object>
 
     <object>
-      <game left="378" top="227" right="444" bottom="257" />
-      <mask left="378" top="227" right="444" bottom="257" />
+      <position left="378" top="227" right="444" bottom="257" />
       <sound>en/mouth.ogg</sound>
     </object>
 
     <object>
-      <game left="447" top="195" right="511" bottom="225" />
-      <mask left="137" top="227" right="201" bottom="257" />
+      <position left="447" top="195" right="511" bottom="225" />
       <sound>en/hat.ogg</sound>
     </object>
 
     <object>
-      <game left="447" top="227" right="511" bottom="249" />
-      <mask left=" 67" top="265" right="131" bottom="287" />
+      <position left="447" top="227" right="511" bottom="249" />
       <sound>en/moustache.ogg</sound>
     </object>
 
     <object>
-      <game left="447" top="251" right="475" bottom="272" />
-      <mask left="  1" top="266" right=" 29" bottom="287" />
+      <position left="447" top="251" right="475" bottom="272" />
       <sound>en/cigar.ogg</sound>
     </object>
 
     <object>
-      <game left="477" top="251" right="511" bottom="272" />
-      <mask left=" 31" top="266" right=" 65" bottom="287" />
+      <position left="477" top="251" right="511" bottom="272" />
       <sound>en/bow.ogg</sound>
     </object>
 
     <object>
-      <game left="242" top="274" right="322" bottom="306" />
-      <mask left="  1" top="289" right=" 81" bottom="321" />
+      <position left="242" top="274" right="322" bottom="306" />
       <sound>en/sunglasses.ogg</sound>
     </object>
 
     <object>
-      <game left="324" top="274" right="399" bottom="306" />
-      <mask left=" 83" top="289" right="158" bottom="321" />
+      <position left="324" top="274" right="399" bottom="306" />
       <sound>en/spectacles.ogg</sound>
     </object>
 
     <object>
-      <game left="401" top="274" right="445" bottom="306" />
-      <mask left="160" top="289" right="204" bottom="321" />
+      <position left="401" top="274" right="445" bottom="306" />
       <sound>en/bow.ogg</sound>
     </object>
 
     <object>
-      <game left="447" top="274" right="462" bottom="306" />
-      <mask left="206" top="289" right="221" bottom="321" />
+      <position left="447" top="274" right="462" bottom="306" />
       <sound>en/earring.ogg</sound>
     </object>
 
     <object>
-      <game left="464" top="274" right="491" bottom="306" />
-      <mask left="213" top="255" right="240" bottom="287" />
+      <position left="464" top="274" right="491" bottom="306" />
       <sound>en/badge.ogg</sound>
     </object>
 
     <object>
-      <game left="493" top="274" right="511" bottom="306" />
-      <mask left="222" top="221" right="240" bottom="253" />
+      <position left="493" top="274" right="511" bottom="306" />
       <sound>en/watch.ogg</sound>
     </object>
 
@@ -319,168 +276,147 @@
     </menuitem>
 
     <editablearea>
-      <game left="  0" top="  0" right="240" bottom="320" />
+      <position left="  0" top="  0" right="240" bottom="320" />
       <sound>en/penguin.ogg</sound>
     </editablearea>
 
     <category>
-      <game left="241" top=" 66" right="413" bottom=" 80" />
+      <position left="241" top=" 66" right="413" bottom=" 80" />
       <label>Eyes</label>
     </category>
 
     <category>
-      <game left="415" top="123" right="511" bottom="137" />
+      <position left="415" top="123" right="511" bottom="137" />
       <label>Tie</label>
     </category>
 
     <category>
-      <game left="241" top="180" right="511" bottom="194" />
+      <position left="241" top="180" right="511" bottom="194" />
       <label>Hair</label>
     </category>
 
     <category>
-      <game left="241" top="259" right="377" bottom="273" />
+      <position left="241" top="259" right="377" bottom="273" />
       <label>Necklaces</label>
     </category>
 
     <category>
-      <game left="379" top="259" right="511" bottom="273" />
+      <position left="379" top="259" right="511" bottom="273" />
       <label>Hats</label>
     </category>
 
     <category>
-      <game left="241" top="307" right="400" bottom="321" />
+      <position left="241" top="307" right="400" bottom="321" />
       <label>Glasses</label>
     </category>
 
     <category>
-      <game left="402" top="307" right="511" bottom="321" />
+      <position left="402" top="307" right="511" bottom="321" />
       <label>Scarf</label>
     </category>
 
     <object>
-      <game left="243" top="  1" right="283" bottom=" 32" />
-      <mask left="243" top="  1" right="283" bottom=" 32" />
+      <position left="243" top="  1" right="283" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="243" top=" 35" right="283" bottom=" 65" />
-      <mask left="243" top=" 35" right="283" bottom=" 65" />
+      <position left="243" top=" 35" right="283" bottom=" 65" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="286" top="  1" right="326" bottom=" 32" />
-      <mask left="286" top="  1" right="326" bottom=" 32" />
+      <position left="286" top="  1" right="326" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="286" top=" 35" right="326" bottom=" 65" />
-      <mask left="286" top=" 35" right="326" bottom=" 65" />
+      <position left="286" top=" 35" right="326" bottom=" 65" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="329" top="  1" right="369" bottom=" 32" />
-      <mask left="329" top="  1" right="369" bottom=" 32" />
+      <position left="329" top="  1" right="369" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="329" top=" 35" right="369" bottom=" 65" />
-      <mask left="329" top=" 35" right="369" bottom=" 65" />
+      <position left="329" top=" 35" right="369" bottom=" 65" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="372" top="  1" right="412" bottom=" 32" />
-      <mask left="372" top="  1" right="412" bottom=" 32" />
+      <position left="372" top="  1" right="412" bottom=" 32" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="372" top=" 35" right="412" bottom=" 65" />
-      <mask left="372" top=" 35" right="412" bottom=" 65" />
+      <position left="372" top=" 35" right="412" bottom=" 65" />
       <sound>en/eye.ogg</sound>
     </object>
 
     <object>
-      <game left="416" top="  1" right="511" bottom="120" />
-      <mask left="416" top="  1" right="511" bottom="120" />
+      <position left="416" top="  1" right="511" bottom="120" />
       <sound>en/tie.ogg</sound>
     </object>
 
     <object>
-      <game left="244" top=" 81" right="390" bottom="116" />
-      <mask left="244" top=" 81" right="390" bottom="116" />
+      <position left="244" top=" 81" right="390" bottom="116" />
       <sound>en/hat.ogg</sound>
     </object>
 
     <object>
-      <game left="243" top="119" right="341" bottom="178" />
-      <mask left="243" top="119" right="341" bottom="178" />
+      <position left="243" top="119" right="341" bottom="178" />
       <sound>en/hair.ogg</sound>
     </object>
 
     <object>
-      <game left="345" top="119" right="390" bottom="178" />
-      <mask left="345" top="119" right="390" bottom="178" />
+      <position left="345" top="119" right="390" bottom="178" />
       <sound>en/hair.ogg</sound>
     </object>
 
     <object>
-      <game left="397" top="140" right="452" bottom="178" />
-      <mask left="397" top="140" right="452" bottom="178" />
+      <position left="397" top="140" right="452" bottom="178" />
       <sound>en/horn.ogg</sound>
     </object>
 
     <object>
-      <game left="455" top="140" right="509" bottom="178" />
-      <mask left="455" top="140" right="509" bottom="178" />
+      <position left="455" top="140" right="509" bottom="178" />
       <sound>en/horn.ogg</sound>
     </object>
 
     <object>
-      <game left="243" top="195" right="376" bottom="225" />
-      <mask left="243" top="195" right="376" bottom="225" />
+      <position left="243" top="195" right="376" bottom="225" />
       <sound>en/necklace.ogg</sound>
     </object>
 
     <object>
-      <game left="243" top="228" right="376" bottom="258" />
-      <mask left="243" top="228" right="376" bottom="258" />
+      <position left="243" top="228" right="376" bottom="258" />
       <sound>en/necklace.ogg</sound>
     </object>
 
     <object>
-      <game left="379" top="195" right="444" bottom="258" />
-      <mask left="379" top="195" right="444" bottom="258" />
+      <position left="379" top="195" right="444" bottom="258" />
       <sound>en/hat.ogg</sound>
     </object>
 
     <object>
-      <game left="448" top="195" right="511" bottom="258" />
-      <mask left="448" top="195" right="511" bottom="258" />
+      <position left="448" top="195" right="511" bottom="258" />
       <sound>en/hat.ogg</sound>
     </object>
 
     <object>
-      <game left="244" top="275" right="322" bottom="305" />
-      <mask left="244" top="275" right="322" bottom="305" />
+      <position left="244" top="275" right="322" bottom="305" />
       <sound>en/spectacles.ogg</sound>
     </object>
 
     <object>
-      <game left="325" top="275" right="398" bottom="305" />
-      <mask left="325" top="275" right="398" bottom="305" />
+      <position left="325" top="275" right="398" bottom="305" />
       <sound>en/sunglasses.ogg</sound>
     </object>
 
     <object>
-      <game left="402" top="275" right="511" bottom="305" />
-      <mask left="402" top="275" right="511" bottom="305" />
+      <position left="402" top="275" right="511" bottom="305" />
       <sound>en/scarf.ogg</sound>
     </object>
 

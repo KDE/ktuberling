@@ -19,7 +19,7 @@ class ToDraw
     ToDraw(const ToDraw &);
     ToDraw(int, const QRect &);
     ToDraw &operator=(const ToDraw &);
-    void draw(QPainter &, const QRect &, const QRect *, const QRect *, const QPixmap *, const QBitmap *) const;
+    void draw(QPainter &, const QRect &, const QRect *, const QPixmap *, const QBitmap *) const;
     void save(FILE *) const;
     bool load(FILE *, int, bool &);
 

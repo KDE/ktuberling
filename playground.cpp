@@ -30,7 +30,7 @@ PlayGround::PlayGround( TopLevel *parent, const char *name, uint selectedGameboa
 {
   topLevel = parent;
 
-  textsLayout = objectsLayout = shapesLayout = 0;
+  textsLayout = objectsLayout = 0;
   textsList = soundsList = 0;
   draggedCursor = 0;
 
@@ -54,7 +54,6 @@ PlayGround::~PlayGround()
 {
   if (textsLayout) delete [] textsLayout;
   if (objectsLayout) delete [] objectsLayout;
-  if (shapesLayout) delete [] shapesLayout;
 
   if (textsList) delete [] textsList;
   if (soundsList) delete [] soundsList;
@@ -244,7 +243,7 @@ void PlayGround::paintEvent( QPaintEvent *event )
   artist.setPen(black);
 
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
-    currentObject->draw(artist, area, objectsLayout, shapesLayout, &gameboard, &masks);
+    currentObject->draw(artist, area, objectsLayout, &gameboard, &masks);
 
   bitBlt(this, destination, &cache, area, Qt::CopyROP);
 }
@@ -260,9 +259,9 @@ void PlayGround::mousePressEvent( QMouseEvent *event )
 
   int draggedNumber = draggedObject.getNumber();
   QPixmap object(objectsLayout[draggedNumber].size());
-  QBitmap shape(shapesLayout[draggedNumber].size());
+  QBitmap shape(objectsLayout[draggedNumber].size());
   bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber], Qt::CopyROP);
-  bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], Qt::CopyROP);
+  bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber], Qt::CopyROP);
   object.setMask(shape);
 
   if (!(draggedCursor = new QCursor
@@ -412,7 +411,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 
   editableAreaElement = (const QDomElement &) editableAreasList.item(0);
 
-  gameAreasList = editableAreaElement.elementsByTagName("game");
+  gameAreasList = editableAreaElement.elementsByTagName("position");
   if (gameAreasList.count() != 1)
     return false;
 
@@ -450,7 +449,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   {
     categoryElement = (const QDomElement &) categoriesList.item(text);
 
-    gameAreasList = categoryElement.elementsByTagName("game");
+    gameAreasList = categoryElement.elementsByTagName("position");
     if (gameAreasList.count() != 1)
       return false;
 
@@ -482,8 +481,6 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 
   if (!(objectsLayout = new QRect[decorations]))
     return false;
-  if (!(shapesLayout = new QRect[decorations]))
-    return false;
   if (!(soundsList = new QString[decorations]))
     return false;
 
@@ -491,7 +488,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   {
     objectElement = (const QDomElement &) objectsList.item(decoration);
 
-    gameAreasList = objectElement.elementsByTagName("game");
+    gameAreasList = objectElement.elementsByTagName("position");
     if (gameAreasList.count() != 1)
       return false;
 
@@ -502,22 +499,6 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
     bottomAttribute = gameAreaElement.attributeNode("bottom");
 
     objectsLayout[decoration].setCoords
-	    (leftAttribute.value().toInt(),
-	     topAttribute.value().toInt(),
-	     rightAttribute.value().toInt(),
-	     bottomAttribute.value().toInt());
-
-    maskAreasList = objectElement.elementsByTagName("mask");
-    if (maskAreasList.count() != 1)
-      return false;
-
-    maskAreaElement = (const QDomElement &) maskAreasList.item(0);
-    leftAttribute = maskAreaElement.attributeNode("left");
-    topAttribute = maskAreaElement.attributeNode("top");
-    rightAttribute = maskAreaElement.attributeNode("right");
-    bottomAttribute = maskAreaElement.attributeNode("bottom");
-
-    shapesLayout[decoration].setCoords
 	    (leftAttribute.value().toInt(),
 	     topAttribute.value().toInt(),
 	     rightAttribute.value().toInt(),
@@ -576,10 +557,10 @@ bool PlayGround::zone(QPoint &position)
     draggedObject = *currentObject;
     draggedNumber = draggedObject.getNumber();
 
-    QBitmap shape(shapesLayout[draggedNumber].size());
+    QBitmap shape(objectsLayout[draggedNumber].size());
     QPoint relative(position.x() - toUpdate.x(),
                     position.y() - toUpdate.y());
-    bitBlt(&shape, QPoint(0, 0), &masks, shapesLayout[draggedNumber], Qt::CopyROP);
+    bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber], Qt::CopyROP);
     if (!shape.convertToImage().pixelIndex(relative.x(), relative.y())) continue;
 
     toDraw.remove(draggedZOrder);

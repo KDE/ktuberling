@@ -75,8 +75,7 @@ private:
   int texts,                    // Number of categories of objects names
       decorations;              // Number of draggable objects on the right side of the gameboard
   QRect *textsLayout,           // Positions of the categories names
-        *objectsLayout,         // Position of the draggable objects on right side of the gameboard
-        *shapesLayout;          // Position of the shapes of these objects in the masks file
+        *objectsLayout;         // Position of the draggable objects on right side of the gameboard
   QString *textsList,           // List of the message numbers associated with categories
           *soundsList;          // List of sounds associated with each object
 

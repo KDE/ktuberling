@@ -43,16 +43,16 @@ ToDraw &ToDraw::operator=(const ToDraw &model)
 
 // Draw an object previously laid down on the game board
 void ToDraw::draw(QPainter &artist, const QRect &area,
-                  const QRect *objectsLayout, const QRect *shapesLayout,
+                  const QRect *objectsLayout,
                   const QPixmap *gameboard, const QBitmap *masks) const
 {
   if (!position.intersects(area)) return;
 
   QPixmap objectPixmap(objectsLayout[number].size());
-  QBitmap shapeBitmap(shapesLayout[number].size());
+  QBitmap shapeBitmap(objectsLayout[number].size());
 
   bitBlt(&objectPixmap, QPoint(0, 0), gameboard, objectsLayout[number], Qt::CopyROP);
-  bitBlt(&shapeBitmap, QPoint(0, 0), masks, shapesLayout[number], Qt::CopyROP);
+  bitBlt(&shapeBitmap, QPoint(0, 0), masks, objectsLayout[number], Qt::CopyROP);
   objectPixmap.setMask(shapeBitmap);
   artist.drawPixmap(position.topLeft(), objectPixmap);
 }
