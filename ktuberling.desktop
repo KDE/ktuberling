@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Exec=ktuberling %i %m -caption "%c"
 Name=Potato Guy
-Name[af]=aartappel man
+Name[af]=Aartappel Man
 Name[ar]=رجل البطاطا
 Name[az]=Kartof Adam
 Name[be]=Бульбаш
@@ -49,7 +49,7 @@ Name[zh_CN]=土豆小子
 Name[zh_TW]=土豆小子
 Name[zu]=Umfo Wamazambane
 GenericName=Game for Children
-GenericName[af]=speletjie vir kinders
+GenericName[af]=Speletjie vir Kinders
 GenericName[ar]=ألعاب للأطفال
 GenericName[bg]=Игри за Деца
 GenericName[bs]=Igra za djecu
