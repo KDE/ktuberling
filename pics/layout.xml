@@ -275,12 +275,6 @@
     </object>
 
     <object>
-      <game left="401" top="274" right="445" bottom="306" />
-      <mask left="160" top="289" right="204" bottom="321" />
-      <sound>en/bow.wav</sound>
-    </object>
-
-    <object>
       <game left="242" top="274" right="322" bottom="306" />
       <mask left="  1" top="289" right=" 81" bottom="321" />
       <sound>en/sunglasses.wav</sound>
@@ -290,6 +284,12 @@
       <game left="324" top="274" right="399" bottom="306" />
       <mask left=" 83" top="289" right="158" bottom="321" />
       <sound>en/spectacles.wav</sound>
+    </object>
+
+    <object>
+      <game left="401" top="274" right="445" bottom="306" />
+      <mask left="160" top="289" right="204" bottom="321" />
+      <sound>en/bow.wav</sound>
     </object>
 
     <object>
