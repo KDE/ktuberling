@@ -14,7 +14,7 @@
   <playground gameboard="potato-game.png" masks="potato-mask.png">
 
     <menuitem action="options_potato_guy">
-      <label>Potato guy</label>
+      <label>Potato Guy</label>
     </menuitem>
 
     <editablearea>

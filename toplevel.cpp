@@ -148,7 +148,7 @@ void TopLevel::setupKAction()
   KStdGameAction::save(this, SLOT(fileSave()), actionCollection());
   KStdGameAction::print(this, SLOT(filePrint()), actionCollection());
   KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
-  (void) new KAction(i18n("Save &as picture..."), 0, this, SLOT(filePicture()), actionCollection(), "game_save_picture");
+  (void) new KAction(i18n("Save &as Picture..."), 0, this, SLOT(filePicture()), actionCollection(), "game_save_picture");
 
 //Edit
   KStdAction::copy(this, SLOT(editCopy()), actionCollection());

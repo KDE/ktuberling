@@ -4,7 +4,7 @@
    mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
-i18n("Potato guy");
+i18n("Potato Guy");
 
 i18n("Eyes");
 i18n("Eyesbrows");
