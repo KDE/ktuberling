@@ -15,6 +15,7 @@
 #include <kiconloader.h>
 #include <kfiledialog.h>
 #include <kstdaccel.h>
+#include <kapp.h>
 #include <klocale.h>
 
 #include "toplevel.h"
