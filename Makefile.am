@@ -22,7 +22,7 @@ ktuberling_SOURCES = main.cpp toplevel.cpp todraw.cpp
 ktuberling_METASOURCES = USE_AUTOMOC
 ktuberling_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-ktuberling_LDADD   = -lkfm -lkfile -lkdeui -lkdecore -lmediatool -lqt -lqimgio -lpng -ljpeg -lz -lXext -lX11 $(LIBSOCKET)
+ktuberling_LDADD   = $(LIB_KFILE) -lmediatool $(LIB_KIMGIO)
 
 kde_icon_DATA = ktuberling.xpm
 

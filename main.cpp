@@ -6,12 +6,14 @@
 
 #include <kapp.h>
 #include <ktopwidget.h>
+#include <kimgio.h>
 
 #include "toplevel.h"
 
 int main(int argc, char *argv[])
 {
   KApplication app(argc, argv);
+  kimgioRegister();
 
   TopLevel *toplevel=0;
 

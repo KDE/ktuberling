@@ -13,6 +13,7 @@
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <ktoolbar.h>
+#include <mediatool.h>
 #include <kaudio.h>
 
 #include <qpopmenu.h>

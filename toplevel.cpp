@@ -11,8 +11,6 @@
 #include <qclipboard.h>
 #include <qprintdialog.h>
 #include <qprinter.h>
-#include <qjpegio.h>
-#include <qpngio.h>
 
 #include <kiconloader.h>
 #include <kfiledialog.h>
@@ -35,8 +33,6 @@ TopLevel::TopLevel()
   setupSound();
   setupMenuBar();
   setupToolBar();
-  qInitJpegIO();
-  qInitPngIO();
   objectsLayout = shapesLayout = 0;
   textsList = soundsList = 0;
   toDraw.setAutoDelete(true);
