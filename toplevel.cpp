@@ -357,11 +357,11 @@ void TopLevel::filePicture()
 
   KURL url = KFileDialog::getSaveURL
                 ( QString::null,
-                 i18n(  "*.xpm|UNIX pixmaps (*.xpm)\n"
-                        "*.jpg|JPEG compressed files (*.jpg)\n"
-                        "*.png|Next generation pictures (*.png)\n"
-                        "*.bmp|Windows bitmaps (*.bmp)\n"
-                        "*|All picture formats"));
+                 i18n(  "*.xpm|UNIX Pixmaps (*.xpm)\n"
+                        "*.jpg|JPEG Compressed Files (*.jpg)\n"
+                        "*.png|Next Generation Pictures (*.png)\n"
+                        "*.bmp|Windows Bitmaps (*.bmp)\n"
+                        "*|All Picture Formats"));
 
   if( url.isEmpty() )
     return;
