@@ -4,7 +4,6 @@
    mailto:ebisch@cybercable.tm.fr
  ------------------------------------------------------------- */
 
-#include <qmessagebox.h>
 #include <qpainter.h>
 #include <qimage.h>
 #include <qlist.h>
@@ -12,6 +11,7 @@
 #include <qprintdialog.h>
 #include <qprinter.h>
 
+#include <kmessagebox.h>
 #include <kicontheme.h>
 #include <kiconloader.h>
 #include <kfiledialog.h>
@@ -49,12 +49,9 @@ TopLevel::TopLevel()
 
   if (!loadBitmaps())
   {
-    QMessageBox::critical
-	(this,
-         i18n("Tuberling"),
-	 i18n("Fatal error :\n" 
-              "I could not load the pictures. I'll quit"),
-	 i18n("OK")); 
+    KMessageBox::error(this,
+		       i18n("Fatal error:\n" 
+			    "I could not load the pictures. I'll quit."));
     exit(-1);
   }
 
@@ -317,7 +314,7 @@ void TopLevel::fileOpen()
   currentAction = 0;
 
   if (!loadFrom(name))
-    QMessageBox::warning(this,i18n("Tuberling"),i18n("Could not load file"),i18n("OK"));
+    KMessageBox::error(this, i18n("Could not load file."));
 
   enableUndo(currentAction != 0);
   enableRedo(false);
@@ -346,12 +343,14 @@ void TopLevel::fileSave()
  
   if( !url.isLocalFile() )
   {
-    KMessageBox::sorry( 0L, i18n( "Only saving to local files currently supported." ) );
+    KMessageBox::sorry(this,
+		       i18n("Only saving to local files currently "
+			    "supported."));
     return;
   }
  
   if( !saveAs( url.path() ) )
-    QMessageBox::warning(this,i18n("Tuberling"),i18n("Could not save file"),i18n("OK"));
+    KMessageBox::error(this, i18n("Could not save file."));
 }
 
 // Save gameboard as picture
@@ -399,20 +398,13 @@ void TopLevel::filePicture()
   else if (end == "bmp") format = "BMP";
   else
   {
-    QMessageBox::warning
-      (this,
-       i18n("Tuberling"),
-       i18n("Unknown picture format"),
-       i18n("OK"));
+    KMessageBox::error(this, i18n("Unknown picture format."));
     return;
   }
 
   if (!picture.save(name, format))
-    QMessageBox::warning
-      (this,
-       i18n("Tuberling"),
-       i18n("Could not save file"),
-       i18n("OK"));
+    KMessageBox::error
+      (this, i18n("Could not save file."));
 }
 
 // Save gameboard as picture
@@ -426,17 +418,11 @@ void TopLevel::filePrint()
   if (!ok) return;
   repaint(true);
   if (!printPicture(printer))
-    QMessageBox::warning
-        (this,
-         i18n("Tuberling"),
-         i18n("Could not print picture"),
-	 i18n("OK"));
+    KMessageBox::error(this,
+			 i18n("Could not print picture."));
   else
-    QMessageBox::information
-        (this,
-         i18n("Tuberling"),
-         i18n("Picture successfully printed"),
-	 i18n("OK"));
+    KMessageBox::information(this,
+			     i18n("Picture successfully printed."));
 }
 
 // Copy modified area to clipboard
