@@ -586,21 +586,21 @@
       <label>&amp;Portuguese</label>
     </menuitem>
 
-    <sound name="tuberling" file="pt/senhor-batata.ogg" />
-    <sound name="eye" file="pt/olho.ogg" />
-    <sound name="eyebrow" file="pt/sobrancelha.ogg" />
-    <sound name="nose" file="pt/nariz.ogg" />
-    <sound name="ear" file="pt/orelha.ogg" />
-    <sound name="mouth" file="pt/boca.ogg" />
-    <sound name="hat" file="pt/chapeu.ogg" />
-    <sound name="moustache" file="pt/bigode.ogg" />
-    <sound name="cigar" file="pt/cigarro.ogg" />
-    <sound name="bow" file="pt/laco.ogg" />
-    <sound name="sunglasses" file="pt/oculos-de-sol.ogg" />
-    <sound name="spectacles" file="pt/oculos.ogg" />
-    <sound name="earring" file="pt/brincos.ogg" />
-    <sound name="badge" file="pt/medalha.ogg" />
-    <sound name="watch" file="pt/relogio.ogg" />
+    <sound name="tuberling" file="pt/senhor-batata.wav" />
+    <sound name="eye" file="pt/olho.wav" />
+    <sound name="eyebrow" file="pt/sobrancelha.wav" />
+    <sound name="nose" file="pt/nariz.wav" />
+    <sound name="ear" file="pt/orelha.wav" />
+    <sound name="mouth" file="pt/boca.wav" />
+    <sound name="hat" file="pt/chapeu.wav" />
+    <sound name="moustache" file="pt/bigode.wav" />
+    <sound name="cigar" file="pt/cigarro.wav" />
+    <sound name="bow" file="pt/laco.wav" />
+    <sound name="sunglasses" file="pt/oculos-de-sol.wav" />
+    <sound name="spectacles" file="pt/oculos.wav" />
+    <sound name="earring" file="pt/brincos.wav" />
+    <sound name="badge" file="pt/medalha.wav" />
+    <sound name="watch" file="pt/relogio.wav" />
 
   </language>
 
