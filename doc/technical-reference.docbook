@@ -125,7 +125,7 @@ translate file names like <filename>en/hat.wav</filename> to names like
 </para>
 
 <para>
-In a future release, &ktuberling will use OGG Vorbis rc3 file format for sounds.
+In a future release, &ktuberling; will use OGG Vorbis rc3 file format for sounds.
 At that moment, it will be possible to convert the WAV files to OGG Vorbis rc3
 through the following command line:
 <screen>
@@ -146,7 +146,7 @@ KDE Translation HOWTO</ulink>.
 <title>For programmers</title>
 <para>&ktuberling; isn't really difficult to extend for programmers.</para>
 
-<sect2>
+<sect2 id="classes">
 <title>C++ classes</title>
 
 <variablelist>
@@ -166,7 +166,7 @@ drawn</para> </listitem>
 
 </sect2>
 
-<sect2>
+<sect2 id="files-structure">
 <title><literal role="extension">.tuberling</literal> files structure</title>
 
 <para>A <literal role="extension">.tuberling</literal> file holds all the
