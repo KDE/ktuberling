@@ -26,11 +26,11 @@ class PlayGround : public QWidget
 
 public:
 
-  PlayGround( TopLevel *parent, const char *name );
+  PlayGround( TopLevel *parent, const char *name, uint selectedGameboard );
   ~PlayGround();
 
   void reset();
-  void change( uint );
+  void change( uint selectedGameboard );
   void loadFailure();
   void repaintAll();
   bool undo();

@@ -81,10 +81,10 @@ bool ToDraw::load(FILE *fp, int decorations, bool &eof)
 }
 
 // Save an object to a file
-bool ToDraw::save(FILE *fp) const
+void ToDraw::save(FILE *fp) const
 {
-  return fprintf(fp, "%d\t%d %d %d %d\n",
-                 number,
-                 position.left(), position.top(), position.right(), position.bottom());
+  fprintf(fp, "%d\t%d %d %d %d\n",
+              number,
+              position.left(), position.top(), position.right(), position.bottom());
 }
 

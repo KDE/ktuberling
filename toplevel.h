@@ -27,6 +27,7 @@ public:
   void changeGameboard( uint newGameboard );
 
   inline bool isSoundEnabled() const {return soundEnabled;}
+  inline uint getSelectedGameboard() const {return selectedGameboard;}
 
 protected:
 

@@ -20,7 +20,7 @@ class ToDraw
     ToDraw(int, const QRect &);
     ToDraw &operator=(const ToDraw &);
     void draw(QPainter &, const QRect &, const QRect *, const QRect *, const QPixmap *, const QBitmap *) const;
-    bool save(FILE *) const;
+    void save(FILE *) const;
     bool load(FILE *, int, bool &);
 
     inline int getNumber() const { return number; }

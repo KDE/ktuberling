@@ -1,7 +1,5 @@
 
-- Better format for .tuberling files (object names instead of numbers, XML?)
-
-- Ability to choose other gameboards (for example : farm with animals, ocean with fishes, clown with accessories, etc)
+- Better format for .tuberling files (object names instead of numbers, XML)
 
 - Draw a small hand when grabbing objects
 
@@ -11,4 +9,5 @@
 
 - More and better localized sounds (French, German, Spanish etc)
 
-- Better graphics and more colour gameboards and objects
+- More and better colour gameboards and objects
+  (for example : farm with animals, ocean with fishes, clown with accessories, etc)

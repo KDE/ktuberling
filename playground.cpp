@@ -25,7 +25,7 @@
 #define YMARGIN 5
 
 // Constructor
-PlayGround::PlayGround( TopLevel *parent, const char *name )
+PlayGround::PlayGround( TopLevel *parent, const char *name, uint selectedGameboard )
     : QWidget( parent, name )
 {
   topLevel = parent;
@@ -42,7 +42,7 @@ PlayGround::PlayGround( TopLevel *parent, const char *name )
   QDomDocument layoutsDocument;
   bool ok = loadLayout(layoutsDocument);
   if (ok) ok = registerPlayGrounds(layoutsDocument);
-  if (ok) ok = loadPlayGround(layoutsDocument, 0);
+  if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
   if (!ok) loadFailure();
 
   currentAction = 0;
@@ -70,12 +70,12 @@ void PlayGround::reset()
   currentAction = 0;
 }
 
-// Change the play ground
-void PlayGround::change( uint selectedPlayground )
+// Change the gameboard
+void PlayGround::change( uint selectedGameboard )
 {
   QDomDocument layoutsDocument;
   bool ok = loadLayout(layoutsDocument);
-  if (ok) ok = loadPlayGround(layoutsDocument, selectedPlayground);
+  if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
   if (!ok) loadFailure();
 
   toDraw.clear();
@@ -176,13 +176,12 @@ bool PlayGround::saveAs(const QString & name)
   FILE *fp;
   const ToDraw *currentObject;
 
-  if (!(fp = fopen(QFile::encodeName(name), "w"))) return false;
+  if (!(fp = fopen((const char *) QFile::encodeName(name), "w"))) return false;
+
+  fprintf(fp, "%d\n", topLevel->getSelectedGameboard());
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
-    if (!currentObject->save(fp))
-    {
-      fclose(fp);
-      return false;
-    }
+    currentObject->save(fp);
+
   return !fclose(fp);
 }
 
@@ -608,6 +607,16 @@ bool PlayGround::loadFrom(const QString & name)
   Action *newAction;
 
   if (!(fp = fopen(QFile::encodeName(name), "r"))) return false;
+
+  uint newGameboard;
+  int nitems = fscanf(fp, "%d\n", &newGameboard);
+  if (nitems == EOF)
+  {
+    fclose(fp);
+    return false;
+  }
+  change(newGameboard);
+
   for (;;)
   {
     if (!readObject.load(fp, decorations, eof))

@@ -35,10 +35,9 @@ TopLevel::TopLevel()
   readOptions();
 
   gameboards = 0;
-  playGround = new PlayGround( this, "playground" );
-  if (selectedGameboard >= gameboards) selectedGameboard = 0;
+  playGround = new PlayGround(this, "playground", selectedGameboard);
 
-  setCentralWidget( playGround );
+  setCentralWidget(playGround);
 
   setupKAction();
 }
@@ -84,7 +83,7 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
   	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard7()), actionCollection(), actionId);
 		break;
   }
-  if (gameboards == 0) t->setChecked(true);
+  if (gameboards == selectedGameboard) t->setChecked(true);
   gameboardActions[gameboards] = actionId;
   gameboards++;
 }
@@ -207,16 +206,12 @@ void TopLevel::fileOpen()
 // Save gameboard
 void TopLevel::fileSave()
 {
-  QString name;
-
-  QString dir = locate("data", "ktuberling/museum/miss.tuberling");
-  dir.truncate(dir.find('/') + 1);
-
-  KURL url = KFileDialog::getSaveURL(dir, "*.tuberling");
+  KURL url = KFileDialog::getSaveURL
+                (getenv("HOME"),
+		 "*.tuberling");
 
   if (url.isEmpty())
     return;
-
 
   if( !url.isLocalFile() )
   {
@@ -226,7 +221,16 @@ void TopLevel::fileSave()
     return;
   }
 
-  if( !playGround->saveAs( url.path() ) )
+  QString name = url.path();
+  int suffix;
+
+  suffix = name.findRev('.');
+  if (suffix == -1)
+  {
+    name += ".tuberling";
+  }
+
+  if( !playGround->saveAs( name ) )
     KMessageBox::error(this, i18n("Could not save file."));
 }
 
@@ -250,7 +254,9 @@ void TopLevel::filePicture()
 
   if( !url.isLocalFile() )
   {
-    KMessageBox::sorry( 0L, i18n( "Only saving to local files supported yet." ) );
+    KMessageBox::sorry(this,
+                       i18n("Only saving to local files currently "
+                            "supported."));
     return;
   }
 
