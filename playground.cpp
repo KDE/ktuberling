@@ -30,35 +30,35 @@ PlayGround::PlayGround( TopLevel *parent, const char *name )
 {
   topLevel = parent;
 
-  objectsLayout = shapesLayout = 0;
+  textsLayout = objectsLayout = shapesLayout = 0;
   textsList = soundsList = 0;
+  draggedCursor = 0;
 
   toDraw.setAutoDelete(true);
   history.setAutoDelete(true);
 
   setBackgroundColor(white);
 
-  if (!loadBitmaps())
-  {
-    KMessageBox::error(this,
-                       i18n("Fatal error:\n"
-                            "I could not load the pictures. I'll quit."));
-    exit(-1);
-  }
+  QDomDocument layoutsDocument;
+  bool ok = loadLayout(layoutsDocument);
+  if (ok) ok = registerPlayGrounds(layoutsDocument);
+  if (ok) ok = loadPlayGround(layoutsDocument, 0);
+  if (!ok) loadFailure();
 
-  draggedCursor = 0;
   currentAction = 0;
-
   setupGeometry();
 }
 
 // Destructor
 PlayGround::~PlayGround()
 {
-  if (soundsList) delete soundsList;
-  if (textsList) delete textsList;
+  if (textsLayout) delete textsLayout;
   if (objectsLayout) delete objectsLayout;
   if (shapesLayout) delete shapesLayout;
+
+  if (textsList) delete textsList;
+  if (soundsList) delete soundsList;
+
   if (draggedCursor) delete draggedCursor;
 }
 
@@ -68,6 +68,32 @@ void PlayGround::reset()
   toDraw.clear();
   history.clear();
   currentAction = 0;
+}
+
+// Change the play ground
+void PlayGround::change( uint selectedPlayground )
+{
+  QDomDocument layoutsDocument;
+  bool ok = loadLayout(layoutsDocument);
+  if (ok) ok = loadPlayGround(layoutsDocument, selectedPlayground);
+  if (!ok) loadFailure();
+
+  toDraw.clear();
+  history.clear();
+  currentAction = 0;
+
+  setupGeometry();
+
+  update();
+}
+
+// Report a load failure
+void PlayGround::loadFailure()
+{
+  KMessageBox::error(this,
+                     i18n("Fatal error:\n"
+                          "I could not load the pictures. I'll quit."));
+  exit(-1);
 }
 
 // Repaint all the editable area
@@ -305,35 +331,73 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
 
 }
 
-// Load background and draggable objects masks
-bool PlayGround::loadBitmaps()
+// Load the layouts file
+bool PlayGround::loadLayout(QDomDocument &layoutDocument)
 {
-  QDomDocument layoutDocument("layout");
-  QDomNodeList playGroundsList,
-               menuItemsList, editableAreasList, categoriesList, objectsList,
-               gameAreasList, maskAreasList, soundNamesList, labelsList;
-  QDomElement playGroundElement,
-              menuItemElement, editableAreaElement, categoryElement, objectElement,
-              gameAreaElement, maskAreaElement, soundNameElement, labelElement;
-  QDomAttr gameboardAttribute, masksAttribute, actionAttribute,
-           leftAttribute, topAttribute, rightAttribute, bottomAttribute;
-
   QFile layoutFile(QFile::encodeName(locate("data", "ktuberling/pics/layout.xml")));
   if (!layoutFile.open(IO_ReadOnly))
      return false;
 
-  if (!layoutDocument.setContent(&layoutFile)) {
+  if (!layoutDocument.setContent(&layoutFile))
+  {
      layoutFile.close();
      return false;
   }
   layoutFile.close();
 
+  return true;
+}
+
+// Register the various playgrounds
+bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
+{
+  QDomNodeList playGroundsList, menuItemsList, labelsList;
+  QDomElement playGroundElement, menuItemElement, labelElement;
+  QDomAttr actionAttribute;
+
   playGroundsList = layoutDocument.elementsByTagName("playground");
   if (playGroundsList.count() < 1)
     return false;
 
-  playGroundElement = (const QDomElement &) playGroundsList.item(0);
- 			 // Someday we'll support several playgrounds
+  for (uint i = 0; i < playGroundsList.count(); i++)
+  {
+    playGroundElement = (const QDomElement &) playGroundsList.item(i);
+
+    menuItemsList = playGroundElement.elementsByTagName("menuitem");
+    if (menuItemsList.count() != 1)
+      return false;
+
+    menuItemElement = (const QDomElement &) menuItemsList.item(0);
+
+    labelsList = menuItemElement.elementsByTagName("label");
+    if (labelsList.count() != 1)
+      return false;
+
+    labelElement = (const QDomElement &) labelsList.item(0);
+    actionAttribute = menuItemElement.attributeNode("action");
+    topLevel->registerGameboard(labelElement.text(), actionAttribute.value().latin1()); 
+  }
+ 
+  return true;
+}
+
+// Load background and draggable objects masks
+bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
+{
+  QDomNodeList playGroundsList,
+               editableAreasList, categoriesList, objectsList,
+               gameAreasList, maskAreasList, soundNamesList, labelsList;
+  QDomElement playGroundElement,
+              editableAreaElement, categoryElement, objectElement,
+              gameAreaElement, maskAreaElement, soundNameElement, labelElement;
+  QDomAttr gameboardAttribute, masksAttribute,
+           leftAttribute, topAttribute, rightAttribute, bottomAttribute;
+
+  playGroundsList = layoutDocument.elementsByTagName("playground");
+  if (toLoad >= playGroundsList.count())
+    return false;
+
+  playGroundElement = (const QDomElement &) playGroundsList.item(toLoad);
 
   gameboardAttribute = playGroundElement.attributeNode("gameboard");
   if (!gameboard.load(locate("data", "ktuberling/pics/" + gameboardAttribute.value())))
@@ -343,20 +407,6 @@ bool PlayGround::loadBitmaps()
   if (!masks.load(locate("data", "ktuberling/pics/" + masksAttribute.value())))
     return false;
 
-  menuItemsList = playGroundElement.elementsByTagName("menuitem");
-  if (menuItemsList.count() != 1)
-    return false;
-
-  menuItemElement = (const QDomElement &) menuItemsList.item(0);
-
-  labelsList = menuItemElement.elementsByTagName("label");
-  if (labelsList.count() != 1)
-    return false;
-
-  labelElement = (const QDomElement &) labelsList.item(0);
-  actionAttribute = menuItemElement.attributeNode("action");
-  topLevel->registerGameboard(labelElement.text(), actionAttribute.value().latin1()); 
- 
   editableAreasList = playGroundElement.elementsByTagName("editablearea");
   if (editableAreasList.count() != 1)
     return false;

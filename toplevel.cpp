@@ -34,7 +34,10 @@ TopLevel::TopLevel()
 {
   readOptions();
 
+  gameboards = 0;
   playGround = new PlayGround( this, "playground" );
+  if (selectedGameboard >= gameboards) selectedGameboard = 0;
+
   setCentralWidget( playGround );
 
   setupKAction();
@@ -60,7 +63,48 @@ void TopLevel::enableRedo(bool enable) const
 // Register an available gameboard
 void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 {
-  (void) new KAction(i18n(menuItem.latin1()), 0, this, /*SLOT(selectGameboard())*/0, actionCollection(), actionId);
+  KToggleAction *t;
+
+  switch (gameboards)
+  {
+  	case 0: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard0()), actionCollection(), actionId);
+		break;
+  	case 1: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard1()), actionCollection(), actionId);
+		break;
+  	case 2: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard2()), actionCollection(), actionId);
+		break;
+  	case 3: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard3()), actionCollection(), actionId);
+		break;
+  	case 4: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard4()), actionCollection(), actionId);
+		break;
+  	case 5: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard5()), actionCollection(), actionId);
+		break;
+  	case 6: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard6()), actionCollection(), actionId);
+		break;
+  	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(optionsGameboard7()), actionCollection(), actionId);
+		break;
+  }
+  if (gameboards == 0) t->setChecked(true);
+  gameboardActions[gameboards] = actionId;
+  gameboards++;
+}
+
+// Switch to another gameboard
+void TopLevel::changeGameboard(uint newGameboard)
+{
+  // Do not accept to switch to same gameboard
+  if (newGameboard == selectedGameboard)
+    return;
+
+  // Unselect preceeding gameboard
+  ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->setChecked(false);
+
+  // Change gameboard in the remembered options
+  selectedGameboard = newGameboard;
+  writeOptions();
+
+  // Change gameboard effectively
+  playGround->change(newGameboard);
 }
 
 // Read options from preferences file
@@ -74,6 +118,11 @@ void TopLevel::readOptions()
   config->setGroup("General");
   option = config->readEntry("Sound", "on");
   soundEnabled = option.find("on") == 0;
+
+  option = config->readEntry("GameboardNumber", "0");
+  selectedGameboard = option.toInt();
+  if (selectedGameboard < 0) selectedGameboard = 0;
+  if (selectedGameboard > 7) selectedGameboard = 7;
 }
 
 // Write options to preferences file
@@ -85,6 +134,9 @@ void TopLevel::writeOptions()
 
   config->setGroup("General");
   config->writeEntry("Sound", soundEnabled? "on": "off");
+
+  config->writeEntry("GameboardNumber", selectedGameboard);
+
   config->sync();
 }
 
@@ -286,6 +338,55 @@ void TopLevel::editRedo()
 void TopLevel::optionsSound()
 {
   soundEnabled = !soundEnabled;
-  ((KToggleAction*)actionCollection()->action("options_sound"))->setChecked(soundEnabled);
+  ((KToggleAction*) actionCollection()->action("options_sound"))->setChecked(soundEnabled);
+
   writeOptions();
+}
+
+// Switch to gameboard #0
+void TopLevel::optionsGameboard0()
+{
+  changeGameboard(0);
+}
+
+// Switch to gameboard #1
+void TopLevel::optionsGameboard1()
+{
+  changeGameboard(1);
+}
+
+// Switch to gameboard #2
+void TopLevel::optionsGameboard2()
+{
+  changeGameboard(2);
+}
+
+// Switch to gameboard #3
+void TopLevel::optionsGameboard3()
+{
+  changeGameboard(3);
+}
+
+// Switch to gameboard #4
+void TopLevel::optionsGameboard4()
+{
+  changeGameboard(4);
+}
+
+// Switch to gameboard #5
+void TopLevel::optionsGameboard5()
+{
+  changeGameboard(5);
+}
+
+// Switch to gameboard #6
+void TopLevel::optionsGameboard6()
+{
+  changeGameboard(6);
+}
+
+// Switch to gameboard #7
+void TopLevel::optionsGameboard7()
+{
+  changeGameboard(7);
 }

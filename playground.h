@@ -18,6 +18,7 @@
 #include "action.h"
 
 class TopLevel;
+class QDomDocument;
 
 class PlayGround : public QWidget
 {
@@ -29,6 +30,8 @@ public:
   ~PlayGround();
 
   void reset();
+  void change( uint );
+  void loadFailure();
   void repaintAll();
   bool undo();
   bool redo();
@@ -51,7 +54,9 @@ protected:
   virtual void mousePressEvent( QMouseEvent *event );
   virtual void mouseReleaseEvent( QMouseEvent *event );
 
-  bool loadBitmaps();
+  bool loadLayout(QDomDocument &);
+  bool registerPlayGrounds(QDomDocument &);
+  bool loadPlayGround(QDomDocument &, uint toLoad);
   void setupGeometry();
 
 private:

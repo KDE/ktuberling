@@ -24,6 +24,7 @@ public:
   void enableUndo(bool) const;
   void enableRedo(bool) const;
   void registerGameboard(const QString &, const char *);
+  void changeGameboard( uint newGameboard );
 
   inline bool isSoundEnabled() const {return soundEnabled;}
 
@@ -44,6 +45,14 @@ private slots:
   void editUndo();
   void editRedo();
   void optionsSound();
+  void optionsGameboard0();
+  void optionsGameboard1();
+  void optionsGameboard2();
+  void optionsGameboard3();
+  void optionsGameboard4();
+  void optionsGameboard5();
+  void optionsGameboard6();
+  void optionsGameboard7();
 
 private:
 
@@ -57,6 +66,9 @@ private:
       ID_HELP };
 
   bool soundEnabled;            // True if the sound is enabled by user, even if there is no audio server
+  uint selectedGameboard,	// Number of currently selected gameboard
+       gameboards;		// Total number of gameboards
+  QString gameboardActions[8];	// Name of actions for registered gameboards
 
   PlayGround *playGround;	// Play ground central widget
 };
