@@ -11,7 +11,6 @@
 # kde_toolbardir    Where general toolbar icons should go to.
 # kde_wallpaperdir  Where general wallpapers should go to.
 
-APPSDIR = $(kde_appsdir)/Utilities
 INCLUDES= $(all_includes)
 SUBDIRS = . doc museum sounds pics
 
@@ -26,13 +25,13 @@ ktuberling_LDADD   = $(LIB_KFILE) -lmediatool $(LIB_KIMGIO)
 
 kde_icon_DATA = ktuberling.xpm
 
+kdelnkdir = $(kde_appsdir)/Games
+kdelnk_DATA = ktuberling.kdelnk
+
 install-data-local: 
-	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) ktuberling.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-ktuberling.xpm $(kde_minidir)/ktuberling.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-ktuberling.xpm $(kde_minidir)/ktuberling.xpm
 
 uninstall-local:
-	-rm -f $(APPSDIR)/ktuberling.kdelnk
 	-rm -f $(kde_minidir)/ktuberling.xpm
 
