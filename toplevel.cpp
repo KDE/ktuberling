@@ -160,6 +160,10 @@ void TopLevel::changeGameboard(uint newGameboard)
   
   // Change gameboard effectively
   playGround->change(newGameboard);
+
+  // Disable undo and redo actions
+  enableUndo(false);
+  enableRedo(false);
 }
 
 // Switch to another language

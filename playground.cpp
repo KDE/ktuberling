@@ -51,13 +51,13 @@ PlayGround::PlayGround(TopLevel *parent, const char *name, uint selectedGameboar
 // Destructor
 PlayGround::~PlayGround()
 {
-  if (textsLayout) delete [] textsLayout;
-  if (objectsLayout) delete [] objectsLayout;
+  delete [] textsLayout;
+  delete [] objectsLayout;
 
-  if (textsList) delete [] textsList;
-  if (soundsList) delete [] soundsList;
+  delete [] textsList;
+  delete [] soundsList;
 
-  if (draggedCursor) delete draggedCursor;
+  delete draggedCursor;
 }
 
 // Reset the play ground
@@ -423,8 +423,10 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (texts < 1)
     return false;
 
+  delete[] textsLayout;
   if (!(textsLayout = new QRect[texts]))
     return false;
+  delete[] textsList;
   if (!(textsList = new QString[texts]))
     return false;
 
@@ -462,8 +464,10 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (decorations < 1)
     return false;
 
+  delete[] objectsLayout;
   if (!(objectsLayout = new QRect[decorations]))
     return false;
+  delete[] soundsList;
   if (!(soundsList = new QString[decorations]))
     return false;
 
