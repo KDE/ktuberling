@@ -14,6 +14,7 @@
 #include <qdom.h>
 
 #include "soundfactory.h"
+#include "soundfactory.moc"
 #include "toplevel.h"
 
 // Constructor
