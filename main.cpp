@@ -6,7 +6,7 @@
 
 #include <kapp.h>
 #include <ktmainwindow.h>
-#include <kimgio.h>
+#include <kimageio.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication app;
-  kimgioRegister();
+  KImageIO::registerFormats();
 
   TopLevel *toplevel=0;
 
