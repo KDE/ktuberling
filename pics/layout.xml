@@ -729,20 +729,21 @@
       <label>&amp;Slovak</label>
     </menuitem>
 
-    <sound name="eye" file="oko.wav" />
-    <sound name="eyebrow" file="obocie.wav" />
-    <sound name="nose" file="nos.wav" />
-    <sound name="ear" file="ucho.wav" />
-    <sound name="mouth" file="usta.wav" />
-    <sound name="hat" file="klobuk.wav" />
-    <sound name="moustache" file="fuzy.wav" />
-    <sound name="cigar" file="cigara.wav" />
-    <sound name="bow" file="kravata.wav" />
-    <sound name="sunglasses" file="slnecneokuliare.wav" />
-    <sound name="spectacles" file="okuliare.wav" />
-    <sound name="earring" file="nausnica.wav" />
-    <sound name="badge" file="odznak.wav" />
-    <sound name="watch" file="hodinky.wav" />
+    <sound name="tuberling" file="sk/zemiacik.wav" />
+    <sound name="eye" file="sk/oko.wav" />
+    <sound name="eyebrow" file="sk/obocie.wav" />
+    <sound name="nose" file="sk/nos.wav" />
+    <sound name="ear" file="sk/ucho.wav" />
+    <sound name="mouth" file="sk/usta.wav" />
+    <sound name="hat" file="sk/klobuk.wav" />
+    <sound name="moustache" file="sk/fuzy.wav" />
+    <sound name="cigar" file="sk/cigara.wav" />
+    <sound name="bow" file="sk/kravata.wav" />
+    <sound name="sunglasses" file="sk/slnecneokuliare.wav" />
+    <sound name="spectacles" file="sk/okuliare.wav" />
+    <sound name="earring" file="sk/nausnica.wav" />
+    <sound name="badge" file="sk/odznak.wav" />
+    <sound name="watch" file="sk/hodinky.wav" />
 
   </language>
 
