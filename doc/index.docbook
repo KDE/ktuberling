@@ -643,8 +643,8 @@ that!</para>
 <para>
 In order to successfully compile &ktuberling;, you need the latest versions of
 <filename>libkdecore</filename>, <filename>libkdeui</filename>,
-<filename>libkfile</filename>, <filename>libkfm</filename>, and
-<filename>libmediatooli</filename>.  All required libraries as well as
+<filename>libkfile</filename>, and <filename>libkfm</filename>.
+All required libraries as well as
 &ktuberling; itself can be found on <ulink
 url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>.
 </para>
