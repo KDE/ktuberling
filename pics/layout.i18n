@@ -28,3 +28,5 @@ i18n("en/spectacles.wav");
 i18n("en/earring.wav");
 i18n("en/badge.wav");
 i18n("en/watch.wav");
+
+i18n("Penguin");
