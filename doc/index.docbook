@@ -815,7 +815,11 @@ advice and help</para>
 </listitem>
 
 <listitem>
-<para>Bass Willems <email>next@euronet.nl</email> - Colour graphics</para>
+<para>Agnieszka Czajkowska <email>agnieszka@imagegalaxy.de</email> - Penguin graphics</para>
+</listitem>
+
+<listitem>
+<para>Bas Willems <email>next@euronet.nl</email> - Graphics reworks</para>
 </listitem>
 
 <listitem>
@@ -824,9 +828,8 @@ the documentation</para>
 </listitem>
 
 <listitem>
-<para>Paul Ahlquist <email>pea@ahlquist.org</email> -
-Reformated and added screenshots for &kde; 2.1.  Expanded the
-graphics section of the technical reference.</para>
+<para>Paul Ahlquist <email>pea@ahlquist.org</email> - Bettering of
+documentation</para>
 </listitem>
 </itemizedlist> 
 
