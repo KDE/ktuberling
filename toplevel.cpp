@@ -27,7 +27,7 @@
 
 // Constructor
 TopLevel::TopLevel()
-  : KTMainWindow()
+  : KMainWindow(0)
 {
   readOptions();
 
@@ -343,3 +343,5 @@ void TopLevel::optionsSound()
   optionsMenu->setItemChecked( soundID, soundEnabled);
   writeOptions();
 }
+
+#include "toplevel.moc"

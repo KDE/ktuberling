@@ -8,11 +8,11 @@
 #ifndef _TOPLEVEL_H_
 #define _TOPLEVEL_H_
 
-#include <ktmainwindow.h>
+#include <kmainwindow.h>
 
 class PlayGround;
 
-class TopLevel : public KTMainWindow
+class TopLevel : public KMainWindow
 {
   Q_OBJECT
 

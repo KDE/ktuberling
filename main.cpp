@@ -5,7 +5,6 @@
  ------------------------------------------------------------- */
 
 #include <kapp.h>
-#include <ktmainwindow.h>
 #include <kimageio.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
