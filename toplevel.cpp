@@ -272,7 +272,7 @@ void TopLevel::setupKAction()
   KToggleAction* t = new KToggleAction(i18n("&No Sound"), 0, this, SLOT(soundOff()), actionCollection(), "speech_no_sound");
   if (!soundEnabled) t->setChecked(true);
 
-  createGUI("ktuberlingui.rc");
+  setupGUI();
 }
 
 // Reset gameboard
