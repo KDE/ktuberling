@@ -465,6 +465,7 @@ void TopLevel::editUndo()
   int zOrder;
 
   if (!currentAction) return;
+  toolbar->getButton(ID_UNDO)->setDown(false);
   if (!(undone = history.at(--currentAction)))
     return;
 
@@ -498,6 +499,7 @@ void TopLevel::editRedo()
   int zOrder;
 
   if (currentAction >= history.count()) return;
+  toolbar->getButton(ID_REDO)->setDown(false);
   if (!(undone = history.at(currentAction++)))
     return;
 
