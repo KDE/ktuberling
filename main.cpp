@@ -14,9 +14,9 @@
 
 
 static const char *description = I18N_NOOP("Potato game for kids");
-static const char *text = I18N_NOOP("A program by Eric Bischoff <e.bischoff@noos.fr>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.\n\nYou need OGG Vorbis rc3 to be able to hear the sounds.");
+static const char *text = I18N_NOOP("A program by Eric Bischoff <e.bischoff@noos.fr>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
 
-static const char *version = "0.2.99";
+static const char *version = "0.3.1";
 
 // Main function
 int main(int argc, char *argv[])
