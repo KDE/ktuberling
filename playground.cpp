@@ -240,17 +240,14 @@ void PlayGround::playSound(int soundNumber) const
     case SOUND_CIGAR:
         soundName = i18n("en/cigar.wav");
         break;
-    case SOUND_TIE:
-        soundName = i18n("en/tie.wav");
+    case SOUND_BOW:
+        soundName = i18n("en/bow.wav");
         break;
     case SOUND_SUNGLASSES:
         soundName = i18n("en/sunglasses.wav");
         break;
     case SOUND_SPECTACLES:
         soundName = i18n("en/spectacles.wav");
-        break;
-    case SOUND_BOW:
-        soundName = i18n("en/bow.wav");
         break;
     case SOUND_EARRING:
         soundName = i18n("en/earring.wav");
@@ -287,10 +284,10 @@ void PlayGround::paintEvent( QPaintEvent *event )
 
   artist.drawPixmap(area.topLeft(), gameboard, area);
 
-  artist.setPen(color0);
+  artist.setPen(white);
   for (text = 0; text < texts; text++)
     drawText(artist, textsLayout[text], textsList[text]);
-  artist.setPen(color1);
+  artist.setPen(black);
 
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
     currentObject->draw(artist, area, objectsLayout, shapesLayout, &gameboard, &masks);

@@ -23,13 +23,12 @@
 #define SOUND_HAT	6
 #define SOUND_MOUSTACHE	7
 #define SOUND_CIGAR	8
-#define SOUND_TIE	9
+#define SOUND_BOW	9
 #define SOUND_SUNGLASSES 10
 #define SOUND_SPECTACLES 11
-#define SOUND_BOW	12
-#define SOUND_EARRING	13
-#define SOUND_BADGE	14
-#define SOUND_WATCH	15
+#define SOUND_EARRING	12
+#define SOUND_BADGE	13
+#define SOUND_WATCH	14
 
 #endif
 
