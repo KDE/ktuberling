@@ -46,8 +46,8 @@ protected:
 private:
 
   bool zone(QPoint &);
-  bool loadFrom(const char *);
-  bool saveAs(const char *);
+  bool loadFrom(const QString &);
+  bool saveAs(const QString &);
   bool printPicture(QPrinter &) const;
   void drawText(QPainter &, QRect &, int) const;
   void playSound(int) const;

@@ -197,13 +197,13 @@ bool TopLevel::loadBitmaps()
   QRect *text, *object, *shape;
   int *label, *sound;
 
-  if (!gameboard.load((const char *) locate("data", "ktuberling/pics/gameboard.xpm")))
+  if (!gameboard.load(locate("data", "ktuberling/pics/gameboard.xpm")))
 	return false;
 
-  if (!masks.load((const char *) locate("data", "ktuberling/pics/masks.xpm")))
+  if (!masks.load(locate("data", "ktuberling/pics/masks.xpm")))
 	return false;
 
-  if (!(layoutFile = fopen((const char *) locate("data", "ktuberling/pics/layout.txt"), "r")))
+  if (!(layoutFile = fopen(QFile::encodeName(locate("data", "ktuberling/pics/layout.txt")), "r")))
 	return false;
 
   if (fscanf(layoutFile, "%d %d %d %d %d",
@@ -296,11 +296,9 @@ void TopLevel::fileNew()
 void TopLevel::fileOpen()
 {
   QString name;
-  char dir[512], *p;
 
-  sprintf(dir, "%.512s", (const char *) locate("data", "ktuberling/museum/miss.tuberling"));
-  for (p = dir + strlen(dir) - 1; p >= dir; p--)
-    if (*p == '/') { *p = '\0'; break; }
+  QString dir = locate("data", "ktuberling/museum/miss.tuberling");
+  dir.truncate(dir.findRev('/') + 1);
 
   KURL url = KFileDialog::getOpenURL(dir, "*.tuberling");
   
@@ -329,11 +327,9 @@ void TopLevel::fileOpen()
 void TopLevel::fileSave()
 {
   QString name;
-  char dir[512], *p;
 
-  sprintf(dir, "%.512s", (const char *) locate("data", "ktuberling/museum/miss.tuberling"));
-  for (p = dir + strlen(dir) - 1; p >= dir; p--)
-    if (*p == '/') { *p = '\0'; break; }
+  QString dir = locate("data", "ktuberling/museum/miss.tuberling");
+  dir.truncate(dir.find('/') + 1);
 
   KURL url = KFileDialog::getSaveURL(dir, "*.tuberling");
   
@@ -687,14 +683,14 @@ bool TopLevel::zone(QPoint &position)
 }
 
 // Load objects and lay them down on the editable area
-bool TopLevel::loadFrom(const char *name)
+bool TopLevel::loadFrom(const QString & name)
 {
   FILE *fp;
   bool eof = false;
   ToDraw readObject, *newObject;
   Action *newAction;
 
-  if (!(fp = fopen(name, "r"))) return false;
+  if (!(fp = fopen(QFile::encodeName(name), "r"))) return false;
   for (;;)
   {
     if (!readObject.load(fp, decorations, eof))
@@ -716,12 +712,12 @@ bool TopLevel::loadFrom(const char *name)
 }
 
 // Save objects laid down on the editable area
-bool TopLevel::saveAs(const char *name)
+bool TopLevel::saveAs(const QString & name)
 {
   FILE *fp;
   const ToDraw *currentObject;
 
-  if (!(fp = fopen(name, "w"))) return false;
+  if (!(fp = fopen(QFile::encodeName(name), "w"))) return false;
   for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
     if (!currentObject->save(fp))
     {
