@@ -170,19 +170,17 @@ void TopLevel::setupMenuBar()
 // Toolbar initialization
 void TopLevel::setupToolBar()
 {
-  KIconLoader iconLoader;
-
   toolbar = toolBar();
   toolbar->setGeometry(0, 24, width(), 24);
 
-  toolbar->insertButton(iconLoader.loadIcon("filenew",KIcon::Toolbar), ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
-  toolbar->insertButton(iconLoader.loadIcon("fileopen",KIcon::Toolbar), ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
-  toolbar->insertButton(iconLoader.loadIcon("filesave",KIcon::Toolbar), ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
-  toolbar->insertButton(iconLoader.loadIcon("fileprint",KIcon::Toolbar), ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
+  toolbar->insertButton("filenew", ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
+  toolbar->insertButton("fileopen", ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
+  toolbar->insertButton("filesave", ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
+  toolbar->insertButton("fileprint", ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
   toolbar->insertSeparator();
 
-  toolbar->insertButton(iconLoader.loadIcon("undo",KIcon::Toolbar), ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
-  toolbar->insertButton(iconLoader.loadIcon("redo",KIcon::Toolbar), ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
+  toolbar->insertButton("undo", ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
+  toolbar->insertButton("redo", ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
 }
 
 // Load background and draggable objects masks
