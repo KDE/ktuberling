@@ -1,6 +1,4 @@
-# KDE Config File
-
-[KDE Desktop Entry]
+[Desktop Entry]
 Exec=ktuberling -caption "%c"
 Name=KTuberling
 Comment=A Potato Editor
