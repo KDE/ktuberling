@@ -123,15 +123,15 @@ void TopLevel::setupMenuBar()
 
   newID = fileMenu->insertItem(i18n("&New"));
   fileMenu->connectItem(newID, this, SLOT(fileNew()));
-  fileMenu->setAccel(KStdAccel::openNew(), newID);
+  fileMenu->setAccel(KStdAccel::key(KStdAccel::New), newID);
 
   openID = fileMenu->insertItem(i18n("&Open..."));
   fileMenu->connectItem(openID, this, SLOT(fileOpen()));
-  fileMenu->setAccel(KStdAccel::open(), openID);
+  fileMenu->setAccel(KStdAccel::key(KStdAccel::Open), openID);
 
   saveID = fileMenu->insertItem(i18n("&Save..."));
   fileMenu->connectItem(saveID, this, SLOT(fileSave()));
-  fileMenu->setAccel(KStdAccel::save(), saveID);
+  fileMenu->setAccel(KStdAccel::key(KStdAccel::Save), saveID);
 
   pictureID = fileMenu->insertItem(i18n("Save &as picture..."));
   fileMenu->connectItem(pictureID, this, SLOT(filePicture()));
@@ -139,28 +139,28 @@ void TopLevel::setupMenuBar()
 
   printID = fileMenu->insertItem(i18n("&Print"));
   fileMenu->connectItem(printID, this, SLOT(filePrint()));
-  fileMenu->setAccel(KStdAccel::print(), printID);
+  fileMenu->setAccel(KStdAccel::key(KStdAccel::Print), printID);
   fileMenu->insertSeparator();
 
   quitID = fileMenu->insertItem(i18n("&Quit"));
   fileMenu->connectItem(quitID, kapp, SLOT(quit()));
-  fileMenu->setAccel(KStdAccel::quit(), quitID);
+  fileMenu->setAccel(KStdAccel::key(KStdAccel::Quit), quitID);
 
   copyID = editMenu->insertItem(i18n("&Copy"));
   editMenu->connectItem(copyID, this, SLOT(editCopy()));
-  editMenu->setAccel(KStdAccel::copy(), copyID);
+  editMenu->setAccel(KStdAccel::key(KStdAccel::Copy), copyID);
   editMenu->insertSeparator();
 
   undoID = editMenu->insertItem(i18n("&Undo"));
   editMenu->setItemEnabled(undoID, false);
   editMenu->connectItem(undoID, this, SLOT(editUndo()));
-  editMenu->setAccel(KStdAccel::undo(), undoID);
+  editMenu->setAccel(KStdAccel::key(KStdAccel::Undo), undoID);
 
 
   redoID = editMenu->insertItem(i18n("&Redo"));
   editMenu->setItemEnabled(redoID, false);
   editMenu->connectItem(redoID, this, SLOT(editRedo()));
-  editMenu->setAccel(CTRL | Key_A, redoID);
+  editMenu->setAccel(KStdAccel::key(KStdAccel::Redo), redoID);
 
   soundID = optionsMenu->insertItem(i18n("&Sound"));
   optionsMenu->setItemChecked(soundID, soundEnabled);
