@@ -50,7 +50,7 @@ Six images are used in &ktuberling;: <filename>potato-game.png</filename>,
 <filename>potato-mask.png</filename>, <filename>penguin-game.png</filename>,
 <filename>penguin-mask.png</filename>, <filename>aquarium-game.png</filename>
 and <filename>aquarium-mask.png</filename>. The standard location
-for these files is the directory <filename
+for these files is the folder <filename
 class="directory">$KDEDIR/share/apps/ktuberling/pics/</filename>.
 </para>
 
@@ -69,7 +69,7 @@ the gameboard file as in the mask file.
 </para>
 
 <para>
-In the same directory, a file named <filename>layout.xml</filename>.
+In the same folder, a file named <filename>layout.xml</filename>.
 (<filename>$KDEDIR/share/apps/ktuberling/pics/layout.xml</filename>) tells
 which images to use and links them to menu entries.  It also contains the
 position parameters of the playground and the objects in the gameboard and
@@ -80,7 +80,7 @@ It follows standard XML syntax (see details
 </para>
 
 <para>
-Still in the same directory, a file named <filename>layout.i18n</filename>
+Still in the same folder, a file named <filename>layout.i18n</filename>
 (<filename>$KDEDIR/share/apps/ktuberling/pics/layout.xml</filename>)
 recapitulates the strings in <filename>layout.xml</filename> that can be
 translated:
@@ -91,7 +91,7 @@ translated:
 </para>
 
 <para>
-One directory above, a file named <filename>ktuberlingui.rc</filename>
+One folder above, a file named <filename>ktuberlingui.rc</filename>
 (<filename>$KDEDIR/share/apps/ktuberling/ktuberlingui.rc</filename>) is a
 second XML file describing the menus of &ktuberling;. It should contain
 one <markup>&lt;action&gt;</markup> tag per playground and language.
@@ -112,8 +112,8 @@ translating program labels and prompts, the sounds can be localized too.
 <para>
 If the various
 translators can record their voice to a <literal role="extension">.wav</literal>
-file, they can store that file to the language-specific subdirectory of the
-sounds directory.  The name of the sound is then assigned to a file in the
+file, they can store that file to the language-specific subfolder of the
+sounds folder.  The name of the sound is then assigned to a file in the
 <filename>layout.xml</filename> file.  For example, if destination language is
 Italian, translators can record their voice in <literal
 role="extension">.wav</literal> files located in
