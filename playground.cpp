@@ -428,7 +428,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (!(textsList = new QString[texts]))
     return false;
 
-  for (uint text = 0; text < texts; text++)
+  for (int text = 0; text < texts; text++)
   {
     categoryElement = (const QDomElement &) categoriesList.item(text).toElement();
 
@@ -467,7 +467,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
   if (!(soundsList = new QString[decorations]))
     return false;
 
-  for (uint decoration = 0; decoration < decorations; decoration++)
+  for (int decoration = 0; decoration < decorations; decoration++)
   {
     objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
 

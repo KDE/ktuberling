@@ -23,9 +23,6 @@ public:
   TopLevel();
   ~TopLevel();
 
-  void readProperties(KConfig *config);
-  void saveProperties(KConfig *config);
-
   void enableUndo(bool enable) const;
   void enableRedo(bool enable) const;
   void registerGameboard(const QString &menuItem, const char *actionId);
