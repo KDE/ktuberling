@@ -27,5 +27,5 @@ KDE_ICON = ktuberling
 appsdir = $(kde_appsdir)/Toys
 apps_DATA = ktuberling.desktop
 
-messages:
-	$(XGETTEXT) $(ktuberling_SOURCES) -o $(podir)/ktuberling.pot
+messages: rc.cpp
+	$(XGETTEXT) rc.cpp $(ktuberling_SOURCES) -o $(podir)/ktuberling.pot
