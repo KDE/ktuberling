@@ -23,17 +23,10 @@ ktuberling_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 ktuberling_LDADD   = $(LIB_KFILE) -lmediatool $(LIB_KIMGIO)
 
-kde_icon_DATA = ktuberling.xpm
+KDE_ICON = ktuberling
 
 appsdir = $(kde_appsdir)/Games
 apps_DATA = ktuberling.desktop
-
-install-data-local: 
-	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) $(srcdir)/mini-ktuberling.xpm $(kde_minidir)/ktuberling.xpm
-
-uninstall-local:
-	-rm -f $(kde_minidir)/ktuberling.xpm
 
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(ktuberling_SOURCES) && mv messages.po ../po/ktuberling.pot
