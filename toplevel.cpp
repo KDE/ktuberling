@@ -325,7 +325,7 @@ void TopLevel::fileSave()
   if( !url.isLocalFile() )
   {
     KMessageBox::sorry(this,
-                       i18n("Only saving to local files currently "
+                       i18n("Only saving to local files is currently "
                             "supported."));
     return;
   }
@@ -362,7 +362,7 @@ void TopLevel::filePicture()
   if( !url.isLocalFile() )
   {
     KMessageBox::sorry(this,
-                       i18n("Only saving to local files currently "
+                       i18n("Only saving to local files is currently "
                             "supported."));
     return;
   }

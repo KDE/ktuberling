@@ -505,7 +505,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
 void PlayGround::loadFailure()
 {
   KMessageBox::error(topLevel, i18n("Fatal error:\n"
-				    "I could not load the pictures. I'll quit."));
+				    "Unable to load the pictures, aborting."));
   exit(-1);
 }
 
