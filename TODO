@@ -3,13 +3,15 @@
 
 - Draw a small hand when grabbing objects
 
-- Write title of last opened/saved tuberling on top of the window
+- Write title of tuberling last opened / saved on top of the window
 
-- Allow ktuberling to "speak" other languages than current one
+- Chose the current language accordingly to locale settings
 
 ============== things for which I need help from other people : ==================
 
-- More and better localized sounds (Italian, Spanish etc)
+- More and better localized sounds (German, Spanish, etc)
 
 - More and better colour gameboards and objects
-  (for example : farm with animals, ocean with fishes, clown with accessories, etc)
+  (for example : farm with animals, criminal identification portrait, clown with accessories, etc)
+
+- Sounds in OGG Vorbis format
