@@ -38,15 +38,10 @@ public:
   bool loadFrom(const QString &);
   bool saveAs(const QString &);
   bool printPicture(KPrinter &) const;
+  QPixmap getPicture() const;
 
   inline bool isFirstAction() const { return currentAction == 0; }
   inline bool isLastAction() const { return currentAction >= history.count(); }
-  inline QPixmap grabWindow() const { return QPixmap::grabWindow
-        (winId(),
-         editableArea.left(),
-         editableArea.top(),
-         editableArea.width(),
-         editableArea.height()); }
 
 protected:
 
@@ -63,6 +58,7 @@ private:
 
   bool zone(QPoint &);
   void drawText(QPainter &, QRect &, QString &) const;
+  void drawGameboard(QPainter &, const QRect &) const;
   void playSound(QString &) const;
 
 private:

@@ -237,9 +237,7 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  playGround->repaint(true);
-
-  QPixmap picture(playGround->grabWindow());
+  QPixmap picture(playGround->getPicture());
 
   KURL url = KFileDialog::getSaveURL
                 (getenv("HOME"),
@@ -309,7 +307,7 @@ void TopLevel::filePrint()
 void TopLevel::editCopy()
 {
   QClipboard *clipboard = QApplication::clipboard();
-  QPixmap picture(playGround->grabWindow());
+  QPixmap picture(playGround->getPicture());
 
   clipboard->setPixmap(picture);
 }

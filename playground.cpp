@@ -188,12 +188,26 @@ bool PlayGround::saveAs(const QString & name)
 bool PlayGround::printPicture(KPrinter &printer) const
 {
   QPainter artist;
-  QPixmap picture(grabWindow());
+  QPixmap picture(getPicture());
 
   if (!artist.begin(&printer)) return false;
   artist.drawPixmap(QPoint(32, 32), picture);
   if (!artist.end()) return false;
   return true;
+}
+
+// Get a pixmap containing the current picture
+QPixmap PlayGround::getPicture() const
+{
+  QPixmap result(editableArea.size());
+  QPainter artist(&result);
+  QRect transEditableArea(editableArea);
+
+  transEditableArea.moveBy(-XMARGIN, -YMARGIN);
+  artist.translate(XMARGIN - editableArea.left(),
+                   YMARGIN - editableArea.top());
+  drawGameboard(artist, transEditableArea);
+  return result;
 }
 
 // Draw some text
@@ -218,6 +232,22 @@ void PlayGround::playSound(QString &soundId) const
   KAudioPlayer::play(locate("data", "ktuberling/sounds/" + soundName));
 }
 
+// Paint the current picture to the given device
+void PlayGround::drawGameboard( QPainter &artist, const QRect &area ) const
+{
+  artist.drawPixmap(area.topLeft(), gameboard, area);
+
+  artist.setPen(white);
+  for (int text = 0; text < texts; text++)
+    drawText(artist, textsLayout[text], textsList[text]);
+
+  artist.setPen(black);
+  for (QPtrListIterator<ToDraw> currentObject(toDraw);
+       currentObject.current();
+       ++currentObject)
+    currentObject.current()->draw(artist, area, objectsLayout, &gameboard, &masks);
+}
+
 // Painting event
 void PlayGround::paintEvent( QPaintEvent *event )
 {
@@ -227,23 +257,13 @@ void PlayGround::paintEvent( QPaintEvent *event )
   QRect area(position, QSize(event->rect().size()));
   QPixmap cache(gameboard.size());
   QPainter artist(&cache);
-  const ToDraw *currentObject;
-  int text;
 
   if (destination.x() < XMARGIN) destination.setX(XMARGIN);
   if (destination.y() < YMARGIN) destination.setY(YMARGIN);
   area = QRect(0, 0, gameboard.width(), gameboard.height()).intersect(area);
   if (area.isEmpty()) return;
 
-  artist.drawPixmap(area.topLeft(), gameboard, area);
-
-  artist.setPen(white);
-  for (text = 0; text < texts; text++)
-    drawText(artist, textsLayout[text], textsList[text]);
-  artist.setPen(black);
-
-  for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
-    currentObject->draw(artist, area, objectsLayout, &gameboard, &masks);
+  drawGameboard(artist, area);
 
   bitBlt(this, destination, &cache, area, Qt::CopyROP);
 }
