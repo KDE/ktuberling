@@ -678,9 +678,9 @@ void TopLevel::drawText(QPainter &artist, QRect &area, int textNumber) const
 	label = i18n("Goodies");
 	break;
       default:
-	label = QString::null;
+	return;
   }
-  if (label) artist.drawText(area, AlignCenter, label);
+  artist.drawText(area, AlignCenter, label);
 }
 
 // Play some sound
