@@ -30,8 +30,7 @@ protected:
 
   void readOptions();
   void writeOptions();
-  void setupMenuBar();
-  void setupToolBar();
+  void setupKAction();
 
 private slots:
 
@@ -47,11 +46,6 @@ private slots:
 
 private:
 
-  KMenuBar *menubar;            // Task window's menubar
-  KToolBar *toolbar;            // Task window's tool bar
-  QPopupMenu *fileMenu,         // Various menus
-             *editMenu,
-             *optionsMenu;
   int                           // Menu items identificators
       newID, openID, saveID, pictureID, printID, quitID,
       copyID, undoID, redoID,

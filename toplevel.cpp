@@ -14,6 +14,8 @@
 #include <kstddirs.h>
 #include <kconfig.h>
 #include <kio/netaccess.h>
+#include <kaction.h>
+#include <kstdaction.h>
 
 #include <kprinter.h>
 #include <qprintdialog.h>
@@ -34,8 +36,7 @@ TopLevel::TopLevel()
   playGround = new PlayGround( this, "playground" );
   setCentralWidget( playGround );
 
-  setupMenuBar();
-  setupToolBar();
+  setupKAction();
 }
 
 // Destructor
@@ -46,15 +47,13 @@ TopLevel::~TopLevel()
 // Enable or disable "undo" button and menu item
 void TopLevel::enableUndo(bool enable) const
 {
-  editMenu->setItemEnabled(undoID, enable);
-  toolbar->setItemEnabled(ID_UNDO, enable);
+  actionCollection()->action(KStdAction::stdName(KStdAction::Undo))->setEnabled(enable);
 }
 
 // Enable or disable "redo" button and menu item
 void TopLevel::enableRedo(bool enable) const
 {
-  editMenu->setItemEnabled(redoID, enable);
-  toolbar->setItemEnabled(ID_REDO, enable);
+  actionCollection()->action(KStdAction::stdName(KStdAction::Redo))->setEnabled(enable);
 }
 
 // Read options from preferences file
@@ -82,85 +81,27 @@ void TopLevel::writeOptions()
   config->sync();
 }
 
-// Menubar initialization
-void TopLevel::setupMenuBar()
+// KAction initialization (aka menuba + toolbar init)
+void TopLevel::setupKAction()
 {
-  menubar = menuBar();
+//Game
+  KStdAction::openNew(this, SLOT(fileNew()), actionCollection(), "game_new");
+  KStdAction::open(this, SLOT(fileOpen()), actionCollection(), "game_load");
+  KStdAction::save(this, SLOT(fileSave()), actionCollection(), "game_save");
+  KStdAction::print(this, SLOT(filePrint()), actionCollection(), "game_print");
+  KStdAction::quit(kapp, SLOT(quit()), actionCollection(), "game_quit");
+  (void)new KAction(i18n("Save &as picture..."), 0, this, SLOT(filePicture()), actionCollection(), "game_save_picture");
 
-  fileMenu = new QPopupMenu( this );
-  editMenu = new QPopupMenu( this );
-  optionsMenu = new QPopupMenu( this );
+//Edit
+  KStdAction::copy(this, SLOT(editCopy()), actionCollection());
+  KStdAction::undo(this, SLOT(editUndo()), actionCollection());
+  KStdAction::redo(this, SLOT(editRedo()), actionCollection());
 
-  newID = fileMenu->insertItem(SmallIcon("filenew"), i18n("&New"));
-  fileMenu->connectItem(newID, this, SLOT(fileNew()));
-  fileMenu->setAccel(KStdAccel::key(KStdAccel::New), newID);
+//Settings
+  KToggleAction* t = new KToggleAction(i18n("&Sound"), 0, this, SLOT(optionsSound()), actionCollection(), "options_sound");
+  t->setChecked(soundEnabled);
 
-  openID = fileMenu->insertItem(SmallIcon("fileopen"), i18n("&Open..."));
-  fileMenu->connectItem(openID, this, SLOT(fileOpen()));
-  fileMenu->setAccel(KStdAccel::key(KStdAccel::Open), openID);
-
-  saveID = fileMenu->insertItem(SmallIcon("filesave"), i18n("&Save..."));
-  fileMenu->connectItem(saveID, this, SLOT(fileSave()));
-  fileMenu->setAccel(KStdAccel::key(KStdAccel::Save), saveID);
-
-  pictureID = fileMenu->insertItem(i18n("Save &as picture..."));
-  fileMenu->connectItem(pictureID, this, SLOT(filePicture()));
-  fileMenu->insertSeparator();
-
-  printID = fileMenu->insertItem(SmallIcon("fileprint"), i18n("&Print"));
-  fileMenu->connectItem(printID, this, SLOT(filePrint()));
-  fileMenu->setAccel(KStdAccel::key(KStdAccel::Print), printID);
-  fileMenu->insertSeparator();
-
-  quitID = fileMenu->insertItem(SmallIcon("exit"), i18n("&Quit"));
-  fileMenu->connectItem(quitID, kapp, SLOT(quit()));
-  fileMenu->setAccel(KStdAccel::key(KStdAccel::Quit), quitID);
-
-  copyID = editMenu->insertItem(SmallIcon("editcopy"), i18n("&Copy"));
-  editMenu->connectItem(copyID, this, SLOT(editCopy()));
-  editMenu->setAccel(KStdAccel::key(KStdAccel::Copy), copyID);
-  editMenu->insertSeparator();
-
-  undoID = editMenu->insertItem(SmallIcon("undo"), i18n("&Undo"));
-  editMenu->setItemEnabled(undoID, false);
-  editMenu->connectItem(undoID, this, SLOT(editUndo()));
-  editMenu->setAccel(KStdAccel::key(KStdAccel::Undo), undoID);
-
-
-  redoID = editMenu->insertItem(SmallIcon("redo"), i18n("&Redo"));
-  editMenu->setItemEnabled(redoID, false);
-  editMenu->connectItem(redoID, this, SLOT(editRedo()));
-  editMenu->setAccel(KStdAccel::key(KStdAccel::Redo), redoID);
-
-  soundID = optionsMenu->insertItem(i18n("&Sound"));
-  optionsMenu->setItemChecked(soundID, soundEnabled);
-  optionsMenu->connectItem(soundID, this, SLOT(optionsSound()));
-
-  QString about = i18n("A program by Eric Bischoff <e.bischoff@noos.fr>\n"
-                       "and John Calhoun.\n\n"
-                       "This program is dedicated to my daughter Sunniva.");
-
-  menubar->insertItem(i18n("&File"), fileMenu);
-  menubar->insertItem(i18n("&Edit"), editMenu);
-  menubar->insertItem(i18n("&Options"), optionsMenu);
-  menubar->insertSeparator(-1);
-  menubar->insertItem(i18n("&Help"), helpMenu(about));
-
-}
-
-// Toolbar initialization
-void TopLevel::setupToolBar()
-{
-  toolbar = toolBar();
-
-  toolbar->insertButton("filenew", ID_NEW, SIGNAL(pressed()), this, SLOT(fileNew()), true, i18n("New"));
-  toolbar->insertButton("fileopen", ID_OPEN, SIGNAL(pressed()), this, SLOT(fileOpen()), true, i18n("Open"));
-  toolbar->insertButton("filesave", ID_SAVE, SIGNAL(pressed()), this, SLOT(fileSave()), true, i18n("Save"));
-  toolbar->insertButton("fileprint", ID_PRINT, SIGNAL(pressed()), this, SLOT(filePrint()), true, i18n("Print"));
-  toolbar->insertSeparator();
-
-  toolbar->insertButton("undo", ID_UNDO, SIGNAL(pressed()), this, SLOT(editUndo()), false, i18n("Undo"));
-  toolbar->insertButton("redo", ID_REDO, SIGNAL(pressed()), this, SLOT(editRedo()), false, i18n("Redo"));
+  createGUI("ktuberlingui.rc");
 }
 
 // Reset gameboard
@@ -183,8 +124,6 @@ void TopLevel::fileOpen()
   dir.truncate(dir.findRev('/') + 1);
 
   KURL url = KFileDialog::getOpenURL(dir, "*.tuberling");
-
-  toolbar->getButton(ID_OPEN)->setDown(false);
 
   if (url.isEmpty())
     return;
@@ -213,8 +152,6 @@ void TopLevel::fileSave()
   dir.truncate(dir.find('/') + 1);
 
   KURL url = KFileDialog::getSaveURL(dir, "*.tuberling");
-
-  toolbar->getButton(ID_SAVE)->setDown(false);
 
   if (url.isEmpty())
     return;
@@ -288,7 +225,6 @@ void TopLevel::filePrint()
   bool ok;
 
   ok = printer.setup(this);
-  toolbar->getButton(ID_PRINT)->setDown(false);
   if (!ok) return;
   playGround->repaint(true);
   if (!playGround->printPicture(printer))
@@ -312,7 +248,6 @@ void TopLevel::editCopy()
 void TopLevel::editUndo()
 {
   if (playGround->isFirstAction()) return;
-  toolbar->getButton(ID_UNDO)->setDown(false);
 
   if (!playGround->undo()) return;
 
@@ -326,7 +261,6 @@ void TopLevel::editUndo()
 void TopLevel::editRedo()
 {
   if (playGround->isLastAction()) return;
-  toolbar->getButton(ID_REDO)->setDown(false);
 
   if (!playGround->redo()) return;
 
@@ -340,6 +274,6 @@ void TopLevel::editRedo()
 void TopLevel::optionsSound()
 {
   soundEnabled = !soundEnabled;
-  optionsMenu->setItemChecked( soundID, soundEnabled);
+  ((KToggleAction*)actionCollection()->action("options_sound"))->setChecked(soundEnabled);
   writeOptions();
 }

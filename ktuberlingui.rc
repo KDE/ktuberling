@@ -1,0 +1,21 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="ktuberling" version="1">
+<MenuBar>
+  <Menu name="game" noMerge="0"><text>&amp;Game</text>
+    <Action name="game_print"/>
+    <Action name="game_save_picture"/>
+  </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+    <Action name="options_sound"/>
+  </Menu>
+</MenuBar>
+<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
+  <Action name="game_new"/>
+  <Action name="game_load"/>
+  <Action name="game_save"/>
+  <Action name="game_print"/>
+  <Separator/>
+  <Action name="edit_undo"/>
+  <Action name="edit_redo"/>
+</ToolBar>
+</kpartgui>
