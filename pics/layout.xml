@@ -435,7 +435,7 @@
 
     <category>
       <position left=" 92" top=" 46" right="736" bottom="359" />
-      <label>Fish</label>
+      <label>Fishes</label>
     </category>
 
     <category>
@@ -597,9 +597,9 @@
     <sound name="bow" file="es/lazo.wav" />
     <sound name="sunglasses" file="es/gafasdesol.wav" />
     <sound name="spectacles" file="es/anteojos.wav" />
-    <sound name="earring" file="es/earring.wav" />
-    <sound name="badge" file="es/badge.wav" />
-    <sound name="watch" file="es/watch.wav" />
+    <sound name="earring" file="es/pendiente.wav" />
+    <sound name="badge" file="es/insignia.wav" />
+    <sound name="watch" file="es/reloj.wav" />
 
   </language>
 
