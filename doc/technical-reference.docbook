@@ -63,7 +63,7 @@ when playing the game.
 <para>
 The second type of images, <filename>*-mask.png</filename>, contains only masks of the
 objects.  The masks are used to delimit the borders of the objects and, in some
-cases, give the object some transparancy (for example, the spectacles).  It is
+cases, give the object some transparency (for example, the spectacles).  It is
 mandatory to put the objects at the same position in
 the gameboard file as in the mask file.
 </para>
