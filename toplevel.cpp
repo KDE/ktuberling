@@ -18,6 +18,7 @@
 
 #include "toplevel.h"
 #include "categories.h"
+#include <klocale.h>
 
 #define XMARGIN 5
 #define YMARGIN 5
@@ -654,7 +655,7 @@ bool TopLevel::printPicture() const
 // Draw some text
 void TopLevel::drawText(QPainter &artist, QRect &area, int textNumber) const
 {
-  const char *label;
+  QString label;
 
   switch (textNumber)
   {
@@ -685,7 +686,7 @@ void TopLevel::drawText(QPainter &artist, QRect &area, int textNumber) const
 // Play some sound
 void TopLevel::playSound(int soundNumber) const
 {
-  const char *soundName;
+  QString soundName;
 
   if (!soundEnabled) return;
   if (!audioServer) return;

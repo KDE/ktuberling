@@ -13,7 +13,7 @@
 
 APPSDIR = $(kde_appsdir)/Utilities
 INCLUDES= $(all_includes)
-SUBDIRS = doc museum sounds pics
+SUBDIRS = . doc museum sounds pics
 
 bin_PROGRAMS = ktuberling
 
@@ -25,8 +25,6 @@ ktuberling_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 ktuberling_LDADD   = $(LIB_KFILE) -lmediatool $(LIB_KIMGIO)
 
 kde_icon_DATA = ktuberling.xpm
-
-DISTCLEANFILES = $()
 
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
