@@ -1,4 +1,8 @@
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN">
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
+ <!ENTITY ktuberling "<application>KTuberling</application>">
+ <!ENTITY % addindex "IGNORE">
+ <![ %addindex; [ <!ENTITY docindex SYSTEM "docindex.docbook"> ]]>
+]>
 
 <book lang="en">
 <bookinfo>
