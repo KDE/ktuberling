@@ -14,7 +14,7 @@
 #include "toplevel.h"
 
 
-static const char *description = I18N_NOOP("KDE Game for kids");
+static const char *description = I18N_NOOP("Potato game for kids");
 
 static const char *version = "v0.0.1";
 
