@@ -113,7 +113,6 @@ void TopLevel::writeOptions()
 void TopLevel::setupMenuBar()
 {
   KConfig *config = KApplication::kApplication()->config();
-  KStdAccel acc(config);
 
   menubar = menuBar();
   menubar->setGeometry(0, 0, width(), 24);
@@ -124,15 +123,15 @@ void TopLevel::setupMenuBar()
 
   newID = fileMenu->insertItem(i18n("&New"));
   fileMenu->connectItem(newID, this, SLOT(fileNew()));
-  fileMenu->setAccel(acc.openNew(), newID);
+  fileMenu->setAccel(KStdAccel::openNew(), newID);
 
   openID = fileMenu->insertItem(i18n("&Open..."));
   fileMenu->connectItem(openID, this, SLOT(fileOpen()));
-  fileMenu->setAccel(acc.open(), openID);
+  fileMenu->setAccel(KStdAccel::open(), openID);
 
   saveID = fileMenu->insertItem(i18n("&Save..."));
   fileMenu->connectItem(saveID, this, SLOT(fileSave()));
-  fileMenu->setAccel(acc.save(), saveID);
+  fileMenu->setAccel(KStdAccel::save(), saveID);
 
   pictureID = fileMenu->insertItem(i18n("Save &as picture..."));
   fileMenu->connectItem(pictureID, this, SLOT(filePicture()));
@@ -140,22 +139,23 @@ void TopLevel::setupMenuBar()
 
   printID = fileMenu->insertItem(i18n("&Print"));
   fileMenu->connectItem(printID, this, SLOT(filePrint()));
-  fileMenu->setAccel(acc.print(), printID);
+  fileMenu->setAccel(KStdAccel::print(), printID);
   fileMenu->insertSeparator();
 
   quitID = fileMenu->insertItem(i18n("&Quit"));
   fileMenu->connectItem(quitID, kapp, SLOT(quit()));
-  fileMenu->setAccel(acc.quit(), quitID);
+  fileMenu->setAccel(KStdAccel::quit(), quitID);
 
   copyID = editMenu->insertItem(i18n("&Copy"));
   editMenu->connectItem(copyID, this, SLOT(editCopy()));
-  editMenu->setAccel(acc.copy(), copyID);
+  editMenu->setAccel(KStdAccel::copy(), copyID);
   editMenu->insertSeparator();
 
   undoID = editMenu->insertItem(i18n("&Undo"));
   editMenu->setItemEnabled(undoID, false);
   editMenu->connectItem(undoID, this, SLOT(editUndo()));
-  editMenu->setAccel(acc.undo(), undoID);
+  editMenu->setAccel(KStdAccel::undo(), undoID);
+
 
   redoID = editMenu->insertItem(i18n("&Redo"));
   editMenu->setItemEnabled(redoID, false);
