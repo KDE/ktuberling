@@ -35,3 +35,5 @@ install-data-local:
 uninstall-local:
 	-rm -f $(kde_minidir)/ktuberling.xpm
 
+messages:
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(ktuberling_SOURCES) && mv messages.po ../po/ktuberling.pot
