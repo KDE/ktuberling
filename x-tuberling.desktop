@@ -1,0 +1,12 @@
+# KDE Config File
+[Desktop Entry]
+Encoding=UTF-8
+MimeType=application/x-tuberling
+Comment=Potato
+Icon=ktuberling
+Type=MimeType
+Patterns=*.tuberling;
+X-KDE-AutoEmbed=false
+[Property::X-KDE-NativeExtension]
+Type=QString
+Value=.tuberling

@@ -9,6 +9,7 @@
 #define _TOPLEVEL_H_
 
 #include <kmainwindow.h>
+#include <kurl.h>
 
 class QDomDocument;
 class PlayGround;
@@ -23,6 +24,7 @@ public:
   TopLevel();
   ~TopLevel();
 
+  void open(const KURL &url);
   void enableUndo(bool enable) const;
   void enableRedo(bool enable) const;
   void registerGameboard(const QString &menuItem, const char *actionId);

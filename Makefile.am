@@ -26,6 +26,9 @@ KDE_ICON = ktuberling
 
 xdg_apps_DATA = ktuberling.desktop
 
+mimetypeapplicationdata_DATA = x-tuberling.desktop
+mimetypeapplicationdatadir = $(kde_mimedir)/application
+
 appsrc_DATA = ktuberlingui.rc
 appsrcdir = $(kde_datadir)/ktuberling
 

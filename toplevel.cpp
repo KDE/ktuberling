@@ -288,17 +288,22 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  QString name;
-
   QString dir = locate("data", "ktuberling/museum/miss.tuberling");
   dir.truncate(dir.findRev('/') + 1);
 
   KURL url = KFileDialog::getOpenURL(dir, "*.tuberling");
 
+  open(url);
+}
+
+void TopLevel::open(const KURL &url)
+{
   if (url.isEmpty())
     return;
 
-  KIO::NetAccess::download(url, name);
+  QString name;
+
+  KIO::NetAccess::download(url, name, this);
 
   playGround->reset();
 
