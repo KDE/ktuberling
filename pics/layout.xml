@@ -714,6 +714,12 @@
     <sound name="earring" file="pt/brincos.wav" />
     <sound name="badge" file="pt/medalha.wav" />
     <sound name="watch" file="pt/relogio.wav" />
+    <sound name="penguin" file="pt/pinguim.wav" />
+    <sound name="tie" file="pt/gravata.wav" />
+    <sound name="hair" file="pt/cabelo.wav" />
+    <sound name="horn" file="pt/corno.wav" />
+    <sound name="necklace" file="pt/laco.wav" />
+    <sound name="scarf" file="pt/lenco.wav" />
 
   </language>
 
