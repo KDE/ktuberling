@@ -12,7 +12,7 @@
 
 #include <qwidget.h>
 #include <qbitmap.h>
-#include <qlist.h>
+#include <qptrlist.h>
 
 #include "todraw.h"
 #include "action.h"
