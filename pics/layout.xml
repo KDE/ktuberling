@@ -429,7 +429,7 @@
     </menuitem>
 
     <editablearea>
-      <position left="  0" top="  0" right="280" bottom="320" />
+      <position left="  0" top="  0" right="320" bottom="320" />
       <sound ref="aquarium" />
     </editablearea>
 
