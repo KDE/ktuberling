@@ -4,14 +4,14 @@
    mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
-#include <kapp.h>
+#include <kapplication.h>
 #include <kmessagebox.h>
 #include <ktoolbarbutton.h>
 #include <kmenubar.h>
 #include <kstdaccel.h>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kconfig.h>
 #include <kio/netaccess.h>
 #include <kaction.h>

@@ -8,7 +8,7 @@
 
 #include <kmessagebox.h>
 #include <klocale.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kaudioplayer.h>
 #include <kprinter.h>
 
