@@ -32,3 +32,6 @@ appsrcdir = $(kde_datadir)/ktuberling
 
 messages: rc.cpp
 	$(XGETTEXT) rc.cpp $(ktuberling_SOURCES) -o $(podir)/ktuberling.pot
+
+install-data-local:
+	rm -rf $(kde_appsdir)/Games/ktuberling.desktop
