@@ -1,10 +1,19 @@
 [Desktop Entry]
 Exec=ktuberling -caption "%c"
 Name=KTuberling
+Name[eo]=Tuberlingo
+Name[sv]=Potatis
 Comment=A Potato Editor
-Comment[de]=Ein "Kartoffel"-Editor
+Comment[ca]=Un editor de patates
+Comment[eo]=Terpomredaktilo
+Comment[fi]=Perunamuokkain
+Comment[hu]=Egy krumpli szerkesztõ
+Comment[mi]=Egy krumpli szerkesztõ
+Comment[no_NY]=Ein potetredigerar
+Comment[sr]=Editor krompira
+Comment[sv]=En potatiseditor
 Type=Application
 DocPath=ktuberling/index.html
 Terminal=0
-Icon=ktuberling.xpm
+Icon=ktuberling
 MimeType=application/x-tuberling

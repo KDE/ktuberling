@@ -2,7 +2,15 @@
 [KDE Desktop Entry]
 MimeType=application/x-tuberling
 Comment=Funny Potato
+Comment[ca]=Patata divertida
+Comment[eo]=Amuza terpomo
+Comment[fi]=Hauska peruna
+Comment[hu]=Vicces krumpli
+Comment[mi]=Vicces krumpli
+Comment[no_NY]=Morosam potet
+Comment[sr]=Sme¹ni krompir
+Comment[sv]=Rolig potatis
 DefaultApp=ktuberling
-Icon=ktuberling.xpm
+Icon=ktuberling
 Type=MimeType
 Patterns=*.tuberling;
