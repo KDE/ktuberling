@@ -180,7 +180,7 @@ The toolbar provides buttons for the commonly used functions.
 
 <table>
 <title>Toolbar Buttons</title>
-<tgroup cols=3>
+<tgroup cols="3">
 
 <thead>
 <row>
@@ -266,7 +266,7 @@ position of objects are saved.
 <guiicon>Print</guiicon>
 </entry>
 <entry>
-Prints your picture (&PostScript format).
+Prints your picture (&PostScript; format).
 </entry>
 </row>
 
@@ -362,7 +362,7 @@ Help
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>N</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
  </shortcut>
 <guimenu><accel>F</accel>ile</guimenu>
  <guimenuitem><accel>N</accel>ew</guimenuitem>
@@ -374,7 +374,7 @@ area </para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>O</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
  </shortcut>
 <guimenu><accel>F</accel>ile</guimenu>
  <guimenuitem><accel>O</accel>pen</guimenuitem>
@@ -386,7 +386,7 @@ the museum or from somewhere else if you wish.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>S</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
 </shortcut>
 <guimenu><accel>F</accel>ile</guimenu>
 <guimenuitem><accel>S</accel>ave</guimenuitem>
@@ -410,20 +410,20 @@ are XPM, JPEG, PNG and BMP.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>P</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
 </shortcut>
 <guimenu><accel>F</accel>ile</guimenu>
 <guimenuitem><accel>P</accel>rint</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Print</action> your tuberling picture using
- &PostScript format.
+ &PostScript; format.
 </para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>Q</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
 <guimenu><accel>F</accel>ile</guimenu>
 <guimenuitem><accel>Q</accel>uit</guimenuitem>
@@ -453,7 +453,7 @@ are XPM, JPEG, PNG and BMP.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>C</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
 </shortcut>
 <guimenu><accel>E</accel>dit</guimenu>
 <guimenuitem><accel>C</accel>opy</guimenuitem>
@@ -465,7 +465,7 @@ clipboard.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>Z</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu><accel>E</accel>dit</guimenu>
 <guimenuitem><accel>U</accel>ndo</guimenuitem>
@@ -478,7 +478,7 @@ clipboard.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl<keycap>Shift</keycap>
+<keycombo action="simul">&Ctrl;<keycap>Shift</keycap>
 <keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu><accel>E</accel>dit</guimenu>
@@ -668,7 +668,7 @@ whitespace, followed by a comment.
  242  34  283  66      70  34  111  66      1 Eye #2
  242  68  283 100      70  68  111 100      1 Eye #3
   :
-  :  <---cut--->
+  :  <!---cut--->
 </screen>
 </screenco>
 
@@ -746,7 +746,7 @@ translate file names like <filename>en/hat.wav</filename> to names like
 </para>
 
 <para>
-Information on how to work with the translation mechanisms in &kde is available
+Information on how to work with the translation mechanisms in &kde; is available
 in
 <ulink url="http://i18n.kde.org/translation-howto/index.html">
 The KDE Translation HOWTO</ulink>.
@@ -856,7 +856,7 @@ In order to successfully compile &ktuberling;, you need the latest versions of
 <filename>libkdecore</filename>, <filename>libkdeui</filename>,
 <filename>libkfile</filename>, <filename>libkfm</filename>, and
 <filename>libmediatooli</filename>.  All required libraries as well as
-&ktuberling itself can be found on <ulink
+&ktuberling; itself can be found on <ulink
 url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>.
 </para>
 </sect1>
