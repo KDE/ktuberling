@@ -4,6 +4,8 @@
    mailto:e.bischoff@noos.fr
  ------------------------------------------------------------- */
 
+#include <stdlib.h>
+
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kstddirs.h>
