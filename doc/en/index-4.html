@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>The KTuberling Handbook: Technical reference</TITLE>
+ <LINK HREF="index-5.html" REL=next>
+ <LINK HREF="index-3.html" REL=previous>
+ <LINK HREF="index.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="index-5.html">Next</A>
+<A HREF="index-3.html">Previous</A>
+<A HREF="index.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="s4">4. Technical reference</A></H2>
+
+<H2><A NAME="ss4.1">4.1 For graphists</A>
+</H2>
+
+<P>KTuberling allows many changes in the graphical appearance: the gamebard's size and shape, the number of
+objects that can be moved onto it, their size and the category they belong to can be redefined. But
+the labels of the various groups of objects (noses, eyes, goodies...) can't be changed. Neither can the
+sounds associated to objects be changed.
+<P>The pictures are located in the 'pics' directory. There are two pictures, named
+'gameboard.xpm' and the other one 'masks.xpm'. The first one holds the gameboard
+and the grid where the user can pick objects. The second one contains the masks of those pictures,
+used to delimitate their borders and, sometimes, to give them some transparency (spectacles).
+There is also a text file in this directory, named 'layout.txt'. One can find there - and change -
+all information related to the positions of the pictures and masks of objects, define new objects,
+and assign sounds to objects. The program needs not beeing recompiled when changing the number
+and position of objects.
+<P>Here comes the structure of layout.txt. It only contains integer numbers in decimal form,
+separated by whitespace, and followed by comments. The comments are ignored.
+<P>The first line describes the area (gameboard) where objects can be dropped to.
+The first four numbers indicate the position of the 'landing area' (left, top, right, bottom),
+whereas the fifth number indicates the sound associated with it (defined in source file
+'categories.h').
+<P>The second line indicates the number of texts that follow on the next lines.
+Those texts cannot be modified, but they can be drawn somewhere else on the gameboard.
+<P>The next lines describe the position of the texts describing the categories of objects, one text per line.
+The first four numbers indicate the position of the text (left, top, right, bottom),
+whereas the fifth number indicates the number of the text to draw (defined in source file
+'categories.h').
+<P>Then comes the number of objects described in the next lines.
+Change this number if you want to add or remove objects.
+<P>The last lines describe the position of the pictures (in 'gameboard.xpm') and masks (in 'masks.xpm')
+of the objects, and the sound associated with them. The first four numbers are the coordinates of
+the rectangle (left, top, bottom, right) of the picture, the next four one are the coordinates of
+the rectangle (same order) of the mask, and the last one is the sound number (defined in source file
+'categories.h').  Several objects can be associated with the same sound.
+<H2><A NAME="ss4.2">4.2 For translators</A>
+</H2>
+
+<P>Besides the usual .po files mechanism, translators have to know that the sounds can be localized too.
+If the various translators have recording devices, they can register their voice and store it into .wav
+files in a new subdirectory of the sounds directory. Then they can translate the sound file name in the
+.po file.
+<P>For example, if destination language is italian, translators can register their voice in .wav files located
+in /opt/kde/share/apps/ktuberling/sounds/it. Then they can translate file names like "en/hat.wav" to
+names like "it/capello.wav".
+<H2><A NAME="ss4.3">4.3 For programmers</A>
+</H2>
+
+<P>KTuberling isn't really difficult to extend for programmers.
+<H3>C++ classes</H3>
+
+<P>
+<DL>
+<DT><B>TopLevel</B><DD><P>Top-level window and basic program management
+<P>
+<DT><B>ToDraw</B><DD><P>Description of one of the graphical "objects" to be drawn
+</DL>
+<H3>.tuberling files structure</H3>
+
+<P>A .tuberling file holds all the necessary data to redraw a tuberling.
+It can be edited with an ordinary text editor.
+<P>There is one graphical object per line, in the order that is used to draw them.
+Each line contains 5 numbers: the identifier of the object, and the rectangle where it should be drawn
+(left, top, right, bottom). The numbers are separated by whitespaces.
+<HR>
+<A HREF="index-5.html">Next</A>
+<A HREF="index-3.html">Previous</A>
+<A HREF="index.html#toc4">Contents</A>
+</BODY>
+</HTML>
