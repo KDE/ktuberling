@@ -8,7 +8,6 @@
 #ifndef _TOPLEVEL_H_
 #define _TOPLEVEL_H_
 
-#include <kapp.h>
 #include <ktmainwindow.h>
 #include <kmenubar.h>
 #include <kstatusbar.h>
