@@ -1,10 +1,10 @@
-<!DOCTYPE book PUBLIC  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
+<?xml version="1.0" ?><!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&ktuberling;">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE" -- change language only here -->
-  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
-  %ents;
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+  
+  
 ]>
 
 <book lang="&language;">
@@ -123,10 +123,10 @@ place on your potato!
 <screeninfo>Main Window of &ktuberling; main window:</screeninfo>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="gameboard.png">
+<imagedata format="PNG" fileref="gameboard.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="gameboard.eps">
+<imagedata format="EPS" fileref="gameboard.eps"/>
 </imageobject>
 <textobject><phrase>Main Window</phrase></textobject>
 </mediaobject>
@@ -168,10 +168,10 @@ area, drag it back from the <quote>potato</quote> area to the
 
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="toolbar.png">
+<imagedata format="PNG" fileref="toolbar.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="toolbar.eps">
+<imagedata format="EPS" fileref="toolbar.eps"/>
 </imageobject>
 <textobject><phrase>Toolbar</phrase></textobject>
 </mediaobject>
@@ -197,10 +197,10 @@ The toolbar provides buttons for the commonly used functions.
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.new.png">
+<imagedata format="PNG" fileref="button.new.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.new.eps">
+<imagedata format="EPS" fileref="button.new.eps"/>
 </imageobject>
 </inlinemediaobject>
 
@@ -218,10 +218,10 @@ potato so a new character may be created.
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.open.png">
+<imagedata format="PNG" fileref="button.open.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.open.eps">
+<imagedata format="EPS" fileref="button.open.eps"/>
 </imageobject>
 </inlinemediaobject>
 </entry>
@@ -235,10 +235,10 @@ Opens an existing tuberling file from the museum or from other folders.
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.save.png">
+<imagedata format="PNG" fileref="button.save.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.save.eps">
+<imagedata format="EPS" fileref="button.save.eps"/>
 </imageobject>
 <textobject><phrase>Save Button</phrase></textobject>
 </inlinemediaobject>
@@ -256,10 +256,10 @@ position of objects are saved.
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.print.png">
+<imagedata format="PNG" fileref="button.print.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.print.eps">
+<imagedata format="EPS" fileref="button.print.eps"/>
 </imageobject>
 <textobject><phrase>Print Button</phrase></textobject>
 </inlinemediaobject>
@@ -276,10 +276,10 @@ Prints your picture (&PostScript; format).
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.undo.png">
+<imagedata format="PNG" fileref="button.undo.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.undo.eps">
+<imagedata format="EPS" fileref="button.undo.eps"/>
 </imageobject>
 <textobject><phrase>Undo Button</phrase></textobject>
 </inlinemediaobject>
@@ -294,10 +294,10 @@ Prints your picture (&PostScript; format).
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.redo.png">
+<imagedata format="PNG" fileref="button.redo.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.redo.eps">
+<imagedata format="EPS" fileref="button.redo.eps"/>
 </imageobject>
 <textobject><phrase>Redo Button</phrase></textobject>
 </inlinemediaobject>
@@ -314,10 +314,10 @@ Re-does last operation.</entry>
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.help.png">
+<imagedata format="PNG" fileref="button.help.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="button.help.eps">
+<imagedata format="EPS" fileref="button.help.eps"/>
 </imageobject>
 <textobject><phrase>Help Button</phrase></textobject>
 </inlinemediaobject>
@@ -339,10 +339,10 @@ Help
 
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.raw.png">
+<imagedata format="PNG" fileref="menu.raw.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="menu.raw.eps">
+<imagedata format="EPS" fileref="menu.raw.eps"/>
 </imageobject>
 <textobject><phrase>Menu Bar</phrase></textobject>
 </mediaobject>
@@ -351,10 +351,10 @@ Help
 <title>The <guimenu>File</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.file.png">
+<imagedata format="PNG" fileref="menu.file.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="menu.file.eps">
+<imagedata format="EPS" fileref="menu.file.eps"/>
 </imageobject>
 <textobject><phrase><guimenu>File</guimenu> Menu</phrase></textobject>
 </mediaobject>
@@ -442,10 +442,10 @@ are XPM, JPEG, PNG and BMP.
 <title>The <guimenu>Edit</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.edit.png">
+<imagedata format="PNG" fileref="menu.edit.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="menu.edit.eps">
+<imagedata format="EPS" fileref="menu.edit.eps"/>
 </imageobject>
 <textobject><phrase>Edit Menu</phrase></textobject>
 </mediaobject>
@@ -499,10 +499,10 @@ placement.  This menu option is active only if you have previously used
 <title>The <guimenu>Options</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.option.png">
+<imagedata format="PNG" fileref="menu.option.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="menu.option.eps">
+<imagedata format="EPS" fileref="menu.option.eps"/>
 </imageobject>
 <textobject><phrase>Options Menu</phrase></textobject>
 </mediaobject>
@@ -525,10 +525,10 @@ disabled. </para></listitem>
 <title>The <guimenu>Help</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.help.png">
+<imagedata format="PNG" fileref="menu.help.png"/>
 </imageobject>
 <imageobject>
-<imagedata format="EPS" fileref="menu.help.eps">
+<imagedata format="EPS" fileref="menu.help.eps"/>
 </imageobject>
 <textobject><phrase>Help Menu</phrase></textobject>
 </mediaobject>
@@ -650,11 +650,11 @@ whitespace, followed by a comment.
 
 <screenco>
         <areaspec>
-          <area coords="1 65" id="one">
-          <area coords="2 65" id="two">
-          <area coords="5 50" id="three">
-          <area coords="9 66" id="four">
-          <area coords="11 58" id="five">
+          <area coords="1 65" id="one"/>
+          <area coords="2 65" id="two"/>
+          <area coords="5 50" id="three"/>
+          <area coords="9 66" id="four"/>
+          <area coords="11 58" id="five"/>
          </areaspec>
 <screen>
    0   0  240 320          0 Area where objects can be dropped
@@ -882,4 +882,5 @@ in the base directory of the &ktuberling; distribution:</para>
 </appendix>
 
 </book>
+
 
