@@ -3,7 +3,7 @@
 <article>
 <title>The KTuberling Handbook
 <author>Eric Bischoff <htmlurl url="mailto:ebisch@cybercable.tm.fr">
-<date>Version 0.1.0, 24 April 1999
+<date>Version 0.1.1, 28 June 1999
 <abstract>This document was last updated for ktuberling version 0.1. 
 Please make any comments and additions to the author.
 </abstract>
@@ -233,19 +233,6 @@ Displays this handbook.
 </descrip>
 </p>
 
-<sect1>Known Bugs
-
-<p>
-A few bugs are due to current version of QT library and are expected to disappear soon:
-</p>
-
-<p>
-<itemize>
-<item>There is no printer selection dialog
-<item>You can't copy the picture to the clipboard
-</itemize>
-</p>
- 
 <sect>Technical reference
 
 <sect1>For graphists
