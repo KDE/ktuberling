@@ -24,7 +24,7 @@ ktuberling_LDADD = -lkdegames $(LIB_KFILE) -lkdeprint
 
 KDE_ICON = ktuberling
 
-appsdir = $(kde_appsdir)/Games
+appsdir = $(kde_appsdir)/Toys
 apps_DATA = ktuberling.desktop
 
 messages:
