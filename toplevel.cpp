@@ -373,7 +373,7 @@ void TopLevel::filePicture()
 		 	"*|All picture formats"));
   if (!name.isEmpty())
   {
-    char *format;
+    const char *format;
     int suffix;
     QString end;
 
@@ -555,7 +555,7 @@ void TopLevel::paintEvent(QPaintEvent *event)
 }
 
 // Top level window close box interaction handling
-void TopLevel::closeEvent(QCloseEvent *event)
+void TopLevel::closeEvent(QCloseEvent *)
 {
   kapp->quit();
 }
