@@ -1,4 +1,5 @@
-<?xml version="1.0" ?><!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&ktuberling;">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % addindex "IGNORE">
@@ -40,7 +41,7 @@
 
 </authorgroup>
 
-<date>23/02/2001</date>
+<date>2001-02-23</date>
 <releaseinfo>0.01.00</releaseinfo>
 
 <copyright>
