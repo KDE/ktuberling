@@ -12,7 +12,7 @@
 # kde_wallpaperdir  Where general wallpapers should go to.
 
 INCLUDES= $(all_includes)
-SUBDIRS = . doc museum sounds pics
+SUBDIRS = . museum sounds pics
 
 bin_PROGRAMS = ktuberling
 
