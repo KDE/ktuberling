@@ -2,7 +2,8 @@
 [KDE Desktop Entry]
 Exec=ktuberling -caption "%c"
 Name=KTuberling
-Name[fr]=Editeur de patates
+Name[en]=A potato editor for little kids
+Name[fr]=Un éditeur de patate pour jeunes enfants
 Type=Application
 DocPath=ktuberling/index.html
 Terminal=0
