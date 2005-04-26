@@ -580,7 +580,7 @@ bool PlayGround::loadFrom(const QString &name)
   if (!(fp = fopen(QFile::encodeName(name), "r"))) return false;
 
   uint newGameboard;
-  int nitems = fscanf(fp, "%d\n", &newGameboard);
+  int nitems = fscanf(fp, "%u\n", &newGameboard);
   if (nitems == EOF)
   {
     fclose(fp);
