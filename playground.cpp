@@ -339,7 +339,7 @@ bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
   if (playGroundsList.count() < 1)
     return false;
 
-  for (uint i = 0; i < playGroundsList.count(); i++)
+  for (int i = 0; i < playGroundsList.count(); i++)
   {
     playGroundElement = (const QDomElement &) playGroundsList.item(i).toElement();
 
@@ -362,7 +362,7 @@ bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
 }
 
 // Load background and draggable objects masks
-bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, uint toLoad)
+bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, int toLoad)
 {
   QDomNodeList playGroundsList,
                editableAreasList, categoriesList, objectsList,

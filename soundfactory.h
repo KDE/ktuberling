@@ -28,7 +28,7 @@ public:
 protected:
 
   bool registerLanguages(QDomDocument &layoutDocument);
-  bool loadLanguage(QDomDocument &layoutDocument, uint toLoad);
+  bool loadLanguage(QDomDocument &layoutDocument, int toLoad);
 
 private:
 

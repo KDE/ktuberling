@@ -55,7 +55,7 @@ protected:
 private:
 
   bool registerPlayGrounds(QDomDocument &layoutDocument);
-  bool loadPlayGround(QDomDocument &layoutDocument, uint toLoad);
+  bool loadPlayGround(QDomDocument &layoutDocument, int toLoad);
   void loadFailure();
   void setupGeometry();
   bool zone(QPoint &position);
