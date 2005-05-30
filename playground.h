@@ -12,7 +12,11 @@
 
 #include <qwidget.h>
 #include <qbitmap.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <QMouseEvent>
+#include <QPaintEvent>
 
 #include "todraw.h"
 #include "action.h"
@@ -76,8 +80,8 @@ private:
   ToDraw draggedObject;         // Object currently dragged
   int draggedZOrder;            // Z-order (in to-draw buffer) of this object
 
-  QPtrList<ToDraw> toDraw;      // List of objects in z-order
-  QPtrList<Action> history;     // List of actions in chronological order
+  Q3PtrList<ToDraw> toDraw;      // List of objects in z-order
+  Q3PtrList<Action> history;     // List of actions in chronological order
   unsigned int currentAction;   // Number of current action (not the last one if used "undo" button!)
 
   TopLevel *topLevel;		// Top-level window

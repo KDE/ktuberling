@@ -9,6 +9,8 @@
 #define _TODRAW_H_
 
 #include <qrect.h>
+//Added by qt3to4:
+#include <QPixmap>
 
 #include <stdio.h>
 

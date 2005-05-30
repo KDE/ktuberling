@@ -16,6 +16,8 @@
 
 #include <kprinter.h>
 #include <qclipboard.h>
+//Added by qt3to4:
+#include <QPixmap>
 
 #include "toplevel.moc"
 #include "playground.h"
@@ -190,7 +192,7 @@ void TopLevel::changeLanguage(uint newLanguage)
 bool TopLevel::loadLayout(QDomDocument &layoutDocument)
 {
   QFile layoutFile(QFile::encodeName(locate("data", "ktuberling/pics/layout.xml")));
-  if (!layoutFile.open(IO_ReadOnly))
+  if (!layoutFile.open(QIODevice::ReadOnly))
      return false;
 
   if (!layoutDocument.setContent(&layoutFile))

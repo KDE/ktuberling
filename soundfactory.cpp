@@ -61,7 +61,7 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (sound == sounds) return;
 
   soundFile = locate("data", "ktuberling/sounds/" + filesList[sound]);
-  if (soundFile == 0) return;
+  if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
   KAudioPlayer::play(soundFile);
@@ -89,7 +89,7 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
   {
     languageElement = (const QDomElement &) languagesList.item(i).toElement();
     codeAttribute = languageElement.attributeNode("code");
-    enabled = locate("data", "ktuberling/sounds/" + codeAttribute.value() + "/") != 0;
+    enabled = !(locate("data", "ktuberling/sounds/" + codeAttribute.value() + "/").isEmpty());
 
     menuItemsList = languageElement.elementsByTagName("menuitem");
     if (menuItemsList.count() != 1)
