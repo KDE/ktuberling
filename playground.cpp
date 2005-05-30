@@ -245,7 +245,7 @@ void PlayGround::paintEvent( QPaintEvent *event )
 
   drawGameboard(artist, area);
 
-  bitBlt(this, destination, &cache, area/*, Qt::CopyROP*/);
+  bitBlt(this, destination, &cache, area);
 }
 
 // Mouse pressed event
@@ -260,8 +260,8 @@ void PlayGround::mousePressEvent( QMouseEvent *event )
   int draggedNumber = draggedObject.getNumber();
   QPixmap object(objectsLayout[draggedNumber].size());
   QBitmap shape(objectsLayout[draggedNumber].size());
-  bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber]/*, Qt::CopyROP*/);
-  bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]/*, Qt::CopyROP*/);
+  bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber]);
+  bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]);
   object.setMask(shape);
 
   draggedCursor = new QCursor(object, position.x(), position.y());
@@ -554,7 +554,7 @@ bool PlayGround::zone(QPoint &position)
     QBitmap shape(objectsLayout[draggedNumber].size());
     QPoint relative(position.x() - toUpdate.x(),
                     position.y() - toUpdate.y());
-    bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]/*, Qt::CopyROP*/);
+    bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]);
     if (!shape.convertToImage().pixelIndex(relative.x(), relative.y())) continue;
 
     toDraw.remove(draggedZOrder);
