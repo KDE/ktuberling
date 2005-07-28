@@ -61,7 +61,7 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (sound == sounds) return;
 
   soundFile = locate("data", "ktuberling/sounds/" + filesList[sound]);
-  if (soundFile == 0) return;
+  if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
   KAudioPlayer::play(soundFile);
@@ -85,11 +85,11 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
   if (languagesList.count() < 1)
     return false;
 
-  for (uint i = 0; i < languagesList.count(); i++)
+  for (int i = 0; i < languagesList.count(); i++)
   {
     languageElement = (const QDomElement &) languagesList.item(i).toElement();
     codeAttribute = languageElement.attributeNode("code");
-    enabled = locate("data", "ktuberling/sounds/" + codeAttribute.value() + "/") != 0;
+    enabled = !(locate("data", "ktuberling/sounds/" + codeAttribute.value() + "/").isEmpty());
 
     menuItemsList = languageElement.elementsByTagName("menuitem");
     if (menuItemsList.count() != 1)
@@ -110,7 +110,7 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
 }
 
 // Load the sounds of one given language
-bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, uint toLoad)
+bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, int toLoad)
 {
   QDomNodeList languagesList,
                soundNamesList;
@@ -134,7 +134,7 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, uint toLoad)
   if (!(filesList = new QString[sounds]))
     return false;
 
-  for (uint sound = 0; sound < sounds; sound++)
+  for (int sound = 0; sound < sounds; sound++)
   {
     soundNameElement = (const QDomElement &) soundNamesList.item(sound).toElement();
 
