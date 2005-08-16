@@ -861,4 +861,28 @@
 
   </language>
 
+  <language code="sr">
+
+    <menuitem action="speech_serbian">
+      <label>Ser&amp;bian</label>
+    </menuitem>
+
+    <sound name="tuberling" file="sr/krompirko.wav" />
+    <sound name="eye" file="sr/oko.wav" />
+    <sound name="eyebrow" file="sr/obrva.wav" />
+    <sound name="nose" file="sr/nos.wav" />
+    <sound name="ear" file="sr/uvo.wav" />
+    <sound name="mouth" file="sr/usta.wav" />
+    <sound name="hat" file="sr/sesir.wav" />
+    <sound name="moustache" file="sr/brkovi.wav" />
+    <sound name="cigar" file="sr/cigara.wav" />
+    <sound name="bow" file="sr/masna.wav" />-->
+    <sound name="sunglasses" file="sr/naocare_za_sunce.wav" />
+    <sound name="spectacles" file="sr/naocare.wav" />
+    <sound name="earring" file="sr/mindjusa.wav" />
+    <sound name="badge" file="sr/znacka.wav" />
+    <sound name="watch" file="sr/sat.wav" />
+
+  </language>
+  
 </ktuberling>
