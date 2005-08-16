@@ -25,6 +25,7 @@
     <Action name="speech_slovak"/>
     <Action name="speech_slovenian"/>
     <Action name="speech_swedish"/>
+    <Action name="speech_serbian"/>
   </Menu>
 </MenuBar>
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
