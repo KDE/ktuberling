@@ -210,7 +210,7 @@ The toolbar provides buttons for the commonly used functions.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button.new.png"/>
+  <imagedata format="PNG" fileref="button-new.png"/>
   </imageobject>
   <imageobject>
   <imagedata format="EPS" fileref="button.new.eps"/>
@@ -236,7 +236,7 @@ playground so a new decoration may be created.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button.open.png"/>
+  <imagedata format="PNG" fileref="button-open.png"/>
   </imageobject>
   <imageobject>
   <imagedata format="EPS" fileref="button.open.eps"/>
@@ -259,7 +259,7 @@ Opens an existing tuberling file from the museum or from other folders.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button.save.png"/>
+  <imagedata format="PNG" fileref="button-save.png"/>
   </imageobject>
   <imageobject>
   <imagedata format="EPS" fileref="button.save.eps"/>
@@ -285,7 +285,7 @@ position of objects are saved.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button.print.png"/>
+  <imagedata format="PNG" fileref="button-print.png"/>
   </imageobject>
   <imageobject>
   <imagedata format="EPS" fileref="button.print.eps"/>
@@ -310,7 +310,7 @@ Prints your picture (&PostScript; format).
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button.undo.png"/>
+  <imagedata format="PNG" fileref="button-undo.png"/>
   </imageobject>
   <imageobject>
   <imagedata format="EPS" fileref="button.undo.eps"/>
@@ -333,7 +333,7 @@ Prints your picture (&PostScript; format).
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button.redo.png"/>
+  <imagedata format="PNG" fileref="button-redo.png"/>
   </imageobject>
   <imageobject>
   <imagedata format="EPS" fileref="button.redo.eps"/>
@@ -358,7 +358,7 @@ Re-does last operation.</entry>
 <entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="button.help.png"/>
+<imagedata format="PNG" fileref="button-help.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="button.help.eps"/>
@@ -383,7 +383,7 @@ Help
 
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.raw.png"/>
+<imagedata format="PNG" fileref="menu-raw.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="menu.raw.eps"/>
@@ -395,7 +395,7 @@ Help
 <title>The <guimenu>Game</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.game.png"/>
+<imagedata format="PNG" fileref="menu-game.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="menu.game.eps"/>
@@ -486,7 +486,7 @@ are XPM, JPEG, PNG and BMP.
 <title>The <guimenu>Edit</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.edit.png"/>
+<imagedata format="PNG" fileref="menu-edit.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="menu.edit.eps"/>
@@ -545,7 +545,7 @@ clipboard.</para></listitem>
 
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.playground.png"/>
+<imagedata format="PNG" fileref="menu-playground.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="menu.playground.eps"/>
@@ -592,7 +592,7 @@ time it starts up.</para></listitem>
 
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.speech.png"/>
+<imagedata format="PNG" fileref="menu-speech.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="menu.speech.eps"/>
@@ -657,7 +657,7 @@ remembers of this option the next time it starts up.</para></listitem>
 <title>The <guimenu>Help</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
-<imagedata format="PNG" fileref="menu.help.png"/>
+<imagedata format="PNG" fileref="menu-help.png"/>
 </imageobject>
 <imageobject>
 <imagedata format="EPS" fileref="menu.help.eps"/>
