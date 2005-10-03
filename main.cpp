@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions(options);
 
   KApplication app;
-  KGlobal::locale()->insertCatalogue("libkdegames");
+  KGlobal::locale()->insertCatalog("libkdegames");
   KImageIO::registerFormats();
 
   TopLevel *toplevel=0;
