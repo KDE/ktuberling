@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
   TopLevel *toplevel=0;
 
-  if (app.isRestored())
+  if (app.isSessionRestored())
     RESTORE(TopLevel)
   else {
     toplevel = new TopLevel();
