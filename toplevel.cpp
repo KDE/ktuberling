@@ -217,7 +217,7 @@ void TopLevel::readOptions()
   KConfig *config;
   QString option;
 
-  config = KApplication::kApplication()->sessionConfig();
+  config = KGlobal::config();
 
   config->setGroup("General");
   option = config->readEntry("Sound", "on");
@@ -240,7 +240,7 @@ void TopLevel::writeOptions()
 {
   KConfig *config;
 
-  config = KApplication::kApplication()->sessionConfig();
+  config = KGlobal::config();
 
   config->setGroup("General");
   config->writeEntry("Sound", soundEnabled? "on": "off");
