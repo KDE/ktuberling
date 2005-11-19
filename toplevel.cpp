@@ -214,21 +214,18 @@ void TopLevel::playSound(const QString &ref) const
 // Read options from preferences file
 void TopLevel::readOptions()
 {
-  KConfig *config;
   QString option;
+  KConfigGroup config(KGlobal::config(), "General");
 
-  config = KGlobal::config();
-
-  config->setGroup("General");
-  option = config->readEntry("Sound", "on");
+  option = config.readEntry("Sound", "on");
   soundEnabled = option.find("on") == 0;
 
-  option = config->readEntry("GameboardNumber", "0");
+  option = config.readEntry("GameboardNumber", "0");
   selectedGameboard = option.toInt();
   if (selectedGameboard <= 0) selectedGameboard = 0;
   if (selectedGameboard > 7) selectedGameboard = 7;
 
-  option = config->readEntry("LanguageNumber", "2");
+  option = config.readEntry("LanguageNumber", "2");
   selectedLanguage = option.toInt();
   if (selectedLanguage <= 0) selectedLanguage = 0;
   if (selectedLanguage > 15) selectedLanguage = 15;
@@ -238,18 +235,12 @@ void TopLevel::readOptions()
 // Write options to preferences file
 void TopLevel::writeOptions()
 {
-  KConfig *config;
+  KConfigGroup config(KGlobal::config(), "General");
+  config.writeEntry("Sound", soundEnabled? "on": "off");
 
-  config = KGlobal::config();
+  config.writeEntry("GameboardNumber", selectedGameboard);
 
-  config->setGroup("General");
-  config->writeEntry("Sound", soundEnabled? "on": "off");
-
-  config->writeEntry("GameboardNumber", selectedGameboard);
-
-  config->writeEntry("LanguageNumber", selectedLanguage);
-
-  config->sync();
+  config.writeEntry("LanguageNumber", selectedLanguage);
 }
 
 // KAction initialization (aka menubar + toolbar init)
