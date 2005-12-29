@@ -75,7 +75,7 @@ which images to use and links them to menu entries.  It also contains the
 position parameters of the playground and the objects in the gameboard and
 in the masks.  It assigns the sounds to objects and places the
 objects in groups.  It finally declares languages as sets of translated sounds.
-It follows standard XML syntax (see details
+It follows standard &XML; syntax (see details
 <link linkend="layout-details">below</link>).
 </para>
 
@@ -93,7 +93,7 @@ translated:
 <para>
 One folder above, a file named <filename>ktuberlingui.rc</filename>
 (<filename>$KDEDIR/share/apps/ktuberling/ktuberlingui.rc</filename>) is a
-second XML file describing the menus of &ktuberling;. It should contain
+second &XML; file describing the menus of &ktuberling;. It should contain
 one <markup>&lt;action&gt;</markup> tag per playground and language.
 The symbolic name of the action in this file should be identical to
 the symbolic name of the action in <filename>layout.xml</filename>.
@@ -134,7 +134,7 @@ through the following command line:
 <para>
 Information on how to work with the translation mechanisms in &kde; is available
 in <ulink url="http://i18n.kde.org/translation-howto/index.html">The
-KDE Translation HOWTO</ulink>.
+&kde; Translation HOWTO</ulink>.
 </para>
 
 </sect1>

@@ -16,7 +16,7 @@
 <firstname>Eric</firstname>
 <surname>Bischoff</surname>
 <affiliation>
-<address><email>e.bischoff@noos.fr</email></address>
+<address>&Eric.Bischoff.mail;</address>
 </affiliation></author>
 
 <author>
@@ -25,7 +25,7 @@
 <surname>Ahlquist</surname>
 <lineage>Jr.</lineage>
 <affiliation>
-<address><email>pea@ahlquist.org</email></address>
+<address>&Paul.E.Ahlquist.Jr.mail;</address>
 </affiliation>
 </author>
 
@@ -39,8 +39,8 @@
 
 </authorgroup>
 
-<date>2002-04-15</date>
-<releaseinfo>0.03.02</releaseinfo>
+<date>2005-12-20</date>
+<releaseinfo>0.40</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year>
@@ -49,7 +49,7 @@
 
 <copyright>
 <year>2001</year>
-<holder>Paul E. Ahlquist Jr.</holder>
+<holder>&Paul.E.Ahlquist.Jr;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
@@ -113,7 +113,7 @@ Slovak, Slovenian and Swedish.
 </chapter>
 
 <chapter id="onscreen-fundamentals">
-<title>On screen Fundamentals</title>
+<title>On Screen Fundamentals</title>
 
 <sect1 id="mouse-operation">
 <title>Mouse Operation</title>
@@ -602,7 +602,7 @@ time it starts up.</para></listitem>
 
 <para>
 Please note that you need to have kdemultimedia installed
-and <command>artsd</command> running to be able to hear sounds.
+and <command>&artsd;</command> running to be able to hear sounds.
 </para>
 
 <variablelist>
@@ -654,6 +654,48 @@ remembers of this option the next time it starts up.</para></listitem>
 </sect2>
 
 <sect2>
+<title>The <guimenu>Settings</guimenu> Menu</title>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="menu-settings.png"/>
+</imageobject>
+<textobject><phrase>Settings Menu</phrase></textobject>
+</mediaobject>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show/Hide Toolbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle the Toolbar display</action> on and off.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice></term>
+<listitem><para>Opens a standard &kde; shortcut configuration dialog, where you can change the 
+keyboard shortcuts used by &ktuberling;.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para>Display the standard &kde; toolbar configuration dialog.</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
 <title>The <guimenu>Help</guimenu> Menu</title>
 <mediaobject>
 <imageobject>
@@ -685,7 +727,7 @@ sounds</para>
 </listitem>
 
 <listitem>
-<para>Eric Bischoff <email>e.bischoff@noos.fr</email> - &kde;
+<para>Eric Bischoff &Eric.Bischoff.mail; - &kde;
 Programming</para>
 </listitem>
 
@@ -712,7 +754,7 @@ the documentation</para>
 </listitem>
 
 <listitem>
-<para>Paul Ahlquist <email>pea@ahlquist.org</email> - Bettering of
+<para>Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - Bettering of
 documentation</para>
 </listitem>
 </itemizedlist> 
