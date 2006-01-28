@@ -24,7 +24,7 @@ public:
   TopLevel();
   ~TopLevel();
 
-  void open(const KURL &url);
+  void open(const KUrl &url);
   void enableUndo(bool enable) const;
   void enableRedo(bool enable) const;
   void registerGameboard(const QString &menuItem, const char *actionId);

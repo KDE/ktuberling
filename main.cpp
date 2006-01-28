@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
   KApplication app;
   KGlobal::locale()->insertCatalog("libkdegames");
-  KImageIO::registerFormats();
+  
 
   TopLevel *toplevel=0;
 
