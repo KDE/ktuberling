@@ -2,8 +2,10 @@
 Encoding=UTF-8
 Exec=ktuberling -caption "%c" %u
 Name=Potato Guy
+Name[fr]=Monsieur patate
 Name[x-test]=xxPotato Guyxx
 GenericName=Game for Children
+GenericName[fr]=Jeu pour les enfants
 GenericName[x-test]=xxGame for Childrenxx
 Type=Application
 DocPath=ktuberling/index.html
