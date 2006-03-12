@@ -21,7 +21,7 @@ kde4_automoc(${ktuberling_SRCS})
 
 kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
-target_link_libraries(ktuberling  ${QT_AND_KDECORE_LIBS} kdeprint )
+target_link_libraries(ktuberling  ${LIB_KDEUI} kdeprint kdegames )
 
 install_targets(/bin ktuberling )
 
