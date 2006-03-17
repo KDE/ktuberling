@@ -1,4 +1,5 @@
 kde4_header()
+project(ktuberling)
 
 add_subdirectory( museum ) 
 add_subdirectory( sounds ) 
