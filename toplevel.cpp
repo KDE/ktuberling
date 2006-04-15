@@ -401,7 +401,7 @@ void TopLevel::filePrint()
   KPrinter printer;
   bool ok;
 
-  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(gameboardActions[selectedGameboard].latin1())->plainText()));
+  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(gameboardActions[selectedGameboard].latin1())->iconText()));
   if (!ok) return;
   playGround->repaint(true);
   if (!playGround->printPicture(printer))
