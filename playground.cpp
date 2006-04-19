@@ -28,8 +28,8 @@
 #define YMARGIN 5
 
 // Constructor
-PlayGround::PlayGround(TopLevel *parent, const char *name, uint selectedGameboard)
-    : QWidget(parent, name)
+PlayGround::PlayGround(TopLevel *parent, uint selectedGameboard)
+    : QWidget(parent)
 {
   topLevel = parent;
 
@@ -40,7 +40,9 @@ PlayGround::PlayGround(TopLevel *parent, const char *name, uint selectedGameboar
   toDraw.setAutoDelete(true);
   history.setAutoDelete(true);
 
-  setBackgroundColor(Qt::white);
+  QPalette palette;
+  palette.setColor( backgroundRole(), Qt::white );
+  setPalette( palette );
 
   QDomDocument layoutsDocument;
   bool ok = topLevel->loadLayout(layoutsDocument);
@@ -98,7 +100,7 @@ void PlayGround::repaintAll()
          editableArea.width() + 20,
          editableArea.height() + 20);
 
-  repaint(dirtyArea, false);
+  repaint(dirtyArea);
 }
 
 // Undo last action
@@ -195,7 +197,7 @@ QPixmap PlayGround::getPicture() const
   QPainter artist(&result);
   QRect transEditableArea(editableArea);
 
-  transEditableArea.moveBy(-XMARGIN, -YMARGIN);
+  transEditableArea.translate(-XMARGIN, -YMARGIN);
   artist.translate(XMARGIN - editableArea.left(),
                    YMARGIN - editableArea.top());
   drawGameboard(artist, transEditableArea);
@@ -207,7 +209,7 @@ void PlayGround::drawText(QPainter &artist, QRect &area, QString &textId) const
 {
   QString label;
 
-  label=i18n(textId.latin1());
+  label=i18n(textId.toLatin1());
 
   artist.drawText(area, Qt::AlignCenter, label);
 }
@@ -323,8 +325,8 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
   topLevel->enableUndo(true);
 
   // Repaint the editable area
-  position.moveBy(XMARGIN, YMARGIN);
-  repaint(position, false);
+  position.translate(XMARGIN, YMARGIN);
+  repaint(position);
 
 }
 
@@ -355,9 +357,9 @@ bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
 
     labelElement = (const QDomElement &) labelsList.item(0).toElement();
     actionAttribute = menuItemElement.attributeNode("action");
-    topLevel->registerGameboard(labelElement.text(), actionAttribute.value().latin1()); 
+    topLevel->registerGameboard(labelElement.text(), actionAttribute.value().toLatin1());
   }
- 
+
   return true;
 }
 
@@ -555,11 +557,11 @@ bool PlayGround::zone(QPoint &position)
     QPoint relative(position.x() - toUpdate.x(),
                     position.y() - toUpdate.y());
     bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]);
-    if (!shape.convertToImage().pixelIndex(relative.x(), relative.y())) continue;
+    if (!shape.toImage().pixelIndex(relative.x(), relative.y())) continue;
 
     toDraw.remove(draggedZOrder);
-    toUpdate.moveBy(XMARGIN, YMARGIN);
-    repaint(toUpdate, false);
+    toUpdate.translate(XMARGIN, YMARGIN);
+    repaint(toUpdate);
 
     position = relative;
 

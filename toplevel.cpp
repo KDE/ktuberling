@@ -31,8 +31,10 @@ TopLevel::TopLevel()
 
   gameboards = 0;
   languages = 0;
-  playGround = new PlayGround(this, "playground", selectedGameboard);
-  soundFactory = new SoundFactory(this, "sounds", selectedLanguage);
+  playGround = new PlayGround(this, selectedGameboard);
+  playGround->setObjectName( "playGround" );
+  soundFactory = new SoundFactory(this, selectedLanguage);
+  soundFactory->setObjectName( "sounds" );
 
   setCentralWidget(playGround);
 
@@ -63,21 +65,21 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 
   switch (gameboards)
   {
-  	case 0: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard0()), actionCollection(), actionId);
+  	case 0: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard0()), actionCollection(), actionId);
 		break;
-  	case 1: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard1()), actionCollection(), actionId);
+  	case 1: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard1()), actionCollection(), actionId);
 		break;
-  	case 2: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard2()), actionCollection(), actionId);
+  	case 2: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard2()), actionCollection(), actionId);
 		break;
-  	case 3: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard3()), actionCollection(), actionId);
+  	case 3: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard3()), actionCollection(), actionId);
 		break;
-  	case 4: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard4()), actionCollection(), actionId);
+  	case 4: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard4()), actionCollection(), actionId);
 		break;
-  	case 5: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard5()), actionCollection(), actionId);
+  	case 5: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard5()), actionCollection(), actionId);
 		break;
-  	case 6: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard6()), actionCollection(), actionId);
+  	case 6: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard6()), actionCollection(), actionId);
 		break;
-  	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(gameboard7()), actionCollection(), actionId);
+  	case 7: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard7()), actionCollection(), actionId);
 		break;
   }
 
@@ -95,37 +97,37 @@ void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, b
 
   switch (languages)
   {
-  	case 0: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language0()), actionCollection(), actionId);
+  	case 0: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language0()), actionCollection(), actionId);
 		break;
-  	case 1: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language1()), actionCollection(), actionId);
+  	case 1: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language1()), actionCollection(), actionId);
 		break;
-  	case 2: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language2()), actionCollection(), actionId);
+  	case 2: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language2()), actionCollection(), actionId);
 		break;
-  	case 3: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language3()), actionCollection(), actionId);
+  	case 3: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language3()), actionCollection(), actionId);
 		break;
-  	case 4: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language4()), actionCollection(), actionId);
+  	case 4: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language4()), actionCollection(), actionId);
 		break;
-  	case 5: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language5()), actionCollection(), actionId);
+  	case 5: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language5()), actionCollection(), actionId);
 		break;
-  	case 6: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language6()), actionCollection(), actionId);
+  	case 6: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language6()), actionCollection(), actionId);
 		break;
-  	case 7: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language7()), actionCollection(), actionId);
+  	case 7: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language7()), actionCollection(), actionId);
 		break;
-  	case 8: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language8()), actionCollection(), actionId);
+  	case 8: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language8()), actionCollection(), actionId);
 		break;
-  	case 9: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language9()), actionCollection(), actionId);
+  	case 9: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language9()), actionCollection(), actionId);
 		break;
-  	case 10: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language10()), actionCollection(), actionId);
+  	case 10: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language10()), actionCollection(), actionId);
 		break;
-  	case 11: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language11()), actionCollection(), actionId);
+  	case 11: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language11()), actionCollection(), actionId);
 		break;
-  	case 12: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language12()), actionCollection(), actionId);
+  	case 12: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language12()), actionCollection(), actionId);
 		break;
-  	case 13: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language13()), actionCollection(), actionId);
+  	case 13: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language13()), actionCollection(), actionId);
 		break;
-  	case 14: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language14()), actionCollection(), actionId);
+  	case 14: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language14()), actionCollection(), actionId);
 		break;
-  	case 15: t = new KToggleAction(i18n(menuItem.latin1()), 0, this, SLOT(language15()), actionCollection(), actionId);
+  	case 15: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language15()), actionCollection(), actionId);
 		break;
   }
 
@@ -143,20 +145,20 @@ void TopLevel::changeGameboard(uint newGameboard)
   // Do not accept to switch to same gameboard
   if (newGameboard == selectedGameboard) {
     // select this gameboard again
-    ((KToggleAction*) actionCollection()->action(gameboardActions[newGameboard].latin1()))->setChecked(true);
+    ((KToggleAction*) actionCollection()->action(gameboardActions[newGameboard]))->setChecked(true);
     return;
   }
 
   // Unselect preceding gameboard
-  ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->setChecked(false);
+  ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard]))->setChecked(false);
 
   // Change gameboard in the remembered options
   selectedGameboard = newGameboard;
   writeOptions();
 
-  if( !((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->isChecked() )
-    ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard].latin1()))->setChecked(true);
-  
+  if( !((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard]))->isChecked() )
+    ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard]))->setChecked(true);
+
   // Change gameboard effectively
   playGround->change(newGameboard);
 
@@ -171,13 +173,13 @@ void TopLevel::changeLanguage(uint newLanguage)
   // Do not accept to switch to same language
   if (newLanguage == selectedLanguage && soundEnabled) {
     // newLanguage should stay checked
-    ((KToggleAction*) actionCollection()->action(languageActions[newLanguage].latin1()))->setChecked(true);
+    ((KToggleAction*) actionCollection()->action(languageActions[newLanguage]))->setChecked(true);
     return;
   }
 
   // Unselect preceding language
   if (!soundEnabled) ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(false);
-  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage].latin1()))->setChecked(false);
+  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage]))->setChecked(false);
 
   // Change language in the remembered options
   soundEnabled = true;
@@ -218,7 +220,7 @@ void TopLevel::readOptions()
   KConfigGroup config(KGlobal::config(), "General");
 
   option = config.readEntry("Sound", "on");
-  soundEnabled = option.find("on") == 0;
+  soundEnabled = option.indexOf("on") == 0;
 
   option = config.readEntry("GameboardNumber", "0");
   selectedGameboard = option.toInt();
@@ -283,7 +285,7 @@ void TopLevel::fileNew()
 void TopLevel::fileOpen()
 {
   QString dir = locate("data", "ktuberling/museum/miss.tuberling");
-  dir.truncate(dir.findRev('/') + 1);
+  dir.truncate(dir.lastIndexOf('/') + 1);
 
   KUrl url = KFileDialog::getOpenURL(dir, "*.tuberling");
 
@@ -333,7 +335,7 @@ void TopLevel::fileSave()
   QString name = url.path();
   int suffix;
 
-  suffix = name.findRev('.');
+  suffix = name.lastIndexOf('.');
   if (suffix == -1)
   {
     name += ".tuberling";
@@ -372,7 +374,7 @@ void TopLevel::filePicture()
   int suffix;
   QString end;
 
-  suffix = name.findRev('.');
+  suffix = name.lastIndexOf('.');
   if (suffix == -1)
   {
     name += ".xpm";
@@ -401,9 +403,9 @@ void TopLevel::filePrint()
   KPrinter printer;
   bool ok;
 
-  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(gameboardActions[selectedGameboard].latin1())->iconText()));
+  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(gameboardActions[selectedGameboard])->iconText()));
   if (!ok) return;
-  playGround->repaint(true);
+  playGround->repaint();
   if (!playGround->printPicture(printer))
     KMessageBox::error(this,
                          i18n("Could not print picture."));
@@ -501,7 +503,7 @@ void TopLevel::soundOff()
   if (!soundEnabled) return;
 
   soundEnabled = false;
-  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage].latin1()))->setChecked(false);
+  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage]))->setChecked(false);
   ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(true);
 
   writeOptions();

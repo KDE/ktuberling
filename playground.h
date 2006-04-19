@@ -25,12 +25,12 @@ class QDomDocument;
 class TopLevel;
 
 class PlayGround : public QWidget
-{
+ {
   Q_OBJECT
 
 public:
 
-  PlayGround(TopLevel *parent, const char *name, uint selectedGameboard);
+  PlayGround(TopLevel *parent, uint selectedGameboard);
   ~PlayGround();
 
   void reset();

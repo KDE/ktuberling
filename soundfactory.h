@@ -19,7 +19,7 @@ class SoundFactory : public QObject
 
 public:
 
-  SoundFactory(TopLevel *parent, const char *name, uint selectedLanguage);
+  SoundFactory(TopLevel *parent, uint selectedLanguage);
   ~SoundFactory();
 
   void change(uint selectedLanguage);

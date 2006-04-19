@@ -18,8 +18,8 @@
 #include "toplevel.h"
 
 // Constructor
-SoundFactory::SoundFactory(TopLevel *parent, const char *name, uint selectedLanguage)
-	: QObject(parent, name)
+SoundFactory::SoundFactory(TopLevel *parent, uint selectedLanguage)
+	: QObject(parent)
 {
   topLevel = parent;
 
@@ -103,9 +103,9 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
 
     labelElement = (const QDomElement &) labelsList.item(0).toElement();
     actionAttribute = menuItemElement.attributeNode("action");
-    topLevel->registerLanguage(labelElement.text(), actionAttribute.value().latin1(), enabled); 
+    topLevel->registerLanguage(labelElement.text(), actionAttribute.value().toLatin1(), enabled);
   }
- 
+
   return true;
 }
 
