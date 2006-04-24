@@ -238,16 +238,19 @@ void PlayGround::paintEvent( QPaintEvent *event )
                   destination.y() - YMARGIN);
   QRect area(position, QSize(event->rect().size()));
   QPixmap cache(gameboard.size());
-  QPainter artist(&cache);
+  QPainter paint(&cache);
 
   if (destination.x() < XMARGIN) destination.setX(XMARGIN);
   if (destination.y() < YMARGIN) destination.setY(YMARGIN);
   area = QRect(0, 0, gameboard.width(), gameboard.height()).intersect(area);
   if (area.isEmpty()) return;
 
-  drawGameboard(artist, area);
+  drawGameboard(paint, area);
 
-  bitBlt(this, destination, &cache, area);
+  paint.end();
+  paint.begin(this);
+  paint.drawPixmap(destination, cache, area);
+  paint.end();
 }
 
 // Mouse pressed event
@@ -262,8 +265,12 @@ void PlayGround::mousePressEvent( QMouseEvent *event )
   int draggedNumber = draggedObject.getNumber();
   QPixmap object(objectsLayout[draggedNumber].size());
   QBitmap shape(objectsLayout[draggedNumber].size());
-  bitBlt(&object, QPoint(0, 0), &gameboard, objectsLayout[draggedNumber]);
-  bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]);
+  QPainter p(&object);
+  p.drawPixmap(QPoint(0, 0), gameboard, objectsLayout[draggedNumber]);
+  p.end();
+  p.begin(&shape);
+  p.drawPixmap(QPoint(0, 0), masks, objectsLayout[draggedNumber]);
+  p.end();
   object.setMask(shape);
 
   draggedCursor = new QCursor(object, position.x(), position.y());
@@ -556,7 +563,8 @@ bool PlayGround::zone(QPoint &position)
     QBitmap shape(objectsLayout[draggedNumber].size());
     QPoint relative(position.x() - toUpdate.x(),
                     position.y() - toUpdate.y());
-    bitBlt(&shape, QPoint(0, 0), &masks, objectsLayout[draggedNumber]);
+    QPainter p(&shape);
+    p.drawPixmap( QPoint(0, 0), masks, objectsLayout[draggedNumber]);
     if (!shape.toImage().pixelIndex(relative.x(), relative.y())) continue;
 
     toDraw.remove(draggedZOrder);

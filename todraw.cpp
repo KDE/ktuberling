@@ -54,8 +54,12 @@ void ToDraw::draw(QPainter &artist, const QRect &area,
   QBitmap shapeBitmap(objectsLayout[number].size());
   shapeBitmap.clear();
 
-  bitBlt(&objectPixmap, QPoint(0, 0), gameboard, objectsLayout[number]);
-  bitBlt(&shapeBitmap, QPoint(0, 0), masks, objectsLayout[number]);
+  QPainter paint(&objectPixmap);
+  paint.drawPixmap(QPoint(0, 0), *gameboard, objectsLayout[number]);
+  paint.end();
+  paint.begin(&shapeBitmap);
+  paint.drawPixmap(QPoint(0, 0), *masks, objectsLayout[number]);
+  paint.end();
   objectPixmap.setMask(shapeBitmap);
   artist.drawPixmap(position.topLeft(), objectPixmap);
 }
