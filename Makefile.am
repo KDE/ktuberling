@@ -33,6 +33,4 @@ mimetypeapplicationdatadir = $(kde_mimedir)/application
 appsrc_DATA = ktuberlingui.rc
 appsrcdir = $(kde_datadir)/ktuberling
 
-messages: rc.cpp
-	$(XGETTEXT) rc.cpp $(ktuberling_SOURCES) pics/layout.i18n -o $(podir)/ktuberling.pot
 
