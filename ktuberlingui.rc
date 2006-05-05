@@ -8,6 +8,12 @@
     <Action name="playground_potato_guy"/>
     <Action name="playground_penguin"/>
     <Action name="playground_aquarium"/>
+    <Action name="playground_criminal_portrait"/>
+    <Action name="playground_farm"/>
+    <Action name="playground_autumn"/>
+    <Action name="playground_shadows"/>
+    <Action name="playground_street"/>
+    <Action name="playground_transports"/>
   </Menu>
   <Menu name="speech"><text>&amp;Speech</text>
     <Action name="speech_no_sound"/>
@@ -24,8 +30,8 @@
     <Action name="speech_romanian"/>
     <Action name="speech_slovak"/>
     <Action name="speech_slovenian"/>
-    <Action name="speech_swedish"/>
     <Action name="speech_serbian"/>
+    <Action name="speech_swedish"/>
   </Menu>
 </MenuBar>
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>

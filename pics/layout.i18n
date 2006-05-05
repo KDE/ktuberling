@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    List of strings in layout.xml that are translatable
-   mailto:e.bischoff@noos.fr
+   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
 i18n("Potato &Guy");
@@ -28,6 +28,52 @@ i18n("&Aquarium");
 i18n("Fishes");
 i18n("Others");
 
+i18n("&Farm");
+
+i18n("Horse");
+i18n("Colt");
+i18n("Pig");
+i18n("Piglet");
+i18n("Hen");
+i18n("Rooster");
+i18n("Chickens");
+i18n("Cow");
+i18n("Calf");
+i18n("Dog");
+i18n("Cat");
+
+i18n("A&utumn");
+
+i18n("Tree");
+i18n("Rain");
+i18n("Squirrel");
+i18n("Fruit");
+i18n("Mushrooms");
+i18n("Leaves");
+i18n("Puddle");
+
+i18n("&Shadows");
+
+i18n("St&reet");
+
+i18n("Ambulance");
+i18n("Car");
+i18n("Signs");
+i18n("Balloon");
+i18n("Cyclist");
+i18n("Airplane");
+i18n("Officials");
+i18n("Pedestrian");
+i18n("Bus");
+
+i18n("&Transports");
+
+i18n("Train");
+i18n("Ship");
+i18n("Motorcycle");
+i18n("Submarine");
+i18n("Bicycle");
+
 i18n("&Danish");
 i18n("&German");
 i18n("&English");
@@ -40,8 +86,8 @@ i18n("&Portuguese");
 i18n("&Romanian");
 i18n("&Slovak");
 i18n("S&lovenian");
-i18n("S&wedish");
 i18n("Ser&bian");
+i18n("S&wedish");
 
 i18n("NOTE_TO_THE_TRANSLATORS",
 "The translators have the opportunity to translate the\n"

@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Play ground widget
-   mailto:e.bischoff@noos.fr
+   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
 #include <stdlib.h>

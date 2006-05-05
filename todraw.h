@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Object to draw on the game board
-   mailto:e.bischoff@noos.fr
+   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
 

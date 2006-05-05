@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Top level window
-   mailto:e.bischoff@noos.fr
+   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
 
@@ -61,6 +61,8 @@ private slots:
   void gameboard5();
   void gameboard6();
   void gameboard7();
+  void gameboard8();
+  void gameboard9();
   void soundOff();
   void language0();
   void language1();
@@ -95,7 +97,7 @@ private:
        gameboards;		// Total number of gameboards
   uint selectedLanguage,	// Number of selected language
        languages;		// Total number of languages
-  QString gameboardActions[8],	// Name of actions for registered gameboards
+  QString gameboardActions[10],	// Name of actions for registered gameboards
           languageActions[16];	// Name of actions for registered languages
 
   PlayGround *playGround;	// Play ground central widget

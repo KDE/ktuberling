@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Sound factory
-   mailto:e.bischoff@noos.fr
+   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
 

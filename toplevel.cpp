@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Top level window
-   mailto:e.bischoff@noos.fr
+   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
 #include <kapplication.h>
@@ -80,6 +80,10 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
   	case 6: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard6()), actionCollection(), actionId);
 		break;
   	case 7: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard7()), actionCollection(), actionId);
+		break;
+  	case 8: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard8()), actionCollection(), actionId);
+		break;
+  	case 9: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard9()), actionCollection(), actionId);
 		break;
   }
 
@@ -496,6 +500,18 @@ void TopLevel::gameboard6()
 void TopLevel::gameboard7()
 {
   changeGameboard(7);
+}
+
+// Switch to gameboard #8
+void TopLevel::gameboard8()
+{
+  changeGameboard(8);
+}
+
+// Switch to gameboard #9
+void TopLevel::gameboard9()
+{
+  changeGameboard(9);
 }
 
 // Toggle sound off
