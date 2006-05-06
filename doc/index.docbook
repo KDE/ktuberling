@@ -791,7 +791,7 @@ that!</para>
 <title>Requirements</title>
 
 <para>
-In order to successfully compile &ktuberling;, you need &kde; 3.0.
+In order to successfully compile &ktuberling;, you need &kde; 3.5.
 All required libraries as well as &ktuberling; itself can be found on
 &kde-ftp;.</para>
 

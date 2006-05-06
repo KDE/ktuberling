@@ -3,14 +3,14 @@
 
 <authorgroup>
 <author>
-<firstname>Eric</firstname>
+<firstname>Éric</firstname>
 <surname>Bischoff</surname>
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2002-04-10</date>
-<releaseinfo>0.03.02</releaseinfo>
+<date>2006-05-05</date>
+<releaseinfo>0.05.01</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -31,7 +31,7 @@ native tongue!
 
 <para>
 If you extend or add to the game please consider sending your additions to the
-developer <ulink url="mailto:e.bischoff@noos.fr">Eric Bischoff</ulink> for
+developer <ulink url="mailto:ebischoff@nerim.net">Éric Bischoff</ulink> for
 inclusion in future releases.
 </para>
 
