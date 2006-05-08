@@ -127,7 +127,7 @@ In a future release, &ktuberling; will use OGG Vorbis rc3 file format for sounds
 At that moment, it will be possible to convert the WAV files to OGG Vorbis rc3
 through the following command line:
 <screen>
-<prompt>$</prompt> <userinput>oggenc_rc3 -o <replaceable>sound.ogg</replaceable> <replaceable>sound.wav</replaceable></userinput>
+<prompt>$</prompt> <userinput>oggenc -q 10 -o <replaceable>sound.ogg</replaceable> <replaceable>sound.wav</replaceable></userinput>
 </screen>
 </para>
 
