@@ -18,7 +18,8 @@
 #include <qclipboard.h>
 //Added by qt3to4:
 #include <QPixmap>
-
+#include <kactioncollection.h>
+#include <ktoggleaction.h>
 #include "toplevel.moc"
 #include "playground.h"
 #include "soundfactory.h"
