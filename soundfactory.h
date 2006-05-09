@@ -13,6 +13,11 @@
 class QDomDocument;
 class TopLevel;
 
+namespace Phonon
+{
+      class SimplePlayer;
+}
+
 class SoundFactory : public QObject
 {
   Q_OBJECT
@@ -41,6 +46,7 @@ private:
   	  *filesList;           // List of sound files associated with each sound name
 
   TopLevel *topLevel;		// Top-level window
+  Phonon::SimplePlayer *player;
 };
 
 #endif

@@ -13,6 +13,7 @@
 
 #include <qdom.h>
 
+#include <phonon/simpleplayer.h>
 #include "soundfactory.h"
 #include "soundfactory.moc"
 #include "toplevel.h"
@@ -22,6 +23,7 @@ SoundFactory::SoundFactory(TopLevel *parent, uint selectedLanguage)
 	: QObject(parent)
 {
   topLevel = parent;
+  player = new Phonon::SimplePlayer(this);
 
   namesList = filesList = 0;
 
@@ -64,7 +66,8 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
-  KAudioPlayer::play(soundFile);
+  player->play(KUrl(soundFile));
+  //KAudioPlayer::play(soundFile);
 }
 
 // Report a load failure

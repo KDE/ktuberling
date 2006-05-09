@@ -22,7 +22,7 @@ kde4_automoc(${ktuberling_SRCS})
 
 kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
-target_link_libraries(ktuberling  ${KDE4_KDEUI_LIBS} kdeprint kdegames )
+target_link_libraries(ktuberling  ${KDE4_KDEUI_LIBS} kdeprint kdegames phononcore)
 
 install_targets(/bin ktuberling )
 
