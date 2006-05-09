@@ -1,8 +1,8 @@
 
 # add here all files
-sound_DATA = badge.wav bow.wav cigar.wav ear.wav earring.wav eye.wav eyebrow.wav\
-	    hat.wav moustache.wav mouth.wav nose.wav spectacles.wav \
-	    sunglasses.wav tuberling.wav watch.wav \
+sound_DATA = tuberling.wav badge.wav bow.wav cigar.wav ear.wav earring.wav \
+            eye.wav eyebrow.wav hat.wav moustache.wav mouth.wav nose.wav \
+            spectacles.wav sunglasses.wav watch.wav \
             farm.wav calf.wav cat.wav chicks.wav colt.wav cow.wav dog.wav \
             hen.wav horse.wav pig.wav piglet.wav rooster.wav \
             autumn-landscape.wav acorn.wav chestnuts.wav leave.wav leaves.wav \

@@ -5,20 +5,7 @@ include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_D
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/ktuberling/sounds/en FILES badge.wav bow.wav cigar.wav ear.wav earring.wav eye.wav eyebrow.wav 	    hat.wav moustache.wav mouth.wav nose.wav spectacles.wav  	    sunglasses.wav tuberling.wav watch.wav )
+install_files( ${DATA_INSTALL_DIR}/ktuberling/sounds/en FILES tuberling.wav badge.wav bow.wav cigar.wav ear.wav earring.wav eye.wav eyebrow.wav hat.wav moustache.wav mouth.wav nose.wav spectacles.wav sunglasses.wav watch.wav              farm.wav calf.wav cat.wav chicks.wav colt.wav cow.wav dog.wav hen.wav horse.wav pig.wav piglet.wav rooster.wav              autumn-landscape.wav acorn.wav chestnuts.wav leave.wav leaves.wav mushroom.wav puddle.wav rain.wav squirrel.wav tree.wav              shadows.wav             street.wav airplane.wav ambulance.wav balloon.wav bus.wav car.wav cyclist.wav nurse.wav pedestrian.wav police.wav sign.wav             transports.wav bicycle.wav motorbike.wav ship.wav submarine.wav train.wav )
 
 kde4_footer()
 
-
-
-#original Makefile.am contents follow:
-
-#
-## add here all files
-#sound_DATA = badge.wav bow.wav cigar.wav ear.wav earring.wav eye.wav eyebrow.wav\
-#	    hat.wav moustache.wav mouth.wav nose.wav spectacles.wav \
-#	    sunglasses.wav tuberling.wav watch.wav
-#
-#sounddir = $(kde_datadir)/ktuberling/sounds/en
-#
-## DONT ADD TRANSLATIONS HERE
