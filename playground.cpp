@@ -11,7 +11,7 @@
 #include <kstandarddirs.h>
 #include <kprinter.h>
 
-#include <qfile.h>
+#include <QFile>
 #include <qpainter.h>
 #include <qimage.h>
 #include <qcursor.h>

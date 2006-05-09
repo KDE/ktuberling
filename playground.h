@@ -10,7 +10,7 @@
 
 #include <kprinter.h>
 
-#include <qwidget.h>
+#include <QWidget>
 #include <qbitmap.h>
 #include <q3ptrlist.h>
 //Added by qt3to4:
