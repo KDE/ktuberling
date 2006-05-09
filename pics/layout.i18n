@@ -36,13 +36,13 @@ i18n("Pig");
 i18n("Piglet");
 i18n("Hen");
 i18n("Rooster");
-i18n("Chickens");
+i18n("Chicks");
 i18n("Cow");
 i18n("Calf");
 i18n("Dog");
 i18n("Cat");
 
-i18n("A&utumn");
+i18n("A&utumn landscape");
 
 i18n("Tree");
 i18n("Rain");
@@ -70,7 +70,7 @@ i18n("&Transports");
 
 i18n("Train");
 i18n("Ship");
-i18n("Motorcycle");
+i18n("Motorbike");
 i18n("Submarine");
 i18n("Bicycle");
 

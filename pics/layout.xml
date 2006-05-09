@@ -606,7 +606,7 @@
 
     <category>
       <position left="761" top="298" right="812" bottom="318" />
-      <label>Chickens</label>
+      <label>Chicks</label>
     </category>
 
     <category>
@@ -661,7 +661,7 @@
 
     <object>
       <position left="770" top="269" right="802" bottom="293" />
-      <sound ref="chickens" />
+      <sound ref="chicks" />
     </object>
 
     <object>
@@ -689,7 +689,7 @@
   <playground gameboard="autumn-game.png" masks="autumn-mask.png">
 
     <menuitem action="playground_autumn">
-      <label>A&amp;utumn</label>
+      <label>A&amp;utumn landscape</label>
     </menuitem>
 
     <editablearea>
@@ -807,7 +807,7 @@
 
     <category>
       <position left="433" top="178" right="597" bottom="214" />
-      <label>Chickens</label>
+      <label>Chicks</label>
     </category>
 
     <category>
@@ -837,7 +837,7 @@
 
     <object>
       <position left="435" top=" 14" right="597" bottom="174" />
-      <sound ref="chickens" />
+      <sound ref="chicks" />
     </object>
 
     <object>
@@ -1058,7 +1058,7 @@
 
     <object>
       <position left="432" top="430" right="531" bottom="489" />
-      <sound ref="motorcycle" />
+      <sound ref="motorbike" />
     </object>
 
     <object>
@@ -1104,6 +1104,7 @@
     <sound name="earring" file="da/oerering.wav" />
     <sound name="badge" file="da/politiskilt.wav" />
     <sound name="watch" file="da/ur.wav" />
+
     <sound name="penguin" file="da/pingvin.wav" />
     <sound name="tie" file="da/slips.wav" />
     <sound name="hair" file="da/haar.wav" />
@@ -1155,6 +1156,51 @@
     <sound name="badge" file="en/badge.wav" />
     <sound name="watch" file="en/watch.wav" />
 
+    <sound name="farm" file="en/farm.wav" />
+    <sound name="calf" file="en/calf.wav" />
+    <sound name="cat" file="en/cat.wav" />
+    <sound name="chicks" file="en/chicks.wav" />
+    <sound name="colt" file="en/colt.wav" />
+    <sound name="cow" file="en/cow.wav" />
+    <sound name="dog" file="en/dog.wav" />
+    <sound name="hen" file="en/hen.wav" />
+    <sound name="horse" file="en/horse.wav" />
+    <sound name="pig" file="en/pig.wav" />
+    <sound name="piglet" file="en/piglet.wav" />
+    <sound name="rooster" file="en/rooster.wav" />
+
+    <sound name="autumn-landscape" file="en/autumn-landscape.wav" />
+    <sound name="acorn" file="en/acorn.wav" />
+    <sound name="chestnuts" file="en/chestnuts.wav" />
+    <sound name="leave" file="en/leave.wav" />
+    <sound name="leaves" file="en/leaves.wav" />
+    <sound name="mushroom" file="en/mushroom.wav" />
+    <sound name="puddle" file="en/puddle.wav" />
+    <sound name="rain" file="en/rain.wav" />
+    <sound name="squirrel" file="en/squirrel.wav" />
+    <sound name="tree" file="en/tree.wav" />
+
+    <sound name="shadows" file="en/shadows.wav" />
+
+    <sound name="street" file="en/street.wav" />
+    <sound name="airplane" file="en/airplane.wav" />
+    <sound name="ambulance" file="en/ambulance.wav" />
+    <sound name="balloon" file="en/balloon.wav" />
+    <sound name="bus" file="en/bus.wav" />
+    <sound name="car" file="en/car.wav" />
+    <sound name="cyclist" file="en/cyclist.wav" />
+    <sound name="nurse" file="en/nurse.wav" />
+    <sound name="pedestrian" file="en/pedestrian.wav" />
+    <sound name="police" file="en/police.wav" />
+    <sound name="sign" file="en/sign.wav" />
+
+    <sound name="transports" file="en/transports.wav" />
+    <sound name="bicycle" file="en/bicycle.wav" />
+    <sound name="motorbike" file="en/motorbike.wav" />
+    <sound name="ship" file="en/ship.wav" />
+    <sound name="submarine" file="en/submarine.wav" />
+    <sound name="train" file="en/train.wav" />
+
   </language>
 
   <language code="es">
@@ -1178,6 +1224,51 @@
     <sound name="earring" file="es/pendiente.wav" />
     <sound name="badge" file="es/insignia.wav" />
     <sound name="watch" file="es/reloj.wav" />
+
+    <sound name="farm" file="es/granja.wav" />
+    <sound name="calf" file="es/ternero.wav" />
+    <sound name="cat" file="es/gato.wav" />
+    <sound name="chicks" file="es/pollitos.wav" />
+    <sound name="colt" file="es/potro.wav" />
+    <sound name="cow" file="es/vaca.wav" />
+    <sound name="dog" file="es/perro.wav" />
+    <sound name="hen" file="es/gallina.wav" />
+    <sound name="horse" file="es/caballo.wav" />
+    <sound name="pig" file="es/cerdo.wav" />
+    <sound name="piglet" file="es/lechon.wav" />
+    <sound name="rooster" file="es/gallo.wav" />
+
+    <sound name="autumn-landscape" file="es/paisaje-de-otono.wav" />
+    <sound name="acorn" file="es/bellota.wav" />
+    <sound name="chestnuts" file="es/castana.wav" />
+    <sound name="leave" file="es/hoja.wav" />
+    <sound name="leaves" file="es/hojas.wav" />
+    <sound name="mushroom" file="es/seta.wav" />
+    <sound name="puddle" file="es/charco.wav" />
+    <sound name="rain" file="es/lluvia.wav" />
+    <sound name="squirrel" file="es/ardilla.wav" />
+    <sound name="tree" file="es/arbol.wav" />
+
+    <sound name="shadows" file="es/sombras.wav" />
+
+    <sound name="street" file="es/calle.wav" />
+    <sound name="airplane" file="es/avion.wav" />
+    <sound name="ambulance" file="es/ambulancia.wav" />
+    <sound name="balloon" file="es/globo.wav" />
+    <sound name="bus" file="es/autobus.wav" />
+    <sound name="car" file="es/coche.wav" />
+    <sound name="cyclist" file="es/ciclista.wav" />
+    <sound name="nurse" file="es/enfermera.wav" />
+    <sound name="pedestrian" file="es/peaton.wav" />
+    <sound name="police" file="es/policia.wav" />
+    <sound name="sign" file="es/senal.wav" />
+
+    <sound name="transports" file="es/transportes.wav" />
+    <sound name="bicycle" file="es/bicicleta.wav" />
+    <sound name="motorbike" file="es/moto.wav" />
+    <sound name="ship" file="es/barco.wav" />
+    <sound name="submarine" file="es/submarino.wav" />
+    <sound name="train" file="es/tren.wav" />
 
   </language>
 
@@ -1226,12 +1317,58 @@
     <sound name="earring" file="fr/boucle-d-oreille.wav" />
     <sound name="badge" file="fr/medaille.wav" />
     <sound name="watch" file="fr/montre.wav" />
+
     <sound name="penguin" file="fr/pingouin.wav" />
     <sound name="tie" file="fr/cravate.wav" />
     <sound name="hair" file="fr/cheveux.wav" />
     <sound name="horn" file="fr/corne.wav" />
     <sound name="necklace" file="fr/collier.wav" />
     <sound name="scarf" file="fr/foulard.wav" />
+
+    <sound name="farm" file="fr/ferme.wav" />
+    <sound name="calf" file="fr/veau.wav" />
+    <sound name="cat" file="fr/chat.wav" />
+    <sound name="chicks" file="fr/poussins.wav" />
+    <sound name="colt" file="fr/poulain.wav" />
+    <sound name="cow" file="fr/vache.wav" />
+    <sound name="dog" file="fr/chien.wav" />
+    <sound name="hen" file="fr/poule.wav" />
+    <sound name="horse" file="fr/cheval.wav" />
+    <sound name="pig" file="fr/porc.wav" />
+    <sound name="piglet" file="fr/cochon.wav" />
+    <sound name="rooster" file="fr/coq.wav" />
+
+    <sound name="autumn-landscape" file="fr/paysage-d-automne.wav" />
+    <sound name="acorn" file="fr/gland.wav" />
+    <sound name="chestnuts" file="fr/chataigne.wav" />
+    <sound name="leave" file="fr/feuille.wav" />
+    <sound name="leaves" file="fr/feuilles.wav" />
+    <sound name="mushroom" file="fr/champignon.wav" />
+    <sound name="puddle" file="fr/mare.wav" />
+    <sound name="rain" file="fr/pluie.wav" />
+    <sound name="squirrel" file="fr/ecureuil.wav" />
+    <sound name="tree" file="fr/arbre.wav" />
+
+    <sound name="shadows" file="fr/ombres.wav" />
+
+    <sound name="street" file="fr/rue.wav" />
+    <sound name="airplane" file="fr/avion.wav" />
+    <sound name="ambulance" file="fr/ambulance.wav" />
+    <sound name="balloon" file="fr/ballon.wav" />
+    <sound name="bus" file="fr/autobus.wav" />
+    <sound name="car" file="fr/voiture.wav" />
+    <sound name="cyclist" file="fr/cycliste.wav" />
+    <sound name="nurse" file="fr/infirmiere.wav" />
+    <sound name="pedestrian" file="fr/pieton.wav" />
+    <sound name="police" file="fr/policier.wav" />
+    <sound name="sign" file="fr/panneau.wav" />
+
+    <sound name="transports" file="fr/transports.wav" />
+    <sound name="bicycle" file="fr/bicyclette.wav" />
+    <sound name="motorbike" file="fr/moto.wav" />
+    <sound name="ship" file="fr/bateau.wav" />
+    <sound name="submarine" file="fr/sous-marin.wav" />
+    <sound name="train" file="fr/train.wav" />
 
   </language>
 
@@ -1286,6 +1423,7 @@
     <sound name="earring" file="nl/oorbel.wav" />
     <sound name="badge" file="nl/ster.wav" />
     <sound name="watch" file="nl/horloge.wav" />
+
     <sound name="penguin" file="nl/pinguin.wav" />
     <sound name="tie" file="nl/stropdas.wav" />
     <sound name="hair" file="nl/haar.wav" />
@@ -1316,6 +1454,7 @@
     <sound name="earring" file="pt/brincos.wav" />
     <sound name="badge" file="pt/medalha.wav" />
     <sound name="watch" file="pt/relogio.wav" />
+
     <sound name="penguin" file="pt/pinguim.wav" />
     <sound name="tie" file="pt/gravata.wav" />
     <sound name="hair" file="pt/cabelo.wav" />
@@ -1346,6 +1485,7 @@
     <sound name="earring" file="ro/cercel.wav" />
     <sound name="badge" file="ro/insigna.wav" />
     <sound name="watch" file="ro/ceas.wav" />
+
     <sound name="penguin" file="ro/pinguin.wav" />
     <sound name="tie" file="ro/cravata.wav" />
     <sound name="hair" file="ro/par.wav" />
@@ -1400,6 +1540,7 @@
     <sound name="earring" file="sl/uhan.wav" />
     <sound name="badge" file="sl/znacka.wav" />
     <sound name="watch" file="sl/ura.wav" />
+
     <sound name="penguin" file="sl/pingvin.wav" />
     <sound name="tie" file="sl/kravata.wav" />
     <sound name="hair" file="sl/lasje.wav" />
@@ -1454,6 +1595,7 @@
     <sound name="earring" file="sv/orhange.wav" />
     <sound name="badge" file="sv/brosch.wav" />
     <sound name="watch" file="sv/klocka.wav" />
+
     <sound name="penguin" file="sv/pingvin.wav" />
     <sound name="tie" file="sv/slips.wav" />
     <sound name="hair" file="sv/har.wav" />
