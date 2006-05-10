@@ -270,7 +270,8 @@ void TopLevel::setupKAction()
   enableRedo(false);
 
 //Speech
-  KToggleAction* t = new KToggleAction(i18n("&No Sound"), 0, this, SLOT(soundOff()), actionCollection(), "speech_no_sound");
+  KToggleAction *t = new KToggleAction(i18n("&No Sound"), actionCollection(), "speech_no_sound");
+  connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
   if (!soundEnabled) t->setChecked(true);
 
   setupGUI();
