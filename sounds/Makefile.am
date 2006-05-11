@@ -3,6 +3,7 @@
 sound_DATA = tuberling.wav badge.wav bow.wav cigar.wav ear.wav earring.wav \
             eye.wav eyebrow.wav hat.wav moustache.wav mouth.wav nose.wav \
             spectacles.wav sunglasses.wav watch.wav \
+            aquarium.wav fish.wav helmet.wav jellyfish.wav seahorse.wav treasure.wav \
             penguin.wav hair.wav horn.wav necklace.wav scarf.wav tie.wav \
             farm.wav calf.wav cat.wav chicks.wav colt.wav cow.wav dog.wav \
             hen.wav horse.wav pig.wav piglet.wav rooster.wav \
