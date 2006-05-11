@@ -1156,6 +1156,13 @@
     <sound name="badge" file="en/badge.wav" />
     <sound name="watch" file="en/watch.wav" />
 
+    <sound name="aquarium" file="en/aquarium.wav" />
+    <sound name="fish" file="en/fish.wav" />
+    <sound name="helmet" file="en/helmet.wav" />
+    <sound name="jellyfish" file="en/jellyfish.wav" />
+    <sound name="seahorse" file="en/seahorse.wav" />
+    <sound name="treasure" file="en/treasure.wav" />
+
     <sound name="penguin" file="en/penguin.wav" />
     <sound name="tie" file="en/tie.wav" />
     <sound name="hair" file="en/hair.wav" />
@@ -1231,6 +1238,13 @@
     <sound name="earring" file="es/pendiente.wav" />
     <sound name="badge" file="es/insignia.wav" />
     <sound name="watch" file="es/reloj.wav" />
+
+    <sound name="aquarium" file="es/acuario.wav" />
+    <sound name="fish" file="es/pez.wav" />
+    <sound name="helmet" file="es/casco.wav" />
+    <sound name="jellyfish" file="es/medusa.wav" />
+    <sound name="seahorse" file="es/caballo-de-mar.wav" />
+    <sound name="treasure" file="es/tesoro.wav" />
 
     <sound name="penguin" file="es/pinguino.wav" />
     <sound name="tie" file="es/lazo.wav" />
@@ -1331,6 +1345,13 @@
     <sound name="earring" file="fr/boucle-d-oreille.wav" />
     <sound name="badge" file="fr/medaille.wav" />
     <sound name="watch" file="fr/montre.wav" />
+
+    <sound name="aquarium" file="fr/aquarium.wav" />
+    <sound name="fish" file="fr/poisson.wav" />
+    <sound name="helmet" file="fr/casque.wav" />
+    <sound name="jellyfish" file="fr/meduse.wav" />
+    <sound name="seahorse" file="fr/hippocampe.wav" />
+    <sound name="treasure" file="fr/tresor.wav" />
 
     <sound name="penguin" file="fr/pingouin.wav" />
     <sound name="tie" file="fr/cravate.wav" />
