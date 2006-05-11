@@ -62,29 +62,29 @@ void TopLevel::enableRedo(bool enable) const
 // Register an available gameboard
 void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 {
-  KToggleAction *t = 0;
+  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), actionCollection(), actionId);
 
   switch (gameboards)
   {
-  	case 0: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard0()), actionCollection(), actionId);
+  	case 0: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard0()));
 		break;
-  	case 1: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard1()), actionCollection(), actionId);
+  	case 1: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard1()));
 		break;
-  	case 2: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard2()), actionCollection(), actionId);
+  	case 2: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard2()));
 		break;
-  	case 3: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard3()), actionCollection(), actionId);
+  	case 3: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard3()));
 		break;
-  	case 4: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard4()), actionCollection(), actionId);
+  	case 4: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard4()));
 		break;
-  	case 5: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard5()), actionCollection(), actionId);
+  	case 5: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard5()));
 		break;
-  	case 6: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard6()), actionCollection(), actionId);
+  	case 6: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard6()));
 		break;
-  	case 7: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard7()), actionCollection(), actionId);
+  	case 7: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard7()));
 		break;
-  	case 8: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard8()), actionCollection(), actionId);
+  	case 8: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard8()));
 		break;
-  	case 9: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(gameboard9()), actionCollection(), actionId);
+  	case 9: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard9()));
 		break;
   }
 
@@ -98,41 +98,41 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 // Register an available language
 void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, bool enabled)
 {
-  KToggleAction *t = 0;
+  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), actionCollection(), actionId);
 
   switch (languages)
   {
-  	case 0: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language0()), actionCollection(), actionId);
+  	case 0: connect(t,SIGNAL(triggered(bool)), SLOT(language0()));
 		break;
-  	case 1: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language1()), actionCollection(), actionId);
+  	case 1: connect(t,SIGNAL(triggered(bool)), SLOT(language1()));
 		break;
-  	case 2: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language2()), actionCollection(), actionId);
+  	case 2: connect(t,SIGNAL(triggered(bool)), SLOT(language2()));
 		break;
-  	case 3: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language3()), actionCollection(), actionId);
+  	case 3: connect(t,SIGNAL(triggered(bool)), SLOT(language3()));
 		break;
-  	case 4: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language4()), actionCollection(), actionId);
+  	case 4: connect(t,SIGNAL(triggered(bool)), SLOT(language4()));
 		break;
-  	case 5: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language5()), actionCollection(), actionId);
+  	case 5: connect(t,SIGNAL(triggered(bool)), SLOT(language5()));
 		break;
-  	case 6: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language6()), actionCollection(), actionId);
+  	case 6: connect(t,SIGNAL(triggered(bool)), SLOT(language6()));
 		break;
-  	case 7: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language7()), actionCollection(), actionId);
+  	case 7: connect(t,SIGNAL(triggered(bool)), SLOT(language7()));
 		break;
-  	case 8: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language8()), actionCollection(), actionId);
+  	case 8: connect(t,SIGNAL(triggered(bool)), SLOT(language8()));
 		break;
-  	case 9: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language9()), actionCollection(), actionId);
+  	case 9: connect(t,SIGNAL(triggered(bool)), SLOT(language9()));
 		break;
-  	case 10: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language10()), actionCollection(), actionId);
+  	case 10: connect(t,SIGNAL(triggered(bool)), SLOT(language10()));
 		break;
-  	case 11: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language11()), actionCollection(), actionId);
+  	case 11: connect(t,SIGNAL(triggered(bool)), SLOT(language11()));
 		break;
-  	case 12: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language12()), actionCollection(), actionId);
+  	case 12: connect(t,SIGNAL(triggered(bool)), SLOT(language12()));
 		break;
-  	case 13: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language13()), actionCollection(), actionId);
+  	case 13: connect(t,SIGNAL(triggered(bool)), SLOT(language13()));
 		break;
-  	case 14: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language14()), actionCollection(), actionId);
+  	case 14: connect(t,SIGNAL(triggered(bool)), SLOT(language14()));
 		break;
-  	case 15: t = new KToggleAction(i18n(menuItem.toLatin1()), 0, this, SLOT(language15()), actionCollection(), actionId);
+  	case 15: connect(t,SIGNAL(triggered(bool)), SLOT(language15()));
 		break;
   }
 
