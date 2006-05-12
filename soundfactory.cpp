@@ -9,7 +9,6 @@
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kaudioplayer.h>
 
 #include <qdom.h>
 
@@ -66,8 +65,7 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
-  player->play(KUrl(soundFile));
-  //KAudioPlayer::play(soundFile);
+  player->play(KUrl::fromPath(soundFile));
 }
 
 // Report a load failure
