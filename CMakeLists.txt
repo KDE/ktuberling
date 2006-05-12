@@ -1,4 +1,3 @@
-kde4_header()
 project(ktuberling)
 
 add_subdirectory( museum ) 
@@ -35,7 +34,6 @@ install_files( ${DATA_INSTALL_DIR}/ktuberling FILES ktuberlingui.rc )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
-kde4_footer()
 
 
 
