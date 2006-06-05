@@ -22,7 +22,7 @@ SoundFactory::SoundFactory(TopLevel *parent, uint selectedLanguage)
 	: QObject(parent)
 {
   topLevel = parent;
-  player = new Phonon::SimplePlayer(this);
+  player = new Phonon::SimplePlayer(Phonon::GameCategory,this);
 
   namesList = filesList = 0;
 
