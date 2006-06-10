@@ -13,7 +13,7 @@
 <authorgroup>
 
 <author>
-<firstname>Eric</firstname>
+<firstname>Éric</firstname>
 <surname>Bischoff</surname>
 <affiliation>
 <address>&Eric.Bischoff.mail;</address>
@@ -39,12 +39,12 @@
 
 </authorgroup>
 
-<date>2005-12-20</date>
-<releaseinfo>0.40</releaseinfo>
+<date>2006-05-05</date>
+<releaseinfo>0.05.01</releaseinfo>
 
 <copyright>
-<year>1999</year><year>2000</year><year>2002</year>
-<holder>Eric Bischoff</holder>
+<year>1999</year><year>2000</year><year>2002</year><year>2006</year>
+<holder>Éric Bischoff</holder>
 </copyright>
 
 <copyright>
@@ -98,7 +98,7 @@ you can.
 There is a museum (like a <quote>Madame Tusseau</quote> gallery) where
 you can find many funny examples of decorated potatoes, penguins and
 aquariums. Of course, you can send your own creations to the programmer,
-<ulink url="mailto:e.bischoff@noos.fr">Eric Bischoff</ulink>, who will
+<ulink url="mailto:ebischoff@nerim.net">Éric Bischoff</ulink>, who will
 include them in the museum if he gets some spare time.
 </para>
 
@@ -108,7 +108,7 @@ the objects you drag and drop. It will <quote>speak</quote> in a language
 that you can chose. You can even use it to learn a bit of vocabulary
 in foreign languages. Currently, &ktuberling; can <quote>speak</quote>
 Danish, German, English, Spanish, French, Italian, Dutch, Portuguese, Romanian,
-Slovak, Slovenian and Swedish.
+Serbian, Slovak, Slovenian and Swedish.
 </para>
 </chapter>
 
@@ -727,7 +727,7 @@ sounds</para>
 </listitem>
 
 <listitem>
-<para>Eric Bischoff &Eric.Bischoff.mail; - &kde;
+<para>Éric Bischoff &Eric.Bischoff.mail; - &kde;
 Programming</para>
 </listitem>
 
@@ -746,6 +746,10 @@ advice and help</para>
 
 <listitem>
 <para>Roger Larsson <email>roger.larsson@norran.net</email> - Sounds tuning</para>
+</listitem>
+
+<listitem>
+<para>Dolores Almansa <email>dolores.almansa@corazondemaria.org</email> - Educative graphics for COR-EDUX initiative</para>
 </listitem>
 
 <listitem>
@@ -787,7 +791,7 @@ that!</para>
 <title>Requirements</title>
 
 <para>
-In order to successfully compile &ktuberling;, you need &kde; 3.0.
+In order to successfully compile &ktuberling;, you need &kde; 3.5.
 All required libraries as well as &ktuberling; itself can be found on
 &kde-ftp;.</para>
 
