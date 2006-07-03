@@ -18,6 +18,7 @@
 #include <qclipboard.h>
 //Added by qt3to4:
 #include <QPixmap>
+#include <QDomDocument>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include "toplevel.moc"
@@ -325,7 +326,7 @@ void TopLevel::open(const KUrl &url)
 void TopLevel::fileSave()
 {
   KUrl url = KFileDialog::getSaveURL
-                ( QString::null,
+                ( KUrl(),
 		 "*.tuberling");
 
   if (url.isEmpty())
@@ -358,7 +359,7 @@ void TopLevel::filePicture()
   QPixmap picture(playGround->getPicture());
 
   KUrl url = KFileDialog::getSaveURL
-                ( QString::null,
+                ( KUrl(),
                  i18n(  "*.xpm|UNIX Pixmaps (*.xpm)\n"
                         "*.jpg|JPEG Compressed Files (*.jpg)\n"
                         "*.png|Next Generation Pictures (*.png)\n"
