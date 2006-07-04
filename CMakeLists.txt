@@ -28,9 +28,9 @@ install_targets(/bin ktuberling )
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES ktuberling.desktop )
-install_files( ${MIME_INSTALL_DIR}/application FILES x-tuberling.desktop )
-install_files( ${DATA_INSTALL_DIR}/ktuberling FILES ktuberlingui.rc )
+install( FILES ktuberling.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES x-tuberling.desktop  DESTINATION  ${MIME_INSTALL_DIR}/application )
+install( FILES ktuberlingui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ktuberling )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
