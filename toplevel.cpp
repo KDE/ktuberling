@@ -199,7 +199,7 @@ void TopLevel::changeLanguage(uint newLanguage)
 // Load the layouts file
 bool TopLevel::loadLayout(QDomDocument &layoutDocument)
 {
-  QFile layoutFile(QFile::encodeName(locate("data", "ktuberling/pics/layout.xml")));
+  QFile layoutFile(QFile::encodeName(KStandardDirs::locate("data", "ktuberling/pics/layout.xml")));
   if (!layoutFile.open(QIODevice::ReadOnly))
      return false;
 

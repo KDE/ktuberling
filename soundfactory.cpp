@@ -90,7 +90,7 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
   {
     languageElement = (const QDomElement &) languagesList.item(i).toElement();
     codeAttribute = languageElement.attributeNode("code");
-    enabled = !(locate("data", "ktuberling/sounds/" + codeAttribute.value() + "/").isEmpty());
+    enabled = !(KStandardDirs::locate("data", "ktuberling/sounds/" + codeAttribute.value() + "/").isEmpty());
 
     menuItemsList = languageElement.elementsByTagName("menuitem");
     if (menuItemsList.count() != 1)

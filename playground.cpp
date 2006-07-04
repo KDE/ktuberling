@@ -390,11 +390,11 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, int toLoad)
   playGroundElement = (const QDomElement &) playGroundsList.item(toLoad).toElement();
 
   gameboardAttribute = playGroundElement.attributeNode("gameboard");
-  if (!gameboard.load(locate("data", "ktuberling/pics/" + gameboardAttribute.value())))
+  if (!gameboard.load(KStandardDirs::locate("data", "ktuberling/pics/" + gameboardAttribute.value())))
     return false;
 
   masksAttribute = playGroundElement.attributeNode("masks");
-  if (!masks.load(locate("data", "ktuberling/pics/" + masksAttribute.value())))
+  if (!masks.load(KStandardDirs::locate("data", "ktuberling/pics/" + masksAttribute.value())))
     return false;
 
   editableAreasList = playGroundElement.elementsByTagName("editablearea");
