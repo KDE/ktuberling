@@ -292,7 +292,7 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  QString dir = locate("data", "ktuberling/museum/miss.tuberling");
+  QString dir = KStandardDirs::locate("data", "ktuberling/museum/miss.tuberling");
   dir.truncate(dir.lastIndexOf('/') + 1);
 
   KUrl url = KFileDialog::getOpenURL(dir, "*.tuberling");

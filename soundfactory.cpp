@@ -61,7 +61,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 	  if (!namesList[sound].compare(soundRef)) break;
   if (sound == sounds) return;
 
-  soundFile = locate("data", "ktuberling/sounds/" + filesList[sound]);
+  soundFile = KStandardDirs::locate("data", "ktuberling/sounds/" + filesList[sound]);
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
