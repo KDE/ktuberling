@@ -295,7 +295,7 @@ void TopLevel::fileOpen()
   QString dir = KStandardDirs::locate("data", "ktuberling/museum/miss.tuberling");
   dir.truncate(dir.lastIndexOf('/') + 1);
 
-  KUrl url = KFileDialog::getOpenURL(dir, "*.tuberling");
+  KUrl url = KFileDialog::getOpenUrl(dir, "*.tuberling");
 
   open(url);
 }
@@ -325,7 +325,7 @@ void TopLevel::open(const KUrl &url)
 // Save gameboard
 void TopLevel::fileSave()
 {
-  KUrl url = KFileDialog::getSaveURL
+  KUrl url = KFileDialog::getSaveUrl
                 ( KUrl(),
 		 "*.tuberling");
 
@@ -358,7 +358,7 @@ void TopLevel::filePicture()
 {
   QPixmap picture(playGround->getPicture());
 
-  KUrl url = KFileDialog::getSaveURL
+  KUrl url = KFileDialog::getSaveUrl
                 ( KUrl(),
                  i18n(  "*.xpm|UNIX Pixmaps (*.xpm)\n"
                         "*.jpg|JPEG Compressed Files (*.jpg)\n"
