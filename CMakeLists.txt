@@ -23,7 +23,7 @@ kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
 target_link_libraries(ktuberling  ${KDE4_KDEUI_LIBS} kdeprint kdegames ${KDE4_PHONONCORE_LIBRARIES} )
 
-install_targets(/bin ktuberling )
+install(TARGETS ktuberling  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
