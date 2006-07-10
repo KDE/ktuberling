@@ -15,7 +15,7 @@ class TopLevel;
 
 namespace Phonon
 {
-      class SimplePlayer;
+      class AudioPlayer;
 }
 
 class SoundFactory : public QObject
@@ -46,7 +46,7 @@ private:
   	  *filesList;           // List of sound files associated with each sound name
 
   TopLevel *topLevel;		// Top-level window
-  Phonon::SimplePlayer *player;
+  Phonon::AudioPlayer *player;
 };
 
 #endif

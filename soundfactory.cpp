@@ -12,7 +12,7 @@
 
 #include <qdom.h>
 
-#include <phonon/simpleplayer.h>
+#include <phonon/audioplayer.h>
 #include "soundfactory.h"
 #include "soundfactory.moc"
 #include "toplevel.h"
@@ -22,7 +22,7 @@ SoundFactory::SoundFactory(TopLevel *parent, uint selectedLanguage)
 	: QObject(parent)
 {
   topLevel = parent;
-  player = new Phonon::SimplePlayer(Phonon::GameCategory,this);
+  player = new Phonon::AudioPlayer(Phonon::GameCategory,this);
 
   namesList = filesList = 0;
 
