@@ -4,10 +4,10 @@
    mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
-#include <qbitmap.h>
-#include <qpainter.h>
-//Added by qt3to4:
+#include <QPainter>
 #include <QPixmap>
+#include <QBitmap>
+#include <QTextStream>
 
 #include "todraw.h"
 
@@ -65,20 +65,12 @@ void ToDraw::draw(QPainter &artist, const QRect &area,
 }
 
 // Load an object from a file
-bool ToDraw::load(FILE *fp, int decorations, bool &eof)
+bool ToDraw::load(QTextStream &stream, int decorations)
 {
-  int nitems;
   int pl, pt, pr, pb;
 
-  nitems = fscanf(fp, "%d\t%d %d %d %d\n", &number, &pl, &pt, &pr, &pb);
-
-  if (nitems == EOF)
-  {
-    eof = true;
-    return true;
-  }
-  eof = false;
-  if (nitems != 5) return false;
+  stream >> number >> pl >> pt >> pr >> pb;
+  // NOTE: read error checking?
 
   if (number < 0 || number >= decorations) return false;
 
@@ -88,10 +80,10 @@ bool ToDraw::load(FILE *fp, int decorations, bool &eof)
 }
 
 // Save an object to a file
-void ToDraw::save(FILE *fp) const
+void ToDraw::save(QTextStream &stream) const
 {
-  fprintf(fp, "%d\t%d %d %d %d\n",
-              number,
-              position.left(), position.top(), position.right(), position.bottom());
+  stream << number << "\t" << position.left() <<" ";
+  stream << position.top() << " " << position.right() << " ";
+  stream << position.bottom() << "\n";
 }
 

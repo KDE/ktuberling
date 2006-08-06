@@ -4,20 +4,17 @@
    mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
-#include <stdlib.h>
-
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kprinter.h>
 
 #include <QFile>
-#include <qpainter.h>
-#include <qimage.h>
-#include <qcursor.h>
-#include <qdom.h>
-//Added by qt3to4:
-#include <QPixmap>
+#include <QTextStream>
+#include <QPainter>
+#include <QImage>
+#include <QCursor>
+#include <QDomDocument>
 #include <QPaintEvent>
 #include <QMouseEvent>
 
@@ -37,8 +34,6 @@ PlayGround::PlayGround(TopLevel *parent, uint selectedGameboard)
   textsList = soundsList = 0;
   draggedCursor = 0;
 
-  toDraw.setAutoDelete(true);
-  history.setAutoDelete(true);
 
   QPalette palette;
   palette.setColor( backgroundRole(), Qt::white );
@@ -69,6 +64,8 @@ PlayGround::~PlayGround()
 // Reset the play ground
 void PlayGround::reset()
 {
+  qDeleteAll(toDraw);
+  qDeleteAll(history);
   toDraw.clear();
   history.clear();
   currentAction = 0;
@@ -82,6 +79,8 @@ void PlayGround::change(uint selectedGameboard)
   if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
   if (!ok) loadFailure();
 
+  qDeleteAll(toDraw);
+  qDeleteAll(history);
   toDraw.clear();
   history.clear();
   currentAction = 0;
@@ -118,7 +117,9 @@ bool PlayGround::undo()
   if (zOrder != -1)
   {
     // Undo an "add" or a "move" action
-    if (!toDraw.remove(zOrder)) return false;
+    if( zOrder < 0 || zOrder >= toDraw.count() )
+        return false;
+    toDraw.removeAt(zOrder);
   }
 
   zOrder = undone->ZOrderBefore();
@@ -126,8 +127,9 @@ bool PlayGround::undo()
   {
     // Undo a "delete" or a "move" action
     newObject = new ToDraw(undone->DrawnBefore());
-    if (!toDraw.insert(zOrder, newObject))
-      return false;
+    if( zOrder < 0 || zOrder >= toDraw.count() )
+        return false;
+    toDraw.replace(zOrder, newObject);
   }
 
   return true;
@@ -148,7 +150,9 @@ bool PlayGround::redo()
   if (zOrder != -1)
   {
     // Redo a "delete" or a "move" action
-    if (!toDraw.remove(zOrder)) return false;
+    if( zOrder < 0 || zOrder >= toDraw.count() )
+        return false;
+    toDraw.removeAt(zOrder);
   }
 
   zOrder = undone->ZOrderAfter();
@@ -156,8 +160,9 @@ bool PlayGround::redo()
   {
     // Redo an "add" or a "move" action
     newObject = new ToDraw(undone->DrawnAfter());
-    if (!toDraw.insert(zOrder, newObject))
-      return false;
+    if( zOrder < 0 || zOrder >= toDraw.count() )
+        return false;
+    toDraw.replace(zOrder, newObject);
   }
 
   return true;
@@ -166,16 +171,16 @@ bool PlayGround::redo()
 // Save objects laid down on the editable area
 bool PlayGround::saveAs(const QString & name)
 {
-  FILE *fp;
-  const ToDraw *currentObject;
+  QFile f(QFile::encodeName(name));
+  if (!f.open( QIODevice::WriteOnly | QIODevice::Text ) )
+      return false;
 
-  if (!(fp = fopen((const char *) QFile::encodeName(name), "w"))) return false;
+  QTextStream out(&f);
+  out << topLevel->getSelectedGameboard() << "\n";
+  foreach( ToDraw* currentObject, toDraw )
+    currentObject->save(out);
 
-  fprintf(fp, "%d\n", topLevel->getSelectedGameboard());
-  for (currentObject = toDraw.first(); currentObject; currentObject = toDraw.next())
-    currentObject->save(fp);
-
-  return !fclose(fp);
+  return (f.error() == QFile::NoError);
 }
 
 // Print gameboard's picture
@@ -224,10 +229,8 @@ void PlayGround::drawGameboard( QPainter &artist, const QRect &area ) const
     drawText(artist, textsLayout[text], textsList[text]);
 
   artist.setPen(Qt::black);
-  for (Q3PtrListIterator<ToDraw> currentObject(toDraw);
-       currentObject.current();
-       ++currentObject)
-    currentObject.current()->draw(artist, area, objectsLayout, &gameboard, &masks);
+  foreach( ToDraw* item, toDraw )
+    item->draw(artist, area, objectsLayout, &gameboard, &masks);
 }
 
 // Painting event
@@ -311,7 +314,11 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
     // ... then register its deletion (if coming from the editable area), and return
     if (draggedZOrder == -1) return;
 
-    while (history.count() > currentAction) history.removeLast();
+    while (history.count() > currentAction)
+    {
+        delete history.last();
+        history.removeLast();
+    }
     newAction = new Action(&draggedObject, draggedZOrder, 0, -1);
     history.append(newAction);
     currentAction++;
@@ -325,7 +332,11 @@ void PlayGround::mouseReleaseEvent( QMouseEvent *event )
   toDraw.append(newObject);
 
   // Forget all subsequent actions in the undo buffer, and register object's addition (or its move)
-  while (history.count() > currentAction) history.removeLast();
+  while (history.count() > currentAction)
+  {
+      delete history.last();
+      history.removeLast();
+  }
   newAction = new Action(&draggedObject, draggedZOrder, newObject, toDraw.count()-1);
   history.append(newAction);
   currentAction++;
@@ -567,7 +578,7 @@ bool PlayGround::zone(QPoint &position)
     p.drawPixmap( QPoint(0, 0), masks, objectsLayout[draggedNumber]);
     if (!shape.toImage().pixelIndex(relative.x(), relative.y())) continue;
 
-    toDraw.remove(draggedZOrder);
+    toDraw.removeAt(draggedZOrder);
     toUpdate.translate(XMARGIN, YMARGIN);
     repaint(toUpdate);
 
@@ -586,32 +597,27 @@ bool PlayGround::zone(QPoint &position)
 // Load objects and lay them down on the editable area
 bool PlayGround::loadFrom(const QString &name)
 {
-  FILE *fp;
-  bool eof = false;
   ToDraw readObject, *newObject;
   Action *newAction;
 
-  if (!(fp = fopen(QFile::encodeName(name), "r"))) return false;
+  QFile f( QFile::encodeName(name) );
+  if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+      return false;
 
   uint newGameboard;
-  int nitems = fscanf(fp, "%u\n", &newGameboard);
-  if (nitems == EOF)
+  QTextStream in(&f);
+  in >> newGameboard;
+  if (in.atEnd())
   {
-    fclose(fp);
     return false;
   }
   topLevel->changeGameboard(newGameboard);
 
-  for (;;)
+  while( !in.atEnd() )
   {
-    if (!readObject.load(fp, decorations, eof))
+    if (!readObject.load(in, decorations))
     {
-      fclose(fp);
       return false;
-    }
-    if (eof)
-    {
-      return !fclose(fp);
     }
     newObject = new ToDraw(readObject);
     toDraw.append(newObject);
@@ -620,4 +626,5 @@ bool PlayGround::loadFrom(const QString &name)
     currentAction++;
 
   }
+  return (f.error() == QFile::NoError);
 }

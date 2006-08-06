@@ -8,11 +8,12 @@
 #ifndef _TODRAW_H_
 #define _TODRAW_H_
 
-#include <qrect.h>
-//Added by qt3to4:
-#include <QPixmap>
+#include <QRect>
 
-#include <stdio.h>
+class QTextStream;
+class QPixmap;
+class QPainter;
+class QBitmap;
 
 class ToDraw
 {
@@ -22,8 +23,8 @@ class ToDraw
     ToDraw(int, const QRect &);
     ToDraw &operator=(const ToDraw &);
     void draw(QPainter &, const QRect &, const QRect *, const QPixmap *, const QBitmap *) const;
-    void save(FILE *) const;
-    bool load(FILE *, int, bool &);
+    void save(QTextStream &) const;
+    bool load(QTextStream &, int);
 
     inline int getNumber() const { return number; }
     inline void setNumber(int newValue) { number = newValue; }
