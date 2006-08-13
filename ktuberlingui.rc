@@ -19,6 +19,7 @@
     <Action name="speech_finnish"/>
     <Action name="speech_french"/>
     <Action name="speech_italian"/>
+    <Action name="speech_lowsaxon"/>
     <Action name="speech_dutch"/>
     <Action name="speech_portuguese"/>
     <Action name="speech_romanian"/>

@@ -686,7 +686,43 @@
     <sound name="scarf" file="it/sciarpina.wav" />
 
   </language>
+  
+  <language code="nds">
 
+    <menuitem action="speech_lowsaxon">
+      <label>Low Sa&amp;xon</label>
+    </menuitem>
+
+    <sound name="tuberling" file="nds/kantueffel.wav" />
+    <sound name="eye" file="nds/oog.wav" />
+    <sound name="eyebrow" file="nds/oogbro.wav" />
+    <sound name="nose" file="nds/nees.wav" />
+    <sound name="ear" file="nds/ohr.wav" />
+    <sound name="mouth" file="nds/mund.wav" />
+    <sound name="hat" file="nds/hoot.wav" />
+    <sound name="moustache" file="nds/neesboort.wav" />
+    <sound name="cigar" file="nds/zigarr.wav" />
+    <sound name="bow" file="nds/fleeg.wav" />
+    <sound name="sunglasses" file="nds/suennbrill.wav" />
+    <sound name="spectacles" file="nds/brill.wav" />
+    <sound name="earring" file="nds/ohrring.wav" />
+    <sound name="badge" file="nds/afteken.wav" />
+    <sound name="watch" file="nds/klock.wav" />
+    <sound name="penguin" file="nds/penguin.wav" />
+    <sound name="tie" file="nds/slips.wav" />
+    <sound name="hair" file="nds/hoor.wav" />
+    <sound name="horn" file="nds/hoorn.wav" />
+    <sound name="necklace" file="nds/halskeed.wav" />
+    <sound name="scarf" file="nds/schaal.wav" />
+    <sound name="fish" file="nds/fisch.wav" />
+    <sound name="jellyfish" file="nds/quall.wav" />
+    <sound name="seahorse" file="nds/seepeerd.wav" />
+    <sound name="aquarium" file="nds/aquarium.wav" />
+    <sound name="helmet" file="nds/duekerhoot.wav" />
+    <sound name="treasure" file="nds/schatz.wav" />
+
+  </language>
+  
   <language code="nl">
 
     <menuitem action="speech_dutch">
