@@ -32,7 +32,7 @@ install( FILES ktuberling.desktop  DESTINATION  ${XDG_APPS_DIR} )
 install( FILES x-tuberling.desktop  DESTINATION  ${MIME_INSTALL_DIR}/application )
 install( FILES ktuberlingui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ktuberling )
 
-kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
+kde4_install_icons( ${ICON_INSTALL_DIR}   )
 
 
 
