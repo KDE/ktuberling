@@ -89,7 +89,7 @@ i18n("S&lovenian");
 i18n("Ser&bian");
 i18n("S&wedish");
 
-i18n("NOTE_TO_THE_TRANSLATORS",
+i18nc("NOTE TO THE TRANSLATORS",
 "The translators have the opportunity to translate the\n"
 "sounds spoken in the game.\n"
 "See the technical reference section in ktuberling's\n"
