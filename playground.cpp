@@ -559,7 +559,7 @@ bool PlayGround::zone(QPoint &position)
      return true;
   }
 
-  // Scan all decorative objects already layed down on editable are because we may be moving or removing one
+  // Scan all decorative objects already laid down on editable are because we may be moving or removing one
   const ToDraw *currentObject;
 
   for (draggedZOrder = toDraw.count()-1; draggedZOrder >= 0; draggedZOrder--)
