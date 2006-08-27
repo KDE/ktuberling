@@ -126,9 +126,9 @@ bool PlayGround::undo()
   if (zOrder != -1)
   {
     // Undo a "delete" or a "move" action
-    newObject = new ToDraw(undone->DrawnBefore());
     if( zOrder < 0 || zOrder >= toDraw.count() )
         return false;
+    newObject = new ToDraw(undone->DrawnBefore());
     toDraw.replace(zOrder, newObject);
   }
 
@@ -159,9 +159,9 @@ bool PlayGround::redo()
   if (zOrder != -1)
   {
     // Redo an "add" or a "move" action
-    newObject = new ToDraw(undone->DrawnAfter());
     if( zOrder < 0 || zOrder >= toDraw.count() )
         return false;
+    newObject = new ToDraw(undone->DrawnAfter());
     toDraw.replace(zOrder, newObject);
   }
 
