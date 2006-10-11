@@ -14,4 +14,4 @@ Icon=ktuberling
 MimeType=application/x-tuberling
 X-KDE-StartupNotify=true
 X-DCOP-ServiceType=Multi
-Categories=Qt;KDE;Game;X-KDE-KidsGame;
+Categories=Qt;KDE;Game;KidsGame;
