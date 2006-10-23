@@ -17,7 +17,7 @@ set(ktuberling_SRCS
    todraw.cpp 
    soundfactory.cpp )
 
-kde4_automoc(ktuberling ${ktuberling_SRCS})
+kde4_automoc(${ktuberling_SRCS})
 
 kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
