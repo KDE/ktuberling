@@ -65,8 +65,10 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 {
   KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), actionCollection(), actionId);
 
-  switch (gameboards)
+  if ( t )
   {
+      switch (gameboards)
+      {
   	case 0: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard0()));
 		break;
   	case 1: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard1()));
@@ -87,9 +89,8 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 		break;
   	case 9: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard9()));
 		break;
-  }
+      }
 
-  if( t ) {
       if (gameboards == selectedGameboard) t->setChecked(true);
       gameboardActions[gameboards] = actionId;
       gameboards++;
@@ -101,8 +102,10 @@ void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, b
 {
   KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), actionCollection(), actionId);
 
-  switch (languages)
+  if ( t )
   {
+      switch (languages)
+      {
   	case 0: connect(t,SIGNAL(triggered(bool)), SLOT(language0()));
 		break;
   	case 1: connect(t,SIGNAL(triggered(bool)), SLOT(language1()));
@@ -135,9 +138,8 @@ void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, b
 		break;
   	case 15: connect(t,SIGNAL(triggered(bool)), SLOT(language15()));
 		break;
-  }
+      }
 
-  if( t ) {
       if (languages == selectedLanguage) t->setChecked(true);
       t->setEnabled(enabled);
       languageActions[languages] = actionId;
