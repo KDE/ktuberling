@@ -10,9 +10,10 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 
-#include <qdom.h>
-
 #include <phonon/audioplayer.h>
+
+#include <QDomDocument>
+
 #include "soundfactory.h"
 #include "soundfactory.moc"
 #include "toplevel.h"
@@ -22,7 +23,7 @@ SoundFactory::SoundFactory(TopLevel *parent, uint selectedLanguage)
 	: QObject(parent)
 {
   topLevel = parent;
-  player = new Phonon::AudioPlayer(Phonon::GameCategory,this);
+  player = new Phonon::AudioPlayer(Phonon::GameCategory, this);
 
   namesList = filesList = 0;
 

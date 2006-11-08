@@ -8,7 +8,7 @@
 #ifndef _SOUNDFACTORY_H_
 #define _SOUNDFACTORY_H_
 
-#include "qobject.h"
+#include <QObject>
 
 class QDomDocument;
 class TopLevel;
@@ -24,7 +24,7 @@ class SoundFactory : public QObject
 
 public:
 
-  SoundFactory(TopLevel *parent, uint selectedLanguage);
+  SoundFactory(TopLevel *parent, const char *name, uint selectedLanguage);
   ~SoundFactory();
 
   void change(uint selectedLanguage);
@@ -46,7 +46,7 @@ private:
   	  *filesList;           // List of sound files associated with each sound name
 
   TopLevel *topLevel;		// Top-level window
-  Phonon::AudioPlayer *player;
+  Phonon::AudioPlayer *player;  // Sound player
 };
 
 #endif

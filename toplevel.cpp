@@ -13,14 +13,13 @@
 #include <kaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
-
-#include <kprinter.h>
-#include <qclipboard.h>
-//Added by qt3to4:
-#include <QPixmap>
-#include <QDomDocument>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
+#include <kprinter.h>
+
+#include <QClipboard>
+#include <QDomDocument>
+
 #include "toplevel.moc"
 #include "playground.h"
 #include "soundfactory.h"

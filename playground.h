@@ -11,7 +11,7 @@
 #include <kprinter.h>
 
 #include <QWidget>
-#include <qbitmap.h>
+#include <QBitmap>
 #include <QPixmap>
 
 #include "todraw.h"
@@ -21,7 +21,7 @@ class QDomDocument;
 class TopLevel;
 
 class PlayGround : public QWidget
- {
+{
   Q_OBJECT
 
 public:
@@ -76,9 +76,9 @@ private:
   ToDraw draggedObject;         // Object currently dragged
   int draggedZOrder;            // Z-order (in to-draw buffer) of this object
 
-  QList<ToDraw*> toDraw;      // List of objects in z-order
-  QList<Action*> history;     // List of actions in chronological order
-  int currentAction;          // Number of current action (not the last one if used "undo" button!)
+  QList<ToDraw*> toDraw;        // List of objects in z-order
+  QList<Action*> history;       // List of actions in chronological order
+  int currentAction;            // Number of current action (not the last one if used "undo" button!)
 
   TopLevel *topLevel;		// Top-level window
 };

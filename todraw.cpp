@@ -5,7 +5,6 @@
  ------------------------------------------------------------- */
 
 #include <QPainter>
-#include <QPixmap>
 #include <QBitmap>
 #include <QTextStream>
 
@@ -82,7 +81,7 @@ bool ToDraw::load(QTextStream &stream, int decorations)
 // Save an object to a file
 void ToDraw::save(QTextStream &stream) const
 {
-  stream << number << "\t" << position.left() <<" ";
+  stream << number << "\t" << position.left() << " ";
   stream << position.top() << " " << position.right() << " ";
   stream << position.bottom() << "\n";
 }

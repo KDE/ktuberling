@@ -16,7 +16,6 @@
 #include <QCursor>
 #include <QDomDocument>
 #include <QPaintEvent>
-#include <QMouseEvent>
 
 #include "playground.moc"
 #include "toplevel.h"
@@ -33,7 +32,6 @@ PlayGround::PlayGround(TopLevel *parent, uint selectedGameboard)
   textsLayout = objectsLayout = 0;
   textsList = soundsList = 0;
   draggedCursor = 0;
-
 
   QPalette palette;
   palette.setColor( backgroundRole(), Qt::white );
@@ -65,9 +63,11 @@ PlayGround::~PlayGround()
 void PlayGround::reset()
 {
   qDeleteAll(toDraw);
-  qDeleteAll(history);
   toDraw.clear();
+
+  qDeleteAll(history);
   history.clear();
+
   currentAction = 0;
 }
 
@@ -80,9 +80,11 @@ void PlayGround::change(uint selectedGameboard)
   if (!ok) loadFailure();
 
   qDeleteAll(toDraw);
-  qDeleteAll(history);
   toDraw.clear();
+
+  qDeleteAll(history);
   history.clear();
+
   currentAction = 0;
 
   setupGeometry();
@@ -177,7 +179,7 @@ bool PlayGround::saveAs(const QString & name)
 
   QTextStream out(&f);
   out << topLevel->getSelectedGameboard() << "\n";
-  foreach( ToDraw* currentObject, toDraw )
+  foreach( const ToDraw* currentObject, toDraw )
     currentObject->save(out);
 
   return (f.error() == QFile::NoError);
@@ -229,7 +231,7 @@ void PlayGround::drawGameboard( QPainter &artist, const QRect &area ) const
     drawText(artist, textsLayout[text], textsList[text]);
 
   artist.setPen(Qt::black);
-  foreach( ToDraw* item, toDraw )
+  foreach( const ToDraw* item, toDraw )
     item->draw(artist, area, objectsLayout, &gameboard, &masks);
 }
 
@@ -608,17 +610,13 @@ bool PlayGround::loadFrom(const QString &name)
   QTextStream in(&f);
   in >> newGameboard;
   if (in.atEnd())
-  {
     return false;
-  }
   topLevel->changeGameboard(newGameboard);
 
-  while( !in.atEnd() )
+  while ( !in.atEnd() )
   {
     if (!readObject.load(in, decorations))
-    {
       return false;
-    }
     newObject = new ToDraw(readObject);
     toDraw.append(newObject);
     newAction = new Action(0, -1, newObject, toDraw.count()-1);
