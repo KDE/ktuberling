@@ -1,5 +1,7 @@
 - Allow point and click instead of drag and drop (KDE bug #68779)
 
+- Similarly, be able to trap the mouse (not let it out of the window)
+
 - Better format for .tuberling files (object names instead of numbers, XML)
 
 - Split layout.xml in two parts : layout and sounds. The sounds.xml part would
@@ -16,6 +18,8 @@
 - See what's wrong with wide cursors on old Tektronix X terminals and if
   there's a workaround (KDE bug #68786)
 
+- Compatibility with, or support for, KISS file format (dolls)
+
 ============= Things for which I need help from other people : ================
 
 - More and better localized sounds (German, Spanish, etc)
@@ -23,8 +27,7 @@
 - More and better colour gameboards and objects (KDE bug #63211)
   For example : Clown with accessories
                 Dragon 
-                Boy-Barbie 
-                Girl-Barbie 
+                Doll (male and female)
                 House 
                 Compound animal
 
@@ -32,5 +35,6 @@
 
 - Text above, not below images (KDE bug #53402)
 
-- Vectorial pictures ? (to adapt to screen size)
+- Vectorial pictures, to adapt to screen size
 
+- Transparency is currently either 0% or 100%. Accept values in between.
