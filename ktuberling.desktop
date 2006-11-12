@@ -13,5 +13,5 @@ Terminal=false
 Icon=ktuberling
 MimeType=application/x-tuberling
 X-KDE-StartupNotify=true
-X-DCOP-ServiceType=Multi
+X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;KidsGame;
