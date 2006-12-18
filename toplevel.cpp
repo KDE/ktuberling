@@ -11,7 +11,7 @@
 #include <kstandarddirs.h>
 #include <kio/netaccess.h>
 #include <kaction.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kstdgameaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
@@ -50,13 +50,13 @@ TopLevel::~TopLevel()
 // Enable or disable "undo" button and menu item
 void TopLevel::enableUndo(bool enable) const
 {
-  actionCollection()->action(KStdAction::stdName(KStdAction::Undo))->setEnabled(enable);
+  actionCollection()->action(KStandardAction::stdName(KStandardAction::Undo))->setEnabled(enable);
 }
 
 // Enable or disable "redo" button and menu item
 void TopLevel::enableRedo(bool enable) const
 {
-  actionCollection()->action(KStdAction::stdName(KStdAction::Redo))->setEnabled(enable);
+  actionCollection()->action(KStandardAction::stdName(KStandardAction::Redo))->setEnabled(enable);
 }
 
 // Register an available gameboard
@@ -265,9 +265,9 @@ void TopLevel::setupKAction()
   connect(action, SIGNAL(triggered(bool) ), SLOT(filePicture()));
 
 //Edit
-  KStdAction::copy(this, SLOT(editCopy()), actionCollection());
-  KStdAction::undo(this, SLOT(editUndo()), actionCollection());
-  KStdAction::redo(this, SLOT(editRedo()), actionCollection());
+  KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
+  KStandardAction::undo(this, SLOT(editUndo()), actionCollection());
+  KStandardAction::redo(this, SLOT(editRedo()), actionCollection());
   enableUndo(false);
   enableRedo(false);
 
