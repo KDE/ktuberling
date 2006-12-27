@@ -12,7 +12,7 @@
 #include <kio/netaccess.h>
 #include <kaction.h>
 #include <kstandardaction.h>
-#include <kstdgameaction.h>
+#include <kstandardgameaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <kprinter.h>
@@ -256,11 +256,11 @@ void TopLevel::writeOptions()
 void TopLevel::setupKAction()
 {
 //Game
-  KStdGameAction::gameNew(this, SLOT(fileNew()), actionCollection());
-  KStdGameAction::load(this, SLOT(fileOpen()), actionCollection());
-  KStdGameAction::save(this, SLOT(fileSave()), actionCollection());
-  KStdGameAction::print(this, SLOT(filePrint()), actionCollection());
-  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
+  KStandardGameAction::gameNew(this, SLOT(fileNew()), actionCollection());
+  KStandardGameAction::load(this, SLOT(fileOpen()), actionCollection());
+  KStandardGameAction::save(this, SLOT(fileSave()), actionCollection());
+  KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
+  KStandardGameAction::quit(kapp, SLOT(quit()), actionCollection());
   KAction *action = new KAction(i18n("Save &as Picture..."), actionCollection(), "game_save_picture");
   connect(action, SIGNAL(triggered(bool) ), SLOT(filePicture()));
 
