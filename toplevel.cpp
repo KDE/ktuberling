@@ -62,7 +62,8 @@ void TopLevel::enableRedo(bool enable) const
 // Register an available gameboard
 void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 {
-  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), actionCollection(), actionId);
+  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), this);
+  actionCollection()->addAction(actionId, t);
 
   if ( t )
   {
@@ -99,7 +100,8 @@ void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
 // Register an available language
 void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, bool enabled)
 {
-  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), actionCollection(), actionId);
+  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), this);
+  actionCollection()->addAction(actionId, t);
 
   if ( t )
   {
@@ -255,24 +257,36 @@ void TopLevel::writeOptions()
 // KAction initialization (aka menubar + toolbar init)
 void TopLevel::setupKAction()
 {
+  QAction *action;
+
 //Game
-  KStandardGameAction::gameNew(this, SLOT(fileNew()), actionCollection());
-  KStandardGameAction::load(this, SLOT(fileOpen()), actionCollection());
-  KStandardGameAction::save(this, SLOT(fileSave()), actionCollection());
-  KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
-  KStandardGameAction::quit(kapp, SLOT(quit()), actionCollection());
-  KAction *action = new KAction(i18n("Save &as Picture..."), actionCollection(), "game_save_picture");
+  action = KStandardGameAction::gameNew(this, SLOT(fileNew()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardGameAction::load(this, SLOT(fileOpen()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardGameAction::save(this, SLOT(fileSave()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardGameAction::print(this, SLOT(filePrint()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardGameAction::quit(kapp, SLOT(quit()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = actionCollection()->addAction("game_save_picture");
+  action->setText(i18n("Save &as Picture..."));
   connect(action, SIGNAL(triggered(bool) ), SLOT(filePicture()));
 
 //Edit
-  KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
-  KStandardAction::undo(this, SLOT(editUndo()), actionCollection());
-  KStandardAction::redo(this, SLOT(editRedo()), actionCollection());
+  action = KStandardAction::copy(this, SLOT(editCopy()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardAction::undo(this, SLOT(editUndo()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardAction::redo(this, SLOT(editRedo()), this);
+  actionCollection()->addAction(action->objectName(), action);
   enableUndo(false);
   enableRedo(false);
 
 //Speech
-  KToggleAction *t = new KToggleAction(i18n("&No Sound"), actionCollection(), "speech_no_sound");
+  KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
+  actionCollection()->addAction("speech_no_sound", t);
   connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
   if (!soundEnabled) t->setChecked(true);
 
