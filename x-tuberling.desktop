@@ -4,6 +4,7 @@ Encoding=UTF-8
 MimeType=application/x-tuberling
 Comment=Potato
 Comment[fr]=Patate
+Comment[ja]=ポテト
 Comment[x-test]=xxPotatoxx
 Icon=ktuberling
 Type=MimeType
