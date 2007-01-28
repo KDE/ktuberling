@@ -19,6 +19,7 @@
 
 #include <QClipboard>
 #include <QDomDocument>
+#include <kconfiggroup.h>
 
 #include "toplevel.moc"
 #include "playground.h"
