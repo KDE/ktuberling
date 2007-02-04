@@ -5,7 +5,6 @@ MimeType=application/x-tuberling
 Comment=Potato
 Comment[el]=Πατάτα
 Comment[fr]=Patate
-Comment[ja]=ポテト
 Comment[x-test]=xxPotatoxx
 Icon=ktuberling
 Type=MimeType
