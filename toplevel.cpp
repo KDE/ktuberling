@@ -27,7 +27,7 @@
 
 // Constructor
 TopLevel::TopLevel()
-  : KMainWindow(0)
+  : KXmlGuiWindow(0)
 {
   readOptions();
 

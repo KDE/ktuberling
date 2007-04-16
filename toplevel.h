@@ -8,14 +8,14 @@
 #ifndef _TOPLEVEL_H_
 #define _TOPLEVEL_H_
 
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 #include <kurl.h>
 
 class QDomDocument;
 class PlayGround;
 class SoundFactory;
 
-class TopLevel : public KMainWindow
+class TopLevel : public KXmlGuiWindow
 {
   Q_OBJECT
 
