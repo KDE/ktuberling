@@ -4,11 +4,11 @@
    mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
+#include "todraw.h"
+
 #include <QPainter>
 #include <QBitmap>
 #include <QTextStream>
-
-#include "todraw.h"
 
 // Constructor with no arguments
 ToDraw::ToDraw()
