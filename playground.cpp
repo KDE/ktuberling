@@ -4,170 +4,51 @@
    mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
 
+#include "playground.h"
+
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kprinter.h>
 
 #include <QFile>
-#include <QTextStream>
+#include <QDataStream>
 #include <QPainter>
 #include <QImage>
 #include <QCursor>
 #include <QDomDocument>
 #include <QPaintEvent>
+#include <QGraphicsSvgItem>
 
-#include "playground.moc"
+#include "action.h"
 #include "toplevel.h"
+#include "todraw.h"
 
-#define XMARGIN 5
-#define YMARGIN 5
+static const char *saveGameText = "KTuberlingSaveGameV2";
 
 // Constructor
-PlayGround::PlayGround(TopLevel *parent, uint selectedGameboard)
-    : QWidget(parent)
+PlayGround::PlayGround(TopLevel *parent)
+    : QGraphicsView(parent), m_dragItem(0), m_scene(0)
 {
-  topLevel = parent;
-
-  textsLayout = objectsLayout = 0;
-  textsList = soundsList = 0;
-  draggedCursor = 0;
-
-  QPalette palette;
-  palette.setColor( backgroundRole(), Qt::white );
-  setPalette( palette );
-
-  QDomDocument layoutsDocument;
-  bool ok = topLevel->loadLayout(layoutsDocument);
-  if (ok) ok = registerPlayGrounds(layoutsDocument);
-  if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
-  if (!ok) loadFailure();
-
-  currentAction = 0;
-  setupGeometry();
+  m_topLevel = parent;
+  setFrameStyle(QFrame::NoFrame);
 }
 
 // Destructor
 PlayGround::~PlayGround()
 {
-  delete [] textsLayout;
-  delete [] objectsLayout;
-
-  delete [] textsList;
-  delete [] soundsList;
-
-  delete draggedCursor;
 }
 
 // Reset the play ground
 void PlayGround::reset()
 {
-  qDeleteAll(toDraw);
-  toDraw.clear();
-
-  qDeleteAll(history);
-  history.clear();
-
-  currentAction = 0;
-}
-
-// Change the gameboard
-void PlayGround::change(uint selectedGameboard)
-{
-  QDomDocument layoutsDocument;
-  bool ok = topLevel->loadLayout(layoutsDocument);
-  if (ok) ok = loadPlayGround(layoutsDocument, selectedGameboard);
-  if (!ok) loadFailure();
-
-  qDeleteAll(toDraw);
-  toDraw.clear();
-
-  qDeleteAll(history);
-  history.clear();
-
-  currentAction = 0;
-
-  setupGeometry();
-
-  update();
-}
-
-// Repaint all the editable area
-void PlayGround::repaintAll()
-{
-  QRect dirtyArea
-        (editableArea.left() - 10,
-         editableArea.top() - 10,
-         editableArea.width() + 20,
-         editableArea.height() + 20);
-
-  repaint(dirtyArea);
-}
-
-// Undo last action
-// Returns true if everything went fine
-bool PlayGround::undo()
-{
-  ToDraw *newObject;
-  Action *undone;
-  int zOrder;
-
-  if (!(undone = history.at(--currentAction)))
-    return false;
-
-  zOrder = undone->ZOrderAfter();
-  if (zOrder != -1)
+  foreach(QGraphicsItem *item, m_scene->items())
   {
-    // Undo an "add" or a "move" action
-    if( zOrder < 0 || zOrder >= toDraw.count() )
-        return false;
-    toDraw.removeAt(zOrder);
+    ToDraw *currentObject = dynamic_cast<ToDraw *>(item);
+    if (currentObject != NULL) delete currentObject;
   }
 
-  zOrder = undone->ZOrderBefore();
-  if (zOrder != -1)
-  {
-    // Undo a "delete" or a "move" action
-    if( zOrder < 0 || zOrder >= toDraw.count() )
-        return false;
-    newObject = new ToDraw(undone->DrawnBefore());
-    toDraw.replace(zOrder, newObject);
-  }
-
-  return true;
-}
-
-// Redo next action
-// Returns true if everything went fine
-bool PlayGround::redo()
-{
-  ToDraw *newObject;
-  Action *undone;
-  int zOrder;
-
-  if (!(undone = history.at(currentAction++)))
-    return false;
-
-  zOrder = undone->ZOrderBefore();
-  if (zOrder != -1)
-  {
-    // Redo a "delete" or a "move" action
-    if( zOrder < 0 || zOrder >= toDraw.count() )
-        return false;
-    toDraw.removeAt(zOrder);
-  }
-
-  zOrder = undone->ZOrderAfter();
-  if (zOrder != -1)
-  {
-    // Redo an "add" or a "move" action
-    if( zOrder < 0 || zOrder >= toDraw.count() )
-        return false;
-    newObject = new ToDraw(undone->DrawnAfter());
-    toDraw.replace(zOrder, newObject);
-  }
-
-  return true;
+  m_undoStack.clear();
 }
 
 // Save objects laid down on the editable area
@@ -177,16 +58,20 @@ bool PlayGround::saveAs(const QString & name)
   if (!f.open( QIODevice::WriteOnly | QIODevice::Text ) )
       return false;
 
-  QTextStream out(&f);
-  out << topLevel->getSelectedGameboard() << "\n";
-  foreach( const ToDraw* currentObject, toDraw )
-    currentObject->save(out);
+  QDataStream out(&f);
+  out << QString(saveGameText);
+  out << m_gameboardName;
+  foreach(QGraphicsItem *item, m_scene->items())
+  {
+    ToDraw *currentObject = dynamic_cast<ToDraw *>(item);
+    if (currentObject != NULL) currentObject->save(out);
+  }
 
   return (f.error() == QFile::NoError);
 }
 
 // Print gameboard's picture
-bool PlayGround::printPicture(KPrinter &printer) const
+bool PlayGround::printPicture(KPrinter &printer)
 {
   QPainter artist;
   QPixmap picture(getPicture());
@@ -198,164 +83,177 @@ bool PlayGround::printPicture(KPrinter &printer) const
 }
 
 // Get a pixmap containing the current picture
-QPixmap PlayGround::getPicture() const
+QPixmap PlayGround::getPicture()
 {
-  QPixmap result(editableArea.size());
+  QPixmap result(backgroundRect().size().toSize());
   QPainter artist(&result);
-  QRect transEditableArea(editableArea);
-
-  transEditableArea.translate(-XMARGIN, -YMARGIN);
-  artist.translate(XMARGIN - editableArea.left(),
-                   YMARGIN - editableArea.top());
-  drawGameboard(artist, transEditableArea);
+  render(&artist, QRectF(), backgroundRect().toRect());
   return result;
 }
 
-// Draw some text
-void PlayGround::drawText(QPainter &artist, QRect &area, QString &textId) const
+QAction *PlayGround::getRedoAction()
 {
-  QString label;
-
-  label=i18n(textId.toLatin1());
-
-  artist.drawText(area, Qt::AlignCenter, label);
+  return m_undoStack.createRedoAction(this);
 }
 
-// Paint the current picture to the given device
-void PlayGround::drawGameboard( QPainter &artist, const QRect &area ) const
+QAction *PlayGround::getUndoAction()
 {
-  artist.drawPixmap(area.topLeft(), gameboard, area);
-
-  artist.setPen(Qt::white);
-  for (int text = 0; text < texts; text++)
-    drawText(artist, textsLayout[text], textsList[text]);
-
-  artist.setPen(Qt::black);
-  foreach( const ToDraw* item, toDraw )
-    item->draw(artist, area, objectsLayout, &gameboard, &masks);
-}
-
-// Painting event
-void PlayGround::paintEvent( QPaintEvent *event )
-{
-  QPoint destination(event->rect().topLeft()),
-         position(destination.x() - XMARGIN,
-                  destination.y() - YMARGIN);
-  QRect area(position, QSize(event->rect().size()));
-  QPixmap cache(gameboard.size());
-  QPainter paint(&cache);
-
-  if (destination.x() < XMARGIN) destination.setX(XMARGIN);
-  if (destination.y() < YMARGIN) destination.setY(YMARGIN);
-  area = QRect(0, 0, gameboard.width(), gameboard.height()).intersect(area);
-  if (area.isEmpty()) return;
-
-  drawGameboard(paint, area);
-
-  paint.end();
-  paint.begin(this);
-  paint.drawPixmap(destination, cache, area);
-  paint.end();
+  return m_undoStack.createUndoAction(this);
 }
 
 // Mouse pressed event
-void PlayGround::mousePressEvent( QMouseEvent *event )
+void PlayGround::mousePressEvent(QMouseEvent *event)
 {
-  if (draggedCursor) return;
+  if (event->button() != Qt::LeftButton) return;
 
-  QPoint position(event->x() - XMARGIN,
-                  event->y() - YMARGIN);
-  if (!zone(position)) return;
+  if (m_dragItem) placeDraggedItem(event->pos());
+  else if (!m_pickedElement.isNull()) placeNewItem(event->pos());
+  else
+  {
+    // see if the user clicked on the warehouse of items
+    QSize defaultSize = m_SvgRenderer.defaultSize();
+    QSize currentSize = size();
+    double xFactor = (double)defaultSize.width() / (double)currentSize.width();
+    double yFactor = (double)defaultSize.height() / (double)currentSize.height();
+    QMap<QString, QString>::const_iterator it, itEnd;
+    it = m_objectsNameSound.begin();
+    itEnd = m_objectsNameSound.end();
+    QString foundElem;
+    QRectF bounds;
+    for( ; foundElem.isNull() && it != itEnd; ++it)
+    {
+      bounds = m_SvgRenderer.boundsOnElement(it.key());
+      bounds.setRect(bounds.x() / xFactor,
+                     bounds.y() / yFactor,
+                     bounds.width() / xFactor,
+                     bounds.height() / yFactor);
+      if (bounds.contains(event->pos())) foundElem = it.key();
+    }
 
-  int draggedNumber = draggedObject.getNumber();
-  QPixmap object(objectsLayout[draggedNumber].size());
-  QBitmap shape(objectsLayout[draggedNumber].size());
-  QPainter p(&object);
-  p.drawPixmap(QPoint(0, 0), gameboard, objectsLayout[draggedNumber]);
-  p.end();
-  p.begin(&shape);
-  p.drawPixmap(QPoint(0, 0), masks, objectsLayout[draggedNumber]);
-  p.end();
-  object.setMask(shape);
+    if (!foundElem.isNull()) 
+    {
+      int width = qRound(bounds.width());
+      int height = qRound(bounds.height());
 
-  draggedCursor = new QCursor(object, position.x(), position.y());
-  setCursor(*draggedCursor);
+      m_topLevel->playSound(m_objectsNameSound.value(foundElem));
+      setCursor(QCursor(QPixmap::fromImage(toImage(foundElem, width, height, &m_SvgRenderer))));
+      m_pickedElement = foundElem;
+    }
+    else
+    {
+      // see if the user clicked on an already existant item
+      QGraphicsItem *dragItem = m_scene->itemAt(event->pos());
+      m_dragItem = dynamic_cast<ToDraw*>(dragItem);
+      if (m_dragItem)
+      {
+        QRectF rect = m_dragItem->boundingRect();
+        rect = m_dragItem->transform().mapRect(rect);
+        QSize size = rect.size().toSize();
+        QString elem = static_cast<QGraphicsSvgItem*>(m_dragItem)->elementId();
+        setCursor(QCursor(QPixmap::fromImage(toImage(elem, size.width(), size.height(), &m_SvgRenderer))));
 
-  topLevel->playSound(soundsList[draggedNumber]);
+        m_scene->removeItem(m_dragItem);
+      }
+    }
+  }
 }
 
-// Mouse released event
-void PlayGround::mouseReleaseEvent( QMouseEvent *event )
+bool PlayGround::insideBackground(const QPoint &pos) const
 {
-  // If we are not dragging an object, ignore the event
-  if (!draggedCursor) return;
+  return backgroundRect().contains(pos);
+}
 
-  QCursor arrow;
-  int draggedNumber = draggedObject.getNumber();
-  QRect position(
-    event->x() - XMARGIN - draggedCursor->hotSpot().x(),
-    event->y() - YMARGIN - draggedCursor->hotSpot().y(),
-    objectsLayout[draggedNumber].width(),
-    objectsLayout[draggedNumber].height());
-  QRect dirtyArea
-        (editableArea.left() - 10,
-         editableArea.top() - 10,
-         editableArea.width() + 20,
-         editableArea.height() + 20);
-  ToDraw *newObject;
-  Action *newAction;
+QRectF PlayGround::backgroundRect() const
+{
+  QSize defaultSize = m_SvgRenderer.defaultSize();
+  QSize currentSize = size();
+  QRectF bounds = m_SvgRenderer.boundsOnElement("background");
+  bounds.setRect(bounds.x() / (double)defaultSize.width() * (double)currentSize.width(),
+                 bounds.y() / (double)defaultSize.height() * (double)currentSize.height(),
+                 bounds.width() / (double)defaultSize.width() * (double)currentSize.width(),
+                 bounds.height() / (double)defaultSize.height() * (double)currentSize.height());
+  return bounds;
+}
 
-  // We are not anymore dragging an object
-  delete draggedCursor;
-  draggedCursor = 0;
-  setCursor(arrow);
-
-  // If we are not moving the object to the editable area
-  if (!dirtyArea.contains(event->pos()))
+void PlayGround::placeDraggedItem(const QPoint &pos)
+{
+  if (insideBackground(pos))
   {
-    // ... then register its deletion (if coming from the editable area), and return
-    if (draggedZOrder == -1) return;
-
-    while (history.count() > currentAction)
-    {
-        delete history.last();
-        history.removeLast();
-    }
-    newAction = new Action(&draggedObject, draggedZOrder, 0, -1);
-    history.append(newAction);
-    currentAction++;
-    topLevel->enableUndo(true);
-
-    return;
+    QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
+                   pos.y() - cursor().pixmap().size().height() / 2);
+    m_scene->addItem(m_dragItem);
+    m_undoStack.push(new ActionMove(m_dragItem, itemPos, m_scene));
+  }
+  else
+  {
+    m_undoStack.push(new ActionRemove(m_dragItem, m_scene));
   }
 
-  // Register that we have one more object to draw
-  newObject = new ToDraw(draggedNumber, position);
-  toDraw.append(newObject);
+  setCursor(QCursor());
+  m_dragItem = 0;
+}
 
-  // Forget all subsequent actions in the undo buffer, and register object's addition (or its move)
-  while (history.count() > currentAction)
+void PlayGround::placeNewItem(const QPoint &pos)
+{
+  if (insideBackground(pos))
   {
-      delete history.last();
-      history.removeLast();
+    QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
+                   pos.y() - cursor().pixmap().size().height() / 2);
+    ToDraw *item = new ToDraw();
+    item->setElementId(m_pickedElement);
+    item->setPos(itemPos);
+    item->setSharedRenderer(&m_SvgRenderer);
+    item->setZValue(m_scene->items().count());
+    QTransform t;
+    QSize defaultSize = m_SvgRenderer.defaultSize();
+    t.scale((double)size().width() / (double)defaultSize.width(),
+          (double)size().height() / (double)defaultSize.height());
+    item->setTransform(t);
+
+    m_undoStack.push(new ActionAdd(item, m_scene));
   }
-  newAction = new Action(&draggedObject, draggedZOrder, newObject, toDraw.count()-1);
-  history.append(newAction);
-  currentAction++;
-  topLevel->enableUndo(true);
 
-  // Repaint the editable area
-  position.translate(XMARGIN, YMARGIN);
-  repaint(position);
+  setCursor(QCursor());
+  m_pickedElement.clear();
+}
 
+void PlayGround::resizeEvent(QResizeEvent *event)
+{
+  adjustItems(event->size(), event->oldSize(), true);
+}
+
+void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool changePos)
+{
+  m_scene->setSceneRect(QRect(QPoint(0, 0), size));
+
+  QSize defaultSize = m_SvgRenderer.defaultSize();
+  double xScale = (double)size.width() / (double)defaultSize.width();
+  double yScale = (double)size.height() / (double)defaultSize.height();
+
+  QTransform t;
+  t.scale(xScale, yScale);
+
+  double xPositionScale, yPositionScale;
+  if (changePos)
+  {
+    xPositionScale = (double)size.width() / (double)oldSize.width();
+    yPositionScale = (double)size.height() / (double)oldSize.height();
+  }
+
+  foreach(QGraphicsItem *item, m_scene->items())
+  {
+    QGraphicsSvgItem *svg = dynamic_cast<QGraphicsSvgItem *>(item);
+    if (svg) item->setTransform(t);
+
+    if (changePos) item->setPos(item->x() * xPositionScale, item->y() * yPositionScale);
+  }
 }
 
 // Register the various playgrounds
 bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
 {
-  QDomNodeList playGroundsList, menuItemsList, labelsList;
-  QDomElement playGroundElement, menuItemElement, labelElement;
-  QDomAttr actionAttribute;
+  QDomNodeList playGroundsList;
+  QDomElement playGroundElement;
 
   playGroundsList = layoutDocument.elementsByTagName("playground");
   if (playGroundsList.count() < 1)
@@ -365,26 +263,16 @@ bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
   {
     playGroundElement = (const QDomElement &) playGroundsList.item(i).toElement();
 
-    menuItemsList = playGroundElement.elementsByTagName("menuitem");
-    if (menuItemsList.count() != 1)
-      return false;
-
-    menuItemElement = (const QDomElement &) menuItemsList.item(0).toElement();
-
-    labelsList = menuItemElement.elementsByTagName("label");
-    if (labelsList.count() != 1)
-      return false;
-
-    labelElement = (const QDomElement &) labelsList.item(0).toElement();
-    actionAttribute = menuItemElement.attributeNode("action");
-    topLevel->registerGameboard(labelElement.text(), actionAttribute.value().toLatin1());
+    QString label = playGroundElement.attribute("name");
+    QString gameboard = playGroundElement.attribute("gameboard");
+    m_topLevel->registerGameboard(label, gameboard);
   }
 
   return true;
 }
 
 // Load background and draggable objects masks
-bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, int toLoad)
+bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gameboardName)
 {
   QDomNodeList playGroundsList,
                editableAreasList, categoriesList, objectsList,
@@ -397,232 +285,158 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, int toLoad)
 	   refAttribute;
 
   playGroundsList = layoutDocument.elementsByTagName("playground");
-  if (toLoad >= playGroundsList.count())
+  
+  bool found = false;
+  for(int i = 0; !found && i < playGroundsList.count(); ++i)
+  {
+    playGroundElement = playGroundsList.item(i).toElement();
+    if (playGroundElement.attribute("gameboard") == gameboardName) found = true;
+  }
+  if (!found) return false;
+
+  if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + gameboardName)))
     return false;
-
-  playGroundElement = (const QDomElement &) playGroundsList.item(toLoad).toElement();
-
-  gameboardAttribute = playGroundElement.attributeNode("gameboard");
-  if (!gameboard.load(KStandardDirs::locate("data", "ktuberling/pics/" + gameboardAttribute.value())))
-    return false;
-
-  masksAttribute = playGroundElement.attributeNode("masks");
-  if (!masks.load(KStandardDirs::locate("data", "ktuberling/pics/" + masksAttribute.value())))
-    return false;
-
-  editableAreasList = playGroundElement.elementsByTagName("editablearea");
-  if (editableAreasList.count() != 1)
-    return false;
-
-  editableAreaElement = (const QDomElement &) editableAreasList.item(0).toElement();
-
-  gameAreasList = editableAreaElement.elementsByTagName("position");
-  if (gameAreasList.count() != 1)
-    return false;
-
-  gameAreaElement = (const QDomElement &) gameAreasList.item(0).toElement();
-  leftAttribute = gameAreaElement.attributeNode("left");
-  topAttribute = gameAreaElement.attributeNode("top");
-  rightAttribute = gameAreaElement.attributeNode("right");
-  bottomAttribute = gameAreaElement.attributeNode("bottom");
-
-  editableArea.setCoords
-        (XMARGIN + leftAttribute.value().toInt(),
-         YMARGIN + topAttribute.value().toInt(),
-         XMARGIN + rightAttribute.value().toInt(),
-         YMARGIN + bottomAttribute.value().toInt());
-
-  soundNamesList = editableAreaElement.elementsByTagName("sound");
-  if (soundNamesList.count() != 1)
-    return false;
-
-  soundNameElement = (const QDomElement &) soundNamesList.item(0).toElement();
-  refAttribute = soundNameElement.attributeNode("ref");
-
-  editableSound = refAttribute.value();
 
   categoriesList = playGroundElement.elementsByTagName("category");
-  texts = categoriesList.count();
-  if (texts < 1)
-    return false;
 
-  delete[] textsLayout;
-  textsLayout = new QRect[texts];
-  delete[] textsList;
-  textsList = new QString[texts];
-
-  for (int text = 0; text < texts; text++)
+  typedef QPair<QString, QString> nameText;
+  QList<nameText> nameTexts;
+  for (int text = 0; text < categoriesList.count(); text++)
   {
     categoryElement = (const QDomElement &) categoriesList.item(text).toElement();
+    QString svgName = categoryElement.attribute("name");
+    QString text = i18n(categoryElement.attribute("text").toLatin1());
 
-    gameAreasList = categoryElement.elementsByTagName("position");
-    if (gameAreasList.count() != 1)
-      return false;
-
-    gameAreaElement = (const QDomElement &) gameAreasList.item(0).toElement();
-    leftAttribute = gameAreaElement.attributeNode("left");
-    topAttribute = gameAreaElement.attributeNode("top");
-    rightAttribute = gameAreaElement.attributeNode("right");
-    bottomAttribute = gameAreaElement.attributeNode("bottom");
-
-    textsLayout[text].setCoords
-	    (leftAttribute.value().toInt(),
-	     topAttribute.value().toInt(),
-	     rightAttribute.value().toInt(),
-	     bottomAttribute.value().toInt());
-
-    labelsList = categoryElement.elementsByTagName("label");
-    if (labelsList.count() != 1)
-      return false;
-
-    labelElement = (const QDomElement &) labelsList.item(0).toElement();
-
-    textsList[text] = labelElement.text();
+    nameTexts << nameText(svgName, text);
   }
 
   objectsList = playGroundElement.elementsByTagName("object");
-  decorations = objectsList.count();
-  if (decorations < 1)
+  if (objectsList.count() < 1)
     return false;
 
-  delete[] objectsLayout;
-  objectsLayout = new QRect[decorations];
-  delete[] soundsList;
-  soundsList = new QString[decorations];
-
-  for (int decoration = 0; decoration < decorations; decoration++)
+  m_objectsNameSound.clear();
+  for (int decoration = 0; decoration < objectsList.count(); decoration++)
   {
     objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
 
-    gameAreasList = objectElement.elementsByTagName("position");
-    if (gameAreasList.count() != 1)
-      return false;
-
-    gameAreaElement = (const QDomElement &) gameAreasList.item(0).toElement();
-    leftAttribute = gameAreaElement.attributeNode("left");
-    topAttribute = gameAreaElement.attributeNode("top");
-    rightAttribute = gameAreaElement.attributeNode("right");
-    bottomAttribute = gameAreaElement.attributeNode("bottom");
-
-    objectsLayout[decoration].setCoords
-	    (leftAttribute.value().toInt(),
-	     topAttribute.value().toInt(),
-	     rightAttribute.value().toInt(),
-	     bottomAttribute.value().toInt());
-
-    soundNamesList = objectElement.elementsByTagName("sound");
-    if (soundNamesList.count() != 1)
-      return false;
-
-    soundNameElement = (const QDomElement &) soundNamesList.item(0).toElement();
-
-    refAttribute = soundNameElement.attributeNode("ref");
-
-    soundsList[decoration] = refAttribute.value();
+    m_objectsNameSound.insert(objectElement.attribute("name"), objectElement.attribute("sound"));
   }
+
+  delete m_scene;
+  m_scene = new QGraphicsScene();
+  setScene(m_scene);
+
+  m_gameboardName = gameboardName;
+
+  QGraphicsSvgItem *background = new QGraphicsSvgItem();
+  background->setPos(QPoint(0,0));
+  background->setSharedRenderer(&m_SvgRenderer);
+  background->setZValue(0);
+  m_scene->addItem(background);
+
+  adjustItems(size(), QSize(), false);
+
+//   int fSize;
+//   QRect textRect;
+//   QTransform t;
+//   QSize defaultSize = m_SvgRenderer.defaultSize();
+//   double xScale = (double)size().width() / (double)defaultSize.width();
+//   double yScale = (double)size().height() / (double)defaultSize.height();
+//   t.scale(xScale, yScale);
+//   kDebug() << xScale << " " << yScale << endl;
+//   foreach(const nameText &nt, nameTexts)
+//   {
+//     QRectF bounds = m_SvgRenderer.boundsOnElement(nt.first);
+//     bounds = t.mapRect(bounds);
+//     QGraphicsSimpleTextItem *textItem = new QGraphicsSimpleTextItem(nt.second);
+//     fontSize(nt.second, bounds, &fSize, &textRect);
+//     QFont f;
+//     f.setPointSizeF(fSize);
+//     textItem->setFont(f);
+//     QPointF thePos((bounds.left() + (bounds.width() - textRect.width()) / 2.0),
+//                    (bounds.top() + (bounds.height() - textRect.height()) / 2.0));
+//     textItem->setPos(thePos);
+//     textItem->setZValue(1);
+// 
+//     m_scene->addItem(textItem);
+//     m_scene->addRect(bounds);
+//     textRect.moveTo(thePos.toPoint());
+//     QGraphicsRectItem *reci = m_scene->addRect(textRect);
+//     reci->setPen(QColor(Qt::red));
+//   }
 
   return true;
 }
 
-// Report a load failure
-void PlayGround::loadFailure()
+QString PlayGround::currentGameboard() const
 {
-  KMessageBox::error(topLevel, i18n("Fatal error:\n"
-				    "Unable to load the pictures, aborting."));
-  exit(-1);
-}
-
-// Set up play ground's geometry
-void PlayGround::setupGeometry()
-{
-  int width = gameboard.width() + 2 * XMARGIN,
-      height = gameboard.height() + 2 * YMARGIN;
-  setFixedWidth(width);
-  setFixedHeight(height);
-}
-
-// In which decorative object are we?
-// On return, the position is the location of the cursor's hot spot
-// Returns false if we aren't in any zone
-bool PlayGround::zone(QPoint &position)
-{
-  // Scan all available decorative objects on right side because we may be adding one
-  int draggedNumber;
-  for (draggedNumber = 0;
-       draggedNumber < decorations;
-       draggedNumber++) if (objectsLayout[draggedNumber].contains(position))
-  {
-     position.setX(position.x() - objectsLayout[draggedNumber].x());
-     position.setY(position.y() - objectsLayout[draggedNumber].y());
-
-     draggedObject.setNumber(draggedNumber);
-     draggedZOrder = -1;
-
-     return true;
-  }
-
-  // Scan all decorative objects already laid down on editable are because we may be moving or removing one
-  const ToDraw *currentObject;
-
-  for (draggedZOrder = toDraw.count()-1; draggedZOrder >= 0; draggedZOrder--)
-  {
-    currentObject = toDraw.at(draggedZOrder);
-    if (!currentObject->getPosition().contains(position)) continue;
-
-    QRect toUpdate(currentObject->getPosition());
-    draggedObject = *currentObject;
-    draggedNumber = draggedObject.getNumber();
-
-    QBitmap shape(objectsLayout[draggedNumber].size());
-    QPoint relative(position.x() - toUpdate.x(),
-                    position.y() - toUpdate.y());
-    QPainter p(&shape);
-    p.drawPixmap( QPoint(0, 0), masks, objectsLayout[draggedNumber]);
-    if (!shape.toImage().pixelIndex(relative.x(), relative.y())) continue;
-
-    toDraw.removeAt(draggedZOrder);
-    toUpdate.translate(XMARGIN, YMARGIN);
-    repaint(toUpdate);
-
-    position = relative;
-
-    return true;
-  }
-
-  // If we are on the gameboard itself, then play "tuberling" sound
-  if (editableArea.contains(position))
-        topLevel->playSound(editableSound);
-
-  return false;
+  return m_gameboardName;
 }
 
 // Load objects and lay them down on the editable area
-bool PlayGround::loadFrom(const QString &name)
+PlayGround::LoadError PlayGround::loadFrom(const QString &name)
 {
-  ToDraw readObject, *newObject;
-  Action *newAction;
-
   QFile f( QFile::encodeName(name) );
   if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
-      return false;
+      return OtherError;
 
-  uint newGameboard;
-  QTextStream in(&f);
-  in >> newGameboard;
+  QDataStream in(&f);
+  
+  QString magicText;
+  in >> magicText;
+  if (saveGameText != magicText)
+      return OldFileVersionError;
+
   if (in.atEnd())
-    return false;
-  topLevel->changeGameboard(newGameboard);
+    return OtherError;
 
+  QString board;
+  in >> board;
+
+  if (in.atEnd())
+    return OtherError;
+  
+  m_topLevel->changeGameboard(board);
+
+  QTransform t;
+  QSize defaultSize = m_SvgRenderer.defaultSize();
+  t.scale((double)size().width() / (double)defaultSize.width(),
+          (double)size().height() / (double)defaultSize.height());
   while ( !in.atEnd() )
   {
-    if (!readObject.load(in, decorations))
-      return false;
-    newObject = new ToDraw(readObject);
-    toDraw.append(newObject);
-    newAction = new Action(0, -1, newObject, toDraw.count()-1);
-    history.append(newAction);
-    currentAction++;
-
+    ToDraw *obj = new ToDraw();
+    if (!obj->load(in))
+    {
+      delete obj;
+      return OtherError;
+    }
+    obj->setSharedRenderer(&m_SvgRenderer);
+    obj->setTransform(t);
+    m_undoStack.push(new ActionAdd(obj, m_scene));
   }
-  return (f.error() == QFile::NoError);
+  if (f.error() == QFile::NoError) return NoError;
+  else return OtherError;
 }
+
+void PlayGround::fontSize(const QString &text, const QRectF &rect, int *fontSize, QRect *usedRect)
+{
+//   bool done = false;
+// 
+//   *fontSize = 28;
+//   while (!done)
+//   {
+//     QFont f;
+//     f.setPointSize(*fontSize);
+//     QFontMetrics fm(f);
+//     *usedRect = fm.boundingRect(text);
+//     kDebug() << text << " " << rect << " " << *fontSize << " " << *usedRect << endl;
+//     if (usedRect->width() > rect.width() || usedRect->height() > rect.height())
+//     {
+//       *fontSize = qMin(rect.width() * (*fontSize) / usedRect->width(), rect.height() * (*fontSize) / usedRect->height());
+//     }
+//     else done = true;
+//   }
+}
+
+
+#include "playground.moc"

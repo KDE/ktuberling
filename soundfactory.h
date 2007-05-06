@@ -24,24 +24,27 @@ class SoundFactory : public QObject
 
 public:
 
-  SoundFactory(TopLevel *parent, uint selectedLanguage);
+  SoundFactory(TopLevel *parent);
   ~SoundFactory();
 
-  void change(uint selectedLanguage);
+  void change(const QString &selectedLanguage);
   void playSound(const QString &soundRef) const;
 
-protected:
+  QString currentLanguage() const;
 
   bool registerLanguages(QDomDocument &layoutDocument);
-  bool loadLanguage(QDomDocument &layoutDocument, int toLoad);
+
+protected:
+  bool loadLanguage(QDomDocument &layoutDocument, const QString &selectedLanguage);
 
 private:
 
   void loadFailure();
 
 private:
+  QString currentLang;		// The current language
 
-  int sounds;			// Number of sounds
+  int sounds;				// Number of sounds
   QString *namesList,		// List of sound names
   	  *filesList;           // List of sound files associated with each sound name
 

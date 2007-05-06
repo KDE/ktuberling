@@ -11,25 +11,13 @@
 
 <ktuberling>
 
-  <playground gameboard="potato-game.png" masks="potato-mask.png">
+  <playground gameboard="default_theme.svg" name="Potato &amp;Guy">
 
-    <menuitem action="playground_potato_guy">
-      <label>Potato &amp;Guy</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="240" bottom="320" />
-      <sound ref="tuberling" />
-    </editablearea>
-
-    <category>
-      <position left="241" top="101" right="413" bottom="115" />
-      <label>Eyes</label>
-    </category>
-
-    <category>
+    <category name="eyebrowsText" text="Eyebrows" />
+    
+<!--	<category>
       <position left="415" top="123" right="511" bottom="137" />
-      <label>Eyebrows</label>
+      <label>Eyes</label>
     </category>
 
     <category>
@@ -50,1037 +38,129 @@
     <category>
       <position left="241" top="307" right="511" bottom="321" />
       <label>Goodies</label>
-    </category>
+    </category>-->
 
-    <object>
-      <position left="242" top="  0" right="283" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
+    <object name="eyes_1" sound="eye" />
+    <object name="eyes_2" sound="eye" />
+    <object name="eyes_3" sound="eye" />
+    <object name="eyes_4" sound="eye" />
+    <object name="eyes_5" sound="eye" />
+    <object name="eyes_6" sound="eye" />
+    <object name="eyes_7" sound="eye" />
+    <object name="eyes_8" sound="eye" />
+    <object name="eyes_9" sound="eye" />
+    <object name="eyes_10" sound="eye" />
+    <object name="eyes_11" sound="eye" />
+    <object name="eyes_12" sound="eye" />
+    <object name="eyes_13" sound="eye" />
+    <object name="eyes_14" sound="eye" />
+    <object name="eyes_15" sound="eye" />
+    <object name="eyes_16" sound="eye" />
+    <object name="eyes_17" sound="eye" />
+    <object name="eyes_18" sound="eye" />
 
-    <object>
-      <position left="242" top=" 34" right="283" bottom=" 66" />
-      <sound ref="eye" />
-    </object>
+    <object name="eyebrows1" sound="eyebrow" />
+    <object name="eyebrows2" sound="eyebrow" />
+    <object name="eyebrows3" sound="eyebrow" />
+    <object name="eyebrows4" sound="eyebrow" />
+    <object name="eyebrows5" sound="eyebrow" />
+    <object name="eyebrows6" sound="eyebrow" />
+    <object name="eyebrows7" sound="eyebrow" />
+    <object name="eyebrows8" sound="eyebrow" />
 
-    <object>
-      <position left="242" top=" 68" right="283" bottom="100" />
-      <sound ref="eye" />
-    </object>
+    <object name="nose_1" sound="nose" />
+    <object name="nose_2" sound="nose" />
+    <object name="nose_3" sound="nose" />
+    <object name="nose_4" sound="nose" />
 
-    <object>
-      <position left="285" top="  0" right="326" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
+    <object name="ear1" sound="ear" />
+    <object name="ear2" sound="ear" />
+    <object name="ear3" sound="ear" />
+    <object name="ear4" sound="ear" />
 
-    <object>
-      <position left="285" top=" 34" right="326" bottom=" 66" />
-      <sound ref="eye" />
-    </object>
+    <object name="mouth1" sound="mouth" />
+    <object name="mouth2" sound="mouth" />
+    <object name="mouth3" sound="mouth" />
 
-    <object>
-      <position left="285" top=" 68" right="326" bottom="100" />
-      <sound ref="eye" />
-    </object>
+    <object name="hat1" sound="hat" />
+    <object name="hat2" sound="hat" />
+    <object name="hat3" sound="hat" />
 
-    <object>
-      <position left="328" top="  0" right="369" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
+    <object name="hair_1" sound="moustache" />
 
-    <object>
-      <position left="328" top=" 34" right="369" bottom=" 66" />
-      <sound ref="eye" />
-    </object>
+    <object name="hair_2" sound="hair" />
+    <object name="hair_3" sound="hair" />
+    <object name="hair_4" sound="hair" />
 
-    <object>
-      <position left="328" top=" 68" right="369" bottom="100" />
-      <sound ref="eye" />
-    </object>
+    <object name="bow1" sound="bow" />
 
-    <object>
-      <position left="371" top="  0" right="412" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
+    <object name="tie1" sound="tie" />
 
-    <object>
-      <position left="371" top=" 34" right="412" bottom=" 66" />
-      <sound ref="eye" />
-    </object>
+    <object name="glass_1" sound="sunglasses" />
 
-    <object>
-      <position left="371" top=" 68" right="412" bottom="100" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="415" top="  0" right="462" bottom=" 29" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="415" top=" 31" right="462" bottom=" 60" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="415" top=" 62" right="462" bottom=" 91" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="415" top=" 93" right="462" bottom="122" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="464" top="  0" right="511" bottom=" 29" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="464" top=" 31" right="511" bottom=" 60" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="464" top=" 62" right="511" bottom=" 91" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="464" top=" 93" right="511" bottom="122" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="242" top="116" right="291" bottom="178" />
-      <sound ref="nose" />
-    </object>
-
-    <object>
-      <position left="293" top="116" right="342" bottom="178" />
-      <sound ref="nose" />
-    </object>
-
-    <object>
-      <position left="344" top="116" right="393" bottom="178" />
-      <sound ref="nose" />
-    </object>
-
-    <object>
-      <position left="397" top="138" right="423" bottom="178" />
-      <sound ref="ear" />
-    </object>
-
-    <object>
-      <position left="426" top="138" right="452" bottom="178" />
-      <sound ref="ear" />
-    </object>
-
-    <object>
-      <position left="455" top="138" right="481" bottom="178" />
-      <sound ref="ear" />
-    </object>
-
-    <object>
-      <position left="484" top="138" right="510" bottom="178" />
-      <sound ref="ear" />
-    </object>
-
-    <object>
-      <position left="242" top="195" right="308" bottom="225" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="242" top="227" right="308" bottom="257" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="310" top="195" right="376" bottom="225" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="310" top="227" right="376" bottom="257" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="378" top="195" right="444" bottom="225" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="378" top="227" right="444" bottom="257" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="447" top="195" right="511" bottom="225" />
-      <sound ref="hat" />
-    </object>
-
-    <object>
-      <position left="447" top="227" right="511" bottom="249" />
-      <sound ref="moustache" />
-    </object>
-
-    <object>
-      <position left="447" top="251" right="475" bottom="272" />
-      <sound ref="cigar" />
-    </object>
-
-    <object>
-      <position left="477" top="251" right="511" bottom="272" />
-      <sound ref="bow" />
-    </object>
-
-    <object>
-      <position left="242" top="274" right="322" bottom="306" />
-      <sound ref="sunglasses" />
-    </object>
-
-    <object>
-      <position left="324" top="274" right="399" bottom="306" />
-      <sound ref="spectacles" />
-    </object>
-
-    <object>
-      <position left="401" top="274" right="445" bottom="306" />
-      <sound ref="bow" />
-    </object>
-
-    <object>
-      <position left="447" top="274" right="462" bottom="306" />
-      <sound ref="earring" />
-    </object>
-
-    <object>
-      <position left="464" top="274" right="491" bottom="306" />
-      <sound ref="badge" />
-    </object>
-
-    <object>
-      <position left="493" top="274" right="511" bottom="306" />
-      <sound ref="watch" />
-    </object>
-
+    <object name="glass_0" sound="spectacles" />
   </playground>
-
-  <playground gameboard="penguin-game.png" masks="penguin-mask.png">
-
-    <menuitem action="playground_penguin">
-      <label>&amp;Penguin</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="240" bottom="320" />
-      <sound ref="penguin" />
-    </editablearea>
-
-    <category>
-      <position left="241" top=" 66" right="413" bottom=" 80" />
-      <label>Eyes</label>
-    </category>
-
-    <category>
-      <position left="415" top="123" right="511" bottom="137" />
-      <label>Tie</label>
-    </category>
-
-    <category>
-      <position left="241" top="180" right="511" bottom="194" />
-      <label>Hair</label>
-    </category>
-
-    <category>
-      <position left="241" top="259" right="377" bottom="273" />
-      <label>Necklaces</label>
-    </category>
-
-    <category>
-      <position left="379" top="259" right="511" bottom="273" />
-      <label>Hats</label>
-    </category>
-
-    <category>
-      <position left="241" top="307" right="400" bottom="321" />
-      <label>Glasses</label>
-    </category>
-
-    <category>
-      <position left="402" top="307" right="511" bottom="321" />
-      <label>Scarf</label>
-    </category>
-
-    <object>
-      <position left="243" top="  1" right="283" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="243" top=" 35" right="283" bottom=" 65" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="286" top="  1" right="326" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="286" top=" 35" right="326" bottom=" 65" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="329" top="  1" right="369" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="329" top=" 35" right="369" bottom=" 65" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="372" top="  1" right="412" bottom=" 32" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="372" top=" 35" right="412" bottom=" 65" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="416" top="  1" right="511" bottom="120" />
-      <sound ref="tie" />
-    </object>
-
-    <object>
-      <position left="244" top=" 81" right="390" bottom="116" />
-      <sound ref="hat" />
-    </object>
-
-    <object>
-      <position left="243" top="119" right="341" bottom="178" />
-      <sound ref="hair" />
-    </object>
-
-    <object>
-      <position left="345" top="119" right="390" bottom="178" />
-      <sound ref="hair" />
-    </object>
-
-    <object>
-      <position left="397" top="140" right="452" bottom="178" />
-      <sound ref="horn" />
-    </object>
-
-    <object>
-      <position left="455" top="140" right="509" bottom="178" />
-      <sound ref="horn" />
-    </object>
-
-    <object>
-      <position left="243" top="195" right="376" bottom="225" />
-      <sound ref="necklace" />
-    </object>
-
-    <object>
-      <position left="243" top="228" right="376" bottom="258" />
-      <sound ref="necklace" />
-    </object>
-
-    <object>
-      <position left="379" top="195" right="444" bottom="258" />
-      <sound ref="hat" />
-    </object>
-
-    <object>
-      <position left="448" top="195" right="511" bottom="258" />
-      <sound ref="hat" />
-    </object>
-
-    <object>
-      <position left="244" top="275" right="322" bottom="305" />
-      <sound ref="spectacles" />
-    </object>
-
-    <object>
-      <position left="325" top="275" right="398" bottom="305" />
-      <sound ref="sunglasses" />
-    </object>
-
-    <object>
-      <position left="402" top="275" right="511" bottom="305" />
-      <sound ref="scarf" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="aquarium-game.png" masks="aquarium-mask.png">
-
-    <menuitem action="playground_aquarium">
-      <label>&amp;Aquarium</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="320" bottom="320" />
-      <sound ref="aquarium" />
-    </editablearea>
-
-    <category>
-      <position left=" 92" top=" 46" right="736" bottom="359" />
-      <label>Fishes</label>
-    </category>
-
-    <category>
-      <position left=" 92" top=" 46" right="736" bottom="559" />
-      <label>Others</label>
-    </category>
-
-    <object>
-      <position left=" 92" top=" 46" right="236" bottom=" 32" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="325" top=" 5" right="388" bottom=" 52" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="395" top=" 5" right="444" bottom=" 52" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="454" top=" 5" right="501" bottom=" 52" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="325" top=" 62" right="415" bottom="124" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="423" top=" 62" right="511" bottom="124" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="330" top="130" right="357" bottom="184" />
-      <sound ref="seahorse" />
-    </object>
-
-    <object>
-      <position left="370" top="130" right="405" bottom="184" />
-      <sound ref="seahorse" />
-    </object>
-
-    <object>
-      <position left="410" top="130" right="500" bottom="184" />
-      <sound ref="fish" />
-    </object>
-
-    <object>
-      <position left="325" top="225" right="378" bottom="290" />
-      <sound ref="jellyfish" />
-    </object>
-
-    <object>
-      <position left="386" top="215" right="439" bottom="290" />
-      <sound ref="helmet" />
-    </object>
-
-    <object>
-      <position left="452" top="215" right="508" bottom="290" />
-      <sound ref="treasure" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="criminal-game.png" masks="criminal-mask.png">
-
-    <menuitem action="playground_criminal_portrait">
-      <label>&amp;Criminal portrait</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="359" bottom="462" />
-      <sound ref="wanted" />
-    </editablearea>
-
-    <category>
-      <position left="361" top="100" right="400" bottom="120" />
-      <label>XXXXXX</label>
-    </category>
-
-    <object>
-      <position left="361" top="  1" right="439" bottom=" 43" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="441" top="  1" right="519" bottom=" 43" />
-      <sound ref="eye" />
-    </object>
-
-    <object>
-      <position left="521" top="  1" right="572" bottom="111" />
-      <sound ref="ear" />
-    </object>
-
-    <object>
-      <position left="574" top="  1" right="625" bottom="111" />
-      <sound ref="ear" />
-    </object>
-
-    <object>
-      <position left="627" top="  1" right="711" bottom="111" />
-      <sound ref="nose" />
-    </object>
-
-    <object>
-      <position left="361" top="242" right="493" bottom="292" />
-      <sound ref="mouth" />
-    </object>
-
-    <object>
-      <position left="495" top="242" right="594" bottom="292" />
-      <sound ref="eyebrow" />
-    </object>
-
-    <object>
-      <position left="596" top="242" right="695" bottom="292" />
-      <sound ref="eyebrow" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="farm-game.png" masks="farm-mask.png">
-
-    <menuitem action="playground_farm">
-      <label>&amp;Farm</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="605" bottom="597" />
-      <sound ref="farm" />
-    </editablearea>
-
-    <category>
-      <position left="616" top="106" right="723" bottom="128" />
-      <label>Horse</label>
-    </category>
-
-    <category>
-      <position left="738" top="106" right="814" bottom="128" />
-      <label>Colt</label>
-    </category>
-
-    <category>
-      <position left="629" top="203" right="706" bottom="220" />
-      <label>Pig</label>
-    </category>
-
-    <category>
-      <position left="748" top="203" right="816" bottom="220" />
-      <label>Piglet</label>
-    </category>
-
-    <category>
-      <position left="612" top="298" right="678" bottom="318" />
-      <label>Hen</label>
-    </category>
-
-    <category>
-      <position left="688" top="298" right="749" bottom="318" />
-      <label>Rooster</label>
-    </category>
-
-    <category>
-      <position left="761" top="298" right="812" bottom="318" />
-      <label>Chicks</label>
-    </category>
-
-    <category>
-      <position left="620" top="442" right="725" bottom="462" />
-      <label>Cow</label>
-    </category>
-
-    <category>
-      <position left="742" top="442" right="815" bottom="462" />
-      <label>Calf</label>
-    </category>
-
-    <category>
-      <position left="619" top="563" right="687" bottom="578" />
-      <label>Dog</label>
-    </category>
-
-    <category>
-      <position left="728" top="566" right="792" bottom="579" />
-      <label>Cat</label>
-    </category>
-
-    <object>
-      <position left="617" top=" 11" right="721" bottom="103" />
-      <sound ref="horse" />
-    </object>
-
-    <object>
-      <position left="741" top=" 13" right="811" bottom="101" />
-      <sound ref="colt" />
-    </object>
-
-    <object>
-      <position left="631" top="149" right="705" bottom="199" />
-      <sound ref="pig" />
-    </object>
-
-    <object>
-      <position left="751" top="171" right="815" bottom="201" />
-      <sound ref="piglet" />
-    </object>
-
-    <object>
-      <position left="623" top="241" right="665" bottom="293" />
-      <sound ref="hen" />
-    </object>
-
-    <object>
-      <position left="699" top="241" right="741" bottom="293" />
-      <sound ref="rooster" />
-    </object>
-
-    <object>
-      <position left="770" top="269" right="802" bottom="293" />
-      <sound ref="chicks" />
-    </object>
-
-    <object>
-      <position left="622" top="347" right="725" bottom="439" />
-      <sound ref="cow" />
-    </object>
-
-    <object>
-      <position left="745" top="349" right="813" bottom="437" />
-      <sound ref="calf" />
-    </object>
-
-    <object>
-      <position left="634" top="515" right="677" bottom="558" />
-      <sound ref="dog" />
-    </object>
-
-    <object>
-      <position left="741" top="489" right="777" bottom="561" />
-      <sound ref="cat" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="autumn-game.png" masks="autumn-mask.png">
-
-    <menuitem action="playground_autumn">
-      <label>A&amp;utumn landscape</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="444" bottom="663" />
-      <sound ref="autumn-landscape" />
-    </editablearea>
-
-    <category>
-      <position left="446" top="366" right="707" bottom="405" />
-      <label>Tree</label>
-    </category>
-
-    <category>
-      <position left="725" top="160" right="875" bottom="211" />
-      <label>Rain</label>
-    </category>
-
-    <category>
-      <position left="748" top="369" right="854" bottom="403" />
-      <label>Squirrel</label>
-    </category>
-
-    <category>
-      <position left="448" top="501" right="535" bottom="536" />
-      <label>Fruit</label>
-    </category>
-
-    <category>
-      <position left="542" top="510" right="882" bottom="536" />
-      <label>Mushrooms</label>
-    </category>
-
-    <category>
-      <position left="448" top="613" right="765" bottom="650" />
-      <label>Leaves</label>
-    </category>
-
-    <category>
-      <position left="778" top="617" right="880" bottom="655" />
-      <label>Puddle</label>
-    </category>
-
-    <object>
-      <position left="448" top="  2" right="705" bottom="363" />
-      <sound ref="tree" />
-    </object>
-
-    <object>
-      <position left="727" top=" 10" right="876" bottom="156" />
-      <sound ref="rain" />
-    </object>
-
-    <object>
-      <position left="749" top="217" right="854" bottom="366" />
-      <sound ref="squirrel" />
-        </object>
-
-    <object>
-      <position left="449" top="416" right="487" bottom="497" />
-      <sound ref="acorn" />
-    </object>
-
-    <object>
-      <position left="496" top="415" right="534" bottom="498" />
-      <sound ref="chestnuts" />
-    </object>
-
-    <object>
-      <position left="543" top="408" right="651" bottom="507" />
-      <sound ref="mushroom" />
-    </object>
-
-    <object>
-      <position left="657" top="409" right="766" bottom="508" />
-      <sound ref="mushroom" />
-    </object>
-
-    <object>
-      <position left="772" top="408" right="881" bottom="508" />
-      <sound ref="mushroom" />
-    </object>
-
-    <object>
-      <position left="450" top="543" right="549" bottom="611" />
-      <sound ref="leave" />
-    </object>
-
-    <object>
-      <position left="557" top="542" right="657" bottom="610" />
-      <sound ref="leaves" />
-    </object>
-
-    <object>
-      <position left="666" top="542" right="765" bottom="610" />
-      <sound ref="leave" />
-    </object>
-
-    <object>
-      <position left="778" top="540" right="882" bottom="614" />
-      <sound ref="puddle" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="shadows-game.png" masks="shadows-mask.png">
-
-    <menuitem action="playground_shadows">
-      <label>&amp;Shadows</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="405" bottom="596" />
-      <sound ref="shadows" />
-    </editablearea>
-
-    <category>
-      <position left="433" top="178" right="597" bottom="214" />
-      <label>Chicks</label>
-    </category>
-
-    <category>
-      <position left="617" top="178" right="813" bottom="214" />
-      <label>Horse</label>
-    </category>
-
-    <category>
-      <position left="435" top="384" right="601" bottom="420" />
-      <label>Hen</label>
-    </category>
-
-    <category>
-      <position left="617" top="386" right="811" bottom="422" />
-      <label>Cow</label>
-    </category>
-
-    <category>
-      <position left="435" top="562" right="603" bottom="594" />
-      <label>Colt</label>
-    </category>
-
-    <category>
-      <position left="619" top="560" right="813" bottom="592" />
-      <label>Calf</label>
-    </category>
-
-    <object>
-      <position left="435" top=" 14" right="597" bottom="174" />
-      <sound ref="chicks" />
-    </object>
-
-    <object>
-      <position left="619" top=" 14" right="813" bottom="172" />
-      <sound ref="horse" />
-    </object>
-
-    <object>
-      <position left="437" top="222" right="601" bottom="380" />
-      <sound ref="hen" />
-    </object>
-
-    <object>
-      <position left="619" top="222" right="813" bottom="382" />
-      <sound ref="cow" />
-    </object>
-
-    <object>
-      <position left="437" top="428" right="599" bottom="558" />
-      <sound ref="colt" />
-    </object>
-
-    <object>
-      <position left="621" top="428" right="811" bottom="551" />
-      <sound ref="calf" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="street-game.png" masks="street-mask.png">
-
-    <menuitem action="playground_street">
-      <label>St&amp;reet</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="443" bottom="596" />
-      <sound ref="street" />
-    </editablearea>
-
-    <category>
-      <position left="451" top="232" right="607" bottom="260" />
-      <label>Ambulance</label>
-    </category>
-
-    <category>
-      <position left="623" top="232" right="777" bottom="258" />
-      <label>Car</label>
-    </category>
-
-    <category>
-      <position left="787" top=" 64" right="883" bottom=" 84" />
-      <label>Signs</label>
-    </category>
-
-    <category>
-      <position left="787" top="236" right="883" bottom="262" />
-      <label>Balloon</label>
-    </category>
-
-    <category>
-      <position left="451" top="356" right="589" bottom="388" />
-      <label>Cyclist</label>
-    </category>
-
-    <category>
-      <position left="609" top="410" right="867" bottom="428" />
-      <label>Airplane</label>
-    </category>
-
-    <category>
-      <position left="459" top="548" right="568" bottom="574" />
-      <label>Officials</label>
-    </category>
-
-    <category>
-      <position left="579" top="548" right="667" bottom="584" />
-      <label>Pedestrian</label>
-    </category>
-
-    <category>
-      <position left="677" top="576" right="873" bottom="594" />
-      <label>Bus</label>
-    </category>
-
-    <object>
-      <position left="453" top="  6" right="605" bottom="226" />
-      <sound ref="ambulance" />
-    </object>
-
-    <object>
-      <position left="625" top="  8" right="775" bottom="226" />
-      <sound ref="car" />
-    </object>
-
-    <object>
-      <position left="788" top="  5" right="831" bottom=" 58" />
-      <sound ref="sign" />
-    </object>
-
-    <object>
-      <position left="839" top="  4" right="885" bottom=" 60" />
-      <sound ref="sign" />
-    </object>
-
-    <object>
-      <position left="789" top=" 90" right="881" bottom="230" />
-      <sound ref="balloon" />
-    </object>
-
-    <object>
-      <position left="453" top="268" right="589" bottom="348" />
-      <sound ref="motorbike" />
-    </object>
-
-    <object>
-      <position left="613" top="270" right="865" bottom="402" />
-      <sound ref="airplane" />
-    </object>
-
-    <object>
-      <position left="459" top="422" right="509" bottom="544" />
-      <sound ref="police" />
-    </object>
-
-    <object>
-      <position left="520" top="423" right="566" bottom="544" />
-      <sound ref="nurse" />
-    </object>
-
-    <object>
-      <position left="581" top="438" right="667" bottom="544" />
-      <sound ref="pedestrian" />
-    </object>
-
-    <object>
-      <position left="679" top="442" right="871" bottom="570" />
-      <sound ref="bus" />
-    </object>
-
-  </playground>
-
-  <playground gameboard="transports-game.png" masks="transports-mask.png">
-
-    <menuitem action="playground_transports">
-      <label>&amp;Transports</label>
-    </menuitem>
-
-    <editablearea>
-      <position left="  0" top="  0" right="825" bottom="413" />
-      <sound ref="transports" />
-    </editablearea>
-
-    <category>
-      <position left="  7" top="564" right="237" bottom="592" />
-      <label>Train</label>
-    </category>
-
-    <category>
-      <position left="243" top="492" right="339" bottom="510" />
-      <label>Airplane</label>
-    </category>
-
-    <category>
-      <position left="249" top="572" right="411" bottom="594" />
-      <label>Ship</label>
-    </category>
-
-    <category>
-      <position left="353" top="492" right="425" bottom="510" />
-      <label>Balloon</label>
-    </category>
-
-    <category>
-      <position left="431" top="492" right="533" bottom="510" />
-      <label>Motorcycle</label>
-    </category>
-
-    <category>
-      <position left="421" top="572" right="529" bottom="594" />
-      <label>Submarine</label>
-    </category>
-
-    <category>
-      <position left="543" top="492" right="629" bottom="510" />
-      <label>Bicycle</label>
-    </category>
-
-    <category>
-      <position left="545" top="572" right="633" bottom="594" />
-      <label>Car</label>
-    </category>
-
-    <category>
-      <position left="637" top="564" right="821" bottom="592" />
-      <label>Bus</label>
-    </category>
-
-    <object>
-      <position left="  9" top="424" right="237" bottom="560" />
-      <sound ref="train" />
-    </object>
-
-    <object>
-      <position left="246" top="424" right="337" bottom="489" />
-      <sound ref="airplane" />
-    </object>
-
-    <object>
-      <position left="251" top="516" right="409" bottom="564" />
-      <sound ref="ship" />
-    </object>
-
-    <object>
-      <position left="363" top="422" right="417" bottom="488" />
-      <sound ref="balloon" />
-    </object>
-
-    <object>
-      <position left="432" top="430" right="531" bottom="489" />
-      <sound ref="motorbike" />
-    </object>
-
-    <object>
-      <position left="423" top="516" right="527" bottom="568" />
-      <sound ref="submarine" />
-    </object>
-
-    <object>
-      <position left="545" top="430" right="623" bottom="488" />
-      <sound ref="bicycle" />
-    </object>
-
-    <object>
-      <position left="539" top="514" right="629" bottom="568" />
-      <sound ref="car" />
-    </object>
-
-    <object>
-      <position left="639" top="452" right="823" bottom="556" />
-      <sound ref="bus" />
-    </object>
-
+  
+  <playground gameboard="default_theme2.svg" name="Potato &amp;Guy2">
+    <object name="eyes_1" sound="eye" />
+    <object name="eyes_2" sound="eye" />
+    <object name="eyes_3" sound="eye" />
+    <object name="eyes_4" sound="eye" />
+    <object name="eyes_5" sound="eye" />
+    <object name="eyes_6" sound="eye" />
+    <object name="eyes_7" sound="eye" />
+    <object name="eyes_8" sound="eye" />
+    <object name="eyes_9" sound="eye" />
+    <object name="eyes_10" sound="eye" />
+    <object name="eyes_11" sound="eye" />
+    <object name="eyes_12" sound="eye" />
+    <object name="eyes_13" sound="eye" />
+    <object name="eyes_14" sound="eye" />
+    <object name="eyes_15" sound="eye" />
+    <object name="eyes_16" sound="eye" />
+    <object name="eyes_17" sound="eye" />
+    <object name="eyes_18" sound="eye" />
+
+    <object name="eyebrows1" sound="eyebrow" />
+    <object name="eyebrows2" sound="eyebrow" />
+    <object name="eyebrows3" sound="eyebrow" />
+    <object name="eyebrows4" sound="eyebrow" />
+    <object name="eyebrows5" sound="eyebrow" />
+    <object name="eyebrows6" sound="eyebrow" />
+    <object name="eyebrows7" sound="eyebrow" />
+    <object name="eyebrows8" sound="eyebrow" />
+
+    <object name="nose_1" sound="nose" />
+    <object name="nose_2" sound="nose" />
+    <object name="nose_3" sound="nose" />
+    <object name="nose_4" sound="nose" />
+
+    <object name="ear1" sound="ear" />
+    <object name="ear2" sound="ear" />
+    <object name="ear3" sound="ear" />
+    <object name="ear4" sound="ear" />
+
+    <object name="mouth1" sound="mouth" />
+    <object name="mouth2" sound="mouth" />
+    <object name="mouth3" sound="mouth" />
+
+    <object name="hat1" sound="hat" />
+    <object name="hat2" sound="hat" />
+    <object name="hat3" sound="hat" />
+
+    <object name="hair_1" sound="moustache" />
+
+    <object name="hair_2" sound="hair" />
+    <object name="hair_3" sound="hair" />
+    <object name="hair_4" sound="hair" />
+
+    <object name="bow1" sound="bow" />
+
+    <object name="tie1" sound="tie" />
+
+    <object name="glass_1" sound="sunglasses" />
+
+    <object name="glass_0" sound="spectacles" />
   </playground>
 
   <language code="da">

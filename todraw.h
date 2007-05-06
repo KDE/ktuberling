@@ -8,31 +8,19 @@
 #ifndef _TODRAW_H_
 #define _TODRAW_H_
 
-#include <QRect>
+#include <QGraphicsSvgItem>
 
-class QTextStream;
-class QPixmap;
-class QPainter;
-class QBitmap;
+class KSvgRenderer;
 
-class ToDraw
+QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer);
+
+class ToDraw : public QGraphicsSvgItem
 {
   public:
-    ToDraw();
-    ToDraw(const ToDraw &);
-    ToDraw(int, const QRect &);
-    ToDraw &operator=(const ToDraw &);
-    void draw(QPainter &, const QRect &, const QRect *, const QPixmap *, const QBitmap *) const;
-    void save(QTextStream &) const;
-    bool load(QTextStream &, int);
+    void save(QDataStream &stream) const;
+    bool load(QDataStream &stream);
 
-    inline int getNumber() const { return number; }
-    inline void setNumber(int newValue) { number = newValue; }
-    inline const QRect &getPosition() const { return position; }
-
-  private:
-    int number;
-    QRect position;
+    bool contains(const QPointF &point) const;
 };
 
 #endif

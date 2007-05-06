@@ -5,33 +5,12 @@
     <Action name="game_save_picture" append="save_merge"/>
   </Menu>
   <Menu name="playground"><text>&amp;Playground</text>
-    <Action name="playground_potato_guy"/>
-    <Action name="playground_penguin"/>
-    <Action name="playground_aquarium"/>
-    <Action name="playground_criminal_portrait"/>
-    <Action name="playground_farm"/>
-    <Action name="playground_autumn"/>
-    <Action name="playground_shadows"/>
-    <Action name="playground_street"/>
-    <Action name="playground_transports"/>
+    <ActionList name="playgroundList" />
   </Menu>
   <Menu name="speech"><text>&amp;Speech</text>
     <Action name="speech_no_sound"/>
     <Separator/>
-    <Action name="speech_danish"/>
-    <Action name="speech_german"/>
-    <Action name="speech_english"/>
-    <Action name="speech_spanish"/>
-    <Action name="speech_finnish"/>
-    <Action name="speech_french"/>
-    <Action name="speech_italian"/>
-    <Action name="speech_dutch"/>
-    <Action name="speech_portuguese"/>
-    <Action name="speech_romanian"/>
-    <Action name="speech_slovak"/>
-    <Action name="speech_slovenian"/>
-    <Action name="speech_serbian"/>
-    <Action name="speech_swedish"/>
+    <ActionList name="languagesList" />
   </Menu>
 </MenuBar>
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>

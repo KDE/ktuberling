@@ -1,28 +1,62 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Action stored in the undo buffer
-   mailto:ebischoff@nerim.net
+   mailto:aacid@kde.org
  ------------------------------------------------------------- */
-
 
 #ifndef _ACTION_H_
 #define _ACTION_H_
 
-#include "todraw.h"
+#include <QUndoCommand>
+#include <QPointF>
 
-class Action
+class ToDraw;
+
+class QGraphicsScene;
+
+class ActionAdd : public QUndoCommand
 {
-  public:
-    Action(const ToDraw *, int,
-           const ToDraw *, int);
-    inline const ToDraw &DrawnBefore() const {return drawnBefore;}
-    inline int ZOrderBefore() const {return zOrderBefore;}
-    inline const ToDraw &DrawnAfter() const {return drawnAfter;}
-    inline int ZOrderAfter() const {return zOrderAfter;}
+	public:
+		ActionAdd(ToDraw *item, QGraphicsScene *scene);
+		~ActionAdd();
+		
+		void redo();
+		void undo();
+	
+	private:
+		ToDraw *m_item;
+		QGraphicsScene *m_scene;
+		bool m_done;
+};
 
-  private:
-    ToDraw drawnBefore, drawnAfter;
-    int zOrderBefore, zOrderAfter;
+
+class ActionRemove : public QUndoCommand
+{
+	public:
+		ActionRemove(ToDraw *item, QGraphicsScene *scene);
+		~ActionRemove();
+		
+		void redo();
+		void undo();
+	
+	private:
+		ToDraw *m_item;
+		QGraphicsScene *m_scene;
+		bool m_done;
+};
+
+class ActionMove : public QUndoCommand
+{
+	public:
+		ActionMove(ToDraw *item, const QPointF &pos, QGraphicsScene *scene);
+		
+		void redo();
+		void undo();
+	
+	private:
+		ToDraw *m_item;
+		QPointF m_pos;
+		QGraphicsScene *m_scene;
 };
 
 #endif

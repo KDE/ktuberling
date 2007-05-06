@@ -12,6 +12,7 @@
 #include <kio/netaccess.h>
 #include <kaction.h>
 #include <kstandardaction.h>
+#include <kstandardshortcut.h>
 #include <kstandardgameaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
@@ -19,6 +20,8 @@
 
 #include <QClipboard>
 #include <QDomDocument>
+#include <QMenu>
+
 #include <kconfiggroup.h>
 
 #include "toplevel.moc"
@@ -29,18 +32,33 @@
 TopLevel::TopLevel()
   : KXmlGuiWindow(0)
 {
-  readOptions();
+  QString board, language;
+  readOptions(board, language);
 
-  gameboards = 0;
-  languages = 0;
-  playGround = new PlayGround(this, selectedGameboard);
+  playGround = new PlayGround(this);
   playGround->setObjectName( "playGround" );
-  soundFactory = new SoundFactory(this, selectedLanguage);
+
+  soundFactory = new SoundFactory(this);
   soundFactory->setObjectName( "sounds" );
 
   setCentralWidget(playGround);
 
+  playgroundsGroup = new QActionGroup(this);
+  playgroundsGroup->setExclusive(true);
+
+  languagesGroup = new QActionGroup(this);
+  languagesGroup->setExclusive(true);
+
   setupKAction();
+
+  QDomDocument layoutsDocument;
+  bool ok = loadLayout(layoutsDocument);
+  ok &= playGround->registerPlayGrounds(layoutsDocument);
+  ok &= soundFactory->registerLanguages(layoutsDocument);
+  if (!ok) loadFailure();
+
+  changeGameboard(board);
+  changeLanguage(language);
 }
 
 // Destructor
@@ -48,156 +66,85 @@ TopLevel::~TopLevel()
 {
 }
 
-// Enable or disable "undo" button and menu item
-void TopLevel::enableUndo(bool enable) const
+// Report a load failure
+void TopLevel::loadFailure()
 {
-  actionCollection()->action(KStandardAction::stdName(KStandardAction::Undo))->setEnabled(enable);
+  KMessageBox::error(this, i18n("Fatal error:\n"
+				    "Unable to load the pictures, aborting."));
+  exit(-1);
 }
 
-// Enable or disable "redo" button and menu item
-void TopLevel::enableRedo(bool enable) const
-{
-  actionCollection()->action(KStandardAction::stdName(KStandardAction::Redo))->setEnabled(enable);
-}
 
 // Register an available gameboard
-void TopLevel::registerGameboard(const QString &menuItem, const char *actionId)
+void TopLevel::registerGameboard(const QString &menuText, const QString &board)
 {
-  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), this);
-  actionCollection()->addAction(actionId, t);
-
-  if ( t )
-  {
-      switch (gameboards)
-      {
-  	case 0: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard0()));
-		break;
-  	case 1: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard1()));
-		break;
-  	case 2: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard2()));
-		break;
-  	case 3: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard3()));
-		break;
-  	case 4: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard4()));
-		break;
-  	case 5: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard5()));
-		break;
-  	case 6: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard6()));
-		break;
-  	case 7: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard7()));
-		break;
-  	case 8: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard8()));
-		break;
-  	case 9: connect(t,SIGNAL(triggered(bool)), SLOT(gameboard9()));
-		break;
-      }
-
-      if (gameboards == selectedGameboard) t->setChecked(true);
-      gameboardActions[gameboards] = actionId;
-      gameboards++;
-  }
+  QList<QAction*> actionList;
+  KToggleAction *t = new KToggleAction(i18n(menuText.toLatin1()), this);
+  actionCollection()->addAction(board, t);
+  t->setData(board);
+  connect(t, SIGNAL(toggled(bool)), SLOT(changeGameboard()));
+  actionList << t;
+  playgroundsGroup->addAction(t);
+  plugActionList( "playgroundList", actionList );
 }
 
 // Register an available language
-void TopLevel::registerLanguage(const QString &menuItem, const char *actionId, bool enabled)
+void TopLevel::registerLanguage(const QString &menuItem, const QString &code, bool enabled)
 {
+  QList<QAction*> actionList;
   KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), this);
-  actionCollection()->addAction(actionId, t);
-
-  if ( t )
-  {
-      switch (languages)
-      {
-  	case 0: connect(t,SIGNAL(triggered(bool)), SLOT(language0()));
-		break;
-  	case 1: connect(t,SIGNAL(triggered(bool)), SLOT(language1()));
-		break;
-  	case 2: connect(t,SIGNAL(triggered(bool)), SLOT(language2()));
-		break;
-  	case 3: connect(t,SIGNAL(triggered(bool)), SLOT(language3()));
-		break;
-  	case 4: connect(t,SIGNAL(triggered(bool)), SLOT(language4()));
-		break;
-  	case 5: connect(t,SIGNAL(triggered(bool)), SLOT(language5()));
-		break;
-  	case 6: connect(t,SIGNAL(triggered(bool)), SLOT(language6()));
-		break;
-  	case 7: connect(t,SIGNAL(triggered(bool)), SLOT(language7()));
-		break;
-  	case 8: connect(t,SIGNAL(triggered(bool)), SLOT(language8()));
-		break;
-  	case 9: connect(t,SIGNAL(triggered(bool)), SLOT(language9()));
-		break;
-  	case 10: connect(t,SIGNAL(triggered(bool)), SLOT(language10()));
-		break;
-  	case 11: connect(t,SIGNAL(triggered(bool)), SLOT(language11()));
-		break;
-  	case 12: connect(t,SIGNAL(triggered(bool)), SLOT(language12()));
-		break;
-  	case 13: connect(t,SIGNAL(triggered(bool)), SLOT(language13()));
-		break;
-  	case 14: connect(t,SIGNAL(triggered(bool)), SLOT(language14()));
-		break;
-  	case 15: connect(t,SIGNAL(triggered(bool)), SLOT(language15()));
-		break;
-      }
-
-      if (languages == selectedLanguage) t->setChecked(true);
-      t->setEnabled(enabled);
-      languageActions[languages] = actionId;
-      languages++;
-  }
+  t->setEnabled(enabled);
+  actionCollection()->addAction(code, t);
+  t->setData(code);
+  connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
+  actionList << t;
+  languagesGroup->addAction(t);
+  plugActionList( "languagesList", actionList );
 }
 
 // Switch to another gameboard
-void TopLevel::changeGameboard(uint newGameboard)
+void TopLevel::changeGameboard()
 {
-  // Do not accept to switch to same gameboard
-  if (newGameboard == selectedGameboard) {
-    // select this gameboard again
-    ((KToggleAction*) actionCollection()->action(gameboardActions[newGameboard]))->setChecked(true);
-    return;
-  }
+  QAction *action = qobject_cast<QAction*>(sender());
+  QString newGameBoard = action->data().toString();
+  changeGameboard(newGameBoard);
+}
 
-  // Unselect preceding gameboard
-  ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard]))->setChecked(false);
+void TopLevel::changeGameboard(const QString &newGameBoard)
+{
+  if (newGameBoard == playGround->currentGameboard()) return;
+
+  QDomDocument layoutsDocument;
+  bool ok = loadLayout(layoutsDocument);
+  ok &= playGround->loadPlayGround(layoutsDocument, newGameBoard);
+  if (!ok) loadFailure();
+
+  actionCollection()->action(newGameBoard)->setChecked(true);
 
   // Change gameboard in the remembered options
-  selectedGameboard = newGameboard;
   writeOptions();
+}
 
-  if( !((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard]))->isChecked() )
-    ((KToggleAction*) actionCollection()->action(gameboardActions[selectedGameboard]))->setChecked(true);
-
-  // Change gameboard effectively
-  playGround->change(newGameboard);
-
-  // Disable undo and redo actions
-  enableUndo(false);
-  enableRedo(false);
+void TopLevel::changeLanguage()
+{
+  QAction *action = qobject_cast<QAction*>(sender());
+  QString langCode = action->data().toString();
+  changeLanguage(langCode);
 }
 
 // Switch to another language
-void TopLevel::changeLanguage(uint newLanguage)
+void TopLevel::changeLanguage(const QString &langCode)
 {
-  // Do not accept to switch to same language
-  if (newLanguage == selectedLanguage && soundEnabled) {
-    // newLanguage should stay checked
-    ((KToggleAction*) actionCollection()->action(languageActions[newLanguage]))->setChecked(true);
-    return;
-  }
+  if (langCode == soundFactory->currentLanguage()) return;
 
-  // Unselect preceding language
-  if (!soundEnabled) ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(false);
-  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage]))->setChecked(false);
+  // Change language effectively
+  soundFactory->change(langCode);
+
+  actionCollection()->action(langCode)->setChecked(true);
 
   // Change language in the remembered options
   soundEnabled = true;
-  selectedLanguage = newLanguage;
   writeOptions();
-
-  // Change language effectively
-  soundFactory->change(newLanguage);
 }
 
 // Load the layouts file
@@ -224,7 +171,7 @@ void TopLevel::playSound(const QString &ref) const
 }
 
 // Read options from preferences file
-void TopLevel::readOptions()
+void TopLevel::readOptions(QString &board, QString &language)
 {
   QString option;
   KConfigGroup config(KGlobal::config(), "General");
@@ -232,16 +179,8 @@ void TopLevel::readOptions()
   option = config.readEntry("Sound", "on");
   soundEnabled = option.indexOf("on") == 0;
 
-  option = config.readEntry("GameboardNumber", "0");
-  selectedGameboard = option.toInt();
-  if (selectedGameboard <= 0) selectedGameboard = 0;
-  if (selectedGameboard > 7) selectedGameboard = 7;
-
-  option = config.readEntry("LanguageNumber", "2");
-  selectedLanguage = option.toInt();
-  if (selectedLanguage <= 0) selectedLanguage = 0;
-  if (selectedLanguage > 15) selectedLanguage = 15;
-
+  board = config.readEntry("Gameboard", "default_theme.svg");
+  language = config.readEntry("Language", "en");
 }
 
 // Write options to preferences file
@@ -250,9 +189,9 @@ void TopLevel::writeOptions()
   KConfigGroup config(KGlobal::config(), "General");
   config.writeEntry("Sound", soundEnabled? "on": "off");
 
-  config.writeEntry("GameboardNumber", selectedGameboard);
+  config.writeEntry("Gameboard", playGround->currentGameboard());
 
-  config.writeEntry("LanguageNumber", selectedLanguage);
+  config.writeEntry("Language", soundFactory->currentLanguage());
 }
 
 // KAction initialization (aka menubar + toolbar init)
@@ -278,17 +217,22 @@ void TopLevel::setupKAction()
 //Edit
   action = KStandardAction::copy(this, SLOT(editCopy()), this);
   actionCollection()->addAction(action->objectName(), action);
-  action = KStandardAction::undo(this, SLOT(editUndo()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardAction::redo(this, SLOT(editRedo()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  enableUndo(false);
-  enableRedo(false);
+
+  QAction *redoAction = playGround->getRedoAction();
+  redoAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Redo).primary());
+  redoAction->setIcon( KIcon("edit-redo") );
+  actionCollection()->addAction("edit_redo", redoAction);
+
+  QAction *undoAction = playGround->getUndoAction();
+  undoAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Undo).primary());
+  undoAction->setIcon( KIcon("edit-undo") );
+  actionCollection()->addAction("edit_undo", undoAction);
 
 //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
   actionCollection()->addAction("speech_no_sound", t);
   connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
+  languagesGroup->addAction(t);
   if (!soundEnabled) t->setChecked(true);
 
   setupGUI();
@@ -298,11 +242,6 @@ void TopLevel::setupKAction()
 void TopLevel::fileNew()
 {
   playGround->reset();
-
-  enableUndo(false);
-  enableRedo(false);
-
-  playGround->repaintAll();
 }
 
 // Load gameboard
@@ -327,13 +266,21 @@ void TopLevel::open(const KUrl &url)
 
   playGround->reset();
 
-  if (!playGround->loadFrom(name))
-    KMessageBox::error(this, i18n("Could not load file."));
+  switch(playGround->loadFrom(name))
+  {
+    case PlayGround::NoError:
+     // good
+    break;
 
-  enableUndo(!playGround->isFirstAction());
-  enableRedo(false);
+    case PlayGround::OldFileVersionError:
+      KMessageBox::error(this, i18n("The saved file is from an old version of KTuberling and unfortunately can not be open with this version."));
+    break;
 
-  playGround->repaintAll();
+    case PlayGround::OtherError:
+      KMessageBox::error(this, i18n("Could not load file."));
+    break;
+  }
+    
 
   KIO::NetAccess::removeTempFile( name );
 }
@@ -427,7 +374,7 @@ void TopLevel::filePrint()
   KPrinter printer;
   bool ok;
 
-  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(gameboardActions[selectedGameboard])->iconText()));
+  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
   if (!ok) return;
   playGround->repaint();
   if (!playGround->printPicture(printer))
@@ -447,196 +394,11 @@ void TopLevel::editCopy()
   clipboard->setPixmap(picture);
 }
 
-// Undo last action
-void TopLevel::editUndo()
-{
-  if (playGround->isFirstAction()) return;
-
-  if (!playGround->undo()) return;
-
-  if (playGround->isFirstAction()) enableUndo(false);
-  enableRedo(true);
-
-  playGround->repaintAll();
-}
-
-// Redo last action
-void TopLevel::editRedo()
-{
-  if (playGround->isLastAction()) return;
-
-  if (!playGround->redo()) return;
-
-  if (playGround->isLastAction()) enableRedo(false);
-  enableUndo(true);
-
-  playGround->repaintAll();
-}
-
-// Switch to gameboard #0
-void TopLevel::gameboard0()
-{
-  changeGameboard(0);
-}
-
-// Switch to gameboard #1
-void TopLevel::gameboard1()
-{
-  changeGameboard(1);
-}
-
-// Switch to gameboard #2
-void TopLevel::gameboard2()
-{
-  changeGameboard(2);
-}
-
-// Switch to gameboard #3
-void TopLevel::gameboard3()
-{
-  changeGameboard(3);
-}
-
-// Switch to gameboard #4
-void TopLevel::gameboard4()
-{
-  changeGameboard(4);
-}
-
-// Switch to gameboard #5
-void TopLevel::gameboard5()
-{
-  changeGameboard(5);
-}
-
-// Switch to gameboard #6
-void TopLevel::gameboard6()
-{
-  changeGameboard(6);
-}
-
-// Switch to gameboard #7
-void TopLevel::gameboard7()
-{
-  changeGameboard(7);
-}
-
-// Switch to gameboard #8
-void TopLevel::gameboard8()
-{
-  changeGameboard(8);
-}
-
-// Switch to gameboard #9
-void TopLevel::gameboard9()
-{
-  changeGameboard(9);
-}
-
 // Toggle sound off
 void TopLevel::soundOff()
 {
   if (!soundEnabled) return;
 
   soundEnabled = false;
-  ((KToggleAction*) actionCollection()->action(languageActions[selectedLanguage]))->setChecked(false);
-  ((KToggleAction*) actionCollection()->action("speech_no_sound"))->setChecked(true);
-
   writeOptions();
-}
-
-// Switch to language #0
-void TopLevel::language0()
-{
-  changeLanguage(0);
-}
-
-// Switch to language #1
-void TopLevel::language1()
-{
-  changeLanguage(1);
-}
-
-// Switch to language #2
-void TopLevel::language2()
-{
-  changeLanguage(2);
-}
-
-// Switch to language #3
-void TopLevel::language3()
-{
-  changeLanguage(3);
-}
-
-// Switch to language #4
-void TopLevel::language4()
-{
-  changeLanguage(4);
-}
-
-// Switch to language #5
-void TopLevel::language5()
-{
-  changeLanguage(5);
-}
-
-// Switch to language #6
-void TopLevel::language6()
-{
-  changeLanguage(6);
-}
-
-// Switch to language #7
-void TopLevel::language7()
-{
-  changeLanguage(7);
-}
-
-// Switch to language #8
-void TopLevel::language8()
-{
-  changeLanguage(8);
-}
-
-// Switch to language #9
-void TopLevel::language9()
-{
-  changeLanguage(9);
-}
-
-// Switch to language #10
-void TopLevel::language10()
-{
-  changeLanguage(10);
-}
-
-// Switch to language #11
-void TopLevel::language11()
-{
-  changeLanguage(11);
-}
-
-// Switch to language #12
-void TopLevel::language12()
-{
-  changeLanguage(12);
-}
-
-// Switch to language #13
-void TopLevel::language13()
-{
-  changeLanguage(13);
-}
-
-// Switch to language #14
-void TopLevel::language14()
-{
-  changeLanguage(14);
-}
-
-// Switch to language #15
-void TopLevel::language15()
-{
-  changeLanguage(15);
 }

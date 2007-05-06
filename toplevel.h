@@ -11,6 +11,7 @@
 #include <kxmlguiwindow.h>
 #include <kurl.h>
 
+class QActionGroup;
 class QDomDocument;
 class PlayGround;
 class SoundFactory;
@@ -24,22 +25,21 @@ public:
   TopLevel();
   ~TopLevel();
 
+  void loadFailure();
+
   void open(const KUrl &url);
-  void enableUndo(bool enable) const;
-  void enableRedo(bool enable) const;
-  void registerGameboard(const QString &menuItem, const char *actionId);
-  void registerLanguage(const QString &menuItem, const char *actionId, bool enabled);
-  void changeGameboard(uint newGameboard);
-  void changeLanguage(uint newLanguage);
+  void registerGameboard(const QString &menuText, const QString &board);
+  void registerLanguage(const QString &menuItem, const QString &code, bool enabled);
+  void changeLanguage(const QString &langCode);
   bool loadLayout(QDomDocument &layoutDocument);
   void playSound(const QString &ref) const;
 
   inline bool isSoundEnabled() const {return soundEnabled;}
-  inline uint getSelectedGameboard() const {return selectedGameboard;}
+
+  void changeGameboard(const QString &gameboard);
 
 protected:
-
-  void readOptions();
+  void readOptions(QString &board, QString &language);
   void writeOptions();
   void setupKAction();
 
@@ -51,38 +51,11 @@ private slots:
   void filePicture();
   void filePrint();
   void editCopy();
-  void editUndo();
-  void editRedo();
-  void gameboard0();
-  void gameboard1();
-  void gameboard2();
-  void gameboard3();
-  void gameboard4();
-  void gameboard5();
-  void gameboard6();
-  void gameboard7();
-  void gameboard8();
-  void gameboard9();
   void soundOff();
-  void language0();
-  void language1();
-  void language2();
-  void language3();
-  void language4();
-  void language5();
-  void language6();
-  void language7();
-  void language8();
-  void language9();
-  void language10();
-  void language11();
-  void language12();
-  void language13();
-  void language14();
-  void language15();
+  void changeGameboard();
+  void changeLanguage();
 
 private:
-
   int                           // Menu items identificators
       newID, openID, saveID, pictureID, printID, quitID,
       copyID, undoID, redoID,
@@ -92,13 +65,9 @@ private:
       ID_UNDO, ID_REDO,
       ID_HELP };
 
+
+  QActionGroup *playgroundsGroup, *languagesGroup;
   bool soundEnabled;            // True if the sound is enabled by user, even if there is no audio server
-  uint selectedGameboard,	// Number of currently selected gameboard
-       gameboards;		// Total number of gameboards
-  uint selectedLanguage,	// Number of selected language
-       languages;		// Total number of languages
-  QString gameboardActions[10],	// Name of actions for registered gameboards
-          languageActions[16];	// Name of actions for registered languages
 
   PlayGround *playGround;	// Play ground central widget
   SoundFactory *soundFactory;	// Speech organ

@@ -7,82 +7,58 @@
 #include "todraw.h"
 
 #include <QPainter>
-#include <QBitmap>
-#include <QTextStream>
+#include <QDataStream>
 
-// Constructor with no arguments
-ToDraw::ToDraw()
-  : position()
+#include <QSvgRenderer>
+
+QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer)
 {
-  number = -1;
-}
-
-// Copy constructor
-ToDraw::ToDraw(const ToDraw &model)
-  : position(model.position)
-{
-  number = model.number;
-}
-
-// Constructor with arguments
-ToDraw::ToDraw(int declaredNumber, const QRect &declaredPosition)
-  : position(declaredPosition)
-{
-  number = declaredNumber;
-}
-
-// Affectation operator
-ToDraw &ToDraw::operator=(const ToDraw &model)
-{
-  if (&model == this) return *this;
-
-  position = model.position;
-  number = model.number;
-
-  return *this;
-}
-
-// Draw an object previously laid down on the game board
-void ToDraw::draw(QPainter &artist, const QRect &area,
-                  const QRect *objectsLayout,
-                  const QPixmap *gameboard, const QBitmap *masks) const
-{
-  if (!position.intersects(area)) return;
-
-  QPixmap objectPixmap(objectsLayout[number].size());
-  QBitmap shapeBitmap(objectsLayout[number].size());
-  shapeBitmap.clear();
-
-  QPainter paint(&objectPixmap);
-  paint.drawPixmap(QPoint(0, 0), *gameboard, objectsLayout[number]);
-  paint.end();
-  paint.begin(&shapeBitmap);
-  paint.drawPixmap(QPoint(0, 0), *masks, objectsLayout[number]);
-  paint.end();
-  objectPixmap.setMask(shapeBitmap);
-  artist.drawPixmap(position.topLeft(), objectPixmap);
+  QImage img(width, height, QImage::Format_ARGB32_Premultiplied);
+  QPainter p2(&img);
+  p2.setCompositionMode(QPainter::CompositionMode_Clear);
+  p2.fillRect(0, 0, width, height, QBrush(QColor(255, 255, 255)));
+  p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
+  renderer->render(&p2, element);
+  return img;
 }
 
 // Load an object from a file
-bool ToDraw::load(QTextStream &stream, int decorations)
+bool ToDraw::load(QDataStream &stream)
 {
-  int pl, pt, pr, pb;
-
-  stream >> number >> pl >> pt >> pr >> pb;
   // NOTE: read error checking?
+  QPointF pos;
+  QString element;
+  qreal zOrder;
 
-  if (number < 0 || number >= decorations) return false;
+  stream >> pos;
+  stream >> element;
+  stream >> zOrder;
 
-  position.setCoords(pl, pt, pr, pb);
+  setPos(pos);
+  setElementId(element);
+  setZValue(zOrder);
 
   return true;
 }
 
 // Save an object to a file
-void ToDraw::save(QTextStream &stream) const
+void ToDraw::save(QDataStream &stream) const
 {
-  stream << number << "\t" << position.left() << " ";
-  stream << position.top() << " " << position.right() << " ";
-  stream << position.bottom() << "\n";
+  stream << pos();
+  stream << elementId();
+  stream << zValue();
 }
 
+bool ToDraw::contains(const QPointF &point) const
+{
+	bool result = QGraphicsSvgItem::contains(point);
+	if (result)
+	{
+		QRectF bounds = renderer()->boundsOnElement(elementId());
+		bounds = transform().mapRect(bounds);
+		const QImage &img = toImage(elementId(), qRound(bounds.width()), qRound(bounds.height()), renderer());
+		QPointF transformedPoint = transform().map(point);
+		result = qAlpha(img.pixel(transformedPoint.toPoint())) != 0;
+	}
+	return result;
+}

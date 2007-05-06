@@ -20,19 +20,13 @@
 #include "toplevel.h"
 
 // Constructor
-SoundFactory::SoundFactory(TopLevel *parent, uint selectedLanguage)
+SoundFactory::SoundFactory(TopLevel *parent)
 	: QObject(parent)
 {
   topLevel = parent;
   player = new Phonon::AudioPlayer(Phonon::GameCategory, this);
 
   namesList = filesList = 0;
-
-  QDomDocument layoutsDocument;
-  bool ok = topLevel->loadLayout(layoutsDocument);
-  if (ok) ok = registerLanguages(layoutsDocument);
-  if (ok) ok = loadLanguage(layoutsDocument, selectedLanguage);
-  if (!ok) loadFailure();
 }
 
 // Destructor
@@ -43,7 +37,7 @@ SoundFactory::~SoundFactory()
 }
 
 // Change the language
-void SoundFactory::change(uint selectedLanguage)
+void SoundFactory::change(const QString &selectedLanguage)
 {
   QDomDocument layoutsDocument;
   bool ok = topLevel->loadLayout(layoutsDocument);
@@ -106,14 +100,14 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
 
     labelElement = (const QDomElement &) labelsList.item(0).toElement();
     actionAttribute = menuItemElement.attributeNode("action");
-    topLevel->registerLanguage(labelElement.text(), actionAttribute.value().toLatin1(), enabled);
+    topLevel->registerLanguage(labelElement.text(), codeAttribute.value(), enabled);
   }
 
   return true;
 }
 
 // Load the sounds of one given language
-bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, int toLoad)
+bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, const QString &selectedLanguage)
 {
   QDomNodeList languagesList,
                soundNamesList;
@@ -122,10 +116,14 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, int toLoad)
   QDomAttr nameAttribute, fileAttribute;
 
   languagesList = layoutDocument.elementsByTagName("language");
-  if (toLoad >= languagesList.count())
-    return false;
 
-  languageElement = (const QDomElement &) languagesList.item(toLoad).toElement();
+  bool found = false;
+  for(int i = 0; !found && i < languagesList.count(); ++i)
+  {
+    languageElement = languagesList.item(i).toElement();
+    if (languageElement.attribute("code") == selectedLanguage) found = true;
+  }
+  if (!found) return false;
 
   soundNamesList = languageElement.elementsByTagName("sound");
   sounds = soundNamesList.count();
@@ -146,6 +144,13 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, int toLoad)
     fileAttribute = soundNameElement.attributeNode("file");
     filesList[sound] = fileAttribute.value();
   }
+
+  currentLang = selectedLanguage;
+
   return true;
 }
 
+QString SoundFactory::currentLanguage() const
+{
+  return currentLang;
+}

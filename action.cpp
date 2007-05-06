@@ -1,20 +1,79 @@
 /* -------------------------------------------------------------
    KDE Tuberling
    Action stored in the undo buffer
-   mailto:ebischoff@nerim.net
+   mailto:aacid@kde.org
  ------------------------------------------------------------- */
 
 #include "action.h"
 
-// Constructor
-Action::Action
-	(const ToDraw *drawn1, int zOrder1,
-	 const ToDraw *drawn2, int zOrder2)
-{
-  if (drawn1) drawnBefore = *drawn1;
-  zOrderBefore = zOrder1;
+#include <QGraphicsScene>
 
-  if (drawn2) drawnAfter = *drawn2;
-  zOrderAfter = zOrder2;
+#include "todraw.h"
+
+ActionAdd::ActionAdd(ToDraw *item, QGraphicsScene *scene)
+ : m_item(item), m_scene(scene), m_done(false)
+{
 }
 
+ActionAdd::~ActionAdd()
+{
+	if (!m_done) delete m_item;
+}
+
+void ActionAdd::redo()
+{
+	m_scene->addItem(m_item);
+	m_done = true;
+}
+
+void ActionAdd::undo()
+{
+	m_scene->removeItem(m_item);
+	m_done = false;
+}
+
+
+
+ActionRemove::ActionRemove(ToDraw *item, QGraphicsScene *scene)
+ : m_item(item), m_scene(scene), m_done(true)
+{
+}
+
+ActionRemove::~ActionRemove()
+{
+	if (m_done) delete m_item;
+}
+
+void ActionRemove::redo()
+{
+	if (!m_done)
+	{
+		m_scene->removeItem(m_item);
+		m_done = true;
+	}
+}
+
+void ActionRemove::undo()
+{
+	m_scene->addItem(m_item);
+	m_done = false;
+}
+
+
+
+ActionMove::ActionMove(ToDraw *item, const QPointF &pos, QGraphicsScene *scene)
+ : m_item(item), m_pos(pos), m_scene(scene)
+{
+}
+
+void ActionMove::redo()
+{
+	QPointF pos = m_item->pos();
+	m_item->setPos(m_pos);
+	m_pos = pos;
+}
+
+void ActionMove::undo()
+{
+	redo();
+}

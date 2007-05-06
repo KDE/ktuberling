@@ -8,79 +8,67 @@
 #ifndef _PLAYGROUND_H_
 #define _PLAYGROUND_H_
 
-#include <kprinter.h>
+#include <QGraphicsView>
+#include <QMap>
+#include <QUndoStack>
 
-#include <QWidget>
-#include <QBitmap>
-#include <QPixmap>
-
-#include "todraw.h"
-#include "action.h"
+#include <KSvgRenderer>
 
 class QDomDocument;
+
+class KPrinter;
+
+class Action;
+class ToDraw;
 class TopLevel;
 
-class PlayGround : public QWidget
+class PlayGround : public QGraphicsView
 {
   Q_OBJECT
 
 public:
-
-  PlayGround(TopLevel *parent, uint selectedGameboard);
+  PlayGround(TopLevel *parent);
   ~PlayGround();
 
-  void reset();
-  void change(uint selectedGameboard);
-  void repaintAll();
-  bool undo();
-  bool redo();
-  bool loadFrom(const QString &name);
-  bool saveAs(const QString &name);
-  bool printPicture(KPrinter &printer) const;
-  QPixmap getPicture() const;
+  enum LoadError { NoError, OldFileVersionError, OtherError };
 
-  inline bool isFirstAction() const { return currentAction == 0; }
-  inline bool isLastAction() const { return currentAction >= history.count(); }
+  void reset();
+  LoadError loadFrom(const QString &name);
+  bool saveAs(const QString &name);
+  bool printPicture(KPrinter &printer);
+  QPixmap getPicture();
+
+  QAction *getRedoAction();
+  QAction *getUndoAction();
+
+  bool registerPlayGrounds(QDomDocument &layoutDocument);
+  bool loadPlayGround(QDomDocument &layoutDocument, const QString &gameboardName);
+  
+  QString currentGameboard() const;
 
 protected:
 
-  virtual void paintEvent(QPaintEvent *event);
-  virtual void mousePressEvent(QMouseEvent *event);
-  virtual void mouseReleaseEvent(QMouseEvent *event);
+  void mousePressEvent(QMouseEvent *event);
+  void resizeEvent(QResizeEvent *event);
 
 private:
+  QRectF backgroundRect() const;
+  bool insideBackground(const QPoint &pos) const;
+  void placeDraggedItem(const QPoint &pos);
+  void placeNewItem(const QPoint &pos);
+  void adjustItems(const QSize &size, const QSize &oldSize, bool changePos);
+  void fontSize(const QString &text, const QRectF &rect, int *fontSize, QRect *usedRect);
 
-  bool registerPlayGrounds(QDomDocument &layoutDocument);
-  bool loadPlayGround(QDomDocument &layoutDocument, int toLoad);
-  void loadFailure();
-  void setupGeometry();
-  bool zone(QPoint &position);
-  void drawText(QPainter &artist, QRect &area, QString &textId) const;
-  void drawGameboard(QPainter &artist, const QRect &area) const;
+  QString m_gameboardName;						// the name of the board file
+  QMap<QString, QString> m_objectsNameSound;	// map between element name and sound
 
-private:
+  QUndoStack m_undoStack;						// the command stack
+  TopLevel *m_topLevel;							// Top-level window
 
-  QPixmap gameboard;		// Picture of the game board
-  QBitmap masks;		// Pictures of the objects' shapes
-  QRect editableArea;           // Part of the gameboard where the player can lay down objects
-  QString menuItem,		// Menu item describing describing this gameboard
-          editableSound;        // Sound associated with this area
-  int texts,                    // Number of categories of objects names
-      decorations;              // Number of draggable objects on the right side of the gameboard
-  QRect *textsLayout,           // Positions of the categories names
-        *objectsLayout;         // Position of the draggable objects on right side of the gameboard
-  QString *textsList,           // List of the message numbers associated with categories
-          *soundsList;          // List of sounds associated with each object
-
-  QCursor *draggedCursor;       // Cursor's shape for currently dragged object
-  ToDraw draggedObject;         // Object currently dragged
-  int draggedZOrder;            // Z-order (in to-draw buffer) of this object
-
-  QList<ToDraw*> toDraw;        // List of objects in z-order
-  QList<Action*> history;       // List of actions in chronological order
-  int currentAction;            // Number of current action (not the last one if used "undo" button!)
-
-  TopLevel *topLevel;		// Top-level window
+  QString m_pickedElement;						// the SVG element the cursor is
+  ToDraw *m_dragItem;							// the item we are dragging
+  QGraphicsScene *m_scene;						// the graphicsScene
+  KSvgRenderer m_SvgRenderer;					// the SVG renderer
 };
 
 #endif
