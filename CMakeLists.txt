@@ -1,6 +1,7 @@
 project(ktuberling)
 
-add_subdirectory( museum ) 
+message(STATUS "TODO: Port KTuberling museum to new version")
+# add_subdirectory( museum ) 
 add_subdirectory( sounds ) 
 add_subdirectory( pics ) 
 
