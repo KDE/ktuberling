@@ -101,69 +101,7 @@
     <object name="glass_0" sound="spectacles" />
   </playground>
   
-  <playground gameboard="default_theme2.svg" name="Potato &amp;Guy2">
-    <object name="eyes_1" sound="eye" />
-    <object name="eyes_2" sound="eye" />
-    <object name="eyes_3" sound="eye" />
-    <object name="eyes_4" sound="eye" />
-    <object name="eyes_5" sound="eye" />
-    <object name="eyes_6" sound="eye" />
-    <object name="eyes_7" sound="eye" />
-    <object name="eyes_8" sound="eye" />
-    <object name="eyes_9" sound="eye" />
-    <object name="eyes_10" sound="eye" />
-    <object name="eyes_11" sound="eye" />
-    <object name="eyes_12" sound="eye" />
-    <object name="eyes_13" sound="eye" />
-    <object name="eyes_14" sound="eye" />
-    <object name="eyes_15" sound="eye" />
-    <object name="eyes_16" sound="eye" />
-    <object name="eyes_17" sound="eye" />
-    <object name="eyes_18" sound="eye" />
-
-    <object name="eyebrows1" sound="eyebrow" />
-    <object name="eyebrows2" sound="eyebrow" />
-    <object name="eyebrows3" sound="eyebrow" />
-    <object name="eyebrows4" sound="eyebrow" />
-    <object name="eyebrows5" sound="eyebrow" />
-    <object name="eyebrows6" sound="eyebrow" />
-    <object name="eyebrows7" sound="eyebrow" />
-    <object name="eyebrows8" sound="eyebrow" />
-
-    <object name="nose_1" sound="nose" />
-    <object name="nose_2" sound="nose" />
-    <object name="nose_3" sound="nose" />
-    <object name="nose_4" sound="nose" />
-
-    <object name="ear1" sound="ear" />
-    <object name="ear2" sound="ear" />
-    <object name="ear3" sound="ear" />
-    <object name="ear4" sound="ear" />
-
-    <object name="mouth1" sound="mouth" />
-    <object name="mouth2" sound="mouth" />
-    <object name="mouth3" sound="mouth" />
-
-    <object name="hat1" sound="hat" />
-    <object name="hat2" sound="hat" />
-    <object name="hat3" sound="hat" />
-
-    <object name="hair_1" sound="moustache" />
-
-    <object name="hair_2" sound="hair" />
-    <object name="hair_3" sound="hair" />
-    <object name="hair_4" sound="hair" />
-
-    <object name="bow1" sound="bow" />
-
-    <object name="tie1" sound="tie" />
-
-    <object name="glass_1" sound="sunglasses" />
-
-    <object name="glass_0" sound="spectacles" />
-  </playground>
-  
-  <playground gameboard="potato-game.svg" name="Potato &amp;Guy 3">
+  <playground gameboard="potato-game.svg" name="Potato &amp;Guy 2">
     <object name="nose01" sound="nose" />
     <object name="nose02" sound="nose" />
     <object name="nose03" sound="nose" />
