@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="ktuberling" version="1">
+<kpartgui name="ktuberling" version="2">
 <MenuBar>
   <Menu name="game"><text>&amp;Game</text>
     <Action name="game_save_picture" append="save_merge"/>
