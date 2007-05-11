@@ -13,33 +13,6 @@
 
   <playground gameboard="default_theme.svg" name="Potato &amp;Guy">
 
-    <category name="eyebrowsText" text="Eyebrows" />
-    
-<!--	<category>
-      <position left="415" top="123" right="511" bottom="137" />
-      <label>Eyes</label>
-    </category>
-
-    <category>
-      <position left="241" top="179" right="394" bottom="193" />
-      <label>Noses</label>
-    </category>
-
-    <category>
-      <position left="395" top="179" right="511" bottom="193" />
-      <label>Ears</label>
-    </category>
-
-    <category>
-      <position left="241" top="259" right="445" bottom="273" />
-      <label>Mouths</label>
-    </category>
-
-    <category>
-      <position left="241" top="307" right="511" bottom="321" />
-      <label>Goodies</label>
-    </category>-->
-
     <object name="eyes_1" sound="eye" />
     <object name="eyes_2" sound="eye" />
     <object name="eyes_3" sound="eye" />

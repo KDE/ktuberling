@@ -62,7 +62,6 @@ private:
   void placeDraggedItem(const QPoint &pos);
   void placeNewItem(const QPoint &pos);
   void adjustItems(const QSize &size, const QSize &oldSize, bool changePos);
-  void fontSize(const QString &text, const QRectF &rect, int *fontSize, QRect *usedRect);
 
   QString m_gameboardName;						// the name of the board file
   QMap<QString, QString> m_objectsNameSound;	// map between element name and sound

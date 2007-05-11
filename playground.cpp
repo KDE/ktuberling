@@ -281,10 +281,10 @@ bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
 bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gameboardName)
 {
   QDomNodeList playGroundsList,
-               editableAreasList, categoriesList, objectsList,
+               editableAreasList, objectsList,
                gameAreasList, maskAreasList, soundNamesList, labelsList;
   QDomElement playGroundElement,
-              editableAreaElement, categoryElement, objectElement,
+              editableAreaElement, objectElement,
               gameAreaElement, maskAreaElement, soundNameElement, labelElement;
   QDomAttr gameboardAttribute, masksAttribute,
            leftAttribute, topAttribute, rightAttribute, bottomAttribute,
@@ -302,19 +302,6 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
 
   if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + gameboardName)))
     return false;
-
-  categoriesList = playGroundElement.elementsByTagName("category");
-
-  typedef QPair<QString, QString> nameText;
-  QList<nameText> nameTexts;
-  for (int text = 0; text < categoriesList.count(); text++)
-  {
-    categoryElement = (const QDomElement &) categoriesList.item(text).toElement();
-    QString svgName = categoryElement.attribute("name");
-    QString text = i18n(categoryElement.attribute("text").toLatin1());
-
-    nameTexts << nameText(svgName, text);
-  }
 
   objectsList = playGroundElement.elementsByTagName("object");
   if (objectsList.count() < 1)
@@ -349,35 +336,6 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
   m_scene->addItem(background);
 
   adjustItems(size(), QSize(), false);
-
-//   int fSize;
-//   QRect textRect;
-//   QTransform t;
-//   QSize defaultSize = m_SvgRenderer.defaultSize();
-//   double xScale = (double)size().width() / (double)defaultSize.width();
-//   double yScale = (double)size().height() / (double)defaultSize.height();
-//   t.scale(xScale, yScale);
-//   kDebug() << xScale << " " << yScale << endl;
-//   foreach(const nameText &nt, nameTexts)
-//   {
-//     QRectF bounds = m_SvgRenderer.boundsOnElement(nt.first);
-//     bounds = t.mapRect(bounds);
-//     QGraphicsSimpleTextItem *textItem = new QGraphicsSimpleTextItem(nt.second);
-//     fontSize(nt.second, bounds, &fSize, &textRect);
-//     QFont f;
-//     f.setPointSizeF(fSize);
-//     textItem->setFont(f);
-//     QPointF thePos((bounds.left() + (bounds.width() - textRect.width()) / 2.0),
-//                    (bounds.top() + (bounds.height() - textRect.height()) / 2.0));
-//     textItem->setPos(thePos);
-//     textItem->setZValue(1);
-// 
-//     m_scene->addItem(textItem);
-//     m_scene->addRect(bounds);
-//     textRect.moveTo(thePos.toPoint());
-//     QGraphicsRectItem *reci = m_scene->addRect(textRect);
-//     reci->setPen(QColor(Qt::red));
-//   }
 
   return true;
 }
@@ -431,26 +389,5 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   if (f.error() == QFile::NoError) return NoError;
   else return OtherError;
 }
-
-void PlayGround::fontSize(const QString &text, const QRectF &rect, int *fontSize, QRect *usedRect)
-{
-//   bool done = false;
-// 
-//   *fontSize = 28;
-//   while (!done)
-//   {
-//     QFont f;
-//     f.setPointSize(*fontSize);
-//     QFontMetrics fm(f);
-//     *usedRect = fm.boundingRect(text);
-//     kDebug() << text << " " << rect << " " << *fontSize << " " << *usedRect << endl;
-//     if (usedRect->width() > rect.width() || usedRect->height() > rect.height())
-//     {
-//       *fontSize = qMin(rect.width() * (*fontSize) / usedRect->width(), rect.height() * (*fontSize) / usedRect->height());
-//     }
-//     else done = true;
-//   }
-}
-
 
 #include "playground.moc"
