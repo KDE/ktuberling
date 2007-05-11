@@ -325,7 +325,15 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
   {
     objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
 
-    m_objectsNameSound.insert(objectElement.attribute("name"), objectElement.attribute("sound"));
+    const QString &objectName = objectElement.attribute("name");
+    if (m_SvgRenderer.elementExists(objectName))
+    {
+      m_objectsNameSound.insert(objectName, objectElement.attribute("sound"));
+    }
+    else
+    {
+      kWarning() << objectName << " does not exist. Check the layout.xml file entry of " << gameboardName << endl;
+    }
   }
 
   delete m_scene;

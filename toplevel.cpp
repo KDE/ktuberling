@@ -45,7 +45,6 @@ TopLevel::TopLevel()
   playGround->setObjectName( "playGround" );
 
   soundFactory = new SoundFactory(this);
-  soundFactory->setObjectName( "sounds" );
 
   setCentralWidget(playGround);
 

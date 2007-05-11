@@ -27,19 +27,14 @@
 
 // Constructor
 SoundFactory::SoundFactory(TopLevel *parent)
-	: QObject(parent)
 {
   topLevel = parent;
-  player = new Phonon::AudioPlayer(Phonon::GameCategory, this);
-
-  namesList = filesList = 0;
+  player = new Phonon::AudioPlayer(Phonon::GameCategory, parent);
 }
 
 // Destructor
 SoundFactory::~SoundFactory()
 {
-  if (namesList) delete [] namesList;
-  if (filesList) delete [] filesList;
 }
 
 // Change the language
@@ -136,19 +131,15 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, const QString &sel
   if (sounds < 1)
     return false;
 
-  if (!(namesList = new QString[sounds]))
-    return false;
-  if (!(filesList = new QString[sounds]))
-    return false;
 
   for (int sound = 0; sound < sounds; sound++)
   {
     soundNameElement = (const QDomElement &) soundNamesList.item(sound).toElement();
 
     nameAttribute = soundNameElement.attributeNode("name");
-    namesList[sound] = nameAttribute.value();
+    namesList << nameAttribute.value();
     fileAttribute = soundNameElement.attributeNode("file");
-    filesList[sound] = fileAttribute.value();
+    filesList << fileAttribute.value();
   }
 
   currentLang = selectedLanguage;

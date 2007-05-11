@@ -13,7 +13,7 @@
 #ifndef _SOUNDFACTORY_H_
 #define _SOUNDFACTORY_H_
 
-#include <QObject>
+#include <QStringList>
 
 class QDomDocument;
 class TopLevel;
@@ -23,10 +23,8 @@ namespace Phonon
       class AudioPlayer;
 }
 
-class SoundFactory : public QObject
+class SoundFactory
 {
-  Q_OBJECT
-
 public:
 
   SoundFactory(TopLevel *parent);
@@ -50,8 +48,8 @@ private:
   QString currentLang;		// The current language
 
   int sounds;				// Number of sounds
-  QString *namesList,		// List of sound names
-  	  *filesList;           // List of sound files associated with each sound name
+  QStringList namesList,		// List of sound names
+              filesList;           // List of sound files associated with each sound name
 
   TopLevel *topLevel;		// Top-level window
   Phonon::AudioPlayer *player;  // Sound player
