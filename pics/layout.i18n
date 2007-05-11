@@ -74,21 +74,6 @@ i18n("Motorbike");
 i18n("Submarine");
 i18n("Bicycle");
 
-i18n("&Danish");
-i18n("&German");
-i18n("&English");
-i18n("Sp&anish");
-i18n("Fi&nnish");
-i18n("&French");
-i18n("&Italian");
-i18n("D&utch");
-i18n("&Portuguese");
-i18n("&Romanian");
-i18n("&Slovak");
-i18n("S&lovenian");
-i18n("Ser&bian");
-i18n("S&wedish");
-
 i18nc("NOTE TO THE TRANSLATORS",
 "The translators have the opportunity to translate the\n"
 "sounds spoken in the game.\n"

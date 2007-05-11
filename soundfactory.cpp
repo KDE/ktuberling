@@ -74,9 +74,9 @@ void SoundFactory::loadFailure()
 // Register the various languages
 bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
 {
-  QDomNodeList languagesList, menuItemsList, labelsList;
-  QDomElement languageElement, menuItemElement, labelElement;
-  QDomAttr codeAttribute, actionAttribute;
+  QDomNodeList languagesList;
+  QDomElement languageElement;
+  QDomAttr codeAttribute;
   bool enabled;
 
   languagesList = layoutDocument.elementsByTagName("language");
@@ -89,19 +89,7 @@ bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
     codeAttribute = languageElement.attributeNode("code");
     enabled = !(KStandardDirs::locate("data", "ktuberling/sounds/" + codeAttribute.value() + '/').isEmpty());
 
-    menuItemsList = languageElement.elementsByTagName("menuitem");
-    if (menuItemsList.count() != 1)
-      return false;
-
-    menuItemElement = (const QDomElement &) menuItemsList.item(0).toElement();
-
-    labelsList = menuItemElement.elementsByTagName("label");
-    if (labelsList.count() != 1)
-      return false;
-
-    labelElement = (const QDomElement &) labelsList.item(0).toElement();
-    actionAttribute = menuItemElement.attributeNode("action");
-    topLevel->registerLanguage(labelElement.text(), codeAttribute.value(), enabled);
+    topLevel->registerLanguage(codeAttribute.value(), enabled);
   }
 
   return true;

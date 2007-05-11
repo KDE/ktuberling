@@ -162,10 +162,6 @@
 
   <language code="da">
 
-    <menuitem action="speech_danish">
-      <label>&amp;Danish</label>
-    </menuitem>
-
     <sound name="tuberling" file="da/kartoffelfyr.wav" />
     <sound name="eye" file="da/oeje.wav" />
     <sound name="eyebrow" file="da/oejenbryn.wav" />
@@ -193,10 +189,6 @@
 
   <language code="de">
 
-    <menuitem action="speech_german">
-      <label>&amp;German</label>
-    </menuitem>
-
     <sound name="eye" file="de/auge.wav" />
     <sound name="eyebrow" file="de/augenbraue.wav" />
     <sound name="ear" file="de/ohr.wav" />
@@ -212,10 +204,6 @@
   </language>
 
   <language code="en">
-
-    <menuitem action="speech_english">
-      <label>&amp;English</label>
-    </menuitem>
 
     <sound name="tuberling" file="en/tuberling.wav" />
     <sound name="eye" file="en/eye.wav" />
@@ -296,10 +284,6 @@
 
   <language code="es">
 
-    <menuitem action="speech_spanish">
-      <label>Sp&amp;anish</label>
-    </menuitem>
-
     <sound name="tuberling" file="es/eltipodelapatata.wav" />
     <sound name="eye" file="es/ojo.wav" />
     <sound name="eyebrow" file="es/ceja.wav" />
@@ -379,10 +363,6 @@
 
   <language code="fi">
 
-    <menuitem action="speech_finnish">
-      <label>Fi&amp;nnish</label>
-    </menuitem>
-
     <sound name="tuberling" file="fi/perunamies.wav" />
     <sound name="eye" file="fi/silma.wav" />
     <sound name="eyebrow" file="fi/kulmakarva.wav" />
@@ -402,10 +382,6 @@
   </language>
 
   <language code="fr">
-
-    <menuitem action="speech_french">
-      <label>&amp;French</label>
-    </menuitem>
 
     <sound name="tuberling" file="fr/monsieur-patate.wav" />
     <sound name="eye" file="fr/oeil.wav" />
@@ -486,10 +462,6 @@
 
   <language code="it">
 
-    <menuitem action="speech_italian">
-      <label>&amp;Italian</label>
-    </menuitem>
-
     <sound name="tuberling" file="it/patatone.wav" />
     <sound name="eye" file="it/occhio.wav" />
     <sound name="eyebrow" file="it/sopracciglio.wav" />
@@ -515,10 +487,6 @@
   </language>
 
   <language code="nl">
-
-    <menuitem action="speech_dutch">
-      <label>D&amp;utch</label>
-    </menuitem>
 
     <sound name="tuberling" file="nl/aardappelmannetje.wav" />
     <sound name="eye" file="nl/oog.wav" />
@@ -547,10 +515,6 @@
 
   <language code="pt">
 
-    <menuitem action="speech_portuguese">
-      <label>&amp;Portuguese</label>
-    </menuitem>
-
     <sound name="tuberling" file="pt/senhor-batata.wav" />
     <sound name="eye" file="pt/olho.wav" />
     <sound name="eyebrow" file="pt/sobrancelha.wav" />
@@ -577,10 +541,6 @@
   </language>
 
   <language code="ro">
-
-    <menuitem action="speech_romanian">
-      <label>&amp;Romanian</label>
-    </menuitem>
 
     <sound name="tuberling" file="ro/domnul-cartof.wav" />
     <sound name="eye" file="ro/ochi.wav" />
@@ -609,10 +569,6 @@
 
   <language code="sk">
 
-    <menuitem action="speech_slovak">
-      <label>&amp;Slovak</label>
-    </menuitem>
-
     <sound name="tuberling" file="sk/zemiacik.wav" />
     <sound name="eye" file="sk/oko.wav" />
     <sound name="eyebrow" file="sk/obocie.wav" />
@@ -632,10 +588,6 @@
   </language>
 
   <language code="sl">
-
-    <menuitem action="speech_slovenian">
-      <label>S&amp;lovenian</label>
-    </menuitem>
 
     <sound name="tuberling" file="sl/krompircek.wav" />
     <sound name="eye" file="sl/oko.wav" />
@@ -664,10 +616,6 @@
 
   <language code="sr">
 
-    <menuitem action="speech_serbian">
-      <label>Ser&amp;bian</label>
-    </menuitem>
-
     <sound name="tuberling" file="sr/krompirko.wav" />
     <sound name="eye" file="sr/oko.wav" />
     <sound name="eyebrow" file="sr/obrva.wav" />
@@ -687,10 +635,6 @@
   </language>
 
   <language code="sv">
-
-    <menuitem action="speech_swedish">
-      <label>S&amp;wedish</label>
-    </menuitem>
 
     <sound name="tuberling" file="sv/potatismannen.wav" />
     <sound name="eye" file="sv/oga.wav" />

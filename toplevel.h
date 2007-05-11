@@ -32,7 +32,7 @@ public:
 
   void open(const KUrl &url);
   void registerGameboard(const QString &menuText, const QString &board);
-  void registerLanguage(const QString &menuItem, const QString &code, bool enabled);
+  void registerLanguage(const QString &code, bool enabled);
   void changeLanguage(const QString &langCode);
   bool loadLayout(QDomDocument &layoutDocument);
   void playSound(const QString &ref) const;

@@ -94,10 +94,10 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board)
 }
 
 // Register an available language
-void TopLevel::registerLanguage(const QString &menuItem, const QString &code, bool enabled)
+void TopLevel::registerLanguage(const QString &code, bool enabled)
 {
   QList<QAction*> actionList;
-  KToggleAction *t = new KToggleAction(i18n(menuItem.toLatin1()), this);
+  KToggleAction *t = new KToggleAction(KGlobal::locale()->twoAlphaToLanguageName(code), this);
   t->setEnabled(enabled);
   actionCollection()->addAction(code, t);
   t->setData(code);
