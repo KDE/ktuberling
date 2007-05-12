@@ -204,23 +204,19 @@ void TopLevel::setupKAction()
 {
   QAction *action;
 
-//Game
-  action = KStandardGameAction::gameNew(this, SLOT(fileNew()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::load(this, SLOT(fileOpen()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::save(this, SLOT(fileSave()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::print(this, SLOT(filePrint()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::quit(kapp, SLOT(quit()), this);
-  actionCollection()->addAction(action->objectName(), action);
+  //Game
+  KStandardGameAction::gameNew(this, SLOT(fileNew()), actionCollection());
+  KStandardGameAction::load(this, SLOT(fileOpen()), actionCollection());
+  KStandardGameAction::save(this, SLOT(fileSave()), actionCollection());
+  KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
+  KStandardGameAction::quit(kapp, SLOT(quit()), actionCollection());
+
   action = actionCollection()->addAction("game_save_picture");
   action->setText(i18n("Save &as Picture..."));
   connect(action, SIGNAL(triggered(bool) ), SLOT(filePicture()));
 
-//Edit
-  action = KStandardAction::copy(this, SLOT(editCopy()), this);
+  //Edit
+  action = KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
   actionCollection()->addAction(action->objectName(), action);
 
   QAction *redoAction = playGround->getRedoAction();
@@ -233,7 +229,7 @@ void TopLevel::setupKAction()
   undoAction->setIcon( KIcon("edit-undo") );
   actionCollection()->addAction("edit_undo", undoAction);
 
-//Speech
+  //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
   actionCollection()->addAction("speech_no_sound", t);
   connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
