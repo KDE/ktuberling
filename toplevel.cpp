@@ -236,7 +236,7 @@ void TopLevel::setupKAction()
   languagesGroup->addAction(t);
   if (!soundEnabled) t->setChecked(true);
 
-  setupGUI();
+  setupGUI(ToolBar | Keys | Save | Create);
 }
 
 // Reset gameboard
