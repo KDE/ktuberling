@@ -22,7 +22,6 @@
 
 #include <QDomDocument>
 
-#include "soundfactory.moc"
 #include "toplevel.h"
 
 // Constructor
