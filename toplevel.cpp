@@ -25,12 +25,10 @@
 #include <kprinter.h>
 #include <kimageio.h>
 #include <kmimetype.h>
+#include <kconfiggroup.h>
 
 #include <QClipboard>
 #include <QDomDocument>
-#include <QMenu>
-
-#include <kconfiggroup.h>
 
 #include "toplevel.moc"
 #include "playground.h"

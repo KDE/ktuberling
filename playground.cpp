@@ -12,7 +12,6 @@
 
 #include "playground.h"
 
-#include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kprinter.h>
@@ -20,11 +19,10 @@
 #include <QFile>
 #include <QDataStream>
 #include <QPainter>
-#include <QImage>
 #include <QCursor>
 #include <QDomDocument>
-#include <QPaintEvent>
 #include <QGraphicsSvgItem>
+#include <QMouseEvent>
 
 #include "action.h"
 #include "toplevel.h"
