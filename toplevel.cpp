@@ -23,6 +23,8 @@
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <kprinter.h>
+#include <kimageio.h>
+#include <kmimetype.h>
 
 #include <QClipboard>
 #include <QDomDocument>
@@ -320,15 +322,7 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  QPixmap picture(playGround->getPicture());
-
-  KUrl url = KFileDialog::getSaveUrl
-                ( KUrl(),
-                 i18n(  "*.xpm|UNIX Pixmaps (*.xpm)\n"
-                        "*.jpg|JPEG Compressed Files (*.jpg)\n"
-                        "*.png|Next Generation Pictures (*.png)\n"
-                        "*.bmp|Windows Bitmaps (*.bmp)\n"
-                        "*|All Picture Formats"));
+  KUrl url = KFileDialog::getSaveUrl(KUrl(), KImageIO::pattern(KImageIO::Writing));
 
   if( url.isEmpty() )
     return;
@@ -341,30 +335,21 @@ void TopLevel::filePicture()
     return;
   }
 
-  QString name = url.path();
-  const char *format;
-  int suffix;
-  QString end;
-
-  suffix = name.lastIndexOf('.');
-  if (suffix == -1)
-  {
-    name += ".xpm";
-    end = "xpm";
-  }
-  else end = name.mid(suffix + 1, name.length());
-
-  if (end == "xpm") format = "XPM";
-  else if (end == "jpg") format = "JPEG";
-  else if (end == "png") format = "PNG";
-  else if (end == "bmp") format = "BMP";
-  else
+  KMimeType::Ptr mime = KMimeType::findByUrl(url, 0, true, true);
+  if (!KImageIO::isSupported(mime->name(), KImageIO::Writing))
   {
     KMessageBox::error(this, i18n("Unknown picture format."));
     return;
-  }
+  };
 
-  if (!picture.save(name, format))
+  QStringList types = KImageIO::typeForMime(mime->name());
+  if (types.isEmpty()) return; // TODO error dialog?
+
+  QPixmap picture(playGround->getPicture());
+
+  QString name = url.path();
+
+  if (!picture.save(name, types.at(0).toLatin1()))
     KMessageBox::error
       (this, i18n("Could not save file."));
 }
