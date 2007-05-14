@@ -48,7 +48,7 @@ void PlayGround::reset()
 {
   foreach(QGraphicsItem *item, m_scene->items())
   {
-    ToDraw *currentObject = dynamic_cast<ToDraw *>(item);
+    ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
     if (currentObject != NULL) delete currentObject;
   }
 
@@ -67,7 +67,7 @@ bool PlayGround::saveAs(const QString & name)
   out << m_gameboardName;
   foreach(QGraphicsItem *item, m_scene->items())
   {
-    ToDraw *currentObject = dynamic_cast<ToDraw *>(item);
+    ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
     if (currentObject != NULL) currentObject->save(out);
   }
 
@@ -147,13 +147,13 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     {
       // see if the user clicked on an already existant item
       QGraphicsItem *dragItem = m_scene->itemAt(event->pos());
-      m_dragItem = dynamic_cast<ToDraw*>(dragItem);
+      m_dragItem = qgraphicsitem_cast<ToDraw*>(dragItem);
       if (m_dragItem)
       {
         QRectF rect = m_dragItem->boundingRect();
         rect = m_dragItem->transform().mapRect(rect);
         QSize size = rect.size().toSize();
-        QString elem = static_cast<QGraphicsSvgItem*>(m_dragItem)->elementId();
+        QString elem = m_dragItem->elementId();
         setCursor(QCursor(QPixmap::fromImage(toImage(elem, size.width(), size.height(), &m_SvgRenderer))));
 
         m_scene->removeItem(m_dragItem);
@@ -246,8 +246,13 @@ void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool chang
 
   foreach(QGraphicsItem *item, m_scene->items())
   {
-    QGraphicsSvgItem *svg = dynamic_cast<QGraphicsSvgItem *>(item);
+    QGraphicsSvgItem *svg = qgraphicsitem_cast<QGraphicsSvgItem *>(item);
     if (svg) item->setTransform(t);
+    else
+    {
+      svg = qgraphicsitem_cast<ToDraw *>(item);
+      if (svg) item->setTransform(t);
+    }
 
     if (changePos) item->setPos(item->x() * xPositionScale, item->y() * yPositionScale);
   }

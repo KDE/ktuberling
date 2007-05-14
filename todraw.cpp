@@ -68,3 +68,8 @@ bool ToDraw::contains(const QPointF &point) const
 	}
 	return result;
 }
+
+int ToDraw::type() const
+{
+  return Type;
+}

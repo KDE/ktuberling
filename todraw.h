@@ -26,6 +26,9 @@ class ToDraw : public QGraphicsSvgItem
     bool load(QDataStream &stream);
 
     bool contains(const QPointF &point) const;
+
+    enum { Type = UserType + 1 };
+    int type() const;
 };
 
 #endif
