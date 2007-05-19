@@ -91,12 +91,10 @@
   </playground>
   
   <playground gameboard="potato-game.svg" name="Potato &amp;Guy 2">
-    <object name="nose_1" sound="nose" />
-    <object name="nose_2" sound="nose" />
-    <object name="nose_3" sound="nose" />
-    <object name="nose_4" sound="nose" />
-    <object name="nose_5" sound="nose" />
-    <object name="nose_6" sound="nose" />
+    <object name="nose01" sound="nose" />
+    <object name="nose02" sound="nose" />
+    <object name="nose03" sound="nose" />
+    <object name="nose04" sound="nose" />
 
     <object name="hair01" sound="hair" />
     <object name="hair02" sound="hair" />
