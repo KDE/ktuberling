@@ -1,0 +1,85 @@
+  <playground gameboard="potato-game.svg" name="Potato &amp;Guy 2">
+    <object name="nose01" sound="nose" />
+    <object name="nose02" sound="nose" />
+    <object name="nose03" sound="nose" />
+    <object name="nose04" sound="nose" />
+
+    <object name="hair01" sound="hair" />
+    <object name="hair02" sound="hair" />
+    <object name="hair03" sound="hair" />
+    <object name="hair04" sound="hair" />
+
+    <object name="glasses01" sound="sunglasses" />
+
+    <object name="glasses02" sound="spectacles" />
+
+    <object name="smoke01" />
+    <object name="smoke02" sound="cigar" />
+    <object name="smoke03" />
+
+    <object name="tie01" sound="tie" />
+    <object name="tie02" sound="tie" />
+
+    <object name="moustache01" sound="moustache" />
+    <object name="moustache02" sound="moustache" />
+    <object name="moustache03_1" sound="moustache" />
+    <object name="moustache03_2" sound="moustache" />
+    <object name="moustache04_1" sound="moustache" />
+    <object name="moustache04_2" sound="moustache" />
+
+    <object name="jewel01" />
+    <object name="jewel02" />
+    <object name="jewel03" />
+    <object name="jewel04" />
+
+    <object name="hat01" sound="hat" />
+    <object name="hat02" sound="hat" />
+    <object name="hat03" sound="hat" />
+    <object name="hat04" sound="hat" />
+
+    <object name="mouth01" sound="mouth" />
+    <object name="mouth02" sound="mouth" />
+    <object name="mouth03" sound="mouth" />
+    <object name="mouth04" sound="mouth" />
+    <object name="mouth05" sound="mouth" />
+    <object name="mouth06" sound="mouth" />
+    <object name="mouth07" sound="mouth" />
+    <object name="mouth08" sound="mouth" />
+    <object name="mouth09" sound="mouth" />
+
+    <object name="ear01_1" sound="ear" />
+    <object name="ear01_2" sound="ear" />
+    <object name="ear02_1" sound="ear" />
+    <object name="ear02_2" sound="ear" />
+    <object name="ear03_1" sound="ear" />
+    <object name="ear03_2" sound="ear" />
+    <object name="ear04_1" sound="ear" />
+    <object name="ear04_2" sound="ear" />
+
+    <object name="eyebrow01_1" sound="eyebrow" />
+    <object name="eyebrow01_2" sound="eyebrow" />
+    <object name="eyebrow02_1" sound="eyebrow" />
+    <object name="eyebrow02_2" sound="eyebrow" />
+    <object name="eyebrow03_1" sound="eyebrow" />
+    <object name="eyebrow03_2" sound="eyebrow" />
+    <object name="eyebrow04_1" sound="eyebrow" />
+    <object name="eyebrow04_2" sound="eyebrow" />
+
+    <object name="eye01_1" sound="eye" />
+    <object name="eye01_2" sound="eye" />
+    <object name="eye02_1" sound="eye" />
+    <object name="eye02_2" sound="eye" />
+    <object name="eye03" sound="eye" />
+    <object name="eye04" sound="eye" />
+    <object name="eye05_1" sound="eye" />
+    <object name="eye05_2" sound="eye" />
+    <object name="eye06_1" sound="eye" />
+    <object name="eye06_2" sound="eye" />
+    <object name="eye07_1" sound="eye" />
+    <object name="eye07_2" sound="eye" />
+    <object name="eye08_1" sound="eye" />
+    <object name="eye08_2" sound="eye" />
+    <object name="eye09" sound="eye" />
+    <object name="eye10" sound="eye" />
+
+  </playground>

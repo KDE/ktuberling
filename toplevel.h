@@ -28,13 +28,10 @@ public:
   TopLevel();
   ~TopLevel();
 
-  void loadFailure();
-
   void open(const KUrl &url);
-  void registerGameboard(const QString &menuText, const QString &board);
-  void registerLanguage(const QString &code, bool enabled);
+  void registerGameboard(const QString &menuText, const QString &boardFile);
+  void registerLanguage(const QString &code, const QString &soundFile, bool enabled);
   void changeLanguage(const QString &langCode);
-  bool loadLayout(QDomDocument &layoutDocument);
   void playSound(const QString &ref) const;
 
   inline bool isSoundEnabled() const {return soundEnabled;}

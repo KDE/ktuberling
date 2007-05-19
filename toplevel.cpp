@@ -56,11 +56,8 @@ TopLevel::TopLevel()
 
   setupKAction();
 
-  QDomDocument layoutsDocument;
-  bool ok = loadLayout(layoutsDocument);
-  ok &= playGround->registerPlayGrounds(layoutsDocument);
-  ok &= soundFactory->registerLanguages(layoutsDocument);
-  if (!ok) loadFailure();
+  playGround->registerPlayGrounds();
+  soundFactory->registerLanguages();
 
   changeGameboard(board);
   changeLanguage(language);
@@ -70,15 +67,6 @@ TopLevel::TopLevel()
 TopLevel::~TopLevel()
 {
 }
-
-// Report a load failure
-void TopLevel::loadFailure()
-{
-  KMessageBox::error(this, i18n("Fatal error:\n"
-				    "Unable to load the pictures, aborting."));
-  exit(-1);
-}
-
 
 // Register an available gameboard
 void TopLevel::registerGameboard(const QString &menuText, const QString &board)
@@ -94,13 +82,13 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board)
 }
 
 // Register an available language
-void TopLevel::registerLanguage(const QString &code, bool enabled)
+void TopLevel::registerLanguage(const QString &code, const QString &soundFile, bool enabled)
 {
   QList<QAction*> actionList;
   KToggleAction *t = new KToggleAction(KGlobal::locale()->twoAlphaToLanguageName(code), this);
   t->setEnabled(enabled);
-  actionCollection()->addAction(code, t);
-  t->setData(code);
+  actionCollection()->addAction(soundFile, t);
+  t->setData(soundFile);
   connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
   actionList << t;
   languagesGroup->addAction(t);
@@ -119,54 +107,69 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
 {
   if (newGameBoard == playGround->currentGameboard()) return;
 
-  QDomDocument layoutsDocument;
-  bool ok = loadLayout(layoutsDocument);
-  ok &= playGround->loadPlayGround(layoutsDocument, newGameBoard);
-  if (!ok) loadFailure();
+  QString fileToLoad;
+  QFileInfo fi(newGameBoard);
+  if (fi.isRelative())
+  {
+    QStringList list = KGlobal::dirs()->findAllResources("appdata", "pics/" + newGameBoard);
+    if (!list.isEmpty()) fileToLoad = list.first();
+  }
+  else
+  {
+    fileToLoad = newGameBoard;
+  }
 
-  actionCollection()->action(newGameBoard)->setChecked(true);
+  if (playGround->loadPlayGround(fileToLoad))
+  {
+    actionCollection()->action(fileToLoad)->setChecked(true);
 
-  // Change gameboard in the remembered options
-  writeOptions();
+    // Change gameboard in the remembered options
+    writeOptions();
+  }
+  else
+  {
+    KMessageBox::error(this, i18n("Error while loading the playground."));
+  }
 }
 
 void TopLevel::changeLanguage()
 {
   QAction *action = qobject_cast<QAction*>(sender());
-  QString langCode = action->data().toString();
-  changeLanguage(langCode);
+  QString soundFile = action->data().toString();
+  changeLanguage(soundFile);
 }
 
 // Switch to another language
-void TopLevel::changeLanguage(const QString &langCode)
+void TopLevel::changeLanguage(const QString &soundFile)
 {
-  if (langCode == soundFactory->currentLanguage()) return;
+  if (soundFile == soundFactory->currentSoundFile()) return;
+
+  QString fileToLoad;
+  QFileInfo fi(soundFile);
+  if (fi.isRelative())
+  {
+    QStringList list = KGlobal::dirs()->findAllResources("appdata", "sounds/" + soundFile);
+    if (!list.isEmpty()) fileToLoad = list.first();
+  }
+  else
+  {
+    fileToLoad = soundFile;
+  }
 
   // Change language effectively
-  soundFactory->change(langCode);
-
-  actionCollection()->action(langCode)->setChecked(true);
-
-  // Change language in the remembered options
-  soundEnabled = true;
-  writeOptions();
-}
-
-// Load the layouts file
-bool TopLevel::loadLayout(QDomDocument &layoutDocument)
-{
-  QFile layoutFile(QFile::encodeName(KStandardDirs::locate("data", "ktuberling/pics/layout.xml")));
-  if (!layoutFile.open(QIODevice::ReadOnly))
-     return false;
-
-  if (!layoutDocument.setContent(&layoutFile))
+  if (soundFactory->loadLanguage(fileToLoad))
   {
-     layoutFile.close();
-     return false;
-  }
-  layoutFile.close();
+    actionCollection()->action(fileToLoad)->setChecked(true);
 
-  return true;
+    // Change language in the remembered options
+    soundEnabled = true;
+    writeOptions();
+  }
+  else
+  {
+    KMessageBox::error(this, i18n("Error while loading the sound file."));
+    soundOff();
+  }
 }
 
 // Play a sound
@@ -184,8 +187,8 @@ void TopLevel::readOptions(QString &board, QString &language)
   option = config.readEntry("Sound", "on");
   soundEnabled = option.indexOf("on") == 0;
 
-  board = config.readEntry("Gameboard", "default_theme.svg");
-  language = config.readEntry("Language", "en");
+  board = config.readEntry("Gameboard", "default_theme.theme");
+  language = config.readEntry("Language", "en.soundtheme");
 }
 
 // Write options to preferences file
@@ -196,7 +199,7 @@ void TopLevel::writeOptions()
 
   config.writeEntry("Gameboard", playGround->currentGameboard());
 
-  config.writeEntry("Language", soundFactory->currentLanguage());
+  config.writeEntry("Language", soundFactory->currentSoundFile());
 }
 
 // KAction initialization (aka menubar + toolbar init)

@@ -30,22 +30,15 @@ public:
   SoundFactory(TopLevel *parent);
   ~SoundFactory();
 
-  void change(const QString &selectedLanguage);
+  bool loadLanguage(const QString &selectedLanguageFile);
   void playSound(const QString &soundRef) const;
 
-  QString currentLanguage() const;
+  QString currentSoundFile() const;
 
-  bool registerLanguages(QDomDocument &layoutDocument);
-
-protected:
-  bool loadLanguage(QDomDocument &layoutDocument, const QString &selectedLanguage);
+  void registerLanguages();
 
 private:
-
-  void loadFailure();
-
-private:
-  QString currentLang;		// The current language
+  QString currentSndFile;		// The current language
 
   int sounds;				// Number of sounds
   QStringList namesList,		// List of sound names

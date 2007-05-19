@@ -17,6 +17,7 @@
 #include <kprinter.h>
 
 #include <QFile>
+#include <QFileInfo>
 #include <QDataStream>
 #include <QPainter>
 #include <QCursor>
@@ -64,7 +65,7 @@ bool PlayGround::saveAs(const QString & name)
 
   QDataStream out(&f);
   out << QString(saveGameText);
-  out << m_gameboardName;
+  out << m_gameboardFile;
   foreach(QGraphicsItem *item, m_scene->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
@@ -108,6 +109,8 @@ QAction *PlayGround::getUndoAction()
 // Mouse pressed event
 void PlayGround::mousePressEvent(QMouseEvent *event)
 {
+  if (!m_scene) return;
+
   if (event->button() != Qt::LeftButton) return;
 
   if (m_dragItem) placeDraggedItem(event->pos());
@@ -228,6 +231,8 @@ void PlayGround::resizeEvent(QResizeEvent *event)
 
 void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool changePos)
 {
+  if (!m_scene) return;
+
   m_scene->setSceneRect(QRect(QPoint(0, 0), size));
 
   QSize defaultSize = m_SvgRenderer.defaultSize();
@@ -259,29 +264,28 @@ void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool chang
 }
 
 // Register the various playgrounds
-bool PlayGround::registerPlayGrounds(QDomDocument &layoutDocument)
+void PlayGround::registerPlayGrounds()
 {
-  QDomNodeList playGroundsList;
-  QDomElement playGroundElement;
+  QStringList list = KGlobal::dirs()->findAllResources("appdata", "pics/*.theme");
 
-  playGroundsList = layoutDocument.elementsByTagName("playground");
-  if (playGroundsList.count() < 1)
-    return false;
-
-  for (int i = 0; i < playGroundsList.count(); i++)
+  foreach(const QString &theme, list)
   {
-    playGroundElement = (const QDomElement &) playGroundsList.item(i).toElement();
-
-    QString label = playGroundElement.attribute("name");
-    QString gameboard = playGroundElement.attribute("gameboard");
-    m_topLevel->registerGameboard(label, gameboard);
+    QFile layoutFile(theme);
+    if (layoutFile.open(QIODevice::ReadOnly))
+    {
+      QDomDocument layoutDocument;
+      if (layoutDocument.setContent(&layoutFile))
+      {
+        QString label = layoutDocument.documentElement().attribute("name");
+        QString gameboard = layoutDocument.documentElement().attribute("gameboard");
+        m_topLevel->registerGameboard(label, theme);
+      }
+    }
   }
-
-  return true;
 }
 
 // Load background and draggable objects masks
-bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gameboardName)
+bool PlayGround::loadPlayGround(const QString &gameboardFile)
 {
   QDomNodeList playGroundsList,
                editableAreasList, objectsList,
@@ -293,15 +297,15 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
            leftAttribute, topAttribute, rightAttribute, bottomAttribute,
 	   refAttribute;
 
-  playGroundsList = layoutDocument.elementsByTagName("playground");
-  
-  bool found = false;
-  for(int i = 0; !found && i < playGroundsList.count(); ++i)
-  {
-    playGroundElement = playGroundsList.item(i).toElement();
-    if (playGroundElement.attribute("gameboard") == gameboardName) found = true;
-  }
-  if (!found) return false;
+  QFile layoutFile(gameboardFile);
+  if (!layoutFile.open(QIODevice::ReadOnly)) return false;
+
+  QDomDocument layoutDocument;
+  if (!layoutDocument.setContent(&layoutFile)) return false;
+
+  playGroundElement = layoutDocument.documentElement();
+
+  QString gameboardName = playGroundElement.attribute("gameboard");
 
   if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + gameboardName)))
     return false;
@@ -322,7 +326,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
     }
     else
     {
-      kWarning() << objectName << " does not exist. Check the layout.xml file entry of " << gameboardName << endl;
+      kWarning() << objectName << " does not exist. Check " << gameboardFile << endl;
     }
   }
 
@@ -330,7 +334,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
   m_scene = new QGraphicsScene();
   setScene(m_scene);
 
-  m_gameboardName = gameboardName;
+  m_gameboardFile = gameboardFile;
 
   QGraphicsSvgItem *background = new QGraphicsSvgItem();
   background->setPos(QPoint(0,0));
@@ -345,7 +349,7 @@ bool PlayGround::loadPlayGround(QDomDocument &layoutDocument, const QString &gam
 
 QString PlayGround::currentGameboard() const
 {
-  return m_gameboardName;
+  return m_gameboardFile;
 }
 
 // Load objects and lay them down on the editable area

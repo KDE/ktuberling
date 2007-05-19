@@ -21,6 +21,7 @@
 #include <phonon/audioplayer.h>
 
 #include <QDomDocument>
+#include <QFile>
 
 #include "toplevel.h"
 
@@ -34,15 +35,6 @@ SoundFactory::SoundFactory(TopLevel *parent)
 // Destructor
 SoundFactory::~SoundFactory()
 {
-}
-
-// Change the language
-void SoundFactory::change(const QString &selectedLanguage)
-{
-  QDomDocument layoutsDocument;
-  bool ok = topLevel->loadLayout(layoutsDocument);
-  if (ok) ok = loadLanguage(layoutsDocument, selectedLanguage);
-  if (!ok) loadFailure();
 }
 
 // Play some sound
@@ -64,38 +56,29 @@ void SoundFactory::playSound(const QString &soundRef) const
   player->play(KUrl::fromPath(soundFile));
 }
 
-// Report a load failure
-void SoundFactory::loadFailure()
-{
-	KMessageBox::error(topLevel, i18n("Error while loading the sound names."));
-}
-
 // Register the various languages
-bool SoundFactory::registerLanguages(QDomDocument &layoutDocument)
+void SoundFactory::registerLanguages()
 {
-  QDomNodeList languagesList;
-  QDomElement languageElement;
-  QDomAttr codeAttribute;
-  bool enabled;
+  QStringList list = KGlobal::dirs()->findAllResources("appdata", "sounds/*.soundtheme");
 
-  languagesList = layoutDocument.elementsByTagName("language");
-  if (languagesList.count() < 1)
-    return false;
-
-  for (int i = 0; i < languagesList.count(); i++)
+  foreach(const QString &soundTheme, list)
   {
-    languageElement = (const QDomElement &) languagesList.item(i).toElement();
-    codeAttribute = languageElement.attributeNode("code");
-    enabled = !(KStandardDirs::locate("data", "ktuberling/sounds/" + codeAttribute.value() + '/').isEmpty());
-
-    topLevel->registerLanguage(codeAttribute.value(), enabled);
+    QFile file(soundTheme);
+    if (file.open(QIODevice::ReadOnly))
+    {
+      QDomDocument document;
+      if (document.setContent(&file))
+      {
+        QString code = document.documentElement().attribute("code");
+        bool enabled = !(KStandardDirs::locate("appdata", "sounds/" + code + '/').isEmpty());
+        topLevel->registerLanguage(code, soundTheme, enabled);
+      }
+    }
   }
-
-  return true;
 }
 
 // Load the sounds of one given language
-bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, const QString &selectedLanguage)
+bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
 {
   QDomNodeList languagesList,
                soundNamesList;
@@ -103,18 +86,17 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, const QString &sel
               soundNameElement;
   QDomAttr nameAttribute, fileAttribute;
 
-  languagesList = layoutDocument.elementsByTagName("language");
+  QFile file(selectedLanguageFile);
+  if (!file.open(QIODevice::ReadOnly)) return false;
 
-  bool found = false;
-  for(int i = 0; !found && i < languagesList.count(); ++i)
-  {
-    languageElement = languagesList.item(i).toElement();
-    if (languageElement.attribute("code") == selectedLanguage) found = true;
-  }
-  if (!found) return false;
+  QDomDocument document;
+  if (!document.setContent(&file)) return false;
+
+  languageElement = document.documentElement();
 
   soundNamesList = languageElement.elementsByTagName("sound");
   sounds = soundNamesList.count();
+  kDebug() << "C" << endl;
   if (sounds < 1)
     return false;
 
@@ -129,12 +111,12 @@ bool SoundFactory::loadLanguage(QDomDocument &layoutDocument, const QString &sel
     filesList << fileAttribute.value();
   }
 
-  currentLang = selectedLanguage;
+  currentSndFile = selectedLanguageFile;
 
   return true;
 }
 
-QString SoundFactory::currentLanguage() const
+QString SoundFactory::currentSoundFile() const
 {
-  return currentLang;
+  return currentSndFile;
 }

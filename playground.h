@@ -46,8 +46,8 @@ public:
   QAction *getRedoAction();
   QAction *getUndoAction();
 
-  bool registerPlayGrounds(QDomDocument &layoutDocument);
-  bool loadPlayGround(QDomDocument &layoutDocument, const QString &gameboardName);
+  void registerPlayGrounds();
+  bool loadPlayGround(const QString &gameboardFile);
   
   QString currentGameboard() const;
 
@@ -63,7 +63,7 @@ private:
   void placeNewItem(const QPoint &pos);
   void adjustItems(const QSize &size, const QSize &oldSize, bool changePos);
 
-  QString m_gameboardName;						// the name of the board file
+  QString m_gameboardFile;						// the file the board
   QMap<QString, QString> m_objectsNameSound;	// map between element name and sound
 
   QUndoStack m_undoStack;						// the command stack

@@ -1,0 +1,78 @@
+  <language code="en">
+
+    <sound name="tuberling" file="en/tuberling.wav" />
+    <sound name="eye" file="en/eye.wav" />
+    <sound name="eyebrow" file="en/eyebrow.wav" />
+    <sound name="nose" file="en/nose.wav" />
+    <sound name="ear" file="en/ear.wav" />
+    <sound name="mouth" file="en/mouth.wav" />
+    <sound name="hat" file="en/hat.wav" />
+    <sound name="moustache" file="en/moustache.wav" />
+    <sound name="cigar" file="en/cigar.wav" />
+    <sound name="bow" file="en/bow.wav" />
+    <sound name="sunglasses" file="en/sunglasses.wav" />
+    <sound name="spectacles" file="en/spectacles.wav" />
+    <sound name="earring" file="en/earring.wav" />
+    <sound name="badge" file="en/badge.wav" />
+    <sound name="watch" file="en/watch.wav" />
+
+    <sound name="aquarium" file="en/aquarium.wav" />
+    <sound name="fish" file="en/fish.wav" />
+    <sound name="helmet" file="en/helmet.wav" />
+    <sound name="jellyfish" file="en/jellyfish.wav" />
+    <sound name="seahorse" file="en/seahorse.wav" />
+    <sound name="treasure" file="en/treasure.wav" />
+
+    <sound name="penguin" file="en/penguin.wav" />
+    <sound name="tie" file="en/tie.wav" />
+    <sound name="hair" file="en/hair.wav" />
+    <sound name="horn" file="en/horn.wav" />
+    <sound name="necklace" file="en/necklace.wav" />
+    <sound name="scarf" file="en/scarf.wav" />
+
+    <sound name="farm" file="en/farm.wav" />
+    <sound name="calf" file="en/calf.wav" />
+    <sound name="cat" file="en/cat.wav" />
+    <sound name="chicks" file="en/chicks.wav" />
+    <sound name="colt" file="en/colt.wav" />
+    <sound name="cow" file="en/cow.wav" />
+    <sound name="dog" file="en/dog.wav" />
+    <sound name="hen" file="en/hen.wav" />
+    <sound name="horse" file="en/horse.wav" />
+    <sound name="pig" file="en/pig.wav" />
+    <sound name="piglet" file="en/piglet.wav" />
+    <sound name="rooster" file="en/rooster.wav" />
+
+    <sound name="autumn-landscape" file="en/autumn-landscape.wav" />
+    <sound name="acorn" file="en/acorn.wav" />
+    <sound name="chestnuts" file="en/chestnuts.wav" />
+    <sound name="leave" file="en/leave.wav" />
+    <sound name="leaves" file="en/leaves.wav" />
+    <sound name="mushroom" file="en/mushroom.wav" />
+    <sound name="puddle" file="en/puddle.wav" />
+    <sound name="rain" file="en/rain.wav" />
+    <sound name="squirrel" file="en/squirrel.wav" />
+    <sound name="tree" file="en/tree.wav" />
+
+    <sound name="shadows" file="en/shadows.wav" />
+
+    <sound name="street" file="en/street.wav" />
+    <sound name="airplane" file="en/airplane.wav" />
+    <sound name="ambulance" file="en/ambulance.wav" />
+    <sound name="balloon" file="en/balloon.wav" />
+    <sound name="bus" file="en/bus.wav" />
+    <sound name="car" file="en/car.wav" />
+    <sound name="cyclist" file="en/cyclist.wav" />
+    <sound name="nurse" file="en/nurse.wav" />
+    <sound name="pedestrian" file="en/pedestrian.wav" />
+    <sound name="police" file="en/police.wav" />
+    <sound name="sign" file="en/sign.wav" />
+
+    <sound name="transports" file="en/transports.wav" />
+    <sound name="bicycle" file="en/bicycle.wav" />
+    <sound name="motorbike" file="en/motorbike.wav" />
+    <sound name="ship" file="en/ship.wav" />
+    <sound name="submarine" file="en/submarine.wav" />
+    <sound name="train" file="en/train.wav" />
+
+  </language>
