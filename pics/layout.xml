@@ -25,12 +25,6 @@
     <object name="eyes_10" sound="eye" />
     <object name="eyes_11" sound="eye" />
     <object name="eyes_12" sound="eye" />
-    <object name="eyes_13" sound="eye" />
-    <object name="eyes_14" sound="eye" />
-    <object name="eyes_15" sound="eye" />
-    <object name="eyes_16" sound="eye" />
-    <object name="eyes_17" sound="eye" />
-    <object name="eyes_18" sound="eye" />
 
     <object name="eyebrows1" sound="eyebrow" />
     <object name="eyebrows2" sound="eyebrow" />
@@ -45,40 +39,64 @@
     <object name="nose_2" sound="nose" />
     <object name="nose_3" sound="nose" />
     <object name="nose_4" sound="nose" />
+    <object name="nose_5" sound="nose" />
+    <object name="nose_6" sound="nose" />
 
     <object name="ear1" sound="ear" />
     <object name="ear2" sound="ear" />
     <object name="ear3" sound="ear" />
     <object name="ear4" sound="ear" />
+    <object name="ear5" sound="ear" />
+    <object name="ear6" sound="ear" />
+    <object name="ear7" sound="ear" />
+    <object name="ear8" sound="ear" />
+    
+    <object name="earring1" sound="ear" />
+    <object name="earring2" sound="ear" />
+    
+    <object name="flowers1" sound="flower" />
 
     <object name="mouth1" sound="mouth" />
     <object name="mouth2" sound="mouth" />
     <object name="mouth3" sound="mouth" />
+    <object name="mouth4" sound="mouth" />
+    <object name="mouth5" sound="mouth" />
 
     <object name="hat1" sound="hat" />
     <object name="hat2" sound="hat" />
     <object name="hat3" sound="hat" />
+    
+    <object name="jaket1" sound="coat" />
+    <object name="jaket2" sound="coat" />
+    
+    <object name="cane1" sound="stick" />
+    
+    <object name="shue_1" sound="shue" />
+    <object name="shue_2" sound="shue" />
+    <object name="shue_3" sound="shue" />
+    <object name="shue_4" sound="shue" />
 
     <object name="hair_1" sound="moustache" />
-
     <object name="hair_2" sound="hair" />
     <object name="hair_3" sound="hair" />
     <object name="hair_4" sound="hair" />
 
-    <object name="bow1" sound="bow" />
+    <object name="bow_1" sound="bow" />
+    <object name="bow_2" sound="bow" />
 
-    <object name="tie1" sound="tie" />
+    <object name="tie_1" sound="tie" />
 
     <object name="glass_1" sound="sunglasses" />
-
     <object name="glass_0" sound="spectacles" />
   </playground>
   
   <playground gameboard="potato-game.svg" name="Potato &amp;Guy 2">
-    <object name="nose01" sound="nose" />
-    <object name="nose02" sound="nose" />
-    <object name="nose03" sound="nose" />
-    <object name="nose04" sound="nose" />
+    <object name="nose_1" sound="nose" />
+    <object name="nose_2" sound="nose" />
+    <object name="nose_3" sound="nose" />
+    <object name="nose_4" sound="nose" />
+    <object name="nose_5" sound="nose" />
+    <object name="nose_6" sound="nose" />
 
     <object name="hair01" sound="hair" />
     <object name="hair02" sound="hair" />
