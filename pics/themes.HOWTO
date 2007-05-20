@@ -1,0 +1,26 @@
+****************************************
+* How to create a new KTuberling theme *
+****************************************
+
+To create a new KTuberling theme you have to:
+ * Draw the theme in a SVG file, there you have to
+   - Name the place where items can dragged "background"
+   - Name each of the draggable items with unique name
+
+ * Create a .theme file, it has to follow this schema
+  <playground gameboard="yourSVGFile" name="theThemeName">
+    <object name="itemName" sound="soundName" />
+    ...
+    ...
+    ...
+  </playground>
+
+  - yourSVGFile is the name of the svg file that has the drawing
+  - theThemeName is the name that identifies the theme, will be shown in
+    the Playground menu
+  - For each object you need a <object> entry. itemName is the unique
+    name you used on the SVG file, soundName is the sound name that will
+    be played when dragging it, see soundthemes.HOWTO for more information.
+
+ * Add a dummy i18n(theThemeName) in layout.i18n so the theme name
+   can be translated
