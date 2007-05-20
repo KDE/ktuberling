@@ -239,6 +239,8 @@ void TopLevel::setupKAction()
   languagesGroup->addAction(t);
   if (!soundEnabled) t->setChecked(true);
 
+  KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
+
   setupGUI(ToolBar | Keys | Save | Create);
 }
 
@@ -388,4 +390,10 @@ void TopLevel::soundOff()
 
   soundEnabled = false;
   writeOptions();
+}
+
+void TopLevel::toggleFullScreen()
+{
+  if (actionCollection()->action("fullscreen")->isChecked()) showFullScreen();
+  else showNormal();
 }

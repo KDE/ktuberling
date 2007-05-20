@@ -54,6 +54,7 @@ private slots:
   void soundOff();
   void changeGameboard();
   void changeLanguage();
+  void toggleFullScreen();
 
 private:
   int                           // Menu items identificators
