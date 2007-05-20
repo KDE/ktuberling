@@ -5,7 +5,7 @@
 To create a new KTuberling theme you have to:
  * Draw the theme in a SVG file, there you have to
    - Name the place where items can dragged "background"
-   - Name each of the draggable items with unique name
+   - Name each of the draggable items with an unique name
 
  * Create a .theme file, it has to follow this schema
   <playground gameboard="yourSVGFile" name="theThemeName">
