@@ -13,7 +13,7 @@ To create a new KTuberling theme you have to:
     ...
   </language>
 
-   - yourLanguageTwoLetterCode is yuor language two letter code, for example gl for Galician
+   - yourLanguageTwoLetterCode is your language two letter code, for example gl for Galician
    - For each sound a <sound> entry. soundName should match with the soundName specified
      in the playground them (see themes.HOWTO). relativePath should be the relative path you
      are going to install the file with this sound to, typically it will be 
