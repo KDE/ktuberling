@@ -9,7 +9,7 @@ To create a new KTuberling theme you have to:
 
  * Create a .theme file, it has to follow this schema
   <playground gameboard="yourSVGFile" name="theThemeName">
-    <object name="itemName" sound="soundName" />
+    <object name="itemName" sound="soundName" scale="someValue" />
     ...
     ...
     ...
@@ -21,6 +21,8 @@ To create a new KTuberling theme you have to:
    - For each object you need a <object> entry. itemName is the unique
      name you used on the SVG file, soundName is the sound name that will
      be played when dragging it, see soundthemes.HOWTO for more information.
+     scale is optional and someValue is the scale factor that will be used
+     when drawing this object outside the warehouse, if not specified is 1.
 
  * If you are adding the theme to KTuberling SVN:
    - Add .svg and .theme files to FILES section of the CMakeLists.txt in the pics/ directory

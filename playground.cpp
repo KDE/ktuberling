@@ -139,8 +139,9 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
 
     if (!foundElem.isNull()) 
     {
-      int width = qRound(bounds.width());
-      int height = qRound(bounds.height());
+      double objectScale = m_objectsNameRatio.value(foundElem);
+      int width = qRound(bounds.width() * objectScale);
+      int height = qRound(bounds.height() * objectScale);
 
       m_topLevel->playSound(m_objectsNameSound.value(foundElem));
       setCursor(QCursor(QPixmap::fromImage(toImage(foundElem, width, height, &m_SvgRenderer))));
@@ -213,6 +214,8 @@ void PlayGround::placeNewItem(const QPoint &pos)
     item->setZValue(m_scene->items().count());
     QTransform t;
     QSize defaultSize = m_SvgRenderer.defaultSize();
+    double objectScale = m_objectsNameRatio.value(m_pickedElement);
+    t.scale(objectScale, objectScale);
     t.scale((double)size().width() / (double)defaultSize.width(),
           (double)size().height() / (double)defaultSize.height());
     item->setTransform(t);
@@ -252,11 +255,17 @@ void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool chang
   foreach(QGraphicsItem *item, m_scene->items())
   {
     QGraphicsSvgItem *svg = qgraphicsitem_cast<QGraphicsSvgItem *>(item);
-    if (svg) item->setTransform(t);
+    if (svg) item->setTransform(t); // just the background
     else
     {
       svg = qgraphicsitem_cast<ToDraw *>(item);
-      if (svg) item->setTransform(t);
+      if (svg)
+      {
+        QTransform t2 = t;
+        double objectScale = m_objectsNameRatio.value(svg->elementId());
+        t2.scale(objectScale, objectScale);
+        item->setTransform(t2);
+      }
     }
 
     if (changePos) item->setPos(item->x() * xPositionScale, item->y() * yPositionScale);
@@ -323,6 +332,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
     if (m_SvgRenderer.elementExists(objectName))
     {
       m_objectsNameSound.insert(objectName, objectElement.attribute("sound"));
+      m_objectsNameRatio.insert(objectName, objectElement.attribute("scale", "1").toDouble());
     }
     else
     {
@@ -390,7 +400,10 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       return OtherError;
     }
     obj->setSharedRenderer(&m_SvgRenderer);
-    obj->setTransform(t);
+    QTransform t2 = t;
+    double objectScale = m_objectsNameRatio.value(obj->elementId());
+    t2.scale(objectScale, objectScale);
+    obj->setTransform(t2);
     m_undoStack.push(new ActionAdd(obj, m_scene));
   }
   if (f.error() == QFile::NoError) return NoError;
