@@ -85,7 +85,7 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board)
 void TopLevel::registerLanguage(const QString &code, const QString &soundFile, bool enabled)
 {
   QList<QAction*> actionList;
-  KToggleAction *t = new KToggleAction(KGlobal::locale()->twoAlphaToLanguageName(code), this);
+  KToggleAction *t = new KToggleAction(KGlobal::locale()->languageCodeToName(code), this);
   t->setEnabled(enabled);
   actionCollection()->addAction(soundFile, t);
   t->setData(soundFile);
