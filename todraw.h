@@ -15,7 +15,6 @@
 
 #include <QGraphicsSvgItem>
 
-class KSvgRenderer;
 
 QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer);
 

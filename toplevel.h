@@ -15,7 +15,6 @@
 #include <kurl.h>
 
 class QActionGroup;
-class QDomDocument;
 class PlayGround;
 class SoundFactory;
 

@@ -19,7 +19,6 @@
 
 #include <KSvgRenderer>
 
-class QDomDocument;
 
 class KPrinter;
 
