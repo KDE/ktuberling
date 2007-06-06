@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs *args  = KCmdLineArgs::parsedArgs();
     if (args->count())
        toplevel->open(args->url(0));
+    args->clear();
   }
 
   return app.exec();
