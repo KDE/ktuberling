@@ -67,16 +67,19 @@ void ActionRemove::undo()
 
 
 
-ActionMove::ActionMove(ToDraw *item, const QPointF &pos, QGraphicsScene *scene)
- : m_item(item), m_pos(pos), m_scene(scene)
+ActionMove::ActionMove(ToDraw *item, const QPointF &pos, int zValue, QGraphicsScene *scene)
+ : m_item(item), m_pos(pos), m_zValue(zValue), m_scene(scene)
 {
 }
 
 void ActionMove::redo()
 {
 	QPointF pos = m_item->pos();
+	qreal zValue = m_item->zValue();
 	m_item->setPos(m_pos);
+	m_item->setZValue(m_zValue);
 	m_pos = pos;
+	m_zValue = zValue;
 }
 
 void ActionMove::undo()

@@ -54,7 +54,7 @@ class ActionRemove : public QUndoCommand
 class ActionMove : public QUndoCommand
 {
 	public:
-		ActionMove(ToDraw *item, const QPointF &pos, QGraphicsScene *scene);
+		ActionMove(ToDraw *item, const QPointF &pos, int zValue, QGraphicsScene *scene);
 		
 		void redo();
 		void undo();
@@ -62,6 +62,7 @@ class ActionMove : public QUndoCommand
 	private:
 		ToDraw *m_item;
 		QPointF m_pos;
+		qreal m_zValue;
 		QGraphicsScene *m_scene;
 };
 

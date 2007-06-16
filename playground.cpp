@@ -33,7 +33,7 @@ static const char *saveGameText = "KTuberlingSaveGameV2";
 
 // Constructor
 PlayGround::PlayGround(TopLevel *parent)
-    : QGraphicsView(parent), m_dragItem(0), m_scene(0)
+    : QGraphicsView(parent), m_dragItem(0), m_scene(0), m_nextZValue(1)
 {
   m_topLevel = parent;
   setFrameStyle(QFrame::NoFrame);
@@ -190,7 +190,8 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
     QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
                    pos.y() - cursor().pixmap().size().height() / 2);
     m_scene->addItem(m_dragItem);
-    m_undoStack.push(new ActionMove(m_dragItem, itemPos, m_scene));
+    m_undoStack.push(new ActionMove(m_dragItem, itemPos, m_nextZValue, m_scene));
+    m_nextZValue++;
   }
   else
   {
@@ -211,7 +212,8 @@ void PlayGround::placeNewItem(const QPoint &pos)
     item->setElementId(m_pickedElement);
     item->setPos(itemPos);
     item->setSharedRenderer(&m_SvgRenderer);
-    item->setZValue(m_scene->items().count());
+    item->setZValue(m_nextZValue);
+    m_nextZValue++;
     QTransform t;
     QSize defaultSize = m_SvgRenderer.defaultSize();
     double objectScale = m_objectsNameRatio.value(m_pickedElement);

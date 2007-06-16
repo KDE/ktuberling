@@ -73,6 +73,7 @@ private:
   ToDraw *m_dragItem;							// the item we are dragging
   QGraphicsScene *m_scene;						// the graphicsScene
   KSvgRenderer m_SvgRenderer;					// the SVG renderer
+  int m_nextZValue;								// the next Z value to use
 };
 
 #endif
