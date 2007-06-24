@@ -49,24 +49,39 @@
     <object name="mouth4" sound="mouth" />
     <object name="mouth5" sound="mouth" />
 
-    <object name="hat1" sound="hat" />
-    <object name="hat2" sound="hat" />
-    <object name="hat3" sound="hat" />
+    <object name="hat1" sound="hat" scale="2" />
+    <object name="hat2" sound="hat" scale="2" />
+    <object name="hat3" sound="hat" scale="2" />
+    <object name="hat4" sound="hat" scale="2" />
+    <object name="hat5" sound="hat" scale="2" />
     
-    <object name="jaket1" sound="coat" />
-    <object name="jaket2" sound="coat" />
+    <object name="jaket1" sound="coat" scale="2" />
+    <object name="jaket2" sound="coat" scale="2" />
+    <object name="jaket3" sound="coat" scale="2" />
+    <object name="jaket4" sound="coat" scale="2" />
+    <object name="jaket5" sound="coat" scale="2" />
+    <object name="jaket6" sound="coat" scale="2" />
     
-    <object name="cane1" sound="stick" />
+    <object name="cane1" sound="stick" scale="2" />
     
-    <object name="shue_1" sound="shue" />
-    <object name="shue_2" sound="shue" />
-    <object name="shue_3" sound="shue" />
-    <object name="shue_4" sound="shue" />
+    <object name="shue_1" sound="shue" scale="2" />
+    <object name="shue_2" sound="shue" scale="2" />
+    <object name="shue_3" sound="shue" scale="2" />
+    <object name="shue_4" sound="shue" scale="2" />
+    <object name="shue_5" sound="shue" scale="2" />
+    <object name="shue_6" sound="shue" scale="2" />
+    <object name="shue_7" sound="shue" scale="2" />
+    <object name="shue_8" sound="shue" scale="2" />
+    <object name="shue_9" sound="shue" scale="2" />
+    <object name="shue_10" sound="shue" scale="2" />
 
     <object name="hair_1" sound="moustache" />
-    <object name="hair_2" sound="hair" />
-    <object name="hair_3" sound="hair" />
-    <object name="hair_4" sound="hair" />
+    <object name="hair_2" sound="hair" scale="2" />
+    <object name="hair_3" sound="hair" scale="2" />
+    <object name="hair_4" sound="hair" scale="2" />
+    <object name="hair_5" sound="hair" scale="2" />
+    <object name="hair_6" sound="hair" scale="2" />
+    <object name="hair_7" sound="hair" scale="1.5" />
 
     <object name="bow_1" sound="bow" />
     <object name="bow_2" sound="bow" />
@@ -75,4 +90,7 @@
 
     <object name="glass_1" sound="sunglasses" />
     <object name="glass_0" sound="spectacles" />
+    
+    <object name="ball1" sound="ball" scale="2" />
+    <object name="ball2" sound="ball" scale="1.5" />
   </playground>
