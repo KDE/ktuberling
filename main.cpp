@@ -16,12 +16,6 @@
 
 #include "toplevel.h"
 
-static KCmdLineOptions options[] = {
-   { "+<tuberling-file>", I18N_NOOP("Potato to open"), 0 },
-   KCmdLineLastOption
-};
-                  
-
 
 static const char description[] = I18N_NOOP("Potato game for kids");
 static const char text[] = I18N_NOOP("A program by Éric Bischoff <ebischoff@nerim.net>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
@@ -32,17 +26,20 @@ static const char version[] = "0.5.1";
 int main(int argc, char *argv[])
 {
 
-  KAboutData aboutData( "ktuberling", I18N_NOOP("KTuberling"), 
-    version, description, KAboutData::License_GPL, 
-    "(c) 1999-2006, The KTuberling Developers", text);
-  aboutData.addAuthor("Éric Bischoff", I18N_NOOP("Developer"), "ebischoff@nerim.net");
-  aboutData.addAuthor("John Calhoun", I18N_NOOP("Original concept and artwork"));
-  aboutData.addAuthor("Albert Astals Cid", I18N_NOOP("SVG port"), "aacid@kde.org");
-  aboutData.addCredit("Agnieszka Czajkowska", I18N_NOOP("New artwork"), "agnieszka@imagegalaxy.de");
-  aboutData.addCredit("Bas Willems", I18N_NOOP("New artwork"), "cybersurfer@euronet.nl");
-  aboutData.addCredit("Roger Larsson", I18N_NOOP("Sounds tuning"), "roger.larsson@norran.net");
-  aboutData.addCredit("Dolores Almansa", I18N_NOOP("New artwork"), "dolores.almansa@corazondemaria.org");
+  KAboutData aboutData( "ktuberling", 0, ki18n("KTuberling"), 
+    version, ki18n(description), KAboutData::License_GPL, 
+    ki18n("(c) 1999-2006, The KTuberling Developers"), ki18n(text));
+  aboutData.addAuthor(ki18n("Éric Bischoff"), ki18n("Developer"), "ebischoff@nerim.net");
+  aboutData.addAuthor(ki18n("John Calhoun"), ki18n("Original concept and artwork"));
+  aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("SVG port"), "aacid@kde.org");
+  aboutData.addCredit(ki18n("Agnieszka Czajkowska"), ki18n("New artwork"), "agnieszka@imagegalaxy.de");
+  aboutData.addCredit(ki18n("Bas Willems"), ki18n("New artwork"), "cybersurfer@euronet.nl");
+  aboutData.addCredit(ki18n("Roger Larsson"), ki18n("Sounds tuning"), "roger.larsson@norran.net");
+  aboutData.addCredit(ki18n("Dolores Almansa"), ki18n("New artwork"), "dolores.almansa@corazondemaria.org");
   KCmdLineArgs::init(argc, argv, &aboutData);
+
+  KCmdLineOptions options;
+  options.add("+<tuberling-file>", ki18n("Potato to open"));
   KCmdLineArgs::addCmdLineOptions(options);
 
   KApplication app;
