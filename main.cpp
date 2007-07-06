@@ -17,8 +17,8 @@
 #include "toplevel.h"
 
 
-static const char description[] = I18N_NOOP("Potato game for kids");
-static const char text[] = I18N_NOOP("A program by Éric Bischoff <ebischoff@nerim.net>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
+static const KLocalizedString description = ki18n("Potato game for kids");
+static const KLocalizedString text = ki18n("A program by Éric Bischoff <ebischoff@nerim.net>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
 
 static const char version[] = "0.5.1";
 
@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 {
 
   KAboutData aboutData( "ktuberling", 0, ki18n("KTuberling"), 
-    version, ki18n(description), KAboutData::License_GPL, 
-    ki18n("(c) 1999-2006, The KTuberling Developers"), ki18n(text));
+    version, description, KAboutData::License_GPL, 
+    ki18n("(c) 1999-2006, The KTuberling Developers"), text);
   aboutData.addAuthor(ki18n("Éric Bischoff"), ki18n("Developer"), "ebischoff@nerim.net");
   aboutData.addAuthor(ki18n("John Calhoun"), ki18n("Original concept and artwork"));
   aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("SVG port"), "aacid@kde.org");
