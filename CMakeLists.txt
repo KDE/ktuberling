@@ -18,8 +18,6 @@ set(ktuberling_SRCS
    todraw.cpp 
    soundfactory.cpp )
 
-kde4_automoc(${ktuberling_SRCS})
-
 kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
 target_link_libraries(ktuberling  ${KDE4_KDEUI_LIBS} ${KDE4_KDEPRINT_LIBS} kdegames ${KDE4_PHONON_LIBS} )
