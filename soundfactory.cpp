@@ -96,7 +96,7 @@ bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
 
   soundNamesList = languageElement.elementsByTagName("sound");
   sounds = soundNamesList.count();
-  kDebug() << "C" << endl;
+  kDebug() << "C";
   if (sounds < 1)
     return false;
 

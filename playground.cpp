@@ -338,7 +338,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
     }
     else
     {
-      kWarning() << objectName << " does not exist. Check " << gameboardFile << endl;
+      kWarning() << objectName << "does not exist. Check" << gameboardFile;
     }
   }
 
