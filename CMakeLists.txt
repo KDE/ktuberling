@@ -5,9 +5,6 @@ message(STATUS "TODO: Port KTuberling museum to new version")
 add_subdirectory( sounds ) 
 add_subdirectory( pics ) 
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
-
-
 ########### next target ###############
 
 set(ktuberling_SRCS 
