@@ -19,7 +19,7 @@ class TopLevel;
 
 namespace Phonon
 {
-      class AudioPlayer;
+      class MediaObject;
 }
 
 class SoundFactory
@@ -44,7 +44,7 @@ private:
               filesList;           // List of sound files associated with each sound name
 
   TopLevel *topLevel;		// Top-level window
-  Phonon::AudioPlayer *player;  // Sound player
+  Phonon::MediaObject *player;  // Sound player
 };
 
 #endif

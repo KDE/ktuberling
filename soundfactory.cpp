@@ -18,7 +18,7 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 
-#include <phonon/audioplayer.h>
+#include <Phonon/MediaObject>
 
 #include <QDomDocument>
 #include <QFile>
@@ -29,7 +29,8 @@
 SoundFactory::SoundFactory(TopLevel *parent)
 {
   topLevel = parent;
-  player = new Phonon::AudioPlayer(Phonon::GameCategory, parent);
+  player = Phonon::createPlayer(Phonon::GameCategory);
+  player->setParent(parent);
 }
 
 // Destructor
@@ -53,7 +54,8 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
-  player->play(KUrl::fromPath(soundFile));
+  player->setCurrentSource(soundFile);
+  player->play();
 }
 
 // Register the various languages
