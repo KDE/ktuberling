@@ -66,6 +66,7 @@ TopLevel::TopLevel()
 // Destructor
 TopLevel::~TopLevel()
 {
+  delete soundFactory;
 }
 
 // Register an available gameboard

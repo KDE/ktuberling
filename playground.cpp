@@ -42,6 +42,7 @@ PlayGround::PlayGround(TopLevel *parent)
 // Destructor
 PlayGround::~PlayGround()
 {
+  delete m_scene;
 }
 
 // Reset the play ground
@@ -123,8 +124,8 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     double xFactor = (double)defaultSize.width() / (double)currentSize.width();
     double yFactor = (double)defaultSize.height() / (double)currentSize.height();
     QMap<QString, QString>::const_iterator it, itEnd;
-    it = m_objectsNameSound.begin();
-    itEnd = m_objectsNameSound.end();
+    it = m_objectsNameSound.constBegin();
+    itEnd = m_objectsNameSound.constEnd();
     QString foundElem;
     QRectF bounds;
     for( ; foundElem.isNull() && it != itEnd; ++it)
@@ -209,6 +210,7 @@ void PlayGround::placeNewItem(const QPoint &pos)
     QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
                    pos.y() - cursor().pixmap().size().height() / 2);
     ToDraw *item = new ToDraw();
+    m_allCreatedItems << item;
     item->setElementId(m_pickedElement);
     item->setPos(itemPos);
     item->setSharedRenderer(&m_SvgRenderer);
@@ -254,7 +256,7 @@ void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool chang
     yPositionScale = (double)size.height() / (double)oldSize.height();
   }
 
-  foreach(QGraphicsItem *item, m_scene->items())
+  foreach(QGraphicsItem *item, m_allCreatedItems)
   {
     QGraphicsSvgItem *svg = qgraphicsitem_cast<QGraphicsSvgItem *>(item);
     if (svg) item->setTransform(t); // just the background
@@ -343,6 +345,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   }
 
   delete m_scene;
+  m_allCreatedItems.clear();
   m_scene = new QGraphicsScene();
   setScene(m_scene);
 
@@ -353,6 +356,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   background->setSharedRenderer(&m_SvgRenderer);
   background->setZValue(0);
   m_scene->addItem(background);
+  m_allCreatedItems << background;
 
   adjustItems(size(), QSize(), false);
 
@@ -401,6 +405,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       delete obj;
       return OtherError;
     }
+    m_allCreatedItems << obj;
     obj->setSharedRenderer(&m_SvgRenderer);
     QTransform t2 = t;
     double objectScale = m_objectsNameRatio.value(obj->elementId());

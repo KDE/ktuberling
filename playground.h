@@ -47,7 +47,7 @@ public:
 
   void registerPlayGrounds();
   bool loadPlayGround(const QString &gameboardFile);
-  
+
   QString currentGameboard() const;
 
 protected:
@@ -62,6 +62,8 @@ private:
   void placeNewItem(const QPoint &pos);
   void adjustItems(const QSize &size, const QSize &oldSize, bool changePos);
 
+  QList<QGraphicsItem*> m_allCreatedItems;		// I need to keep them all so i can adjust positions of removed
+												// items when changing the size of the playground
   QString m_gameboardFile;						// the file the board
   QMap<QString, QString> m_objectsNameSound;	// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
