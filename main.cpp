@@ -18,7 +18,7 @@
 
 
 static const KLocalizedString description = ki18n("Potato game for kids");
-static const KLocalizedString text = ki18n("A program by Éric Bischoff <ebischoff@nerim.net>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.");
+static const KLocalizedString text = ki18n("A program original by <email address='%1'>Éric Bischoff</email>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.").subs("ebischoff@nerim.net");
 
 static const char version[] = "0.5.1";
 
