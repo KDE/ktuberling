@@ -39,7 +39,6 @@ TopLevel::TopLevel()
   : KXmlGuiWindow(0)
 {
   QString board, language;
-  readOptions(board, language);
 
   playGround = new PlayGround(this);
   playGround->setObjectName( "playGround" );
@@ -59,6 +58,7 @@ TopLevel::TopLevel()
   playGround->registerPlayGrounds();
   soundFactory->registerLanguages();
 
+  readOptions(board, language);
   changeGameboard(board);
   changeLanguage(language);
 }
@@ -90,6 +90,7 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
   t->setEnabled(enabled);
   actionCollection()->addAction(soundFile, t);
   t->setData(soundFile);
+  sounds.insert(code, soundFile);
   connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
   actionList << t;
   languagesGroup->addAction(t);
@@ -163,7 +164,6 @@ void TopLevel::changeLanguage(const QString &soundFile)
     actionCollection()->action(fileToLoad)->setChecked(true);
 
     // Change language in the remembered options
-    soundEnabled = true;
     writeOptions();
   }
   else
@@ -186,17 +186,29 @@ void TopLevel::readOptions(QString &board, QString &language)
   KConfigGroup config(KGlobal::config(), "General");
 
   option = config.readEntry("Sound", "on");
-  soundEnabled = option.indexOf("on") == 0;
+  bool soundEnabled = option.indexOf("on") == 0;
 
   board = config.readEntry("Gameboard", "default_theme.theme");
-  language = config.readEntry("Language", "en.soundtheme");
+  if (soundEnabled)
+  {
+    language = config.readEntry("Language", "");
+    if (language.isEmpty())
+    {
+      language = sounds.value(KGlobal::locale()->language(), "en.soundtheme");
+    }
+  }
+  else
+  {
+    soundOff();
+    language = QString();
+  }
 }
 
 // Write options to preferences file
 void TopLevel::writeOptions()
 {
   KConfigGroup config(KGlobal::config(), "General");
-  config.writeEntry("Sound", soundEnabled? "on": "off");
+  config.writeEntry("Sound", actionCollection()->action("speech_no_sound")->isChecked() ? "off": "on");
 
   config.writeEntry("Gameboard", playGround->currentGameboard());
 
@@ -238,7 +250,6 @@ void TopLevel::setupKAction()
   actionCollection()->addAction("speech_no_sound", t);
   connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
   languagesGroup->addAction(t);
-  if (!soundEnabled) t->setChecked(true);
 
   KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
 
@@ -387,10 +398,13 @@ void TopLevel::editCopy()
 // Toggle sound off
 void TopLevel::soundOff()
 {
-  if (!soundEnabled) return;
-
-  soundEnabled = false;
+  actionCollection()->action("speech_no_sound")->setChecked(true);
   writeOptions();
+}
+
+bool TopLevel::isSoundEnabled() const
+{
+  return !actionCollection()->action("speech_no_sound")->isChecked();
 }
 
 void TopLevel::toggleFullScreen()

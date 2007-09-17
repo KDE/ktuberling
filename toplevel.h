@@ -33,7 +33,7 @@ public:
   void changeLanguage(const QString &langCode);
   void playSound(const QString &ref) const;
 
-  inline bool isSoundEnabled() const {return soundEnabled;}
+  bool isSoundEnabled() const;
 
   void changeGameboard(const QString &gameboard);
 
@@ -67,10 +67,10 @@ private:
 
 
   QActionGroup *playgroundsGroup, *languagesGroup;
-  bool soundEnabled;            // True if the sound is enabled by user, even if there is no audio server
 
   PlayGround *playGround;	// Play ground central widget
   SoundFactory *soundFactory;	// Speech organ
+  QMap<QString, QString> sounds; // language code, file
 };
 
 #endif
