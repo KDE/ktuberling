@@ -1,4 +1,4 @@
-  <playground gameboard="default_theme.svg" name="Potato &amp;Guy">
+  <playground gameboard="default_theme.svg" desktop="default_theme.desktop">
 
     <object name="eyes_1" sound="eye" />
     <object name="eyes_2" sound="eye" />

@@ -289,9 +289,11 @@ void PlayGround::registerPlayGrounds()
       QDomDocument layoutDocument;
       if (layoutDocument.setContent(&layoutFile))
       {
-        QString label = layoutDocument.documentElement().attribute("name");
+        QString desktop = layoutDocument.documentElement().attribute("desktop");
+        KConfig c(KStandardDirs::locate("appdata", "pics/" + desktop));
+        KConfigGroup cg = c.group("KTuberlingTheme");
         QString gameboard = layoutDocument.documentElement().attribute("gameboard");
-        m_topLevel->registerGameboard(label, theme);
+        m_topLevel->registerGameboard(cg.readEntry("Name"), theme);
       }
     }
   }

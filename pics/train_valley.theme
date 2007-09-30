@@ -1,4 +1,4 @@
-<playground gameboard="train_valley.svgz" name="Train Valley">
+<playground gameboard="train_valley.svgz" desktop="train_valley.desktop">
        <object name="accident_car" />
        <object name="barrier1" />
        <object name="barrier2" />

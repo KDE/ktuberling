@@ -1,11 +1,6 @@
 /* -------------------------------------------------------------
    KDE Tuberling
-   List of strings in layout.xml that are translatable
-   mailto:ebischoff@nerim.net
  ------------------------------------------------------------- */
-
-i18n("Potato &Guy");
-i18n("Potato &Guy 2");
 
 i18nc("NOTE TO THE TRANSLATORS",
 "The translators have the opportunity to translate the\n"

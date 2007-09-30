@@ -7,8 +7,9 @@ To create a new KTuberling theme you have to:
    - Name the place where items can dragged "background"
    - Name each of the draggable items with an unique name
 
+
  * Create a .theme file, it has to follow this schema
-  <playground gameboard="yourSVGFile" name="theThemeName">
+  <playground gameboard="yourSVGFile" name="theDesktopFile">
     <object name="itemName" sound="soundName" scale="someValue" />
     ...
     ...
@@ -16,17 +17,25 @@ To create a new KTuberling theme you have to:
   </playground>
 
    - yourSVGFile is the name of the svg file that has the drawing
-   - theThemeName is the name that identifies the theme, will be shown in
-     the Playground menu
+   - theDesktopFile is the name of the desktop file that has the name of the theme
    - For each object you need a <object> entry. itemName is the unique
      name you used on the SVG file, soundName is the sound name that will
      be played when dragging it, see soundthemes.HOWTO for more information.
-     scale is optional and someValue is the scale factor that will be used
+   - scale is optional and someValue is the scale factor that will be used
      when drawing this object outside the warehouse, if not specified is 1.
 
+
+ * Create a .desktop file, it has to follow this schema
+  [KTuberlingTheme]
+  Name=themeName
+
+   - themeName is the name that identifies the theme, will be shown in
+     the Playground menu
+
+
  * If you are adding the theme to KTuberling SVN:
-   - Add .svg and .theme files to FILES section of the CMakeLists.txt in the pics/ directory
-   - Add a dummy i18n(theThemeName) in layout.i18n so the theme name can be translated
+   - Add .svg .theme .desktop files to FILES section of the CMakeLists.txt in the pics/ directory
+
 
  * If you want to install it for yourself:
-   - Place .svg and .theme files in `kde4-config --prefix`/share/apps/ktuberling/pics
+   - Place .svg .theme .desktop files in `kde4-config --prefix`/share/apps/ktuberling/pics
