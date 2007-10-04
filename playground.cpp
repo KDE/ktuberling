@@ -15,6 +15,8 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kprinter.h>
+#include <kconfiggroup.h>
+#include <kdebug.h>
 
 #include <QFile>
 #include <QFileInfo>
