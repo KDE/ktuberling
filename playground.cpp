@@ -97,14 +97,14 @@ QPixmap PlayGround::getPicture()
   return result;
 }
 
-QAction *PlayGround::getRedoAction()
+QAction *PlayGround::createRedoAction(KActionCollection *ac)
 {
-  return m_undoStack.createRedoAction(this);
+  return m_undoStack.createRedoAction(ac);
 }
 
-QAction *PlayGround::getUndoAction()
+QAction *PlayGround::createUndoAction(KActionCollection *ac)
 {
-  return m_undoStack.createUndoAction(this);
+  return m_undoStack.createUndoAction(ac);
 }
 
 // Mouse pressed event
@@ -234,6 +234,13 @@ void PlayGround::placeNewItem(const QPoint &pos)
 void PlayGround::resizeEvent(QResizeEvent *event)
 {
   adjustItems(event->size(), event->oldSize(), true);
+}
+
+void PlayGround::paintEvent(QPaintEvent *e)
+{
+QTime t = QTime::currentTime();
+QGraphicsView::paintEvent(e);
+qDebug() << t.msecsTo(QTime::currentTime());
 }
 
 void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool changePos)

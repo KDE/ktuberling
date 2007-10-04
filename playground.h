@@ -15,11 +15,11 @@
 
 #include <QGraphicsView>
 #include <QMap>
-#include <QUndoStack>
 
 #include <KSvgRenderer>
+#include <KUndoStack>
 
-
+class KActionCollection;
 class KPrinter;
 
 class Action;
@@ -42,8 +42,8 @@ public:
   bool printPicture(KPrinter &printer);
   QPixmap getPicture();
 
-  QAction *getRedoAction();
-  QAction *getUndoAction();
+  QAction *createRedoAction(KActionCollection *ac);
+  QAction *createUndoAction(KActionCollection *ac);
 
   void registerPlayGrounds();
   bool loadPlayGround(const QString &gameboardFile);
@@ -54,6 +54,7 @@ protected:
 
   void mousePressEvent(QMouseEvent *event);
   void resizeEvent(QResizeEvent *event);
+  void paintEvent(QPaintEvent *e);
 
 private:
   QRectF backgroundRect() const;
@@ -68,7 +69,7 @@ private:
   QMap<QString, QString> m_objectsNameSound;	// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
 
-  QUndoStack m_undoStack;						// the command stack
+  KUndoStack m_undoStack;						// the command stack
   TopLevel *m_topLevel;							// Top-level window
 
   QString m_pickedElement;						// the SVG element the cursor is

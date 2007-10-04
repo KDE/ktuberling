@@ -235,15 +235,8 @@ void TopLevel::setupKAction()
   action = KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
   actionCollection()->addAction(action->objectName(), action);
 
-  QAction *redoAction = playGround->getRedoAction();
-  redoAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Redo).primary());
-  redoAction->setIcon( KIcon("edit-redo") );
-  actionCollection()->addAction("edit_redo", redoAction);
-
-  QAction *undoAction = playGround->getUndoAction();
-  undoAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Undo).primary());
-  undoAction->setIcon( KIcon("edit-undo") );
-  actionCollection()->addAction("edit_undo", undoAction);
+  playGround->createRedoAction(actionCollection());
+  playGround->createUndoAction(actionCollection());
 
   //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
