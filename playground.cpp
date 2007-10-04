@@ -236,13 +236,6 @@ void PlayGround::resizeEvent(QResizeEvent *event)
   adjustItems(event->size(), event->oldSize(), true);
 }
 
-void PlayGround::paintEvent(QPaintEvent *e)
-{
-QTime t = QTime::currentTime();
-QGraphicsView::paintEvent(e);
-qDebug() << t.msecsTo(QTime::currentTime());
-}
-
 void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool changePos)
 {
   if (!m_scene) return;

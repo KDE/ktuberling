@@ -54,7 +54,6 @@ protected:
 
   void mousePressEvent(QMouseEvent *event);
   void resizeEvent(QResizeEvent *event);
-  void paintEvent(QPaintEvent *e);
 
 private:
   QRectF backgroundRect() const;
