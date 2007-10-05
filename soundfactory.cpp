@@ -17,6 +17,7 @@
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
+#include <kdebug.h>
 
 #include <Phonon/MediaObject>
 
