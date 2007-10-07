@@ -86,7 +86,7 @@ suitable for adults who have remained young at heart.
 <para>
 It is a <quote>potato editor</quote>. That means that you can drag and drop
 eyes, mouths, mustache, and other parts of face and goodies onto a potato-like
-guy. Similarly, you have a penguin and an aquarium on which you can drop other stuff.
+guy. Similarly, you have other playgrounds with different themes.
 </para>
 
 <para>
@@ -106,9 +106,7 @@ include them in the museum if he gets some spare time.
 &ktuberling; can also <quote>speak</quote>. It will spell out the name of
 the objects you drag and drop. It will <quote>speak</quote> in a language
 that you can chose. You can even use it to learn a bit of vocabulary
-in foreign languages. Currently, &ktuberling; can <quote>speak</quote>
-Danish, German, English, Spanish, French, Italian, Dutch, Portuguese, Romanian,
-Serbian, Slovak, Slovenian and Swedish.
+in foreign languages.
 </para>
 </chapter>
 
@@ -123,10 +121,10 @@ There are two areas in the main window:
 </para>
 
 <itemizedlist>
-<listitem><para><quote>Playground</quote> area, on the left side.
+<listitem><para><quote>Playground</quote> area.
 </para></listitem>
 <listitem><para>
-<quote>Objects</quote> area, on the right side, where you select objects to
+<quote>Objects</quote> area, where you select objects to
 place on your playground.
 </para></listitem>
 </itemizedlist>
@@ -149,9 +147,8 @@ place on your playground.
 
 <para>
 To drag an object, move the mouse pointer to the <quote>objects</quote>
-area on the right. Click on the object you want to drag, but do not release
-the mouse button until you have moved the mouse pointer to the location in
-the <quote>playground</quote> area where you want to drop the object.
+area and Click on it. Then move it to the <quote>playground</quote> area 
+and click again.
 </para>
 </sect2>
 
@@ -159,8 +156,8 @@ the <quote>playground</quote> area where you want to drop the object.
 <title>Moving an Object</title>
 <para>
 Once dropped in the <quote>playground</quote> area, an object can be moved.
-Just click on the object to select it for further drag and drop. When you
-click on it, it goes on top of other objects that were partially hiding it.
+Just click on the object to select it, move it to the new place and click again
+to drop it. When you drop it, it goes on top of other objects that were partially hiding it.
 This trick is useful for getting the glasses and eyes placed correctly.
 </para>
 </sect2>
@@ -298,11 +295,11 @@ position of objects are saved.
 </entry>
 <entry>
   <link linkend="game-print"><menuchoice>
-  <guimenu>Game</guimenu> <guimenuitem>Print</guimenuitem></menuchoice>
+  <guimenu>Game</guimenu> <guimenuitem>Print...</guimenuitem></menuchoice>
   </link>
   </entry>
 <entry>
-Prints your picture (&PostScript; format).
+Prints your picture.
 </entry>
 </row>
 
@@ -381,16 +378,6 @@ Help
 <sect1 id="the-menu-items">
 <title>The Menu Items</title>
 
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-raw.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.raw.eps"/>
-</imageobject>
-<textobject><phrase>Menu Bar</phrase></textobject>
-</mediaobject>
-
 <sect2>
 <title>The <guimenu>Game</guimenu> Menu</title>
 <mediaobject>
@@ -448,8 +435,7 @@ saved to a small file where only the position of objects are saved.
 <guimenuitem>Save as Picture...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Creates a graphics file</action>
-containing a picture of your tuberling.  Available file formats
-are XPM, JPEG, PNG and BMP.
+containing a picture of your tuberling.
 </para></listitem>
 </varlistentry>
 
@@ -461,8 +447,7 @@ are XPM, JPEG, PNG and BMP.
 <guimenu>Game</guimenu>
 <guimenuitem>Print...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Print</action> your tuberling picture using
- &PostScript; format.
+<listitem><para><action>Prints</action> your tuberling picture.
 </para></listitem>
 </varlistentry>
 
@@ -543,66 +528,33 @@ clipboard.</para></listitem>
 <sect2>
 <title>The <guimenu>Playground</guimenu> Menu</title>
 
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-playground.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.playground.eps"/>
-</imageobject>
-<textobject><phrase><guimenu>Playground</guimenu> Menu</phrase></textobject>
-</mediaobject>
-
 <variablelist>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Playground</guimenu>
-<guimenuitem>Potato Guy</guimenuitem>
+<guimenuitem>Playground Name</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Switches to potato playground</action>.
-&ktuberling; remembers the last chosen playground the next
-time it starts up.</para></listitem>
+<listitem><para><action>Switches to the playground</action>.
+</para></listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Playground</guimenu>
-<guimenuitem>Penguin</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Switches to penguin playground</action>.
-&ktuberling; remembers the last chosen playground the next
-time it starts up.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Playground</guimenu>
-<guimenuitem>Aquarium</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Switches to aquarium playground</action>.
-&ktuberling; remembers the last chosen playground the next
-time it starts up.</para></listitem>
-</varlistentry>
 </variablelist>
+
+<para>
+It will contain the playgrounds installed in your system.
+</para>
+<para>
+&ktuberling; remembers the last chosen playground the next time it starts up.
+</para>
 </sect2>
 
 <sect2>
 <title>The <guimenu>Speech</guimenu> Menu</title>
 
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-speech.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.speech.eps"/>
-</imageobject>
-<textobject><phrase><guimenu>Speech</guimenu> Menu</phrase></textobject>
-</mediaobject>
-
 <para>
-Please note that you need to have kdemultimedia installed
-and <command>&artsd;</command> running to be able to hear sounds.
+Please note that you need to have <command>&phonon;</command> installed
+and properly configured to be able to hear sounds.
 </para>
 
 <variablelist>
@@ -612,45 +564,24 @@ and <command>&artsd;</command> running to be able to hear sounds.
 <guimenu>Speech</guimenu>
 <guimenuitem>No Sound</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Toggles sound off</action>. &ktuberling;
-remembers of this option the next time it starts up.</para></listitem>
+<listitem><para><action>Toggles sound off</action>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Speech</guimenu>
-<guimenuitem>Danish</guimenuitem>
+<guimenuitem>Language Name</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Toggles sound on and speaks Danish</action>.
-If Danish sounds are not installed then this option is grayed out. &ktuberling;
-remembers of this option the next time it starts up.</para></listitem>
+<listitem><para><action>Toggles sound on and speaks the selected language</action>.
+</para></listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Speech</guimenu>
-<guimenuitem>German</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles sound on and speaks German</action>.
-If German sounds are not installed then this option is grayed out. &ktuberling;
-remembers of this option the next time it starts up.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Speech</guimenu>
-<guimenuitem>English</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles sound on and speaks English</action>.
-If English sounds are not installed then this option is grayed out. &ktuberling;
-remembers of this option the next time it starts up.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term>etc...</term>
-<listitem><para>Same for the other languages.</para></listitem>
-</varlistentry>
 </variablelist>
+
+<para>
+&ktuberling; remembers of this option the next time it starts up.
+</para>
+
 </sect2>
 
 <sect2>
@@ -670,6 +601,15 @@ remembers of this option the next time it starts up.</para></listitem>
 <guimenuitem>Show/Hide Toolbar</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggle the Toolbar display</action> on and off.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Full Screen Mode</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles the Full Screen mode</action> on and off.
 </para></listitem>
 </varlistentry>
 
@@ -737,22 +677,6 @@ advice and help</para>
 </listitem>
 
 <listitem>
-<para>Agnieszka Czajkowska <email>agnieszka@imagegalaxy.de</email> - Penguin graphics</para>
-</listitem>
-
-<listitem>
-<para>Bas Willems <email>next@euronet.nl</email> - Graphics reworks and aquarium theme</para>
-</listitem>
-
-<listitem>
-<para>Roger Larsson <email>roger.larsson@norran.net</email> - Sounds tuning</para>
-</listitem>
-
-<listitem>
-<para>Dolores Almansa <email>dolores.almansa@corazondemaria.org</email> - Educative graphics for COR-EDUX initiative</para>
-</listitem>
-
-<listitem>
 <para>Peter Silva <email>peter.silva@videotron.ca</email> - Proofreading of
 the documentation</para>
 </listitem>
@@ -763,49 +687,11 @@ documentation</para>
 </listitem>
 </itemizedlist> 
 
-<para>This game is dedicated to my little daughter Sunniva Bischoff</para>
-
-<para>Thanks to Apple Computer and to the &LinuxPPC; project for having made
-ports of &Linux; to the &Mac;.  &ktuberling; would never have existed without
-that!</para>
-
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
 &underGPL;
 
 </chapter>
-
-
-<appendix id="installation">
-<title>Installation</title>
-
-<sect1 id="how-to-obtain-ktuberling">
-<title>How to obtain <application>ktuberling</application></title>
-
-&install.intro.documentation;
-
-</sect1>
-
-<sect1 id="requirements">
-<title>Requirements</title>
-
-<para>
-In order to successfully compile &ktuberling;, you need &kde; 3.5.
-All required libraries as well as &ktuberling; itself can be found on
-&kde-ftp;.</para>
-
-<para>
-To be able to hear the sounds, you need to have kdemultimedia installed.
-</para>
-</sect1>
-
-<sect1 id="compilation-and-installation">
-<title>Compilation and Installation</title>
-
-&install.compile.documentation;
-
-</sect1>
-</appendix>
 
 </book>
