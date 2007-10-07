@@ -55,29 +55,33 @@ To create a new KTuberling playground you have to:
 
 <listitem>
     <para>Create a .theme file, it has to follow this schema:</para>
-    <para>&lt;playground gameboard="yourSVGFile" name="theDesktopFile"&gt;</para>
-    <para>&lt;object name="itemName" sound="soundName" scale="someValue" /&gt;</para>
-    <para>...</para>
-    <para>...</para>
-    <para>...</para>
-    <para>&lt;/playground gameboard="yourSVGFile" name="theDesktopFile"&gt;</para>
+    <programlisting>
+    &lt;playground gameboard="<replaceable>yourSVGFile</replaceable>" name="<replaceable>theDesktopFile</replaceable>"&gt;
+    &lt;object name="<replaceable>itemName</replaceable>" sound="<replaceable>soundName</replaceable>" scale="<replaceable>someValue</replaceable>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+    </programlisting>
     <itemizedlist>
-        <listitem><para>yourSVGFile is the name of the svg file that has the drawing.</para></listitem>
-        <listitem><para>theDesktopFile is the name of the desktop file that has the name of the theme.</para></listitem>
-        <listitem><para>For each object you need a &lt;object&gt; entry. itemName is the unique
-                        name you used on the SVG file, soundName is the sound name that will
+        <listitem><para><replaceable>yourSVGFile</replaceable> is the name of the svg file that has the drawing.</para></listitem>
+        <listitem><para><replaceable>theDesktopFile</replaceable> is the name of the desktop file that has the name of the theme.</para></listitem>
+        <listitem><para>For each object you need a &lt;object&gt; entry. <replaceable>itemName</replaceable> is the unique
+                        name you used on the SVG file, <replaceable>soundName</replaceable> is the sound name that will
                         be played when dragging it, see sound themes howto for more information.</para></listitem>
-        <listitem><para>scale is optional and someValue is the scale factor that will be used
+        <listitem><para>scale is optional and <replaceable>someValue</replaceable> is the scale factor that will be used
                         when drawing this object outside the warehouse, if not specified is 1.</para></listitem>
     </itemizedlist>
 </listitem>
 
 <listitem>
     <para>Create a .desktop file, it has to follow this schema</para>
-    <para>[KTuberlingTheme]</para>
-    <para>Name=themeName</para>
+    <programlisting>
+    [KTuberlingTheme]
+    Name=<replaceable>themeName</replaceable>
+    </programlisting>
     <itemizedlist>
-        <listitem><para>themeName is the name that identifies the theme, will be shown in the Playground menu.</para></listitem>
+        <listitem><para><replaceable>themeName</replaceable> is the name that identifies the theme, will be shown in the Playground menu.</para></listitem>
     </itemizedlist>
 </listitem>
 
@@ -113,16 +117,18 @@ To create a new KTuberling sound theme you have to:
 
 <listitem>
 <para>Create a .soundtheme file, it has to follow this schema:</para>
-<para>&lt;language code="yourLanguageTwoLetterCode"&gt;</para>
-<para>&lt;sound name="soundName" file="relativePath" /&gt;</para>
-<para>...</para>
-<para>...</para>
-<para>...</para>
-<para>&lt;/language&gt;</para>
+<programlisting>
+&lt;language code="<replaceable>yourLanguageTwoLetterCode</replaceable>"&gt;
+&lt;sound name="<replaceable>soundName</replaceable>" file="<replaceable>relativePath</replaceable>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
 <itemizedlist>
-<listitem><para>yourLanguageTwoLetterCode is your language two letter code, for example gl for Galician.</para></listitem>
-<listitem><para>For each sound a &lt;sound&gt; entry. soundName should match with the soundName specified
-     in the playground them (see themes.HOWTO). relativePath should be the relative path you
+<listitem><para><replaceable>yourLanguageTwoLetterCode</replaceable> is your language two letter code, for example gl for Galician.</para></listitem>
+<listitem><para>For each sound a &lt;sound&gt; entry. <replaceable>soundName</replaceable> should match with the soundName specified
+     in the playground them (see themes HOWTO). <replaceable>relativePath</replaceable> should be the relative path you
      are going to install the file with this sound to, typically it will be 
      someUniquePath/soundName.format (someUniquePath can be your language two letter code for
      example).</para></listitem>
@@ -134,8 +140,10 @@ To create a new KTuberling sound theme you have to:
 <listitem><para>Add the sound files and the .soundtheme files to the data/kdegames/ktuberling directory
      of your language translations.</para></listitem>
 <listitem><para>On that very same dir you need a CMakeLists.txt describing how to install the files, typically it will be.</para>
-<para>install( FILES yourSoundFile1 yourSoundFile2 ... yourSoundFileN DESTINATION  ${DATA_INSTALL_DIR}/ktuberling/sounds/someUniquePath )</para>
-<para>install( FILES yourSoundThemeFile DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )</para>
+<programlisting>
+install( FILES <replaceable>yourSoundFile1</replaceable> <replaceable>yourSoundFile2</replaceable> ... <replaceable>yourSoundFileN</replaceable> DESTINATION  ${DATA_INSTALL_DIR}/ktuberling/sounds/<replaceable>someUniquePath</replaceable> )
+install( FILES <replaceable>yourSoundThemeFile</replaceable> DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+</programlisting>
 </listitem>
 </itemizedlist>
 </listitem>
