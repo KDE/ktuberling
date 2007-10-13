@@ -22,13 +22,14 @@
 #include <kstandardgameaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
-#include <kprinter.h>
 #include <kimageio.h>
 #include <kmimetype.h>
 #include <kconfiggroup.h>
 
 #include <QClipboard>
 #include <QDomDocument>
+#include <QPrintDialog>
+#include <QPrinter>
 
 #include "toplevel.moc"
 #include "playground.h"
@@ -365,10 +366,12 @@ void TopLevel::filePicture()
 // Save gameboard as picture
 void TopLevel::filePrint()
 {
-  KPrinter printer;
+  QPrinter printer;
   bool ok;
-
-  ok = printer.setup(this, i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
+  
+  QPrintDialog printDialog(&printer, this);
+  printDialog.setWindowTitle(i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
+  ok = printDialog.exec();
   if (!ok) return;
   playGround->repaint();
   if (!playGround->printPicture(printer))

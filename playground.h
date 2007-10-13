@@ -20,7 +20,6 @@
 #include <KUndoStack>
 
 class KActionCollection;
-class KPrinter;
 
 class Action;
 class ToDraw;
@@ -39,7 +38,7 @@ public:
   void reset();
   LoadError loadFrom(const QString &name);
   bool saveAs(const QString &name);
-  bool printPicture(KPrinter &printer);
+  bool printPicture(QPrinter &printer);
   QPixmap getPicture();
 
   QAction *createRedoAction(KActionCollection *ac);

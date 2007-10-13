@@ -14,18 +14,18 @@
 
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kprinter.h>
 #include <kconfiggroup.h>
 #include <kdebug.h>
 
+#include <QCursor>
+#include <QDataStream>
+#include <QDomDocument>
 #include <QFile>
 #include <QFileInfo>
-#include <QDataStream>
-#include <QPainter>
-#include <QCursor>
-#include <QDomDocument>
 #include <QGraphicsSvgItem>
 #include <QMouseEvent>
+#include <QPainter>
+#include <QPrinter>
 
 #include "action.h"
 #include "toplevel.h"
@@ -79,7 +79,7 @@ bool PlayGround::saveAs(const QString & name)
 }
 
 // Print gameboard's picture
-bool PlayGround::printPicture(KPrinter &printer)
+bool PlayGround::printPicture(QPrinter &printer)
 {
   QPainter artist;
   QPixmap picture(getPicture());
