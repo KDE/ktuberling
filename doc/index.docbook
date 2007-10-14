@@ -187,56 +187,7 @@ area, drag it back from the <quote>playground</quote> area to the
 </sect1>
 </chapter>
 
-<chapter id="faq">
-<title>Frequently Asked Questions</title>
 
-<qandaset>
-<qandaentry>
-<question><para>Who made this application?</para></question>
- <answer><para>The kdegames team. You can find their website here.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>How do I start a new game? </para></question>
- <answer><para>&ktuberling; starts right into the 'game mode' by default. To restart the game you may use <guibutton>New</guibutton> button on the toolbar. Alternatively refer to <link linkend="game-new">this</link> section of 'Interface Overview' for details.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>How do I pause the game? </para></question>
- <answer><para>This game does not have a 'Pause' feature as it does not require one.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>Yes you can. Refer to <link linkend="theme_change">this</link> section of 'Interface Overview' for details.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I have made a mistake. Can I undo? </para></question>
- <answer><para>Yes. To undo you can click <guibutton>Undo</guibutton> button on the toolbar. Alternatively refer to <link linkend="edit-undo">this</link> section of 'Interface Overview' for details.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>Can I use keyboard? </para></question>
- <answer><para>No. This game can not be played using keyboard.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I can't figure out what to do here! Are there hints? </para></question>
- <answer><para>No. This game does not have a 'Hint' feature.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
-  <answer><para>Yes. To save the current session click <guibutton>Save</guibutton> button on the toolbar. Alternatively refer to <link linkend="game-save">this</link> section of 'Interface Overview' for details.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I've made a great picture and I want to share it with my friends. Can I save it as an image?</para></question>
-  <answer><para>Yes. To save the current session as an image refer to <link linkend="game-save-as-picture">this</link> section of 'Interface Overview'.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>I want to change the toolbar layout. What do I do?</para></question>
- <answer><para>There a few ways to change the toolbar layout.  Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
-</qandaentry>
-</qandaset>
-</chapter>
 
 <chapter id="interface">
 <title>Interface Overview </title>
@@ -719,6 +670,57 @@ keyboard shortcuts used by &ktuberling;.
 
 </sect2>
 </sect1>
+</chapter>
+
+<chapter id="faq">
+<title>Frequently Asked Questions</title>
+
+<qandaset>
+<qandaentry>
+<question><para>Who made this application?</para></question>
+ <answer><para>The kdegames team. You can find their website here.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I start a new game? </para></question>
+ <answer><para>&ktuberling; starts right into the 'game mode' by default. To restart the game you may use <guibutton>New</guibutton> button on the toolbar. Alternatively refer to <link linkend="game-new">this</link> section of 'Interface Overview' for details.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I pause the game? </para></question>
+ <answer><para>This game does not have a 'Pause' feature as it does not require one.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the way this game looks. Can I? </para></question>
+ <answer><para>Yes you can. Refer to <link linkend="theme_change">this</link> section of 'Interface Overview' for details.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have made a mistake. Can I undo? </para></question>
+ <answer><para>Yes. To undo you can click <guibutton>Undo</guibutton> button on the toolbar. Alternatively refer to <link linkend="edit-undo">this</link> section of 'Interface Overview' for details.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Can I use keyboard? </para></question>
+ <answer><para>No. This game can not be played using keyboard.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I can't figure out what to do here! Are there hints? </para></question>
+ <answer><para>No. This game does not have a 'Hint' feature.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
+  <answer><para>Yes. To save the current session click <guibutton>Save</guibutton> button on the toolbar. Alternatively refer to <link linkend="game-save">this</link> section of 'Interface Overview' for details.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I've made a great picture and I want to share it with my friends. Can I save it as an image?</para></question>
+  <answer><para>Yes. To save the current session as an image refer to <link linkend="game-save-as-picture">this</link> section of 'Interface Overview'.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the game configuration. Where do I go? </para></question>
+ <answer><para>Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the toolbar layout. What do I do?</para></question>
+ <answer><para>There a few ways to change the toolbar layout.  Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
+</qandaentry>
+</qandaset>
 </chapter>
 
 &technical.reference;
