@@ -19,7 +19,7 @@
 </keywordset>
 </chapterinfo>
 
-<title>Technical reference</title>
+<title>Technical References</title>
 
 <para>
 &ktuberling; offers a gentle and rewarding introduction to &kde; customization
@@ -36,7 +36,7 @@ inclusion in future releases.
 </para>
 
 <sect1 id="for-artists">
-<title>For artists</title>
+<title>For Artists</title>
 
 <para>
 To create a new KTuberling playground you have to:
@@ -100,7 +100,7 @@ To create a new KTuberling playground you have to:
 </sect1>
 
 <sect1 id="for-translators">
-<title>Translation</title>
+<title>For Translators</title>
 
 <para>
 Besides the usual <literal role="extension">.po</literal> files mechanism for
@@ -168,7 +168,7 @@ in <ulink url="http://i18n.kde.org/translation-howto/index.html">The
 
 <sect1 id="for-programmers">
 
-<title>For programmers</title>
+<title>For Programmers</title>
 <para>&ktuberling; isn't really difficult to extend for programmers.</para>
 
 <sect2 id="classes">
