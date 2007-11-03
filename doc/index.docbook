@@ -13,20 +13,18 @@
 <authorgroup>
 
 <author>
-<firstname>Éric</firstname>
-<surname>Bischoff</surname>
-<affiliation>
-<address>&Eric.Bischoff.mail;</address>
-</affiliation></author>
+<firstname>Éric</firstname><surname>Bischoff</surname>
+<affiliation><address>&Eric.Bischoff.mail;</address></affiliation>
+</author>
 
 <author>
-<firstname>Paul</firstname>
-<othername>E.</othername>
-<surname>Ahlquist</surname>
-<lineage>Jr.</lineage>
-<affiliation>
-<address>&Paul.E.Ahlquist.Jr.mail;</address>
-</affiliation>
+<firstname>Paul</firstname><othername>E.</othername><surname>Ahlquist</surname><lineage>Jr.</lineage>
+<affiliation><address>&Paul.E.Ahlquist.Jr.mail;</address></affiliation>
+</author>
+
+<author>
+<firstname>Eugene</firstname><surname>Trounev</surname>
+<affiliation><address><email>eugene.trounev@gmail.com</email></address></affiliation>
 </author>
 
 <othercredit role="reviewer">
@@ -571,10 +569,10 @@ It will contain the playgrounds installed in your system.
 <sect2>
 <title>The <guimenu>Speech</guimenu> Menu</title>
 
-<para>
+<!--<para>
 Please note that you need to have <command>&phonon;</command> installed
 and properly configured to be able to hear sounds.
-</para>
+</para>-->
 
 <variablelist>
 
