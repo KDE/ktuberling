@@ -6,7 +6,13 @@ To create a new KTuberling theme you have to:
  * Draw the theme in a SVG file, there you have to
    - Name the place where items can dragged "background"
    - Name each of the draggable items with an unique name
-
+   - NOTE: Due to a limitation in SVG handling code of KTuberling
+     objects need to have all the transformation on themselves
+     not on parent layers, to check that in inkscape you can use 
+     the XML Editor in the Edit menu and check that your main
+     layer doesn't have the transform attribute. If it has, you
+     must remove it and apply the same transform to all the objects
+     separately (there's a checkbox for that in the transform dialog)
 
  * Create a .theme file, it has to follow this schema
   <playground gameboard="yourSVGFile" name="theDesktopFile">
