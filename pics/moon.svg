@@ -2385,7 +2385,7 @@
         <dc:date>Nov 11, 2007</dc:date>
         <dc:creator>
           <cc:Agent>
-            <dc:title>Michal Bartecki</dc:title>
+            <dc:title>Michał Bartecki</dc:title>
           </cc:Agent>
         </dc:creator>
         <dc:publisher>
@@ -2395,7 +2395,7 @@
         </dc:publisher>
         <dc:rights>
           <cc:Agent>
-            <dc:title>Michal Bartecki</dc:title>
+            <dc:title>Michał Bartecki</dc:title>
           </cc:Agent>
         </dc:rights>
         <dc:subject>
@@ -2405,10 +2405,10 @@
           </rdf:Bag>
         </dc:subject>
         <cc:license
-           rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/" />
+           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
       </cc:Work>
       <cc:License
-         rdf:about="http://creativecommons.org/licenses/by-sa/2.5/">
+         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
         <cc:permits
            rdf:resource="http://web.resource.org/cc/Reproduction" />
         <cc:permits
