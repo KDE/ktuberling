@@ -1,0 +1,33 @@
+ <playground gameboard="moon.svg" desktop="moon.desktop">
+
+	<object name="astro1" />
+	<object name="astro2" />
+	<object name="astro3" />
+	<object name="astro4" />
+	<object name="astro5" />
+	<object name="astro6" />
+
+	<object name="build1" />
+	<object name="build2" />
+	<object name="build3" />
+	<object name="build4" />
+
+	<object name="live1" />
+	<object name="live2" />
+	<object name="live3" />
+	<object name="live4" />
+	<object name="live5" />
+	<object name="live6" />
+	<object name="live7" />
+	<object name="live8" />
+
+	<object name="ship1" />
+	<object name="ship2" />
+	<object name="ship3" />
+	<object name="ship4" />
+	<object name="ship5" />
+	<object name="ship6" />
+	<object name="ship7" />
+	<object name="ship8" />
+
+</playground>
