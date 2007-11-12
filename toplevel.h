@@ -42,6 +42,9 @@ protected:
   void writeOptions();
   void setupKAction();
 
+protected slots:
+  void saveNewToolbarConfig();
+
 private slots:
 
   void fileNew();

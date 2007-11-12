@@ -250,6 +250,15 @@ void TopLevel::setupKAction()
   setupGUI(ToolBar | Keys | Save | Create);
 }
 
+void TopLevel::saveNewToolbarConfig()
+{
+  // this destroys our actions lists ...
+  KXmlGuiWindow::saveNewToolbarConfig();
+  // ... so plug them again
+  plugActionList( "playgroundList", playgroundsGroup->actions() );
+  plugActionList( "languagesList", languagesGroup->actions() );
+}
+
 // Reset gameboard
 void TopLevel::fileNew()
 {
