@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+﻿<?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&ktuberling;">
   <!ENTITY package "kdegames">
@@ -184,8 +184,6 @@ area, drag it back from the <quote>playground</quote> area to the
 </sect2>
 </sect1>
 </chapter>
-
-
 
 <chapter id="interface">
 <title>Interface Overview </title>
@@ -676,7 +674,7 @@ keyboard shortcuts used by &ktuberling;.
 <qandaset>
 <qandaentry>
 <question><para>Who made this application?</para></question>
- <answer><para>The kdegames team. You can find their website here.</para></answer>
+ <answer><para>The kdegames team. You can find their website <ulink url="http://games.kde.org">here</ulink>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
