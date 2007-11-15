@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&ktuberling;">
   <!ENTITY package "kdegames">
@@ -37,8 +37,8 @@
 
 </authorgroup>
 
-<date>2006-05-05</date>
-<releaseinfo>0.05.01</releaseinfo>
+<date>2007-11-14</date>
+<releaseinfo>0.5.1</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year><year>2006</year>
@@ -79,7 +79,7 @@
 <para>Gametype: Toy</para>
 <para>Number of possible players: One</para>
 <para>
-Ktuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept. A potato was decorated with various small artifacts to make it look more like a tiny person. Ktubeling however, goes much further in terms of content and adds a surprising variety of different themes.
+&ktuberling; a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept. A potato was decorated with various small artifacts to make it look more like a tiny person. &ktuberling; however, goes much further in terms of content and adds a surprising variety of different themes.
 </para>
 </chapter>
 
@@ -621,6 +621,9 @@ and properly configured to be able to hear sounds.
 
 <varlistentry>
 <term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
+</shortcut>
 <guimenu>Settings</guimenu>
 <guimenuitem>Full Screen Mode</guimenuitem>
 </menuchoice></term>
@@ -694,19 +697,19 @@ keyboard shortcuts used by &ktuberling;.
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>No. This game can not be played using keyboard.</para></answer>
+ <answer><para>No. This game cannot be played using keyboard.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I can't figure out what to do here! Are there hints? </para></question>
+ <question><para>I cannot figure out what to do here! Are there hints? </para></question>
  <answer><para>No. This game does not have a 'Hint' feature.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
-  <answer><para>Yes. To save the current session click <guibutton>Save</guibutton> button on the toolbar. Alternatively refer to <link linkend="game-save">this</link> section of 'Interface Overview' for details.</para></answer>
+ <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
+  <answer><para>Yes. To save the current session click <guibutton>Save</guibutton> button on the toolbar. Alternatively refer to <link linkend="game-save">this</link> of 'Interface Overview' section for details.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I've made a great picture and I want to share it with my friends. Can I save it as an image?</para></question>
-  <answer><para>Yes. To save the current session as an image refer to <link linkend="game-save-as-picture">this</link> section of 'Interface Overview'.</para></answer>
+ <question><para>I have made a great picture and I want to share it with my friends. Can I save it as an image?</para></question>
+  <answer><para>Yes. To save the current session as an image refer to <link linkend="game-save-as-picture">this</link> section of 'Interface Overview' for details.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
