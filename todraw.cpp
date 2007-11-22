@@ -22,7 +22,8 @@ QImage toImage(const QString &element, int width, int height, QSvgRenderer *rend
   QImage img(width, height, QImage::Format_ARGB32_Premultiplied);
   QPainter p2(&img);
   p2.setCompositionMode(QPainter::CompositionMode_Clear);
-  p2.fillRect(0, 0, width, height, QBrush(QColor(255, 255, 255)));
+  p2.setBrush(Qt::SolidPattern);
+  p2.drawRect(0, 0, width, height);
   p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
   renderer->render(&p2, element);
   return img;
