@@ -74,7 +74,7 @@ TopLevel::~TopLevel()
 void TopLevel::registerGameboard(const QString &menuText, const QString &board)
 {
   QList<QAction*> actionList;
-  KToggleAction *t = new KToggleAction(i18n(menuText.toLatin1()), this);
+  KToggleAction *t = new KToggleAction(menuText, this);
   actionCollection()->addAction(board, t);
   t->setData(board);
   connect(t, SIGNAL(toggled(bool)), SLOT(changeGameboard()));
