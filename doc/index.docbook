@@ -402,7 +402,7 @@ Help
 <imageobject>
 <imagedata format="EPS" fileref="menu.game.eps"/>
 </imageobject>
-<textobject><phrase><guimenu>File</guimenu> Menu</phrase></textobject>
+<textobject><phrase><guimenu>Game</guimenu> Menu</phrase></textobject>
 </mediaobject>
 
 <variablelist>
@@ -613,7 +613,7 @@ and properly configured to be able to hear sounds.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Show/Hide Toolbar</guimenuitem>
+<guimenuitem>Show Toolbar</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggle the Toolbar display</action> on and off.
 </para></listitem>
