@@ -61,8 +61,7 @@ bool ToDraw::contains(const QPointF &point) const
 	bool result = QGraphicsSvgItem::contains(point);
 	if (result)
 	{
-		QRectF bounds = renderer()->boundsOnElement(elementId());
-		bounds = transform().mapRect(bounds);
+		QRectF bounds = transform().mapRect(boundingRect());
 		const QImage &img = toImage(elementId(), qRound(bounds.width()), qRound(bounds.height()), renderer());
 		QPointF transformedPoint = transform().map(point);
 		result = qAlpha(img.pixel(transformedPoint.toPoint())) != 0;
