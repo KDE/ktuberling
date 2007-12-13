@@ -56,31 +56,6 @@ void ToDraw::save(QDataStream &stream) const
   stream << zValue();
 }
 
-#include <kdebug.h>
-void ToDraw::paint(QPainter * painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
-	const QRectF &bounds = transform().mapRect(boundingRect());
-	const QRectF &backgroundRect = renderer()->boundsOnElement("background");
-	double xMaxEdge = transform().inverted().map(pos()).x() - backgroundRect.x() + boundingRect().width();
-	double yMaxEdge = transform().inverted().map(pos()).y() - backgroundRect.y() + boundingRect().height();
-
-	QImage img(bounds.width(), bounds.height(), QImage::Format_ARGB32_Premultiplied);
-	QPainter p2(&img);
-	p2.setCompositionMode(QPainter::CompositionMode_Clear);
-	p2.setBrush(Qt::SolidPattern);
-	p2.drawRect(0, 0, bounds.width(), bounds.height());
-	p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
-	renderer()->render(&p2, elementId());
-	painter->setWorldMatrix(QMatrix());
-	double widthCut = 0;
-	double heightCut = 0;
-	double mappedWidthCut, mappedHeightCut;
-	if (xMaxEdge > backgroundRect.width()) widthCut = xMaxEdge - backgroundRect.width();
-	if (yMaxEdge > backgroundRect.height()) heightCut = yMaxEdge - backgroundRect.height();
-	transform().map(widthCut, heightCut, &mappedWidthCut, &mappedHeightCut);
-	painter->drawImage(pos(), img, QRectF(0, 0, bounds.width() - mappedWidthCut, bounds.height() - mappedHeightCut));
-}
-
 bool ToDraw::contains(const QPointF &point) const
 {
 	bool result = QGraphicsSvgItem::contains(point);
