@@ -25,6 +25,8 @@ class Action;
 class ToDraw;
 class TopLevel;
 
+class QGraphicsSvgItem;
+
 class PlayGround : public QGraphicsView
 {
   Q_OBJECT
@@ -56,25 +58,25 @@ protected:
 
 private:
   QRectF backgroundRect() const;
-  bool insideBackground(const QPoint &pos) const;
+  bool insideBackground(const QSizeF &size, const QPoint &pos) const;
   void placeDraggedItem(const QPoint &pos);
   void placeNewItem(const QPoint &pos);
   void adjustItems(const QSize &size, const QSize &oldSize, bool changePos);
 
-  QList<QGraphicsItem*> m_allCreatedItems;		// I need to keep them all so i can adjust positions of removed
-												// items when changing the size of the playground
-  QString m_gameboardFile;						// the file the board
-  QMap<QString, QString> m_objectsNameSound;	// map between element name and sound
+  QList<QGraphicsSvgItem*> m_allCreatedItems;		// I need to keep them all so i can adjust positions of removed
+                                             		// items when changing the size of the playground
+  QString m_gameboardFile;				// the file the board
+  QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
 
-  KUndoStack m_undoStack;						// the command stack
-  TopLevel *m_topLevel;							// Top-level window
+  KUndoStack m_undoStack;				// the command stack
+  TopLevel *m_topLevel;					// Top-level window
 
-  QString m_pickedElement;						// the SVG element the cursor is
-  ToDraw *m_dragItem;							// the item we are dragging
-  QGraphicsScene *m_scene;						// the graphicsScene
-  KSvgRenderer m_SvgRenderer;					// the SVG renderer
-  int m_nextZValue;								// the next Z value to use
+  QString m_pickedElement;				// the SVG element the cursor is
+  ToDraw *m_dragItem;					// the item we are dragging
+  QGraphicsScene *m_scene;				// the graphicsScene
+  KSvgRenderer m_SvgRenderer;				// the SVG renderer
+  int m_nextZValue;					// the next Z value to use
 };
 
 #endif

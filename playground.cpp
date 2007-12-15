@@ -169,9 +169,9 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
   }
 }
 
-bool PlayGround::insideBackground(const QPoint &pos) const
+bool PlayGround::insideBackground(const QSizeF &size, const QPoint &pos) const
 {
-  return backgroundRect().contains(pos);
+  return backgroundRect().intersects(QRectF(pos, size));
 }
 
 QRectF PlayGround::backgroundRect() const
@@ -188,10 +188,11 @@ QRectF PlayGround::backgroundRect() const
 
 void PlayGround::placeDraggedItem(const QPoint &pos)
 {
-  if (insideBackground(pos))
+  const QSizeF &elementSize = m_dragItem->transform().mapRect(m_dragItem->boundingRect()).size();
+  QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
+                 pos.y() - cursor().pixmap().size().height() / 2);
+  if (insideBackground(elementSize, itemPos))
   {
-    QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
-                   pos.y() - cursor().pixmap().size().height() / 2);
     m_scene->addItem(m_dragItem);
     m_undoStack.push(new ActionMove(m_dragItem, itemPos, m_nextZValue, m_scene));
     m_nextZValue++;
@@ -207,23 +208,24 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
 
 void PlayGround::placeNewItem(const QPoint &pos)
 {
-  if (insideBackground(pos))
+  QTransform t;
+  const QSize &defaultSize = m_SvgRenderer.defaultSize();
+  double objectScale = m_objectsNameRatio.value(m_pickedElement);
+  t.scale(objectScale, objectScale);
+  t.scale((double)size().width() / (double)defaultSize.width(),
+          (double)size().height() / (double)defaultSize.height());
+  const QSizeF &elementSize = t.mapRect(m_SvgRenderer.boundsOnElement(m_pickedElement)).size();
+  QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
+                 pos.y() - cursor().pixmap().size().height() / 2);
+  if (insideBackground(elementSize, itemPos))
   {
-    QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
-                   pos.y() - cursor().pixmap().size().height() / 2);
-    ToDraw *item = new ToDraw();
+    ToDraw *item = new ToDraw(m_allCreatedItems.first());
     m_allCreatedItems << item;
     item->setElementId(m_pickedElement);
     item->setPos(itemPos);
     item->setSharedRenderer(&m_SvgRenderer);
     item->setZValue(m_nextZValue);
     m_nextZValue++;
-    QTransform t;
-    QSize defaultSize = m_SvgRenderer.defaultSize();
-    double objectScale = m_objectsNameRatio.value(m_pickedElement);
-    t.scale(objectScale, objectScale);
-    t.scale((double)size().width() / (double)defaultSize.width(),
-          (double)size().height() / (double)defaultSize.height());
     item->setTransform(t);
 
     m_undoStack.push(new ActionAdd(item, m_scene));
@@ -403,7 +405,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
           (double)size().height() / (double)defaultSize.height());
   while ( !in.atEnd() )
   {
-    ToDraw *obj = new ToDraw();
+    ToDraw *obj = new ToDraw(m_allCreatedItems.first());
     if (!obj->load(in))
     {
       delete obj;
