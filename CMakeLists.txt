@@ -16,11 +16,11 @@ set(ktuberling_SRCS
    soundfactory.cpp )
 
 set(ktuberling_icons
-	hi16-app-ktuberling.png
-	hi32-app-ktuberling.png
-	hi48-app-ktuberling.png
-	hi64-app-ktuberling.png
-	hi128-app-ktuberling.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi16-app-ktuberling.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi32-app-ktuberling.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi48-app-ktuberling.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi64-app-ktuberling.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi128-app-ktuberling.png
 )
 kde4_add_win32_app_icon(ktuberling_SRCS ${ktuberling_icons})
 kde4_add_executable(ktuberling ${ktuberling_SRCS})
