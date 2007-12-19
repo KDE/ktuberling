@@ -21,7 +21,6 @@
 #include <QDataStream>
 #include <QDomDocument>
 #include <QFile>
-#include <QFileInfo>
 #include <QGraphicsSvgItem>
 #include <QMouseEvent>
 #include <QPainter>

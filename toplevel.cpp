@@ -27,7 +27,6 @@
 #include <kconfiggroup.h>
 
 #include <QClipboard>
-#include <QDomDocument>
 #include <QPrintDialog>
 #include <QPrinter>
 
