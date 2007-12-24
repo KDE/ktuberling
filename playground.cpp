@@ -95,6 +95,7 @@ QPixmap PlayGround::getPicture()
   QPixmap result(backgroundRect().size().toSize());
   QPainter artist(&result);
   render(&artist, QRectF(), backgroundRect().toRect());
+  artist.end();
   return result;
 }
 

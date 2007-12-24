@@ -26,6 +26,7 @@ QImage toImage(const QString &element, int width, int height, QSvgRenderer *rend
   p2.drawRect(0, 0, width, height);
   p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
   renderer->render(&p2, element);
+  p2.end();
   return img;
 }
 
@@ -85,6 +86,7 @@ void ToDraw::paint(QPainter * painter, const QStyleOptionGraphicsItem *option, Q
 		p2.drawRect(0, 0, qRound(bounds.width()), qRound(bounds.height()));
 		p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
 		renderer()->render(&p2, elementId());
+		p2.end();
 		painter->setWorldMatrix(QMatrix());
 		
 		painter->drawImage(pos() + QPointF(xStart, yStart), img, QRectF(xStart, yStart, bounds.width() - widthCut, bounds.height() - heightCut));
