@@ -15,14 +15,7 @@ set(ktuberling_SRCS
    todraw.cpp 
    soundfactory.cpp )
 
-set(ktuberling_icons
-	${CMAKE_CURRENT_SOURCE_DIR}/hi16-app-ktuberling.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi32-app-ktuberling.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi48-app-ktuberling.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi64-app-ktuberling.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi128-app-ktuberling.png
-)
-kde4_add_win32_app_icon(ktuberling_SRCS ${ktuberling_icons})
+kde4_add_app_icon(ktuberling_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-ktuberling.png")
 kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
 target_link_libraries(ktuberling  ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS} )
@@ -36,6 +29,7 @@ install( FILES ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES ktuberlingui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ktuberling )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
+
 
 
 
