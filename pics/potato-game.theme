@@ -13,9 +13,7 @@
 
     <object name="glasses02" sound="spectacles" />
 
-    <object name="smoke01" />
-    <object name="smoke02" sound="cigar" />
-    <object name="smoke03" />
+    <object name="umbrello" />
 
     <object name="tie01" sound="tie" />
     <object name="tie02" sound="tie" />
