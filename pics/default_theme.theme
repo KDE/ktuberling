@@ -37,8 +37,8 @@
     <object name="ear7" sound="ear" />
     <object name="ear8" sound="ear" />
     
-    <object name="earring1" sound="ear" />
-    <object name="earring2" sound="ear" />
+    <object name="earring1" sound="earring" />
+    <object name="earring2" sound="earring" />
     
     <object name="flowers1" sound="flower" />
 
