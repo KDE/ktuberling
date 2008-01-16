@@ -52,7 +52,7 @@ void PlayGround::reset()
   foreach(QGraphicsItem *item, m_scene->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
-    if (currentObject != NULL) delete currentObject;
+    delete currentObject;
   }
 
   m_undoStack.clear();
