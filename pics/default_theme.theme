@@ -58,21 +58,21 @@
     <object name="jaket2" sound="coat" scale="2" />
     <object name="jaket3" sound="coat" scale="2" />
     <object name="jaket4" sound="coat" scale="2" />
-    <object name="jaket5" sound="coat" scale="2" />
-    <object name="jaket6" sound="coat" scale="2" />
+    <object name="jaket5" scale="2" />
+    <object name="jaket6" scale="2" />
     
     <object name="cane1" sound="stick" scale="2" />
     
-    <object name="shue_1" sound="shue" scale="2" />
-    <object name="shue_2" sound="shue" scale="2" />
-    <object name="shue_3" sound="shue" scale="2" />
-    <object name="shue_4" sound="shue" scale="2" />
-    <object name="shue_5" sound="shue" scale="2" />
-    <object name="shue_6" sound="shue" scale="2" />
-    <object name="shue_7" sound="shue" scale="2" />
-    <object name="shue_8" sound="shue" scale="2" />
-    <object name="shue_9" sound="shue" scale="2" />
-    <object name="shue_10" sound="shue" scale="2" />
+    <object name="shue_1" sound="shoe" scale="2" />
+    <object name="shue_2" sound="shoe" scale="2" />
+    <object name="shue_3" sound="shoe" scale="2" />
+    <object name="shue_4" sound="shoe" scale="2" />
+    <object name="shue_5" sound="shoe" scale="2" />
+    <object name="shue_6" sound="shoe" scale="2" />
+    <object name="shue_7" sound="shoe" scale="2" />
+    <object name="shue_8" sound="shoe" scale="2" />
+    <object name="shue_9" sound="shoe" scale="2" />
+    <object name="shue_10" sound="shoe" scale="2" />
 
     <object name="hair_1" sound="moustache" />
     <object name="hair_2" sound="hair" scale="2" />
