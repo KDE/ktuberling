@@ -13,7 +13,7 @@
 
     <object name="glasses02" sound="spectacles" />
 
-    <object name="umbrello" />
+    <object name="umbrello" sound="umbrella" />
 
     <object name="tie01" sound="tie" />
     <object name="tie02" sound="tie" />
@@ -25,10 +25,10 @@
     <object name="moustache04_1" sound="moustache" />
     <object name="moustache04_2" sound="moustache" />
 
-    <object name="jewel01" />
-    <object name="jewel02" />
-    <object name="jewel03" />
-    <object name="jewel04" />
+    <object name="jewel01" sound="earring" />
+    <object name="jewel02" sound="earring" />
+    <object name="jewel03" sound="earring" />
+    <object name="jewel04" sound="earring" />
 
     <object name="hat01" sound="hat" />
     <object name="hat02" sound="hat" />

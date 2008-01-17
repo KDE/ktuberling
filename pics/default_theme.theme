@@ -58,8 +58,8 @@
     <object name="jaket2" sound="coat" scale="2" />
     <object name="jaket3" sound="coat" scale="2" />
     <object name="jaket4" sound="coat" scale="2" />
-    <object name="jaket5" scale="2" />
-    <object name="jaket6" scale="2" />
+    <object name="jaket5" sound="shorts" scale="2" />
+    <object name="jaket6" sound="skirt" scale="2" />
     
     <object name="cane1" sound="stick" scale="2" />
     

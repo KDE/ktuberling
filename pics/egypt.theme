@@ -1,40 +1,40 @@
  <playground gameboard="egypt.svg" desktop="egypt.desktop">
 
-	<object name="build1" />
-	<object name="build2" />
-	<object name="build3" />
-	<object name="build4" />
-	<object name="build5" />
-	<object name="build6" />
-	<object name="build7" />
-	<object name="build8" />
-	<object name="build9" />
-	<object name="build10" />
-	<object name="build11" />
-	<object name="build12" />
+	<object name="build1" sound="egypt_pyramid" />
+	<object name="build2" sound="egypt_pyramid" />
+	<object name="build3" sound="egypt_column" />
+	<object name="build4" sound="egypt_sphynx" />
+	<object name="build5" sound="egypt_road" />
+	<object name="build6" sound="egypt_road" />
+	<object name="build7" sound="egypt_well" />
+	<object name="build8" sound="egypt_road" />
+	<object name="build9" sound="egypt_road" />
+	<object name="build10" sound="egypt_bridge" />
+	<object name="build11" sound="egypt_arch" />
+	<object name="build12" sound="egypt_arch" />
 
 
-	<object name="live1" />
-	<object name="live2" />
-	<object name="live3" />
-	<object name="live4" />
-	<object name="live5" />
-	<object name="live6" />
-	<object name="live7" />
-	<object name="live8" />
-	<object name="live9" />
-	<object name="live10" />
-	<object name="live11" />
-	<object name="live12" />
+	<object name="live1" sound="egypt_donkey" />
+	<object name="live2" sound="egypt_donkey" />
+	<object name="live3" sound="egypt_cart" />
+	<object name="live4" sound="egypt_cart" />
+	<object name="live5" sound="egypt_girl" />
+	<object name="live6" sound="egypt_boy" />
+	<object name="live7" sound="egypt_camel" />
+	<object name="live8" sound="egypt_man" />
+	<object name="live9" sound="egypt_woman" />
+	<object name="live10" sound="egypt_camel" />
+	<object name="live11" sound="egypt_man" />
+	<object name="live12" sound="egypt_woman" />
 
-	<object name="nat1" />
-	<object name="nat2" />
-	<object name="nat3" />
-	<object name="nat4" />
-	<object name="nat5" />
-	<object name="nat6" />
-	<object name="nat7" />
-	<object name="nat8" />
-	<object name="nat9" />
+	<object name="nat1" sound="egypt_palmtree" />
+	<object name="nat2" sound="egypt_birds" />
+	<object name="nat3" sound="egypt_oasis" />
+	<object name="nat4" sound="egypt_grass" />
+	<object name="nat5" sound="egypt_grass" />
+	<object name="nat6" sound="egypt_oasis" />
+	<object name="nat7" sound="egypt_palmtree" />
+	<object name="nat8" sound="egypt_palmtree" />
+	<object name="nat9" sound="egypt_palmtree" />
 
 </playground>
