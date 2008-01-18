@@ -99,11 +99,12 @@ bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
 
   soundNamesList = languageElement.elementsByTagName("sound");
   sounds = soundNamesList.count();
-  kDebug() << "C";
   if (sounds < 1)
     return false;
 
 
+  namesList.clear();
+  filesList.clear();
   for (int sound = 0; sound < sounds; sound++)
   {
     soundNameElement = (const QDomElement &) soundNamesList.item(sound).toElement();
