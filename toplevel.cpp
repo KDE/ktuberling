@@ -101,8 +101,12 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
 void TopLevel::changeGameboard()
 {
   QAction *action = qobject_cast<QAction*>(sender());
-  QString newGameBoard = action->data().toString();
-  changeGameboard(newGameBoard);
+  // ignore toggling of "nonchecked" actions
+  if (action->isChecked())
+  {
+    QString newGameBoard = action->data().toString();
+    changeGameboard(newGameBoard);
+  }
 }
 
 void TopLevel::changeGameboard(const QString &newGameBoard)
