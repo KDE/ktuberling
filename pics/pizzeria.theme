@@ -1,0 +1,40 @@
+ <playground gameboard="pizzeria.svg" desktop="pizzeria.desktop">
+
+	<object name="pepper1" />
+	<object name="pepper2" />
+	<object name="pepper3" />
+
+	<object name="pineapple" />
+
+	<object name="olive1" />
+	<object name="olive2" />
+	<object name="olive3" />
+	<object name="olive4" />
+
+	<object name="tomato" />
+
+	<object name="cucumber" />
+
+	<object name="salami" />
+
+	<object name="mushroom" />
+
+	<object name="pepperoni1" />
+	<object name="pepperoni2" />
+
+	<object name="oregano1" />
+	<object name="oregano2" />
+
+	<object name="cheese1" />
+	<object name="cheese2" />
+
+	<object name="onion1" />
+	<object name="onion2" />
+
+	<object name="brocolli" />
+
+	<object name="anchois" />
+
+	<object name="bacon" />
+
+</playground>
