@@ -512,7 +512,7 @@ containing a picture of your tuberling.
 <varlistentry id="edit-redo">
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Shift</keycap>
+<keycombo action="simul">&Ctrl;&Shift;
 <keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
