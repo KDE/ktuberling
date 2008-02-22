@@ -139,7 +139,7 @@ There are two areas in the main window:
 place on your playground.
 </para></listitem>
 </itemizedlist>
-<note><title>Note:</title><para>An actual look of the application screen my change depending on a 'playground' selected.</para></note>
+<note><title>Note:</title><para>An actual look of the application screen may change depending on a 'playground' selected.</para></note>
 <screenshot>
 <screeninfo>Main Window of &ktuberling;</screeninfo>
 <mediaobject>
