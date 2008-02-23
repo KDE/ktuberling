@@ -717,7 +717,7 @@ keyboard shortcuts used by &ktuberling;.
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the toolbar layout. What do I do?</para></question>
- <answer><para>There a few ways to change the toolbar layout.  Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
+ <answer><para>Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
 </qandaentry>
 </qandaset>
 </chapter>
