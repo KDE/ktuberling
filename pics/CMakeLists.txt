@@ -11,6 +11,7 @@ install( FILES
 	moon.svg moon.theme moon.desktop
 	egypt.desktop egypt.svg egypt.theme
 	pizzeria.desktop pizzeria.svg pizzeria.theme
+	christmas.desktop christmas.svgz christmas.theme
 DESTINATION  ${DATA_INSTALL_DIR}/ktuberling/pics )
 
 
