@@ -139,7 +139,7 @@ There are two areas in the main window:
 place on your playground.
 </para></listitem>
 </itemizedlist>
-<note><title>Note:</title><para>An actual look of the application screen my change depending on a 'playground' selected.</para></note>
+<note><title>Note:</title><para>An actual look of the application screen may change depending on a 'playground' selected.</para></note>
 <screenshot>
 <screeninfo>Main Window of &ktuberling;</screeninfo>
 <mediaobject>
@@ -512,7 +512,7 @@ containing a picture of your tuberling.
 <varlistentry id="edit-redo">
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Shift</keycap>
+<keycombo action="simul">&Ctrl;&Shift;
 <keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
@@ -717,7 +717,7 @@ keyboard shortcuts used by &ktuberling;.
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the toolbar layout. What do I do?</para></question>
- <answer><para>There a few ways to change the toolbar layout.  Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
+ <answer><para>Refer to <link linkend="settings">this</link> section of 'Interface Overview' for details.</para></answer>
 </qandaentry>
 </qandaset>
 </chapter>
