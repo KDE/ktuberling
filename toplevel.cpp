@@ -22,6 +22,7 @@
 #include <kstandardgameaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
+#include <ktogglefullscreenaction.h>
 #include <kimageio.h>
 #include <kmimetype.h>
 #include <kconfiggroup.h>
@@ -417,6 +418,5 @@ bool TopLevel::isSoundEnabled() const
 
 void TopLevel::toggleFullScreen()
 {
-  if (actionCollection()->action("fullscreen")->isChecked()) showFullScreen();
-  else showNormal();
+  KToggleFullScreenActive::setFullScreen( this, actionCollection()->action("fullscreen")->isChecked());
 }
