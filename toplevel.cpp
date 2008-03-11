@@ -418,5 +418,5 @@ bool TopLevel::isSoundEnabled() const
 
 void TopLevel::toggleFullScreen()
 {
-  KToggleFullScreenActive::setFullScreen( this, actionCollection()->action("fullscreen")->isChecked());
+  KToggleFullScreenAction::setFullScreen( this, actionCollection()->action("fullscreen")->isChecked());
 }
