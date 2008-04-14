@@ -12,10 +12,11 @@
 
 #include "todraw.h"
 
-#include <QPainter>
 #include <QDataStream>
-
+#include <QPainter>
 #include <QSvgRenderer>
+
+#include <kdeversion.h>
 
 QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer)
 {
@@ -89,7 +90,11 @@ void ToDraw::paint(QPainter * painter, const QStyleOptionGraphicsItem *option, Q
 		p2.end();
 		painter->setWorldMatrix(QMatrix());
 		
+#if QT_VERSION < KDE_MAKE_VERSION(4,4,0)
 		painter->drawImage(pos() + QPointF(xStart, yStart), img, QRectF(xStart, yStart, bounds.width() - widthCut, bounds.height() - heightCut));
+#else
+		painter->drawImage(QPointF(xStart, yStart), img, QRectF(xStart, yStart, bounds.width() - widthCut, bounds.height() - heightCut));
+#endif
 	}
 	else QGraphicsSvgItem::paint(painter, option, widget);
 }
