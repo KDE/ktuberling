@@ -21,19 +21,24 @@ QImage toImage(const QString &element, int width, int height, QSvgRenderer *rend
 class ToDraw : public QGraphicsSvgItem
 {
   public:
-    ToDraw(QGraphicsSvgItem *background);
+    ToDraw();
     
     void save(QDataStream &stream) const;
     bool load(QDataStream &stream);
 
-    void paint(QPainter * painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     bool contains(const QPointF &point) const;
 
     enum { Type = UserType + 1 };
     int type() const;
+
+    QRectF boundingRect() const;
+    QRectF unclippedRect() const;
+
+  protected:
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
   
   private:
-    QGraphicsSvgItem *m_background;
+    QRectF clippedRectAt(const QPointF &somePos) const;
 };
 
 #endif

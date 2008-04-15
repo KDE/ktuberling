@@ -58,10 +58,9 @@ protected:
 
 private:
   QRectF backgroundRect() const;
-  bool insideBackground(const QSizeF &size, const QPoint &pos) const;
+  bool insideBackground(const QSizeF &size, const QPointF &pos) const;
   void placeDraggedItem(const QPoint &pos);
   void placeNewItem(const QPoint &pos);
-  void adjustItems(const QSize &size, const QSize &oldSize, bool changePos);
 
   QList<QGraphicsSvgItem*> m_allCreatedItems;		// I need to keep them all so i can adjust positions of removed
                                              		// items when changing the size of the playground

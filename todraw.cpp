@@ -31,8 +31,7 @@ QImage toImage(const QString &element, int width, int height, QSvgRenderer *rend
   return img;
 }
 
-ToDraw::ToDraw(QGraphicsSvgItem *background)
- : m_background(background)
+ToDraw::ToDraw()
 {
 }
 
@@ -63,40 +62,32 @@ void ToDraw::save(QDataStream &stream) const
   stream << zValue();
 }
 
-void ToDraw::paint(QPainter * painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+QRectF ToDraw::unclippedRect() const
 {
-	const QRectF &bounds = transform().mapRect(boundingRect());
-	const QRectF &backgroundBounds = m_background->transform().mapRect(renderer()->boundsOnElement("background"));
-	double xMaxEdge = pos().x() - backgroundBounds.x() + bounds.width();
-	double yMaxEdge = pos().y() - backgroundBounds.y() + bounds.height();
+  return QGraphicsSvgItem::boundingRect();
+}
 
-	double widthCut = 0;
-	double heightCut = 0;
-	double xStart = 0;
-	double yStart = 0;
-	if (xMaxEdge > backgroundBounds.width()) widthCut = xMaxEdge - backgroundBounds.width();
-	if (yMaxEdge > backgroundBounds.height()) heightCut = yMaxEdge - backgroundBounds.height();
-	if (pos().x() < backgroundBounds.left()) xStart = backgroundBounds.left() - pos().x();
-	if (pos().y() < backgroundBounds.top()) yStart = backgroundBounds.top() - pos().y();
-	if (widthCut > 0 || heightCut > 0 || xStart > 0 || yStart > 0)
-	{
-		QImage img(qRound(bounds.width()), qRound(bounds.height()), QImage::Format_ARGB32_Premultiplied);
-		QPainter p2(&img);
-		p2.setCompositionMode(QPainter::CompositionMode_Clear);
-		p2.setBrush(Qt::SolidPattern);
-		p2.drawRect(0, 0, qRound(bounds.width()), qRound(bounds.height()));
-		p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
-		renderer()->render(&p2, elementId());
-		p2.end();
-		painter->setWorldMatrix(QMatrix());
-		
-#if QT_VERSION < KDE_MAKE_VERSION(4,4,0)
-		painter->drawImage(pos() + QPointF(xStart, yStart), img, QRectF(xStart, yStart, bounds.width() - widthCut, bounds.height() - heightCut));
-#else
-		painter->drawImage(QPointF(xStart, yStart), img, QRectF(xStart, yStart, bounds.width() - widthCut, bounds.height() - heightCut));
-#endif
-	}
-	else QGraphicsSvgItem::paint(painter, option, widget);
+QRectF ToDraw::clippedRectAt(const QPointF &somePos) const
+{
+  QRectF backgroundRect = renderer()->boundsOnElement("background");
+  backgroundRect.translate(-somePos);
+  backgroundRect = transform().inverted().map(backgroundRect).boundingRect();
+
+  return unclippedRect().intersected(backgroundRect);
+}
+
+QRectF ToDraw::boundingRect() const
+{
+  return clippedRectAt(pos());
+}
+
+QVariant ToDraw::itemChange(GraphicsItemChange change, const QVariant& value)
+{
+  if (change == QGraphicsItem::ItemPositionChange) {
+    if (boundingRect() != clippedRectAt(value.toPointF()))
+      prepareGeometryChange();
+  }
+  return QGraphicsSvgItem::itemChange(change, value);
 }
 
 bool ToDraw::contains(const QPointF &point) const
@@ -104,16 +95,10 @@ bool ToDraw::contains(const QPointF &point) const
 	bool result = QGraphicsSvgItem::contains(point);
 	if (result)
 	{
-		QRectF bounds = transform().mapRect(boundingRect());
+		QRectF bounds = transform().mapRect(unclippedRect());
 		const QImage &img = toImage(elementId(), qRound(bounds.width()), qRound(bounds.height()), renderer());
 		QPointF transformedPoint = transform().map(point);
 		result = qAlpha(img.pixel(transformedPoint.toPoint())) != 0;
-		if (result)
-		{
-			transformedPoint += pos();
-			const QRectF &backgroundBounds = m_background->transform().mapRect(renderer()->boundsOnElement("background"));
-			result = backgroundBounds.contains(transformedPoint);
-		}
 	}
 	return result;
 }

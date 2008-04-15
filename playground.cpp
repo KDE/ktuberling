@@ -30,7 +30,8 @@
 #include "toplevel.h"
 #include "todraw.h"
 
-static const char *saveGameText = "KTuberlingSaveGameV2";
+static const char *saveGameTextScale = "KTuberlingSaveGameV2";
+static const char *saveGameText = "KTuberlingSaveGameV3";
 
 // Constructor
 PlayGround::PlayGround(TopLevel *parent)
@@ -38,6 +39,9 @@ PlayGround::PlayGround(TopLevel *parent)
 {
   m_topLevel = parent;
   setFrameStyle(QFrame::NoFrame);
+  setOptimizationFlag(QGraphicsView::DontSavePainterState, true); // all items here save the painter state
+  setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+  setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 // Destructor
@@ -153,13 +157,14 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     else
     {
       // see if the user clicked on an already existant item
-      QGraphicsItem *dragItem = m_scene->itemAt(event->pos());
+      QGraphicsItem *dragItem = m_scene->itemAt(mapToScene(event->pos()));
       m_dragItem = qgraphicsitem_cast<ToDraw*>(dragItem);
       if (m_dragItem)
       {
-        QRectF rect = m_dragItem->boundingRect();
+        QRectF rect = m_dragItem->unclippedRect();
         rect = m_dragItem->transform().mapRect(rect);
-        QSize size = rect.size().toSize();
+        QPolygon poly = mapFromScene(rect);
+        QSize size = poly.boundingRect().size(); // the polygon should be a rect...
         QString elem = m_dragItem->elementId();
         setCursor(QCursor(QPixmap::fromImage(toImage(elem, size.width(), size.height(), &m_SvgRenderer))));
 
@@ -169,28 +174,22 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
   }
 }
 
-bool PlayGround::insideBackground(const QSizeF &size, const QPoint &pos) const
+bool PlayGround::insideBackground(const QSizeF &size, const QPointF &pos) const
 {
   return backgroundRect().intersects(QRectF(pos, size));
 }
 
 QRectF PlayGround::backgroundRect() const
 {
-  QSize defaultSize = m_SvgRenderer.defaultSize();
-  QSize currentSize = size();
-  QRectF bounds = m_SvgRenderer.boundsOnElement("background");
-  bounds.setRect(bounds.x() / (double)defaultSize.width() * (double)currentSize.width(),
-                 bounds.y() / (double)defaultSize.height() * (double)currentSize.height(),
-                 bounds.width() / (double)defaultSize.width() * (double)currentSize.width(),
-                 bounds.height() / (double)defaultSize.height() * (double)currentSize.height());
-  return bounds;
+  return m_SvgRenderer.boundsOnElement("background");
 }
 
 void PlayGround::placeDraggedItem(const QPoint &pos)
 {
-  const QSizeF &elementSize = m_dragItem->transform().mapRect(m_dragItem->boundingRect()).size();
-  QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
-                 pos.y() - cursor().pixmap().size().height() / 2);
+  QPointF itemPos = mapToScene(pos);
+  const QSizeF &elementSize = m_dragItem->transform().mapRect(m_dragItem->unclippedRect()).size();
+  itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
+
   if (insideBackground(elementSize, itemPos))
   {
     m_scene->addItem(m_dragItem);
@@ -208,25 +207,22 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
 
 void PlayGround::placeNewItem(const QPoint &pos)
 {
-  QTransform t;
-  const QSize &defaultSize = m_SvgRenderer.defaultSize();
   double objectScale = m_objectsNameRatio.value(m_pickedElement);
-  t.scale(objectScale, objectScale);
-  t.scale((double)size().width() / (double)defaultSize.width(),
-          (double)size().height() / (double)defaultSize.height());
-  const QSizeF &elementSize = t.mapRect(m_SvgRenderer.boundsOnElement(m_pickedElement)).size();
-  QPoint itemPos(pos.x() - cursor().pixmap().size().width() / 2,
-                 pos.y() - cursor().pixmap().size().height() / 2);
+  QSizeF elementSize = m_SvgRenderer.boundsOnElement(m_pickedElement).size() * objectScale;
+  QPointF itemPos = mapToScene(pos);
+
+  itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
+
   if (insideBackground(elementSize, itemPos))
   {
-    ToDraw *item = new ToDraw(m_allCreatedItems.first());
+    ToDraw *item = new ToDraw;
     m_allCreatedItems << item;
     item->setElementId(m_pickedElement);
     item->setPos(itemPos);
     item->setSharedRenderer(&m_SvgRenderer);
     item->setZValue(m_nextZValue);
     m_nextZValue++;
-    item->setTransform(t);
+    item->scale(objectScale, objectScale);
 
     m_undoStack.push(new ActionAdd(item, m_scene));
   }
@@ -235,49 +231,11 @@ void PlayGround::placeNewItem(const QPoint &pos)
   m_pickedElement.clear();
 }
 
-void PlayGround::resizeEvent(QResizeEvent *event)
+void PlayGround::resizeEvent(QResizeEvent *)
 {
-  adjustItems(event->size(), event->oldSize(), true);
-}
-
-void PlayGround::adjustItems(const QSize &size, const QSize &oldSize, bool changePos)
-{
-  if (!m_scene) return;
-
-  m_scene->setSceneRect(QRect(QPoint(0, 0), size));
-
-  QSize defaultSize = m_SvgRenderer.defaultSize();
-  double xScale = (double)size.width() / (double)defaultSize.width();
-  double yScale = (double)size.height() / (double)defaultSize.height();
-
-  QTransform t;
-  t.scale(xScale, yScale);
-
-  double xPositionScale, yPositionScale;
-  if (changePos)
-  {
-    xPositionScale = (double)size.width() / (double)oldSize.width();
-    yPositionScale = (double)size.height() / (double)oldSize.height();
-  }
-
-  foreach(QGraphicsItem *item, m_allCreatedItems)
-  {
-    QGraphicsSvgItem *svg = qgraphicsitem_cast<QGraphicsSvgItem *>(item);
-    if (svg) item->setTransform(t); // just the background
-    else
-    {
-      svg = qgraphicsitem_cast<ToDraw *>(item);
-      if (svg)
-      {
-        QTransform t2 = t;
-        double objectScale = m_objectsNameRatio.value(svg->elementId());
-        t2.scale(objectScale, objectScale);
-        item->setTransform(t2);
-      }
-    }
-
-    if (changePos) item->setPos(item->x() * xPositionScale, item->y() * yPositionScale);
-  }
+  // Cannot use sceneRect() because sometimes items get placed
+  // with pos() outside rect (e.g. pizza theme)
+  fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()));
 }
 
 // Register the various playgrounds
@@ -364,7 +322,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   m_scene->addItem(background);
   m_allCreatedItems << background;
 
-  adjustItems(size(), QSize(), false);
+  fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()));
 
   return true;
 }
@@ -382,11 +340,16 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       return OtherError;
 
   QDataStream in(&f);
-  
+
+  bool scale = false;
   QString magicText;
   in >> magicText;
-  if (saveGameText != magicText)
+  if (saveGameTextScale == magicText) {
+      scale = true;
+  } else if (saveGameText != magicText) {
       return OldFileVersionError;
+  }
+  sceneRect();
 
   if (in.atEnd())
     return OtherError;
@@ -397,15 +360,19 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   if (in.atEnd())
     return OtherError;
   
+  qreal xFactor = 1.0;
+  qreal yFactor = 1.0;
   m_topLevel->changeGameboard(board);
+  if (scale) {
+    QSize defaultSize = m_SvgRenderer.defaultSize();
+    QSize currentSize = size();
+    xFactor = (qreal)defaultSize.width() / (qreal)currentSize.width();
+    yFactor = (qreal)defaultSize.height() / (qreal)currentSize.height();
+  }
 
-  QTransform t;
-  QSize defaultSize = m_SvgRenderer.defaultSize();
-  t.scale((double)size().width() / (double)defaultSize.width(),
-          (double)size().height() / (double)defaultSize.height());
   while ( !in.atEnd() )
   {
-    ToDraw *obj = new ToDraw(m_allCreatedItems.first());
+    ToDraw *obj = new ToDraw;
     if (!obj->load(in))
     {
       delete obj;
@@ -413,10 +380,14 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
     }
     m_allCreatedItems << obj;
     obj->setSharedRenderer(&m_SvgRenderer);
-    QTransform t2 = t;
     double objectScale = m_objectsNameRatio.value(obj->elementId());
-    t2.scale(objectScale, objectScale);
-    obj->setTransform(t2);
+    obj->scale(objectScale, objectScale);
+    if (scale) { // Mimic old behavior
+      QPointF storedPos = obj->pos();
+      storedPos.setX(storedPos.x() * xFactor);
+      storedPos.setY(storedPos.y() * yFactor);
+      obj->setPos(storedPos);
+    }
     m_undoStack.push(new ActionAdd(obj, m_scene));
   }
   if (f.error() == QFile::NoError) return NoError;
