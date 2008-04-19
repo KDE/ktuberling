@@ -62,8 +62,6 @@ private:
   void placeDraggedItem(const QPoint &pos);
   void placeNewItem(const QPoint &pos);
 
-  QList<QGraphicsSvgItem*> m_allCreatedItems;		// I need to keep them all so i can adjust positions of removed
-                                             		// items when changing the size of the playground
   QString m_gameboardFile;				// the file the board
   QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio

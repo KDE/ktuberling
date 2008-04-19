@@ -216,7 +216,6 @@ void PlayGround::placeNewItem(const QPoint &pos)
   if (insideBackground(elementSize, itemPos))
   {
     ToDraw *item = new ToDraw;
-    m_allCreatedItems << item;
     item->setElementId(m_pickedElement);
     item->setPos(itemPos);
     item->setSharedRenderer(&m_SvgRenderer);
@@ -309,7 +308,6 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   }
 
   delete m_scene;
-  m_allCreatedItems.clear();
   m_scene = new QGraphicsScene();
   setScene(m_scene);
 
@@ -320,7 +318,6 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   background->setSharedRenderer(&m_SvgRenderer);
   background->setZValue(0);
   m_scene->addItem(background);
-  m_allCreatedItems << background;
 
   fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()));
 
@@ -378,7 +375,6 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       delete obj;
       return OtherError;
     }
-    m_allCreatedItems << obj;
     obj->setSharedRenderer(&m_SvgRenderer);
     double objectScale = m_objectsNameRatio.value(obj->elementId());
     obj->scale(objectScale, objectScale);
