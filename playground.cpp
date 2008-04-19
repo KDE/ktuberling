@@ -35,7 +35,7 @@ static const char *saveGameText = "KTuberlingSaveGameV3";
 
 // Constructor
 PlayGround::PlayGround(TopLevel *parent)
-    : QGraphicsView(parent), m_dragItem(0), m_scene(0), m_nextZValue(1)
+    : QGraphicsView(parent), m_dragItem(0), m_scene(0), m_nextZValue(1), m_lockAspect(false)
 {
   m_topLevel = parent;
   setFrameStyle(QFrame::NoFrame);
@@ -125,10 +125,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
   else
   {
     // see if the user clicked on the warehouse of items
-    QSize defaultSize = m_SvgRenderer.defaultSize();
-    QSize currentSize = size();
-    double xFactor = (double)defaultSize.width() / (double)currentSize.width();
-    double yFactor = (double)defaultSize.height() / (double)currentSize.height();
+    QPointF scenePos = mapToScene(event->pos());
     QMap<QString, QString>::const_iterator it, itEnd;
     it = m_objectsNameSound.constBegin();
     itEnd = m_objectsNameSound.constEnd();
@@ -137,15 +134,12 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     for( ; foundElem.isNull() && it != itEnd; ++it)
     {
       bounds = m_SvgRenderer.boundsOnElement(it.key());
-      bounds.setRect(bounds.x() / xFactor,
-                     bounds.y() / yFactor,
-                     bounds.width() / xFactor,
-                     bounds.height() / yFactor);
-      if (bounds.contains(event->pos())) foundElem = it.key();
+      if (bounds.contains(scenePos)) foundElem = it.key();
     }
 
     if (!foundElem.isNull()) 
     {
+      bounds = mapFromScene(bounds).boundingRect();
       double objectScale = m_objectsNameRatio.value(foundElem);
       int width = qRound(bounds.width() * objectScale);
       int height = qRound(bounds.height() * objectScale);
@@ -230,11 +224,31 @@ void PlayGround::placeNewItem(const QPoint &pos)
   m_pickedElement.clear();
 }
 
-void PlayGround::resizeEvent(QResizeEvent *)
+void PlayGround::recenterView()
 {
   // Cannot use sceneRect() because sometimes items get placed
   // with pos() outside rect (e.g. pizza theme)
-  fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()));
+  fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()),
+      m_lockAspect ? Qt::KeepAspectRatio : Qt::IgnoreAspectRatio);
+}
+
+void PlayGround::resizeEvent(QResizeEvent *)
+{
+  recenterView();
+}
+
+void PlayGround::lockAspectRatio(bool lock)
+{
+  if (m_lockAspect != lock)
+  {
+    m_lockAspect = lock;
+    recenterView();
+  }
+}
+
+bool PlayGround::isAspectRatioLocked() const
+{
+  return m_lockAspect;
 }
 
 // Register the various playgrounds
@@ -283,6 +297,10 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   QString gameboardName = playGroundElement.attribute("gameboard");
 
+  QColor bgColor = QColor(playGroundElement.attribute("bgcolor", "#fff"));
+  if (!bgColor.isValid())
+    bgColor = Qt::white;
+
   if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + gameboardName)))
     return false;
 
@@ -310,6 +328,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   delete m_scene;
   m_scene = new QGraphicsScene();
   setScene(m_scene);
+  setBackgroundBrush(bgColor);
 
   m_gameboardFile = gameboardFile;
 
@@ -319,7 +338,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   background->setZValue(0);
   m_scene->addItem(background);
 
-  fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()));
+  recenterView();
 
   return true;
 }

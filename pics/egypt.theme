@@ -1,4 +1,4 @@
- <playground gameboard="egypt.svg" desktop="egypt.desktop">
+ <playground gameboard="egypt.svg" desktop="egypt.desktop" bgcolor="#8f6b32">
 
 	<object name="build1" sound="egypt_pyramid" />
 	<object name="build2" sound="egypt_pyramid" />

@@ -57,6 +57,7 @@ private slots:
   void changeGameboard();
   void changeLanguage();
   void toggleFullScreen();
+  void lockAspectRatio(bool lock);
 
 private:
   int                           // Menu items identificators

@@ -187,16 +187,16 @@ void TopLevel::playSound(const QString &ref) const
 // Read options from preferences file
 void TopLevel::readOptions(QString &board, QString &language)
 {
-  QString option;
   KConfigGroup config(KGlobal::config(), "General");
 
-  option = config.readEntry("Sound", "on");
+  QString option = config.readEntry("Sound", "on");
   bool soundEnabled = option.indexOf("on") == 0;
-
   board = config.readEntry("Gameboard", "default_theme.theme");
+  language = config.readEntry("Language", "");
+  bool keepAspectRatio = config.readEntry("KeepAspectRatio", false);
+
   if (soundEnabled)
-  {
-    language = config.readEntry("Language", "");
+  {  
     if (language.isEmpty())
     {
       language = sounds.value(KGlobal::locale()->language(), "en.soundtheme");
@@ -207,6 +207,8 @@ void TopLevel::readOptions(QString &board, QString &language)
     soundOff();
     language = QString();
   }
+  
+  lockAspectRatio(keepAspectRatio);
 }
 
 // Write options to preferences file
@@ -218,6 +220,8 @@ void TopLevel::writeOptions()
   config.writeEntry("Gameboard", playGround->currentGameboard());
 
   config.writeEntry("Language", soundFactory->currentSoundFile());
+  
+  config.writeEntry("KeepAspectRatio", playGround->isAspectRatioLocked());
 }
 
 // KAction initialization (aka menubar + toolbar init)
@@ -250,6 +254,10 @@ void TopLevel::setupKAction()
   languagesGroup->addAction(t);
 
   KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
+
+  t = new KToggleAction(i18n("&Lock Aspect Ratio"), this);
+  actionCollection()->addAction("lock_aspect_ratio", t);
+  connect(t, SIGNAL(triggered(bool)), this, SLOT(lockAspectRatio(bool)));
 
   setupGUI(ToolBar | Keys | Save | Create);
 }
@@ -419,4 +427,11 @@ bool TopLevel::isSoundEnabled() const
 void TopLevel::toggleFullScreen()
 {
   KToggleFullScreenAction::setFullScreen( this, actionCollection()->action("fullscreen")->isChecked());
+}
+
+void TopLevel::lockAspectRatio(bool lock)
+{
+  actionCollection()->action("lock_aspect_ratio")->setChecked(lock);
+  playGround->lockAspectRatio(lock);
+  writeOptions();
 }

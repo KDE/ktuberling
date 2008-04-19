@@ -1,4 +1,4 @@
-  <playground gameboard="potato-game.svg" desktop="potato-game.desktop">
+  <playground gameboard="potato-game.svg" desktop="potato-game.desktop" bgcolor="#e7ddae">
     <object name="nose01" sound="nose" />
     <object name="nose02" sound="nose" />
     <object name="nose03" sound="nose" />

@@ -1,4 +1,4 @@
-<playground gameboard="christmas.svgz" desktop="christmas.desktop">
+<playground gameboard="christmas.svgz" desktop="christmas.desktop" bgcolor="#00275f">
   <object name="g_comet_left" sound="xmas_comet" />
   <object name="g_comet_right" sound="xmas_comet" />
   <object name="g_yellow_star_L" sound="xmas_star" />

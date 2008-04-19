@@ -1,4 +1,4 @@
- <playground gameboard="pizzeria.svgz" desktop="pizzeria.desktop">
+ <playground gameboard="pizzeria.svgz" desktop="pizzeria.desktop" bgcolor="#e8a560">
 
 	<object name="pepper1" sound="pizzeria_pepper" />
 	<object name="pepper2" sound="pizzeria_pepper" />

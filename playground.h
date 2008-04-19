@@ -51,6 +51,11 @@ public:
 
   QString currentGameboard() const;
 
+  bool isAspectRatioLocked() const;
+
+public Q_SLOTS:
+  void lockAspectRatio(bool lock);
+
 protected:
 
   void mousePressEvent(QMouseEvent *event);
@@ -61,6 +66,8 @@ private:
   bool insideBackground(const QSizeF &size, const QPointF &pos) const;
   void placeDraggedItem(const QPoint &pos);
   void placeNewItem(const QPoint &pos);
+
+  void recenterView();
 
   QString m_gameboardFile;				// the file the board
   QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
@@ -74,6 +81,8 @@ private:
   QGraphicsScene *m_scene;				// the graphicsScene
   KSvgRenderer m_SvgRenderer;				// the SVG renderer
   int m_nextZValue;					// the next Z value to use
+
+  bool m_lockAspect;					// whether we are locking aspect ratio
 };
 
 #endif

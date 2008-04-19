@@ -1,4 +1,4 @@
- <playground gameboard="moon.svg" desktop="moon.desktop">
+ <playground gameboard="moon.svg" desktop="moon.desktop" bgcolor="#00275f">
 
 	<object name="astro1" sound="moon_earth" />
 	<object name="astro2" sound="moon_planet" />

@@ -1,4 +1,4 @@
-<playground gameboard="train_valley.svgz" desktop="train_valley.desktop">
+<playground gameboard="train_valley.svgz" desktop="train_valley.desktop" bgcolor="#a4c0e4">
        <object name="accident_car" sound="tv_accident" />
        <object name="barrier1" sound="tv_barrier" />
        <object name="barrier2" sound="tv_barrier" />

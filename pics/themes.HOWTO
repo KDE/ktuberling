@@ -15,7 +15,7 @@ To create a new KTuberling theme you have to:
      separately (there's a checkbox for that in the transform dialog)
 
  * Create a .theme file, it has to follow this schema
-  <playground gameboard="yourSVGFile" name="theDesktopFile">
+  <playground gameboard="yourSVGFile" name="theDesktopFile" bgcolor="bgColor">
     <object name="itemName" sound="soundName" scale="someValue" />
     ...
     ...
@@ -24,6 +24,8 @@ To create a new KTuberling theme you have to:
 
    - yourSVGFile is the name of the svg file that has the drawing
    - theDesktopFile is the name of the desktop file that has the name of the theme
+   - bgColor is the color (specified like HTML) of the area outside the playground
+     when aspect ratio is locked. If invalid or unspecified, white is used
    - For each object you need a <object> entry. itemName is the unique
      name you used on the SVG file, soundName is the sound name that will
      be played when dragging it, see soundthemes.HOWTO for more information.
