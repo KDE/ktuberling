@@ -26,6 +26,12 @@
 #include <QPainter>
 #include <QPrinter>
 
+#include <kstandardaction.h>
+#include <kactioncollection.h>
+#include <kstandardshortcut.h>
+#include <kicon.h>
+#include <QAction>
+
 #include "action.h"
 #include "toplevel.h"
 #include "todraw.h"
@@ -59,7 +65,7 @@ void PlayGround::reset()
     delete currentObject;
   }
 
-  m_undoStack.clear();
+  m_undoStack->clear();
 }
 
 // Save objects laid down on the editable area
@@ -103,14 +109,36 @@ QPixmap PlayGround::getPicture()
   return result;
 }
 
+//TODO: reimplement this with kundogroup as soon as possible
 QAction *PlayGround::createRedoAction(KActionCollection *ac)
 {
-  return m_undoStack.createRedoAction(ac);
+  QAction* action = m_undoGroup.createRedoAction(this);
+
+  action->setObjectName(KStandardAction::name(KStandardAction::Redo));
+
+  action->setIcon(KIcon("edit-redo"));
+  action->setIconText(i18n("Redo"));
+  action->setShortcuts(KStandardShortcut::redo());
+
+  ac->addAction(action->objectName(), action);
+
+  return action;
 }
 
+//TODO: reimplement this with kundogroup as soon as possible
 QAction *PlayGround::createUndoAction(KActionCollection *ac)
 {
-  return m_undoStack.createUndoAction(ac);
+  QAction* action = m_undoGroup.createUndoAction(this);
+
+  action->setObjectName(KStandardAction::name(KStandardAction::Undo));
+
+  action->setIcon(KIcon("edit-undo"));
+  action->setIconText(i18n("Undo"));
+  action->setShortcuts(KStandardShortcut::undo());
+
+  ac->addAction(action->objectName(), action);
+
+  return action;
 }
 
 // Mouse pressed event
@@ -187,12 +215,12 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
   if (insideBackground(elementSize, itemPos))
   {
     m_scene->addItem(m_dragItem);
-    m_undoStack.push(new ActionMove(m_dragItem, itemPos, m_nextZValue, m_scene));
+    m_undoStack->push(new ActionMove(m_dragItem, itemPos, m_nextZValue, m_scene));
     m_nextZValue++;
   }
   else
   {
-    m_undoStack.push(new ActionRemove(m_dragItem, m_scene));
+    m_undoStack->push(new ActionRemove(m_dragItem, m_scene));
   }
 
   setCursor(QCursor());
@@ -217,7 +245,7 @@ void PlayGround::placeNewItem(const QPoint &pos)
     m_nextZValue++;
     item->scale(objectScale, objectScale);
 
-    m_undoStack.push(new ActionAdd(item, m_scene));
+    m_undoStack->push(new ActionAdd(item, m_scene));
   }
 
   setCursor(QCursor());
@@ -285,7 +313,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
               gameAreaElement, maskAreaElement, soundNameElement, labelElement;
   QDomAttr gameboardAttribute, masksAttribute,
            leftAttribute, topAttribute, rightAttribute, bottomAttribute,
-	   refAttribute;
+           refAttribute;
 
   QFile layoutFile(gameboardFile);
   if (!layoutFile.open(QIODevice::ReadOnly)) return false;
@@ -309,6 +337,24 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
     return false;
 
   m_objectsNameSound.clear();
+
+  //restore scene
+  if(m_sceneCache.contains(gameboardFile))
+  {
+    m_scene = m_sceneCache[gameboardFile];
+  }
+  else
+  {
+    m_scene = new QGraphicsScene();
+    m_sceneCache[gameboardFile] =  m_scene;
+  
+    QGraphicsSvgItem *background = new QGraphicsSvgItem();
+    background->setPos(QPoint(0,0));
+    background->setSharedRenderer(&m_SvgRenderer);
+    background->setZValue(0);
+    m_scene->addItem(background);
+  }
+  
   for (int decoration = 0; decoration < objectsList.count(); decoration++)
   {
     objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
@@ -325,20 +371,25 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
     }
   }
 
-  delete m_scene;
-  m_scene = new QGraphicsScene();
-  setScene(m_scene);
   setBackgroundBrush(bgColor);
-
   m_gameboardFile = gameboardFile;
-
-  QGraphicsSvgItem *background = new QGraphicsSvgItem();
-  background->setPos(QPoint(0,0));
-  background->setSharedRenderer(&m_SvgRenderer);
-  background->setZValue(0);
-  m_scene->addItem(background);
+  setScene(m_scene);
 
   recenterView();
+
+  //restore undo stack
+  if(m_undoCache.contains(m_gameboardFile))
+  {
+    m_undoStack = m_undoCache[m_gameboardFile];
+  }
+  else
+  {
+    m_undoStack = new KUndoStack();
+    m_undoCache[m_gameboardFile] = m_undoStack;
+    m_undoGroup.addStack(m_undoStack);
+  }
+
+  m_undoGroup.setActiveStack(m_undoStack);
 
   return true;
 }
@@ -379,6 +430,9 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   qreal xFactor = 1.0;
   qreal yFactor = 1.0;
   m_topLevel->changeGameboard(board);
+
+  reset();
+
   if (scale) {
     QSize defaultSize = m_SvgRenderer.defaultSize();
     QSize currentSize = size();
@@ -403,7 +457,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       storedPos.setY(storedPos.y() * yFactor);
       obj->setPos(storedPos);
     }
-    m_undoStack.push(new ActionAdd(obj, m_scene));
+    m_undoStack->push(new ActionAdd(obj, m_scene));
   }
   if (f.error() == QFile::NoError) return NoError;
   else return OtherError;

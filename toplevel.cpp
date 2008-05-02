@@ -297,8 +297,6 @@ void TopLevel::open(const KUrl &url)
 
   KIO::NetAccess::download(url, name, this);
 
-  playGround->reset();
-
   switch(playGround->loadFrom(name))
   {
     case PlayGround::NoError:

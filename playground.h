@@ -18,6 +18,7 @@
 
 #include <KSvgRenderer>
 #include <KUndoStack>
+#include <QUndoGroup>
 
 class KActionCollection;
 
@@ -73,7 +74,7 @@ private:
   QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
 
-  KUndoStack m_undoStack;				// the command stack
+  KUndoStack *m_undoStack;				// the command stack
   TopLevel *m_topLevel;					// Top-level window
 
   QString m_pickedElement;				// the SVG element the cursor is
@@ -83,6 +84,9 @@ private:
   int m_nextZValue;					// the next Z value to use
 
   bool m_lockAspect;					// whether we are locking aspect ratio
+  QMap <QString, QGraphicsScene *> m_sceneCache;
+  QMap <QString, KUndoStack *> m_undoCache;                 // caches the items of each playground
+  QUndoGroup m_undoGroup;
 };
 
 #endif
