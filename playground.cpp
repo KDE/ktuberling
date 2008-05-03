@@ -109,36 +109,16 @@ QPixmap PlayGround::getPicture()
   return result;
 }
 
-//TODO: reimplement this with kundogroup as soon as possible
-QAction *PlayGround::createRedoAction(KActionCollection *ac)
+void PlayGround::connectRedoAction(QAction *action)
 {
-  QAction* action = m_undoGroup.createRedoAction(this);
-
-  action->setObjectName(KStandardAction::name(KStandardAction::Redo));
-
-  action->setIcon(KIcon("edit-redo"));
-  action->setIconText(i18n("Redo"));
-  action->setShortcuts(KStandardShortcut::redo());
-
-  ac->addAction(action->objectName(), action);
-
-  return action;
+  connect(action, SIGNAL(triggered()), &m_undoGroup, SLOT(redo()));
+  connect(&m_undoGroup, SIGNAL(canRedoChanged(bool)), action, SLOT(setEnabled(bool)));
 }
 
-//TODO: reimplement this with kundogroup as soon as possible
-QAction *PlayGround::createUndoAction(KActionCollection *ac)
+void PlayGround::connectUndoAction(QAction *action)
 {
-  QAction* action = m_undoGroup.createUndoAction(this);
-
-  action->setObjectName(KStandardAction::name(KStandardAction::Undo));
-
-  action->setIcon(KIcon("edit-undo"));
-  action->setIconText(i18n("Undo"));
-  action->setShortcuts(KStandardShortcut::undo());
-
-  ac->addAction(action->objectName(), action);
-
-  return action;
+  connect(action, SIGNAL(triggered()), &m_undoGroup, SLOT(undo())); 
+  connect(&m_undoGroup, SIGNAL(canUndoChanged(bool)), action, SLOT(setEnabled(bool)));
 }
 
 // Mouse pressed event
@@ -384,7 +364,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   }
   else
   {
-    m_undoStack = new KUndoStack();
+    m_undoStack = new QUndoStack();
     m_undoCache[m_gameboardFile] = m_undoStack;
     m_undoGroup.addStack(m_undoStack);
   }

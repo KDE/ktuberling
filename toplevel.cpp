@@ -244,8 +244,10 @@ void TopLevel::setupKAction()
   action = KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
   actionCollection()->addAction(action->objectName(), action);
 
-  playGround->createRedoAction(actionCollection());
-  playGround->createUndoAction(actionCollection());
+  action = KStandardAction::undo(0, 0, actionCollection());
+  playGround->connectUndoAction(action);
+  action = KStandardAction::redo(0, 0, actionCollection());
+  playGround->connectRedoAction(action);
 
   //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);

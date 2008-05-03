@@ -17,7 +17,6 @@
 #include <QMap>
 
 #include <KSvgRenderer>
-#include <KUndoStack>
 #include <QUndoGroup>
 
 class KActionCollection;
@@ -44,8 +43,8 @@ public:
   bool printPicture(QPrinter &printer);
   QPixmap getPicture();
 
-  QAction *createRedoAction(KActionCollection *ac);
-  QAction *createUndoAction(KActionCollection *ac);
+  void connectRedoAction(QAction *action);
+  void connectUndoAction(QAction *action);
 
   void registerPlayGrounds();
   bool loadPlayGround(const QString &gameboardFile);
@@ -74,7 +73,7 @@ private:
   QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
 
-  KUndoStack *m_undoStack;				// the command stack
+  QUndoStack *m_undoStack;				// the command stack
   TopLevel *m_topLevel;					// Top-level window
 
   QString m_pickedElement;				// the SVG element the cursor is
@@ -85,7 +84,7 @@ private:
 
   bool m_lockAspect;					// whether we are locking aspect ratio
   QMap <QString, QGraphicsScene *> m_sceneCache;
-  QMap <QString, KUndoStack *> m_undoCache;                 // caches the items of each playground
+  QMap <QString, QUndoStack *> m_undoCache;                 // caches the items of each playground
   QUndoGroup m_undoGroup;
 };
 
