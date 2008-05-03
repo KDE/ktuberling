@@ -102,9 +102,9 @@ bool PlayGround::printPicture(QPrinter &printer)
 // Get a pixmap containing the current picture
 QPixmap PlayGround::getPicture()
 {
-  QPixmap result(backgroundRect().size().toSize());
+  QPixmap result(mapFromScene(sceneRect()).boundingRect().size());
   QPainter artist(&result);
-  render(&artist, QRectF(), backgroundRect().toRect());
+  scene()->render(&artist);
   artist.end();
   return result;
 }
