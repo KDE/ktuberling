@@ -25,6 +25,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPrinter>
+#include <QFileInfo>
 
 #include <kstandardaction.h>
 #include <kactioncollection.h>
@@ -75,9 +76,10 @@ bool PlayGround::saveAs(const QString & name)
   if (!f.open( QIODevice::WriteOnly | QIODevice::Text ) )
       return false;
 
+  QFileInfo gameBoard(m_gameboardFile);
   QDataStream out(&f);
   out << QString(saveGameText);
-  out << m_gameboardFile;
+  out << gameBoard.fileName();
   foreach(QGraphicsItem *item, m_scene->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
