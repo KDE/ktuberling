@@ -26,6 +26,7 @@
 #include <kimageio.h>
 #include <kmimetype.h>
 #include <kconfiggroup.h>
+#include <ktemporaryfile.h>
 
 #include <QClipboard>
 #include <QPrintDialog>
@@ -285,7 +286,8 @@ void TopLevel::fileOpen()
   QString dir = KStandardDirs::locate("data", "ktuberling/museum/miss.tuberling");
   dir.truncate(dir.lastIndexOf('/') + 1);
 
-  KUrl url = KFileDialog::getOpenUrl(dir, "*.tuberling");
+  KUrl url = KFileDialog::getOpenUrl(dir,
+                 QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   open(url);
 }
@@ -323,30 +325,38 @@ void TopLevel::fileSave()
 {
   KUrl url = KFileDialog::getSaveUrl
                 ( KUrl(),
-		 "*.tuberling");
+                 QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   if (url.isEmpty())
     return;
 
+  KTemporaryFile tempFile; // for network saving
+  QString name;
   if( !url.isLocalFile() )
   {
-    KMessageBox::sorry(this,
-                       i18n("Only saving to local files is currently "
-                            "supported."));
-    return;
+    if (tempFile.open()) name = tempFile.fileName();
+    else
+    {
+      KMessageBox::error(this, i18n("Could not save file."));
+      return;
+    }
   }
-
-  QString name = url.path();
-  int suffix;
-
-  suffix = name.lastIndexOf('.');
-  if (suffix == -1)
+  else
   {
-    name += ".tuberling";
+    name = url.path();
   }
 
   if( !playGround->saveAs( name ) )
+  {
     KMessageBox::error(this, i18n("Could not save file."));
+    return;
+  }
+  
+  if( !url.isLocalFile() )
+  {
+    if (!KIO::NetAccess::upload(name, url, this))
+      KMessageBox::error(this, i18n("Could not save file."));
+  }
 }
 
 // Save gameboard as picture
@@ -357,12 +367,16 @@ void TopLevel::filePicture()
   if( url.isEmpty() )
     return;
 
+  KTemporaryFile tempFile; // for network saving
+  QString name;
   if( !url.isLocalFile() )
   {
-    KMessageBox::sorry(this,
-                       i18n("Only saving to local files is currently "
-                            "supported."));
-    return;
+    tempFile.open();
+    name = tempFile.fileName();
+  }
+  else
+  {
+    name = url.path();
   }
 
   KMimeType::Ptr mime = KMimeType::findByUrl(url, 0, true, true);
@@ -377,11 +391,19 @@ void TopLevel::filePicture()
 
   QPixmap picture(playGround->getPicture());
 
-  QString name = url.path();
-
   if (!picture.save(name, types.at(0).toLatin1()))
+  {
     KMessageBox::error
       (this, i18n("Could not save file."));
+    return;
+  }
+
+  if( !url.isLocalFile() )
+  {
+    if (! KIO::NetAccess::upload(name, url, this))
+      KMessageBox::error(this, i18n("Could not save file."));
+  }
+
 }
 
 // Save gameboard as picture
