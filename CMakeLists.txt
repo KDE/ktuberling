@@ -20,7 +20,7 @@ kde4_add_executable(ktuberling ${ktuberling_SRCS})
 
 target_link_libraries(ktuberling  ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS} )
 
-install(TARGETS ktuberling  DESTINATION ${BIN_INSTALL_DIR} )
+install(TARGETS ktuberling  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
