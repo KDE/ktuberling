@@ -27,6 +27,7 @@
 #include <kmimetype.h>
 #include <kconfiggroup.h>
 #include <ktemporaryfile.h>
+#include <kdeprintdialog.h>
 
 #include <QClipboard>
 #include <QPrintDialog>
@@ -412,9 +413,10 @@ void TopLevel::filePrint()
   QPrinter printer;
   bool ok;
   
-  QPrintDialog printDialog(&printer, this);
-  printDialog.setWindowTitle(i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
-  ok = printDialog.exec();
+  QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, this);
+  printDialog->setWindowTitle(i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
+  ok = printDialog->exec();
+  delete printDialog;
   if (!ok) return;
   playGround->repaint();
   if (!playGround->printPicture(printer))
