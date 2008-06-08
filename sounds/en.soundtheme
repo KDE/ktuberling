@@ -1,18 +1,26 @@
 <language code="en">
 
+    <sound name="ball" file="en/ball.ogg" />
     <sound name="bow" file="en/bow.ogg" />
+    <sound name="coat" file="en/coat.ogg" />
     <sound name="ear" file="en/ear.ogg" />
     <sound name="earring" file="en/earring.ogg" />
     <sound name="eye" file="en/eye.ogg" />
     <sound name="eyebrow" file="en/eyebrow.ogg" />
+    <sound name="flower" file="en/flower.ogg" />
     <sound name="hair" file="en/hair.ogg" />
     <sound name="hat" file="en/hat.ogg" />
     <sound name="moustache" file="en/moustache.ogg" />
     <sound name="mouth" file="en/mouth.ogg" />
     <sound name="nose" file="en/nose.ogg" />
+    <sound name="shoe" file="en/shoe.ogg" />
+    <sound name="shorts" file="en/shorts.ogg" />
+    <sound name="skirt" file="en/skirt.ogg" />
     <sound name="spectacles" file="en/spectacles.ogg" />
+    <sound name="stick" file="en/stick.ogg" />
     <sound name="sunglasses" file="en/sunglasses.ogg" />
     <sound name="tie" file="en/tie.ogg" />
+
 
     <sound name="tv_car" file="en/tv_car.ogg" />
     <sound name="tv_cyclist" file="en/tv_cyclist.ogg" />
