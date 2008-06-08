@@ -20,7 +20,25 @@
     <sound name="stick" file="en/stick.ogg" />
     <sound name="sunglasses" file="en/sunglasses.ogg" />
     <sound name="tie" file="en/tie.ogg" />
-
+    
+    <sound name="egypt_bridge" file="en/egypt_bridge.ogg" />
+    <sound name="egypt_birds" file="en/egypt_birds.ogg" />
+    <sound name="egypt_palmtree" file="en/egypt_palmtree.ogg" />
+    <sound name="egypt_grass" file="en/egypt_grass.ogg" />
+    <sound name="egypt_camel" file="en/egypt_camel.ogg" />
+    <sound name="egypt_road" file="en/egypt_road.ogg" />
+    <sound name="egypt_cart" file="en/egypt_cart.ogg" />
+    <sound name="egypt_sphynx" file="en/egypt_sphynx.ogg" />
+    <sound name="egypt_column" file="en/egypt_column.ogg" />
+    <sound name="egypt_girl" file="en/egypt_girl.ogg" />
+    <sound name="egypt_well" file="en/egypt_well.ogg" />
+    <sound name="egypt_pyramid" file="en/egypt_pyramid.ogg" />
+    <sound name="egypt_man" file="en/egypt_man.ogg" />
+    <sound name="egypt_arch" file="en/egypt_arch.ogg" />
+    <sound name="egypt_oasis" file="en/egypt_oasis.ogg" />
+    <sound name="egypt_woman" file="en/egypt_woman.ogg" />
+    <sound name="egypt_boy" file="en/egypt_boy.ogg" />
+    <sound name="egypt_donkey" file="en/egypt_donkey.ogg" />
 
     <sound name="tv_car" file="en/tv_car.ogg" />
     <sound name="tv_cyclist" file="en/tv_cyclist.ogg" />
