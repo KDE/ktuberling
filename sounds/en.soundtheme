@@ -46,5 +46,18 @@
     <sound name="tv_train" file="en/tv_train.ogg" />
     
     <sound name="moon_sign" file="en/moon_sign.ogg" />
+    <sound name="moon_planet" file="en/moon_planet.ogg" />
+    <sound name="moon_satellite" file="en/moon_satellite.ogg" />
+    <sound name="moon_radar" file="en/moon_radar.ogg" />
+    <sound name="moon_moonwalker" file="en/moon_moonwalker.ogg" />
+    <sound name="moon_rocket" file="en/moon_rocket.ogg" />
+    <sound name="moon_ufo" file="en/moon_ufo.ogg" />
+    <sound name="moon_hotel" file="en/moon_hotel.ogg" />
+    <sound name="moon_astronaut" file="en/moon_astronaut.ogg" />
+    <sound name="moon_monster" file="en/moon_monster.ogg" />
+    <sound name="moon_alien" file="en/moon_alien.ogg" />
+    <sound name="moon_earth" file="en/moon_earth.ogg" />
+    <sound name="moon_fallingstar" file="en/moon_fallingstar.ogg" />
+    <sound name="moon_star" file="en/moon_star.ogg" />
 
 </language>
