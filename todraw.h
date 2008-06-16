@@ -16,7 +16,7 @@
 #include <QGraphicsSvgItem>
 
 
-QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer);
+QPixmap toPixmap(const QString &element, int width, int height, QSvgRenderer *renderer);
 
 class ToDraw : public QGraphicsSvgItem
 {

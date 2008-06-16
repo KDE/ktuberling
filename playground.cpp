@@ -155,7 +155,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
       int height = qRound(bounds.height() * objectScale);
 
       m_topLevel->playSound(m_objectsNameSound.value(foundElem));
-      setCursor(QCursor(QPixmap::fromImage(toImage(foundElem, width, height, &m_SvgRenderer))));
+      setCursor(QCursor(toPixmap(foundElem, width, height, &m_SvgRenderer)));
       m_pickedElement = foundElem;
     }
     else
@@ -170,7 +170,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
         QPolygon poly = mapFromScene(rect);
         QSize size = poly.boundingRect().size(); // the polygon should be a rect...
         QString elem = m_dragItem->elementId();
-        setCursor(QCursor(QPixmap::fromImage(toImage(elem, size.width(), size.height(), &m_SvgRenderer))));
+        setCursor(QCursor(toPixmap(elem, size.width(), size.height(), &m_SvgRenderer)));
 
         m_scene->removeItem(m_dragItem);
       }

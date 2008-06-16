@@ -18,17 +18,26 @@
 
 #include <kdeversion.h>
 
-QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer)
+static QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer)
 {
   QImage img(width, height, QImage::Format_ARGB32_Premultiplied);
+  img.fill(Qt::transparent);
   QPainter p2(&img);
-  p2.setCompositionMode(QPainter::CompositionMode_Clear);
-  p2.setBrush(Qt::SolidPattern);
-  p2.drawRect(0, 0, width, height);
-  p2.setCompositionMode(QPainter::CompositionMode_SourceOver);
+  // don't need quality here
+  p2.setRenderHints(QPainter::Antialiasing|QPainter::TextAntialiasing|QPainter::SmoothPixmapTransform, false);
   renderer->render(&p2, element);
   p2.end();
   return img;
+}
+
+QPixmap toPixmap(const QString &element, int width, int height, QSvgRenderer *renderer)
+{
+  QPixmap pix(width, height);
+  pix.fill(Qt::transparent);
+  QPainter p2(&pix);
+  renderer->render(&p2, element);
+  p2.end();
+  return pix;
 }
 
 ToDraw::ToDraw()
