@@ -60,5 +60,21 @@
     <sound name="moon_earth" file="en/moon_earth.ogg" />
     <sound name="moon_fallingstar" file="en/moon_fallingstar.ogg" />
     <sound name="moon_star" file="en/moon_star.ogg" />
+    
+    <sound name="pizzeria_anchovy" file="en/pizzeria_anchovy.ogg" />
+    <sound name="pizzeria_bacon" file="en/pizzeria_bacon.ogg" />
+    <sound name="pizzeria_brocolli" file="en/pizzeria_broccolli.ogg" />
+    <sound name="pizzeria_cheese" file="en/pizzeria_cheese.ogg" />
+    <sound name="pizzeria_cucumber" file="en/pizzeria_cucumber.ogg" />
+    <sound name="pizzeria_mushroom" file="en/pizzeria_mushroom.ogg" />
+    <sound name="pizzeria_olive" file="en/pizzeria_olive.ogg" />
+    <sound name="pizzeria_onion" file="en/pizzeria_onion.ogg" />
+    <sound name="pizzeria_oregano" file="en/pizzeria_oregano.ogg" />
+    <sound name="pizzeria_pepper" file="en/pizzeria_pepper.ogg" />
+    <sound name="pizzeria_pepperoni" file="en/pizzeria_pepperoni.ogg" />
+    <sound name="pizzeria_pineapple" file="en/pizzeria_pineapple.ogg" />
+    <sound name="pizzeria_salami" file="en/pizzeria_salami.ogg" />
+    <sound name="pizzeria_tomato" file="en/pizzeria_tomato.ogg" />
+
 
 </language>
