@@ -20,6 +20,7 @@
     <sound name="stick" file="en/stick.ogg" />
     <sound name="sunglasses" file="en/sunglasses.ogg" />
     <sound name="tie" file="en/tie.ogg" />
+    <sound name="umbrella" file="en/umbrella.ogg" />
     
     <sound name="egypt_bridge" file="en/egypt_bridge.ogg" />
     <sound name="egypt_birds" file="en/egypt_birds.ogg" />
