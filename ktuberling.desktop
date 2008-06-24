@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Exec=ktuberling %i %m -caption "%c" %u
 Name=Potato Guy
 Name[af]=Aartappel Man
