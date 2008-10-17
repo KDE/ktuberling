@@ -128,7 +128,7 @@ To create a new KTuberling sound theme you have to:
 <itemizedlist>
 <listitem><para><replaceable>yourLanguageTwoLetterCode</replaceable> is your language two letter code, for example gl for Galician.</para></listitem>
 <listitem><para>For each sound a &lt;sound&gt; entry. <replaceable>soundName</replaceable> should match with the soundName specified
-     in the playground them (see themes HOWTO). <replaceable>relativePath</replaceable> should be the relative path you
+     in the playground theme (see themes HOWTO). <replaceable>relativePath</replaceable> should be the relative path you
      are going to install the file with this sound to, typically it will be 
      someUniquePath/soundName.format (someUniquePath can be your language two letter code for
      example).</para></listitem>
