@@ -116,7 +116,7 @@ include them in the museum if he gets some spare time.
 <para>
 &ktuberling; can also <quote>speak</quote>. It will spell out the name of
 the objects you drag and drop. It will <quote>speak</quote> in a language
-that you can chose. You can even use it to learn a bit of vocabulary
+that you can choose. You can even use it to learn a bit of vocabulary
 in foreign languages.
 </para>
 </chapter>
@@ -238,7 +238,7 @@ The toolbar provides buttons for the commonly used functions.
   </link>
   </entry>
 <entry>
-Resets the <quote>playground</quote> area. This cleans all parts off the
+Resets the <quote>playground</quote> area. This cleans all parts of the
 playground so a new decoration may be created.
 </entry>
 </row>
