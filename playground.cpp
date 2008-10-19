@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 1999-2006 by Éric Bischoff <ebischoff@nerim.net>        *
- *   Copyright (C) 2007 by Albert Astals Cid <aacid@kde.org>               *
+ *   Copyright (C) 2007-2008 by Albert Astals Cid <aacid@kde.org>          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -104,9 +104,9 @@ bool PlayGround::printPicture(QPrinter &printer)
 // Get a pixmap containing the current picture
 QPixmap PlayGround::getPicture()
 {
-  QPixmap result(mapFromScene(sceneRect()).boundingRect().size());
+  QPixmap result(mapFromScene(backgroundRect()).boundingRect().size());
   QPainter artist(&result);
-  scene()->render(&artist);
+  scene()->render(&artist, QRectF(), backgroundRect());
   artist.end();
   return result;
 }
