@@ -160,7 +160,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     }
     else
     {
-      // see if the user clicked on an already existant item
+      // see if the user clicked on an already existent item
       QGraphicsItem *dragItem = m_scene->itemAt(mapToScene(event->pos()));
       m_dragItem = qgraphicsitem_cast<ToDraw*>(dragItem);
       if (m_dragItem)
