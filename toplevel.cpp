@@ -284,10 +284,7 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  QString dir = KStandardDirs::locate("data", "ktuberling/museum/miss.tuberling");
-  dir.truncate(dir.lastIndexOf('/') + 1);
-
-  KUrl url = KFileDialog::getOpenUrl(dir,
+  KUrl url = KFileDialog::getOpenUrl(KUrl("kfiledialog:///<ktuberling>"),
                  QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   open(url);
@@ -325,7 +322,7 @@ void TopLevel::open(const KUrl &url)
 void TopLevel::fileSave()
 {
   KUrl url = KFileDialog::getSaveUrl
-                ( KUrl(),
+                ( KUrl("kfiledialog:///<ktuberling>"),
                  QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   if (url.isEmpty())
@@ -363,7 +360,7 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  KUrl url = KFileDialog::getSaveUrl(KUrl(), KImageIO::pattern(KImageIO::Writing));
+  KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog:///<ktuberling>"), KImageIO::pattern(KImageIO::Writing));
 
   if( url.isEmpty() )
     return;
