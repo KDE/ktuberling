@@ -12,6 +12,7 @@ install( FILES
 	egypt.desktop egypt.svg egypt.theme
 	pizzeria.desktop pizzeria.svgz pizzeria.theme
 	christmas.desktop christmas.svgz christmas.theme
+	robin-tux.desktop robin-tux.svgz robin-tux.theme
 DESTINATION  ${DATA_INSTALL_DIR}/ktuberling/pics )
 
 
