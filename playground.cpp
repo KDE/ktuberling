@@ -72,7 +72,7 @@ void PlayGround::reset()
 // Save objects laid down on the editable area
 bool PlayGround::saveAs(const QString & name)
 {
-  QFile f(QFile::encodeName(name));
+  QFile f(name);
   if (!f.open( QIODevice::WriteOnly | QIODevice::Text ) )
       return false;
 
@@ -384,7 +384,7 @@ QString PlayGround::currentGameboard() const
 // Load objects and lay them down on the editable area
 PlayGround::LoadError PlayGround::loadFrom(const QString &name)
 {
-  QFile f( QFile::encodeName(name) );
+  QFile f(name);
   if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
       return OtherError;
 
