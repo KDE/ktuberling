@@ -3,9 +3,9 @@
 **********************************************
 
 To create a new KTuberling theme you have to:
- * Record the sounds
+ * Record the sounds in OGG Vorbis rc3 file format
 
- * Create a .soundtheme file, it has to follow this schema
+ * Create a "yourLanguageTwoLetterCode".soundtheme file, it has to follow this schema
   <language code="yourLanguageTwoLetterCode">
     <sound name="soundName" file="relativePath" />
     ...
@@ -15,18 +15,19 @@ To create a new KTuberling theme you have to:
 
    - yourLanguageTwoLetterCode is your language two letter code, for example gl for Galician
    - For each sound a <sound> entry. soundName should match with the soundName specified
-     in the playground them (see themes.HOWTO). relativePath should be the relative path you
+     in the playground theme (see themes.HOWTO). relativePath should be the relative path you
      are going to install the file with this sound to, typically it will be 
      someUniquePath/soundName.format (someUniquePath can be your language two letter code for
      example)
 
  * If you are adding the sound theme to KTuberling SVN:
-   - Add the sound files and the .soundtheme files to the data/kdegames/ktuberling directory
+   - Add the sound files and the "yourLanguageTwoLetterCode".soundtheme files to the data/kdegames/ktuberling directory
      of your language translations
    - On that very same dir you need a CMakeLists.txt describing how to install the files, typically it will be
-     install( FILES yourSoundFile1 yourSoundFile2 ... yourSoundFileN DESTINATION  ${DATA_INSTALL_DIR}/ktuberling/sounds/someUniquePath )
-     install( FILES yourSoundThemeFile DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+     FILE(GLOB datafiles *.ogg)
+     install( FILES ${datafiles} DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/"yourLanguageTwoLetterCode" )
+     install( FILES "yourLanguageTwoLetterCode".soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
 
  * If you want to install it for yourself:
-   - Place .soundtheme files in `kde4-config --prefix`/share/apps/ktuberling/sounds
-   - Place yourSoundFiles in `kde4-config --prefix`/share/apps/ktuberling/sounds/someUniquePath
+   - Place "yourLanguageTwoLetterCode".soundtheme files in `kde4-config --prefix`/share/apps/ktuberling/sounds
+   - Place yourSoundFiles in `kde4-config --prefix`/share/apps/ktuberling/sounds/"yourLanguageTwoLetterCode"
