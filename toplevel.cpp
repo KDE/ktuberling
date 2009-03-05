@@ -306,7 +306,7 @@ void TopLevel::open(const KUrl &url)
     break;
 
     case PlayGround::OldFileVersionError:
-      KMessageBox::error(this, i18n("The saved file is from an old version of KTuberling and unfortunately can not be open with this version."));
+      KMessageBox::error(this, i18n("The saved file is from an old version of KTuberling and unfortunately cannot be opened with this version."));
     break;
 
     case PlayGround::OtherError:
