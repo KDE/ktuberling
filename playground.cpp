@@ -173,6 +173,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
         setCursor(QCursor(toPixmap(elem, size.width(), size.height(), &m_SvgRenderer)));
 
         m_scene->removeItem(m_dragItem);
+        m_topLevel->playSound(m_objectsNameSound.value(elem));
       }
     }
   }
