@@ -28,11 +28,9 @@ int main(int argc, char *argv[])
 
   KAboutData aboutData( "ktuberling", 0, ki18n("KTuberling"), 
     version, description, KAboutData::License_GPL, 
-    // TODO KDE 4.4: Update copyright years
-    ki18n("(c) 1999-2006, The KTuberling Developers"), text, "http://games.kde.org/ktuberling" );
-   // TODO KDE 4.4: If Albert still maintainer change "SVG port" -> "Maintainer"; "Developer" -> "Former Developer"
-  aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("SVG port"), "aacid@kde.org");
-  aboutData.addAuthor(ki18n("Éric Bischoff"), ki18n("Developer"), "ebischoff@nerim.net");
+    ki18n("(c) 1999-2009, The KTuberling Developers"), text, "http://games.kde.org/ktuberling" );
+  aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("Mantainer"), "aacid@kde.org");
+  aboutData.addAuthor(ki18n("Éric Bischoff"), ki18n("Former Developer"), "ebischoff@nerim.net");
   aboutData.addCredit(ki18n("John Calhoun"), ki18n("Original concept and artwork"));
   aboutData.addCredit(ki18n("Agnieszka Czajkowska"), ki18n("New artwork"), "agnieszka@imagegalaxy.de");
   aboutData.addCredit(ki18n("Bas Willems"), ki18n("New artwork"), "cybersurfer@euronet.nl");
