@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
   KAboutData aboutData( "ktuberling", 0, ki18n("KTuberling"), 
     version, description, KAboutData::License_GPL, 
     ki18n("(c) 1999-2009, The KTuberling Developers"), text, "http://games.kde.org/ktuberling" );
-  aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("Mantainer"), "aacid@kde.org");
+  aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("Maintainer"), "aacid@kde.org");
   aboutData.addAuthor(ki18n("Éric Bischoff"), ki18n("Former Developer"), "ebischoff@nerim.net");
   aboutData.addCredit(ki18n("John Calhoun"), ki18n("Original concept and artwork"));
   aboutData.addCredit(ki18n("Agnieszka Czajkowska"), ki18n("New artwork"), "agnieszka@imagegalaxy.de");
