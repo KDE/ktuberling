@@ -43,7 +43,7 @@ QPixmap toPixmap(const QString &element, int width, int height, QSvgRenderer *re
 ToDraw::ToDraw()
 {
 }
-
+#include <kdebug.h>
 // Load an object from a file
 bool ToDraw::load(QDataStream &stream)
 {
@@ -55,6 +55,7 @@ bool ToDraw::load(QDataStream &stream)
   stream >> pos;
   stream >> element;
   stream >> zOrder;
+  kDebug() << pos << element << zOrder;
 
   setPos(pos);
   setElementId(element);
