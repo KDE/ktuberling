@@ -37,8 +37,9 @@
 #include "toplevel.h"
 #include "todraw.h"
 
-static const char *saveGameTextScale = "KTuberlingSaveGameV2";
-static const char *saveGameText = "KTuberlingSaveGameV3";
+static const char *saveGameTextScaleTextMode = "KTuberlingSaveGameV2";
+static const char *saveGameTextTextMode = "KTuberlingSaveGameV3";
+static const char *saveGameText = "KTuberlingSaveGameV4";
 
 // Constructor
 PlayGround::PlayGround(TopLevel *parent)
@@ -73,7 +74,7 @@ void PlayGround::reset()
 bool PlayGround::saveAs(const QString & name)
 {
   QFile f(name);
-  if (!f.open( QIODevice::WriteOnly | QIODevice::Text ) )
+  if (!f.open( QIODevice::WriteOnly ) )
       return false;
 
   QFileInfo gameBoard(m_gameboardFile);
@@ -387,20 +388,34 @@ QString PlayGround::currentGameboard() const
 PlayGround::LoadError PlayGround::loadFrom(const QString &name)
 {
   QFile f(name);
-  if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+  if (!f.open(QIODevice::ReadOnly))
       return OtherError;
 
   QDataStream in(&f);
   in.setVersion(QDataStream::Qt_4_5);
 
   bool scale = false;
+  bool reopenInTextMode = false;
   QString magicText;
   in >> magicText;
-  if (saveGameTextScale == magicText) {
+  if (saveGameTextScaleTextMode == magicText) {
       scale = true;
+      reopenInTextMode = true;
+  } else if (saveGameTextTextMode == magicText) {
+      reopenInTextMode = true;
   } else if (saveGameText != magicText) {
       return OldFileVersionError;
   }
+
+  if (reopenInTextMode) {
+      f.close();
+      if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+        return OtherError;
+      in.setDevice(&f);
+      in.setVersion(QDataStream::Qt_4_5);
+      in >> magicText;
+  }
+
   sceneRect();
 
   if (in.atEnd())
