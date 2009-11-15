@@ -323,7 +323,7 @@ void TopLevel::fileSave()
 {
   KUrl url = KFileDialog::getSaveUrl
                 ( KUrl("kfiledialog:///<ktuberling>"),
-                 QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")), this, QString(), KFileDialog::ConfirmOverwrite);
+                 QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   if (url.isEmpty())
     return;
