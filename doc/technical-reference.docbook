@@ -9,8 +9,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2006-05-05</date>
-<releaseinfo>0.05.01</releaseinfo>
+<date>2009-12-15</date>
+<releaseinfo>0.6.0</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -31,7 +31,7 @@ native tongue!
 
 <para>
 If you extend or add to the game please consider sending your additions to the
-developer <ulink url="mailto:aacid@kde.org">Albert Astals Cid</ulink> for
+maintainer <ulink url="mailto:alex@eyeos.org">Alex Fiestas</ulink> for
 inclusion in future releases.
 </para>
 
@@ -39,7 +39,7 @@ inclusion in future releases.
 <title>For Artists</title>
 
 <para>
-To create a new KTuberling playground you have to:
+To create a new &ktuberling; playground you have to:
 </para>
 
 <itemizedlist>
@@ -86,7 +86,7 @@ To create a new KTuberling playground you have to:
 </listitem>
 
 <listitem>
-    <para>If you are adding the theme to KTuberling SVN, add .svg .theme .desktop files to FILES section of the CMakeLists.txt in the pics/ directory
+    <para>If you are adding the theme to &ktuberling; SVN, add .svg .theme .desktop files to FILES section of the CMakeLists.txt in the pics/ directory
     </para>
 </listitem>
 
@@ -108,7 +108,7 @@ translating program labels and prompts, the sounds can be localized too.
 </para>
 
 <para>
-To create a new KTuberling sound theme you have to:
+To create a new &ktuberling; sound theme you have to:
 </para>
 
 <itemizedlist>
@@ -135,7 +135,7 @@ To create a new KTuberling sound theme you have to:
 </itemizedlist>
 </listitem>
 
-<listitem><para>If you are adding the sound theme to KTuberling SVN:</para>
+<listitem><para>If you are adding the sound theme to &ktuberling; SVN:</para>
 <itemizedlist>
 <listitem><para>Add the sound files and the .soundtheme files to the data/kdegames/ktuberling directory
      of your language translations.</para></listitem>
@@ -161,7 +161,7 @@ install( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme D
 
 <para>
 Information on how to work with the translation mechanisms in &kde; is available
-in <ulink url="http://i18n.kde.org/translation-howto/index.html">The
+in <ulink url="http://l10n.kde.org/docs/translation-howto/index.html">The
 &kde; Translation HOWTO</ulink>.
 </para>
 
