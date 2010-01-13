@@ -1,0 +1,31 @@
+  <playground gameboard="butterflies.svgz" desktop="butterflies.desktop" bgcolor="#fff">
+
+    <object name="wingsYellow" scale="8" />
+    <object name="wingsPurple" scale="8" />
+    <object name="wingsPink" scale="8" />
+
+    <object name="bodyBrown" scale="4" />
+    <object name="bodyYellow"  scale="4"/>
+    <object name="bodyRed"  scale="4"/>
+
+    <object name="spiralLeft"  scale="2"/>
+    <object name="spiralRight"  scale="2"/>
+    <object name="eyeLeft"  scale="2"/>
+    <object name="eyeRight"  scale="2"/>
+    <object name="purpleLeft"  scale="2"/>
+    <object name="purpleRight"  scale="2"/>
+    <object name="heartWhiteLeft"  scale="2"/>
+    <object name="heartWhiteRight"  scale="2"/>
+    <object name="yellowHeartLeft"  scale="2"/>
+    <object name="yellowHeartRight"  scale="2"/>
+    <object name="diamondLeft"  scale="2"/>
+    <object name="diamondRight"  scale="2"/>
+    <object name="circles"  scale="2"/>
+    <object name="circlesSmall"  scale="2"/>
+    <object name="circleBlue"  scale="2"/>
+    <object name="circleRed"  scale="2"/>
+    <object name="circleGreen"  scale="2"/>
+    <object name="circleYellow"  scale="2"/>
+    <object name="circlePurple"  scale="2"/>
+
+  </playground>
