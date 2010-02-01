@@ -507,6 +507,17 @@ clipboard.</para></listitem>
 
 <variablelist>
 
+<varlistentry>
+<term><menuchoice>
+<guimenu>Playground</guimenu>
+<guimenuitem>Lock Aspect Ratio</guimenuitem>
+</menuchoice></term>
+<listitem><para>This option preserves the playground aspect ration when resizing 
+the &ktuberling; window. When the playground aspect ratio does not match the one 
+of the window the background is filled with the one specified in the theme.
+</para></listitem>
+</varlistentry>
+
 <varlistentry id="theme_change">
 <term><menuchoice>
 <guimenu>Playground</guimenu>
