@@ -1,6 +1,7 @@
 [KTuberlingTheme]
 Name=Pizzeria
 Name[ca]=Pizzeria
+Name[ca@valencia]=Pizzeria
 Name[cs]=Pizzerie
 Name[da]=Pizzeria
 Name[de]=Pizzeria
@@ -20,6 +21,7 @@ Name[it]=Pizzeria
 Name[ja]=ピザ屋さん
 Name[km]=Pizzeria
 Name[lv]=Picērija
+Name[nb]=Pizzeria
 Name[nds]=Pizzeria
 Name[nl]=Pizzeria
 Name[nn]=Pizzeria
@@ -28,8 +30,11 @@ Name[pt]=Pizzaria
 Name[pt_BR]=Pizzaria
 Name[ro]=Pizzeria
 Name[ru]=Пиццерия
+Name[sk]=Pizzeria
 Name[sl]=Picerija
 Name[sr]=Пицерија
+Name[sr@ijekavian]=Пицерија
+Name[sr@ijekavianlatin]=Picerija
 Name[sr@latin]=Picerija
 Name[sv]=Pizzeria
 Name[te]=పిజ్జెరియా

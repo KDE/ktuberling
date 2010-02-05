@@ -1,6 +1,7 @@
 [KTuberlingTheme]
 Name=Christmas
 Name[ca]=Nadal
+Name[ca@valencia]=Nadal
 Name[cs]=Vánoce
 Name[da]=Jul
 Name[de]=Weihnachten
@@ -21,6 +22,7 @@ Name[ja]=クリスマス
 Name[km]=បុណ្យណូអែល
 Name[lt]=Kalėdos
 Name[lv]=Ziemassvētki
+Name[nb]=Jul
 Name[nds]=Wiehnachten
 Name[nl]=Christmas
 Name[nn]=Jul
@@ -29,8 +31,11 @@ Name[pt]=Natal
 Name[pt_BR]=Natal
 Name[ro]=Crăciunul
 Name[ru]=Рождество
+Name[sk]=Vianoce
 Name[sl]=Božič
 Name[sr]=Божић
+Name[sr@ijekavian]=Божић
+Name[sr@ijekavianlatin]=Božić
 Name[sr@latin]=Božić
 Name[sv]=Jul
 Name[te]=క్రిస్మస్
