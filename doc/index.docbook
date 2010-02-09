@@ -37,8 +37,8 @@
 
 </authorgroup>
 
-<date>2007-11-14</date>
-<releaseinfo>0.5.1</releaseinfo>
+<date>2009-12-15</date>
+<releaseinfo>0.6.0</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year><year>2006</year>
@@ -106,14 +106,6 @@ you can.
 </para>
 
 <para>
-There is a museum (like a <quote>Madame Tusseau</quote> gallery) where
-you can find many funny examples of decorated potatoes, penguins and
-aquariums. Of course, you can send your own creations to the programmer,
-<ulink url="mailto:ebischoff@nerim.net">&Eric.Bischoff;</ulink>, who will
-include them in the museum if he gets some spare time.
-</para>
-
-<para>
 &ktuberling; can also <quote>speak</quote>. It will spell out the name of
 the objects you drag and drop. It will <quote>speak</quote> in a language
 that you can choose. You can even use it to learn a bit of vocabulary
@@ -139,15 +131,12 @@ There are two areas in the main window:
 place on your playground.
 </para></listitem>
 </itemizedlist>
-<note><title>Note:</title><para>An actual look of the application screen may change depending on a 'playground' selected.</para></note>
+<note><title>Note:</title><para>An actual look of the application screen may change depending on a <quote>playground</quote> selected.</para></note>
 <screenshot>
 <screeninfo>Main Window of &ktuberling;</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata format="PNG" fileref="gameboard.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="gameboard.eps"/>
 </imageobject>
 <textobject><phrase>Main Window</phrase></textobject>
 </mediaobject>
@@ -158,7 +147,7 @@ place on your playground.
 
 <para>
 To drag an object, move the mouse pointer to the <quote>objects</quote>
-area and Click on it. Then move it to the <quote>playground</quote> area 
+area and click on it. Then move it to the <quote>playground</quote> area 
 and click again.
 <note><title>Note:</title><para>Size of the objects may change while dragging. Some of the oversized objects have been scaled down to feet into the “objects” area.</para></note>
 </para>
@@ -194,9 +183,6 @@ area, drag it back from the <quote>playground</quote> area to the
 <imageobject>
 <imagedata format="PNG" fileref="toolbar.png"/>
 </imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="toolbar.eps"/>
-</imageobject>
 <textobject><phrase>Toolbar</phrase></textobject>
 </mediaobject>
 
@@ -224,9 +210,6 @@ The toolbar provides buttons for the commonly used functions.
   <imageobject>
   <imagedata format="PNG" fileref="button-new.png"/>
   </imageobject>
-  <imageobject>
-  <imagedata format="EPS" fileref="button.new.eps"/>
-  </imageobject>
 	<textobject><phrase>New Game Button</phrase></textobject>
   </inlinemediaobject>
   </entry>
@@ -250,9 +233,6 @@ playground so a new decoration may be created.
   <imageobject>
   <imagedata format="PNG" fileref="button-open.png"/>
   </imageobject>
-  <imageobject>
-  <imagedata format="EPS" fileref="button.open.eps"/>
-  </imageobject>
 	<textobject><phrase>Load Button</phrase></textobject>
   </inlinemediaobject>
   </entry>
@@ -263,7 +243,7 @@ playground so a new decoration may be created.
   </link>
   </entry>
 <entry>
-Opens an existing tuberling file from the museum or from other folders.
+Opens an existing tuberling file from the disk.
 </entry>
 </row>
 
@@ -272,9 +252,6 @@ Opens an existing tuberling file from the museum or from other folders.
   <inlinemediaobject>
   <imageobject>
   <imagedata format="PNG" fileref="button-save.png"/>
-  </imageobject>
-  <imageobject>
-  <imagedata format="EPS" fileref="button.save.eps"/>
   </imageobject>
   <textobject><phrase>Save Button</phrase></textobject>
   </inlinemediaobject>
@@ -286,8 +263,8 @@ Opens an existing tuberling file from the museum or from other folders.
   </link>
   </entry>
 <entry>
-Saves your creation to your home folder, or to some other folder like
-the museum if you wish. The tuberling is saved to a small file where only the
+Saves your creation to your home folder, or to some other folder 
+on your disk. The tuberling is saved to a small file where only the
 position of objects are saved.
 </entry>
 </row>
@@ -298,9 +275,6 @@ position of objects are saved.
   <inlinemediaobject>
   <imageobject>
   <imagedata format="PNG" fileref="button-print.png"/>
-  </imageobject>
-  <imageobject>
-  <imagedata format="EPS" fileref="button.print.eps"/>
   </imageobject>
   <textobject><phrase>Print Button</phrase></textobject>
 </inlinemediaobject>
@@ -324,9 +298,6 @@ Prints your picture.
   <imageobject>
   <imagedata format="PNG" fileref="button-undo.png"/>
   </imageobject>
-  <imageobject>
-  <imagedata format="EPS" fileref="button.undo.eps"/>
-  </imageobject>
   <textobject><phrase>Undo Button</phrase></textobject>
   </inlinemediaobject>
   </entry>
@@ -346,9 +317,6 @@ Prints your picture.
   <inlinemediaobject>
   <imageobject>
   <imagedata format="PNG" fileref="button-redo.png"/>
-  </imageobject>
-  <imageobject>
-  <imagedata format="EPS" fileref="button.redo.eps"/>
   </imageobject>
   <textobject><phrase>Redo Button</phrase></textobject>
   </inlinemediaobject>
@@ -399,9 +367,6 @@ Help
 <imageobject>
 <imagedata format="PNG" fileref="menu-game.png"/>
 </imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.game.eps"/>
-</imageobject>
 <textobject><phrase><guimenu>Game</guimenu> Menu</phrase></textobject>
 </mediaobject>
 
@@ -428,7 +393,7 @@ area </para></listitem>
  <guimenuitem>Load...</guimenuitem>
  </menuchoice></term>
  <listitem><para><action>Opens an existing tuberling file</action> from
-the museum or from somewhere else if you wish.</para></listitem>
+your disk.</para></listitem>
 </varlistentry>
 
 <varlistentry id="game-save">
@@ -488,9 +453,6 @@ containing a picture of your tuberling.
 <imageobject>
 <imagedata format="PNG" fileref="menu-edit.png"/>
 </imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.edit.eps"/>
-</imageobject>
 <textobject><phrase>Edit Menu</phrase></textobject>
 </mediaobject>
 
@@ -544,6 +506,17 @@ clipboard.</para></listitem>
 <title>The <guimenu>Playground</guimenu> Menu</title>
 
 <variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Playground</guimenu>
+<guimenuitem>Lock Aspect Ratio</guimenuitem>
+</menuchoice></term>
+<listitem><para>This option preserves the playground aspect ratio when resizing 
+the &ktuberling; window. When the playground aspect ratio does not match the one 
+of the window the background is filled with the one specified in the theme.
+</para></listitem>
+</varlistentry>
 
 <varlistentry id="theme_change">
 <term><menuchoice>
@@ -659,9 +632,6 @@ keyboard shortcuts used by &ktuberling;.
 <imageobject>
 <imagedata format="PNG" fileref="menu-help.png"/>
 </imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="menu.help.eps"/>
-</imageobject>
 <textobject><phrase>Help Menu</phrase></textobject>
 </mediaobject>
 
@@ -698,6 +668,10 @@ keyboard shortcuts used by &ktuberling;.
 <para>&ktuberling;</para>
 
 <itemizedlist>
+<listitem>
+<para>Alex Fiestas <email>alex@eyeos.org</email> - current Maintainer</para>
+</listitem>
+
 <listitem>
 <para>John Calhoun - Original idea, original pictures and English
 sounds</para>
