@@ -13,7 +13,8 @@ set(ktuberling_SRCS
    toplevel.cpp 
    playground.cpp 
    todraw.cpp 
-   soundfactory.cpp )
+   soundfactory.cpp 
+   playgrounddelegate.cpp )
 
 kde4_add_app_icon(ktuberling_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-ktuberling.png")
 kde4_add_executable(ktuberling ${ktuberling_SRCS})

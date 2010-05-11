@@ -13,6 +13,7 @@
 
 #include <kxmlguiwindow.h>
 #include <kurl.h>
+#include <kcombobox.h>
 
 class QActionGroup;
 class PlayGround;
@@ -28,7 +29,7 @@ public:
   ~TopLevel();
 
   void open(const KUrl &url);
-  void registerGameboard(const QString &menuText, const QString &boardFile);
+  void registerGameboard(const QString& menuText, const QString& boardFile, const QPixmap& pixmap);
   void registerLanguage(const QString &code, const QString &soundFile, bool enabled);
   void changeLanguage(const QString &langCode);
   void playSound(const QString &ref) const;
@@ -54,6 +55,7 @@ private slots:
   void filePrint();
   void editCopy();
   void soundOff();
+  void changeGameboardFromCombo(int index);
   void changeGameboard();
   void changeLanguage();
   void toggleFullScreen();
@@ -68,9 +70,11 @@ private:
       ID_NEW, ID_OPEN, ID_SAVE, ID_PRINT,
       ID_UNDO, ID_REDO,
       ID_HELP };
+  enum { BOARD_THEME = Qt::UserRole + 1};
 
 
   QActionGroup *playgroundsGroup, *languagesGroup;
+  KComboBox *playgroundCombo;
 
   PlayGround *playGround;	// Play ground central widget
   SoundFactory *soundFactory;	// Speech organ

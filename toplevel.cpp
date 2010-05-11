@@ -28,6 +28,7 @@
 #include <kconfiggroup.h>
 #include <ktemporaryfile.h>
 #include <kdeprintdialog.h>
+#include <kcombobox.h>
 
 #include <QClipboard>
 #include <QPrintDialog>
@@ -36,6 +37,7 @@
 #include "toplevel.moc"
 #include "playground.h"
 #include "soundfactory.h"
+#include "playgrounddelegate.h"
 
 // Constructor
 TopLevel::TopLevel()
@@ -73,7 +75,7 @@ TopLevel::~TopLevel()
 }
 
 // Register an available gameboard
-void TopLevel::registerGameboard(const QString &menuText, const QString &board)
+void TopLevel::registerGameboard(const QString &menuText, const QString &board, const QPixmap &pixmap)
 {
   QList<QAction*> actionList;
   KToggleAction *t = new KToggleAction(menuText, this);
@@ -83,6 +85,9 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board)
   actionList << t;
   playgroundsGroup->addAction(t);
   plugActionList( "playgroundList", actionList );
+
+  playgroundCombo->addItem(menuText,QVariant(pixmap));
+  playgroundCombo->setItemData(playgroundCombo->count()-1,QVariant(board),BOARD_THEME);
 }
 
 // Register an available language
@@ -101,6 +106,12 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
 }
 
 // Switch to another gameboard
+void TopLevel::changeGameboardFromCombo(int index)
+{
+  QString newBoard = playgroundCombo->itemData(index,BOARD_THEME).toString();
+  changeGameboard(newBoard);
+}
+
 void TopLevel::changeGameboard()
 {
   QAction *action = qobject_cast<QAction*>(sender());
@@ -115,6 +126,8 @@ void TopLevel::changeGameboard()
 void TopLevel::changeGameboard(const QString &newGameBoard)
 {
   if (newGameBoard == playGround->currentGameboard()) return;
+  int index = playgroundCombo->findData(newGameBoard,BOARD_THEME);
+  playgroundCombo->setCurrentIndex(index);
 
   QString fileToLoad;
   QFileInfo fi(newGameBoard);
@@ -262,6 +275,21 @@ void TopLevel::setupKAction()
   t = new KToggleAction(i18n("&Lock Aspect Ratio"), this);
   actionCollection()->addAction("lock_aspect_ratio", t);
   connect(t, SIGNAL(triggered(bool)), this, SLOT(lockAspectRatio(bool)));
+
+  playgroundCombo = new KComboBox(this);
+  playgroundCombo->setMinimumWidth(200);
+  playgroundCombo->view()->setMinimumHeight(100);
+  playgroundCombo->view()->setMinimumWidth(200);
+  playgroundCombo->view()->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+
+  PlaygroundDelegate *playgroundDelegate = new PlaygroundDelegate(playgroundCombo->view());
+  playgroundCombo->setItemDelegate(playgroundDelegate);
+
+  connect(playgroundCombo, SIGNAL(currentIndexChanged(int)),this,SLOT(changeGameboardFromCombo(int)));
+
+  QWidgetAction *widgetAction = new QWidgetAction(this);
+  widgetAction->setDefaultWidget(playgroundCombo);
+  actionCollection()->addAction("playgroundSelection",widgetAction);
 
   setupGUI(ToolBar | Keys | Save | Create);
 }

@@ -66,6 +66,7 @@ private:
   bool insideBackground(const QSizeF &size, const QPointF &pos) const;
   void placeDraggedItem(const QPoint &pos);
   void placeNewItem(const QPoint &pos);
+  void playGroundPixmap(const QString &playgroundName, QPixmap &pixmap);
 
   void recenterView();
 

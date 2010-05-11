@@ -29,4 +29,7 @@
   <Action name="edit_undo"/>
   <Action name="edit_redo"/>
 </ToolBar>
+<ToolBar name="gameOptions"><text>Game Options</text>
+  <Action name="playgroundSelection"/>
+</ToolBar>
 </gui>

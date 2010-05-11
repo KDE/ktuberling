@@ -281,10 +281,19 @@ void PlayGround::registerPlayGrounds()
         KConfig c(KStandardDirs::locate("appdata", "pics/" + desktop));
         KConfigGroup cg = c.group("KTuberlingTheme");
         QString gameboard = layoutDocument.documentElement().attribute("gameboard");
-        m_topLevel->registerGameboard(cg.readEntry("Name"), theme);
+        QPixmap pixmap(200,100);
+        playGroundPixmap(gameboard,pixmap);
+        m_topLevel->registerGameboard(cg.readEntry("Name"), theme, pixmap);
       }
     }
   }
+}
+
+void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap)
+{
+  m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + playgroundName));
+  QPainter painter(&pixmap);
+  m_SvgRenderer.render(&painter,"background");
 }
 
 // Load background and draggable objects masks
