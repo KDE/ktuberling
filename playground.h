@@ -16,7 +16,7 @@
 #include <QGraphicsView>
 #include <QMap>
 
-#include <KSvgRenderer>
+#include <QSvgRenderer>
 #include <QUndoGroup>
 
 class KActionCollection;
@@ -80,7 +80,7 @@ private:
   QString m_pickedElement;				// the SVG element the cursor is
   ToDraw *m_dragItem;					// the item we are dragging
   QGraphicsScene *m_scene;				// the graphicsScene
-  KSvgRenderer m_SvgRenderer;				// the SVG renderer
+  QSvgRenderer m_SvgRenderer;				// the SVG renderer
   int m_nextZValue;					// the next Z value to use
 
   bool m_lockAspect;					// whether we are locking aspect ratio
