@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions(options);
 
   KApplication app;
-  KGlobal::locale()->insertCatalog("libkdegames");
+  KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
   TopLevel *toplevel=0;
 

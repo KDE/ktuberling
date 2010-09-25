@@ -46,7 +46,7 @@ TopLevel::TopLevel()
   QString board, language;
 
   playGround = new PlayGround(this);
-  playGround->setObjectName( "playGround" );
+  playGround->setObjectName( QLatin1String( "playGround" ) );
 
   soundFactory = new SoundFactory(this);
 
@@ -251,7 +251,7 @@ void TopLevel::setupKAction()
   KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
   KStandardGameAction::quit(kapp, SLOT(quit()), actionCollection());
 
-  action = actionCollection()->addAction("game_save_picture");
+  action = actionCollection()->addAction( QLatin1String( "game_save_picture" ));
   action->setText(i18n("Save &as Picture..."));
   connect(action, SIGNAL(triggered(bool) ), SLOT(filePicture()));
 
@@ -266,14 +266,14 @@ void TopLevel::setupKAction()
 
   //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
-  actionCollection()->addAction("speech_no_sound", t);
+  actionCollection()->addAction( QLatin1String( "speech_no_sound" ), t);
   connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
   languagesGroup->addAction(t);
 
   KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
 
   t = new KToggleAction(i18n("&Lock Aspect Ratio"), this);
-  actionCollection()->addAction("lock_aspect_ratio", t);
+  actionCollection()->addAction( QLatin1String( "lock_aspect_ratio" ), t);
   connect(t, SIGNAL(triggered(bool)), this, SLOT(lockAspectRatio(bool)));
 
   playgroundCombo = new KComboBox(this);
@@ -289,7 +289,7 @@ void TopLevel::setupKAction()
 
   QWidgetAction *widgetAction = new QWidgetAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
-  actionCollection()->addAction("playgroundSelection",widgetAction);
+  actionCollection()->addAction( QLatin1String( "playgroundSelection" ),widgetAction);
 
   setupGUI(ToolBar | Keys | Save | Create);
 }
