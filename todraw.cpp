@@ -50,7 +50,7 @@ bool ToDraw::load(QDataStream &stream)
   // NOTE: read error checking?
   QPointF pos;
   QString element;
-  qreal zOrder;  
+  qreal zOrder;
 
   stream >> pos;
   stream >> element;
@@ -78,7 +78,7 @@ QRectF ToDraw::unclippedRect() const
 
 QRectF ToDraw::clippedRectAt(const QPointF &somePos) const
 {
-  QRectF backgroundRect = renderer()->boundsOnElement("background");
+  QRectF backgroundRect = renderer()->boundsOnElement(QLatin1String( "background" ));
   backgroundRect.translate(-somePos);
   backgroundRect = transform().inverted().map(backgroundRect).boundingRect();
 

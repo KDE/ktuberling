@@ -51,7 +51,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 	  if (!namesList[sound].compare(soundRef)) break;
   if (sound == sounds) return;
 
-  soundFile = KStandardDirs::locate("data", "ktuberling/sounds/" + filesList[sound]);
+  soundFile = KStandardDirs::locate("data", QLatin1String( "ktuberling/sounds/" ) + filesList[sound]);
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
@@ -62,7 +62,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 // Register the various languages
 void SoundFactory::registerLanguages()
 {
-  QStringList list = KGlobal::dirs()->findAllResources("appdata", "sounds/*.soundtheme");
+  const QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "sounds/*.soundtheme" ));
 
   foreach(const QString &soundTheme, list)
   {
@@ -72,8 +72,8 @@ void SoundFactory::registerLanguages()
       QDomDocument document;
       if (document.setContent(&file))
       {
-        QString code = document.documentElement().attribute("code");
-        bool enabled = !(KStandardDirs::locate("appdata", "sounds/" + code + '/').isEmpty());
+        QString code = document.documentElement().attribute(QLatin1String( "code" ));
+        bool enabled = !(KStandardDirs::locate("appdata", QLatin1String( "sounds/" ) + code + QLatin1Char( '/' )).isEmpty());
         topLevel->registerLanguage(code, soundTheme, enabled);
       }
     }
@@ -97,7 +97,7 @@ bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
 
   languageElement = document.documentElement();
 
-  soundNamesList = languageElement.elementsByTagName("sound");
+  soundNamesList = languageElement.elementsByTagName(QLatin1String( "sound" ));
   sounds = soundNamesList.count();
   if (sounds < 1)
     return false;
@@ -109,9 +109,9 @@ bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
   {
     soundNameElement = (const QDomElement &) soundNamesList.item(sound).toElement();
 
-    nameAttribute = soundNameElement.attributeNode("name");
+    nameAttribute = soundNameElement.attributeNode(QLatin1String( "name" ));
     namesList << nameAttribute.value();
-    fileAttribute = soundNameElement.attributeNode("file");
+    fileAttribute = soundNameElement.attributeNode(QLatin1String( "file" ));
     filesList << fileAttribute.value();
   }
 

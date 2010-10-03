@@ -80,7 +80,7 @@ bool PlayGround::saveAs(const QString & name)
   QFileInfo gameBoard(m_gameboardFile);
   QDataStream out(&f);
   out.setVersion(QDataStream::Qt_4_5);
-  out << QString(saveGameText);
+  out << saveGameText;
   out << gameBoard.fileName();
   foreach(QGraphicsItem *item, m_scene->items())
   {
@@ -121,7 +121,7 @@ void PlayGround::connectRedoAction(QAction *action)
 
 void PlayGround::connectUndoAction(QAction *action)
 {
-  connect(action, SIGNAL(triggered()), &m_undoGroup, SLOT(undo())); 
+  connect(action, SIGNAL(triggered()), &m_undoGroup, SLOT(undo()));
   connect(&m_undoGroup, SIGNAL(canUndoChanged(bool)), action, SLOT(setEnabled(bool)));
 }
 
@@ -149,7 +149,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
       if (bounds.contains(scenePos)) foundElem = it.key();
     }
 
-    if (!foundElem.isNull()) 
+    if (!foundElem.isNull())
     {
       bounds = mapFromScene(bounds).boundingRect();
       double objectScale = m_objectsNameRatio.value(foundElem);
@@ -188,7 +188,7 @@ bool PlayGround::insideBackground(const QSizeF &size, const QPointF &pos) const
 
 QRectF PlayGround::backgroundRect() const
 {
-  return m_SvgRenderer.boundsOnElement("background");
+  return m_SvgRenderer.boundsOnElement(QLatin1String( "background" ));
 }
 
 void PlayGround::placeDraggedItem(const QPoint &pos)
@@ -267,7 +267,7 @@ bool PlayGround::isAspectRatioLocked() const
 // Register the various playgrounds
 void PlayGround::registerPlayGrounds()
 {
-  QStringList list = KGlobal::dirs()->findAllResources("appdata", "pics/*.theme");
+  const QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "pics/*.theme" ));
 
   foreach(const QString &theme, list)
   {
@@ -277,10 +277,10 @@ void PlayGround::registerPlayGrounds()
       QDomDocument layoutDocument;
       if (layoutDocument.setContent(&layoutFile))
       {
-        QString desktop = layoutDocument.documentElement().attribute("desktop");
-        KConfig c(KStandardDirs::locate("appdata", "pics/" + desktop));
+        QString desktop = layoutDocument.documentElement().attribute(QLatin1String( "desktop" ));
+        KConfig c( KStandardDirs::locate("appdata", QLatin1String( "pics/" ) ) + desktop);
         KConfigGroup cg = c.group("KTuberlingTheme");
-        QString gameboard = layoutDocument.documentElement().attribute("gameboard");
+        QString gameboard = layoutDocument.documentElement().attribute(QLatin1String( "gameboard" ));
         QPixmap pixmap(200,100);
         playGroundPixmap(gameboard,pixmap);
         m_topLevel->registerGameboard(cg.readEntry("Name"), theme, pixmap);
@@ -291,9 +291,9 @@ void PlayGround::registerPlayGrounds()
 
 void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap)
 {
-  m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + playgroundName));
+  m_SvgRenderer.load(KStandardDirs::locate("appdata", QLatin1String( "pics/" ) + playgroundName));
   QPainter painter(&pixmap);
-  m_SvgRenderer.render(&painter,"background");
+  m_SvgRenderer.render(&painter,QLatin1String( "background" ));
 }
 
 // Load background and draggable objects masks
@@ -317,16 +317,16 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   playGroundElement = layoutDocument.documentElement();
 
-  QString gameboardName = playGroundElement.attribute("gameboard");
+  QString gameboardName = playGroundElement.attribute(QLatin1String( "gameboard" ));
 
-  QColor bgColor = QColor(playGroundElement.attribute("bgcolor", "#fff"));
+  QColor bgColor = QColor(playGroundElement.attribute(QLatin1String( "bgcolor" ), QLatin1String( "#fff" ) ) );
   if (!bgColor.isValid())
     bgColor = Qt::white;
 
-  if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", "pics/" + gameboardName)))
+  if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", QLatin1String( "pics/" ) + gameboardName)))
     return false;
 
-  objectsList = playGroundElement.elementsByTagName("object");
+  objectsList = playGroundElement.elementsByTagName(QLatin1String( "object" ));
   if (objectsList.count() < 1)
     return false;
 
@@ -341,23 +341,23 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   {
     m_scene = new QGraphicsScene();
     m_sceneCache[gameboardFile] =  m_scene;
-  
+
     QGraphicsSvgItem *background = new QGraphicsSvgItem();
     background->setPos(QPoint(0,0));
     background->setSharedRenderer(&m_SvgRenderer);
     background->setZValue(0);
     m_scene->addItem(background);
   }
-  
+
   for (int decoration = 0; decoration < objectsList.count(); decoration++)
   {
     objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
 
-    const QString &objectName = objectElement.attribute("name");
+    const QString &objectName = objectElement.attribute(QLatin1String( "name" ));
     if (m_SvgRenderer.elementExists(objectName))
     {
-      m_objectsNameSound.insert(objectName, objectElement.attribute("sound"));
-      m_objectsNameRatio.insert(objectName, objectElement.attribute("scale", "1").toDouble());
+      m_objectsNameSound.insert(objectName, objectElement.attribute(QLatin1String( "sound" )));
+      m_objectsNameRatio.insert(objectName, objectElement.attribute(QLatin1String( "scale" ), QLatin1String( "1" )).toDouble());
     }
     else
     {
@@ -407,12 +407,12 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   bool reopenInTextMode = false;
   QString magicText;
   in >> magicText;
-  if (saveGameTextScaleTextMode == magicText) {
+  if ( QLatin1String( saveGameTextScaleTextMode ) == magicText) {
       scale = true;
       reopenInTextMode = true;
-  } else if (saveGameTextTextMode == magicText) {
+  } else if (QLatin1String( saveGameTextTextMode ) == magicText) {
       reopenInTextMode = true;
-  } else if (saveGameText != magicText) {
+  } else if ( QLatin1String( saveGameText ) != magicText) {
       return OldFileVersionError;
   }
 
@@ -435,7 +435,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
 
   if (in.atEnd())
     return OtherError;
-  
+
   qreal xFactor = 1.0;
   qreal yFactor = 1.0;
   m_topLevel->changeGameboard(board);

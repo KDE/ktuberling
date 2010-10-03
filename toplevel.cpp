@@ -84,7 +84,7 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
   connect(t, SIGNAL(toggled(bool)), SLOT(changeGameboard()));
   actionList << t;
   playgroundsGroup->addAction(t);
-  plugActionList( "playgroundList", actionList );
+  plugActionList( QLatin1String( "playgroundList" ), actionList );
 
   playgroundCombo->addItem(menuText,QVariant(pixmap));
   playgroundCombo->setItemData(playgroundCombo->count()-1,QVariant(board),BOARD_THEME);
@@ -102,7 +102,7 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
   connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
   actionList << t;
   languagesGroup->addAction(t);
-  plugActionList( "languagesList", actionList );
+  plugActionList( QLatin1String( "languagesList" ), actionList );
 }
 
 // Switch to another gameboard
@@ -133,7 +133,7 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
   QFileInfo fi(newGameBoard);
   if (fi.isRelative())
   {
-    QStringList list = KGlobal::dirs()->findAllResources("appdata", "pics/" + newGameBoard);
+    QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "pics/" ) + newGameBoard);
     if (!list.isEmpty()) fileToLoad = list.first();
   }
   else
@@ -170,7 +170,7 @@ void TopLevel::changeLanguage(const QString &soundFile)
   QFileInfo fi(soundFile);
   if (fi.isRelative())
   {
-    QStringList list = KGlobal::dirs()->findAllResources("appdata", "sounds/" + soundFile);
+    const QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "sounds/" ) + soundFile);
     if (!list.isEmpty()) fileToLoad = list.first();
   }
   else
@@ -204,17 +204,17 @@ void TopLevel::readOptions(QString &board, QString &language)
 {
   KConfigGroup config(KGlobal::config(), "General");
 
-  QString option = config.readEntry("Sound", "on");
-  bool soundEnabled = option.indexOf("on") == 0;
+  QString option = config.readEntry("Sound",  "on" );
+  bool soundEnabled = option.indexOf(QLatin1String( "on" )) == 0;
   board = config.readEntry("Gameboard", "default_theme.theme");
-  language = config.readEntry("Language", "");
+  language = config.readEntry("Language", "" );
   bool keepAspectRatio = config.readEntry("KeepAspectRatio", false);
 
   if (soundEnabled)
-  {  
+  {
     if (language.isEmpty())
     {
-      language = sounds.value(KGlobal::locale()->language(), "en.soundtheme");
+      language = sounds.value(KGlobal::locale()->language(), QLatin1String( "en.soundtheme" ));
     }
   }
   else
@@ -222,7 +222,7 @@ void TopLevel::readOptions(QString &board, QString &language)
     soundOff();
     language = QString();
   }
-  
+
   lockAspectRatio(keepAspectRatio);
 }
 
@@ -230,12 +230,12 @@ void TopLevel::readOptions(QString &board, QString &language)
 void TopLevel::writeOptions()
 {
   KConfigGroup config(KGlobal::config(), "General");
-  config.writeEntry("Sound", actionCollection()->action("speech_no_sound")->isChecked() ? "off": "on");
+  config.writeEntry("Sound", actionCollection()->action(QLatin1String( "speech_no_sound" ))->isChecked() ? "off": "on");
 
   config.writeEntry("Gameboard", playGround->currentGameboard());
 
   config.writeEntry("Language", soundFactory->currentSoundFile());
-  
+
   config.writeEntry("KeepAspectRatio", playGround->isAspectRatioLocked());
 }
 
@@ -299,8 +299,8 @@ void TopLevel::saveNewToolbarConfig()
   // this destroys our actions lists ...
   KXmlGuiWindow::saveNewToolbarConfig();
   // ... so plug them again
-  plugActionList( "playgroundList", playgroundsGroup->actions() );
-  plugActionList( "languagesList", languagesGroup->actions() );
+  plugActionList( QLatin1String( "playgroundList" ), playgroundsGroup->actions() );
+  plugActionList( QLatin1String( "languagesList" ), languagesGroup->actions() );
 }
 
 // Reset gameboard
@@ -313,7 +313,7 @@ void TopLevel::fileNew()
 void TopLevel::fileOpen()
 {
   KUrl url = KFileDialog::getOpenUrl(KUrl("kfiledialog:///<ktuberling>"),
-                 QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
+                                     QString::fromLatin1("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   open(url);
 }
@@ -341,7 +341,7 @@ void TopLevel::open(const KUrl &url)
       KMessageBox::error(this, i18n("Could not load file."));
     break;
   }
-    
+
 
   KIO::NetAccess::removeTempFile( name );
 }
@@ -351,7 +351,7 @@ void TopLevel::fileSave()
 {
   KUrl url = KFileDialog::getSaveUrl
                 ( KUrl("kfiledialog:///<ktuberling>"),
-                 QString("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")), this, QString(), KFileDialog::ConfirmOverwrite);
+                  QString::fromLatin1("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")), this, QString(), KFileDialog::ConfirmOverwrite);
 
   if (url.isEmpty())
     return;
@@ -377,7 +377,7 @@ void TopLevel::fileSave()
     KMessageBox::error(this, i18n("Could not save file."));
     return;
   }
-  
+
   if( !url.isLocalFile() )
   {
     if (!KIO::NetAccess::upload(name, url, this))
@@ -437,7 +437,7 @@ void TopLevel::filePrint()
 {
   QPrinter printer;
   bool ok;
-  
+
   QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, this);
   printDialog->setWindowTitle(i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
   ok = printDialog->exec();
@@ -464,23 +464,23 @@ void TopLevel::editCopy()
 // Toggle sound off
 void TopLevel::soundOff()
 {
-  actionCollection()->action("speech_no_sound")->setChecked(true);
+  actionCollection()->action(QLatin1String( "speech_no_sound" ))->setChecked(true);
   writeOptions();
 }
 
 bool TopLevel::isSoundEnabled() const
 {
-  return !actionCollection()->action("speech_no_sound")->isChecked();
+  return !actionCollection()->action(QLatin1String( "speech_no_sound" ))->isChecked();
 }
 
 void TopLevel::toggleFullScreen()
 {
-  KToggleFullScreenAction::setFullScreen( this, actionCollection()->action("fullscreen")->isChecked());
+  KToggleFullScreenAction::setFullScreen( this, actionCollection()->action(QLatin1String( "fullscreen" ))->isChecked());
 }
 
 void TopLevel::lockAspectRatio(bool lock)
 {
-  actionCollection()->action("lock_aspect_ratio")->setChecked(lock);
+  actionCollection()->action(QLatin1String( "lock_aspect_ratio" ))->setChecked(lock);
   playGround->lockAspectRatio(lock);
   writeOptions();
 }
