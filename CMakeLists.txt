@@ -26,7 +26,7 @@ install(TARGETS ktuberling  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( FILES ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES ktuberlingui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ktuberling )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
