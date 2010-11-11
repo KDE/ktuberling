@@ -282,6 +282,7 @@ void PlayGround::registerPlayGrounds()
         KConfigGroup cg = c.group("KTuberlingTheme");
         QString gameboard = layoutDocument.documentElement().attribute(QLatin1String( "gameboard" ));
         QPixmap pixmap(200,100);
+        pixmap.fill(Qt::transparent);
         playGroundPixmap(gameboard,pixmap);
         m_topLevel->registerGameboard(cg.readEntry("Name"), theme, pixmap);
       }
