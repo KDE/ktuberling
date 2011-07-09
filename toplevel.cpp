@@ -126,8 +126,6 @@ void TopLevel::changeGameboard()
 void TopLevel::changeGameboard(const QString &newGameBoard)
 {
   if (newGameBoard == playGround->currentGameboard()) return;
-  int index = playgroundCombo->findData(newGameBoard,BOARD_THEME);
-  playgroundCombo->setCurrentIndex(index);
 
   QString fileToLoad;
   QFileInfo fi(newGameBoard);
@@ -141,6 +139,8 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
     fileToLoad = newGameBoard;
   }
 
+  int index = playgroundCombo->findData(fileToLoad, BOARD_THEME);
+  playgroundCombo->setCurrentIndex(index);
   if (playGround->loadPlayGround(fileToLoad))
   {
     actionCollection()->action(fileToLoad)->setChecked(true);
