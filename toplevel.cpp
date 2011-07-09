@@ -287,7 +287,7 @@ void TopLevel::setupKAction()
 
   connect(playgroundCombo, SIGNAL(currentIndexChanged(int)),this,SLOT(changeGameboardFromCombo(int)));
 
-  QWidgetAction *widgetAction = new QWidgetAction(this);
+  KAction *widgetAction = new KAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
   actionCollection()->addAction( QLatin1String( "playgroundSelection" ),widgetAction);
 
