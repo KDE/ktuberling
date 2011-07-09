@@ -154,9 +154,9 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
   else
   {
     // Something bad just happened, try the default playground
-    if (newGameBoard != DEFAULT_THEME)
+    if (newGameBoard != QLatin1String(DEFAULT_THEME))
     {
-      changeGameboard(DEFAULT_THEME);
+      changeGameboard(QLatin1String(DEFAULT_THEME));
     }
     else
     {
