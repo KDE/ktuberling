@@ -80,7 +80,7 @@ bool PlayGround::saveAs(const QString & name)
   QFileInfo gameBoard(m_gameboardFile);
   QDataStream out(&f);
   out.setVersion(QDataStream::Qt_4_5);
-  out << saveGameText;
+  out << QString::fromLatin1(saveGameText);
   out << gameBoard.fileName();
   foreach(QGraphicsItem *item, m_scene->items())
   {
