@@ -39,6 +39,8 @@
 #include "soundfactory.h"
 #include "playgrounddelegate.h"
 
+static const char *DEFAULT_THEME = "default_theme.theme";
+
 // Constructor
 TopLevel::TopLevel()
   : KXmlGuiWindow(0)
@@ -141,16 +143,25 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
 
   int index = playgroundCombo->findData(fileToLoad, BOARD_THEME);
   playgroundCombo->setCurrentIndex(index);
-  if (playGround->loadPlayGround(fileToLoad))
+  QAction *action = actionCollection()->action(fileToLoad);
+  if (action && playGround->loadPlayGround(fileToLoad))
   {
-    actionCollection()->action(fileToLoad)->setChecked(true);
+    action->setChecked(true);
 
     // Change gameboard in the remembered options
     writeOptions();
   }
   else
   {
-    KMessageBox::error(this, i18n("Error while loading the playground."));
+    // Something bad just happened, try the default playground
+    if (newGameBoard != DEFAULT_THEME)
+    {
+      changeGameboard(DEFAULT_THEME);
+    }
+    else
+    {
+      KMessageBox::error(this, i18n("Error while loading the playground."));
+    }
   }
 }
 
@@ -179,9 +190,10 @@ void TopLevel::changeLanguage(const QString &soundFile)
   }
 
   // Change language effectively
-  if (soundFactory->loadLanguage(fileToLoad))
+  QAction *action = actionCollection()->action(fileToLoad);
+  if (action && soundFactory->loadLanguage(fileToLoad))
   {
-    actionCollection()->action(fileToLoad)->setChecked(true);
+    action->setChecked(true);
 
     // Change language in the remembered options
     writeOptions();
@@ -206,7 +218,7 @@ void TopLevel::readOptions(QString &board, QString &language)
 
   QString option = config.readEntry("Sound",  "on" );
   bool soundEnabled = option.indexOf(QLatin1String( "on" )) == 0;
-  board = config.readEntry("Gameboard", "default_theme.theme");
+  board = config.readEntry("Gameboard", DEFAULT_THEME);
   language = config.readEntry("Language", "" );
   bool keepAspectRatio = config.readEntry("KeepAspectRatio", false);
 
