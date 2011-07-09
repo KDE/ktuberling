@@ -18,8 +18,6 @@
     <object name="heartWhiteRight"  scale="2"/>
     <object name="yellowHeartLeft"  scale="2"/>
     <object name="yellowHeartRight"  scale="2"/>
-    <object name="diamondLeft"  scale="2"/>
-    <object name="diamondRight"  scale="2"/>
     <object name="circles"  scale="2"/>
     <object name="circlesSmall"  scale="2"/>
     <object name="circleBlue"  scale="2"/>
