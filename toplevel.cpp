@@ -265,7 +265,7 @@ void TopLevel::setupKAction()
 
   action = actionCollection()->addAction( QLatin1String( "game_save_picture" ));
   action->setText(i18n("Save &as Picture..."));
-  connect(action, SIGNAL(triggered(bool) ), SLOT(filePicture()));
+  connect(action, SIGNAL(triggered(bool)), SLOT(filePicture()));
 
   //Edit
   action = KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
@@ -279,7 +279,7 @@ void TopLevel::setupKAction()
   //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
   actionCollection()->addAction( QLatin1String( "speech_no_sound" ), t);
-  connect(t, SIGNAL(triggered(bool) ), SLOT(soundOff()));
+  connect(t, SIGNAL(triggered(bool)), SLOT(soundOff()));
   languagesGroup->addAction(t);
 
   KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
