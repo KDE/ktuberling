@@ -76,16 +76,22 @@ TopLevel::~TopLevel()
   delete soundFactory;
 }
 
+static bool actionSorterByName(QAction *a, QAction *b)
+{
+  return a->text().localeAwareCompare(b->text()) < 0;
+}
+
 // Register an available gameboard
 void TopLevel::registerGameboard(const QString &menuText, const QString &board, const QPixmap &pixmap)
 {
-  QList<QAction*> actionList;
   KToggleAction *t = new KToggleAction(menuText, this);
   actionCollection()->addAction(board, t);
   t->setData(board);
   connect(t, SIGNAL(toggled(bool)), SLOT(changeGameboard()));
-  actionList << t;
   playgroundsGroup->addAction(t);
+  QList<QAction*> actionList = playgroundsGroup->actions();
+  qSort(actionList.begin(), actionList.end(), actionSorterByName);
+  unplugActionList( QLatin1String( "playgroundList" ) );
   plugActionList( QLatin1String( "playgroundList" ), actionList );
 
   playgroundCombo->addItem(menuText,QVariant(pixmap));
@@ -95,15 +101,17 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
 // Register an available language
 void TopLevel::registerLanguage(const QString &code, const QString &soundFile, bool enabled)
 {
-  QList<QAction*> actionList;
   KToggleAction *t = new KToggleAction(KGlobal::locale()->languageCodeToName(code), this);
   t->setEnabled(enabled);
   actionCollection()->addAction(soundFile, t);
   t->setData(soundFile);
   sounds.insert(code, soundFile);
   connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
-  actionList << t;
   languagesGroup->addAction(t);
+  QList<QAction*> actionList = languagesGroup->actions();
+  actionList.removeAll(actionCollection()->action(QLatin1String( "speech_no_sound" )));
+  qSort(actionList.begin(), actionList.end(), actionSorterByName);
+  unplugActionList( QLatin1String( "languagesList" ) );
   plugActionList( QLatin1String( "languagesList" ), actionList );
 }
 
