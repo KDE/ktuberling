@@ -34,7 +34,7 @@
 #include <QPrintDialog>
 #include <QPrinter>
 
-#include "toplevel.moc"
+#include "toplevel.h"
 #include "playground.h"
 #include "soundfactory.h"
 #include "playgrounddelegate.h"

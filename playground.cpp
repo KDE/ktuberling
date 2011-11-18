@@ -473,4 +473,3 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   else return OtherError;
 }
 
-#include "playground.moc"

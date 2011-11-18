@@ -19,7 +19,7 @@
 #include <kstandarddirs.h>
 #include <kdebug.h>
 
-#include <Phonon/MediaObject>
+#include <phonon/MediaObject>
 
 #include <QDomDocument>
 #include <QFile>
