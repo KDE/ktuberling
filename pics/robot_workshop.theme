@@ -1,50 +1,50 @@
   <playground gameboard="robot_workshop.svgz" desktop="robot_workshop.desktop" bgcolor="#9898ab">
 
-    <object name="eyes1" />
-    <object name="eyes2" />
+    <object name="eyes1" sound="robot_workshop_eye" />
+    <object name="eyes2" sound="robot_workshop_eye" />
 
-    <object name="bodyBlue" />
-    <object name="bodyGreen" />
-    <object name="bodyRed" />
+    <object name="bodyBlue" sound="robot_workshop_body" />
+    <object name="bodyGreen" sound="robot_workshop_body" />
+    <object name="bodyRed" sound="robot_workshop_body" />
 
-    <object name="armBlue1" />
-    <object name="armBlue2" />
-    <object name="armRedHoriz" />
-    <object name="armRedVert" />
-    <object name="armFlexi1" />
-    <object name="armFlexi2" />
-    <object name="armFlexi3" />
-    <object name="scissorArm1" />
-    <object name="scissorArm2" />
-    <object name="scissorArm3" />
-    <object name="scissorArm1" />
-    <object name="scissorArm2" />
+    <object name="armBlue1" sound="robot_workshop_arm" />
+    <object name="armBlue2" sound="robot_workshop_arm" />
+    <object name="armRedHoriz" sound="robot_workshop_arm" />
+    <object name="armRedVert" sound="robot_workshop_arm" />
+    <object name="armFlexi1" sound="robot_workshop_arm" />
+    <object name="armFlexi2" sound="robot_workshop_arm" />
+    <object name="armFlexi3" sound="robot_workshop_arm" />
+    <object name="scissorArm1" sound="robot_workshop_arm" />
+    <object name="scissorArm2" sound="robot_workshop_arm" />
+    <object name="scissorArm3" sound="robot_workshop_arm" />
+    <object name="scissorArm1" sound="robot_workshop_arm" />
+    <object name="scissorArm2" sound="robot_workshop_arm" />
 
-    <object name="headBlue" />
-    <object name="headRed" />
-    <object name="headGreen" />
-    <object name="headDome" />
-    <object name="headEyes" />
+    <object name="headBlue" sound="robot_workshop_head" />
+    <object name="headRed" sound="robot_workshop_head" />
+    <object name="headGreen" sound="robot_workshop_head" />
+    <object name="headDome" sound="robot_workshop_head" />
+    <object name="headEyes" sound="robot_workshop_head" />
 
-    <object name="wheel" />
-    <object name="rocket1" />
-    <object name="rocket2" />
-    <object name="base1" />
-    <object name="foot" />
+    <object name="wheel" sound="robot_workshop_wheel" />
+    <object name="rocket1" sound="robot_workshop_rocket" />
+    <object name="rocket2" sound="robot_workshop_rocket" />
+    <object name="base1" sound="robot_workshop_base" />
+    <object name="foot" sound="robot_workshop_foot" />
 
-    <object name="rodHoriz" />
-    <object name="rodVert" />
-    <object name="rodLeft" />
-    <object name="rodRight" />
-    <object name="clawBlue1" />
-    <object name="clawBlue2" />
-    <object name="handGreenLeft" />
-    <object name="handGreenRight" />
-    <object name="ballGreen" />
-    <object name="blockGreen" />
-    <object name="blockRed" />
-    <object name="panel1" />
-    <object name="antLeft" />
-    <object name="antRight" />
+    <object name="rodHoriz" sound="robot_workshop_rod" />
+    <object name="rodVert" sound="robot_workshop_rod" />
+    <object name="rodLeft" sound="robot_workshop_rod" />
+    <object name="rodRight" sound="robot_workshop_rod" />
+    <object name="clawBlue1" sound="robot_workshop_claw" />
+    <object name="clawBlue2" sound="robot_workshop_claw" />
+    <object name="handGreenLeft" sound="robot_workshop_hand" />
+    <object name="handGreenRight" sound="robot_workshop_hand" />
+    <object name="ballGreen" sound="robot_workshop_ball" />
+    <object name="blockGreen" sound="robot_workshop_block" />
+    <object name="blockRed" sound="robot_workshop_block" />
+    <object name="panel1" sound="robot_workshop_panel" />
+    <object name="antLeft" sound="robot_workshop_antenna" />
+    <object name="antRight" sound="robot_workshop_antenna" />
 
   </playground>

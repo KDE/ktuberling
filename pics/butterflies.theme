@@ -1,29 +1,29 @@
   <playground gameboard="butterflies.svgz" desktop="butterflies.desktop" bgcolor="#fff">
 
-    <object name="wingsYellow" scale="8" />
-    <object name="wingsPurple" scale="8" />
-    <object name="wingsPink" scale="8" />
+    <object name="wingsYellow" scale="8" sound="butterflies_wing" />
+    <object name="wingsPurple" scale="8" sound="butterflies_wing" />
+    <object name="wingsPink" scale="8" sound="butterflies_wing" />
 
-    <object name="bodyBrown" scale="4" />
-    <object name="bodyYellow"  scale="4"/>
-    <object name="bodyRed"  scale="4"/>
+    <object name="bodyBrown" scale="4" sound="butterflies_body" />
+    <object name="bodyYellow" scale="4" sound="butterflies_body" />
+    <object name="bodyRed" scale="4" sound="butterflies_body" />
 
-    <object name="spiralLeft"  scale="2"/>
-    <object name="spiralRight"  scale="2"/>
-    <object name="eyeLeft"  scale="2"/>
-    <object name="eyeRight"  scale="2"/>
-    <object name="purpleLeft"  scale="2"/>
-    <object name="purpleRight"  scale="2"/>
-    <object name="heartWhiteLeft"  scale="2"/>
-    <object name="heartWhiteRight"  scale="2"/>
-    <object name="yellowHeartLeft"  scale="2"/>
-    <object name="yellowHeartRight"  scale="2"/>
-    <object name="circles"  scale="2"/>
-    <object name="circlesSmall"  scale="2"/>
-    <object name="circleBlue"  scale="2"/>
-    <object name="circleRed"  scale="2"/>
-    <object name="circleGreen"  scale="2"/>
-    <object name="circleYellow"  scale="2"/>
-    <object name="circlePurple"  scale="2"/>
+    <object name="spiralLeft" scale="2" sound="butterflies_spiral" />
+    <object name="spiralRight" scale="2" sound="butterflies_spiral" />
+    <object name="eyeLeft" scale="2" sound="butterflies_eye" />
+    <object name="eyeRight" scale="2" sound="butterflies_eye" />
+    <object name="purpleLeft" scale="2" sound="butterflies_purple_shape" />
+    <object name="purpleRight" scale="2" sound="butterflies_purple_shape" />
+    <object name="heartWhiteLeft" scale="2" sound="butterflies_heart" />
+    <object name="heartWhiteRight" scale="2" sound="butterflies_heart" />
+    <object name="yellowHeartLeft" scale="2" sound="butterflies_heart" />
+    <object name="yellowHeartRight" scale="2" sound="butterflies_heart" />
+    <object name="circles" scale="2" sound="butterflies_circles" />
+    <object name="circlesSmall" scale="2" sound="butterflies_circles" />
+    <object name="circleBlue" scale="2" sound="butterflies_circle" />
+    <object name="circleRed" scale="2" sound="butterflies_circle" />
+    <object name="circleGreen" scale="2" sound="butterflies_circle" />
+    <object name="circleYellow" scale="2" sound="butterflies_circle" />
+    <object name="circlePurple" scale="2" sound="butterflies_circle" />
 
   </playground>
