@@ -434,9 +434,6 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   QString board;
   in >> board;
 
-  if (in.atEnd())
-    return OtherError;
-
   qreal xFactor = 1.0;
   qreal yFactor = 1.0;
   m_topLevel->changeGameboard(board);
