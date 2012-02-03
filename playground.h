@@ -69,24 +69,33 @@ private:
   void playGroundPixmap(const QString &playgroundName, QPixmap &pixmap);
 
   void recenterView();
+  
+  QGraphicsScene *scene() const;
+  QUndoStack *undoStack() const;
 
   QString m_gameboardFile;				// the file the board
   QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
 
-  QUndoStack *m_undoStack;				// the command stack
   TopLevel *m_topLevel;					// Top-level window
 
   QString m_pickedElement;				// the SVG element the cursor is
   ToDraw *m_dragItem;					// the item we are dragging
-  QGraphicsScene *m_scene;				// the graphicsScene
   QSvgRenderer m_SvgRenderer;				// the SVG renderer
   int m_nextZValue;					// the next Z value to use
 
   bool m_lockAspect;					// whether we are locking aspect ratio
-  QMap <QString, QGraphicsScene *> m_sceneCache;
-  QMap <QString, QUndoStack *> m_undoCache;                 // caches the items of each playground
   QUndoGroup m_undoGroup;
+  
+  class SceneData
+  {
+    public:
+      QGraphicsScene *scene;
+      QUndoStack *undoStack;
+  };
+  QMap <QString, SceneData> m_scenes;  // caches the items of each playground
 };
 
 #endif
+
+/* kate: replace-tabs on; indent-width 2; */

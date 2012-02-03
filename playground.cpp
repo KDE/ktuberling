@@ -43,7 +43,7 @@ static const char *saveGameText = "KTuberlingSaveGameV4";
 
 // Constructor
 PlayGround::PlayGround(TopLevel *parent)
-    : QGraphicsView(parent), m_dragItem(0), m_scene(0), m_nextZValue(1), m_lockAspect(false)
+    : QGraphicsView(parent), m_dragItem(0), m_nextZValue(1), m_lockAspect(false)
 {
   m_topLevel = parent;
   setFrameStyle(QFrame::NoFrame);
@@ -55,19 +55,24 @@ PlayGround::PlayGround(TopLevel *parent)
 // Destructor
 PlayGround::~PlayGround()
 {
-  delete m_scene;
+  foreach (const SceneData &data, m_scenes)
+  {
+    delete data.scene;
+    delete data.undoStack;
+  }
 }
 
 // Reset the play ground
 void PlayGround::reset()
 {
-  foreach(QGraphicsItem *item, m_scene->items())
+    
+  foreach(QGraphicsItem *item, scene()->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
     delete currentObject;
   }
 
-  m_undoStack->clear();
+  undoStack()->clear();
 }
 
 // Save objects laid down on the editable area
@@ -82,7 +87,7 @@ bool PlayGround::saveAs(const QString & name)
   out.setVersion(QDataStream::Qt_4_5);
   out << QString::fromLatin1(saveGameText);
   out << gameBoard.fileName();
-  foreach(QGraphicsItem *item, m_scene->items())
+  foreach(QGraphicsItem *item, scene()->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
     if (currentObject != NULL) currentObject->save(out);
@@ -128,7 +133,7 @@ void PlayGround::connectUndoAction(QAction *action)
 // Mouse pressed event
 void PlayGround::mousePressEvent(QMouseEvent *event)
 {
-  if (!m_scene) return;
+  if (m_gameboardFile.isEmpty()) return;
 
   if (event->button() != Qt::LeftButton) return;
 
@@ -163,7 +168,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     else
     {
       // see if the user clicked on an already existent item
-      QGraphicsItem *dragItem = m_scene->itemAt(mapToScene(event->pos()));
+      QGraphicsItem *dragItem = scene()->itemAt(mapToScene(event->pos()));
       m_dragItem = qgraphicsitem_cast<ToDraw*>(dragItem);
       if (m_dragItem)
       {
@@ -174,7 +179,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
         QString elem = m_dragItem->elementId();
         setCursor(QCursor(toPixmap(elem, size.width(), size.height(), &m_SvgRenderer)));
 
-        m_scene->removeItem(m_dragItem);
+        scene()->removeItem(m_dragItem);
         m_topLevel->playSound(m_objectsNameSound.value(elem));
       }
     }
@@ -199,13 +204,13 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
 
   if (insideBackground(elementSize, itemPos))
   {
-    m_scene->addItem(m_dragItem);
-    m_undoStack->push(new ActionMove(m_dragItem, itemPos, m_nextZValue, m_scene));
+    scene()->addItem(m_dragItem);
+    undoStack()->push(new ActionMove(m_dragItem, itemPos, m_nextZValue, scene()));
     m_nextZValue++;
   }
   else
   {
-    m_undoStack->push(new ActionRemove(m_dragItem, m_scene));
+    undoStack()->push(new ActionRemove(m_dragItem, scene()));
   }
 
   setCursor(QCursor());
@@ -230,7 +235,7 @@ void PlayGround::placeNewItem(const QPoint &pos)
     m_nextZValue++;
     item->scale(objectScale, objectScale);
 
-    m_undoStack->push(new ActionAdd(item, m_scene));
+    undoStack()->push(new ActionAdd(item, scene()));
   }
 
   setCursor(QCursor());
@@ -243,6 +248,16 @@ void PlayGround::recenterView()
   // with pos() outside rect (e.g. pizza theme)
   fitInView(QRect(QPoint(0,0), m_SvgRenderer.defaultSize()),
       m_lockAspect ? Qt::KeepAspectRatio : Qt::IgnoreAspectRatio);
+}
+
+QGraphicsScene *PlayGround::scene() const
+{
+  return m_scenes[m_gameboardFile].scene;
+}
+
+QUndoStack *PlayGround::undoStack() const
+{
+  return m_scenes[m_gameboardFile].undoStack;
 }
 
 void PlayGround::resizeEvent(QResizeEvent *)
@@ -333,21 +348,20 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   m_objectsNameSound.clear();
 
-  //restore scene
-  if(m_sceneCache.contains(gameboardFile))
+  // create scene data if needed
+  if(!m_scenes.contains(gameboardFile))
   {
-    m_scene = m_sceneCache[gameboardFile];
-  }
-  else
-  {
-    m_scene = new QGraphicsScene();
-    m_sceneCache[gameboardFile] =  m_scene;
+    SceneData &data = m_scenes[gameboardFile];
+    data.scene = new QGraphicsScene();
+    data.undoStack = new QUndoStack();
 
     QGraphicsSvgItem *background = new QGraphicsSvgItem();
     background->setPos(QPoint(0,0));
     background->setSharedRenderer(&m_SvgRenderer);
     background->setZValue(0);
-    m_scene->addItem(background);
+    data.scene->addItem(background);
+
+    m_undoGroup.addStack(data.undoStack);
   }
 
   for (int decoration = 0; decoration < objectsList.count(); decoration++)
@@ -368,23 +382,11 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   setBackgroundBrush(bgColor);
   m_gameboardFile = gameboardFile;
-  setScene(m_scene);
+  setScene(scene());
 
   recenterView();
 
-  //restore undo stack
-  if(m_undoCache.contains(m_gameboardFile))
-  {
-    m_undoStack = m_undoCache[m_gameboardFile];
-  }
-  else
-  {
-    m_undoStack = new QUndoStack();
-    m_undoCache[m_gameboardFile] = m_undoStack;
-    m_undoGroup.addStack(m_undoStack);
-  }
-
-  m_undoGroup.setActiveStack(m_undoStack);
+  m_undoGroup.setActiveStack(undoStack());
 
   return true;
 }
@@ -464,9 +466,10 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       storedPos.setY(storedPos.y() * yFactor);
       obj->setPos(storedPos);
     }
-    m_undoStack->push(new ActionAdd(obj, m_scene));
+    undoStack()->push(new ActionAdd(obj, scene()));
   }
   if (f.error() == QFile::NoError) return NoError;
   else return OtherError;
 }
 
+/* kate: replace-tabs on; indent-width 2; */
