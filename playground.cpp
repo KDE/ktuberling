@@ -55,7 +55,10 @@ PlayGround::PlayGround(TopLevel *parent)
 // Destructor
 PlayGround::~PlayGround()
 {
-  delete m_scene;
+  foreach (QGraphicsScene *scene, m_sceneCache)
+    delete scene;
+  foreach (QUndoStack *undoStack, m_undoCache)
+    delete undoStack;
 }
 
 // Reset the play ground
