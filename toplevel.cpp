@@ -10,6 +10,8 @@
 
 /* Top level window */
 
+#include "toplevel.h"
+
 #include <kapplication.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
@@ -34,7 +36,6 @@
 #include <QPrintDialog>
 #include <QPrinter>
 
-#include "toplevel.h"
 #include "playground.h"
 #include "soundfactory.h"
 #include "playgrounddelegate.h"
