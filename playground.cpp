@@ -113,7 +113,7 @@ QPixmap PlayGround::getPicture()
 {
   QPixmap result(mapFromScene(backgroundRect()).boundingRect().size());
   QPainter artist(&result);
-  scene()->render(&artist, QRectF(), backgroundRect());
+  scene()->render(&artist, QRectF(), backgroundRect(), Qt::IgnoreAspectRatio);
   artist.end();
   return result;
 }
