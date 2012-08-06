@@ -37,8 +37,8 @@
 
 </authorgroup>
 
-<date>2009-12-15</date>
-<releaseinfo>0.6.0</releaseinfo>
+<date>2012-08-06</date>
+<releaseinfo>0.8.0 (&kde; 4.9)</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year><year>2006</year>
@@ -586,9 +586,9 @@ and properly configured to be able to hear sounds.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Show Toolbar</guimenuitem>
+<guimenuitem>Toolbars Shown</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Toggle the Toolbar display</action> on and off.
+<listitem><para><action>Toggle the Main Toolbar and Game Options display</action> on and off.
 </para></listitem>
 </varlistentry>
 
