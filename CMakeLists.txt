@@ -13,6 +13,7 @@ endif(NOT COMPILING_KDEGAMES)
 
 add_subdirectory( sounds ) 
 add_subdirectory( pics ) 
+add_subdirectory( doc )
 
 ########### next target ###############
 
