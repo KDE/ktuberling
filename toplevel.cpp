@@ -409,7 +409,7 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog:///<ktuberling>"), KImageIO::pattern(KImageIO::Writing));
+  const KUrl url = KFileDialog::getSaveUrl(KUrl(QString("kfiledialog:///<ktuberling>")), KImageIO::pattern(KImageIO::Writing), this, QString(), KFileDialog::ConfirmOverwrite);
 
   if( url.isEmpty() )
     return;
