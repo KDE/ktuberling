@@ -585,15 +585,6 @@ and properly configured to be able to hear sounds.
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Toolbars Shown</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggle the Main Toolbar and Game Options display</action> on and off.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
 </shortcut>
@@ -604,25 +595,15 @@ and properly configured to be able to hear sounds.
 </para></listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Opens a standard &kde; shortcut configuration dialog, where you can change the 
-keyboard shortcuts used by &ktuberling;.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Display the standard &kde; toolbar configuration dialog.</para></listitem>
-</varlistentry>
-
 </variablelist>
+
+<para>
+Additionally &ktuberling; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the
+<ulink url="help:/fundamentals/ui.html#menus-settings">Settings Menu</ulink> and
+<ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
 
 </sect2>
 
