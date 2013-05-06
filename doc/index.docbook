@@ -606,19 +606,6 @@ of the &kde; Fundamentals.
 </para>
 
 </sect2>
-
-<sect2>
-<title>The <guimenu>Help</guimenu> Menu</title>
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-help.png"/>
-</imageobject>
-<textobject><phrase>Help Menu</phrase></textobject>
-</mediaobject>
-
-&help.menu.documentation;
-
-</sect2>
 </sect1>
 </chapter>
 
