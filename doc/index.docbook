@@ -37,8 +37,8 @@
 
 </authorgroup>
 
-<date>2012-08-06</date>
-<releaseinfo>0.8.0 (&kde; 4.9)</releaseinfo>
+<date>2013-05-06</date>
+<releaseinfo>0.8.0 (&kde; 4.11)</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year><year>2006</year>
@@ -296,7 +296,7 @@ Prints your picture.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button-undo.png"/>
+  <imagedata format="PNG" fileref="edit-undo.png"/>
   </imageobject>
   <textobject><phrase>Undo Button</phrase></textobject>
   </inlinemediaobject>
@@ -316,7 +316,7 @@ Prints your picture.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button-redo.png"/>
+  <imagedata format="PNG" fileref="edit-redo.png"/>
   </imageobject>
   <textobject><phrase>Redo Button</phrase></textobject>
   </inlinemediaobject>
@@ -521,7 +521,7 @@ of the window the background is filled with the one specified in the theme.
 <varlistentry id="theme_change">
 <term><menuchoice>
 <guimenu>Playground</guimenu>
-<guimenuitem>Playground Name</guimenuitem>
+<guimenuitem><replaceable>Playground Name</replaceable></guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Switches to the playground</action>.
 </para></listitem>
@@ -558,7 +558,7 @@ and properly configured to be able to hear sounds.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Speech</guimenu>
-<guimenuitem>Language Name</guimenuitem>
+<guimenuitem><replaceable>Language Name</replaceable></guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles sound on and speaks the selected language</action>.
 </para></listitem>
