@@ -86,7 +86,7 @@ To create a new &ktuberling; playground you have to:
 </listitem>
 
 <listitem>
-    <para>If you are adding the theme to &ktuberling; SVN, add .svg .theme .desktop files to FILES section of the CMakeLists.txt in the pics/ directory
+    <para>If you are adding the theme to &ktuberling; repository, add .svg .theme .desktop files to FILES section of the CMakeLists.txt in the pics/ directory
     </para>
 </listitem>
 
@@ -135,7 +135,7 @@ To create a new &ktuberling; sound theme you have to:
 </itemizedlist>
 </listitem>
 
-<listitem><para>If you are adding the sound theme to &ktuberling; SVN:</para>
+<listitem><para>If you are adding the sound theme to &ktuberling; in your language folder:</para>
 <itemizedlist>
 <listitem><para>Add the sound files and the .soundtheme files to the data/kdegames/ktuberling directory
      of your language translations.</para></listitem>
