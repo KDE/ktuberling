@@ -55,7 +55,7 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
-  player->setCurrentSource(soundFile);
+  player->setCurrentSource(QUrl::fromLocalFile(soundFile));
   player->play();
 }
 
