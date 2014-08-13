@@ -15,9 +15,6 @@
 
 #include <QGraphicsSvgItem>
 
-
-QPixmap toPixmap(const QString &element, int width, int height, QSvgRenderer *renderer);
-
 class ToDraw : public QGraphicsSvgItem
 {
   public:
@@ -34,11 +31,15 @@ class ToDraw : public QGraphicsSvgItem
     QRectF boundingRect() const;
     QRectF unclippedRect() const;
 
+    void setBeingDragged(bool dragged);
+
   protected:
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
   
   private:
     QRectF clippedRectAt(const QPointF &somePos) const;
+
+    bool m_beingDragged;
 };
 
 #endif
