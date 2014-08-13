@@ -33,6 +33,7 @@ class ActionAdd : public QUndoCommand
 		ToDraw *m_item;
 		QGraphicsScene *m_scene;
 		bool m_done;
+		bool m_shouldAdd;
 };
 
 
@@ -54,14 +55,15 @@ class ActionRemove : public QUndoCommand
 class ActionMove : public QUndoCommand
 {
 	public:
-		ActionMove(ToDraw *item, const QPointF &pos, int zValue, QGraphicsScene *scene);
+		ActionMove(ToDraw *item, const QPointF &oldPos, int zValue, QGraphicsScene *scene);
 		
 		void redo();
 		void undo();
 	
 	private:
 		ToDraw *m_item;
-		QPointF m_pos;
+		QPointF m_oldPos;
+		QPointF m_newPos;
 		qreal m_zValue;
 		QGraphicsScene *m_scene;
 };

@@ -30,17 +30,9 @@ static QImage toImage(const QString &element, int width, int height, QSvgRendere
   return img;
 }
 
-QPixmap toPixmap(const QString &element, int width, int height, QSvgRenderer *renderer)
-{
-  QPixmap pix(width, height);
-  pix.fill(Qt::transparent);
-  QPainter p2(&pix);
-  renderer->render(&p2, element);
-  p2.end();
-  return pix;
-}
 
 ToDraw::ToDraw()
+ : m_beingDragged(false)
 {
 }
 
@@ -78,11 +70,20 @@ QRectF ToDraw::unclippedRect() const
 
 QRectF ToDraw::clippedRectAt(const QPointF &somePos) const
 {
+  if (m_beingDragged)
+    return unclippedRect();
+
   QRectF backgroundRect = renderer()->boundsOnElement(QLatin1String( "background" ));
   backgroundRect.translate(-somePos);
   backgroundRect = transform().inverted().map(backgroundRect).boundingRect();
 
   return unclippedRect().intersected(backgroundRect);
+}
+
+void ToDraw::setBeingDragged(bool dragged)
+{
+    prepareGeometryChange();
+    m_beingDragged = dragged;
 }
 
 QRectF ToDraw::boundingRect() const

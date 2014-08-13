@@ -59,9 +59,11 @@ public Q_SLOTS:
 protected:
 
   void mousePressEvent(QMouseEvent *event);
+  void mouseMoveEvent(QMouseEvent *event);
   void resizeEvent(QResizeEvent *event);
 
 private:
+  QPointF clipPos(const QPointF &p, ToDraw *item) const;
   QRectF backgroundRect() const;
   bool insideBackground(const QSizeF &size, const QPointF &pos) const;
   void placeDraggedItem(const QPoint &pos);
@@ -79,8 +81,9 @@ private:
 
   TopLevel *m_topLevel;					// Top-level window
 
-  QString m_pickedElement;				// the SVG element the cursor is
-  ToDraw *m_dragItem;					// the item we are dragging
+  QPointF m_itemDraggedPos;
+  ToDraw *m_newItem;				    // the new item we are moving
+  ToDraw *m_dragItem;					// the existing item we are dragging
   QSvgRenderer m_SvgRenderer;				// the SVG renderer
   int m_nextZValue;					// the next Z value to use
 

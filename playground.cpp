@@ -43,13 +43,14 @@ static const char *saveGameText = "KTuberlingSaveGameV4";
 
 // Constructor
 PlayGround::PlayGround(TopLevel *parent)
-    : QGraphicsView(parent), m_dragItem(0), m_nextZValue(1), m_lockAspect(false)
+    : QGraphicsView(parent), m_newItem(0), m_dragItem(0), m_nextZValue(1), m_lockAspect(false)
 {
   m_topLevel = parent;
   setFrameStyle(QFrame::NoFrame);
   setOptimizationFlag(QGraphicsView::DontSavePainterState, true); // all items here save the painter state
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+  setMouseTracking(true);
 }
 
 // Destructor
@@ -138,7 +139,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
   if (event->button() != Qt::LeftButton) return;
 
   if (m_dragItem) placeDraggedItem(event->pos());
-  else if (!m_pickedElement.isNull()) placeNewItem(event->pos());
+  else if (m_newItem) placeNewItem(event->pos());
   else
   {
     // see if the user clicked on the warehouse of items
@@ -156,14 +157,24 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
 
     if (!foundElem.isNull())
     {
-      bounds = mapFromScene(bounds).boundingRect();
-      double objectScale = m_objectsNameRatio.value(foundElem);
-      int width = qRound(bounds.width() * objectScale);
-      int height = qRound(bounds.height() * objectScale);
+      const double objectScale = m_objectsNameRatio.value(foundElem);
+      const QSizeF elementSize = m_SvgRenderer.boundsOnElement(foundElem).size() * objectScale;
+      QPointF itemPos = mapToScene(event->pos());
+      itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
 
       m_topLevel->playSound(m_objectsNameSound.value(foundElem));
-      setCursor(QCursor(toPixmap(foundElem, width, height, &m_SvgRenderer)));
-      m_pickedElement = foundElem;
+
+      m_newItem = new ToDraw;
+      m_newItem->setBeingDragged(true);
+      m_newItem->setPos(clipPos(itemPos, m_newItem));
+      m_newItem->setSharedRenderer(&m_SvgRenderer);
+      m_newItem->setElementId(foundElem);
+      m_newItem->setZValue(m_nextZValue);
+      m_nextZValue++;
+      m_newItem->scale(objectScale, objectScale);
+
+      scene()->addItem(m_newItem);
+      setCursor(Qt::BlankCursor);
     }
     else
     {
@@ -172,23 +183,54 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
       m_dragItem = qgraphicsitem_cast<ToDraw*>(dragItem);
       if (m_dragItem)
       {
-        QRectF rect = m_dragItem->unclippedRect();
-        rect = m_dragItem->transform().mapRect(rect);
-        QPolygon poly = mapFromScene(rect);
-        QSize size = poly.boundingRect().size(); // the polygon should be a rect...
         QString elem = m_dragItem->elementId();
-        setCursor(QCursor(toPixmap(elem, size.width(), size.height(), &m_SvgRenderer)));
 
-        scene()->removeItem(m_dragItem);
         m_topLevel->playSound(m_objectsNameSound.value(elem));
+        setCursor(Qt::BlankCursor);
+        m_dragItem->setBeingDragged(true);
+        m_itemDraggedPos = m_dragItem->pos();
+
+        const QSizeF elementSize = m_dragItem->transform().mapRect(m_dragItem->unclippedRect()).size();
+        QPointF itemPos = mapToScene(event->pos());
+        itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
+        m_dragItem->setPos(clipPos(itemPos, m_dragItem));
       }
     }
+  }
+}
+
+void PlayGround::mouseMoveEvent(QMouseEvent *event)
+{
+  if (m_newItem) {
+    QPointF itemPos = mapToScene(event->pos());
+    const QSizeF elementSize = m_newItem->transform().mapRect(m_newItem->unclippedRect()).size();
+    itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
+
+    m_newItem->setPos(clipPos(itemPos, m_newItem));
+  } else if (m_dragItem) {
+    QPointF itemPos = mapToScene(event->pos());
+    const QSizeF elementSize = m_dragItem->transform().mapRect(m_dragItem->unclippedRect()).size();
+    itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
+
+    m_dragItem->setPos(clipPos(itemPos, m_dragItem));
   }
 }
 
 bool PlayGround::insideBackground(const QSizeF &size, const QPointF &pos) const
 {
   return backgroundRect().intersects(QRectF(pos, size));
+}
+
+QPointF PlayGround::clipPos(const QPointF &p, ToDraw *item) const
+{
+  const double objectScale = m_objectsNameRatio.value(item->elementId());
+
+  QPointF res = p;
+  res.setX(qMax(0., res.x()));
+  res.setY(qMax(0., res.y()));
+  res.setX(qMin(m_SvgRenderer.defaultSize().width() - item->boundingRect().width() * objectScale, res.x()));
+  res.setY(qMin(m_SvgRenderer.defaultSize().height()- item->boundingRect().height() * objectScale, res.y()));
+  return res;
 }
 
 QRectF PlayGround::backgroundRect() const
@@ -204,8 +246,8 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
 
   if (insideBackground(elementSize, itemPos))
   {
-    scene()->addItem(m_dragItem);
-    undoStack()->push(new ActionMove(m_dragItem, itemPos, m_nextZValue, scene()));
+    m_dragItem->setBeingDragged(false);
+    undoStack()->push(new ActionMove(m_dragItem, m_itemDraggedPos, m_nextZValue, scene()));
     m_nextZValue++;
   }
   else
@@ -219,27 +261,18 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
 
 void PlayGround::placeNewItem(const QPoint &pos)
 {
-  double objectScale = m_objectsNameRatio.value(m_pickedElement);
-  QSizeF elementSize = m_SvgRenderer.boundsOnElement(m_pickedElement).size() * objectScale;
+  const QSizeF elementSize = m_newItem->transform().mapRect(m_newItem->unclippedRect()).size();
   QPointF itemPos = mapToScene(pos);
-
   itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
-
   if (insideBackground(elementSize, itemPos))
   {
-    ToDraw *item = new ToDraw;
-    item->setElementId(m_pickedElement);
-    item->setPos(itemPos);
-    item->setSharedRenderer(&m_SvgRenderer);
-    item->setZValue(m_nextZValue);
-    m_nextZValue++;
-    item->scale(objectScale, objectScale);
-
-    undoStack()->push(new ActionAdd(item, scene()));
+    m_newItem->setBeingDragged(false);
+    undoStack()->push(new ActionAdd(m_newItem, scene()));
+  } else {
+    m_newItem->deleteLater();
   }
-
+  m_newItem = 0;
   setCursor(QCursor());
-  m_pickedElement.clear();
 }
 
 void PlayGround::recenterView()
