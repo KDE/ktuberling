@@ -226,10 +226,10 @@ QPointF PlayGround::clipPos(const QPointF &p, ToDraw *item) const
   const double objectScale = m_objectsNameRatio.value(item->elementId());
 
   QPointF res = p;
-  res.setX(qMax(0., res.x()));
-  res.setY(qMax(0., res.y()));
-  res.setX(qMin(m_SvgRenderer.defaultSize().width() - item->boundingRect().width() * objectScale, res.x()));
-  res.setY(qMin(m_SvgRenderer.defaultSize().height()- item->boundingRect().height() * objectScale, res.y()));
+  res.setX(qMax(qreal(0.), res.x()));
+  res.setY(qMax(qreal(0.), res.y()));
+  res.setX(qMin(qreal(m_SvgRenderer.defaultSize().width() - item->boundingRect().width() * objectScale), res.x()));
+  res.setY(qMin(qreal(m_SvgRenderer.defaultSize().height()- item->boundingRect().height() * objectScale), res.y()));
   return res;
 }
 
