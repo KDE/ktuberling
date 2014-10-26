@@ -499,6 +499,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
       storedPos.setY(storedPos.y() * yFactor);
       obj->setPos(storedPos);
     }
+    scene()->addItem(obj);
     undoStack()->push(new ActionAdd(obj, scene()));
   }
   if (f.error() == QFile::NoError) return NoError;
