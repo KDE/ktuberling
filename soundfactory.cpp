@@ -18,7 +18,7 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
-
+#include <KGlobal>
 #include <phonon/MediaObject>
 
 #include <QDomDocument>

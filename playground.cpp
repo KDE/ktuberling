@@ -32,6 +32,7 @@
 #include <kstandardshortcut.h>
 #include <kicon.h>
 #include <QAction>
+#include <KGlobal>
 
 #include "action.h"
 #include "toplevel.h"

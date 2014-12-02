@@ -24,7 +24,7 @@ class KActionCollection;
 class Action;
 class ToDraw;
 class TopLevel;
-
+class QPrinter;
 class QGraphicsSvgItem;
 
 class PlayGround : public QGraphicsView

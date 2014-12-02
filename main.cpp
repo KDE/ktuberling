@@ -11,7 +11,7 @@
 #include <kapplication.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
-#include <kaboutdata.h>
+#include <K4AboutData>
 #include <kglobal.h>
 
 #include "toplevel.h"
@@ -26,8 +26,8 @@ static const char version[] = "0.9.0";
 int main(int argc, char *argv[])
 {
 
-  KAboutData aboutData( "ktuberling", 0, ki18n("KTuberling"), 
-    version, description, KAboutData::License_GPL, 
+  K4AboutData aboutData( "ktuberling", 0, ki18n("KTuberling"), 
+    version, description, K4AboutData::License_GPL, 
     ki18n("(c) 1999-2009, The KTuberling Developers"), text, "http://games.kde.org/ktuberling" );
   aboutData.addAuthor(ki18n("Albert Astals Cid"), ki18n("Maintainer"), "aacid@kde.org");
   aboutData.addAuthor(ki18n("Éric Bischoff"), ki18n("Former Developer"), "ebischoff@nerim.net");
@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions(options);
 
   KApplication app;
-  KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
   TopLevel *toplevel=0;
 
