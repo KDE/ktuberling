@@ -62,7 +62,7 @@ install(TARGETS ktuberling  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES ktuberlingui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ktuberling )
 
 ecm_install_icons( ICONS hi128-apps-ktuberling.png               hi16-apps-ktuberling.png               hi22-apps-ktuberling.png               hi32-apps-ktuberling.png               hi48-apps-ktuberling.png               hi64-apps-ktuberling.png
