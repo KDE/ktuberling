@@ -65,7 +65,9 @@ install(TARGETS ktuberling  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 install( PROGRAMS ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES ktuberlingui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ktuberling )
 
-ecm_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ICONS hi128-apps-ktuberling.png               hi16-apps-ktuberling.png               hi22-apps-ktuberling.png               hi32-apps-ktuberling.png               hi48-apps-ktuberling.png               hi64-apps-ktuberling.png
+hi128-mime-application-x-tuberling.png  hi16-mime-application-x-tuberling.png  hi22-mime-application-x-tuberling.png  hi32-mime-application-x-tuberling.png  hi48-mime-application-x-tuberling.png  hi64-mime-application-x-tuberling.png
+ DESTINATION ${ICON_INSTALL_DIR} )
 
 
 
