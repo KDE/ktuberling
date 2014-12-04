@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <KGlobal>

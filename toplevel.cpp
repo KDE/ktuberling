@@ -15,7 +15,7 @@
 #include <kapplication.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kio/netaccess.h>
 #include <kaction.h>

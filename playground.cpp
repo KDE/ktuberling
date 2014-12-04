@@ -12,7 +12,7 @@
 
 #include "playground.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kconfiggroup.h>
 #include <kdebug.h>
