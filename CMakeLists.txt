@@ -74,4 +74,4 @@ hi128-mime-application-x-tuberling.png  hi16-mime-application-x-tuberling.png  h
 
 
 
-
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
