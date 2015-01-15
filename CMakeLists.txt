@@ -57,7 +57,7 @@ set(ktuberling_SRCS
 kde4_add_app_icon(ktuberling_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-ktuberling.png")
 add_executable(ktuberling ${ktuberling_SRCS})
 
-target_link_libraries(ktuberling   KF5::KIOCore KF5KDEGames Phonon::phonon4qt5 Qt5::Svg KF5::KDELibs4Support Phonon::phonon4qt5)
+target_link_libraries(ktuberling   KF5::KIOCore KF5KDEGames Phonon::phonon4qt5 Qt5::Svg KF5::KDELibs4Support Phonon::phonon4qt5 KF5::DBusAddons)
 
 install(TARGETS ktuberling  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

@@ -15,9 +15,8 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
-
+#include <KDBusService>
 #include "toplevel.h"
-
 
 static const QString description = i18n("Potato game for kids");
 static const KLocalizedString text = ki18n("A program original by <email address='%1'>Éric Bischoff</email>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.").subs(QLatin1String("ebischoff@nerim.net"));
@@ -27,7 +26,7 @@ static const char version[] = "0.9.0";
 // Main function
 int main(int argc, char *argv[])
 {
-
+  QApplication app(argc, argv);
   KAboutData aboutData( "ktuberling", i18n("KTuberling"), 
     version, description, KAboutLicense::GPL, 
     i18n("(c) 1999-2009, The KTuberling Developers"), "http://games.kde.org/ktuberling" );
@@ -38,7 +37,6 @@ int main(int argc, char *argv[])
   aboutData.addCredit(i18n("Bas Willems"), i18n("New artwork"), "cybersurfer@euronet.nl");
   aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), "roger.larsson@norran.net");
   aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), "dolores.almansa@corazondemaria.org");
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
@@ -49,7 +47,7 @@ int main(int argc, char *argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-
+  KDBusService service;
   TopLevel *toplevel=0;
 
   if (app.isSessionRestored())
