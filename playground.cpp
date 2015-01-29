@@ -15,7 +15,7 @@
 #include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kconfiggroup.h>
-#include <kdebug.h>
+#include <qdebug.h>
 
 #include <QCursor>
 #include <QDataStream>
@@ -30,7 +30,6 @@
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <kstandardshortcut.h>
-#include <kicon.h>
 #include <QAction>
 #include <KGlobal>
 
@@ -410,7 +409,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
     }
     else
     {
-      kWarning() << objectName << "does not exist. Check" << gameboardFile;
+      qWarning() << objectName << "does not exist. Check" << gameboardFile;
     }
   }
 
