@@ -270,7 +270,7 @@ void TopLevel::setupKAction()
   KStandardGameAction::load(this, SLOT(fileOpen()), actionCollection());
   KStandardGameAction::save(this, SLOT(fileSave()), actionCollection());
   KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
-  KStandardGameAction::quit(kapp, SLOT(quit()), actionCollection());
+  KStandardGameAction::quit(qApp, SLOT(quit()), actionCollection());
 
   action = actionCollection()->addAction( QLatin1String( "game_save_picture" ));
   action->setText(i18n("Save &as Picture..."));
