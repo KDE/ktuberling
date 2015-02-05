@@ -16,8 +16,6 @@
 #include <QPainter>
 #include <QSvgRenderer>
 
-#include <kdeversion.h>
-
 static QImage toImage(const QString &element, int width, int height, QSvgRenderer *renderer)
 {
   QImage img(width, height, QImage::Format_ARGB32_Premultiplied);
