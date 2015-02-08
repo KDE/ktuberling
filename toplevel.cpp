@@ -102,7 +102,7 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
 // Register an available language
 void TopLevel::registerLanguage(const QString &code, const QString &soundFile, bool enabled)
 {
-  KToggleAction *t = new KToggleAction(KGlobal::locale()->languageCodeToName(code), this);
+  KToggleAction *t = new KToggleAction(KLocale::global()->languageCodeToName(code), this);
   t->setEnabled(enabled);
   actionCollection()->addAction(soundFile, t);
   t->setData(soundFile);
@@ -223,7 +223,7 @@ void TopLevel::playSound(const QString &ref) const
 // Read options from preferences file
 void TopLevel::readOptions(QString &board, QString &language)
 {
-  KConfigGroup config(KGlobal::config(), "General");
+  KConfigGroup config(KSharedConfig::openConfig(), "General");
 
   QString option = config.readEntry("Sound",  "on" );
   bool soundEnabled = option.indexOf(QLatin1String( "on" )) == 0;
@@ -235,7 +235,7 @@ void TopLevel::readOptions(QString &board, QString &language)
   {
     if (language.isEmpty())
     {
-      language = sounds.value(KGlobal::locale()->language(), QLatin1String( "en.soundtheme" ));
+      language = sounds.value(KLocale::global()->language(), QLatin1String( "en.soundtheme" ));
     }
   }
   else
@@ -250,7 +250,7 @@ void TopLevel::readOptions(QString &board, QString &language)
 // Write options to preferences file
 void TopLevel::writeOptions()
 {
-  KConfigGroup config(KGlobal::config(), "General");
+  KConfigGroup config(KSharedConfig::openConfig(), "General");
   config.writeEntry("Sound", actionCollection()->action(QLatin1String( "speech_no_sound" ))->isChecked() ? "off": "on");
 
   config.writeEntry("Gameboard", playGround->currentGameboard());
@@ -333,13 +333,13 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  KUrl url = KFileDialog::getOpenUrl(KUrl("kfiledialog:///<ktuberling>"),
+  QUrl url = KFileDialog::getOpenUrl(QUrl("kfiledialog:///<ktuberling>"),
                                      QString::fromLatin1("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   open(url);
 }
 
-void TopLevel::open(const KUrl &url)
+void TopLevel::open(const QUrl &url)
 {
   if (url.isEmpty())
     return;

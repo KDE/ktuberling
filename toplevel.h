@@ -28,7 +28,7 @@ public:
   TopLevel();
   ~TopLevel();
 
-  void open(const KUrl &url);
+  void open(const QUrl &url);
   void registerGameboard(const QString& menuText, const QString& boardFile, const QPixmap& pixmap);
   void registerLanguage(const QString &code, const QString &soundFile, bool enabled);
   void changeLanguage(const QString &langCode);

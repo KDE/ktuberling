@@ -16,13 +16,12 @@
 
 #include <kmessagebox.h>
 #include <KLocalizedString>
-#include <kstandarddirs.h>
-#include <kdebug.h>
-#include <KGlobal>
+
 #include <phonon/MediaObject>
 
 #include <QDomDocument>
 #include <QFile>
+#include <QStandardPaths>
 
 #include "toplevel.h"
 
@@ -51,7 +50,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 	  if (!namesList[sound].compare(soundRef)) break;
   if (sound == sounds) return;
 
-  soundFile = KStandardDirs::locate("appdata", QLatin1String( "sounds/" ) + filesList[sound]);
+  soundFile = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + filesList[sound]);
   if (soundFile.isEmpty()) return;
 
 //printf("%s\n", (const char *) soundFile);
@@ -62,7 +61,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 // Register the various languages
 void SoundFactory::registerLanguages()
 {
-  const QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "sounds/*.soundtheme" ));
+  const QStringList list = QStandardPaths::locateAll(QStandardPaths::DataLocation, QLatin1String( "sounds/*.soundtheme" ));
 
   foreach(const QString &soundTheme, list)
   {
@@ -73,7 +72,7 @@ void SoundFactory::registerLanguages()
       if (document.setContent(&file))
       {
         QString code = document.documentElement().attribute(QLatin1String( "code" ));
-        bool enabled = !(KStandardDirs::locate("appdata", QLatin1String( "sounds/" ) + code + QLatin1Char( '/' )).isEmpty());
+        bool enabled = !(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + code + QLatin1Char( '/' )).isEmpty());
         topLevel->registerLanguage(code, soundTheme, enabled);
       }
     }
