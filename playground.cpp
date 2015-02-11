@@ -13,25 +13,26 @@
 #include "playground.h"
 
 #include <KLocalizedString>
-#include <kstandarddirs.h>
+#include <kconfig.h>
 #include <kconfiggroup.h>
 #include <qdebug.h>
 
+#include <QAction>
 #include <QCursor>
 #include <QDataStream>
+#include <QDir>
 #include <QDomDocument>
 #include <QFile>
+#include <QFileInfo>
 #include <QGraphicsSvgItem>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPrinter>
-#include <QFileInfo>
+#include <QStandardPaths>
 
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <kstandardshortcut.h>
-#include <QAction>
-#include <KGlobal>
 
 #include "action.h"
 #include "toplevel.h"
@@ -315,7 +316,16 @@ bool PlayGround::isAspectRatioLocked() const
 // Register the various playgrounds
 void PlayGround::registerPlayGrounds()
 {
-  const QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "pics/*.theme" ));
+  QSet<QString> list;
+  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, "pics", QStandardPaths::LocateDirectory);
+  Q_FOREACH (const QString &dir, dirs)
+  {
+    const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.theme"));
+    Q_FOREACH (const QString &file, fileNames)
+    {
+        list << dir + '/' + file;
+    }
+  }
 
   foreach(const QString &theme, list)
   {
@@ -326,7 +336,7 @@ void PlayGround::registerPlayGrounds()
       if (layoutDocument.setContent(&layoutFile))
       {
         QString desktop = layoutDocument.documentElement().attribute(QLatin1String( "desktop" ));
-        KConfig c( KStandardDirs::locate("appdata", QLatin1String( "pics/" ) ) + desktop);
+        KConfig c( QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + desktop ) );
         KConfigGroup cg = c.group("KTuberlingTheme");
         QString gameboard = layoutDocument.documentElement().attribute(QLatin1String( "gameboard" ));
         QPixmap pixmap(200,100);
@@ -340,7 +350,7 @@ void PlayGround::registerPlayGrounds()
 
 void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap)
 {
-  m_SvgRenderer.load(KStandardDirs::locate("appdata", QLatin1String( "pics/" ) + playgroundName));
+  m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + playgroundName ));
   QPainter painter(&pixmap);
   m_SvgRenderer.render(&painter,QLatin1String( "background" ));
 }
@@ -372,7 +382,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   if (!bgColor.isValid())
     bgColor = Qt::white;
 
-  if (!m_SvgRenderer.load(KStandardDirs::locate("appdata", QLatin1String( "pics/" ) + gameboardName)))
+  if (!m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + gameboardName )))
     return false;
 
   objectsList = playGroundElement.elementsByTagName(QLatin1String( "object" ));
