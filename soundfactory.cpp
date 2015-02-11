@@ -19,6 +19,7 @@
 
 #include <phonon/MediaObject>
 
+#include <QDir>
 #include <QDomDocument>
 #include <QFile>
 #include <QStandardPaths>
@@ -61,7 +62,16 @@ void SoundFactory::playSound(const QString &soundRef) const
 // Register the various languages
 void SoundFactory::registerLanguages()
 {
-  const QStringList list = QStandardPaths::locateAll(QStandardPaths::DataLocation, QLatin1String( "sounds/*.soundtheme" ));
+  QSet<QString> list;
+  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, "sounds", QStandardPaths::LocateDirectory);
+  Q_FOREACH (const QString &dir, dirs)
+  {
+    const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.soundtheme"));
+    Q_FOREACH (const QString &file, fileNames)
+    {
+        list <<dir + '/' + file;
+    }
+  }
 
   foreach(const QString &soundTheme, list)
   {
@@ -72,7 +82,7 @@ void SoundFactory::registerLanguages()
       if (document.setContent(&file))
       {
         QString code = document.documentElement().attribute(QLatin1String( "code" ));
-        bool enabled = !(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + code + QLatin1Char( '/' )).isEmpty());
+        bool enabled = !(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + code + QLatin1Char( '/' ), QStandardPaths::LocateDirectory).isEmpty());
         topLevel->registerLanguage(code, soundTheme, enabled);
       }
     }
