@@ -12,13 +12,11 @@
 
 #include "toplevel.h"
 
-#include <kapplication.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <kfiledialog.h> // TODO
+#include <klocale.h> // TODO
 #include <KLocalizedString>
-#include <kstandarddirs.h>
-#include <kio/netaccess.h>
-#include <kaction.h>
+#include <kio/netaccess.h> // TODO
 #include <kstandardaction.h>
 #include <kstandardshortcut.h>
 #include <kstandardgameaction.h>
@@ -26,15 +24,17 @@
 #include <ktoggleaction.h>
 #include <ktogglefullscreenaction.h>
 #include <kimageio.h>
-#include <kmimetype.h>
+#include <kmimetype.h> // TODO
 #include <kconfiggroup.h>
-#include <ktemporaryfile.h>
-#include <kdeprintdialog.h>
 #include <kcombobox.h>
 
+#include <QApplication>
 #include <QClipboard>
+#include <QFileInfo>
 #include <QPrintDialog>
 #include <QPrinter>
+#include <QTemporaryFile>
+#include <QWidgetAction>
 
 #include "playground.h"
 #include "soundfactory.h"
@@ -142,8 +142,7 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
   QFileInfo fi(newGameBoard);
   if (fi.isRelative())
   {
-    QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "pics/" ) + newGameBoard);
-    if (!list.isEmpty()) fileToLoad = list.first();
+    fileToLoad = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + newGameBoard);
   }
   else
   {
@@ -190,8 +189,7 @@ void TopLevel::changeLanguage(const QString &soundFile)
   QFileInfo fi(soundFile);
   if (fi.isRelative())
   {
-    const QStringList list = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "sounds/" ) + soundFile);
-    if (!list.isEmpty()) fileToLoad = list.first();
+    fileToLoad = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + soundFile);
   }
   else
   {
@@ -308,7 +306,7 @@ void TopLevel::setupKAction()
 
   connect(playgroundCombo, SIGNAL(currentIndexChanged(int)),this,SLOT(changeGameboardFromCombo(int)));
 
-  KAction *widgetAction = new KAction(this);
+  QWidgetAction *widgetAction = new QWidgetAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
   actionCollection()->addAction( QLatin1String( "playgroundSelection" ),widgetAction);
 
@@ -377,7 +375,7 @@ void TopLevel::fileSave()
   if (url.isEmpty())
     return;
 
-  KTemporaryFile tempFile; // for network saving
+  QTemporaryFile tempFile; // for network saving
   QString name;
   if( !url.isLocalFile() )
   {
@@ -426,7 +424,7 @@ void TopLevel::filePicture()
   if( url.isEmpty() )
     return;
 
-  KTemporaryFile tempFile; // for network saving
+  QTemporaryFile tempFile; // for network saving
   QString name;
   if( !url.isLocalFile() )
   {
@@ -471,7 +469,7 @@ void TopLevel::filePrint()
   QPrinter printer;
   bool ok;
 
-  QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, this);
+  QPrintDialog *printDialog = new QPrintDialog(&printer, this);
   printDialog->setWindowTitle(i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
   ok = printDialog->exec();
   delete printDialog;
