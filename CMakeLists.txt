@@ -3,7 +3,7 @@ project(ktuberling)
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.3.0")
 
-find_package(ECM 1.3.0 REQUIRED CONFIG)
+find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Quick QuickWidgets Svg Test)
@@ -30,6 +30,7 @@ find_package(Phonon4Qt5 CONFIG REQUIRED)
 include_directories(BEFORE ${PHONON_INCLUDES})
 
 include(FeatureSummary)
+include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(KDEInstallDirs)
 include(KDECompilerSettings)
@@ -54,22 +55,23 @@ set(ktuberling_SRCS
    soundfactory.cpp 
    playgrounddelegate.cpp )
 
-kde4_add_app_icon(ktuberling_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-ktuberling.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-ktuberling.png")
+ecm_add_app_icon(ktuberling_SRCS ICONS ${ICONS_SRCS})
 add_executable(ktuberling ${ktuberling_SRCS})
 
 target_link_libraries(ktuberling   KF5::KIOCore KF5KDEGames Phonon::phonon4qt5 Qt5::Svg Phonon::phonon4qt5 KF5::DBusAddons KF5::XmlGui KF5::Completion Qt5::PrintSupport KF5::KDELibs4Support)
 
-install(TARGETS ktuberling  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS ktuberling  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.ktuberling.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES ktuberlingui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ktuberling )
+install( PROGRAMS org.kde.ktuberling.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
+install( FILES ktuberlingui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ktuberling )
 
 ecm_install_icons( ICONS hi128-apps-ktuberling.png               hi16-apps-ktuberling.png               hi22-apps-ktuberling.png               hi32-apps-ktuberling.png               hi48-apps-ktuberling.png               hi64-apps-ktuberling.png
 hi128-mimetypes-application-x-tuberling.png  hi16-mimetypes-application-x-tuberling.png  hi22-mimetypes-application-x-tuberling.png  hi32-mimetypes-application-x-tuberling.png  hi48-mimetypes-application-x-tuberling.png  hi64-mimetypes-application-x-tuberling.png
- DESTINATION ${ICON_INSTALL_DIR} )
+ DESTINATION ${KDE_INSTALL_ICONDIR} )
 
 
 
