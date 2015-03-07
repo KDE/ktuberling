@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=ktuberling -caption %c %u
+Exec=ktuberling -qwindowtitle %c %u
 Name=Potato Guy
 Name[af]=Aartappel Man
 Name[ast]=Pá Pataca
