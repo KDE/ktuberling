@@ -55,7 +55,7 @@ set(ktuberling_SRCS
    soundfactory.cpp 
    playgrounddelegate.cpp )
 
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-ktuberling.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-ktuberling.png")
 ecm_add_app_icon(ktuberling_SRCS ICONS ${ICONS_SRCS})
 add_executable(ktuberling ${ktuberling_SRCS})
 
@@ -69,9 +69,9 @@ install(TARGETS ktuberling  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 install( PROGRAMS org.kde.ktuberling.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 install( FILES ktuberlingui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ktuberling )
 
-ecm_install_icons( ICONS hi128-apps-ktuberling.png               hi16-apps-ktuberling.png               hi22-apps-ktuberling.png               hi32-apps-ktuberling.png               hi48-apps-ktuberling.png               hi64-apps-ktuberling.png
-hi128-mimetypes-application-x-tuberling.png  hi16-mimetypes-application-x-tuberling.png  hi22-mimetypes-application-x-tuberling.png  hi32-mimetypes-application-x-tuberling.png  hi48-mimetypes-application-x-tuberling.png  hi64-mimetypes-application-x-tuberling.png
- DESTINATION ${KDE_INSTALL_ICONDIR} )
+ecm_install_icons( ICONS 128-apps-ktuberling.png               16-apps-ktuberling.png               22-apps-ktuberling.png               32-apps-ktuberling.png               48-apps-ktuberling.png               64-apps-ktuberling.png
+128-mimetypes-application-x-tuberling.png  16-mimetypes-application-x-tuberling.png  22-mimetypes-application-x-tuberling.png  32-mimetypes-application-x-tuberling.png  48-mimetypes-application-x-tuberling.png  64-mimetypes-application-x-tuberling.png
+ DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor )
 
 
 
