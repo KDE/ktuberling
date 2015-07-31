@@ -45,9 +45,10 @@ void ActionAdd::undo()
 
 
 
-ActionRemove::ActionRemove(ToDraw *item, QGraphicsScene *scene)
+ActionRemove::ActionRemove(ToDraw *item, const QPointF &oldPos, QGraphicsScene *scene)
  : m_item(item), m_scene(scene), m_done(true)
 {
+	m_oldPos = QPointF(oldPos.x() / scene->width(), oldPos.y() / scene->height());
 }
 
 ActionRemove::~ActionRemove()
@@ -63,6 +64,7 @@ void ActionRemove::redo()
 
 void ActionRemove::undo()
 {
+	m_item->setPos(m_oldPos.x() * m_scene->width(), m_oldPos.y() * m_scene->height());
 	m_scene->addItem(m_item);
 	m_done = false;
 }

@@ -253,7 +253,7 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
   }
   else
   {
-    undoStack()->push(new ActionRemove(m_dragItem, scene()));
+    undoStack()->push(new ActionRemove(m_dragItem, m_itemDraggedPos, scene()));
   }
 
   setCursor(QCursor());

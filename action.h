@@ -40,7 +40,7 @@ class ActionAdd : public QUndoCommand
 class ActionRemove : public QUndoCommand
 {
 	public:
-		ActionRemove(ToDraw *item, QGraphicsScene *scene);
+		ActionRemove(ToDraw *item, const QPointF &oldPos, QGraphicsScene *scene);
 		~ActionRemove();
 		
 		void redo();
@@ -48,6 +48,7 @@ class ActionRemove : public QUndoCommand
 	
 	private:
 		ToDraw *m_item;
+		QPointF m_oldPos;
 		QGraphicsScene *m_scene;
 		bool m_done;
 };
