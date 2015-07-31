@@ -13,10 +13,10 @@
 #include "toplevel.h"
 
 #include <kmessagebox.h>
-#include <kfiledialog.h> // TODO
-#include <klocale.h> // TODO
+#include <kfiledialog.h>
+#include <klocale.h>
 #include <KLocalizedString>
-#include <kio/netaccess.h> // TODO
+#include <kio/netaccess.h>
 #include <kstandardaction.h>
 #include <kstandardshortcut.h>
 #include <kstandardgameaction.h>
@@ -24,7 +24,7 @@
 #include <ktoggleaction.h>
 #include <ktogglefullscreenaction.h>
 #include <kimageio.h>
-#include <kmimetype.h> // TODO
+#include <kmimetype.h>
 #include <kconfiggroup.h>
 #include <kcombobox.h>
 
