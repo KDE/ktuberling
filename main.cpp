@@ -15,6 +15,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QDir>
 #include <KDBusService>
 #include "toplevel.h"
 
@@ -56,7 +57,7 @@ int main(int argc, char *argv[])
     toplevel = new TopLevel();
     toplevel->show();
     if (parser.positionalArguments().count())
-       toplevel->open(parser.positionalArguments().at(0));
+       toplevel->open(QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath()));
     
   }
 
