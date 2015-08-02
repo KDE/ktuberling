@@ -28,6 +28,9 @@ static const char version[] = "1.0.0";
 int main(int argc, char *argv[])
 {
   QApplication app(argc, argv);
+
+  KLocalizedString::setApplicationDomain("ktuberling");
+
   KAboutData aboutData( "ktuberling", i18n("KTuberling"), 
     version, description, KAboutLicense::GPL, 
     i18n("(c) 1999-2009, The KTuberling Developers"), "http://games.kde.org/ktuberling" );

@@ -38,7 +38,6 @@ include(KDECMakeSettings)
 
 add_definitions(${QT_DEFINITIONS})
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-add_definitions(-DTRANSLATION_DOMAIN="ktuberling")
 
 add_subdirectory( sounds ) 
 add_subdirectory( pics ) 
