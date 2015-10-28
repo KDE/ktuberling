@@ -122,14 +122,14 @@ QPixmap PlayGround::getPicture()
 
 void PlayGround::connectRedoAction(QAction *action)
 {
-  connect(action, SIGNAL(triggered()), &m_undoGroup, SLOT(redo()));
-  connect(&m_undoGroup, SIGNAL(canRedoChanged(bool)), action, SLOT(setEnabled(bool)));
+  connect(action, &QAction::triggered, &m_undoGroup, &QUndoGroup::redo);
+  connect(&m_undoGroup, &QUndoGroup::canRedoChanged, action, &QAction::setEnabled);
 }
 
 void PlayGround::connectUndoAction(QAction *action)
 {
-  connect(action, SIGNAL(triggered()), &m_undoGroup, SLOT(undo()));
-  connect(&m_undoGroup, SIGNAL(canUndoChanged(bool)), action, SLOT(setEnabled(bool)));
+  connect(action, &QAction::triggered, &m_undoGroup, &QUndoGroup::undo);
+  connect(&m_undoGroup, &QUndoGroup::canUndoChanged, action, &QAction::setEnabled);
 }
 
 // Mouse pressed event
@@ -236,7 +236,7 @@ QPointF PlayGround::clipPos(const QPointF &p, ToDraw *item) const
 
 QRectF PlayGround::backgroundRect() const
 {
-  return m_SvgRenderer.boundsOnElement(QLatin1String( "background" ));
+  return m_SvgRenderer.boundsOnElement(QStringLiteral( "background" ));
 }
 
 void PlayGround::placeDraggedItem(const QPoint &pos)
@@ -317,7 +317,7 @@ bool PlayGround::isAspectRatioLocked() const
 void PlayGround::registerPlayGrounds()
 {
   QSet<QString> list;
-  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, "pics", QStandardPaths::LocateDirectory);
+  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, QStringLiteral("pics"), QStandardPaths::LocateDirectory);
   Q_FOREACH (const QString &dir, dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.theme"));
@@ -335,10 +335,10 @@ void PlayGround::registerPlayGrounds()
       QDomDocument layoutDocument;
       if (layoutDocument.setContent(&layoutFile))
       {
-        QString desktop = layoutDocument.documentElement().attribute(QLatin1String( "desktop" ));
+        QString desktop = layoutDocument.documentElement().attribute(QStringLiteral( "desktop" ));
         KConfig c( QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + desktop ) );
         KConfigGroup cg = c.group("KTuberlingTheme");
-        QString gameboard = layoutDocument.documentElement().attribute(QLatin1String( "gameboard" ));
+        QString gameboard = layoutDocument.documentElement().attribute(QStringLiteral( "gameboard" ));
         QPixmap pixmap(200,100);
         pixmap.fill(Qt::transparent);
         playGroundPixmap(gameboard,pixmap);
@@ -352,7 +352,7 @@ void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap
 {
   m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + playgroundName ));
   QPainter painter(&pixmap);
-  m_SvgRenderer.render(&painter,QLatin1String( "background" ));
+  m_SvgRenderer.render(&painter,QStringLiteral( "background" ));
 }
 
 // Load background and draggable objects masks
@@ -376,16 +376,16 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   playGroundElement = layoutDocument.documentElement();
 
-  QString gameboardName = playGroundElement.attribute(QLatin1String( "gameboard" ));
+  QString gameboardName = playGroundElement.attribute(QStringLiteral( "gameboard" ));
 
-  QColor bgColor = QColor(playGroundElement.attribute(QLatin1String( "bgcolor" ), QLatin1String( "#fff" ) ) );
+  QColor bgColor = QColor(playGroundElement.attribute(QStringLiteral( "bgcolor" ), QStringLiteral( "#fff" ) ) );
   if (!bgColor.isValid())
     bgColor = Qt::white;
 
   if (!m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + gameboardName )))
     return false;
 
-  objectsList = playGroundElement.elementsByTagName(QLatin1String( "object" ));
+  objectsList = playGroundElement.elementsByTagName(QStringLiteral( "object" ));
   if (objectsList.count() < 1)
     return false;
 
@@ -411,11 +411,11 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   {
     objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
 
-    const QString &objectName = objectElement.attribute(QLatin1String( "name" ));
+    const QString &objectName = objectElement.attribute(QStringLiteral( "name" ));
     if (m_SvgRenderer.elementExists(objectName))
     {
-      m_objectsNameSound.insert(objectName, objectElement.attribute(QLatin1String( "sound" )));
-      m_objectsNameRatio.insert(objectName, objectElement.attribute(QLatin1String( "scale" ), QLatin1String( "1" )).toDouble());
+      m_objectsNameSound.insert(objectName, objectElement.attribute(QStringLiteral( "sound" )));
+      m_objectsNameRatio.insert(objectName, objectElement.attribute(QStringLiteral( "scale" ), QStringLiteral( "1" )).toDouble());
     }
     else
     {

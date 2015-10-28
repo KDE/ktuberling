@@ -71,7 +71,7 @@ QRectF ToDraw::clippedRectAt(const QPointF &somePos) const
   if (m_beingDragged)
     return unclippedRect();
 
-  QRectF backgroundRect = renderer()->boundsOnElement(QLatin1String( "background" ));
+  QRectF backgroundRect = renderer()->boundsOnElement(QStringLiteral( "background" ));
   backgroundRect.translate(-somePos);
   backgroundRect = transform().inverted().map(backgroundRect).boundingRect();
 

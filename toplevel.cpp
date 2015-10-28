@@ -49,7 +49,7 @@ TopLevel::TopLevel()
   QString board, language;
 
   playGround = new PlayGround(this);
-  playGround->setObjectName( QLatin1String( "playGround" ) );
+  playGround->setObjectName( QStringLiteral( "playGround" ) );
 
   soundFactory = new SoundFactory(this);
 
@@ -92,8 +92,8 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
   playgroundsGroup->addAction(t);
   QList<QAction*> actionList = playgroundsGroup->actions();
   qSort(actionList.begin(), actionList.end(), actionSorterByName);
-  unplugActionList( QLatin1String( "playgroundList" ) );
-  plugActionList( QLatin1String( "playgroundList" ), actionList );
+  unplugActionList( QStringLiteral( "playgroundList" ) );
+  plugActionList( QStringLiteral( "playgroundList" ), actionList );
 
   playgroundCombo->addItem(menuText,QVariant(pixmap));
   playgroundCombo->setItemData(playgroundCombo->count()-1,QVariant(board),BOARD_THEME);
@@ -110,10 +110,10 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
   connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
   languagesGroup->addAction(t);
   QList<QAction*> actionList = languagesGroup->actions();
-  actionList.removeAll(actionCollection()->action(QLatin1String( "speech_no_sound" )));
+  actionList.removeAll(actionCollection()->action(QStringLiteral( "speech_no_sound" )));
   qSort(actionList.begin(), actionList.end(), actionSorterByName);
-  unplugActionList( QLatin1String( "languagesList" ) );
-  plugActionList( QLatin1String( "languagesList" ), actionList );
+  unplugActionList( QStringLiteral( "languagesList" ) );
+  plugActionList( QStringLiteral( "languagesList" ), actionList );
 }
 
 // Switch to another gameboard
@@ -233,7 +233,7 @@ void TopLevel::readOptions(QString &board, QString &language)
   {
     if (language.isEmpty())
     {
-      language = sounds.value(KLocale::global()->language(), QLatin1String( "en.soundtheme" ));
+      language = sounds.value(KLocale::global()->language(), QStringLiteral( "en.soundtheme" ));
     }
   }
   else
@@ -249,7 +249,7 @@ void TopLevel::readOptions(QString &board, QString &language)
 void TopLevel::writeOptions()
 {
   KConfigGroup config(KSharedConfig::openConfig(), "General");
-  config.writeEntry("Sound", actionCollection()->action(QLatin1String( "speech_no_sound" ))->isChecked() ? "off": "on");
+  config.writeEntry("Sound", actionCollection()->action(QStringLiteral( "speech_no_sound" ))->isChecked() ? "off": "on");
 
   config.writeEntry("Gameboard", playGround->currentGameboard());
 
@@ -270,9 +270,9 @@ void TopLevel::setupKAction()
   KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
   KStandardGameAction::quit(qApp, SLOT(quit()), actionCollection());
 
-  action = actionCollection()->addAction( QLatin1String( "game_save_picture" ));
+  action = actionCollection()->addAction( QStringLiteral( "game_save_picture" ));
   action->setText(i18n("Save &as Picture..."));
-  connect(action, SIGNAL(triggered(bool)), SLOT(filePicture()));
+  connect(action, &QAction::triggered, this, &TopLevel::filePicture);
 
   //Edit
   action = KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
@@ -285,15 +285,15 @@ void TopLevel::setupKAction()
 
   //Speech
   KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
-  actionCollection()->addAction( QLatin1String( "speech_no_sound" ), t);
-  connect(t, SIGNAL(triggered(bool)), SLOT(soundOff()));
+  actionCollection()->addAction( QStringLiteral( "speech_no_sound" ), t);
+  connect(t, &QAction::triggered, this, &TopLevel::soundOff);
   languagesGroup->addAction(t);
 
   KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
 
   t = new KToggleAction(i18n("&Lock Aspect Ratio"), this);
-  actionCollection()->addAction( QLatin1String( "lock_aspect_ratio" ), t);
-  connect(t, SIGNAL(triggered(bool)), this, SLOT(lockAspectRatio(bool)));
+  actionCollection()->addAction( QStringLiteral( "lock_aspect_ratio" ), t);
+  connect(t, &QAction::triggered, this, &TopLevel::lockAspectRatio);
 
   playgroundCombo = new KComboBox(this);
   playgroundCombo->setMinimumWidth(200);
@@ -308,7 +308,7 @@ void TopLevel::setupKAction()
 
   QWidgetAction *widgetAction = new QWidgetAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
-  actionCollection()->addAction( QLatin1String( "playgroundSelection" ),widgetAction);
+  actionCollection()->addAction( QStringLiteral( "playgroundSelection" ),widgetAction);
 
   setupGUI(ToolBar | Keys | Save | Create);
 }
@@ -318,8 +318,8 @@ void TopLevel::saveNewToolbarConfig()
   // this destroys our actions lists ...
   KXmlGuiWindow::saveNewToolbarConfig();
   // ... so plug them again
-  plugActionList( QLatin1String( "playgroundList" ), playgroundsGroup->actions() );
-  plugActionList( QLatin1String( "languagesList" ), languagesGroup->actions() );
+  plugActionList( QStringLiteral( "playgroundList" ), playgroundsGroup->actions() );
+  plugActionList( QStringLiteral( "languagesList" ), languagesGroup->actions() );
 }
 
 // Reset gameboard
@@ -331,8 +331,8 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  QUrl url = KFileDialog::getOpenUrl(QUrl("kfiledialog:///<ktuberling>"),
-                                     QString::fromLatin1("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
+  QUrl url = KFileDialog::getOpenUrl(QUrl(QStringLiteral("kfiledialog:///<ktuberling>")),
+                                     QStringLiteral("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
 
   open(url);
 }
@@ -370,7 +370,7 @@ void TopLevel::fileSave()
 {
   KUrl url = KFileDialog::getSaveUrl
                 ( KUrl("kfiledialog:///<ktuberling>"),
-                  QString::fromLatin1("*.tuberling|%1").arg(i18n("KTuberling files")), this, QString(), KFileDialog::ConfirmOverwrite);
+                  QStringLiteral("*.tuberling|%1").arg(i18n("KTuberling files")), this, QString(), KFileDialog::ConfirmOverwrite);
 
   if (url.isEmpty())
     return;
@@ -408,18 +408,18 @@ void TopLevel::fileSave()
 void TopLevel::filePicture()
 {
   const QString patternsString = KImageIO::pattern(KImageIO::Writing);
-  QStringList patterns = patternsString.split("\n");
+  QStringList patterns = patternsString.split(QStringLiteral("\n"));
   // Favor png
   if (!patterns.isEmpty()) {
       QString firstLine = patterns[0];
       patterns.removeAt(0);
-      if (firstLine.contains(" *.png")) {
-          firstLine.remove(" *.png");
+      if (firstLine.contains(QStringLiteral(" *.png"))) {
+          firstLine.remove(QStringLiteral(" *.png"));
           firstLine.prepend("*.png ");
       }
       patterns.prepend(firstLine);
   }
-  const KUrl url = KFileDialog::getSaveUrl(KUrl(QString("kfiledialog:///<ktuberling>")), patterns.join("\n"), this, QString(), KFileDialog::ConfirmOverwrite);
+  const KUrl url = KFileDialog::getSaveUrl(KUrl(QStringLiteral("kfiledialog:///<ktuberling>")), patterns.join(QStringLiteral("\n")), this, QString(), KFileDialog::ConfirmOverwrite);
 
   if( url.isEmpty() )
     return;
@@ -495,23 +495,23 @@ void TopLevel::editCopy()
 // Toggle sound off
 void TopLevel::soundOff()
 {
-  actionCollection()->action(QLatin1String( "speech_no_sound" ))->setChecked(true);
+  actionCollection()->action(QStringLiteral( "speech_no_sound" ))->setChecked(true);
   writeOptions();
 }
 
 bool TopLevel::isSoundEnabled() const
 {
-  return !actionCollection()->action(QLatin1String( "speech_no_sound" ))->isChecked();
+  return !actionCollection()->action(QStringLiteral( "speech_no_sound" ))->isChecked();
 }
 
 void TopLevel::toggleFullScreen()
 {
-  KToggleFullScreenAction::setFullScreen( this, actionCollection()->action(QLatin1String( "fullscreen" ))->isChecked());
+  KToggleFullScreenAction::setFullScreen( this, actionCollection()->action(QStringLiteral( "fullscreen" ))->isChecked());
 }
 
 void TopLevel::lockAspectRatio(bool lock)
 {
-  actionCollection()->action(QLatin1String( "lock_aspect_ratio" ))->setChecked(lock);
+  actionCollection()->action(QStringLiteral( "lock_aspect_ratio" ))->setChecked(lock);
   playGround->lockAspectRatio(lock);
   writeOptions();
 }

@@ -63,7 +63,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 void SoundFactory::registerLanguages()
 {
   QSet<QString> list;
-  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, "sounds", QStandardPaths::LocateDirectory);
+  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, QStringLiteral("sounds"), QStandardPaths::LocateDirectory);
   Q_FOREACH (const QString &dir, dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.soundtheme"));
@@ -81,7 +81,7 @@ void SoundFactory::registerLanguages()
       QDomDocument document;
       if (document.setContent(&file))
       {
-        QString code = document.documentElement().attribute(QLatin1String( "code" ));
+        QString code = document.documentElement().attribute(QStringLiteral( "code" ));
         bool enabled = !(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + code + QLatin1Char( '/' ), QStandardPaths::LocateDirectory).isEmpty());
         topLevel->registerLanguage(code, soundTheme, enabled);
       }
@@ -106,7 +106,7 @@ bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
 
   languageElement = document.documentElement();
 
-  soundNamesList = languageElement.elementsByTagName(QLatin1String( "sound" ));
+  soundNamesList = languageElement.elementsByTagName(QStringLiteral( "sound" ));
   sounds = soundNamesList.count();
   if (sounds < 1)
     return false;
@@ -118,9 +118,9 @@ bool SoundFactory::loadLanguage(const QString &selectedLanguageFile)
   {
     soundNameElement = (const QDomElement &) soundNamesList.item(sound).toElement();
 
-    nameAttribute = soundNameElement.attributeNode(QLatin1String( "name" ));
+    nameAttribute = soundNameElement.attributeNode(QStringLiteral( "name" ));
     namesList << nameAttribute.value();
-    fileAttribute = soundNameElement.attributeNode(QLatin1String( "file" ));
+    fileAttribute = soundNameElement.attributeNode(QStringLiteral( "file" ));
     filesList << fileAttribute.value();
   }
 

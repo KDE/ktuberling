@@ -20,7 +20,7 @@
 #include "toplevel.h"
 
 static const QString description = i18n("Potato game for kids");
-static const KLocalizedString text = ki18n("A program original by <email address='%1'>Éric Bischoff</email>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.").subs(QLatin1String("ebischoff@nerim.net"));
+static const KLocalizedString text = ki18n("A program original by <email address='%1'>Éric Bischoff</email>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.").subs(QStringLiteral("ebischoff@nerim.net"));
 
 static const char version[] = "1.0.0";
 
@@ -31,21 +31,21 @@ int main(int argc, char *argv[])
 
   KLocalizedString::setApplicationDomain("ktuberling");
 
-  KAboutData aboutData( "ktuberling", i18n("KTuberling"), 
+  KAboutData aboutData( QStringLiteral("ktuberling"), i18n("KTuberling"), 
     version, description, KAboutLicense::GPL, 
-    i18n("(c) 1999-2009, The KTuberling Developers"), "http://games.kde.org/ktuberling" );
-  aboutData.addAuthor(i18n("Albert Astals Cid"), i18n("Maintainer"), "aacid@kde.org");
-  aboutData.addAuthor(i18n("Éric Bischoff"), i18n("Former Developer"), "ebischoff@nerim.net");
+    i18n("(c) 1999-2009, The KTuberling Developers"), QStringLiteral("http://games.kde.org/ktuberling") );
+  aboutData.addAuthor(i18n("Albert Astals Cid"), i18n("Maintainer"), QStringLiteral("aacid@kde.org"));
+  aboutData.addAuthor(i18n("Éric Bischoff"), i18n("Former Developer"), QStringLiteral("ebischoff@nerim.net"));
   aboutData.addCredit(i18n("John Calhoun"), i18n("Original concept and artwork"));
-  aboutData.addCredit(i18n("Agnieszka Czajkowska"), i18n("New artwork"), "agnieszka@imagegalaxy.de");
-  aboutData.addCredit(i18n("Bas Willems"), i18n("New artwork"), "cybersurfer@euronet.nl");
-  aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), "roger.larsson@norran.net");
-  aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), "dolores.almansa@corazondemaria.org");
+  aboutData.addCredit(i18n("Agnieszka Czajkowska"), i18n("New artwork"), QStringLiteral("agnieszka@imagegalaxy.de"));
+  aboutData.addCredit(i18n("Bas Willems"), i18n("New artwork"), QStringLiteral("cybersurfer@euronet.nl"));
+  aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), QStringLiteral("roger.larsson@norran.net"));
+  aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), QStringLiteral("dolores.almansa@corazondemaria.org"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-  parser.addOption(QCommandLineOption(QStringList() <<  QLatin1String("+<tuberling-file>"), i18n("Potato to open")));
+  parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+<tuberling-file>"), i18n("Potato to open")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
