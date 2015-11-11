@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
   KAboutData aboutData( QStringLiteral("ktuberling"), i18n("KTuberling"), 
     version, description, KAboutLicense::GPL, 
-    i18n("(c) 1999-2009, The KTuberling Developers"), QStringLiteral("http://games.kde.org/ktuberling") );
+    i18n("(c) 1999-2009, The KTuberling Developers"));
   aboutData.addAuthor(i18n("Albert Astals Cid"), i18n("Maintainer"), QStringLiteral("aacid@kde.org"));
   aboutData.addAuthor(i18n("Éric Bischoff"), i18n("Former Developer"), QStringLiteral("ebischoff@nerim.net"));
   aboutData.addCredit(i18n("John Calhoun"), i18n("Original concept and artwork"));
@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
   aboutData.addCredit(i18n("Bas Willems"), i18n("New artwork"), QStringLiteral("cybersurfer@euronet.nl"));
   aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), QStringLiteral("roger.larsson@norran.net"));
   aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), QStringLiteral("dolores.almansa@corazondemaria.org"));
+  aboutData.setHomepage(QStringLiteral("http://games.kde.org/ktuberling"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
