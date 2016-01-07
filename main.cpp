@@ -65,5 +65,7 @@ int main(int argc, char *argv[])
     
   }
 
+  app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ktuberling")));
+
   return app.exec();
 }
