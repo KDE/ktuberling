@@ -12,6 +12,7 @@
 #include <KLocalizedString>
 
 #include <KAboutData>
+#include <KCrash>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
@@ -32,8 +33,8 @@ int main(int argc, char *argv[])
   KLocalizedString::setApplicationDomain("ktuberling");
 
   KAboutData aboutData( QStringLiteral("ktuberling"), i18n("KTuberling"), 
-    version, description, KAboutLicense::GPL, 
-    i18n("(c) 1999-2009, The KTuberling Developers"));
+          version, description, KAboutLicense::GPL, 
+          i18n("(c) 1999-2009, The KTuberling Developers"));
   aboutData.addAuthor(i18n("Albert Astals Cid"), i18n("Maintainer"), QStringLiteral("aacid@kde.org"));
   aboutData.addAuthor(i18n("Éric Bischoff"), i18n("Former Developer"), QStringLiteral("ebischoff@nerim.net"));
   aboutData.addCredit(i18n("John Calhoun"), i18n("Original concept and artwork"));
@@ -42,27 +43,28 @@ int main(int argc, char *argv[])
   aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), QStringLiteral("roger.larsson@norran.net"));
   aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), QStringLiteral("dolores.almansa@corazondemaria.org"));
   aboutData.setHomepage(QStringLiteral("http://games.kde.org/ktuberling"));
-    QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
-    parser.addVersionOption();
-    parser.addHelpOption();
+  QCommandLineParser parser;
+  KAboutData::setApplicationData(aboutData);
+  KCrash::initialize();
+  parser.addVersionOption();
+  parser.addHelpOption();
   parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+<tuberling-file>"), i18n("Potato to open")));
 
-    aboutData.setupCommandLine(&parser);
-    parser.process(app);
-    aboutData.processCommandLine(&parser);
+  aboutData.setupCommandLine(&parser);
+  parser.process(app);
+  aboutData.processCommandLine(&parser);
 
   KDBusService service;
   TopLevel *toplevel=0;
 
   if (app.isSessionRestored())
-    RESTORE(TopLevel)
+      RESTORE(TopLevel)
   else {
-    toplevel = new TopLevel();
-    toplevel->show();
-    if (parser.positionalArguments().count())
-       toplevel->open(QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath()));
-    
+      toplevel = new TopLevel();
+      toplevel->show();
+      if (parser.positionalArguments().count())
+          toplevel->open(QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath()));
+
   }
 
   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ktuberling")));
