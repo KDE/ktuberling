@@ -67,7 +67,7 @@ PlayGround::~PlayGround()
 // Reset the play ground
 void PlayGround::reset()
 {
-    
+
   foreach(QGraphicsItem *item, scene()->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
@@ -317,7 +317,7 @@ bool PlayGround::isAspectRatioLocked() const
 void PlayGround::registerPlayGrounds()
 {
   QSet<QString> list;
-  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, QStringLiteral("pics"), QStandardPaths::LocateDirectory);
+  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("pics"), QStandardPaths::LocateDirectory);
   Q_FOREACH (const QString &dir, dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.theme"));
@@ -336,7 +336,7 @@ void PlayGround::registerPlayGrounds()
       if (layoutDocument.setContent(&layoutFile))
       {
         QString desktop = layoutDocument.documentElement().attribute(QStringLiteral( "desktop" ));
-        KConfig c( QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + desktop ) );
+        KConfig c( QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + desktop ) );
         KConfigGroup cg = c.group("KTuberlingTheme");
         QString gameboard = layoutDocument.documentElement().attribute(QStringLiteral( "gameboard" ));
         QPixmap pixmap(200,100);
@@ -350,7 +350,7 @@ void PlayGround::registerPlayGrounds()
 
 void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap)
 {
-  m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + playgroundName ));
+  m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + playgroundName ));
   QPainter painter(&pixmap);
   m_SvgRenderer.render(&painter,QStringLiteral( "background" ));
 }
@@ -382,7 +382,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   if (!bgColor.isValid())
     bgColor = Qt::white;
 
-  if (!m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + gameboardName )))
+  if (!m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + gameboardName )))
     return false;
 
   objectsList = playGroundElement.elementsByTagName(QStringLiteral( "object" ));

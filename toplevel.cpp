@@ -142,7 +142,7 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
   QFileInfo fi(newGameBoard);
   if (fi.isRelative())
   {
-    fileToLoad = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "pics/" ) + newGameBoard);
+    fileToLoad = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + newGameBoard);
   }
   else
   {
@@ -189,7 +189,7 @@ void TopLevel::changeLanguage(const QString &soundFile)
   QFileInfo fi(soundFile);
   if (fi.isRelative())
   {
-    fileToLoad = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sounds/" ) + soundFile);
+    fileToLoad = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "sounds/" ) + soundFile);
   }
   else
   {
