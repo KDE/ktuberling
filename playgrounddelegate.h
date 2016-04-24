@@ -19,7 +19,7 @@
 #ifndef PLAYGROUNDDELEGATE_H
 #define PLAYGROUNDDELEGATE_H
 
-#include <QtWidgets/QAbstractItemDelegate>
+#include <QAbstractItemDelegate>
 #include <QAbstractItemView>
 
 class PlaygroundDelegate : public QAbstractItemDelegate
