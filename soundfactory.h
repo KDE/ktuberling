@@ -26,7 +26,7 @@ class SoundFactory
 {
 public:
 
-  SoundFactory(TopLevel *parent);
+  explicit SoundFactory(TopLevel *parent);
   ~SoundFactory();
 
   bool loadLanguage(const QString &selectedLanguageFile);

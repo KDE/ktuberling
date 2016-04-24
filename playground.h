@@ -32,7 +32,7 @@ class PlayGround : public QGraphicsView
   Q_OBJECT
 
 public:
-  PlayGround(TopLevel *parent);
+  explicit PlayGround(TopLevel *parent);
   ~PlayGround();
 
   enum LoadError { NoError, OldFileVersionError, OtherError };
