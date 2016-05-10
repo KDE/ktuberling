@@ -20,9 +20,6 @@
 #include <KDBusService>
 #include "toplevel.h"
 
-static const QString description = i18n("Potato game for kids");
-static const KLocalizedString text = ki18n("A program original by <email address='%1'>Éric Bischoff</email>\nand John Calhoun.\n\nThis program is dedicated to my daughter Sunniva.").subs(QStringLiteral("ebischoff@nerim.net"));
-
 static const char version[] = "1.0.0";
 
 // Main function
@@ -33,7 +30,7 @@ int main(int argc, char *argv[])
   KLocalizedString::setApplicationDomain("ktuberling");
 
   KAboutData aboutData( QStringLiteral("ktuberling"), i18n("KTuberling"), 
-          version, description, KAboutLicense::GPL, 
+          version, i18n("Potato game for kids"), KAboutLicense::GPL, 
           i18n("(c) 1999-2009, The KTuberling Developers"));
   aboutData.addAuthor(i18n("Albert Astals Cid"), i18n("Maintainer"), QStringLiteral("aacid@kde.org"));
   aboutData.addAuthor(i18n("Éric Bischoff"), i18n("Former Developer"), QStringLiteral("ebischoff@nerim.net"));
