@@ -1,7 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kappname "&ktuberling;">
-  <!ENTITY package "kdegames">
   <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
@@ -37,8 +35,8 @@
 
 </authorgroup>
 
-<date>2013-05-06</date>
-<releaseinfo>0.8.0 (&kde; 4.11)</releaseinfo>
+<date>2016-05-11</date>
+<releaseinfo>1.0.0 (Applications 16.04)</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year><year>2006</year>
@@ -78,6 +76,18 @@
 <title>Introduction</title>
 <para>Gametype: Toy</para>
 <para>Number of possible players: One</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Pizzeria Playground</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
 <para>
 &ktuberling; a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept. A potato was decorated with various small artifacts to make it look more like a tiny person. &ktuberling; however, goes much further in terms of content and adds a surprising variety of different themes.
 </para>
@@ -87,9 +97,6 @@
 <title>How to Play</title>
 
 <para>
-<!--<inlinemediaobject><imageobject>
-<imagedata fileref="ktuberling.png" format="PNG"/></imageobject>
-</inlinemediaobject>-->
 &ktuberling; is a game intended for small children. Of course, it may be
 suitable for adults who have remained young at heart.
 </para>
@@ -179,13 +186,6 @@ area, drag it back from the <quote>playground</quote> area to the
 <sect1 id="the-tool-bar">
 <title>The Tool Bar</title>
 
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="toolbar.png"/>
-</imageobject>
-<textobject><phrase>Toolbar</phrase></textobject>
-</mediaobject>
-
 <para>
 The toolbar provides buttons for the commonly used functions.
 </para>
@@ -208,7 +208,7 @@ The toolbar provides buttons for the commonly used functions.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button-new.png"/>
+  <imagedata format="PNG" fileref="document-new.png"/>
   </imageobject>
 	<textobject><phrase>New Game Button</phrase></textobject>
   </inlinemediaobject>
@@ -231,7 +231,7 @@ playground so a new decoration may be created.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button-open.png"/>
+  <imagedata format="PNG" fileref="document-open.png"/>
   </imageobject>
 	<textobject><phrase>Load Button</phrase></textobject>
   </inlinemediaobject>
@@ -251,7 +251,7 @@ Opens an existing tuberling file from the disk.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button-save.png"/>
+  <imagedata format="PNG" fileref="document-save.png"/>
   </imageobject>
   <textobject><phrase>Save Button</phrase></textobject>
   </inlinemediaobject>
@@ -274,7 +274,7 @@ position of objects are saved.
 <entry>
   <inlinemediaobject>
   <imageobject>
-  <imagedata format="PNG" fileref="button-print.png"/>
+  <imagedata format="PNG" fileref="document-print.png"/>
   </imageobject>
   <textobject><phrase>Print Button</phrase></textobject>
 </inlinemediaobject>
@@ -333,26 +333,6 @@ Prints your picture.
 Re-does last operation.</entry>
 </row>
 
-<!--  Currently there is no HELP button on the toolbar
-<row>
-<entry>
-<inlinemediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="button-help.png"/>
-</imageobject>
-<imageobject>
-<imagedata format="EPS" fileref="button.help.eps"/>
-</imageobject>
-<textobject><phrase>Help Button</phrase></textobject>
-</inlinemediaobject>
-</entry>
-<entry>
-Help
-</entry>
-<entry>Displays this handbook.</entry>
-</row>
--->
-
 </tbody>
 </tgroup>
 </table>
@@ -362,13 +342,7 @@ Help
 <title>The Menu Items</title>
 
 <sect2>
-<title>The <guimenu>Game</guimenu> Menu</title>
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-game.png"/>
-</imageobject>
-<textobject><phrase><guimenu>Game</guimenu> Menu</phrase></textobject>
-</mediaobject>
+<title>The Game Menu</title>
 
 <variablelist>
 
@@ -448,13 +422,7 @@ containing a picture of your tuberling.
 </sect2>
 
 <sect2>
-<title>The <guimenu>Edit</guimenu> Menu</title>
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-edit.png"/>
-</imageobject>
-<textobject><phrase>Edit Menu</phrase></textobject>
-</mediaobject>
+<title>The Edit Menu</title>
 
 <variablelist>
 
@@ -503,7 +471,7 @@ clipboard.</para></listitem>
 </sect2>
 
 <sect2>
-<title>The <guimenu>Playground</guimenu> Menu</title>
+<title>The Playground Menu</title>
 
 <variablelist>
 
@@ -538,9 +506,10 @@ It will contain the playgrounds installed in your system.
 </sect2>
 
 <sect2>
-<title>The <guimenu>Speech</guimenu> Menu</title>
+<title>The Speech Menu</title>
 
-<!--<para>
+<!--FIXME
+<para>
 Please note that you need to have <command>&phonon;</command> installed
 and properly configured to be able to hear sounds.
 </para>-->
@@ -573,13 +542,7 @@ and properly configured to be able to hear sounds.
 </sect2>
 
 <sect2 id="settings">
-<title>The <guimenu>Settings</guimenu> Menu</title>
-<mediaobject>
-<imageobject>
-<imagedata format="PNG" fileref="menu-settings.png"/>
-</imageobject>
-<textobject><phrase>Settings Menu</phrase></textobject>
-</mediaobject>
+<title>The Settings Menu</title>
 
 <variablelist>
 

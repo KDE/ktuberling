@@ -9,8 +9,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2009-12-15</date>
-<releaseinfo>0.6.0</releaseinfo>
+<date>2016-05-11</date>
+<releaseinfo>1.0.0 (Applications 16.04)</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -29,7 +29,7 @@ adding appropriate sound files, translators can change the sounds to their
 native tongue!
 </para>
 
-<para>
+<para><!--FIXME email alex ok?-->
 If you extend or add to the game please consider sending your additions to the
 maintainer <ulink url="mailto:alex@eyeos.org">Alex Fiestas</ulink> for
 inclusion in future releases.
@@ -140,10 +140,11 @@ To create a new &ktuberling; sound theme you have to:
 <listitem><para>Add the sound files and the .soundtheme files to the data/kdegames/ktuberling directory
      of your language translations.</para></listitem>
 <listitem><para>On that very same dir you need a CMakeLists.txt describing how to install the files, typically it will be.</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
 <programlisting>
-FILE(GLOB datafiles *.ogg)
-install( FILES ${datafiles} DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/<replaceable>yourLanguageTwoLetterCode</replaceable> )
-install( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable>yourLanguageTwoLetterCode</replaceable> )
+INSTALL( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
 </programlisting>
 </listitem>
 </itemizedlist>
@@ -152,8 +153,8 @@ install( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme D
 <listitem>
 <para>If you want to install it for yourself:</para>
 <itemizedlist>
-<listitem><para>Place <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme file in `kde4-config --prefix`/share/apps/ktuberling/sounds</para></listitem>
-<listitem><para>Place yourSoundFiles in `kde4-config --prefix`/share/apps/ktuberling/sounds/someUniquePath</para></listitem>
+<listitem><para>Place <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme file in `kde5-config --prefix`/share/apps/ktuberling/sounds</para></listitem>
+<listitem><para>Place yourSoundFiles in `kde5-config --prefix`/share/apps/ktuberling/sounds/someUniquePath</para></listitem>
 </itemizedlist>
 </listitem>
 
