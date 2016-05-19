@@ -153,8 +153,8 @@ INSTALL( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme D
 <listitem>
 <para>If you want to install it for yourself:</para>
 <itemizedlist>
-<listitem><para>Place <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme file in `kde5-config --prefix`/share/apps/ktuberling/sounds</para></listitem>
-<listitem><para>Place yourSoundFiles in `kde5-config --prefix`/share/apps/ktuberling/sounds/someUniquePath</para></listitem>
+<listitem><para>Place <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme file in `kf5-config --prefix`/share/apps/ktuberling/sounds</para></listitem>
+<listitem><para>Place yourSoundFiles in `kf5-config --prefix`/share/apps/ktuberling/sounds/someUniquePath</para></listitem>
 </itemizedlist>
 </listitem>
 
