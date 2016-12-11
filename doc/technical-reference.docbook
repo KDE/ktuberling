@@ -92,7 +92,7 @@ To create a new &ktuberling; playground you have to:
 
 <listitem>
     <para>If you want to install it for yourself, place .svg .theme .desktop files in <filename class="directory">ktuberling/pics</filename>
-    in <userinput><command>qtpaths</command> <option>- --paths GenericDataLocation</option></userinput>
+    in <userinput><command>qtpaths</command> <option>--paths GenericDataLocation</option></userinput>
     </para>
 </listitem>
 
@@ -155,9 +155,9 @@ INSTALL( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme D
 <para>If you want to install it for yourself:</para>
 <itemizedlist>
 <listitem><para>Place <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme file in <filename class="directory">ktuberling/sounds</filename>
-in <userinput><command>qtpaths</command> <option>- --paths GenericDataLocation </option></userinput></para></listitem>
+in <userinput><command>qtpaths</command> <option>--paths GenericDataLocation </option></userinput></para></listitem>
 <listitem><para>Place yourSoundFiles in <filename class="directory">ktuberling/sounds/someUniquePath</filename>
-in<userinput><command>qtpaths</command> <option>- --paths GenericDataLocation </option></userinput></para></listitem>
+in<userinput><command>qtpaths</command> <option>--paths GenericDataLocation </option></userinput></para></listitem>
 </itemizedlist>
 </listitem>
 
