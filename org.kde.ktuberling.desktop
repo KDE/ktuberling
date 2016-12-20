@@ -2,7 +2,6 @@
 Exec=ktuberling -qwindowtitle %c %u
 Name=Potato Guy
 Name[af]=Aartappel Man
-Name[ast]=Pá Pataca
 Name[be]=Бульбяш
 Name[bn]=পটেটো গাই
 Name[br]=Paotr ar patatez
@@ -69,7 +68,6 @@ Name[x-test]=xxPotato Guyxx
 Name[zh_CN]=土豆小子
 Name[zh_TW]=馬鈴薯小子
 GenericName=Picture Game for Children
-GenericName[ast]=Xuegu de dibuxu pa neños
 GenericName[bs]=Igra slika za djecu
 GenericName[ca]=Joc d'imatges per a la canalla
 GenericName[ca@valencia]=Joc d'imatges per a la canalla
