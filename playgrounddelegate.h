@@ -27,8 +27,8 @@ class PlaygroundDelegate : public QAbstractItemDelegate
   public:
     explicit PlaygroundDelegate(QObject *parent = 0);
   private:
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const Q_DECL_OVERRIDE;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const Q_DECL_OVERRIDE;
 };
 
 #endif // PLAYGROUNDDELEGATE_H

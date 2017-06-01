@@ -23,18 +23,18 @@ class ToDraw : public QGraphicsSvgItem
     void save(QDataStream &stream) const;
     bool load(QDataStream &stream);
 
-    bool contains(const QPointF &point) const;
+    bool contains(const QPointF &point) const Q_DECL_OVERRIDE;
 
     enum { Type = UserType + 1 };
-    int type() const;
+    int type() const Q_DECL_OVERRIDE;
 
-    QRectF boundingRect() const;
+    QRectF boundingRect() const Q_DECL_OVERRIDE;
     QRectF unclippedRect() const;
 
     void setBeingDragged(bool dragged);
 
   protected:
-    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value) Q_DECL_OVERRIDE;
   
   private:
     QRectF clippedRectAt(const QPointF &somePos) const;

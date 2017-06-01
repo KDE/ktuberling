@@ -44,7 +44,7 @@ protected:
   void setupKAction();
 
 protected slots:
-  void saveNewToolbarConfig();
+  void saveNewToolbarConfig() Q_DECL_OVERRIDE;
 
 private slots:
 

@@ -26,8 +26,8 @@ class ActionAdd : public QUndoCommand
 		ActionAdd(ToDraw *item, QGraphicsScene *scene);
 		~ActionAdd();
 		
-		void redo();
-		void undo();
+		void redo() Q_DECL_OVERRIDE;
+		void undo() Q_DECL_OVERRIDE;
 	
 	private:
 		ToDraw *m_item;
@@ -43,8 +43,8 @@ class ActionRemove : public QUndoCommand
 		ActionRemove(ToDraw *item, const QPointF &oldPos, QGraphicsScene *scene);
 		~ActionRemove();
 		
-		void redo();
-		void undo();
+		void redo() Q_DECL_OVERRIDE;
+		void undo() Q_DECL_OVERRIDE;
 	
 	private:
 		ToDraw *m_item;
@@ -58,8 +58,8 @@ class ActionMove : public QUndoCommand
 	public:
 		ActionMove(ToDraw *item, const QPointF &oldPos, int zValue, QGraphicsScene *scene);
 		
-		void redo();
-		void undo();
+		void redo() Q_DECL_OVERRIDE;
+		void undo() Q_DECL_OVERRIDE;
 	
 	private:
 		ToDraw *m_item;
