@@ -58,9 +58,9 @@ public Q_SLOTS:
 
 protected:
 
-  void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-  void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-  void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+  void mousePressEvent(QMouseEvent *event) override;
+  void mouseMoveEvent(QMouseEvent *event) override;
+  void resizeEvent(QResizeEvent *event) override;
 
 private:
   QPointF clipPos(const QPointF &p, ToDraw *item) const;
