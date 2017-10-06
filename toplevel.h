@@ -12,7 +12,6 @@
 #define _TOPLEVEL_H_
 
 #include <kxmlguiwindow.h>
-#include <kurl.h>
 #include <kcombobox.h>
 
 class QActionGroup;

@@ -13,32 +13,36 @@
 #include "toplevel.h"
 
 #include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <klocale.h>
 #include <KLocalizedString>
-#include <kio/netaccess.h>
 #include <kstandardaction.h>
 #include <kstandardshortcut.h>
 #include <kstandardgameaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <ktogglefullscreenaction.h>
-#include <kimageio.h>
-#include <kmimetype.h>
 #include <kconfiggroup.h>
 #include <kcombobox.h>
+#include <ksharedconfig.h>
 
 #include <QApplication>
 #include <QClipboard>
+#include <QFileDialog>
 #include <QFileInfo>
+#include <QImageWriter>
+#include <QMimeDatabase>
 #include <QPrintDialog>
 #include <QPrinter>
+#include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QWidgetAction>
 
 #include "playground.h"
 #include "soundfactory.h"
 #include "playgrounddelegate.h"
+
+// TODO kdelibs4support REMOVE
+#include <KLocale>
+#include "kio/netaccess.h"
 
 static const char *DEFAULT_THEME = "default_theme.theme";
 
@@ -331,8 +335,8 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  QUrl url = KFileDialog::getOpenUrl(QUrl(QStringLiteral("kfiledialog:///<ktuberling>")),
-                                     QStringLiteral("*.tuberling|%1\n*|%2").arg(i18n("KTuberling files"), i18n("All files")));
+  QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Load file"), QUrl(),
+                                     i18n("KTuberling files (%1)", QStringLiteral("*.tuberling")));
 
   open(url);
 }
@@ -368,9 +372,7 @@ void TopLevel::open(const QUrl &url)
 // Save gameboard
 void TopLevel::fileSave()
 {
-  KUrl url = KFileDialog::getSaveUrl
-                ( KUrl("kfiledialog:///<ktuberling>"),
-                  QStringLiteral("*.tuberling|%1").arg(i18n("KTuberling files")), this, QString(), KFileDialog::ConfirmOverwrite);
+  QUrl url = QFileDialog::getSaveFileUrl( this, QString(), QUrl(), i18n("KTuberling files (%1)", QStringLiteral("*.tuberling")) );
 
   if (url.isEmpty())
     return;
@@ -407,19 +409,34 @@ void TopLevel::fileSave()
 // Save gameboard as picture
 void TopLevel::filePicture()
 {
-  const QString patternsString = KImageIO::pattern(KImageIO::Writing);
-  QStringList patterns = patternsString.split(QStringLiteral("\n"));
-  // Favor png
-  if (!patterns.isEmpty()) {
-      QString firstLine = patterns[0];
-      patterns.removeAt(0);
-      if (firstLine.contains(QStringLiteral(" *.png"))) {
-          firstLine.remove(QStringLiteral(" *.png"));
-          firstLine.prepend("*.png ");
+  const QMimeDatabase mimedb;
+  const QList<QByteArray> imageWriterMimetypes = QImageWriter::supportedMimeTypes();
+  QStringList patterns;
+  for(auto mimeName : imageWriterMimetypes)
+  {
+    const QMimeType mime = mimedb.mimeTypeForName(mimeName);
+    if (mime.isValid())
+    {
+      qDebug() << mimeName << mime.comment()   << mime.suffixes();
+      QStringList suffixes;
+      for(const QString &suffix : mime.suffixes())
+      {
+          suffixes << QString("*.%1").arg(suffix);
       }
-      patterns.prepend(firstLine);
+
+      // Favor png
+      const QString pattern = i18nc("%1 is mimetype and %2 is the file extensions", "%1 (%2)", mime.comment(), suffixes.join(' '));
+      if (mimeName == "image/png")
+      {
+        patterns.prepend(pattern);
+      }
+      else
+      {
+        patterns << pattern;
+      }
+    }
   }
-  const KUrl url = KFileDialog::getSaveUrl(KUrl(QStringLiteral("kfiledialog:///<ktuberling>")), patterns.join(QStringLiteral("\n")), this, QString(), KFileDialog::ConfirmOverwrite);
+  const QUrl url = QFileDialog::getSaveFileUrl( this, QString(), QUrl(), patterns.join(";;") );
 
   if( url.isEmpty() )
     return;
@@ -436,19 +453,9 @@ void TopLevel::filePicture()
     name = url.path();
   }
 
-  KMimeType::Ptr mime = KMimeType::findByUrl(url, 0, true, true);
-  if (!KImageIO::isSupported(mime->name(), KImageIO::Writing))
-  {
-    KMessageBox::error(this, i18n("Unknown picture format."));
-    return;
-  };
-
-  QStringList types = KImageIO::typeForMime(mime->name());
-  if (types.isEmpty()) return; // TODO error dialog?
-
   QPixmap picture(playGround->getPicture());
 
-  if (!picture.save(name, types.at(0).toLatin1()))
+  if (!picture.save(name))
   {
     KMessageBox::error
       (this, i18n("Could not save file."));
