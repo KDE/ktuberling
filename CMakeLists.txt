@@ -15,6 +15,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Crash
     DBusAddons
+    KIO
     DocTools
     I18n
     KDELibs4Support #TODO eventually remove kdelibs4support
@@ -63,6 +64,7 @@ target_link_libraries(ktuberling
     KF5::Completion
     KF5::Crash
     KF5::DBusAddons
+    KF5::KIOCore
     KF5::KDELibs4Support
     KF5::XmlGui
     Phonon::phonon4qt5
