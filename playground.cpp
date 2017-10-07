@@ -172,7 +172,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
       m_newItem->setElementId(foundElem);
       m_newItem->setZValue(m_nextZValue);
       m_nextZValue++;
-      m_newItem->scale(objectScale, objectScale);
+      m_newItem->setTransform(QTransform::fromScale(objectScale, objectScale));
 
       scene()->addItem(m_newItem);
       setCursor(Qt::BlankCursor);
@@ -180,7 +180,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
     else
     {
       // see if the user clicked on an already existent item
-      QGraphicsItem *dragItem = scene()->itemAt(mapToScene(event->pos()));
+      QGraphicsItem *dragItem = scene()->itemAt(mapToScene(event->pos()), QTransform());
       m_dragItem = qgraphicsitem_cast<ToDraw*>(dragItem);
       if (m_dragItem)
       {
@@ -502,7 +502,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
     }
     obj->setSharedRenderer(&m_SvgRenderer);
     double objectScale = m_objectsNameRatio.value(obj->elementId());
-    obj->scale(objectScale, objectScale);
+    obj->setTransform(QTransform::fromScale(objectScale, objectScale));
     if (scale) { // Mimic old behavior
       QPointF storedPos = obj->pos();
       storedPos.setX(storedPos.x() * xFactor);
