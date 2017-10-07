@@ -430,7 +430,6 @@ void TopLevel::filePicture()
     const QMimeType mime = mimedb.mimeTypeForName(mimeName);
     if (mime.isValid())
     {
-      qDebug() << mimeName << mime.comment()   << mime.suffixes();
       QStringList suffixes;
       for(const QString &suffix : mime.suffixes())
       {
