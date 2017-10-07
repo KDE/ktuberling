@@ -61,6 +61,8 @@ private slots:
   void lockAspectRatio(bool lock);
 
 private:
+  bool upload(const QString &src, const QUrl &target);
+
   int                           // Menu items identificators
       newID, openID, saveID, pictureID, printID, quitID,
       copyID, undoID, redoID,

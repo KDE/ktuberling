@@ -23,6 +23,7 @@
 #include <kconfiggroup.h>
 #include <kcombobox.h>
 #include <ksharedconfig.h>
+#include <kio/job.h>
 
 #include <QApplication>
 #include <QClipboard>
@@ -42,7 +43,6 @@
 
 // TODO kdelibs4support REMOVE
 #include <KLocale>
-#include "kio/netaccess.h"
 
 static const char *DEFAULT_THEME = "default_theme.theme";
 
@@ -347,8 +347,20 @@ void TopLevel::open(const QUrl &url)
     return;
 
   QString name;
-
-  KIO::NetAccess::download(url, name, this);
+  if (url.isLocalFile()) {
+    // file protocol. We do not need the network
+    name = url.toLocalFile();
+  } else {
+    QTemporaryFile tmpFile;
+    tmpFile.setAutoRemove(false);
+    tmpFile.open();
+    name = tmpFile.fileName();
+    const QUrl dest = QUrl::fromLocalFile(name);
+    KIO::Job *job = KIO::file_copy(url, dest, -1, KIO::Overwrite | KIO::HideProgressInfo);
+    QEventLoop eventLoop;
+    connect(job, &KIO::Job::result, &eventLoop, &QEventLoop::quit);
+    eventLoop.exec(QEventLoop::ExcludeUserInputEvents);
+  }
 
   switch(playGround->loadFrom(name))
   {
@@ -365,8 +377,9 @@ void TopLevel::open(const QUrl &url)
     break;
   }
 
-
-  KIO::NetAccess::removeTempFile( name );
+  if (!url.isLocalFile()) {
+    QFile::remove(name);
+  }
 }
 
 // Save gameboard
@@ -401,7 +414,7 @@ void TopLevel::fileSave()
 
   if( !url.isLocalFile() )
   {
-    if (!KIO::NetAccess::upload(name, url, this))
+    if (!upload(name, url))
       KMessageBox::error(this, i18n("Could not save file."));
   }
 }
@@ -464,7 +477,7 @@ void TopLevel::filePicture()
 
   if( !url.isLocalFile() )
   {
-    if (! KIO::NetAccess::upload(name, url, this))
+    if (!upload(name, url))
       KMessageBox::error(this, i18n("Could not save file."));
   }
 
@@ -521,4 +534,15 @@ void TopLevel::lockAspectRatio(bool lock)
   actionCollection()->action(QStringLiteral( "lock_aspect_ratio" ))->setChecked(lock);
   playGround->lockAspectRatio(lock);
   writeOptions();
+}
+
+bool TopLevel::upload(const QString &src, const QUrl &target)
+{
+  bool success = true;
+  const QUrl srcUrl = QUrl::fromLocalFile(src);
+  KIO::Job *job = KIO::file_copy(srcUrl, target, -1, KIO::Overwrite | KIO::HideProgressInfo);
+  QEventLoop eventLoop;
+  connect(job, &KIO::Job::result, this, [job, &eventLoop, &success] { success = !job->error(); eventLoop.quit(); } );
+  eventLoop.exec(QEventLoop::ExcludeUserInputEvents);
+  return success;
 }
