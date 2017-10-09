@@ -41,7 +41,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 add_subdirectory(sounds)
 add_subdirectory(pics)
-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
+if(KF5DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 
