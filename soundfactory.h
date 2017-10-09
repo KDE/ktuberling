@@ -15,18 +15,20 @@
 
 #include <QStringList>
 
-class TopLevel;
+class QMediaPlayer;
 
-namespace Phonon
+class SoundFactoryCallbacks
 {
-      class MediaObject;
-}
+public:
+  virtual ~SoundFactoryCallbacks() {};
+  virtual bool isSoundEnabled() const = 0;
+  virtual void registerLanguage(const QString &code, const QString &soundFile, bool enabled) = 0;
+};
 
 class SoundFactory
 {
 public:
-
-  explicit SoundFactory(TopLevel *parent);
+  explicit SoundFactory(SoundFactoryCallbacks *callbacks);
   ~SoundFactory();
 
   bool loadLanguage(const QString &selectedLanguageFile);
@@ -37,14 +39,15 @@ public:
   void registerLanguages();
 
 private:
+  SoundFactoryCallbacks *m_callbacks;
+
   QString currentSndFile;		// The current language
 
   int sounds;				// Number of sounds
   QStringList namesList,		// List of sound names
               filesList;           // List of sound files associated with each sound name
 
-  TopLevel *topLevel;		// Top-level window
-  Phonon::MediaObject *player;  // Sound player
+  QMediaPlayer *player;
 };
 
 #endif

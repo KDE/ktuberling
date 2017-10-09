@@ -23,16 +23,24 @@ class KActionCollection;
 
 class Action;
 class ToDraw;
-class TopLevel;
-class QPrinter;
+class QPagedPaintDevice;
 class QGraphicsSvgItem;
+
+class PlayGroundCallbacks
+{
+public:
+  virtual ~PlayGroundCallbacks() {}
+  virtual void playSound(const QString &ref) = 0;
+  virtual void changeGameboard(const QString &gameboard) = 0;
+  virtual void registerGameboard(const QString& menuText, const QString& boardFile, const QPixmap& pixmap) = 0;
+};
 
 class PlayGround : public QGraphicsView
 {
   Q_OBJECT
 
 public:
-  explicit PlayGround(TopLevel *parent);
+  explicit PlayGround(PlayGroundCallbacks *callbacks, QWidget *parent = nullptr);
   ~PlayGround();
 
   enum LoadError { NoError, OldFileVersionError, OtherError };
@@ -40,7 +48,7 @@ public:
   void reset();
   LoadError loadFrom(const QString &name);
   bool saveAs(const QString &name);
-  bool printPicture(QPrinter &printer);
+  bool printPicture(QPagedPaintDevice &printer);
   QPixmap getPicture();
 
   void connectRedoAction(QAction *action);
@@ -48,6 +56,8 @@ public:
 
   void registerPlayGrounds();
   bool loadPlayGround(const QString &gameboardFile);
+
+  void setAllowOnlyDrag(bool allowOnlyDrag);
 
   QString currentGameboard() const;
 
@@ -60,6 +70,7 @@ protected:
 
   void mousePressEvent(QMouseEvent *event) override;
   void mouseMoveEvent(QMouseEvent *event) override;
+  void mouseReleaseEvent(QMouseEvent *event) override;
   void resizeEvent(QResizeEvent *event) override;
 
 private:
@@ -75,12 +86,12 @@ private:
   QGraphicsScene *scene() const;
   QUndoStack *undoStack() const;
 
+  PlayGroundCallbacks *m_callbacks;
   QString m_gameboardFile;				// the file the board
   QMap<QString, QString> m_objectsNameSound;		// map between element name and sound
   QMap<QString, double> m_objectsNameRatio;		// map between element name and scaling ratio
 
-  TopLevel *m_topLevel;					// Top-level window
-
+  QPoint m_mousePressPos;
   QPointF m_itemDraggedPos;
   ToDraw *m_newItem;				    // the new item we are moving
   ToDraw *m_dragItem;					// the existing item we are dragging
@@ -88,6 +99,7 @@ private:
   int m_nextZValue;					// the next Z value to use
 
   bool m_lockAspect;					// whether we are locking aspect ratio
+  bool m_allowOnlyDrag;
   QUndoGroup m_undoGroup;
   
   class SceneData

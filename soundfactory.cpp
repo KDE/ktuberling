@@ -14,48 +14,42 @@
 
 #include <stdlib.h>
 
-#include <kmessagebox.h>
-#include <KLocalizedString>
-
-#include <phonon/MediaObject>
-
 #include <QDir>
 #include <QDomDocument>
 #include <QFile>
-#include <QStandardPaths>
+#include <QMediaPlayer>
+#include <QSet>
+#include <QUrl>
 
-#include "toplevel.h"
+#include "filefactory.h"
 
 // Constructor
-SoundFactory::SoundFactory(TopLevel *parent)
+SoundFactory::SoundFactory(SoundFactoryCallbacks *callbacks)
+ : m_callbacks(callbacks)
 {
-  topLevel = parent;
-  player = Phonon::createPlayer(Phonon::GameCategory);
-  player->setParent(parent);
+  player = new QMediaPlayer();
 }
 
 // Destructor
 SoundFactory::~SoundFactory()
 {
+  delete player;
 }
 
 // Play some sound
 void SoundFactory::playSound(const QString &soundRef) const
 {
+  if (!m_callbacks->isSoundEnabled()) return;
+
   int sound;
-  QString soundFile;
-
-  if (!topLevel->isSoundEnabled()) return;
-
   for (sound = 0; sound < sounds; sound++)
 	  if (!namesList[sound].compare(soundRef)) break;
   if (sound == sounds) return;
 
-  soundFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "sounds/" ) + filesList[sound]);
+  const QString soundFile = FileFactory::locate(QLatin1String( "sounds/" ) + filesList[sound]);
   if (soundFile.isEmpty()) return;
 
-//printf("%s\n", (const char *) soundFile);
-  player->setCurrentSource(QUrl::fromLocalFile(soundFile));
+  player->setMedia(QUrl::fromLocalFile(soundFile));
   player->play();
 }
 
@@ -63,7 +57,7 @@ void SoundFactory::playSound(const QString &soundRef) const
 void SoundFactory::registerLanguages()
 {
   QSet<QString> list;
-  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("sounds"), QStandardPaths::LocateDirectory);
+  const QStringList dirs = FileFactory::locateAll(QStringLiteral("sounds"));
   Q_FOREACH (const QString &dir, dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.soundtheme"));
@@ -81,9 +75,9 @@ void SoundFactory::registerLanguages()
       QDomDocument document;
       if (document.setContent(&file))
       {
-        QString code = document.documentElement().attribute(QStringLiteral( "code" ));
-        bool enabled = !(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "sounds/" ) + code + QLatin1Char( '/' ), QStandardPaths::LocateDirectory).isEmpty());
-        topLevel->registerLanguage(code, soundTheme, enabled);
+        const QString code = document.documentElement().attribute(QStringLiteral( "code" ));
+        const bool enabled = FileFactory::folderExists(QLatin1String( "sounds/" ) + code + QLatin1Char( '/' ));
+        m_callbacks->registerLanguage(code, soundTheme, enabled);
       }
     }
   }

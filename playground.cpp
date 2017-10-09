@@ -12,12 +12,12 @@
 
 #include "playground.h"
 
-#include <KLocalizedString>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <qdebug.h>
 
 #include <QAction>
+#include <QApplication>
 #include <QCursor>
 #include <QDataStream>
 #include <QDir>
@@ -27,15 +27,10 @@
 #include <QGraphicsSvgItem>
 #include <QMouseEvent>
 #include <QPainter>
-#include <QPrinter>
-#include <QStandardPaths>
-
-#include <kstandardaction.h>
-#include <kactioncollection.h>
-#include <kstandardshortcut.h>
+#include <QPagedPaintDevice>
 
 #include "action.h"
-#include "toplevel.h"
+#include "filefactory.h"
 #include "todraw.h"
 
 static const char *saveGameTextScaleTextMode = "KTuberlingSaveGameV2";
@@ -43,10 +38,9 @@ static const char *saveGameTextTextMode = "KTuberlingSaveGameV3";
 static const char *saveGameText = "KTuberlingSaveGameV4";
 
 // Constructor
-PlayGround::PlayGround(TopLevel *parent)
-    : QGraphicsView(parent), m_newItem(0), m_dragItem(0), m_nextZValue(1), m_lockAspect(false)
+PlayGround::PlayGround(PlayGroundCallbacks *callbacks, QWidget *parent)
+    : QGraphicsView(parent), m_callbacks(callbacks), m_newItem(0), m_dragItem(0), m_nextZValue(1), m_lockAspect(false), m_allowOnlyDrag(false)
 {
-  m_topLevel = parent;
   setFrameStyle(QFrame::NoFrame);
   setOptimizationFlag(QGraphicsView::DontSavePainterState, true); // all items here save the painter state
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -99,7 +93,7 @@ bool PlayGround::saveAs(const QString & name)
 }
 
 // Print gameboard's picture
-bool PlayGround::printPicture(QPrinter &printer)
+bool PlayGround::printPicture(QPagedPaintDevice &printer)
 {
   QPainter artist;
   QPixmap picture(getPicture());
@@ -139,6 +133,8 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
 
   if (event->button() != Qt::LeftButton) return;
 
+  m_mousePressPos = event->pos();
+
   if (m_dragItem) placeDraggedItem(event->pos());
   else if (m_newItem) placeNewItem(event->pos());
   else
@@ -163,7 +159,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
       QPointF itemPos = mapToScene(event->pos());
       itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
 
-      m_topLevel->playSound(m_objectsNameSound.value(foundElem));
+      m_callbacks->playSound(m_objectsNameSound.value(foundElem));
 
       m_newItem = new ToDraw;
       m_newItem->setBeingDragged(true);
@@ -186,7 +182,7 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
       {
         QString elem = m_dragItem->elementId();
 
-        m_topLevel->playSound(m_objectsNameSound.value(elem));
+        m_callbacks->playSound(m_objectsNameSound.value(elem));
         setCursor(Qt::BlankCursor);
         m_dragItem->setBeingDragged(true);
         m_itemDraggedPos = m_dragItem->pos();
@@ -202,18 +198,22 @@ void PlayGround::mousePressEvent(QMouseEvent *event)
 
 void PlayGround::mouseMoveEvent(QMouseEvent *event)
 {
-  if (m_newItem) {
+  ToDraw *movingItem = m_newItem ? m_newItem : m_dragItem;
+  if (movingItem) {
     QPointF itemPos = mapToScene(event->pos());
-    const QSizeF elementSize = m_newItem->transform().mapRect(m_newItem->unclippedRect()).size();
+    const QSizeF elementSize = movingItem->transform().mapRect(movingItem->unclippedRect()).size();
     itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
 
-    m_newItem->setPos(clipPos(itemPos, m_newItem));
-  } else if (m_dragItem) {
-    QPointF itemPos = mapToScene(event->pos());
-    const QSizeF elementSize = m_dragItem->transform().mapRect(m_dragItem->unclippedRect()).size();
-    itemPos -= QPointF(elementSize.width()/2, elementSize.height()/2);
+    movingItem->setPos(clipPos(itemPos, movingItem));
+  }
+}
 
-    m_dragItem->setPos(clipPos(itemPos, m_dragItem));
+void PlayGround::mouseReleaseEvent(QMouseEvent *event)
+{
+  QPoint point = event->pos() - m_mousePressPos;
+  if (m_allowOnlyDrag || point.manhattanLength() > qApp->startDragDistance()) {
+      if (m_dragItem) placeDraggedItem(event->pos());
+      else if (m_newItem) placeNewItem(event->pos());
   }
 }
 
@@ -317,7 +317,7 @@ bool PlayGround::isAspectRatioLocked() const
 void PlayGround::registerPlayGrounds()
 {
   QSet<QString> list;
-  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("pics"), QStandardPaths::LocateDirectory);
+  const QStringList dirs = FileFactory::locateAll(QStringLiteral("pics"));
   Q_FOREACH (const QString &dir, dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.theme"));
@@ -326,6 +326,8 @@ void PlayGround::registerPlayGrounds()
         list << dir + '/' + file;
     }
   }
+
+  QMap<QString, QPair<QString, QPixmap>> sortedByName;
 
   foreach(const QString &theme, list)
   {
@@ -336,21 +338,26 @@ void PlayGround::registerPlayGrounds()
       if (layoutDocument.setContent(&layoutFile))
       {
         QString desktop = layoutDocument.documentElement().attribute(QStringLiteral( "desktop" ));
-        KConfig c( QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + desktop ) );
+        KConfig c( FileFactory::locate( QLatin1String( "pics/" ) + desktop ) );
         KConfigGroup cg = c.group("KTuberlingTheme");
         QString gameboard = layoutDocument.documentElement().attribute(QStringLiteral( "gameboard" ));
         QPixmap pixmap(200,100);
         pixmap.fill(Qt::transparent);
         playGroundPixmap(gameboard,pixmap);
-        m_topLevel->registerGameboard(cg.readEntry("Name"), theme, pixmap);
+        sortedByName.insertMulti(cg.readEntry("Name"), QPair<QString, QPixmap>(theme, pixmap));
       }
     }
   }
+
+  for(auto it = sortedByName.begin(); it != sortedByName.end(); ++it) {
+    m_callbacks->registerGameboard(it.key(), it.value().first, it.value().second);
+  }
+
 }
 
 void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap)
 {
-  m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + playgroundName ));
+  m_SvgRenderer.load(FileFactory::locate(QLatin1String( "pics/" ) + playgroundName ));
   QPainter painter(&pixmap);
   m_SvgRenderer.render(&painter,QStringLiteral( "background" ));
 }
@@ -370,7 +377,6 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   QFile layoutFile(gameboardFile);
   if (!layoutFile.open(QIODevice::ReadOnly)) return false;
-
   QDomDocument layoutDocument;
   if (!layoutDocument.setContent(&layoutFile)) return false;
 
@@ -382,7 +388,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   if (!bgColor.isValid())
     bgColor = Qt::white;
 
-  if (!m_SvgRenderer.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + gameboardName )))
+  if (!m_SvgRenderer.load(FileFactory::locate( QLatin1String( "pics/" ) + gameboardName )))
     return false;
 
   objectsList = playGroundElement.elementsByTagName(QStringLiteral( "object" ));
@@ -434,6 +440,11 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   return true;
 }
 
+void PlayGround::setAllowOnlyDrag(bool allowOnlyDrag)
+{
+  m_allowOnlyDrag = allowOnlyDrag;
+}
+
 QString PlayGround::currentGameboard() const
 {
   return m_gameboardFile;
@@ -481,7 +492,7 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
 
   qreal xFactor = 1.0;
   qreal yFactor = 1.0;
-  m_topLevel->changeGameboard(board);
+  m_callbacks->changeGameboard(board);
 
   reset();
 

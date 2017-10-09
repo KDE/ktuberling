@@ -14,11 +14,13 @@
 #include <kxmlguiwindow.h>
 #include <kcombobox.h>
 
+#include "soundfactory.h"
+#include "playground.h"
+
 class QActionGroup;
 class PlayGround;
-class SoundFactory;
 
-class TopLevel : public KXmlGuiWindow
+class TopLevel : public KXmlGuiWindow, public SoundFactoryCallbacks, public PlayGroundCallbacks
 {
   Q_OBJECT
 
@@ -28,12 +30,12 @@ public:
   ~TopLevel();
 
   void open(const QUrl &url);
-  void registerGameboard(const QString& menuText, const QString& boardFile, const QPixmap& pixmap);
-  void registerLanguage(const QString &code, const QString &soundFile, bool enabled);
+  void registerGameboard(const QString& menuText, const QString& boardFile, const QPixmap& pixmap) override;
+  void registerLanguage(const QString &code, const QString &soundFile, bool enabled) override;
   void changeLanguage(const QString &langCode);
-  void playSound(const QString &ref) const;
+  void playSound(const QString &ref) override;
 
-  bool isSoundEnabled() const;
+  bool isSoundEnabled() const override;
 
   void changeGameboard(const QString &gameboard);
 

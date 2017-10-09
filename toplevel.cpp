@@ -33,10 +33,10 @@
 #include <QMimeDatabase>
 #include <QPrintDialog>
 #include <QPrinter>
-#include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QWidgetAction>
 
+#include "filefactory.h"
 #include "playground.h"
 #include "soundfactory.h"
 #include "playgrounddelegate.h"
@@ -52,7 +52,7 @@ TopLevel::TopLevel()
 {
   QString board, language;
 
-  playGround = new PlayGround(this);
+  playGround = new PlayGround(this, this);
   playGround->setObjectName( QStringLiteral( "playGround" ) );
 
   soundFactory = new SoundFactory(this);
@@ -146,7 +146,7 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
   QFileInfo fi(newGameBoard);
   if (fi.isRelative())
   {
-    fileToLoad = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "pics/" ) + newGameBoard);
+    fileToLoad = FileFactory::locate(QLatin1String( "pics/" ) + newGameBoard);
   }
   else
   {
@@ -193,7 +193,7 @@ void TopLevel::changeLanguage(const QString &soundFile)
   QFileInfo fi(soundFile);
   if (fi.isRelative())
   {
-    fileToLoad = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String( "sounds/" ) + soundFile);
+    fileToLoad = FileFactory::locate(QLatin1String( "sounds/" ) + soundFile);
   }
   else
   {
@@ -217,7 +217,7 @@ void TopLevel::changeLanguage(const QString &soundFile)
 }
 
 // Play a sound
-void TopLevel::playSound(const QString &ref) const
+void TopLevel::playSound(const QString &ref)
 {
   soundFactory->playSound(ref);
 }

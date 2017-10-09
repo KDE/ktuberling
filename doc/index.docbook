@@ -508,12 +508,6 @@ It will contain the playgrounds installed in your system.
 <sect2>
 <title>The Speech Menu</title>
 
-<!--FIXME
-<para>
-Please note that you need to have <command>&phonon;</command> installed
-and properly configured to be able to hear sounds.
-</para>-->
-
 <variablelist>
 
 <varlistentry>

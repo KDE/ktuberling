@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>games-config-theme.png</file>
+        <file>audio-volume-high.png</file>
+        <file>audio-volume-muted.png</file>
+    </qresource>
+</RCC>
