@@ -43,6 +43,8 @@ int main(int argc, char *argv[])
   QCommandLineParser parser;
   KAboutData::setApplicationData(aboutData);
   KCrash::initialize();
+  parser.addVersionOption();
+  parser.addHelpOption();
   parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+<tuberling-file>"), i18n("Potato to open")));
 
   aboutData.setupCommandLine(&parser);
