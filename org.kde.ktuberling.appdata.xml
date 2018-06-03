@@ -7,6 +7,7 @@
   <name xml:lang="de">Kartoffelknülch</name>
   <name xml:lang="en-GB">Potato Guy</name>
   <name xml:lang="es">Papá patata</name>
+  <name xml:lang="fr">Monsieur Patate</name>
   <name xml:lang="gl">Señor Patata</name>
   <name xml:lang="it">Uomo patata</name>
   <name xml:lang="nl">Aardappelmannetje</name>
@@ -22,6 +23,7 @@
   <summary xml:lang="de">Ein einfaches Aufbauspiel für Kinder und Erwachsene</summary>
   <summary xml:lang="en-GB">A simple constructor game suitable for children and adults alike</summary>
   <summary xml:lang="es">Un sencillo juego de construcción apropiado tanto para niños como para adultos</summary>
+  <summary xml:lang="fr">Un jeu d'assemblage simple qui convient aussi bien aux enfants qu'aux adultes</summary>
   <summary xml:lang="gl">Un simple xogo de construción axeitado tanto para nenos como para adultos</summary>
   <summary xml:lang="it">Un semplice gioco di costruzioni adatto sia ai bambini, sia agli adulti</summary>
   <summary xml:lang="nl">Een eenvoudig aannemerspel geschikt voor zowel kinderen als volwassenen</summary>
@@ -38,6 +40,7 @@
   <developer_name xml:lang="de">Die KTuberling-Entwickler</developer_name>
   <developer_name xml:lang="en-GB">The KTuberling Developers</developer_name>
   <developer_name xml:lang="es">Los desarrolladores de KTuberling</developer_name>
+  <developer_name xml:lang="fr">Les développeurs de KTuberling</developer_name>
   <developer_name xml:lang="gl">Os desenvolvedores de KTuberling</developer_name>
   <developer_name xml:lang="it">Gli sviluppatori di KTuberling</developer_name>
   <developer_name xml:lang="nl">De ontwikkelaars van KTuberling</developer_name>
@@ -53,6 +56,7 @@
     <p xml:lang="de">KTuberling ist ein einfaches Verkleidungsspiel für Kinder und jung gebliebene Erwachsene. Die Idee des Spiels stammt aus den bekannten Anziehspiel für Puppen.</p>
     <p xml:lang="en-GB">KTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.</p>
     <p xml:lang="es">KTuberling es un sencillo juego de construcción apropiado tanto para niños como para adultos. La idea del juego está basada en un concepto de creación de muñecas que fue popular hace un tiempo.</p>
+    <p xml:lang="fr">KTuberling est un jeu d'assemblage simple qui convient aussi bien aux enfants qu'aux adultes. Le concept du jeu est basé sur un type de poupée autrefois très populaire.</p>
     <p xml:lang="gl">KTuberling é un simple xogo de construción axeitado tanto para nenos como para adultos. A idea do xogo está baseada nun concepto de construción de bonecos que foi popular no pasado.</p>
     <p xml:lang="it">Ktuberling è un semplice gioco di costruzioni adatto tanto ai bambini che agli adulti. L'idea del gioco è basata su un tradizionale metodo per costruire pupazzi.</p>
     <p xml:lang="nl">KTuberling is een eenvoudig opbouwspel zowel voor kinderen als volwassenen. Het idee van het spel is gebaseerd op een eens populair concept voor poppen maken.</p>
