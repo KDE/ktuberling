@@ -11,6 +11,7 @@
   <name xml:lang="gl">Home patata</name>
   <name xml:lang="it">Uomo patata</name>
   <name xml:lang="nl">Aardappelmannetje</name>
+  <name xml:lang="nn">Potetfyren</name>
   <name xml:lang="pl">Ziemniaczany facet</name>
   <name xml:lang="pt">Homem-Batata</name>
   <name xml:lang="sk">Zemiakový chlapec</name>
@@ -28,6 +29,7 @@
   <summary xml:lang="gl">Un xogo de construción sinxelo axeitado tanto para nenos como para adultos</summary>
   <summary xml:lang="it">Un semplice gioco di costruzioni adatto sia ai bambini, sia agli adulti</summary>
   <summary xml:lang="nl">Een eenvoudig aannemerspel geschikt voor zowel kinderen als volwassenen</summary>
+  <summary xml:lang="nn">Eit enkelt biletbyggjespel for både store og små</summary>
   <summary xml:lang="pl">Prosta gra twórcza kierowana dla dzieci i dorosłych</summary>
   <summary xml:lang="pt">Um jogo de construção simples adequado para crianças e adultos semelhantes</summary>
   <summary xml:lang="sk">Jednoduchá výstavbová hra vhodná pre deti a dospelých</summary>
@@ -46,6 +48,7 @@
   <developer_name xml:lang="gl">Os desenvolvedores de KTuberling</developer_name>
   <developer_name xml:lang="it">Gli sviluppatori di KTuberling</developer_name>
   <developer_name xml:lang="nl">De ontwikkelaars van KTuberling</developer_name>
+  <developer_name xml:lang="nn">KTuberling-utviklarane</developer_name>
   <developer_name xml:lang="pl">Programiści KTuberling</developer_name>
   <developer_name xml:lang="pt">A Equipa de Desenvolvimento do KTuberling</developer_name>
   <developer_name xml:lang="sk">Vývojári KTuberling</developer_name>
@@ -63,6 +66,7 @@
     <p xml:lang="gl">KTuberling é un xogo de construción sinxelo axeitado tanto para nenos como para adultos. A idea do xogo está baseada nun concepto outrora popular de construción de bonecos.</p>
     <p xml:lang="it">Ktuberling è un semplice gioco di costruzioni adatto tanto ai bambini che agli adulti. L'idea del gioco è basata su un tradizionale metodo per costruire pupazzi.</p>
     <p xml:lang="nl">KTuberling is een eenvoudig opbouwspel zowel voor kinderen als volwassenen. Het idee van het spel is gebaseerd op een eens populair concept voor poppen maken.</p>
+    <p xml:lang="nn">KTuberling er eit enkelt biletbyggjespel for både store og små. Tanken bak spelet er å vera ein elektronisk versjon av den ein gong så populære papirdukka.</p>
     <p xml:lang="pl">KTuberling jest prostą grą twórczą przeznaczoną dla dzieci i dorosłych. Pomysł na grę został ściągnięty z jednego popularnego konceptu tworzenia lalki.</p>
     <p xml:lang="pt">O KTuberling é um jogo de construção simples e adequado para crianças e adultos compatíveis. A ideia do jogo baseia-se num antigo conceito popular de criação de bonecos.</p>
     <p xml:lang="sv">Potatismannen är ett enkelt byggspel lika lämpligt för barn som vuxna. Spelets idé är baserat på ett en gång populärt sätt att göra dockor.</p>
