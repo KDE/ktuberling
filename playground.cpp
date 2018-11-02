@@ -365,22 +365,12 @@ void PlayGround::playGroundPixmap(const QString &playgroundName, QPixmap &pixmap
 // Load background and draggable objects masks
 bool PlayGround::loadPlayGround(const QString &gameboardFile)
 {
-  QDomNodeList playGroundsList,
-               editableAreasList, objectsList,
-               gameAreasList, maskAreasList, soundNamesList, labelsList;
-  QDomElement playGroundElement,
-              editableAreaElement, objectElement,
-              gameAreaElement, maskAreaElement, soundNameElement, labelElement;
-  QDomAttr gameboardAttribute, masksAttribute,
-           leftAttribute, topAttribute, rightAttribute, bottomAttribute,
-           refAttribute;
-
   QFile layoutFile(gameboardFile);
   if (!layoutFile.open(QIODevice::ReadOnly)) return false;
   QDomDocument layoutDocument;
   if (!layoutDocument.setContent(&layoutFile)) return false;
 
-  playGroundElement = layoutDocument.documentElement();
+  const QDomElement playGroundElement = layoutDocument.documentElement();
 
   QString gameboardName = playGroundElement.attribute(QStringLiteral( "gameboard" ));
 
@@ -391,7 +381,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
   if (!m_SvgRenderer.load(FileFactory::locate( QLatin1String( "pics/" ) + gameboardName )))
     return false;
 
-  objectsList = playGroundElement.elementsByTagName(QStringLiteral( "object" ));
+  const QDomNodeList objectsList = playGroundElement.elementsByTagName(QStringLiteral( "object" ));
   if (objectsList.count() < 1)
     return false;
 
@@ -415,7 +405,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
 
   for (int decoration = 0; decoration < objectsList.count(); decoration++)
   {
-    objectElement = (const QDomElement &) objectsList.item(decoration).toElement();
+    const QDomElement objectElement = objectsList.item(decoration).toElement();
 
     const QString &objectName = objectElement.attribute(QStringLiteral( "name" ));
     if (m_SvgRenderer.elementExists(objectName))
