@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
   else {
       toplevel = new TopLevel();
       toplevel->show();
-      if (parser.positionalArguments().count())
+      if (!parser.positionalArguments().isEmpty())
           toplevel->open(QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath()));
 
   }
