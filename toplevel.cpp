@@ -14,6 +14,7 @@
 
 #include <kmessagebox.h>
 #include <KLocalizedString>
+#include <KLanguageName>
 #include <kstandardaction.h>
 #include <kstandardshortcut.h>
 #include <kstandardgameaction.h>
@@ -41,8 +42,6 @@
 #include "soundfactory.h"
 #include "playgrounddelegate.h"
 
-// TODO kdelibs4support REMOVE
-#include <KLocale>
 
 static const char *DEFAULT_THEME = "default_theme.theme";
 
@@ -106,7 +105,7 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
 // Register an available language
 void TopLevel::registerLanguage(const QString &code, const QString &soundFile, bool enabled)
 {
-  KToggleAction *t = new KToggleAction(KLocale::global()->languageCodeToName(code), this);
+  KToggleAction *t = new KToggleAction(KLanguageName::nameForCode(code), this);
   t->setEnabled(enabled);
   actionCollection()->addAction(soundFile, t);
   t->setData(soundFile);
@@ -233,14 +232,25 @@ void TopLevel::readOptions(QString &board, QString &language)
   language = config.readEntry("Language", "" );
   bool keepAspectRatio = config.readEntry("KeepAspectRatio", false);
 
-  if (soundEnabled)
+  if (soundEnabled && language.isEmpty())
   {
+    const QStringList &systemLanguages = KLocalizedString::languages();
+    for (const QString &systemLanguage : systemLanguages)
+    {
+      QString sound = sounds.value(systemLanguage);
+      if (!sound.isEmpty())
+      {
+        language = sound;
+        break;
+      }
+    }
     if (language.isEmpty())
     {
-      language = sounds.value(KLocale::global()->language(), QStringLiteral( "en.soundtheme" ));
+      language = QStringLiteral("en.soundtheme");
     }
   }
-  else
+
+  if (!soundEnabled)
   {
     soundOff();
     language = QString();

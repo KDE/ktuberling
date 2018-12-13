@@ -2,7 +2,7 @@ project(ktuberling)
 
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.3.0")
-set (KF5_MIN_VERSION "5.15.0")
+set (KF5_MIN_VERSION "5.55.0")
 
 find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -20,7 +20,6 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
         KIO
         DocTools
         I18n
-        KDELibs4Support #TODO eventually remove kdelibs4support
         WidgetsAddons
         XmlGui
     )
@@ -93,11 +92,11 @@ else()
         Qt5::PrintSupport
         Qt5::Svg
         Qt5::Multimedia
+        KF5::ConfigWidgets
         KF5::Completion
         KF5::Crash
         KF5::DBusAddons
         KF5::KIOCore
-        KF5::KDELibs4Support
         KF5::XmlGui
         KF5KDEGames
     )
