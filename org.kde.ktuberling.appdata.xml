@@ -128,5 +128,5 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <project_group>KDE</project_group>
-  <update_contact>kdeedu@kde.org</update_contact>
+  <update_contact>kde-edu@kde.org</update_contact>
 </component>
