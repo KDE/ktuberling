@@ -30,6 +30,8 @@ class SoundFactory
 public:
   explicit SoundFactory(SoundFactoryCallbacks *callbacks);
   ~SoundFactory();
+  SoundFactory(const SoundFactory &) = delete;
+  SoundFactory &operator=(const SoundFactory &) = delete;
 
   bool loadLanguage(const QString &selectedLanguageFile);
   void playSound(const QString &soundRef) const;
