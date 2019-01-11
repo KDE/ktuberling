@@ -425,7 +425,7 @@ void TopLevel::filePicture()
   const QMimeDatabase mimedb;
   const QList<QByteArray> imageWriterMimetypes = QImageWriter::supportedMimeTypes();
   QStringList patterns;
-  for(auto mimeName : imageWriterMimetypes)
+  for(const auto &mimeName : imageWriterMimetypes)
   {
     const QMimeType mime = mimedb.mimeTypeForName(mimeName);
     if (mime.isValid())
@@ -433,7 +433,7 @@ void TopLevel::filePicture()
       QStringList suffixes;
       for(const QString &suffix : mime.suffixes())
       {
-          suffixes << QString("*.%1").arg(suffix);
+          suffixes << QStringLiteral("*.%1").arg(suffix);
       }
 
       // Favor png
@@ -448,7 +448,7 @@ void TopLevel::filePicture()
       }
     }
   }
-  const QUrl url = QFileDialog::getSaveFileUrl( this, QString(), QUrl(), patterns.join(";;") );
+  const QUrl url = QFileDialog::getSaveFileUrl( this, QString(), QUrl(), patterns.join(QStringLiteral(";;")) );
 
   if( url.isEmpty() )
     return;
