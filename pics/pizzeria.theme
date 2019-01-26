@@ -20,7 +20,6 @@
 	<object name="mushroom" sound="pizzeria_mushroom" />
 
 	<object name="pepperoni1" sound="pizzeria_pepperoni" />
-	<object name="pepperoni2" sound="pizzeria_pepperoni" />
 
 	<object name="oregano1" sound="pizzeria_oregano" />
 	<object name="oregano2" sound="pizzeria_oregano" />
