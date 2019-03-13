@@ -94,7 +94,7 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
   connect(t, SIGNAL(toggled(bool)), SLOT(changeGameboard()));
   playgroundsGroup->addAction(t);
   QList<QAction*> actionList = playgroundsGroup->actions();
-  qSort(actionList.begin(), actionList.end(), actionSorterByName);
+  std::sort(actionList.begin(), actionList.end(), actionSorterByName);
   unplugActionList( QStringLiteral( "playgroundList" ) );
   plugActionList( QStringLiteral( "playgroundList" ), actionList );
 
@@ -114,7 +114,7 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
   languagesGroup->addAction(t);
   QList<QAction*> actionList = languagesGroup->actions();
   actionList.removeAll(actionCollection()->action(QStringLiteral( "speech_no_sound" )));
-  qSort(actionList.begin(), actionList.end(), actionSorterByName);
+  std::sort(actionList.begin(), actionList.end(), actionSorterByName);
   unplugActionList( QStringLiteral( "languagesList" ) );
   plugActionList( QStringLiteral( "languagesList" ), actionList );
 }
