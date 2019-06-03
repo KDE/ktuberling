@@ -19,12 +19,10 @@
 #include <QSvgRenderer>
 #include <QUndoGroup>
 
-class KActionCollection;
 
 class Action;
 class ToDraw;
 class QPagedPaintDevice;
-class QGraphicsSvgItem;
 
 class PlayGroundCallbacks
 {
