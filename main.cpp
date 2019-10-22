@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
   TopLevel *toplevel=0;
 
   if (app.isSessionRestored())
-      RESTORE(TopLevel)
+      kRestoreMainWindows<TopLevel>();
   else {
       toplevel = new TopLevel();
       toplevel->show();
