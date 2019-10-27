@@ -57,8 +57,6 @@ private slots:
   void editCopy();
   void soundOff();
   void changeGameboardFromCombo(int index);
-  void changeGameboard();
-  void changeLanguage();
   void toggleFullScreen();
   void lockAspectRatio(bool lock);
 

@@ -90,8 +90,12 @@ void TopLevel::registerGameboard(const QString &menuText, const QString &board, 
 {
   KToggleAction *t = new KToggleAction(menuText, this);
   actionCollection()->addAction(board, t);
-  t->setData(board);
-  connect(t, SIGNAL(toggled(bool)), SLOT(changeGameboard()));
+  connect(t, &KToggleAction::toggled, this, [this, t, board] {
+    if (t->isChecked())
+    {
+      changeGameboard(board);
+    }
+  });
   playgroundsGroup->addAction(t);
   QList<QAction*> actionList = playgroundsGroup->actions();
   std::sort(actionList.begin(), actionList.end(), actionSorterByName);
@@ -108,9 +112,10 @@ void TopLevel::registerLanguage(const QString &code, const QString &soundFile, b
   KToggleAction *t = new KToggleAction(KLanguageName::nameForCode(code), this);
   t->setEnabled(enabled);
   actionCollection()->addAction(soundFile, t);
-  t->setData(soundFile);
   sounds.insert(code, soundFile);
-  connect(t, SIGNAL(toggled(bool)), SLOT(changeLanguage()));
+  connect(t, &KToggleAction::toggled, this, [this, soundFile] {
+    changeLanguage(soundFile);
+  });
   languagesGroup->addAction(t);
   QList<QAction*> actionList = languagesGroup->actions();
   actionList.removeAll(actionCollection()->action(QStringLiteral( "speech_no_sound" )));
@@ -124,17 +129,6 @@ void TopLevel::changeGameboardFromCombo(int index)
 {
   QString newBoard = playgroundCombo->itemData(index,BOARD_THEME).toString();
   changeGameboard(newBoard);
-}
-
-void TopLevel::changeGameboard()
-{
-  QAction *action = qobject_cast<QAction*>(sender());
-  // ignore toggling of "nonchecked" actions
-  if (action->isChecked())
-  {
-    QString newGameBoard = action->data().toString();
-    changeGameboard(newGameBoard);
-  }
 }
 
 void TopLevel::changeGameboard(const QString &newGameBoard)
@@ -174,13 +168,6 @@ void TopLevel::changeGameboard(const QString &newGameBoard)
       KMessageBox::error(this, i18n("Error while loading the playground."));
     }
   }
-}
-
-void TopLevel::changeLanguage()
-{
-  QAction *action = qobject_cast<QAction*>(sender());
-  QString soundFile = action->data().toString();
-  changeLanguage(soundFile);
 }
 
 // Switch to another language
@@ -289,7 +276,7 @@ void TopLevel::setupKAction()
   connect(action, &QAction::triggered, this, &TopLevel::filePicture);
 
   //Edit
-  action = KStandardAction::copy(this, SLOT(editCopy()), actionCollection());
+  action = KStandardAction::copy(this, &TopLevel::editCopy, actionCollection());
   actionCollection()->addAction(action->objectName(), action);
 
   action = KStandardAction::undo(0, 0, actionCollection());
@@ -303,7 +290,7 @@ void TopLevel::setupKAction()
   connect(t, &QAction::triggered, this, &TopLevel::soundOff);
   languagesGroup->addAction(t);
 
-  KStandardAction::fullScreen(this, SLOT(toggleFullScreen()), this, actionCollection());
+  KStandardAction::fullScreen(this, &TopLevel::toggleFullScreen, this, actionCollection());
 
   t = new KToggleAction(i18n("&Lock Aspect Ratio"), this);
   actionCollection()->addAction( QStringLiteral( "lock_aspect_ratio" ), t);
@@ -318,7 +305,7 @@ void TopLevel::setupKAction()
   PlaygroundDelegate *playgroundDelegate = new PlaygroundDelegate(playgroundCombo->view());
   playgroundCombo->setItemDelegate(playgroundDelegate);
 
-  connect(playgroundCombo, SIGNAL(currentIndexChanged(int)),this,SLOT(changeGameboardFromCombo(int)));
+  connect(playgroundCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &TopLevel::changeGameboardFromCombo);
 
   QWidgetAction *widgetAction = new QWidgetAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
