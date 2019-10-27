@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright 2008 Albert Astals Cid <aacid@kde.org>
+# Copyright 2008-2019 Albert Astals Cid <aacid@kde.org>
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
@@ -17,22 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
-from PyQt4 import QtCore
-from PyQt4 import QtGui
-from PyQt4 import QtXml
+from PyQt5 import QtCore
+from PyQt5 import QtGui
+from PyQt5 import QtXml
 
-app = QtGui.QApplication(sys.argv)
+app = QtGui.QGuiApplication(sys.argv)
 
 if len(sys.argv) != 5:
-	print "Error: You have to specify the sound theme file to check, the folder containing the graphical themes, the folder where to look for the sound files and the path to ignore in the file tag of the sound object"
-	print " E.g: For lt it would be something like 'python soundthemecheker.py /home/kdeunstable/l10n-kde4/lt/data/kdegames/ktuberling/lt.soundtheme /home/kdeunstable/kdegames/ktuberling/pics /home/kdeunstable/l10n-kde4/lt/data/kdegames/ktuberling/ lt'"
+	print("Error: You have to specify the sound theme file to check, the folder containing the graphical themes, the folder where to look for the sound files and the path to ignore in the file tag of the sound object")
+	print(" E.g: For lt it would be something like 'python soundthemecheker.py /home/kdeunstable/l10n-kde4/lt/data/kdegames/ktuberling/lt.soundtheme /home/kdeunstable/kdegames/ktuberling/pics /home/kdeunstable/l10n-kde4/lt/data/kdegames/ktuberling/ lt'")
 	sys.exit(1)
 
 soundThemePath = sys.argv[1]
 graphicalThemesPath = sys.argv[2]
 soundsPath = sys.argv[3]
 ignorePath = sys.argv[4]
-print "Processing " + soundThemePath + " " + graphicalThemesPath
+print("Processing " + soundThemePath + " " + graphicalThemesPath)
 soundThemeFile = QtCore.QFile(soundThemePath)
 
 if soundThemeFile.exists():
@@ -49,18 +49,18 @@ if soundThemeFile.exists():
 				if (contains == 0):
 					soundList.append(name)
 					fpath = soundTag.attribute("file")
-					if (fpath.startsWith(ignorePath)):
-						fpath = fpath.mid(len(ignorePath))
+					if (fpath.startswith(ignorePath)):
+						fpath = fpath[len(ignorePath):]
 					if (not QtCore.QFile.exists(soundsPath + fpath)):
-						print "Error: Sound file for " + name + " not found"
+						print("Error: Sound file for " + name + " not found")
 				else:
-					print QtCore.QString("Error: The name %1 is used more than once in the sound theme file").arg(name)
+					print("Error: The name {0} is used more than once in the sound theme file".format(name))
 				
 				soundTag = soundTag.nextSiblingElement("sound");
 			
 			graphicalThemesDir = QtCore.QDir(graphicalThemesPath)
 			allSoundsList = []
-			for graphicalThemePath in graphicalThemesDir.entryList(QtCore.QStringList("*.theme")):
+			for graphicalThemePath in graphicalThemesDir.entryList(["*.theme"]):
 				graphicalThemeFile = QtCore.QFile(graphicalThemesPath + "/" + graphicalThemePath)
 				if graphicalThemeFile.exists():
 					if (graphicalThemeFile.open(QtCore.QIODevice.ReadOnly)):
@@ -73,32 +73,32 @@ if soundThemeFile.exists():
 								sound = objectTag.attribute("sound")
 								contains = allSoundsList.count(sound)
 								if (sound == ""):
-									print "The sound of " + objectTag.attribute("name") + " in " + graphicalThemeFile.fileName() + " is empty"
+									print("The sound of " + objectTag.attribute("name") + " in " + graphicalThemeFile.fileName() + " is empty")
 								if (contains == 0):
 									allSoundsList.append(sound)
 								
 								objectTag = objectTag.nextSiblingElement("object");
 						else:
-							print "Error: The graphical theme file should begin with the playground tag " + graphicalThemeFile.fileName()
+							print("Error: The graphical theme file should begin with the playground tag " + graphicalThemeFile.fileName())
 					else:
-						print QtCore.QString("Error: Could not open %1 for reading").arg(graphicalThemePath)
+						print("Error: Could not open {0} for reading".format(graphicalThemePath))
 				else:
-					print QtCore.QString("Error: File %1 does not exist").arg(graphicalThemePath)
+					print("Error: File {0} does not exist".format(graphicalThemePath))
 			for sound in soundList:
 				if (allSoundsList.count(sound) == 1):
 					allSoundsList.remove(sound)
 				else:
-					print "Error: The sound theme defines " + sound + " that is not used in any graphical theme"
+					print("Error: The sound theme defines " + sound + " that is not used in any graphical theme")
 			if (len(allSoundsList) > 0):
-				print "The following sounds used in the graphical themes are not defined in the sound theme:"
+				print("The following sounds used in the graphical themes are not defined in the sound theme:")
 				for sound in allSoundsList:
-					print "\t" + sound
+					print("\t" + sound)
 		else:
-			print "Error: The sound theme file should begin with the language tag"
+			print("Error: The sound theme file should begin with the language tag")
 		soundThemeFile.close();
 	else:
-		print QtCore.QString("Error: Could not open %1 for reading").arg(path)
+		print("Error: Could not open {0} for reading".format(path))
 else:
-	print QtCore.QString("Error: File %1 does not exist").arg(soundThemePath)
+	print("Error: File {0} does not exist".format(soundThemePath))
 
 sys.exit(0)
