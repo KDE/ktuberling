@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
   aboutData.addCredit(i18n("Bas Willems"), i18n("New artwork"), QStringLiteral("cybersurfer@euronet.nl"));
   aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), QStringLiteral("roger.larsson@norran.net"));
   aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), QStringLiteral("dolores.almansa@corazondemaria.org"));
-  aboutData.setHomepage(QStringLiteral("http://games.kde.org/ktuberling"));
+  aboutData.setHomepage(QStringLiteral("https://kde.org/applications/games/org.kde.ktuberling"));
   QCommandLineParser parser;
   KAboutData::setApplicationData(aboutData);
   KCrash::initialize();
