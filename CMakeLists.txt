@@ -42,7 +42,7 @@ include(ECMSetupVersion)
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
-
+include(ECMQtDeclareLoggingCategory)
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
 
 add_definitions(${QT_DEFINITIONS})
@@ -67,7 +67,7 @@ set(ktuberling_common_SRCS
    soundfactory.cpp
    filefactory.cpp
 )
-
+ecm_qt_declare_logging_category(ktuberling_common_SRCS HEADER ktuberling_debug.h IDENTIFIER KTUBERLING_LOG CATEGORY_NAME org.kde.kdegames.ktuberling)
 if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
     set(ktuberling_mobile_SRCS
         ${ktuberling_common_SRCS}
@@ -138,4 +138,5 @@ else()
 endif()
 
 install(FILES org.kde.ktuberling.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES ktuberling.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

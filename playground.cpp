@@ -14,7 +14,7 @@
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <qdebug.h>
+#include "ktuberling_debug.h"
 
 #include <QAction>
 #include <QApplication>
@@ -415,7 +415,7 @@ bool PlayGround::loadPlayGround(const QString &gameboardFile)
     }
     else
     {
-      qWarning() << objectName << "does not exist. Check" << gameboardFile;
+      qCWarning(KTUBERLING_LOG) << objectName << "does not exist. Check" << gameboardFile;
     }
   }
 

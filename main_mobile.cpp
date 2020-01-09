@@ -9,7 +9,7 @@
  ***************************************************************************/
 
 #include <QApplication>
-#include <QDebug>
+#include "ktuberling_debug.h"
 #include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <QLabel>
