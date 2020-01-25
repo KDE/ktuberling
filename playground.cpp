@@ -327,7 +327,7 @@ void PlayGround::registerPlayGrounds()
     }
   }
 
-  QMap<QString, QPair<QString, QPixmap>> sortedByName;
+  QMultiMap<QString, QPair<QString, QPixmap>> sortedByName;
 
   foreach(const QString &theme, list)
   {
@@ -344,7 +344,7 @@ void PlayGround::registerPlayGrounds()
         QPixmap pixmap(200,100);
         pixmap.fill(Qt::transparent);
         playGroundPixmap(gameboard,pixmap);
-        sortedByName.insertMulti(cg.readEntry("Name"), QPair<QString, QPixmap>(theme, pixmap));
+        sortedByName.insert(cg.readEntry("Name"), QPair<QString, QPixmap>(theme, pixmap));
       }
     }
   }
