@@ -138,4 +138,7 @@
   </content_rating>
   <project_group>KDE</project_group>
   <update_contact>kde-edu@kde.org</update_contact>
+  <custom>
+    <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.ktuberling</value>
+  </custom>
 </component>
