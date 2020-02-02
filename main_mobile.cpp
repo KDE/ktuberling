@@ -111,7 +111,7 @@ public:
     return m_soundEnabled;
   }
 
-  void registerLanguage(const QString &/*code*/, const QString &/*soundFile*/, bool /*enabled*/)
+  void registerLanguage(const QString &/*code*/, const QString &/*soundFile*/, bool /*enabled*/) override
   {
     // TODO
   }
