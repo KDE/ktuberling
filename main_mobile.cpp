@@ -46,7 +46,7 @@ public:
     QVBoxLayout *sideLayout = new QVBoxLayout();
 
     // Not sure this is the best way but it works for now
-    const int screenWidth = QDesktopWidget().screenGeometry().width();
+    const int screenWidth = QDesktopWidget::screenGeometry().width();
     const int iconWidth = screenWidth / 15;
 
     QPushButton *themesButton = new QPushButton(mainWidget);
