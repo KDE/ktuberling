@@ -100,11 +100,11 @@
   <project_license>GPL-2.0+</project_license>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=ktuberling</url>
   <url type="donation">https://www.kde.org/community/donations/?app=ktuberling&amp;source=appdata</url>
-  <url type="help">https://docs.kde.org/stable5/en/kdegames/ktuberling/index.html</url>
+  <url type="help">https://docs.kde.org/?application=ktuberling</url>
   <url type="homepage">https://www.kde.org/applications/games/ktuberling/</url>
   <screenshots>
     <screenshot type="default">
-      <image>https://www.kde.org/images/screenshots/ktuberling.png</image>
+      <image>https://cdn.kde.org/screenshots/ktuberling/ktuberling.png</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
@@ -142,6 +142,7 @@
     <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.ktuberling</value>
   </custom>
   <releases>
+    <release version="19.12.3" date="2020-03-05"/>
     <release version="19.12.2" date="2020-02-06"/>
     <release version="19.12.1" date="2020-01-09"/>
     <release version="19.12.0" date="2019-12-12"/>
