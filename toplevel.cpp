@@ -304,11 +304,7 @@ void TopLevel::setupKAction()
 
   PlaygroundDelegate *playgroundDelegate = new PlaygroundDelegate(playgroundCombo->view());
   playgroundCombo->setItemDelegate(playgroundDelegate);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
   connect(playgroundCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &TopLevel::changeGameboardFromCombo);
-#else
-  connect(playgroundCombo, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &TopLevel::changeGameboardFromCombo);
-#endif
   QWidgetAction *widgetAction = new QWidgetAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
   actionCollection()->addAction( QStringLiteral( "playgroundSelection" ),widgetAction);
