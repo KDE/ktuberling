@@ -12,7 +12,7 @@
 #define _TOPLEVEL_H_
 
 #include <kxmlguiwindow.h>
-#include <kcombobox.h>
+#include <KComboBox>
 
 #include "soundfactory.h"
 #include "playground.h"

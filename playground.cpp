@@ -12,8 +12,8 @@
 
 #include "playground.h"
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include "ktuberling_debug.h"
 
 #include <QAction>

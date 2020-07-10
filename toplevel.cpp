@@ -12,18 +12,18 @@
 
 #include "toplevel.h"
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KLocalizedString>
 #include <KLanguageName>
-#include <kstandardaction.h>
-#include <kstandardshortcut.h>
-#include <kstandardgameaction.h>
-#include <kactioncollection.h>
-#include <ktoggleaction.h>
-#include <ktogglefullscreenaction.h>
-#include <kconfiggroup.h>
-#include <kcombobox.h>
-#include <ksharedconfig.h>
+#include <KStandardAction>
+#include <KStandardShortcut>
+#include <KStandardGameAction>
+#include <KActionCollection>
+#include <KToggleAction>
+#include <KToggleFullScreenAction>
+#include <KConfigGroup>
+#include <KComboBox>
+#include <KSharedConfig>
 #include <kio/job.h>
 
 #include <QApplication>
