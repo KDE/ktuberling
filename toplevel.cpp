@@ -22,7 +22,6 @@
 #include <KToggleAction>
 #include <KToggleFullScreenAction>
 #include <KConfigGroup>
-#include <KComboBox>
 #include <KSharedConfig>
 #include <kio/job.h>
 
@@ -38,8 +37,6 @@
 #include <QWidgetAction>
 
 #include "filefactory.h"
-#include "playground.h"
-#include "soundfactory.h"
 #include "playgrounddelegate.h"
 
 
