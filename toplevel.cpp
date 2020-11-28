@@ -395,7 +395,7 @@ void TopLevel::fileSave()
   }
   else
   {
-    name = url.path();
+    name = url.toLocalFile();
   }
 
   if( !playGround->saveAs( name ) )
@@ -454,7 +454,7 @@ void TopLevel::filePicture()
   }
   else
   {
-    name = url.path();
+    name = url.toLocalFile();
   }
 
   QPixmap picture(playGround->getPicture());
