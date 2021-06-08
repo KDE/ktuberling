@@ -71,16 +71,16 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
         main_mobile.cpp
     )
 
-    qt5_add_resources(ktuberling_mobile_SRCS android_data/resources.qrc)
+    qt_add_resources(ktuberling_mobile_SRCS android_data/resources.qrc)
 
     add_executable(ktuberling_mobile ${ktuberling_mobile_SRCS})
 
     target_link_libraries(ktuberling_mobile
-        Qt5::Gui
-        Qt5::Svg
-        Qt5::Multimedia
-        Qt5::Xml
-        Qt5::Widgets
+        Qt::Gui
+        Qt::Svg
+        Qt::Multimedia
+        Qt::Xml
+        Qt::Widgets
         KF5::ConfigCore )
 
     install(TARGETS ktuberling_mobile RUNTIME DESTINATION bin)
@@ -100,9 +100,9 @@ else()
     add_executable(ktuberling ${ktuberling_SRCS})
 
     target_link_libraries(ktuberling
-        Qt5::PrintSupport
-        Qt5::Svg
-        Qt5::Multimedia
+        Qt::PrintSupport
+        Qt::Svg
+        Qt::Multimedia
         KF5::ConfigWidgets
         KF5::Completion
         KF5::Crash
