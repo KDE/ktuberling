@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
 
 # KDE Application Version, managed by release script
 set(RELEASE_SERVICE_VERSION_MAJOR "21")
@@ -8,8 +8,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(ktuberling VERSION ${RELEASE_SERVICE_VERSION})
 
-set (QT_MIN_VERSION "5.15.0")
-set (KF5_MIN_VERSION "5.83.0")
+set (QT_MIN_VERSION "5.12.0")
+set (KF5_MIN_VERSION "5.68.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
@@ -71,16 +71,16 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
         main_mobile.cpp
     )
 
-    qt_add_resources(ktuberling_mobile_SRCS android_data/resources.qrc)
+    qt5_add_resources(ktuberling_mobile_SRCS android_data/resources.qrc)
 
     add_executable(ktuberling_mobile ${ktuberling_mobile_SRCS})
 
     target_link_libraries(ktuberling_mobile
-        Qt::Gui
-        Qt::Svg
-        Qt::Multimedia
-        Qt::Xml
-        Qt::Widgets
+        Qt5::Gui
+        Qt5::Svg
+        Qt5::Multimedia
+        Qt5::Xml
+        Qt5::Widgets
         KF5::ConfigCore )
 
     install(TARGETS ktuberling_mobile RUNTIME DESTINATION bin)
@@ -100,9 +100,9 @@ else()
     add_executable(ktuberling ${ktuberling_SRCS})
 
     target_link_libraries(ktuberling
-        Qt::PrintSupport
-        Qt::Svg
-        Qt::Multimedia
+        Qt5::PrintSupport
+        Qt5::Svg
+        Qt5::Multimedia
         KF5::ConfigWidgets
         KF5::Completion
         KF5::Crash
