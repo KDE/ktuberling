@@ -51,7 +51,7 @@ PlayGround::PlayGround(PlayGroundCallbacks *callbacks, QWidget *parent)
 // Destructor
 PlayGround::~PlayGround()
 {
-    for (const SceneData &data : std::as_const(m_scenes))
+  foreach (const SceneData &data, m_scenes)
   {
     delete data.scene;
     delete data.undoStack;
@@ -62,8 +62,7 @@ PlayGround::~PlayGround()
 void PlayGround::reset()
 {
 
-    const auto items = scene()->items();
-  for (QGraphicsItem *item : items )
+  foreach(QGraphicsItem *item, scene()->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
     delete currentObject;
@@ -84,8 +83,7 @@ bool PlayGround::saveAs(const QString & name)
   out.setVersion(QDataStream::Qt_4_5);
   out << QString::fromLatin1(saveGameText);
   out << gameBoard.fileName();
-  const auto items = scene()->items();
-  for (QGraphicsItem *item : items)
+  foreach(QGraphicsItem *item, scene()->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
     if (currentObject != NULL) currentObject->save(out);
@@ -320,18 +318,18 @@ void PlayGround::registerPlayGrounds()
 {
   QSet<QString> list;
   const QStringList dirs = FileFactory::locateAll(QStringLiteral("pics"));
-  for (const QString &dir : dirs)
+  Q_FOREACH (const QString &dir, dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.theme"));
-    for (const QString &file : fileNames)
+    Q_FOREACH (const QString &file, fileNames)
     {
-        list << dir + QLatin1Char('/') + file;
+        list << dir + '/' + file;
     }
   }
 
   QMultiMap<QString, QPair<QString, QPixmap>> sortedByName;
 
-  for(const QString &theme : std::as_const(list))
+  foreach(const QString &theme, list)
   {
     QFile layoutFile(theme);
     if (layoutFile.open(QIODevice::ReadOnly))
