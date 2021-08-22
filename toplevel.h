@@ -44,10 +44,10 @@ protected:
   void writeOptions();
   void setupKAction();
 
-protected slots:
+protected Q_SLOTS:
   void saveNewToolbarConfig() override;
 
-private slots:
+private Q_SLOTS:
 
   void fileNew();
   void fileOpen();

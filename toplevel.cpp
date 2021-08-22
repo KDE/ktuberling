@@ -419,7 +419,7 @@ void TopLevel::filePicture()
   QStringList patterns;
   for(const auto &mimeName : imageWriterMimetypes)
   {
-    const QMimeType mime = mimedb.mimeTypeForName(mimeName);
+      const QMimeType mime = mimedb.mimeTypeForName(QString::fromLatin1(mimeName));
     if (mime.isValid())
     {
       QStringList suffixes;
@@ -429,7 +429,7 @@ void TopLevel::filePicture()
       }
 
       // Favor png
-      const QString pattern = i18nc("%1 is mimetype and %2 is the file extensions", "%1 (%2)", mime.comment(), suffixes.join(' '));
+      const QString pattern = i18nc("%1 is mimetype and %2 is the file extensions", "%1 (%2)", mime.comment(), suffixes.join(QLatin1Char(' ')));
       if (mimeName == "image/png")
       {
         patterns.prepend(pattern);
