@@ -327,7 +327,7 @@ void TopLevel::fileNew()
 // Load gameboard
 void TopLevel::fileOpen()
 {
-  QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Load file"), QUrl(),
+  QUrl url = QFileDialog::getOpenFileUrl(this, i18nc("@title:window", "Load file"), QUrl(),
                                      i18n("KTuberling files (%1)", QStringLiteral("*.tuberling")));
 
   open(url);
@@ -481,7 +481,7 @@ void TopLevel::filePrint()
   bool ok;
 
   QPrintDialog *printDialog = new QPrintDialog(&printer, this);
-  printDialog->setWindowTitle(i18n("Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
+  printDialog->setWindowTitle(i18nc("@title:window", "Print %1", actionCollection()->action(playGround->currentGameboard())->iconText()));
   ok = printDialog->exec();
   delete printDialog;
   if (!ok) return;
