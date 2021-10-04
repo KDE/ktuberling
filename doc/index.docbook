@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potato Guy">
+
   <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
@@ -35,8 +37,8 @@
 
 </authorgroup>
 
-<date>2016-05-11</date>
-<releaseinfo>1.0.0 (Applications 16.04)</releaseinfo>
+<date>2021-10-04</date>
+<releaseinfo>KDE Gear 21.08</releaseinfo>
 
 <copyright>
 <year>1999</year><year>2000</year><year>2002</year><year>2006</year>
@@ -52,7 +54,7 @@
 
 <abstract>
 <para>
-&ktuberling; is a game intended for small children.
+&i18n-ktuberling; is a game intended for small children.
 </para>
 </abstract>
 
@@ -89,7 +91,7 @@
 </screenshot>
 
 <para>
-&ktuberling; a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept. A potato was decorated with various small artifacts to make it look more like a tiny person. &ktuberling; however, goes much further in terms of content and adds a surprising variety of different themes.
+&i18n-ktuberling; is a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept. A potato was decorated with various small artifacts to make it look more like a tiny person. &i18n-ktuberling; however, goes much further in terms of content and adds a surprising variety of different themes.
 </para>
 </chapter>
 
@@ -97,7 +99,7 @@
 <title>How to Play</title>
 
 <para>
-&ktuberling; is a game intended for small children. Of course, it may be
+&i18n-ktuberling; is a game intended for small children. Of course, it may be
 suitable for adults who have remained young at heart.
 </para>
 
@@ -113,7 +115,7 @@ you can.
 </para>
 
 <para>
-&ktuberling; can also <quote>speak</quote>. It will spell out the name of
+&i18n-ktuberling; can also <quote>speak</quote>. It will spell out the name of
 the objects you drag and drop. It will <quote>speak</quote> in a language
 that you can choose. You can even use it to learn a bit of vocabulary
 in foreign languages.
@@ -138,9 +140,9 @@ There are two areas in the main window:
 place on your playground.
 </para></listitem>
 </itemizedlist>
-<note><title>Note:</title><para>An actual look of the application screen may change depending on a <quote>playground</quote> selected.</para></note>
+<note><para>An actual look of the application screen may change depending on a <quote>playground</quote> selected.</para></note>
 <screenshot>
-<screeninfo>Main Window of &ktuberling;</screeninfo>
+<screeninfo>Main Window of &i18n-ktuberling;</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata format="PNG" fileref="gameboard.png"/>
@@ -154,9 +156,9 @@ place on your playground.
 
 <para>
 To drag an object, move the mouse pointer to the <quote>objects</quote>
-area and click on it. Then move it to the <quote>playground</quote> area 
+area and click on it. Then move it to the <quote>playground</quote> area
 and click again.
-<note><title>Note:</title><para>Size of the objects may change while dragging. Some of the oversized objects have been scaled down to feet into the “objects” area.</para></note>
+<note><para>Size of the objects may change while dragging. Some of the oversized objects have been scaled down to feet into the <quote>objects</quote> area.</para></note>
 </para>
 </sect2>
 
@@ -194,144 +196,95 @@ The toolbar provides buttons for the commonly used functions.
 <title>Toolbar Buttons</title>
 <tgroup cols="4">
 
-<thead>
-<row>
-<entry>Button</entry>
-<entry>Name</entry>
-<entry>Menu Equivalent</entry>
-<entry>Action</entry>
-</row>
-</thead>
+  <thead>
+    <row>
+      <entry>Button&nbsp;</entry>
+      <entry>Name&nbsp;</entry>
+      <entry>Menu Equivalent&nbsp;</entry>
+      <entry>Action</entry>
+    </row>
+  </thead>
 <tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject><phrase>New Game Button</phrase></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry><guiicon>New</guiicon></entry>
+    <entry><link linkend="game-new"><menuchoice>
+    <guimenu>Game</guimenu> <guimenuitem>New</guimenuitem></menuchoice></link></entry>
+    <entry>Resets the <quote>playground</quote> area. This cleans all parts of the
+    playground so a new decoration may be created.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-new.png"/>
-  </imageobject>
-	<textobject><phrase>New Game Button</phrase></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-  <guiicon>New</guiicon></entry>
-<entry>
-  <link linkend="game-new"><menuchoice>
-  <guimenu>Game</guimenu> <guimenuitem>New</guimenuitem></menuchoice>
-  </link>
-  </entry>
-<entry>
-Resets the <quote>playground</quote> area. This cleans all parts of the
-playground so a new decoration may be created.
-</entry>
-</row>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject><phrase>Load Button</phrase></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry><guiicon>Load...</guiicon></entry>
+    <entry><link linkend="game-load"><menuchoice>
+    <guimenu>Game</guimenu> <guimenuitem>Load...</guimenuitem></menuchoice></link></entry>
+    <entry>Opens an existing <literal role="extension">.tuberling</literal> file from the disk.</entry>
+  </row>
 
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject><phrase>Save Button</phrase></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry><guiicon>Save</guiicon></entry>
+    <entry><link linkend="game-save"><menuchoice>
+    <guimenu>Game</guimenu> <guimenuitem>Save</guimenuitem></menuchoice></link></entry>
+    <entry>Saves your creation to your home folder, or to some other folder
+    on your disk. The <literal role="extension">.tuberling</literal>
+    is saved to a small file where only the position of objects are saved.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-open.png"/>
-  </imageobject>
-	<textobject><phrase>Load Button</phrase></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry><guiicon>Load</guiicon></entry>
-<entry>
-  <link linkend="game-load"><menuchoice>
-  <guimenu>Game</guimenu> <guimenuitem>Load...</guimenuitem></menuchoice>
-  </link>
-  </entry>
-<entry>
-Opens an existing tuberling file from the disk.
-</entry>
-</row>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject><phrase>Print Button</phrase></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry><guiicon>Print...</guiicon></entry>
+    <entry><link linkend="game-print"><menuchoice>
+    <guimenu>Game</guimenu> <guimenuitem>Print...</guimenuitem></menuchoice></link></entry>
+    <entry>Prints your picture.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-save.png"/>
-  </imageobject>
-  <textobject><phrase>Save Button</phrase></textobject>
-  </inlinemediaobject>
-</entry>
-<entry><guiicon>Save</guiicon></entry>
-<entry>
-  <link linkend="game-save"><menuchoice>
-  <guimenu>Game</guimenu> <guimenuitem>Save</guimenuitem></menuchoice>
-  </link>
-  </entry>
-<entry>
-Saves your creation to your home folder, or to some other folder 
-on your disk. The tuberling is saved to a small file where only the
-position of objects are saved.
-</entry>
-</row>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject><phrase>Undo Button</phrase></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry><guiicon>Undo</guiicon></entry>
+    <entry><link linkend="edit-undo"><menuchoice>
+    <guimenu>Edit</guimenu> <guimenuitem>Undo</guimenuitem></menuchoice></link></entry>
+    <entry>Undoes last operation.</entry>
+  </row>
 
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-print.png"/>
-  </imageobject>
-  <textobject><phrase>Print Button</phrase></textobject>
-</inlinemediaobject>
-</entry>
-<entry>
-<guiicon>Print</guiicon>
-</entry>
-<entry>
-  <link linkend="game-print"><menuchoice>
-  <guimenu>Game</guimenu> <guimenuitem>Print...</guimenuitem></menuchoice>
-  </link>
-  </entry>
-<entry>
-Prints your picture.
-</entry>
-</row>
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="edit-undo.png"/>
-  </imageobject>
-  <textobject><phrase>Undo Button</phrase></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-  <guiicon>Undo</guiicon>
-  </entry>
-<entry>
-  <link linkend="edit-undo"><menuchoice>
-  <guimenu>Edit</guimenu> <guimenuitem>Undo</guimenuitem></menuchoice>
-  </link>
-  </entry>
-<entry>Undoes last operation.</entry>
-</row>
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="edit-redo.png"/>
-  </imageobject>
-  <textobject><phrase>Redo Button</phrase></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-<guiicon>Redo</guiicon>
-</entry>
-<entry>
-  <link linkend="edit-redo"><menuchoice>
-  <guimenu>Edit</guimenu> <guimenuitem>Redo</guimenuitem></menuchoice>
-  </link>
-  </entry>
-<entry>
-Re-does last operation.</entry>
-</row>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject><phrase>Redo Button</phrase></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry><guiicon>Redo</guiicon></entry>
+    <entry><link linkend="edit-redo"><menuchoice>
+    <guimenu>Edit</guimenu> <guimenuitem>Redo</guimenuitem></menuchoice></link></entry>
+    <entry>Re-does last operation.</entry>
+  </row>
 
 </tbody>
 </tgroup>
@@ -346,79 +299,51 @@ Re-does last operation.</entry>
 
 <variablelist>
 
-<varlistentry id="game-new">
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
- </shortcut>
-<guimenu>Game</guimenu>
- <guimenuitem>New</guimenuitem>
- </menuchoice></term>
-<listitem><para><action>Clears</action> the <quote>playground</quote>
-area </para></listitem>
-</varlistentry>
+  <varlistentry id="game-new">
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo> </shortcut>
+    <guimenu>Game</guimenu>
+    <guimenuitem>New</guimenuitem></menuchoice></term>
+    <listitem><para><action>Clears</action> the <quote>playground</quote> area.</para></listitem>
+  </varlistentry>
 
-<varlistentry id="game-load">
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
- </shortcut>
-<guimenu>Game</guimenu>
- <guimenuitem>Load...</guimenuitem>
- </menuchoice></term>
- <listitem><para><action>Opens an existing tuberling file</action> from
-your disk.</para></listitem>
-</varlistentry>
+  <varlistentry id="game-load">
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo> </shortcut>
+    <guimenu>Game</guimenu>
+    <guimenuitem>Load...</guimenuitem></menuchoice></term>
+    <listitem><para><action>Opens an existing <literal role="extension">.tuberling</literal> file</action>
+    from your disk.</para></listitem>
+  </varlistentry>
 
-<varlistentry id="game-save">
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Save</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Saves</action> your creation. The tuberling is
-saved to a small file where only the position of objects are saved.
-</para></listitem>
-</varlistentry>
+  <varlistentry id="game-save">
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo> </shortcut>
+    <guimenu>Game</guimenu>
+    <guimenuitem>Save</guimenuitem></menuchoice></term>
+    <listitem><para><action>Saves</action> your creation. The tuberling is saved
+    to a small file where only the position of objects are saved.</para></listitem>
+  </varlistentry>
 
-<varlistentry id="game-save-as-picture">
-<term><menuchoice>
-<guimenu>Game</guimenu>
-<guimenuitem>Save as Picture...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Creates a graphics file</action>
-containing a picture of your tuberling.
-</para></listitem>
-</varlistentry>
+  <varlistentry id="game-save-as-picture">
+    <term><menuchoice><guimenu>Game</guimenu>
+    <guimenuitem>Save as Picture...</guimenuitem></menuchoice></term>
+    <listitem><para><action>Creates a graphics file</action> containing a picture
+    of your tuberling.</para></listitem>
+  </varlistentry>
 
-<varlistentry id="game-print">
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Print...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Prints</action> your tuberling picture.
-</para></listitem>
-</varlistentry>
+  <varlistentry id="game-print">
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo> </shortcut>
+    <guimenu>Game</guimenu>
+    <guimenuitem>Print...</guimenuitem></menuchoice></term>
+    <listitem><para><action>Prints</action> your tuberling picture.</para></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Quit</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Quit</action> &ktuberling;.
-</para></listitem>
-</varlistentry>
+  <varlistentry>
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo> </shortcut>
+    <guimenu>Game</guimenu>
+    <guimenuitem>Quit</guimenuitem></menuchoice></term>
+    <listitem><para><action>Quit</action> &i18n-ktuberling;.</para></listitem>
+  </varlistentry>
 
 </variablelist>
-
 </sect2>
 
 <sect2>
@@ -426,48 +351,47 @@ containing a picture of your tuberling.
 
 <variablelist>
 
-<varlistentry id="edit-undo">
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-</shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Undo</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Undo</action> the last
-<quote>object</quote> placement.
-</para></listitem>
-</varlistentry>
+  <varlistentry id="edit-undo">
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo> </shortcut>
+    <guimenu>Edit</guimenu>
+    <guimenuitem>Undo</guimenuitem></menuchoice></term>
+    <listitem><para><action>Undo</action> the last <quote>object</quote>
+    placement.</para></listitem>
+  </varlistentry>
 
-<varlistentry id="edit-redo">
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;&Shift;
-<keycap>Z</keycap></keycombo>
-</shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Redo</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Re-does</action> the last <quote>object</quote>
-placement.  This menu option is active only if you have previously used
-<guilabel>Undo</guilabel>.
-</para></listitem>
-</varlistentry>
+  <varlistentry id="edit-redo">
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>Z</keycap></keycombo> </shortcut>
+    <guimenu>Edit</guimenu>
+    <guimenuitem>Redo</guimenuitem></menuchoice></term>
+    <listitem><para><action>Re-does</action> the last <quote>object</quote>
+    placement.  This menu option is active only if you have previously used
+    <guilabel>Undo</guilabel>.</para></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
-</shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Copy</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Copy</action> the <quote>playground</quote> area to the
-clipboard.</para></listitem>
-</varlistentry>
+  <varlistentry>
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo> </shortcut>
+    <guimenu>Edit</guimenu>
+    <guimenuitem>Copy</guimenuitem></menuchoice></term>
+    <listitem><para><action>Copy</action> the <quote>playground</quote> area to the
+    clipboard.</para></listitem>
+  </varlistentry>
 
 </variablelist>
+</sect2>
 
+<sect2>
+<title>The View Menu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo> </shortcut>
+    <guimenu>View</guimenu>
+    <guimenuitem>Full Screen Mode</guimenuitem></menuchoice></term>
+    <listitem><para>Toggles the graphic interface to full screen mode.</para></listitem>
+  </varlistentry>
+
+</variablelist>
 </sect2>
 
 <sect2>
@@ -475,25 +399,20 @@ clipboard.</para></listitem>
 
 <variablelist>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Playground</guimenu>
-<guimenuitem>Lock Aspect Ratio</guimenuitem>
-</menuchoice></term>
-<listitem><para>This option preserves the playground aspect ratio when resizing 
-the &ktuberling; window. When the playground aspect ratio does not match the one 
-of the window the background is filled with the one specified in the theme.
-</para></listitem>
-</varlistentry>
+  <varlistentry>
+    <term><menuchoice><guimenu>Playground</guimenu>
+    <guimenuitem>Lock Aspect Ratio</guimenuitem></menuchoice></term>
+    <listitem><para>This option preserves the playground aspect ratio when resizing
+    the &i18n-ktuberling; window. When the playground aspect ratio does not match the one
+    of the window the background is filled with the one specified in the theme.</para></listitem>
+  </varlistentry>
 
-<varlistentry id="theme_change">
-<term><menuchoice>
-<guimenu>Playground</guimenu>
-<guimenuitem><replaceable>Playground Name</replaceable></guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Switches to the playground</action>.
-</para></listitem>
-</varlistentry>
+  <varlistentry id="theme_change">
+    <term><menuchoice>
+    <guimenu>Playground</guimenu>
+    <guimenuitem><replaceable>Playground Name</replaceable></guimenuitem></menuchoice></term>
+    <listitem><para><action>Switches to the playground</action>.</para></listitem>
+  </varlistentry>
 
 </variablelist>
 
@@ -501,7 +420,7 @@ of the window the background is filled with the one specified in the theme.
 It will contain the playgrounds installed in your system.
 </para>
 <para>
-&ktuberling; remembers the last chosen playground the next time it starts up.
+&i18n-ktuberling; remembers the last chosen playground the next time it starts up.
 </para>
 </sect2>
 
@@ -510,52 +429,30 @@ It will contain the playgrounds installed in your system.
 
 <variablelist>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Speech</guimenu>
-<guimenuitem>No Sound</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles sound off</action>.</para></listitem>
-</varlistentry>
+  <varlistentry>
+    <term><menuchoice><guimenu>Speech</guimenu>
+    <guimenuitem>No Sound</guimenuitem></menuchoice></term>
+    <listitem><para><action>Toggles sound off</action>.</para></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Speech</guimenu>
-<guimenuitem><replaceable>Language Name</replaceable></guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles sound on and speaks the selected language</action>.
-</para></listitem>
-</varlistentry>
+  <varlistentry>
+    <term><menuchoice><guimenu>Speech</guimenu>
+    <guimenuitem><replaceable>Language Name</replaceable></guimenuitem></menuchoice></term>
+    <listitem><para><action>Toggles sound on and speaks the selected language</action>.</para></listitem>
+  </varlistentry>
 
 </variablelist>
 
 <para>
-&ktuberling; remembers of this option the next time it starts up.
+&i18n-ktuberling; remembers of this option the next time it starts up.
 </para>
-
 </sect2>
 
 <sect2 id="settings">
-<title>The Settings Menu</title>
-
-<variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
-</shortcut>
-<guimenu>Settings</guimenu>
-<guimenuitem>Full Screen Mode</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles the Full Screen mode</action> on and off.
-</para></listitem>
-</varlistentry>
-
-</variablelist>
+<title>The Settings and Help Menus</title>
 
 <para>
-Additionally &ktuberling; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+Additionally &i18n-ktuberling; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 menu items, for more information read the sections about the
 <ulink url="help:/fundamentals/menus.html#menus-settings">Settings Menu</ulink> and
 <ulink url="help:/fundamentals/menus.html#menus-help">Help Menu</ulink>
@@ -618,10 +515,10 @@ the documentation</para>
 </listitem>
 
 <listitem>
-<para>Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - Bettering of
+<para>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - Bettering of
 documentation</para>
 </listitem>
-</itemizedlist> 
+</itemizedlist>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
