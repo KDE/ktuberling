@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 
 # KDE Application Version, managed by release script
 set(RELEASE_SERVICE_VERSION_MAJOR "22")
@@ -8,8 +8,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(ktuberling VERSION ${RELEASE_SERVICE_VERSION})
 
-set (QT_MIN_VERSION "5.12.0")
-set (KF5_MIN_VERSION "5.68.0")
+set (QT_MIN_VERSION "5.12.0") # Remember to update the QT_DEPRECATED_WARNINGS_SINCE below
+set (KF5_MIN_VERSION "5.68.0") # Remember to update the KF_DEPRECATED_WARNINGS_SINCE below
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
@@ -46,6 +46,9 @@ include(ECMQtDeclareLoggingCategory)
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+add_definitions(-DQT_DEPRECATED_WARNINGS_SINCE=0x050C00)
+add_definitions(-DKF_DEPRECATED_WARNINGS_SINCE=0x054400)
 
 
 add_subdirectory(sounds)
