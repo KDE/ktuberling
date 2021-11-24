@@ -1,11 +1,13 @@
-<?xml version="1.0"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.0.3" package="org.kde.ktuberling" android:installLocation="auto" android:versionCode="7">
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.0.3" package="org.kde.ktuberling" android:installLocation="auto" android:versionCode="9">
         <application android:name="org.qtproject.qt5.android.bindings.QtApplication"
                      android:label="KTuberling"
-                     android:icon="@drawable/ktuberling">
+                     android:icon="@drawable/ktuberling"
+                     android:extractNativeLibs="true">
                 <activity android:name="org.qtproject.qt5.android.bindings.QtActivity"
                           android:label="KTuberling"
                           android:screenOrientation="landscape"
+                          android:hardwareAccelerated="true"
                           android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|locale|fontScale|keyboard|keyboardHidden|navigation">
                         <intent-filter>
                                 <action android:name="android.intent.action.MAIN"/>
@@ -32,5 +34,4 @@
                 </activity>
         </application>
         <supports-screens android:anyDensity="true" android:normalScreens="true" android:smallScreens="true" android:largeScreens="true"/>
-        <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21"/>
 </manifest>

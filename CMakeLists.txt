@@ -15,7 +15,7 @@ find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
 
 if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
@@ -26,7 +26,6 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
         DBusAddons
         KIO
         DocTools
-        I18n
         WidgetsAddons
         XmlGui
     )
