@@ -19,8 +19,6 @@
 #include "soundfactory.h"
 #include "playground.h"
 
-static const char version[] = "1.0.0";
-
 class KTuberlingMobile : public PlayGroundCallbacks, public SoundFactoryCallbacks
 {
 public:
@@ -53,7 +51,7 @@ public:
     themesButton->setIcon(QPixmap(":/games-config-theme.png"));
     themesButton->setIconSize(QSize(iconWidth, iconWidth));
     themesButton->setFocusPolicy(Qt::NoFocus);
-    QObject::connect(themesButton, &QPushButton::clicked, [this, mainWidget] {
+    QObject::connect(themesButton, &QPushButton::clicked, [this] {
       m_themesWidget->showFullScreen();
     });
 
