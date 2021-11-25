@@ -374,10 +374,54 @@ void TopLevel::open(const QUrl &url)
   }
 }
 
+static QStringList extractSuffixesFromQtPattern(const QString &qtPattern)
+{
+  static const QRegularExpression regexp(".*\\((.*)\\)");
+  const QRegularExpressionMatch match = regexp.match(qtPattern);
+  if (match.hasMatch()) {
+    QStringList suffixes = match.captured(1).split(" ");
+    if (!suffixes.isEmpty()) {
+      for (QString &suffix : suffixes) {
+        suffix = suffix.mid(1); // Remove the * from the start, we want the actual suffix
+      }
+      return suffixes;
+    }
+    qWarning() << "extractSuffixesFromQtPattern suffix split failed" << qtPattern;
+  } else {
+    qWarning() << "extractSuffixesFromQtPattern regexp match failed" << qtPattern;
+  }
+  return { ".report_bug_please" };
+}
+
+static QUrl getSaveFileUrl(QWidget *w, const QString &patterns)
+{
+  QString selectedPattern;
+  QUrl url = QFileDialog::getSaveFileUrl( w, QString(), QUrl(), patterns, &selectedPattern );
+
+  if( url.isEmpty() )
+    return {};
+
+  // make sure the url ends in one of the extensions of selectedPattern
+  const QStringList selectedSuffixes = extractSuffixesFromQtPattern(selectedPattern);
+  bool validSuffix = false;
+  for (const QString &suffix : selectedSuffixes) {
+    if (url.path().endsWith(suffix)) {
+      validSuffix = true;
+      break;
+    }
+  }
+  // and if it does not add it
+  if (!validSuffix) {
+    url.setPath(url.path() + selectedSuffixes[0]);
+  }
+
+  return url;
+}
+
 // Save gameboard
 void TopLevel::fileSave()
 {
-  QUrl url = QFileDialog::getSaveFileUrl( this, QString(), QUrl(), i18n("KTuberling files (%1)", QStringLiteral("*.tuberling")) );
+  const QUrl url = getSaveFileUrl( this, i18n("KTuberling files (%1)", QStringLiteral("*.tuberling")) );
 
   if (url.isEmpty())
     return;
@@ -440,7 +484,7 @@ void TopLevel::filePicture()
       }
     }
   }
-  const QUrl url = QFileDialog::getSaveFileUrl( this, QString(), QUrl(), patterns.join(QStringLiteral(";;")) );
+  const QUrl url = getSaveFileUrl( this, patterns.join(QStringLiteral(";;")) );
 
   if( url.isEmpty() )
     return;
