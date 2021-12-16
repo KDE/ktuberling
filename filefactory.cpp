@@ -15,8 +15,8 @@
 bool FileFactory::folderExists(const QString &relativePath)
 {
 #if defined(Q_OS_ANDROID)
-    QFileInfo fi("/data/data/org.kde.ktuberling/qt-reserved-files/share/ktuberling/" + relativePath);
-    return fi.isDir();
+    Q_UNUSED(relativePath);
+    return true;
 #else
     return !(QStandardPaths::locate(QStandardPaths::AppDataLocation, relativePath, QStandardPaths::LocateDirectory).isEmpty());
 #endif
@@ -25,7 +25,7 @@ bool FileFactory::folderExists(const QString &relativePath)
 QString FileFactory::locate(const QString &relativePath)
 {
 #if defined(Q_OS_ANDROID)
-    return "/data/data/org.kde.ktuberling/qt-reserved-files/share/ktuberling/" + relativePath;
+    return ":/" + relativePath;
 #else
     return QStandardPaths::locate(QStandardPaths::AppDataLocation, relativePath);
 #endif
@@ -34,7 +34,7 @@ QString FileFactory::locate(const QString &relativePath)
 QStringList FileFactory::locateAll(const QString &relativePath)
 {
 #if defined(Q_OS_ANDROID)
-    return { "/data/data/org.kde.ktuberling/qt-reserved-files/share/ktuberling/" + relativePath };
+    return { ":/" + relativePath };
 #else
     return QStandardPaths::locateAll(QStandardPaths::AppDataLocation, relativePath, QStandardPaths::LocateDirectory);
 #endif

@@ -49,7 +49,11 @@ void SoundFactory::playSound(const QString &soundRef) const
   const QString soundFile = FileFactory::locate(QLatin1String( "sounds/" ) + filesList[sound]);
   if (soundFile.isEmpty()) return;
 
-  player->setMedia(QUrl::fromLocalFile(soundFile));
+  if (soundFile.startsWith(':')) {
+    player->setMedia(QUrl("qrc" + soundFile));
+  } else {
+    player->setMedia(QUrl::fromLocalFile(soundFile));
+  }
   player->play();
 }
 

@@ -17,7 +17,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
 
-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
+if(NOT ANDROID)
     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
         Completion
         ConfigWidgets
@@ -50,8 +50,6 @@ add_definitions(-DQT_DEPRECATED_WARNINGS_SINCE=0x050C00)
 add_definitions(-DKF_DEPRECATED_WARNINGS_SINCE=0x054400)
 
 
-add_subdirectory(sounds)
-add_subdirectory(pics)
 if(KF5DocTools_FOUND)
     add_subdirectory(doc)
 endif()
@@ -67,7 +65,7 @@ set(ktuberling_common_SRCS
 )
 ecm_qt_declare_logging_category(ktuberling_common_SRCS HEADER ktuberling_debug.h IDENTIFIER KTUBERLING_LOG CATEGORY_NAME org.kde.kdegames.ktuberling DESCRIPTION "ktuberling (kdegames)" EXPORT KTUBERLING)
 
-if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
+if(ANDROID)
     set(ktuberling_mobile_SRCS
         ${ktuberling_common_SRCS}
         main_mobile.cpp
@@ -134,6 +132,9 @@ else()
         64-mimetypes-application-x-tuberling.png
         DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor
     )
+
+    add_subdirectory(sounds)
+    add_subdirectory(pics)
 endif()
 
 install(FILES org.kde.ktuberling.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

@@ -3,5 +3,108 @@
         <file>games-config-theme.png</file>
         <file>audio-volume-high.png</file>
         <file>audio-volume-muted.png</file>
+        <file>../pics/butterflies.desktop</file>
+        <file>../pics/butterflies.svgz</file>
+        <file>../pics/butterflies.theme</file>
+        <file>../pics/christmas.desktop</file>
+        <file>../pics/christmas.svgz</file>
+        <file>../pics/christmas.theme</file>
+        <file>../pics/default_theme.desktop</file>
+        <file>../pics/default_theme.svg</file>
+        <file>../pics/default_theme.theme</file>
+        <file>../pics/egypt.desktop</file>
+        <file>../pics/egypt.svg</file>
+        <file>../pics/egypt.theme</file>
+        <file>../pics/moon.desktop</file>
+        <file>../pics/moon.svg</file>
+        <file>../pics/moon.theme</file>
+        <file>../pics/pizzeria.desktop</file>
+        <file>../pics/pizzeria.svgz</file>
+        <file>../pics/pizzeria.theme</file>
+        <file>../pics/potato-game.desktop</file>
+        <file>../pics/potato-game.svg</file>
+        <file>../pics/potato-game.theme</file>
+        <file>../pics/robin-tux.desktop</file>
+        <file>../pics/robin-tux.svgz</file>
+        <file>../pics/robin-tux.theme</file>
+        <file>../pics/robot_workshop.desktop</file>
+        <file>../pics/robot_workshop.svgz</file>
+        <file>../pics/robot_workshop.theme</file>
+        <file>../pics/train_valley.desktop</file>
+        <file>../pics/train_valley.svgz</file>
+        <file>../pics/train_valley.theme</file>
+        <file>../sounds/en.soundtheme</file>
+        <file alias="sounds/en/ball.ogg">../sounds/ball.ogg</file>
+        <file alias="sounds/en/bow.ogg">../sounds/bow.ogg</file>
+        <file alias="sounds/en/coat.ogg">../sounds/coat.ogg</file>
+        <file alias="sounds/en/ear.ogg">../sounds/ear.ogg</file>
+        <file alias="sounds/en/earring.ogg">../sounds/earring.ogg</file>
+        <file alias="sounds/en/egypt_arch.ogg">../sounds/egypt_arch.ogg</file>
+        <file alias="sounds/en/egypt_birds.ogg">../sounds/egypt_birds.ogg</file>
+        <file alias="sounds/en/egypt_boy.ogg">../sounds/egypt_boy.ogg</file>
+        <file alias="sounds/en/egypt_bridge.ogg">../sounds/egypt_bridge.ogg</file>
+        <file alias="sounds/en/egypt_camel.ogg">../sounds/egypt_camel.ogg</file>
+        <file alias="sounds/en/egypt_cart.ogg">../sounds/egypt_cart.ogg</file>
+        <file alias="sounds/en/egypt_column.ogg">../sounds/egypt_column.ogg</file>
+        <file alias="sounds/en/egypt_donkey.ogg">../sounds/egypt_donkey.ogg</file>
+        <file alias="sounds/en/egypt_girl.ogg">../sounds/egypt_girl.ogg</file>
+        <file alias="sounds/en/egypt_grass.ogg">../sounds/egypt_grass.ogg</file>
+        <file alias="sounds/en/egypt_man.ogg">../sounds/egypt_man.ogg</file>
+        <file alias="sounds/en/egypt_oasis.ogg">../sounds/egypt_oasis.ogg</file>
+        <file alias="sounds/en/egypt_palmtree.ogg">../sounds/egypt_palmtree.ogg</file>
+        <file alias="sounds/en/egypt_pyramid.ogg">../sounds/egypt_pyramid.ogg</file>
+        <file alias="sounds/en/egypt_road.ogg">../sounds/egypt_road.ogg</file>
+        <file alias="sounds/en/egypt_sphynx.ogg">../sounds/egypt_sphynx.ogg</file>
+        <file alias="sounds/en/egypt_well.ogg">../sounds/egypt_well.ogg</file>
+        <file alias="sounds/en/egypt_woman.ogg">../sounds/egypt_woman.ogg</file>
+        <file alias="sounds/en/eyebrow.ogg">../sounds/eyebrow.ogg</file>
+        <file alias="sounds/en/eye.ogg">../sounds/eye.ogg</file>
+        <file alias="sounds/en/flower.ogg">../sounds/flower.ogg</file>
+        <file alias="sounds/en/hair.ogg">../sounds/hair.ogg</file>
+        <file alias="sounds/en/hat.ogg">../sounds/hat.ogg</file>
+        <file alias="sounds/en/moon_alien.ogg">../sounds/moon_alien.ogg</file>
+        <file alias="sounds/en/moon_astronaut.ogg">../sounds/moon_astronaut.ogg</file>
+        <file alias="sounds/en/moon_earth.ogg">../sounds/moon_earth.ogg</file>
+        <file alias="sounds/en/moon_fallingstar.ogg">../sounds/moon_fallingstar.ogg</file>
+        <file alias="sounds/en/moon_hotel.ogg">../sounds/moon_hotel.ogg</file>
+        <file alias="sounds/en/moon_monster.ogg">../sounds/moon_monster.ogg</file>
+        <file alias="sounds/en/moon_moonwalker.ogg">../sounds/moon_moonwalker.ogg</file>
+        <file alias="sounds/en/moon_planet.ogg">../sounds/moon_planet.ogg</file>
+        <file alias="sounds/en/moon_radar.ogg">../sounds/moon_radar.ogg</file>
+        <file alias="sounds/en/moon_rocket.ogg">../sounds/moon_rocket.ogg</file>
+        <file alias="sounds/en/moon_satellite.ogg">../sounds/moon_satellite.ogg</file>
+        <file alias="sounds/en/moon_sign.ogg">../sounds/moon_sign.ogg</file>
+        <file alias="sounds/en/moon_star.ogg">../sounds/moon_star.ogg</file>
+        <file alias="sounds/en/moon_ufo.ogg">../sounds/moon_ufo.ogg</file>
+        <file alias="sounds/en/moustache.ogg">../sounds/moustache.ogg</file>
+        <file alias="sounds/en/mouth.ogg">../sounds/mouth.ogg</file>
+        <file alias="sounds/en/nose.ogg">../sounds/nose.ogg</file>
+        <file alias="sounds/en/pizzeria_anchovy.ogg">../sounds/pizzeria_anchovy.ogg</file>
+        <file alias="sounds/en/pizzeria_bacon.ogg">../sounds/pizzeria_bacon.ogg</file>
+        <file alias="sounds/en/pizzeria_broccolli.ogg">../sounds/pizzeria_broccolli.ogg</file>
+        <file alias="sounds/en/pizzeria_cheese.ogg">../sounds/pizzeria_cheese.ogg</file>
+        <file alias="sounds/en/pizzeria_cucumber.ogg">../sounds/pizzeria_cucumber.ogg</file>
+        <file alias="sounds/en/pizzeria_mushroom.ogg">../sounds/pizzeria_mushroom.ogg</file>
+        <file alias="sounds/en/pizzeria_olive.ogg">../sounds/pizzeria_olive.ogg</file>
+        <file alias="sounds/en/pizzeria_onion.ogg">../sounds/pizzeria_onion.ogg</file>
+        <file alias="sounds/en/pizzeria_oregano.ogg">../sounds/pizzeria_oregano.ogg</file>
+        <file alias="sounds/en/pizzeria_pepper.ogg">../sounds/pizzeria_pepper.ogg</file>
+        <file alias="sounds/en/pizzeria_pepperoni.ogg">../sounds/pizzeria_pepperoni.ogg</file>
+        <file alias="sounds/en/pizzeria_pineapple.ogg">../sounds/pizzeria_pineapple.ogg</file>
+        <file alias="sounds/en/pizzeria_salami.ogg">../sounds/pizzeria_salami.ogg</file>
+        <file alias="sounds/en/pizzeria_tomato.ogg">../sounds/pizzeria_tomato.ogg</file>
+        <file alias="sounds/en/shoe.ogg">../sounds/shoe.ogg</file>
+        <file alias="sounds/en/shorts.ogg">../sounds/shorts.ogg</file>
+        <file alias="sounds/en/skirt.ogg">../sounds/skirt.ogg</file>
+        <file alias="sounds/en/spectacles.ogg">../sounds/spectacles.ogg</file>
+        <file alias="sounds/en/stick.ogg">../sounds/stick.ogg</file>
+        <file alias="sounds/en/sunglasses.ogg">../sounds/sunglasses.ogg</file>
+        <file alias="sounds/en/tie.ogg">../sounds/tie.ogg</file>
+        <file alias="sounds/en/tv_bicycle.ogg">../sounds/tv_bicycle.ogg</file>
+        <file alias="sounds/en/tv_car.ogg">../sounds/tv_car.ogg</file>
+        <file alias="sounds/en/tv_cyclist.ogg">../sounds/tv_cyclist.ogg</file>
+        <file alias="sounds/en/tv_train.ogg">../sounds/tv_train.ogg</file>
+        <file alias="sounds/en/tv_tree.ogg">../sounds/tv_tree.ogg</file>
+        <file alias="sounds/en/umbrella.ogg">../sounds/umbrella.ogg</file>
     </qresource>
 </RCC>
