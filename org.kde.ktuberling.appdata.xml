@@ -59,7 +59,7 @@
   <summary xml:lang="zh-CN">一个简单的建造游戏，适合儿童和成人</summary>
   <developer_name>The KTuberling Developers</developer_name>
   <developer_name xml:lang="ca">Els desenvolupadors del KTuberling</developer_name>
-  <developer_name xml:lang="ca-valencia">Els desenvolupadors del KTuberling</developer_name>
+  <developer_name xml:lang="ca-valencia">Els desenvolupadors de KTuberling</developer_name>
   <developer_name xml:lang="cs">Vývojáři aplikace KTuberling</developer_name>
   <developer_name xml:lang="da">KTuberling-udviklerne</developer_name>
   <developer_name xml:lang="de">Die KTuberling-Entwickler</developer_name>
@@ -88,7 +88,7 @@
   <description>
     <p>KTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.</p>
     <p xml:lang="ca">El KTuberling és un joc de construcció senzill, adequat per als infants i també per als adults. La idea del joc està basada en un concepte popular de fer un nino.</p>
-    <p xml:lang="ca-valencia">El KTuberling és un joc de construcció senzill, adequat per als infants i també per als adults. La idea del joc està basada en un concepte popular de fer un nino.</p>
+    <p xml:lang="ca-valencia">KTuberling és un joc de construcció senzill, adequat per als infants i també per als adults. La idea del joc està basada en un concepte popular de fer un nino.</p>
     <p xml:lang="da">KTuberling er et simpelt påklædningsdukkespil for børn såvel som voksne. Ideen med spillet er baseret på et dukkekoncept der engang var populært.</p>
     <p xml:lang="de">KTuberling ist ein einfaches Verkleidungsspiel für Kinder und jung gebliebene Erwachsene. Die Idee des Spiels stammt aus den bekannten Anziehspiel für Puppen.</p>
     <p xml:lang="el">Το KTuberling είναι ένα απλό κατασκευαστικό παιχνίδι κατάλληλο για μικρούς και μεγάλους. Η ιδέα του παιχνιδιού βασίζεται στην παλαιότερα δημοφιλή ιδέα με τα παιδιά να κατασκευάζουν κούκλες.</p>
