@@ -20,3 +20,5 @@ Dependencies:
     'frameworks/kdbusaddons': '@stable'
     'frameworks/kio': '@stable'
     'games/libkdegames': '@same'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
