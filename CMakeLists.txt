@@ -140,4 +140,9 @@ endif()
 install(FILES org.kde.ktuberling.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 ecm_qt_install_logging_categories(EXPORT KTUBERLING FILE ktuberling.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
+ki18n_install(po)
+if(KF5DocTools_FOUND)
+    kdoctools_install(po)
+endif()
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
