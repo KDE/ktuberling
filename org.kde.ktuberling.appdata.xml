@@ -27,6 +27,7 @@
   <name xml:lang="sk">Zemiakový chlapec</name>
   <name xml:lang="sl">Krompirjev fant</name>
   <name xml:lang="sv">Potatismannen</name>
+  <name xml:lang="tr">Patates Adam</name>
   <name xml:lang="uk">Картопляний хлопець</name>
   <name xml:lang="x-test">xxPotato Guyxx</name>
   <name xml:lang="zh-CN">土豆小子</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="sk">Jednoduchá výstavbová hra vhodná pre deti a dospelých</summary>
   <summary xml:lang="sl">Enostavna konstrukcijska igra primerna za otroke in odrasle</summary>
   <summary xml:lang="sv">Ett enkelt byggspel lika lämpligt för barn som vuxna</summary>
+  <summary xml:lang="tr">Çocuklar ve yetişkinler için bir yapım oyunu</summary>
   <summary xml:lang="uk">Проста гра-складанка для дітей та дорослих.</summary>
   <summary xml:lang="x-test">xxA simple constructor game suitable for children and adults alikexx</summary>
   <summary xml:lang="zh-CN">一个简单的建造游戏，适合儿童和成人</summary>
@@ -83,6 +85,7 @@
   <developer_name xml:lang="sk">Vývojári KTuberling</developer_name>
   <developer_name xml:lang="sl">Razvijalci KTuberling</developer_name>
   <developer_name xml:lang="sv">KTuberling-utvecklarna</developer_name>
+  <developer_name xml:lang="tr">KTuberling Geliştiricileri</developer_name>
   <developer_name xml:lang="uk">Розробники KTuberling</developer_name>
   <developer_name xml:lang="x-test">xxThe KTuberling Developersxx</developer_name>
   <description>
@@ -110,6 +113,7 @@
     <p xml:lang="sk">KTuberling jednoduchá hra pre konštruktérov vhodná pre deti aj dospelých.Myšlienka hry je založená na kedysi populárnej koncepcii výroby bábik.</p>
     <p xml:lang="sl">KTuberling je enostavna konstrukcijska igra primerna za otroke in odrasle. Ideja igre je osnovana na nekoč popularni igri izdelovanja punčk iz cunj.</p>
     <p xml:lang="sv">Potatismannen är ett enkelt byggspel lika lämpligt för barn som vuxna. Spelets idé är baserat på ett en gång populärt sätt att göra dockor.</p>
+    <p xml:lang="tr">Çocuklar ve yetişkinler için bir yapım oyunudur. Oyunun ana temeli, bir zamanlar çok popüler olan bir oyuncak bebek yapımıdır.</p>
     <p xml:lang="uk">«Картопляний хлопець» — проста гра-складанка для дітей та дорослих. Ідею гри запозичено із колись популярної гри у створення ляльок.</p>
     <p xml:lang="x-test">xxKTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.xx</p>
   </description>
