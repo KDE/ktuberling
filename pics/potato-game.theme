@@ -15,8 +15,8 @@
 
     <object name="umbrello" sound="umbrella" />
 
-    <object name="tie01" sound="tie" />
-    <object name="tie02" sound="tie" />
+    <object name="tie01" sound="bow" />
+    <object name="tie02" sound="bow" />
 
     <object name="moustache01" sound="moustache" />
     <object name="moustache02" sound="moustache" />
