@@ -26,6 +26,10 @@ include(ECMQtDeclareLoggingCategory)
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
 
+if (QT_MAJOR_VERSION EQUAL "6")
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS SvgWidgets)
+endif()
+
 if(NOT ANDROID)
     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
         Completion
@@ -82,6 +86,10 @@ if(ANDROID)
         Qt${QT_MAJOR_VERSION}::Widgets
         KF5::ConfigCore )
 
+    if (QT_MAJOR_VERSION EQUAL "6")
+        target_link_libraries(ktuberling_mobile Qt6::SvgWidgets)
+    endif()
+
     install(TARGETS ktuberling_mobile RUNTIME DESTINATION bin)
 
 else()
@@ -110,6 +118,10 @@ else()
         KF5::XmlGui
         KF5KDEGames
     )
+
+    if (QT_MAJOR_VERSION EQUAL "6")
+        target_link_libraries(ktuberling Qt6::SvgWidgets)
+    endif()
 
     install(TARGETS ktuberling  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
