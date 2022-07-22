@@ -10,10 +10,10 @@
 
 #include <QApplication>
 #include "ktuberling_debug.h"
-#include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
+#include <QScreen>
 
 #include "filefactory.h"
 #include "soundfactory.h"
@@ -31,7 +31,6 @@ public:
 
     QWidget *mainWidget = new QWidget();
     QHBoxLayout *lay = new QHBoxLayout(mainWidget);
-
     m_themesWidget = new QWidget();
     m_gameboardLayout = new QGridLayout(m_themesWidget);
 
@@ -44,7 +43,7 @@ public:
     QVBoxLayout *sideLayout = new QVBoxLayout();
 
     // Not sure this is the best way but it works for now
-    const int screenWidth = QApplication::desktop()->screenGeometry(mainWidget).width();
+    const int screenWidth = QApplication::primaryScreen()->geometry().width();
     const int iconWidth = screenWidth / 15;
 
     QPushButton *themesButton = new QPushButton(mainWidget);
