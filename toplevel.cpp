@@ -25,6 +25,7 @@
 #include <KSharedConfig>
 #include <kio/job.h>
 
+#include <QActionGroup>
 #include <QApplication>
 #include <QClipboard>
 #include <QFileDialog>
