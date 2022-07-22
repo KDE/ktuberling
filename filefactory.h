@@ -11,7 +11,8 @@
 #define FILEFACTORY_H
 
 class QString;
-class QStringList;
+
+#include <QStringList>
 
 namespace FileFactory
 {
