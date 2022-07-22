@@ -14,7 +14,16 @@ set (KF5_MIN_VERSION "5.68.0") # Remember to update the KF_DEPRECATED_WARNINGS_S
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
+include(FeatureSummary)
+include(ECMAddAppIcon)
+include(ECMInstallIcons)
+include(ECMSetupVersion)
+include(KDEInstallDirs)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+include(KDECMakeSettings)
+include(ECMQtDeclareLoggingCategory)
+
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
 
 if(NOT ANDROID)
@@ -33,15 +42,6 @@ if(NOT ANDROID)
     find_package(KF5KDEGames 4.9.0 REQUIRED)
 endif()
 
-
-include(FeatureSummary)
-include(ECMAddAppIcon)
-include(ECMInstallIcons)
-include(ECMSetupVersion)
-include(KDEInstallDirs)
-include(KDECompilerSettings NO_POLICY_SCOPE)
-include(KDECMakeSettings)
-include(ECMQtDeclareLoggingCategory)
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
@@ -69,18 +69,17 @@ if(ANDROID)
     set(ktuberling_mobile_SRCS
         ${ktuberling_common_SRCS}
         main_mobile.cpp
+        android_data/resources.qrc
     )
-
-    qt5_add_resources(ktuberling_mobile_SRCS android_data/resources.qrc)
 
     add_executable(ktuberling_mobile ${ktuberling_mobile_SRCS})
 
     target_link_libraries(ktuberling_mobile
-        Qt5::Gui
-        Qt5::Svg
-        Qt5::Multimedia
-        Qt5::Xml
-        Qt5::Widgets
+        Qt${QT_MAJOR_VERSION}::Gui
+        Qt${QT_MAJOR_VERSION}::Svg
+        Qt${QT_MAJOR_VERSION}::Multimedia
+        Qt${QT_MAJOR_VERSION}::Xml
+        Qt${QT_MAJOR_VERSION}::Widgets
         KF5::ConfigCore )
 
     install(TARGETS ktuberling_mobile RUNTIME DESTINATION bin)
@@ -100,9 +99,9 @@ else()
     add_executable(ktuberling ${ktuberling_SRCS})
 
     target_link_libraries(ktuberling
-        Qt5::PrintSupport
-        Qt5::Svg
-        Qt5::Multimedia
+        Qt${QT_MAJOR_VERSION}::PrintSupport
+        Qt${QT_MAJOR_VERSION}::Svg
+        Qt${QT_MAJOR_VERSION}::Multimedia
         KF5::ConfigWidgets
         KF5::Completion
         KF5::Crash
