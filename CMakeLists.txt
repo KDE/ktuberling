@@ -100,6 +100,8 @@ else()
         main.cpp
         toplevel.cpp
         playgrounddelegate.cpp
+
+        ktuberling.qrc
     )
 
     file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-ktuberling.png")
@@ -127,7 +129,6 @@ else()
     install(TARGETS ktuberling  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
     install(PROGRAMS org.kde.ktuberling.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
-    install(FILES ktuberlingui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ktuberling)
 
     ecm_install_icons(ICONS
         128-apps-ktuberling.png
