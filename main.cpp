@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
   aboutData.processCommandLine(&parser);
 
   KDBusService service;
-  TopLevel *toplevel=0;
+  TopLevel *toplevel=nullptr;
 
   if (app.isSessionRestored())
       kRestoreMainWindows<TopLevel>();

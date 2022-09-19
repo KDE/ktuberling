@@ -39,7 +39,7 @@ static const char *saveGameText = "KTuberlingSaveGameV4";
 
 // Constructor
 PlayGround::PlayGround(PlayGroundCallbacks *callbacks, QWidget *parent)
-    : QGraphicsView(parent), m_callbacks(callbacks), m_newItem(0), m_dragItem(0), m_nextZValue(1), m_lockAspect(false), m_allowOnlyDrag(false)
+    : QGraphicsView(parent), m_callbacks(callbacks), m_newItem(nullptr), m_dragItem(nullptr), m_nextZValue(1), m_lockAspect(false), m_allowOnlyDrag(false)
 {
   setFrameStyle(QFrame::NoFrame);
   setOptimizationFlag(QGraphicsView::DontSavePainterState, true); // all items here save the painter state
@@ -86,7 +86,7 @@ bool PlayGround::saveAs(const QString & name)
   foreach(QGraphicsItem *item, scene()->items())
   {
     ToDraw *currentObject = qgraphicsitem_cast<ToDraw *>(item);
-    if (currentObject != NULL) currentObject->save(out);
+    if (currentObject != nullptr) currentObject->save(out);
   }
 
   return (f.error() == QFile::NoError);
@@ -257,7 +257,7 @@ void PlayGround::placeDraggedItem(const QPoint &pos)
   }
 
   setCursor(QCursor());
-  m_dragItem = 0;
+  m_dragItem = nullptr;
 }
 
 void PlayGround::placeNewItem(const QPoint &pos)
@@ -272,7 +272,7 @@ void PlayGround::placeNewItem(const QPoint &pos)
   } else {
     m_newItem->deleteLater();
   }
-  m_newItem = 0;
+  m_newItem = nullptr;
   setCursor(QCursor());
 }
 

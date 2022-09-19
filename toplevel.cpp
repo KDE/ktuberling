@@ -45,7 +45,7 @@ static const char *DEFAULT_THEME = "default_theme.theme";
 
 // Constructor
 TopLevel::TopLevel()
-  : KXmlGuiWindow(0)
+  : KXmlGuiWindow(nullptr)
 {
   QString board, language;
 
@@ -277,9 +277,9 @@ void TopLevel::setupKAction()
   action = KStandardAction::copy(this, &TopLevel::editCopy, actionCollection());
   actionCollection()->addAction(action->objectName(), action);
 
-  action = KStandardAction::undo(0, 0, actionCollection());
+  action = KStandardAction::undo(nullptr, nullptr, actionCollection());
   playGround->connectUndoAction(action);
-  action = KStandardAction::redo(0, 0, actionCollection());
+  action = KStandardAction::redo(nullptr, nullptr, actionCollection());
   playGround->connectRedoAction(action);
 
   //Speech
