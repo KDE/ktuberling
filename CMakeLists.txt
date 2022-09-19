@@ -43,7 +43,7 @@ if(NOT ANDROID)
         XmlGui
     )
 
-    find_package(KF5KDEGames 4.9.0 REQUIRED)
+    find_package(KF5KDEGames 7.3.0 REQUIRED)
 endif()
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
