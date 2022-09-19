@@ -37,7 +37,7 @@ public:
 
   bool isSoundEnabled() const override;
 
-  void changeGameboard(const QString &gameboard) override final;
+  void changeGameboard(const QString &gameboard) final;
 
 protected:
   void readOptions(QString &board, QString &language);
