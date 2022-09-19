@@ -27,7 +27,7 @@ class TopLevel : public KXmlGuiWindow, public SoundFactoryCallbacks, public Play
 public:
 
   TopLevel();
-  ~TopLevel();
+  ~TopLevel() override;
 
   void open(const QUrl &url);
   void registerGameboard(const QString& menuText, const QString& boardFile, const QPixmap& pixmap) override;

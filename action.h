@@ -24,7 +24,7 @@ class ActionAdd : public QUndoCommand
 {
 	public:
 		ActionAdd(ToDraw *item, QGraphicsScene *scene);
-		~ActionAdd();
+		~ActionAdd() override;
 		
 		void redo() override;
 		void undo() override;
@@ -41,7 +41,7 @@ class ActionRemove : public QUndoCommand
 {
 	public:
 		ActionRemove(ToDraw *item, const QPointF &oldPos, QGraphicsScene *scene);
-		~ActionRemove();
+		~ActionRemove() override;
 		
 		void redo() override;
 		void undo() override;

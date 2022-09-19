@@ -39,7 +39,7 @@ class PlayGround : public QGraphicsView
 
 public:
   explicit PlayGround(PlayGroundCallbacks *callbacks, QWidget *parent = nullptr);
-  ~PlayGround();
+  ~PlayGround() override;
 
   enum LoadError { NoError, OldFileVersionError, OtherError };
 
