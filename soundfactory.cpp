@@ -67,16 +67,16 @@ void SoundFactory::registerLanguages()
 {
   QSet<QString> list;
   const QStringList dirs = FileFactory::locateAll(QStringLiteral("sounds"));
-  Q_FOREACH (const QString &dir, dirs)
+  for (const QString &dir : dirs)
   {
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.soundtheme"));
-    Q_FOREACH (const QString &file, fileNames)
+    for (const QString &file :  fileNames)
     {
         list <<dir + '/' + file;
     }
   }
 
-  foreach(const QString &soundTheme, list)
+  for(const QString &soundTheme : qAsConst(list))
   {
     QFile file(soundTheme);
     if (file.open(QIODevice::ReadOnly))
