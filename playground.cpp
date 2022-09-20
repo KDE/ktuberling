@@ -48,7 +48,7 @@ PlayGround::PlayGround(PlayGroundCallbacks *callbacks, QWidget *parent)
 // Destructor
 PlayGround::~PlayGround()
 {
-  for (const SceneData &data : qAsConst(m_scenes))
+  for (const SceneData &data : std::as_const(m_scenes))
   {
     delete data.scene;
     delete data.undoStack;
@@ -328,7 +328,7 @@ void PlayGround::registerPlayGrounds()
 
   QMultiMap<QString, QPair<QString, QPixmap>> sortedByName;
 
-  for(const QString &theme : qAsConst(list))
+  for(const QString &theme : std::as_const(list))
   {
     QFile layoutFile(theme);
     if (layoutFile.open(QIODevice::ReadOnly))

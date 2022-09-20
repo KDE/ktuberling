@@ -76,7 +76,7 @@ void SoundFactory::registerLanguages()
     }
   }
 
-  for(const QString &soundTheme : qAsConst(list))
+  for(const QString &soundTheme : std::as_const(list))
   {
     QFile file(soundTheme);
     if (file.open(QIODevice::ReadOnly))
