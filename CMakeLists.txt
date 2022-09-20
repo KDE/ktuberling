@@ -23,6 +23,7 @@ include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
@@ -54,8 +55,10 @@ remove_definitions(
     -DQT_NO_CAST_FROM_ASCII
 )
 
-add_definitions(-DQT_DEPRECATED_WARNINGS_SINCE=0x050C00)
-add_definitions(-DKF_DEPRECATED_WARNINGS_SINCE=0x054400)
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.91
+)
 
 if(KF5DocTools_FOUND)
     add_subdirectory(doc)
