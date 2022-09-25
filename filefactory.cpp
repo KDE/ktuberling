@@ -6,7 +6,6 @@
 
 #include "filefactory.h"
 
-#include <QFileInfo>
 #include <QStandardPaths>
 
 bool FileFactory::folderExists(const QString &relativePath)

@@ -7,14 +7,13 @@
 
 #include <KLocalizedString>
 
+#include "toplevel.h"
 #include <KAboutData>
 #include <KCrash>
+#include <KDBusService>
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QCommandLineOption>
 #include <QDir>
-#include <KDBusService>
-#include "toplevel.h"
 
 #include "ktuberling_version.h"
 
