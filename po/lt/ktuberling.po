@@ -1,0 +1,247 @@
+# translation of ktuberling.po to Lithuanian
+#
+# Donatas Glodenis <dgvirtual@akl.lt>, 2005, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2011-11-28 16:48+0200\n"
+"Last-Translator: Donatas G. <dgvirtual@akl.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrius Štikonas, Donatas Glodenis"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrius@stikonas.eu, dgvirtual@akl.lt"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "Žai&dimas"
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "&Aikštelė"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "Įga&rsinimas"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Pagrindinė įrankinė"
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr "Žaidimo parinktys"
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Bulvinio vyruko žaidimas vaikams"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr "(c) 1999-2009, KTuberling programuotojai"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr "Prižiūrėtojas"
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr "Éric Bischoff"
+
+#: main.cpp:33
+#, kde-format
+msgid "Former Developer"
+msgstr "Ankstesnis programuotojas"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr "John Calhoun"
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Koncepcija ir pirmieji piešiniai"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr "Agnieszka Czajkowska"
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Nauji piešiniai"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr "Bas Willems"
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr "Roger Larsson"
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Garso derinimas"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr "Dolores Almansa"
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "Atverti bulvę"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+
+#: toplevel.cpp:163
+#, kde-format
+msgid "Error while loading the playground."
+msgstr "Klaida įkeliant aikštelę."
+
+#: toplevel.cpp:195
+#, kde-format
+msgid "Error while loading the sound file."
+msgstr "Klaida įkeliant garso failą."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "Įrašyti paveikslėlį &kaip..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&Be garso"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr "&Fiksuoti proporcijas"
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling files"
+msgid "KTuberling files (%1)"
+msgstr "KTuberling failai"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+"Įrašytas failas yra iš senos KTuberling versijos, ir, deja, negali būti su "
+"šia versija atidarytas."
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Nepavyksta įkelti failo."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Nepavyko išsaugoti failo."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "Spausdinti %1"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Nepavyko išspausdinti paveikslėlio."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Paveikslėlis sėkmingai išspausdintas."
+
+#~ msgid "All files"
+#~ msgstr "Visi failai"
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Nežinomas paveikslėlio formatas."
+
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "Programą sukūrė <email address='%1'>Éric Bischoff</email>\n"
+#~ "ir John Calhoun.\n"
+#~ "\n"
+#~ "Ši programa dedikuojama mano dukrai Sunniva."

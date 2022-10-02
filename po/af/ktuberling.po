@@ -1,0 +1,360 @@
+# WEB-Translator generated file. UTF-8 test:äëïöü
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Frikkie Thirion <frix@expertron.co.za>, 2001,2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2002-11-07 11:32+0200\n"
+"Last-Translator: WEB-Translator <http://kde.af.org.za>\n"
+"Language-Team: AFRIKAANS <AF@lia.org.za>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "WEB-Vertaler (http://kde.af.org.za)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "frix@expertron.co.za"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr ""
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr ""
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr ""
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr ""
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "Ktuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Aartappel speletjie vir kinders"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr ""
+
+#: main.cpp:33
+#, fuzzy, kde-format
+#| msgid "Developer"
+msgid "Former Developer"
+msgstr "Ontwikkelaar"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Oorspronklike konsep en kunswerk"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr ""
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Nuwe kunswerk"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Klanke instel"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr ""
+
+#: pics/layout.i18n:6
+#, fuzzy, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+"Die vertalers het Die geleentheid na vertaal Dieklanke gepraate in Die "
+"speletjie.Sien Die tegniese verwysing seksie in ktuberling'sdokumentasie vir "
+"meer informasie op hoe na doen wat.(vertaal hierdie boodskap as \"Klaar\" "
+"wanneer jy het vertaaldeDie klanke; andersins los dit onvertaal as 'n "
+"herhindering)"
+
+#: toplevel.cpp:163
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the playground."
+msgstr "Fout terwyl laaiïng van die klank name."
+
+#: toplevel.cpp:195
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the sound file."
+msgstr "Fout terwyl laaiïng van die klank name."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "Stoor as Prent..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "Nee Klank"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr ""
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling"
+msgid "KTuberling files (%1)"
+msgstr "Ktuberling"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Kon nie las lêer."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Kon nie stoor lêer."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, kde-format
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr ""
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Kon nie druk prent."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Prent suksesvol printed."
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Onbekende prent formaat."
+
+#, fuzzy
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "'n program deur Eric Bischoff <e.Bischoff@noos.fr>\n"
+#~ "en John Calhoun.\n"
+#~ "\n"
+#~ "Hierdie program is opgedra  na my dogter Sunniva."
+
+#~ msgid "Only saving to local files is currently supported."
+#~ msgstr "Slegs stooring na plaaslike lêers is huidiglik ondersteunde."
+
+#~ msgid "Potato &Guy"
+#~ msgstr "Aartappel Man"
+
+#, fuzzy
+#~| msgid "Potato &Guy"
+#~ msgid "Potato &Guy 2"
+#~ msgstr "Aartappel Man"
+
+#~ msgid ""
+#~ "Fatal error:\n"
+#~ "Unable to load the pictures, aborting."
+#~ msgstr ""
+#~ "Fatale fout:\n"
+#~ "Nie moontlik na las die prentjies, gaan staak."
+
+#~ msgid "Eyes"
+#~ msgstr "Oë"
+
+#, fuzzy
+#~ msgid "Eyebrows"
+#~ msgstr "Wenkbroue"
+
+#~ msgid "Noses"
+#~ msgstr "Neuse"
+
+#~ msgid "Ears"
+#~ msgstr "Ore"
+
+#~ msgid "Mouths"
+#~ msgstr "Monde"
+
+#~ msgid "Goodies"
+#~ msgstr "Goedjies"
+
+#~ msgid "&Penguin"
+#~ msgstr "Pikkewyn"
+
+#~ msgid "Tie"
+#~ msgstr "Das"
+
+#~ msgid "Glasses"
+#~ msgstr "Glaasse"
+
+#~ msgid "Others"
+#~ msgstr "Andere"
+
+#, fuzzy
+#~ msgid "Horse"
+#~ msgstr "Neuse"
+
+#, fuzzy
+#~ msgid "Rain"
+#~ msgstr "Romeense"
+
+#, fuzzy
+#~ msgid ""
+#~ "*.xpm|UNIX Pixmaps (*.xpm)\n"
+#~ "*.jpg|JPEG Compressed Files (*.jpg)\n"
+#~ "*.png|Next Generation Pictures (*.png)\n"
+#~ "*.bmp|Windows Bitmaps (*.bmp)\n"
+#~ "*|All Picture Formats"
+#~ msgstr ""
+#~ "*.xpm|Unix pix-kaarte (*.xpm)\n"
+#~ "*.jpg|Jpeg saamgepersde lêers (*.jpg)\n"
+#~ "*.png|Volgende genereering prentjies (*.png)\n"
+#~ "*.bmp|Vensters biskaarte (*.bmp)\n"
+#~ "*|Alle prent formate"
+
+#~ msgid "&Danish"
+#~ msgstr "Deens"
+
+#~ msgid "&German"
+#~ msgstr "Duits"
+
+#~ msgid "&English"
+#~ msgstr "Engels"
+
+#~ msgid "Sp&anish"
+#~ msgstr "Spaanse"
+
+#, fuzzy
+#~ msgid "Fi&nnish"
+#~ msgstr "Deens"
+
+#~ msgid "&French"
+#~ msgstr "Franse"
+
+#~ msgid "&Italian"
+#~ msgstr "Italiaanse"
+
+#~ msgid "D&utch"
+#~ msgstr "Hollandse"
+
+#~ msgid "&Portuguese"
+#~ msgstr "Portugese"
+
+#~ msgid "&Romanian"
+#~ msgstr "Romeense"
+
+#~ msgid "&Slovak"
+#~ msgstr "Slovakiese"
+
+#~ msgid "S&lovenian"
+#~ msgstr "Sloveniese"
+
+#~ msgid "S&wedish"
+#~ msgstr "Sweedse"

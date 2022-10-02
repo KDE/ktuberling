@@ -1,0 +1,962 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Картопляний хлопець">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>Підручник з &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Рецензент</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>4 жовтня 2021 року</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>«&i18n-ktuberling;» — це гра, яку призначено для маленьких дітей. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>гра</keyword>
+<keyword
+>забавка</keyword>
+<keyword
+>конструктор</keyword>
+<keyword
+>лялька</keyword>
+<keyword
+>вдягання</keyword>
+<keyword
+>дитина</keyword>
+<keyword
+>картопляна лялька</keyword>
+<keyword
+>картоплина</keyword>
+<keyword
+>залізнична станція</keyword>
+<keyword
+>один гравець</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Вступ</title>
+<para
+>Тип гри: Забавка</para>
+<para
+>Кількість можливих гравців: Один</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Гра у режимі «Піцерія»</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>«&i18n-ktuberling;» — проста гра-конструктор, яку призначено для дітей та дорослих. Ідею гри засновано на колись популярній грі у одягання ляльки. У цій грі картоплину оздоблювали різноманітними невеличкими елементами, щоб зробити її схожою не мініатюрного чоловічка. У грі «&i18n-ktuberling;» ви матимете набагато ширший вибір у сенсі змісту, крім того можна мати справу з найрізноманітнішими темами гри. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Як грати</title>
+
+<para
+>Гру «&i18n-ktuberling;» призначено для малих дітей. Звичайно ж, у неї можуть грати і дорослі, в душі яких живе мала дитина. </para>
+
+<para
+>Ця гра — <quote
+>редактор картоплини</quote
+>. Це означає, що ви можете перетягувати і скидати очі, рот, вуса та інші частини обличчя та одягу на чоловічка, схожого на картоплину. Крім того, ви зможете робити подібні дії із ігровими майданчиками з іншими темами. </para>
+
+<para
+>У грі немає переможця. Єдиною метою гри є усмішка на обличчі дитини, яка у неї грає. </para>
+
+<para
+>Крім того, «&i18n-ktuberling;» може <quote
+>розмовляти</quote
+>. Програма вимовляє назву об’єкта, який ви перетягуєте і скидаєте. Вона <quote
+>вимовляє</quote
+> слова мовою, яку ви можете обрати. Ви навіть можете скористатися нею для вивчення словника іноземної мови. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Правила і підказки</title>
+
+<sect1 id="mouse-operation">
+<title
+>Дії за допомогою миші</title>
+
+<para
+>У головному вікні програми є дві області: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Область <quote
+>Ігрового поля</quote
+>. </para
+></listitem>
+<listitem
+><para
+>У області <quote
+>Об’єктів</quote
+> ви можете обирати об’єкти для розташування на ігровому майданчику. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Вигляд програми може бути різним і залежить від обраного ігрового майданчика.</para
+></note>
+<screenshot>
+<screeninfo
+>Головне вікно гри «&i18n-ktuberling;»</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Головне вікно</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Як розташувати об’єкт</title>
+
+<para
+>Щоб перетягнути об’єкт, пересуньте вказівник миші до області <quote
+>об’єктів</quote
+>, наведіть його на об’єкт і клацніть лівою кнопкою миші. Після цього, пересуньте об’єкт у область <quote
+>ігрового майданчика</quote
+> і знову клацніть лівою кнопкою миші. <note
+><para
+>Під час перетягування розмір об’єктів може змінюватися. Деякі великі об’єкти зменшено так, щоб вони могли вміститися у області об’єктів.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Пересування об’єкта</title>
+<para
+>Після скидання об’єкта у <quote
+>ігровий майданчик</quote
+> цей об’єкт можна пересувати. Просто наведіть вказівник миші на об’єкт, клацніть лівою кнопкою миші, щоб обрати його, перетягніть об’єкт на нове місце і знову клацніть лівою кнопкою миші, щоб скинути його. Після скидання об’єкт знаходитиметься над іншими об’єктами, які могли частково його приховувати. Цей трюк корисний для правильного розташування окулярів та очей. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Вилучення об’єкта</title>
+<para
+>Щоб вилучити об’єкт, який було скинуто у <quote
+>ігровий майданчик</quote
+>, перетягніть його назад з <quote
+>ігрового майданчика</quote
+> до області <quote
+>об’єктів</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Огляд інтерфейсу </title>
+<sect1 id="the-tool-bar">
+<title
+>Панель інструментів</title>
+
+<para
+>На панелі інструментів розташовано кнопки для найпоширеніших функцій гри. </para>
+
+<table>
+<title
+>Кнопки панелі інструментів</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Кнопка&nbsp;</entry>
+      <entry
+>Назва&nbsp;</entry>
+      <entry
+>Еквівалент у меню&nbsp;</entry>
+      <entry
+>Дія</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка «Нова гра»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Створити</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Повертає <quote
+>ігровий майданчик</quote
+> у початковий стан. Ця дія спорожнює всі частини ігрового майданчика так, щоб можна було створювати нові декорації.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка «Завантажити»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Завантажити…</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Завантажити...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Відкриває наявний файл гри (<literal role="extension"
+>.tuberling</literal
+>) з диска.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка «Зберегти»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Зберегти</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Зберегти</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Зберігає ваше творіння до вашої домашньої теки або, за вашого бажання, до якоїсь іншої теки на вашому диску. Картина зберігається у вигляді маленького файла <literal role="extension"
+>.tuberling</literal
+>, у якому записано лише розташування об’єктів.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка «Друкувати»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Надрукувати…</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Друкувати...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Друкує зображення.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка «Вернути»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Вернути</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вернути</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Скасовує останню дію.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка «Повторити»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Повторити</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Повторити</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Повторює останню скасовану дію.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Пункти меню</title>
+
+<sect2>
+<title
+>Меню «Гра»</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Спорожнює</action
+> область <quote
+>ігрового майданчика</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Завантажити...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Відкриває наявний файл гри (<literal role="extension"
+>.tuberling</literal
+>)</action
+> з вашого диска.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Зберегти</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Зберігає</action
+> ваше творіння. Картину буде збережено у вигляді маленького файла, у якому буде зафіксовано лише розташування об’єктів.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Зберегти як малюнок...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Створює графічний файл</action
+>, у якому міститиметься малюнок вашого творіння.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Друкувати...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Друкує</action
+> створене вами зображення.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Завершує роботу</action
+> гри «&i18n-ktuberling;».</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Меню «Зміни»</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вернути</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Скасовує</action
+> останнє розміщення <quote
+>об’єкта</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Повторити</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Повторює</action
+> останнє розташування <quote
+>об’єкта</quote
+>. Цей пункт меню стане активним, лише якщо ви раніше користувалися пунктом меню <guilabel
+>Вернути</guilabel
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Копіювати</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Копіює</action
+> <quote
+>ігровий майданчик</quote
+> до буфера обміну інформацією.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Меню «Перегляд»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Повноекранний режим</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Вмикає або вимикає повноекранний режим у графічному інтерфейсі програми.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Меню «Ігровий майданчик»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Ігровий майданчик</guimenu
+> <guimenuitem
+>Зберігати співвідношення</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>За допомогою цього пункту можна зберігати співвідношення сторін ігрового поля під час зміни розмірів вікна гри «&i18n-ktuberling;». Якщо співвідношення сторін ігрового поля не збігається зі співвідношенням розмірів вікна, тло буде заповнено відповідно до поточної теми.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Ігровий майданчик</guimenu
+> <guimenuitem
+><replaceable
+>Назва ігрового майданчика</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Змінює ігровий майданчик</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Тут містяться ігрові майданчики, які встановлено у вашій системі. </para>
+<para
+>Гра «&i18n-ktuberling;» запам’ятовує назву останнього ігрового майданчика, де ви грали, і наступного разу відкриває саме цей майданчик. </para>
+</sect2>
+
+<sect2>
+<title
+>Меню «Мовлення»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Мовлення</guimenu
+> <guimenuitem
+>Без звуку</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Вимикає звукові ефекти гри</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Мовлення</guimenu
+> <guimenuitem
+><replaceable
+>Назва мови</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Вмикає звукові ефекти гри обраною мовою</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Гра «&i18n-ktuberling;» запам’ятовує значення цього параметра і відновлює його під час наступного запуску гри. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>Меню «Параметри» і «Довідка»</title>
+
+<para
+>Крім того, у грі «&i18n-ktuberling;» передбачено типові для &kde; пункти меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>. Щоб дізнатися більше, ознайомтеся з розділами щодо <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde;. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Часті запитання</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Я хочу змінити вигляд цієї гри. Як це зробити? </para
+></question>
+ <answer
+><para
+>Зверніться до <link linkend="theme_change"
+>цього</link
+> розділу «Огляду інтерфейсу», щоб дізнатися як це зробити.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Чи можна використовувати для гри клавіатуру? </para
+></question>
+ <answer
+><para
+>Ні. У цю гру не можна грати за допомогою клавіатури.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Мені вдалося створити чудовий малюнок, і я хочу поділитися ним зі своїми друзями. Чи можна зберегти малюнок у вигляді файла зображення?</para
+></question>
+  <answer
+><para
+>Так. Щоб зберегти поточний сеанс у вигляді зображення, зверніться до <link linkend="game-save-as-picture"
+>цього</link
+> розділу «Огляду інтерфейсу», щоб дізнатися більше.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Подяки і ліцензія</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> — поточний супровідник</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun — початкова ідея, перші малюнки і звуки англійською</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; — програмування для &kde;</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> — тести, поради і допомога</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> — корекція документації</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; — удосконалення документації</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>

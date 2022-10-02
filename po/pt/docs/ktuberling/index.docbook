@@ -1,0 +1,980 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>O Manual do &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Revisão</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>2016-05-11</date>
+<releaseinfo
+>1.0.0 (Aplicações 16.04)</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&ktuberling; é um jogo para crianças pequenas. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Homem Batata</keyword>
+<keyword
+>jogo</keyword>
+<keyword
+>brinquedo</keyword>
+<keyword
+>construtor</keyword>
+<keyword
+>boneco</keyword>
+<keyword
+>decoração</keyword>
+<keyword
+>crianças</keyword>
+<keyword
+>tuberling</keyword>
+<keyword
+>batata</keyword>
+<keyword
+>estação de comboios</keyword>
+<keyword
+>um jogador</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introdução</title>
+<para
+>Tipo de jogo: Brinquedo</para>
+<para
+>Número de jogadores possíveis: Um</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Recreio da Pizzaria</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>O &ktuberling; é um jogo simples de construção para crianças e adultos. A ideia do jogo é baseada num conceito antigo de criação de bonecas. Uma batata era decorada com diversos objectos pequenos para que se parecesse mais com uma pessoa pequena. O &ktuberling; contudo vai mais além, no que compete ao conteúdo, e adiciona uma grande variedade de diferentes temas. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Como Jogar</title>
+
+<para
+>O &ktuberling; é um jogo vocacionado para crianças pequenas. Obviamente, também poderá ser adequado para os adultos que ainda tenham algo de jovem no coração. </para>
+
+<para
+>É um <quote
+>editor de batatas</quote
+>. Significa que você poderá arrastar e largar olhos, bocas, bigodes e outras partes da cara, bem como alguns extras num boneco semelhante a uma batata. Da mesma forma, terá também outras áreas de recreio com temas diferentes. </para>
+
+<para
+>Não existe nenhum vencedor para o jogo. O único intuito é fazer as caras mais engraçadas que conseguir. </para>
+
+<para
+>O &ktuberling; também poderá <quote
+>falar</quote
+>. Ele irá pronunciar os nomes dos objectos que você arrastar e largar. Ele irá <quote
+>falar</quote
+> numa língua à sua escolha. Você até o poderá usar para aprender um pouco de vocabulário das várias línguas estrangeiras. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Regras e Sugestões</title>
+
+<sect1 id="mouse-operation">
+<title
+>Utilização do Rato</title>
+
+<para
+>Existem duas áreas na janela principal: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Área de <quote
+>Recreio</quote
+>. </para
+></listitem>
+<listitem
+><para
+>A área dos <quote
+>Objectos</quote
+>, onde você pode seleccionar os objectos a colocar na área de recreio. </para
+></listitem>
+</itemizedlist>
+<note
+><title
+>Nota:</title
+><para
+>A vista actual do ecrã da aplicação poderá mudar de acordo com o <quote
+>recreio</quote
+> seleccionado.</para
+></note>
+<screenshot>
+<screeninfo
+>Janela Principal do &ktuberling;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>A Janela Principal</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Colocar um Objecto</title>
+
+<para
+>Para arrastar um objecto, mova o cursor do rato para a área de <quote
+>objectos</quote
+> e carregue no objecto que deseja arrastar. Depois mova o cursor para a localização na <quote
+>área de recreio</quote
+> e carregue de novo. <note
+><title
+>Nota:</title
+><para
+>O tamanho dos objectos poderá mudar durante o arrastamento. Alguns dos objectos aumentados foram ajustados para caber na área de "objectos".</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Mover um Objecto</title>
+<para
+>Logo que tenha sido largado na área de <quote
+>recreio</quote
+>, um objecto pode ser movido. Basta carregar no objecto para o seleccionar e, posteriormente, arrastá-lo e largá-lo. Quando você carregar nele, ele passará para cima dos outros objectos que o tivessem coberto. Este truque é útil para fazer com que os olhos fiquem colocados correctamente. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Retirar um Objecto</title>
+<para
+>Para remover um objecto que tenha sido largado na área de <quote
+>recreio</quote
+>, arraste-o de volta da área de <quote
+>recreio</quote
+> para a área dos <quote
+>objectos</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Apresentação à Interface </title>
+<sect1 id="the-tool-bar">
+<title
+>A Barra de Ferramentas</title>
+
+<para
+>A barra de ferramentas possui os botões para as funções mais usadas. </para>
+
+<table>
+<title
+>Botões da Barra de Ferramentas</title>
+<tgroup cols="4">
+
+<thead>
+<row>
+<entry
+>Botão</entry>
+<entry
+>Nome</entry>
+<entry
+>Equivalente no Menu</entry>
+<entry
+>Acção</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-new.png"/>
+  </imageobject>
+	<textobject
+><phrase
+>Botão de Novo Jogo</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+  <guiicon
+>Novo</guiicon
+></entry>
+<entry>
+  <link linkend="game-new"
+><menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Novo</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Limpa a área de <quote
+>recreio</quote
+>. Esta limpa todas as peças para fora da área de recreio para que possa criar uma nova decoração. </entry>
+</row>
+
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-open.png"/>
+  </imageobject>
+	<textobject
+><phrase
+>Botão Carregar</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry
+><guiicon
+>Carregar</guiicon
+></entry>
+<entry>
+  <link linkend="game-load"
+><menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Carregar...</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Abre um ficheiro da aplicação a partir do disco. </entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-save.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Botão Gravar</phrase
+></textobject>
+  </inlinemediaobject>
+</entry>
+<entry
+><guiicon
+>Gravar</guiicon
+></entry>
+<entry>
+  <link linkend="game-save"
+><menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Gravar</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Grava a sua criação na sua pasta pessoal, ou noutra pasta qualquer no seu disco. O boneco é gravado num pequeno ficheiro onde somente as posições dos objectos são gravados. </entry>
+</row>
+
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-print.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Botão  Imprimir</phrase
+></textobject>
+</inlinemediaobject>
+</entry>
+<entry>
+<guiicon
+>Imprimir</guiicon>
+</entry>
+<entry>
+  <link linkend="game-print"
+><menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Imprimir...</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Imprime a sua imagem. </entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="edit-undo.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Botão Desfazer</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+  <guiicon
+>Desfazer</guiicon>
+  </entry>
+<entry>
+  <link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Desfazer</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Desfaz a última operação.</entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="edit-redo.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Botão Refazer</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+<guiicon
+>Refazer</guiicon>
+</entry>
+<entry>
+  <link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Refazer</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Refaz a última operação.</entry>
+</row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Os Itens de Menu</title>
+
+<sect2>
+<title
+>O Menu Jogo</title>
+
+<variablelist>
+
+<varlistentry id="game-new">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Novo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Limpa</action
+> a área de <quote
+>recreio</quote
+> </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-load">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Carregar...</guimenuitem
+> </menuchoice
+></term>
+ <listitem
+><para
+><action
+>Abre um ficheiro com um boneco</action
+> a partir do seu disco.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-save">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Gravar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Grava</action
+> a sua criação. O boneco é gravado num pequeno ficheiro onde somente a posição dos objectos é que é gravada. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-save-as-picture">
+<term
+><menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Gravar como Imagem...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Cria um ficheiro gráfico</action
+> que contém uma imagem do seu boneco. Os formatos disponíveis são o XPM, o JPEG, o PNG e o BMP. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-print">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Imprimir...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Imprime</action
+> a imagem do seu boneco. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Sair</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sai</action
+> do &ktuberling;. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>O Menu Editar</title>
+
+<variablelist>
+
+<varlistentry id="edit-undo">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Desfazer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Anula</action
+> a última colocação de <quote
+>objectos</quote
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="edit-redo">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Refazer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Repete</action
+> a última colocação anulada de <quote
+>objectos</quote
+>. Esta opção do menu só estará activa se você tiver usado anteriormente o <guilabel
+>Desfazer</guilabel
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Copia</action
+> a área de <quote
+>recreio</quote
+> para a área de transferência.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>O Menu Recreio</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Recreio</guimenu
+> <guimenuitem
+>Bloquear as Proporções</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Esta opção preserva as proporções do recreio ao dimensionar a janela do &ktuberling;. Quando as proporções não corresponderem às da janela, o fundo é preenchido com o indicado no tema. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="theme_change">
+<term
+><menuchoice
+><guimenu
+>Recreio</guimenu
+> <guimenuitem
+><replaceable
+>Nome do Recreio</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Muda para a área de recreio</action
+>. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Irá conter as áreas de recreio instaladas no seu sistema. </para>
+<para
+>O &ktuberling; recordará o último recreio escolhido da próxima vez que arrancar. </para>
+</sect2>
+
+<sect2>
+<title
+>O Menu Fala</title>
+
+<!--FIXME
+<para>
+Please note that you need to have <command
+>&phonon;</command
+> installed
+and properly configured to be able to hear sounds.
+</para
+>-->
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fala</guimenu
+> <guimenuitem
+>Desligar Som</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Desliga o som</action
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fala</guimenu
+> <guimenuitem
+><replaceable
+>Nome da Língua</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Activa o som e fala a língua seleccionada</action
+>. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>O &ktuberling; recordará esta opção da próxima vez que for iniciado. </para>
+
+</sect2>
+
+<sect2 id="settings">
+<title
+>O Menu Configuração</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Configuração</guimenu
+> <guimenuitem
+>Modo de Ecrã Completo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Comuta (liga ou desliga)</action
+> o modo de ecrã completo. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Para além disso, o &ktuberling; tem os menus de <guimenu
+>Configuração</guimenu
+> e <guimenu
+>Ajuda</guimenu
+> normais do &kde;; para mais informações, leia as secções acerca dos menus de <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Configuração</ulink
+> e <ulink url="help:/fundamentals/ui.html#menus-help"
+>Ajuda</ulink
+> dos Fundamentos do &kde;. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Perguntas Mais Frequentes</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Quero alterar a forma como este jogo aparece. Posso fazê-lo? </para
+></question>
+ <answer
+><para
+>Sim, pode. Veja <link linkend="theme_change"
+>esta</link
+> secção da 'Apresentação da Interface' para mais detalhes.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Posso usar o teclado para jogar neste jogo? </para
+></question>
+ <answer
+><para
+>Não, este jogo não pode ser jogado com o teclado.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Fiz uma imagem óptima e quero partilhá-la com os meus amigos. Posso gravá-la como uma imagem?</para
+></question>
+  <answer
+><para
+>Sim. Para gravar a sessão actual como uma imagem, veja <link linkend="game-save-as-picture"
+>esta</link
+> secção da 'Apresentação à Interface'.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Créditos e Licença</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - Manutenção actual</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - Ideia original, imagens originais e sons em Inglês</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - Programação no &kde;</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - Testes, conselhos e ajuda</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - Revisão da documentação</para>
+</listitem>
+
+<listitem>
+<para
+>Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - Melhorias na documentação</para>
+</listitem>
+</itemizedlist
+> 
+
+<para
+>Tradução de José Nuno Pires <email
+>zepires@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+</book>

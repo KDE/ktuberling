@@ -1,0 +1,256 @@
+# translation of ktuberling.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2005, 2007, 2008, 2009.
+# Auk Piseth <piseth_dv@khmeros.info>, 2006, 2007, 2008.
+# Morn Met, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2009-10-23 22:13+0700\n"
+"Last-Translator: Morn Met\n"
+"Language-Team: Khmer <kde-i18n-doc@kde.org>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
+"X-Language: km_KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "ល្បែង"
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "កន្លែង​លេង"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "និយាយ"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr "របារ​ឧបករណ៍​មេ"
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr "ជម្រើស​ល្បែង"
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "ល្បែង​ដំឡូង​សម្រាប់​ក្មេង"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ១​៩​៩​៩-២​០​០​៩ ដោយ​អ្នក​អភិវឌ្ឍន៍ KTuberling"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr "អ្នក​ថែ​ទាំ​"
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr "Éric Bischoff"
+
+#: main.cpp:33
+#, kde-format
+msgid "Former Developer"
+msgstr "អតីត​អ្នក​អភិវឌ្ឍន៍"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr "John Calhoun"
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "គំនិត​ និង​សិល្បកម្ម​ដើម​"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr "Agnieszka Czajkowska"
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "សិល្បៈកម្ម​ថ្មី"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr "Bas Willems"
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr "Roger Larsson"
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "លៃតម្រូវសម្លេង"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr "Dolores Almansa"
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "ដំឡូង​ត្រូវ​បើក"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+"អ្នក​បក​ប្រែ​មាន​ឱកាស​ក្នុង​ការ​បក​ប្រែ​\n"
+"សំឡេង​​និយាយ​នៅ​ក្នុង​ល្បែងបាន ។\n"
+"ចំពោះ​ព័ត៌​មាន​បន្ថែម​​លើ​របៀប​នៃ​ការ​ធ្វើ​នោះ​ សូម​មើល​ផ្នែក​យោង​បច្ចេកទេសនៅក្នុង​ឯកសារ​របស់​ ktuberling​"
+" ។\n"
+"(បកប្រែ​សារ​នេះជា \"DONE\" នៅពេល​ដែល​អ្នក​បាន​បកប្រែ\n"
+"សំឡេង ផ្សេង​ពីនេះ​​​មិន​បាច់​បក​ប្រែ​វា​ដើម្បី​ទុក​វា​ជា​កម្មវិធី​រំលឹក)"
+
+#: toplevel.cpp:163
+#, kde-format
+msgid "Error while loading the playground."
+msgstr "មាន​កំហុស​​​នៅ​ខណៈ​ពេល​កំពុង​ផ្ទុក​កន្លែង​លេង ។"
+
+#: toplevel.cpp:195
+#, kde-format
+msgid "Error while loading the sound file."
+msgstr "មាន​កំហុស​ខណៈ​ពេល​ផ្ទុក​ឯកសារ​សំឡេង ។"
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "រក្សាទុក​ជា​រូបភាព..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "គ្មាន​សំឡេង"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr "ចាក់​សោ​សមាមាត្រ"
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling files"
+msgid "KTuberling files (%1)"
+msgstr "ឯកសារ KTuberling"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+"ឯកសារ​ដែល​បាន​​​រក្សា​ទុក​​​មក​ពី​កំណែ​ចាស់​របស់ KTuberling ហើយ​​ជា​អកុសល​មិន​អាច​​បើក​​ជា​មួយ​កំណែ​នេះ​បាន​​ទេ ។"
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "មិន​អាច​ផ្ទុក​ឯកសារ​បាន​ទេ ។"
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "មិន​អាច​រក្សា​ទុក​ឯកសារ​បាន​ទេ​ ។"
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "បោះពុម្ព %1"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "មិន​អាច​បោះពុម្ព​រូបភាព​បាន​ទេ​ ។"
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "បាន​បោះពុម្ព​រូបភាព​ដោយ​ជោគជ័យ ។"
+
+#~ msgid "All files"
+#~ msgstr "ឯកសារ​ទាំងអស់"
+
+#~ msgid "Unknown picture format."
+#~ msgstr "មិន​ស្គាល់​ទ្រង់ទ្រាយ​រូបភាព ។"
+
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "កម្មវិធី​នេះ​ត្រូវ​បាន​បង្កើត​ដោយ <email address='%1'>Éric Bischoff</email>\n"
+#~ "និង John Calhoun ។\n"
+#~ "\n"
+#~ "សូម​ឧទ្ទិស​កម្មវិធី​នេះ​​ចំពោះ​​ប្អូន​ស្រី​របស់​ខ្ញុំ​គឺ Sunniva ។"
+
+#~ msgid "SVG port"
+#~ msgstr "ច្រក SVG"

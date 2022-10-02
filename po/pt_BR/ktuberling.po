@@ -1,0 +1,263 @@
+# Translation of ktuberling.po to Brazilian Portuguese
+# Copyright (C) 2010-2016 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Lisiane Sztoltz <lisiane@conectiva.com.br>, 2002, 2003.
+# Lisiane Sztoltz Teixeira <lisiane@conectiva.com.br>, 2004.
+# Lisiane Sztoltz Teixeira <lisiane@kdemail.net>, 2004.
+# Stephen Killing <stephen.killing@kdemail.net>, 2005.
+# Mauricio Piacentini <piacentini@kde.org>, 2007, 2008, 2009.
+# Eliana Megumi Habiro Boaglio <eliana.habiro@gmail.com>, 2008.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2017, 2021.
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2021-10-05 17:19-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Elvis Pfützenreuter, Lisiane Sztoltz, João Emanuel, Stephen Killing, "
+"Mauricio Piacentini"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"epx@conectiva.com.br, lisiane@conectiva.com.br, joaoemanuel@terra.com.br, "
+"stephen.killing@kdemail.net, piacentini@kde.org"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "Jo&go"
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "&Cenário"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "&Fala"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Barra de ferramentas principal"
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr "Opções do jogo"
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Jogo do Homem-Batata para crianças"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr "(c) 1999-2009, os desenvolvedores do KTuberling"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr "Mantenedor"
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr "Éric Bischoff"
+
+#: main.cpp:33
+#, kde-format
+msgid "Former Developer"
+msgstr "Desenvolvedor original"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr "John Calhoun"
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Ideia e arte originais"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr "Agnieszka Czajkowska"
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Nova arte"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr "Bas Willems"
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr "Roger Larsson"
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Ajuste de sons"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr "Dolores Almansa"
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "Atividade para abrir"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+"Os tradutores podem traduzir os sons falados no jogo.\n"
+"Consulte a seção de referência técnica na documentação\n"
+"do KTuberling para mais informações sobre como fazer isso.\n"
+"(traduza esta mensagem como \"DONE\" quando você tiver traduzido\n"
+"os sons; se não deixe-a sem traduzir como um lembrete)"
+
+#: toplevel.cpp:163
+#, kde-format
+msgid "Error while loading the playground."
+msgstr "Erro ao carregar o cenário."
+
+#: toplevel.cpp:195
+#, kde-format
+msgid "Error while loading the sound file."
+msgstr "Erro ao carregar os arquivos de som."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "Salvar &como imagem..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "S&em som"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr "B&loquear proporção"
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr "Carregar arquivo"
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, kde-format
+msgid "KTuberling files (%1)"
+msgstr "Arquivos KTuberling (%1)"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+"O arquivo salvo é de uma versão antiga do KTuberling e, infelizmente, não "
+"pode ser aberto com esta versão."
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Não foi possível carregar o arquivo."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Não foi possível salvar o arquivo."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: toplevel.cpp:526
+#, kde-format
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "Imprimir %1"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Não foi possível imprimir a imagem."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Imagem impressa com sucesso."
+
+#~ msgid "All files"
+#~ msgstr "Todos os arquivos"
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Formato gráfico desconhecido."
+
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "Um programa criado originalmente por <email address='%1'>Éric Bischoff</"
+#~ "email>\n"
+#~ "e John Calhoun.\n"
+#~ "\n"
+#~ "Este programa é dedicado à minha filha Sunniva."

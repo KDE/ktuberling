@@ -1,0 +1,253 @@
+# translation of ktuberling.po to Estonian
+# Copyright (C) 2000,2002, 2003, 2007 Free Software Foundation, Inc.
+#
+# Jane Susi <jane@linux.ee>, 2000.
+# Anti Veeranna <duke@linux.ee>, 2002.
+# Hasso Tepper <hasso@linux.ee>, 2003.
+# Marek Laane <bald@smail.ee>, 2007-2008, 2009, 2010, 2016, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2019-11-11 14:59+0200\n"
+"Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
+"Language-Team: Estonian <kde-et@lists.linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Anti Veeranna, Marek Laane"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "duke@linux.ee, qiilaq69@gmail.com"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "&Mäng"
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "Män&gulaud"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "&Kõne"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Peamine tööriistariba"
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr "Mängu valikud"
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Kartulimäng lastele"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr "(c) 1999-2009: KTuberlingi arendajad"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr "Hooldaja"
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr "Éric Bischoff"
+
+#: main.cpp:33
+#, kde-format
+msgid "Former Developer"
+msgstr "Endine arendaja"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr "John Calhoun"
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Algne idee ja graafika"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr "Agnieszka Czajkowska"
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Uus graafika"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr "Bas Willems"
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr "Roger Larsson"
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Häälte autor"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr "Dolores Almansa"
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "Avatav kartulimees"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+
+#: toplevel.cpp:163
+#, kde-format
+msgid "Error while loading the playground."
+msgstr "Viga tausta laadimisel."
+
+#: toplevel.cpp:195
+#, kde-format
+msgid "Error while loading the sound file."
+msgstr "Viga helifaili laadimisel."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "Salvesta &pildina... "
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&Hääletu"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr "&Lukusta proportsioonid"
+
+#: toplevel.cpp:328
+#, fuzzy, kde-format
+#| msgid "Load file"
+msgctxt "@title:window"
+msgid "Load file"
+msgstr "Faili laadimine"
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, kde-format
+msgid "KTuberling files (%1)"
+msgstr "KTuberlingi failid (%1)"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+"Salvestatud fail KTuberlingi vanast versioonist, mida paraku ei saa praeguse "
+"versiooniga avada."
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Faili laadimine nurjus."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Faili salvestamine nurjus."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "%1 trükkimine"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Pilti pole võimalik trükkida."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Pilt edukalt trükitud."
+
+#~ msgid "All files"
+#~ msgstr "Kõik failid"
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Tundmatu pildivorming."
+
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "Programmi autorid on <email address='%1'>Éric Bischoff</email>\n"
+#~ "ja John Calhoun.\n"
+#~ "\n"
+#~ "See programm on pühendatud mu tütrele Sunnivale."
+
+#~ msgid "SVG port"
+#~ msgstr "SVG port"

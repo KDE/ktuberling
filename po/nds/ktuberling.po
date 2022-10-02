@@ -1,0 +1,251 @@
+# translation of ktuberling.po to Low Saxon
+# Translation of ktuberling.po to Low Saxon
+#
+# Manfred Wiese <m.j.wiese@web.de>, 2006, 2008, 2010, 2011.
+# Sönke Dibbern <s_dibbern@web.de>, 2006, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2010-05-17 21:39+0200\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manfred Wiese, Sönke Dibbern"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "m.j.wiese@web.de, s_dibbern@web.de"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "&Speel"
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "&Speelfeld"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "&Spraak"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Hööft-Warktüüchbalken"
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr "Speel-Optschonen"
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Kantüffelspeel för Kinner"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr "© 1999-2009: De Utwicklers vun KTuberling"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr "Pleger"
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr "Éric Bischoff"
+
+#: main.cpp:33
+#, kde-format
+msgid "Former Developer"
+msgstr "Verleden Schriever"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr "John Calhoun"
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Orginaalidee un Biller-Arbeit"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr "Agnieszka Czajkowska"
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Nieg Biller-Arbeit"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr "Bas Willems"
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr "Roger Larsson"
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Klangoptimeren"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr "Dolores Almansa"
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "Kantüffel, de opmaakt warrn schall"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr "DONE"
+
+#: toplevel.cpp:163
+#, kde-format
+msgid "Error while loading the playground."
+msgstr "Fehler bi't Laden vun't Speelfeld."
+
+#: toplevel.cpp:195
+#, kde-format
+msgid "Error while loading the sound file."
+msgstr "Fehler bi't Laden vun de Klangdatei."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "&As Bild sekern..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&Keen Kläng"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr "Bildproportschoon fastsetten"
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling files"
+msgid "KTuberling files (%1)"
+msgstr "KTuberling-Dateien"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+"De sekerte Datei is vun en oolt Verschoon vun KTuberling un lett sik mit "
+"disse nich opmaken."
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Datei lett sik nich laden."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Datei lett sik nich sekern."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "%1 drucken"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Bild lett sik nich drucken."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Bild druckt."
+
+#~ msgid "All files"
+#~ msgstr "All dateien"
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Nich begäng Bildformaat"
+
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "En Programm vun <email address='%1'>Eric Bischoff</email>\n"
+#~ "un John Calhoun.\n"
+#~ "\n"
+#~ "Dit Speel is mien Dochter Sunniva toeegt."
+
+#~ msgid "SVG port"
+#~ msgstr "SVG-Porteren"

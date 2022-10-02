@@ -1,0 +1,388 @@
+# translation of ktuberling.po to Tajik
+# translation of ktuberling.po to Тоҷикӣ
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# 2004, Youth Opportunities, NGO
+# Victor Ibragimov <youth_opportunities@tajikngo.org>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2005-09-23 18:23+0500\n"
+"Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
+"Language-Team: Tajik\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"НПО \"Имкониятҳои ҷавонон\" ва Khujand Computer Technologies, Inc. USA, "
+"Роҷер Ковакс, Виктор Ибрагимов, Марина Колючева"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"youth_opportunities@tajikngo.org,,rkovacs@khujand.org,,MarinaKL@tajikngo.org"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr ""
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "&Майдони бозӣ"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "&Овозҳо"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr ""
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "Картошка"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Бозии \"Картошка\" барои кӯдакон"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr ""
+
+#: main.cpp:33
+#, fuzzy, kde-format
+#| msgid "Developer"
+msgid "Former Developer"
+msgstr "Тавлидгар"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Идея ва графикаи ҳақиқӣ"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr ""
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Сурати нав"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Танзими овоз"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "Картошка барои кушодан"
+
+#: pics/layout.i18n:6
+#, fuzzy, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+"Тарҷумон ҳуқуқи тарҷума намудани овозҳои гуфтугӯро\n"
+"дар бозӣ дорад.\n"
+"Барои маълумоти иловагӣ ва чӣ тавр кардани он, бахши\n"
+"муроҷиаи техникиро дар ktuberling нигаред.\n"
+"(агар ки шумо ин садоро тарҷума кунед, ин паёмро ҳамчун \"ИҶРОШУДА\" тарҷима "
+"кунед; дар дигар ҳолат чун пештара\n"
+"онро чун тарҷиманашуда боқӣ гузоред)"
+
+#: toplevel.cpp:163
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the playground."
+msgstr "Хатогӣ: Номҳои овозро пурбор карда натавонист."
+
+#: toplevel.cpp:195
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the sound file."
+msgstr "Хатогӣ: Номҳои овозро пурбор карда натавонист."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "&Нигоҳ доштан ҳамчун сурат..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&Бе овоз"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr ""
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling"
+msgid "KTuberling files (%1)"
+msgstr "Картошка"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Файлро пурбор карда нашуда истодааст."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Файлро нигоҳ дошта натавонист."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "Чопи %1"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Тасвирро чоп карда натавонист."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Тасвир бо мувоффақият чоп шуд."
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Андозаи тасвир номуайян аст."
+
+#, fuzzy
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "Муаллифони барнома Эрик Бишоф (Eric Bischoff) (e.bischoff@noos.fr)\n"
+#~ "ва Джон Кэлхаун (John Calhoun).\n"
+#~ "\n"
+#~ "Ин бозӣ ба духтари ман Сунива бахшида мешавад."
+
+#~ msgid "Only saving to local files is currently supported."
+#~ msgstr "Нигоҳ доштан танҳо дар файлҳои локалӣ."
+
+#~ msgid "Potato &Guy"
+#~ msgstr "&Картошка"
+
+#, fuzzy
+#~| msgid "Potato &Guy"
+#~ msgid "Potato &Guy 2"
+#~ msgstr "&Картошка"
+
+#~ msgid ""
+#~ "Fatal error:\n"
+#~ "Unable to load the pictures, aborting."
+#~ msgstr ""
+#~ "Хатои дурушт:\n"
+#~ "Тасвирро пурбор карда нашуда истодааст. Аз барнома баромадан."
+
+#~ msgid "Eyes"
+#~ msgstr "Чашмҳо"
+
+#~ msgid "Eyebrows"
+#~ msgstr "Қош"
+
+#~ msgid "Noses"
+#~ msgstr "Биниҳо"
+
+#~ msgid "Ears"
+#~ msgstr "Гӯшҳо"
+
+#~ msgid "Mouths"
+#~ msgstr "Даҳонҳо"
+
+#~ msgid "Goodies"
+#~ msgstr "Ороишдиҳӣ"
+
+#~ msgid "&Penguin"
+#~ msgstr "&Пингвин"
+
+#~ msgid "Tie"
+#~ msgstr "Галстук"
+
+#~ msgid "Hair"
+#~ msgstr "Мӯи сар"
+
+#~ msgid "Necklaces"
+#~ msgstr "Гарданбандҳо"
+
+#~ msgid "Hats"
+#~ msgstr "Телпакҳо"
+
+#~ msgid "Glasses"
+#~ msgstr "Ойнакҳо"
+
+#~ msgid "Scarf"
+#~ msgstr "Шарф"
+
+#~ msgid "&Aquarium"
+#~ msgstr "&Аквариум"
+
+#~ msgid "Fishes"
+#~ msgstr "Моҳиҳо"
+
+#~ msgid "Others"
+#~ msgstr "Дигар"
+
+#, fuzzy
+#~ msgid "Horse"
+#~ msgstr "Биниҳо"
+
+#, fuzzy
+#~ msgid "Rain"
+#~ msgstr "&Руминӣ"
+
+#~ msgid ""
+#~ "*.xpm|UNIX Pixmaps (*.xpm)\n"
+#~ "*.jpg|JPEG Compressed Files (*.jpg)\n"
+#~ "*.png|Next Generation Pictures (*.png)\n"
+#~ "*.bmp|Windows Bitmaps (*.bmp)\n"
+#~ "*|All Picture Formats"
+#~ msgstr ""
+#~ "*.xpm|Тасвирҳои битии Unix (*.xpm)\n"
+#~ "*.jpg|Файлҳои зершудаи JPEG (*.jpg)\n"
+#~ "*.png|Файлҳои графикии png (*.png)\n"
+#~ "*.bmp|Тасвирҳои битии Windows (*.bmp)\n"
+#~ "*|Тавсири ҳамаи андозаҳо"
+
+#~ msgid "&Danish"
+#~ msgstr "&Даниягӣ"
+
+#~ msgid "&German"
+#~ msgstr "&Немисӣ"
+
+#~ msgid "&English"
+#~ msgstr "&Англисӣ"
+
+#~ msgid "Sp&anish"
+#~ msgstr "&Испанӣ"
+
+#~ msgid "Fi&nnish"
+#~ msgstr "&Финнӣ"
+
+#~ msgid "&French"
+#~ msgstr "&Франсузӣ"
+
+#~ msgid "&Italian"
+#~ msgstr "&Итолиёӣ"
+
+#~ msgid "D&utch"
+#~ msgstr "&Голландӣ"
+
+#~ msgid "&Portuguese"
+#~ msgstr "&Португалӣ"
+
+#~ msgid "&Romanian"
+#~ msgstr "&Руминӣ"
+
+#~ msgid "&Slovak"
+#~ msgstr "&Словакӣ"
+
+#~ msgid "S&lovenian"
+#~ msgstr "&Словенӣ"
+
+#~ msgid "Ser&bian"
+#~ msgstr "Сер&бӣ"
+
+#~ msgid "S&wedish"
+#~ msgstr "&Шведӣ"

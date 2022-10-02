@@ -1,0 +1,240 @@
+# translation of ktuberling.po to Hebrew
+# KDE Hebrew Localization Project
+# Translation of ktuberling.po into Hebrew
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 2000-2002 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Diego Iastrubni <elcuco@kde.org>, 2005.
+# Diego Iastrubni <elcuco@kde.org>, 2005.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2017-05-16 07:01-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr ""
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "מ&גרש משחקים"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "קו&ל"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr ""
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "משחק תפוח אדמה לילדים"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr ""
+
+#: main.cpp:33
+#, fuzzy, kde-format
+msgid "Former Developer"
+msgstr "מפתח"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "רעיון ואמנות מקוריים"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr ""
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "אמנות חדשה"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "שיפור הצלילים"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "איזה תפוח אדמה לפתוח"
+
+#: pics/layout.i18n:6
+#, fuzzy, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr "NOT YET DONE"
+
+#: toplevel.cpp:163
+#, fuzzy, kde-format
+msgid "Error while loading the playground."
+msgstr "שגיאה במהלך טעינת שמות הצלילים."
+
+#: toplevel.cpp:195
+#, fuzzy, kde-format
+msgid "Error while loading the sound file."
+msgstr "שגיאה במהלך טעינת שמות הצלילים."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "שמירה &בתור תמונה..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&ללא צליל"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr ""
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+msgid "KTuberling files (%1)"
+msgstr "KTuberling"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "אין אפשרות לטעון את הקובץ."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "אין אפשרות לשמור את הקובץ."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "הדפס %1"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "אין אפשרות להדפיס את התמונה."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "התמונה הודפסה בהצלחה."
+
+#~ msgid "Unknown picture format."
+#~ msgstr "תבנית תמונה לא מוכרת."

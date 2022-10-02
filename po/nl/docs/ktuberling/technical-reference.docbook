@@ -1,0 +1,401 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>technische referentie</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Technische referentie</title>
+
+<para
+>&ktuberling; biedt een elegante en belonende inleiding in het programmeren voor en aanpassen van &kde;. Het programma kan worden uitgebreid. Bijvoorbeeld, zonder dat u hoeft te programmaren kunt u nieuwe speelvelden toevoegen door de grafische bestanden te wijzigen. Door de juiste geluidsbestanden kunnen vertalers de geluiden aanpassen aan hun eigen taal! </para>
+
+<para
+>Als u het spel uitbreidt, overweeg dan om uw toevoegingen te sturen aan de onderhouder <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> zodat ze in toekomstige versies kunnen worden bijgesloten. </para>
+
+<sect1 id="for-artists">
+<title
+>Voor artiesten</title>
+
+<para
+>Om een nieuwe &ktuberling; speelveld aan te maken dient u: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Het te tekenen speelveld in een een &SVG;-bestand, waarin u: <itemizedlist>
+        <listitem
+><para
+>De plaats waar items naar toe gesleept worden <quote
+>background</quote
+> wordt genoemd.</para
+></listitem>
+        <listitem
+><para
+>Geef elk van de versleepbare items een unieke naam.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Maak een <literal role="extension"
+>.thema</literal
+>-bestand aan, met het volgende schema:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>uwSVGbestand</replaceable
+>" name="<replaceable
+>hetBureaubladBestand</replaceable
+>"&gt;
+&lt;object name="<replaceable
+>itemNaam</replaceable
+>" sound="<replaceable
+>geluidNaam</replaceable
+>" scale="<replaceable
+>eenWaarde</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>uwSVGbestand</replaceable
+> is de naam van het &SVG;-bestand dat de tekening bevat.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>hetBureaubladBestand</replaceable
+> is de naam van het bureaubladbestand dat de naam van het thema bevat.</para
+></listitem>
+      <listitem
+><para
+>Voor elk object hebt u een <literal
+>&lt;object&gt;</literal
+>-item nodig. <replaceable
+>itemNaam</replaceable
+> is de unieke naam die u gebruikt voor het &SVG;-bestand, <replaceable
+>geluidNaam</replaceable
+> is de naam van het geluid dat zal worden afgespeeld bij het slepen, zie het bestand <filename
+>sounds/soundthemes.HOWTO</filename
+> uit de broncode voor meer informatie.</para
+></listitem>
+      <listitem
+><para
+><literal
+>scale</literal
+> is optioneel en <replaceable
+>eenWaarde</replaceable
+> is de schaalfactor die zal worden gebruikt bij het tekenen van dit object buiten de opslagplaats, als deze niet is gespecificeerd dan is deze 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Maak een <literal role="extension"
+>.desktop</literal
+>-bestand aan, met dit schema:</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>themaNaam</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>themaNaam</replaceable
+> is de naam die het thema identificeert en zal worden getoond in het menu Speelveld.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Als u het thema toevoegt aan de &ktuberling;-opslagruimte, voeg dan <literal role="extension"
+>.svg</literal
+>-, <literal role="extension"
+>.theme</literal
+>- en <literal role="extension"
+>.desktop</literal
+>-bestanden toe aan de sectie FILES van CMakeLists.txt in de map <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Als u het wilt installeren voor uzelf, plaats <literal role="extension"
+>.svg</literal
+>-, <literal role="extension"
+>.theme</literal
+>- en <literal role="extension"
+>.desktop</literal
+>-bestanden in de map <filename class="directory"
+>ktuberling/pics</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Voor vertalers</title>
+
+<para
+>Naast de gebruikelijke mechanisme met <literal role="extension"
+>.po</literal
+>-bestanden voor het vertalen van programmateksten en documentatie kunnen ook de geluiden worden overgezet naar andere talen. </para>
+
+<para
+>Om een nieuw &ktuberling; geluid aan te maken dient u: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>Neem de geluiden op in OGG Vorbis rc3 bestandsformaat.</para
+></listitem>
+  <listitem
+><para
+>Maak een bestand <filename
+><replaceable
+>uwTaalTweeLetterCode</replaceable
+>.soundtheme</filename
+>, het moet dit schema volgen:</para>
+<programlisting
+>&lt;language code="<replaceable
+>uwTaalTweeLetterCode</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>geluidsNaam</replaceable
+>" file="<replaceable
+>relatiefPad</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>uwTaalTweeLetterCode</replaceable
+> is de twee lettercode van uw taal, bijvoorbeeld nl voor Nederlands.</para
+></listitem>
+      <listitem
+><para
+>Voor elke klank moet een <literal
+>&lt;sound&gt;</literal
+>-item. <replaceable
+>geluidsNaam</replaceable
+> overeenkomen met de geluidsNaam gespecificeerd in het playground-thema (zie de <filename
+>pics/themes.HOWTO</filename
+> uit de broncode). <replaceable
+>relatievePad</replaceable
+> zou het relatieve pad moeten zijn waar u het bestand met deze klank in gaat installeren, dit is typisch <filename
+><replaceable
+>eenUniekPad</replaceable
+>/<replaceable
+>geluidNaam</replaceable
+>.<replaceable
+>format</replaceable
+></filename
+> (<replaceable
+>eenUniekPad</replaceable
+> kan bijvoorbeeld uw tweeletterige taalcode zijn).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Als u het geluidsthema toevoegt aan de &ktuberling; in uw taalmap:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Voeg de klankbestanden en de <literal role="extension"
+>.soundtheme</literal
+>-bestanden toe in de map <filename class="directory"
+>data/kdegames/ktuberling</filename
+> van de vertalingen in uw taal.</para
+></listitem>
+      <listitem
+><para
+>In diezelfde map hebt u een <filename
+>CMakeLists.txt</filename
+> nodig die beschrijft hoe de bestanden te installeren, dit is typisch:</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB ogg-bestanden *.ogg)
+install( FILES ${datafiles} DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/<replaceable
+>uwTaalTweeLetterCode</replaceable
+> )
+install( FILES <replaceable
+>uwTaalTweeLetterCode</replaceable
+>.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Als u het wilt installeren voor uzelf:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Plaats het bestand <filename
+><replaceable
+>uwTweeletterigeTaalcode</replaceable
+>.soundtheme</filename
+> in de map <filename class="directory"
+>ktuberling/sounds</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>Plaats uw geluidsbestanden in de map <filename class="directory"
+>ktuberling/sounds/<replaceable
+>eenUniekPad</replaceable
+></filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>Informatie over hoe u gebruik kunt maken met de vertaalmechanismen van &kde; is beschikbaar in <ulink url="https://l10n.kde.org/docs/translation-howto/index.html"
+>The &kde; HOWTO voor vertalen</ulink
+>. Kijk ook op de vertalerswebsite van het <ulink url="http://www.kde.nl/helpen/vertaling.html"
+>Nederlandse KDE-team</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Voor programmeurs</title>
+<para
+>&ktuberling; is voor programmeurs niet moeilijk om uit te breiden.</para>
+
+<sect2 id="classes">
+<title
+>C++-klassen</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>Topniveau venster en basis programmabeheer.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>PlayGround</classname
+></term>
+    <listitem
+><para
+>Beschrijving van een van de spelniveaus.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>Beschrijving van een van de grafische <quote
+>objecten</quote
+> om te tekenen.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>Beschrijving van een van de talen en diens geluiden.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>Actie</classname
+></term>
+    <listitem
+><para
+>Een van de gebruikers' manipulatie in de ongedaan maken/opnieuw maken stapel.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

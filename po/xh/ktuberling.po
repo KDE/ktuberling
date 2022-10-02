@@ -1,0 +1,382 @@
+# translation of ktuberling.po to
+# translation of ktuberling.po to
+# translation of ktuberling.po to
+# translation of ktuberling.po to
+# translation of ktuberling.po to Xhosa
+# translation of ktuberling.po to
+# K Desktop Environment - kdegames
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001,2002.
+# Thelma Lungcuzo <thelma@translate.org.za>, 2002
+# Lwandle Mgidlana <lwandle@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2002-10-10 13:29SAST\n"
+"Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
+"Language-Team: Xhosa <xhosa@translate.org.za>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lwandle Mgidlana,Thelma Lungcuzo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lwandle@translate.org.za,thelma@translate.org.za"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr ""
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "&Ibala lokudlala"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "&Intetho"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr ""
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Umdlalo wetapile wabantwana"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr ""
+
+#: main.cpp:33
+#, fuzzy, kde-format
+#| msgid "Developer"
+msgid "Former Developer"
+msgstr "Umbhekisi phambili"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Undoqo woqobo nomsebenzi womnatha"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr ""
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Umsebenzi womzobo omtsha"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Ukuphendulela kwiisandi"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr ""
+
+#: pics/layout.i18n:6
+#, fuzzy, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr "\"IGQITYIWE\""
+
+#: toplevel.cpp:163
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the playground."
+msgstr "Imposiso ngexa  ubulayisha isandi samagama."
+
+#: toplevel.cpp:195
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the sound file."
+msgstr "Imposiso ngexa  ubulayisha isandi samagama."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "Gcina &njengomfanekiso..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&Akho sandi"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr ""
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling"
+msgid "KTuberling files (%1)"
+msgstr "KTuberling"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Ayinakulayisha fayile."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Ayinakugcina fayile."
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, kde-format
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr ""
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Ayikwazi ukushicilela umfanekiso."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Umfanekiso ushicilelwe ngempumelelo."
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Ifomati yomfanekiso engaziwayo."
+
+#, fuzzy
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "Inkqubo ngu Eric Bischoff <e.bischoff@noos.fr>\n"
+#~ "no John Calhoun.\n"
+#~ "\n"
+#~ "Le nkqubo ijoliswe kwintombi yam Sunniva."
+
+#~ msgid "Only saving to local files is currently supported."
+#~ msgstr "Lugcino olukwiifayile zakulendawo kuphela oluxhaswayongoku."
+
+#~ msgid "Potato &Guy"
+#~ msgstr "Potato &Guy"
+
+#, fuzzy
+#~| msgid "Potato &Guy"
+#~ msgid "Potato &Guy 2"
+#~ msgstr "Potato &Guy"
+
+#~ msgid ""
+#~ "Fatal error:\n"
+#~ "Unable to load the pictures, aborting."
+#~ msgstr ""
+#~ "Imposiso yomonakalo:\n"
+#~ "Andikwazanga ukulayisha imifanekiso, iyalahla. "
+
+#~ msgid "Eyes"
+#~ msgstr "Amehlo"
+
+#, fuzzy
+#~ msgid "Eyebrows"
+#~ msgstr "Amashiya"
+
+#~ msgid "Noses"
+#~ msgstr "Iimpumlo"
+
+#~ msgid "Ears"
+#~ msgstr "Iindlebe"
+
+#~ msgid "Mouths"
+#~ msgstr "Imilomo"
+
+#~ msgid "Goodies"
+#~ msgstr "Ezilungileyo"
+
+#~ msgid "&Penguin"
+#~ msgstr "&Penguin"
+
+#~ msgid "Tie"
+#~ msgstr "Iqhina"
+
+#~ msgid "Hair"
+#~ msgstr "Iinwele"
+
+#~ msgid "Necklaces"
+#~ msgstr "Isacholo sentamo"
+
+#~ msgid "Hats"
+#~ msgstr "Iminqwazi"
+
+#~ msgid "Glasses"
+#~ msgstr "Iiglasi"
+
+#~ msgid "Scarf"
+#~ msgstr "Isikhafu"
+
+#~ msgid "&Aquarium"
+#~ msgstr "&Indawo yokugcina izilwanyana zasemanzini"
+
+#~ msgid "Fishes"
+#~ msgstr "Iintlanzi"
+
+#~ msgid "Others"
+#~ msgstr "Nezinye"
+
+#, fuzzy
+#~ msgid "Horse"
+#~ msgstr "Iimpumlo"
+
+#, fuzzy
+#~ msgid "Rain"
+#~ msgstr "&Amaromaniya"
+
+#, fuzzy
+#~ msgid ""
+#~ "*.xpm|UNIX Pixmaps (*.xpm)\n"
+#~ "*.jpg|JPEG Compressed Files (*.jpg)\n"
+#~ "*.png|Next Generation Pictures (*.png)\n"
+#~ "*.bmp|Windows Bitmaps (*.bmp)\n"
+#~ "*|All Picture Formats"
+#~ msgstr ""
+#~ "*.xpm|Unix pixmaps (*.xpm)\n"
+#~ "*.jpg|JPEG iifayile ezixineneyo (*.jpg)\n"
+#~ "*.png|Imifanekiso yesizukulwana esilandelayo (*.png)\n"
+#~ "*.bmp|Iibimaps zeewindow bitmaps (*.bmp)\n"
+#~ "*|Zonke iifomati zomfanekiso"
+
+#~ msgid "&Danish"
+#~ msgstr "&Isidenishi"
+
+#~ msgid "&German"
+#~ msgstr "&Isijamani"
+
+#~ msgid "&English"
+#~ msgstr "&Isingesi"
+
+#~ msgid "Sp&anish"
+#~ msgstr "&Isipenishi"
+
+#, fuzzy
+#~ msgid "Fi&nnish"
+#~ msgstr "&Isidenishi"
+
+#~ msgid "&French"
+#~ msgstr "&Isifrentshi"
+
+#~ msgid "&Italian"
+#~ msgstr "&Isitaliyane"
+
+#~ msgid "D&utch"
+#~ msgstr "I&sidatshi"
+
+#~ msgid "&Portuguese"
+#~ msgstr "&Amaphothukezi"
+
+#~ msgid "&Romanian"
+#~ msgstr "&Amaromaniya"
+
+#~ msgid "&Slovak"
+#~ msgstr "&Amaslovak"
+
+#~ msgid "S&lovenian"
+#~ msgstr "I&siloveniya"
+
+#~ msgid "S&wedish"
+#~ msgstr "I&siswedishi"

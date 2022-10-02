@@ -1,0 +1,390 @@
+# Translation of ktuberling to Croatian
+#
+# ivan <admin@linuxzasve.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling 0\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2009-06-22 16:42+0200\n"
+"Last-Translator: ivan <admin@linuxzasve.com>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Renato Pavičić"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "renato@translator-shop.org"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr ""
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "&Igralište"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "&Govor"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr ""
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "Igra s krumpirima za djecu"
+
+#: main.cpp:31
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2006, The KTuberling Developers"
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr "© 1999–2006 The KTuberling Developers"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr ""
+
+#: main.cpp:33
+#, fuzzy, kde-format
+#| msgid "Developer"
+msgid "Former Developer"
+msgstr "Razvijatelj"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr "Izvorni koncept i grafika"
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr ""
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "Nova grafika"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr "Podešavanje zvukova"
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "Krumpir za otvoriti"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+
+#: toplevel.cpp:163
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the playground."
+msgstr "Pogreška tijekom učitavanja zvukova."
+
+#: toplevel.cpp:195
+#, fuzzy, kde-format
+#| msgid "Error while loading the sound names."
+msgid "Error while loading the sound file."
+msgstr "Pogreška tijekom učitavanja zvukova."
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "Spremi &kao sliku …"
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "&Bez zvuka"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr ""
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, fuzzy, kde-format
+#| msgid "KTuberling"
+msgid "KTuberling files (%1)"
+msgstr "KTuberling"
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+"Spremljena datoteka je iz stare verzije KTuberlinga, te se kao takva ne može "
+"otvoriti u ovoj verziji."
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "Nije moguće učitati datoteku."
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "Nije moguće spremiti datoteku"
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "Ispiši %1"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr "Nije moguće ispisati sliku."
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr "Slika je uspješno ispisana."
+
+#~ msgid "All files"
+#~ msgstr "Sve datoteke"
+
+#~ msgid "Unknown picture format."
+#~ msgstr "Nepoznati oblik slike."
+
+#, fuzzy
+#~ msgid ""
+#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
+#~ "and John Calhoun.\n"
+#~ "\n"
+#~ "This program is dedicated to my daughter Sunniva."
+#~ msgstr ""
+#~ "Program napisali Eric Bischoff <e.bischoff@noos.fr>\n"
+#~ "i John Calhoun.\n"
+#~ "\n"
+#~ "Program je posvećen mojoj kćeri Sunnivi."
+
+#~ msgid "SVG port"
+#~ msgstr "SVG port"
+
+#~ msgid "Only saving to local files is currently supported."
+#~ msgstr "Trenutno je podržano samo spremanje u lokalne datoteke."
+
+#~ msgid "Potato &Guy"
+#~ msgstr "&Krumpirko"
+
+#, fuzzy
+#~| msgid "Potato &Guy"
+#~ msgid "Potato &Guy 2"
+#~ msgstr "&Krumpirko"
+
+#~ msgid ""
+#~ "Fatal error:\n"
+#~ "Unable to load the pictures, aborting."
+#~ msgstr ""
+#~ "Ozbiljna pogreška:\n"
+#~ "Nije moguće učitati slike. Odustajanje."
+
+#~ msgid "Eyes"
+#~ msgstr "Oči"
+
+#~ msgid "Eyebrows"
+#~ msgstr "Obrve"
+
+#~ msgid "Noses"
+#~ msgstr "Nosevi"
+
+#~ msgid "Ears"
+#~ msgstr "Uši"
+
+#~ msgid "Mouths"
+#~ msgstr "Usta"
+
+#~ msgid "Goodies"
+#~ msgstr "Razno"
+
+#~ msgid "&Penguin"
+#~ msgstr "&Pingvin"
+
+#~ msgid "Tie"
+#~ msgstr "Kravata"
+
+#~ msgid "Hair"
+#~ msgstr "Kosa"
+
+#~ msgid "Necklaces"
+#~ msgstr "Ogrlice"
+
+#~ msgid "Hats"
+#~ msgstr "Šeširi"
+
+#~ msgid "Glasses"
+#~ msgstr "Naočare"
+
+#~ msgid "Scarf"
+#~ msgstr "Šal"
+
+#~ msgid "&Aquarium"
+#~ msgstr "&Akvarij"
+
+#~ msgid "Fishes"
+#~ msgstr "Ribe"
+
+#~ msgid "Others"
+#~ msgstr "Ostali"
+
+#, fuzzy
+#~ msgid "Horse"
+#~ msgstr "Nosevi"
+
+#, fuzzy
+#~ msgid "Rain"
+#~ msgstr "&Rumunjski"
+
+#~ msgid ""
+#~ "*.xpm|UNIX Pixmaps (*.xpm)\n"
+#~ "*.jpg|JPEG Compressed Files (*.jpg)\n"
+#~ "*.png|Next Generation Pictures (*.png)\n"
+#~ "*.bmp|Windows Bitmaps (*.bmp)\n"
+#~ "*|All Picture Formats"
+#~ msgstr ""
+#~ "*.xpm|Unix piksmape (*.xpm)\n"
+#~ "*.jpg|JPEG komprimirane datoteke (*.jpg)\n"
+#~ "*.png|Sljedeća generacija slika (*.png)\n"
+#~ "*.bmp|Windows bitmape (*.bmp)\n"
+#~ "*|Svi oblici slika"
+
+#~ msgid "&Danish"
+#~ msgstr "&Danski"
+
+#~ msgid "&German"
+#~ msgstr "&Njemački"
+
+#~ msgid "&English"
+#~ msgstr "&Engleski"
+
+#~ msgid "Sp&anish"
+#~ msgstr "&Španjolski"
+
+#~ msgid "Fi&nnish"
+#~ msgstr "&Finski"
+
+#~ msgid "&French"
+#~ msgstr "F&rancuski"
+
+#~ msgid "&Italian"
+#~ msgstr "&Talijanski"
+
+#~ msgid "D&utch"
+#~ msgstr "Ni&zozemski"
+
+#~ msgid "&Portuguese"
+#~ msgstr "&Portugalski"
+
+#~ msgid "&Romanian"
+#~ msgstr "&Rumunjski"
+
+#~ msgid "&Slovak"
+#~ msgstr "&Slovački"
+
+#~ msgid "S&lovenian"
+#~ msgstr "S&lovenski"
+
+#~ msgid "Ser&bian"
+#~ msgstr "Sr&pski"
+
+#~ msgid "S&wedish"
+#~ msgstr "Š&vedski"
+
+#~ msgid "Low Sa&xon"
+#~ msgstr "Donjo saksonski"

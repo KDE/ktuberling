@@ -1,0 +1,950 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Home Patata">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>El manual del &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Revisor</contrib>
+</othercredit>
+
+&traductor.Antoni.Bella; 
+
+</authorgroup>
+
+<date
+>4 d'octubre de 2021</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>L'&i18n-ktuberling; és un joc destinat a la canalla. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>joc</keyword>
+<keyword
+>joguina</keyword>
+<keyword
+>constructor</keyword>
+<keyword
+>nina</keyword>
+<keyword
+>decoració</keyword>
+<keyword
+>canalla</keyword>
+<keyword
+>home Patata</keyword>
+<keyword
+>patata</keyword>
+<keyword
+>estació de tren</keyword>
+<keyword
+>un jugador</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+<para
+>Tipus de joc: Joguina</para>
+<para
+>Nombre de possibles jugadors: Un</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Zona de joc pizzeria</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>L'&i18n-ktuberling; és un joc de construcció senzill, adequat per als infants i també per als adults. La idea del joc està basada en un concepte popular de fer un nino. Una patata decorada amb diversos elements petits perquè s'assembli més a una persona petita. No obstant això, l'&i18n-ktuberling; va molt més enllà en termes de contingut i afegeix una sorprenent varietat de temes diferents. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Com jugar</title>
+
+<para
+>L'&i18n-ktuberling; és un joc destinat a infants. Per descomptat, pot ser adequat per a adults que en el fons segueixen sent joves. </para>
+
+<para
+>És un <quote
+>editor de patates</quote
+>. Això vol dir que podeu arrossegar i deixar anar els ulls, la boca, el bigoti i altres parts de la cara i delícies sobre un noi semblant a una patata. De la mateixa manera, teniu altres zones de joc amb temes diferents. </para>
+
+<para
+>En aquest joc no hi ha guanyador. L'únic propòsit és fer les cares més divertides que pugueu. </para>
+
+<para
+>L'&i18n-ktuberling; també pot <quote
+>parlar</quote
+>. Lletrejarà el nom dels objectes que arrossegueu i deixeu anar. <quote
+>Pronunciarà</quote
+> en un idioma que podeu triar. Fins i tot podreu utilitzar-lo per a aprendre una mica de vocabulari en idiomes estrangers. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Les regles del joc, estratègies i consells</title>
+
+<sect1 id="mouse-operation">
+<title
+>Operar amb el ratolí</title>
+
+<para
+>A la finestra principal hi ha dues àrees: </para>
+
+<itemizedlist>
+<listitem
+><para
+>L'àrea de <quote
+>zona de joc</quote
+>. </para
+></listitem>
+<listitem
+><para
+>L'àrea d'<quote
+>objectes</quote
+>, és on seleccionareu els objectes per a col·locar-los en l'àrea de joc. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Un aspecte real de la pantalla de l'aplicació pot canviar depenent de la <quote
+>zona de joc</quote
+> seleccionada.</para
+></note>
+<screenshot>
+<screeninfo
+>Finestra principal de l'&i18n-ktuberling;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Finestra principal</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Col·locar un objecte</title>
+
+<para
+>Per a arrossegar un objecte, moveu el punter del ratolí fins a l'àrea d'<quote
+>objectes</quote
+> i feu-hi clic. Després, moveu-lo fins a l'àrea de <quote
+>zona de joc</quote
+> i feu-hi clic de nou. <note
+><para
+>La mida dels objectes pot canviar mentre s'arrossega. Alguns dels objectes sobredimensionats es redueixen dins de l'àrea d'<quote
+>objectes</quote
+>.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Moure un objecte</title>
+<para
+>Un cop deixat anar a l'àrea de <quote
+>zona de joc</quote
+>, un objecte es podrà moure. Senzillament feu clic sobre l'objecte per a seleccionar-lo, moveu-lo fins al lloc nou i feu clic de nou per a deixar-lo anar. Quan el deixeu, anirà damunt els altres objectes que seran ocultats parcialment. Aquest truc és útil per a aconseguir que les ulleres i els ulls es col·loquin correctament. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Eliminar un objecte</title>
+<para
+>Per a eliminar un objecte que heu deixat anar a l'àrea de <quote
+>zona de joc</quote
+>, arrossegueu-lo cap enrere des de l'àrea de <quote
+>zona de joc</quote
+> fins a l'àrea d'<quote
+>objectes</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Resum de la interfície </title>
+<sect1 id="the-tool-bar">
+<title
+>La barra d'eines</title>
+
+<para
+>La barra d'eines proporciona botons per a les funcions més utilitzades. </para>
+
+<table>
+<title
+>Botons de la barra d'eines</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Botó&nbsp;</entry>
+      <entry
+>Nom&nbsp;</entry>
+      <entry
+>Equivalent en el menú&nbsp;</entry>
+      <entry
+>Acció</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>El botó «Partida nova»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Nova</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Restableix l'àrea de <quote
+>zona de joc</quote
+>. Això netejarà totes les parts de la zona de joc, de manera que es podrà crear una decoració nova.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>El botó «Carrega...»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Carrega...</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Carrega...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Obre un fitxer <literal role="extension"
+>.tuberling</literal
+> existent des del disc.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>El botó «Desa»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Desa</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Desa</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Desa la creació a la vostra carpeta d'inici o a una altra carpeta en el disc. El <literal role="extension"
+>.tuberling</literal
+> es desarà en un fitxer petit on només es desarà la posició dels objectes.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>El botó «Imprimeix...»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Imprimeix...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Imprimeix...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Imprimeix la vostra imatge.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>El botó «Desfés»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Desfés</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Desfés</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Desfà la darrera operació.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>El botó «Refés»</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Refés</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Refés</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Refà la darrera operació.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Els elements del menú</title>
+
+<sect2>
+<title
+>El menú Joc</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Esborra</action
+> l'àrea de <quote
+>zona de joc</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Carrega...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Obre un fitxer <literal role="extension"
+>.tuberling</literal
+> existent</action
+> des del disc.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Desa</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Desa</action
+> la vostra creació. El tubercle es desa en un petit fitxer on només es desarà la posició dels objectes.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Desa com a imatge...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Crea un fitxer de gràfics</action
+> que conté una imatge del vostre tubercle.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+></shortcut
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Imprimeix...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Imprimeix</action
+> la vostra imatge del tubercle.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Surt</action
+> de l'&i18n-ktuberling;.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>El menú Edita</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Desfés</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Desfà</action
+> la darrera col·locació d'un <quote
+>objecte</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Refés</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Refà</action
+> la darrera col·locació d'un <quote
+>objecte</quote
+>. Aquesta opció de menú només estarà activa si heu emprat prèviament l'acció <guilabel
+>Desfés</guilabel
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Copia</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Copia</action
+> l'àrea de <quote
+>zona de joc</quote
+> al porta-retalls.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>El menú Visualitza</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Visualitza</guimenu
+> <guimenuitem
+>Mode de pantalla completa</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Alterna la interfície gràfica al mode de pantalla completa.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>El menú Zona de joc</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Zona de joc</guimenu
+> <guimenuitem
+>Bloqueja la relació d'aspecte</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Aquesta opció conserva la relació d'aspecte de la zona de joc quan es canvia la mida de la finestra de l'&i18n-ktuberling;. Quan la relació d'aspecte de la zona de joc no coincideix amb el de la finestra, el fons s'omplirà amb el tema especificat.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Zona de joc</guimenu
+> <guimenuitem
+><replaceable
+>Nom de la zona de joc</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Canvia a la zona de joc</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Conté les zones de joc que hi ha instal·lades al vostre sistema. </para>
+<para
+>L'&i18n-ktuberling; recordarà la darrera zona de joc triada la pròxima vegada que s'iniciï. </para>
+</sect2>
+
+<sect2>
+<title
+>El menú Veu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Veu</guimenu
+> <guimenuitem
+>Sense so</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Apaga el so</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Veu</guimenu
+> <guimenuitem
+><replaceable
+>Nom de l'idioma</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Alterna el so i parla en l'idioma seleccionat</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>L'&i18n-ktuberling; recordarà aquesta opció la pròxima vegada que s'iniciï. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>Els menús Arranjament i Ajuda</title>
+
+<para
+>De manera addicional, l'&i18n-ktuberling; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, llegiu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Preguntes més freqüents</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Vull canviar l'aparença d'aquest joc. Puc fer-ho? </para
+></question>
+ <answer
+><para
+>Sí que podeu. Per a obtenir més informació, vegeu <link linkend="theme_change"
+>aquesta</link
+> secció de «Resum de la interfície».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puc utilitzar el teclat per a jugar a aquest joc? </para
+></question>
+ <answer
+><para
+>No. Aquest joc no es pot jugar amb el teclat.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He creat una gran imatge i vull compartir-la amb els meus amics. Puc desar-la com una imatge?</para
+></question>
+  <answer
+><para
+>Sí. Per a desar la sessió actual com una imatge, consulteu <link linkend="game-save-as-picture"
+>aquesta</link
+> secció de «Resum de la interfície» per a obtenir més informació.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Crèdits i llicència</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - mantenidor actual</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - idea original, imatges originals i sons anglesos</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - programació &kde;</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - proves, consells i ajuda</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - correcció de la documentació</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - millora de la documentació</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+</book>

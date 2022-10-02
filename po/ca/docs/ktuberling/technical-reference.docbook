@@ -1,0 +1,401 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>4 d'octubre de 2021</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>referència tècnica</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Referències tècniques</title>
+
+<para
+>El &ktuberling; ofereix una introducció suau i gratificant a la personalització i programació en el &kde;. L'aplicació es pot ampliar. Per exemple, sense codificar, es poden afegir zones de joc noves canviant els fitxers gràfics. Afegint fitxers de so adequats, els traductors poden canviar els sons al seu idioma natiu! </para>
+
+<para
+>Si amplieu o afegiu res al joc, penseu a enviar les vostres addicions al mantenidor <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> per a la seva inclusió en versions futures. </para>
+
+<sect1 id="for-artists">
+<title
+>Per a artistes</title>
+
+<para
+>Per a crear una zona de joc nova del &ktuberling; heu de: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Dibuixar la zona de joc en un fitxer &SVG;, aquí heu de: <itemizedlist>
+        <listitem
+><para
+>Donar un nom al lloc on els elements es poden arrossegar <quote
+>Fons</quote
+>.</para
+></listitem>
+        <listitem
+><para
+>Donar un nom únic a cadascun dels elements arrossegables.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Crear un fitxer <literal role="extension"
+>.theme</literal
+>, haurà de seguir aquest esquema:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>vostre_fitxer_SVG</replaceable
+>" name="<replaceable
+>fitxer_escriptori</replaceable
+>"&gt;
+&lt;object name="<replaceable
+>nom_element</replaceable
+>" sound="<replaceable
+>nom_so</replaceable
+>" scale="<replaceable
+>algun_valor</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>vostre_fitxer_SVG</replaceable
+> és el nom del fitxer &SVG; que té el dibuix.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>fitxer_escriptori</replaceable
+> és el nom del fitxer d'escriptori que té el nom del tema.</para
+></listitem>
+      <listitem
+><para
+>Per a cada objecte necessitareu una entrada <literal
+>&lt;object&gt;</literal
+>. <replaceable
+>nom_element</replaceable
+> és el nom únic que heu utilitzat en el fitxer &SVG;, <replaceable
+>nom_so</replaceable
+> és el nom del so que es reproduirà en arrossegar-lo, per a més informació, vegeu el fitxer <filename
+>sounds/soundthemes.HOWTO</filename
+> en el codi font.</para
+></listitem>
+      <listitem
+><para
+><literal
+>scale</literal
+> és opcional i el <replaceable
+>algun_valor</replaceable
+> és el factor d'escala que s'utilitzarà en dibuixar aquest objecte fora del rebost, si no s'especifica serà 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Crear un fitxer <literal role="extension"
+>.desktop</literal
+>, haurà de seguir aquest esquema:</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>nom_tema</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>nom_tema</replaceable
+> és el nom que identificarà el tema, es mostrarà a la zona de joc.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Si afegiu el tema al repositori del &ktuberling;, afegiu els fitxers <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> i <literal role="extension"
+>.desktop</literal
+> a la secció <literal
+>FILES</literal
+> del <filename
+>CMakeLists.txt</filename
+> dins la carpeta <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Si voleu instal·lar-lo per a vosaltres mateixos, col·loqueu els fitxers <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> i <literal role="extension"
+>.desktop</literal
+> dins la carpeta <filename class="directory"
+>ktuberling/pics</filename
+> a <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Per a traductors</title>
+
+<para
+>A més del mecanisme habitual dels fitxers <literal role="extension"
+>.po</literal
+>, per a traduir els nivells i les indicacions del programa, els sons també es poden localitzar. </para>
+
+<para
+>Per a crear un tema nou de so del &ktuberling;, heu de: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>Enregistrar els sons en el format de fitxer OGG Vorbis rc3.</para
+></listitem>
+  <listitem
+><para
+>Crear un fitxer <filename
+><replaceable
+>vostre_idioma-codi_de_dos_lletres</replaceable
+>.soundtheme</filename
+>, haurà de seguir aquest esquema:</para>
+<programlisting
+>&lt;language code="<replaceable
+>vostre_idioma-codi_de_dos_lletres</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>nom_so</replaceable
+>" file="<replaceable
+>camí_relatiu</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>vostre_idioma-codi_de_dos_lletres</replaceable
+> és el codi de dues lletres del vostre idioma, per exemple, gl per a gallec.</para
+></listitem>
+      <listitem
+><para
+>Per a cada so hi ha una entrada <literal
+>&lt;sound&gt;</literal
+>. El nom del so haurà de coincidir amb el nom especificat en el tema de la zona de joc (vegeu el fitxer <filename
+>pics/themes.HOWTO</filename
+> en el codi font). El <replaceable
+>camí_relatiu</replaceable
+> haurà de ser el camí relatiu on vàreu instal·lar el fitxer amb aquest so, generalment, serà de <filename
+><replaceable
+>algunCamíÚnic</replaceable
+>/<replaceable
+>nom_so</replaceable
+>.<replaceable
+>format</replaceable
+></filename
+> (&pex;, <replaceable
+>algunCamíÚnic</replaceable
+> pot ser el vostre codi d'idioma de dues lletres).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Si esteu afegint el tema de so al &ktuberling; a la vostra carpeta d'idioma:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Afegiu els arxius de so i els fitxers <literal role="extension"
+>.soundtheme</literal
+> dins la carpeta <filename class="directory"
+>data/kdegames/ktuberling</filename
+> de les vostres traduccions d'idioma.</para
+></listitem>
+      <listitem
+><para
+>En aquest mateix lloc, necessitareu un fitxer <filename
+>CMakeLists.txt</filename
+> que descrigui com instal·lar els fitxers, normalment serà.</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>vostre_idioma-codi_de_dos_lletres</replaceable
+> )
+INSTALL( FILES <replaceable
+>vostre_idioma-codi_de_dos_lletres</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Si voleu instal·lar-lo:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Situeu el fitxer <filename
+><replaceable
+>vostre_idioma-codi_de_dos_lletres</replaceable
+>.soundtheme</filename
+> dins la carpeta <filename class="directory"
+>ktuberling/sounds</filename
+> a <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>Poseu els vostres fitxers de so dins la carpeta <filename class="directory"
+>ktuberling/sounds/<replaceable
+>algunCamíÚnic</replaceable
+></filename
+> a <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>La informació sobre com treballar amb els mecanismes de traducció en el &kde; està disponible en el <ulink url="https://l10n.kde.org/docs/translation-howto/index.html"
+>The &kde; Translation HOWTO</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Per a programadors</title>
+<para
+>Per als programadors no és realment difícil estendre el &ktuberling;.</para>
+
+<sect2 id="classes">
+<title
+>Classes de C++</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>Finestra de primer nivell i gestió bàsica del programa.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>PlayGround</classname
+></term>
+    <listitem
+><para
+>Descripció d'un dels nivells de la partida.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>Descripció d'un dels <quote
+>objectes</quote
+> gràfics a dibuixar.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>Descripció d'un dels idiomes i els seus sons.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>Action</classname
+></term>
+    <listitem
+><para
+>Una de les manipulacions de l'usuari a la pila de desfés/refés.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

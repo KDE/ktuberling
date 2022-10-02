@@ -1,0 +1,441 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+> <firstname
+>Rafael</firstname
+> <surname
+>Osuna</surname
+> <affiliation
+><address
+><email
+>rosuna@wol.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Miguel</firstname
+> <surname
+>Revilla Rodríguez</surname
+> <affiliation
+><address
+><email
+>yo@miguelrevilla.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Kira</firstname
+> <surname
+>J. Fernández</surname
+> <affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductora</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>referencia técnica</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Referencia técnica</title>
+
+<para
+>&ktuberling; ofrece una interesante y satisfactoria introducción a la personalización y programación de &kde;. Es posible extender la aplicación. Por ejemplo, sin necesidad de programar, se pueden añadir más zonas de juego cambiando los archivos de gráficos. ¡Añadiendo los archivos de sonido adecuados, los traductores pueden poner el audio en su propio idioma! </para>
+
+<para
+>Si extiende o añade algo al juego, piense en enviar sus mejoras al desarrollador <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+>para incluirlas en futuras versiones. </para>
+
+<sect1 id="for-artists">
+<title
+>Para los artistas</title>
+
+<para
+>Para crear una zona de juego nueva en &ktuberling; debe hacer lo siguiente: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Dibujar una zona de juego y guardarla en un archivo &SVG;, para lo que tiene que: <itemizedlist>
+        <listitem
+><para
+>Llamar a los lugares en los que los elementos se pueden dibujar «background».</para
+></listitem>
+        <listitem
+><para
+>Dar nombre a cada uno de los elementos que se pueden dibujar con un nombre único.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Crear un archivo <literal role="extension"
+>.theme</literal
+>, de acuerdo al siguiente esquema:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>suArchivoSVG</replaceable
+>" name="<replaceable
+>elArchivoEscritorio</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>nombreElemento</replaceable
+>" sound="<replaceable
+>nombreSonido</replaceable
+>" scale="<replaceable
+>algúnValor</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>suArchivoSVG</replaceable
+> es el nombre del archivo &SVG; que contiene el dibujo.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>elArchivoEscritorio</replaceable
+> es el nombre del archivo de escritorio que contiene el nombre del tema.</para
+></listitem>
+      <listitem
+><para
+>Para cada objeto necesitará una entrada <literal
+>&lt;object&gt;</literal
+>. <replaceable
+>nombreElemento</replaceable
+> es el nombre único que se usa en el archivo &SVG;; <replaceable
+>nombreSonido</replaceable
+> es el nombre del sonido que se reproducirá cuando lo arrastre. Consulte el archivo <filename
+>sounds/soundthemes.HOWTO</filename
+> en el código fuente para obtener más información.</para
+></listitem>
+      <listitem
+><para
+>La <literal
+>escala</literal
+> es opcional, y <replaceable
+>algúnValor</replaceable
+> es el factor de escala que se utilizará cuando se dibuja este objeto fuera del almacén, si se especifica se utiliza 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Crear un archivo <literal role="extension"
+>.desktop</literal
+>, de acuerdo con el siguiente esquema</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>nombreDelTema</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>nombreTema</replaceable
+> es el nombre que identifica el tema. Se mostrará en el menú Zona de juego.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Si está añadiendo el tema al repositorio de &ktuberling;, añada los archivos <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> y <literal role="extension"
+>.desktop</literal
+> a la sección <literal
+>FILES</literal
+> de <filename
+>CMakeLists.txt</filename
+> en la carpeta <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Si desea instalarlo por sí mismo, sitúe los archivos <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> y <literal role="extension"
+>.desktop</literal
+> en la carpeta <filename class="directory"
+>ktuberling/pics</filename
+> de <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Para los traductores</title>
+
+<para
+>Además del mecanismo habitual de archivos <literal role="extension"
+>.po</literal
+> para la traducción de los mensajes escritos del programa, también es posible traducir los sonidos. </para>
+
+<para
+>Para crear un nuevo tema de sonido para &ktuberling; debe hacer lo siguiente: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>Grabar los sonidos en un archivo de formato OGG Vorbis rc3.</para
+></listitem>
+  <listitem
+><para
+>Crear un archivo <filename
+><replaceable
+>CódigoDeDosLetrasDeSuIdioma</replaceable
+>.soundtheme</filename
+>, según el siguiente esquema:</para>
+<programlisting
+>&lt;language code="<replaceable
+>suCódigoDeIdiomaDeDosLetras</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>nombreSonido</replaceable
+>" file="<replaceable
+>rutaRelativa</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>suCódigoDeIdiomaDeDosLetras</replaceable
+> es el código de dos letras de su idioma, por ejemplo, gl para Gallego.</para
+></listitem>
+      <listitem
+><para
+>Para cada sonido necesitará una entrada <literal
+>&lt;sonido&gt;</literal
+>. <replaceable
+>nombreSonido</replaceable
+> debería coincidir con el nombreSonido especificado en el tema del juego (consulte el archivo <filename
+>pics/themes.HOWTO</filename
+> en el código fuente). <replaceable
+>rutaRelativa</replaceable
+> debe ser la ruta relativa al lugar donde va a instalar el archivo con este sonido, que suele ser <filename
+><replaceable
+>algunaRutaÚnica</replaceable
+>/<replaceable
+>nombreSonido</replaceable
+>.<replaceable
+>formato</replaceable
+></filename
+> (<replaceable
+>algunaRutaÚnica</replaceable
+> puede ser, por ejemplo, el código de dos letras de su idioma).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Si está añadiendo el tema de sonido a &ktuberling;: en la carpeta de su idioma:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Añada los archivos de sonido y los archivos <literal role="extension"
+>.soundtheme</literal
+> a la carpeta <filename class="directory"
+>data/kdegames/ktuberling</filename
+> de las traducciones de su idioma.</para
+></listitem>
+      <listitem
+><para
+>En este misma misma carpeta necesitará un archivo <filename
+>CMakeLists.txt</filename
+> que describa cómo instalar los archivos, suele ser:</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>códigoDeDosLetrasDeSuIdioma</replaceable
+> )
+INSTALL( FILES <replaceable
+>códigoDeDosLetrasDeSuIdioma</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Si desea instalarlo por si mismo debe:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Sitúe el archivo <filename
+><replaceable
+>códigoDeDosLetrasDeSuIdioma</replaceable
+>.soundtheme</filename
+> en la carpeta <filename class="directory"
+>ktuberling/sounds</filename
+> de <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>Sitúe sus archivos de sonido en la carpeta <filename class="directory"
+>ktuberling/sounds/<replaceable
+>unaRutaÚnica</replaceable
+></filename
+> de <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>Hay información disponible sobre el funcionamiento de los mecanismos de traducción de &kde; en <ulink url="https://i18n.kde.org/translation-howto/index.html"
+> el manual de traducción</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Para programadores</title>
+<para
+>&ktuberling; resulta sencillo de extender por programadores.</para>
+
+<sect2 id="classes">
+<title
+>Clases C++</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>Ventana de nivel principal y administración básica del programa.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>PlayGround</classname
+></term>
+    <listitem
+><para
+>Descripción de uno de los niveles del juego.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>Descripción de uno de los «objetos» gráficos a dibujar.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>Descripción de uno de los idiomas y sus sonidos.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>Action</classname
+></term>
+    <listitem
+><para
+>Una de las manipulaciones del usuario en la pila deshacer/rehacer.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

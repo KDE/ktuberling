@@ -1,0 +1,341 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-12-15</date>
+<releaseinfo
+>0.6.0</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>tehniline külg</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Tehniline külg</title>
+
+<para
+>&ktuberling; pakub omalt poolt hea võimaluse kaasa aidata &kde; kohandamisele ja arendamisele. Ka seda mängu saab laiendada. Nii võib ka ilma programmeerimata lisada uusi mängulaudu lihtsalt graafikafaile redigeerides. Sobivate helifailide lisamisega võivad tõlkijad panna sõnad ka oma emakeeles kõlama! </para>
+
+<para
+>Kui laiendad mängu või lisad sellele midagi, võiksid saata oma panuse ka hooldajale <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestasele</ulink
+> , kes saab siis sinu panuse järgmisse versiooni kaasata. </para>
+
+<sect1 id="for-artists">
+<title
+>Kunstiinimesed</title>
+
+<para
+>&ktuberling;i uue mänguvälja loomiseks on vajalik: </para>
+
+<itemizedlist>
+
+<listitem>
+    <para
+>Joonistada mänguväli SVG-faili, kus peab olema: <itemizedlist>
+            <listitem
+><para
+>koha nimi, kuhu elemente saab lohistada "taustale".</para
+></listitem>
+            <listitem
+><para
+>iga lohistatava elemendi unikaalne nimi.</para
+></listitem>
+        </itemizedlist>
+    </para>
+</listitem>
+
+<listitem>
+    <para
+>Luua .theme-fail, mis peab järgima järgmist skeemi:</para>
+    <programlisting
+>&lt;playground gameboard="<replaceable
+>sinuSVGFail</replaceable
+>" name="<replaceable
+>TöölauaFail</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>elemendiNimi</replaceable
+>" sound="<replaceable
+>heliNimi</replaceable
+>" scale="<replaceable
+>mingiVäärtus</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+    </programlisting>
+    <itemizedlist>
+        <listitem
+><para
+><replaceable
+>sinuSVGFail</replaceable
+> on joonistust sisaldava SVG-faili nimi.</para
+></listitem>
+        <listitem
+><para
+><replaceable
+>TöölauaFail</replaceable
+> on .desktop-faili nimi, mis sisaldab teema nime.</para
+></listitem>
+        <listitem
+><para
+>Igale objektile on vajalik kirje &lt;object&gt;. <replaceable
+>elemendiNimi</replaceable
+> on SVG-failis kasutatav unikaalne nimi. <replaceable
+>heliNimi</replaceable
+> on heli nimi, mida esitatakse objekti lohistamisel. Vaata selle kohta täpsemalt heliteemade HOWTO-d.</para
+></listitem>
+        <listitem
+><para
+>scale ei ole kohustuslik ning <replaceable
+>mingiVäärtus</replaceable
+> on skaleerimistegur, mida kasutatakse objekti lohistamisel väljaspool ladu. Kui see pole määratud, kasutatakse vaikimisi väärtust 1.</para
+></listitem>
+    </itemizedlist>
+</listitem>
+
+<listitem>
+    <para
+>Luua .desktop-fail, mis peab järgima järgmist skeemi</para>
+    <programlisting
+>[KTuberlingTheme]
+    Name=<replaceable
+>teemaNimi</replaceable
+>
+    </programlisting>
+    <itemizedlist>
+        <listitem
+><para
+><replaceable
+>teemaNimi</replaceable
+> on teemat tuvastav nimi, mida näeb mänguvälja menüüs.</para
+></listitem>
+    </itemizedlist>
+</listitem>
+
+<listitem>
+    <para
+>Kui lisad teema &ktuberling;i hoidlasse, lisa ka .svg-, .desktop- ja  .theme-fail kataloogis pics/ faili CMakeLists.txt sektsiooni FILES. </para>
+</listitem>
+
+<listitem>
+    <para
+>Kui soovid selle ainult enda jaoks paigaldada, lisa .svg-, .theme- ja .desktop-fail asukohta `kde4-config --prefix`/share/apps/ktuberling/pics. </para>
+</listitem>
+
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Tõlkijad</title>
+
+<para
+>Lisaks tavalisemale rakenduse käskude, teadete ja muu nähtava <literal role="extension"
+>.po</literal
+>-failide tõlkimisele saab lokaliseerida ka helisid. </para>
+
+<para
+>&ktuberling;i uue heliteema loomiseks on vajalik: </para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Salvestada helid OGG Vorbis rc3 failivormingus.</para
+></listitem>
+
+<listitem>
+<para
+>Luua <replaceable
+>sinuKeeleKahetähelineKood</replaceable
+>.soundtheme fail, mis peab järgima järgmist skeemi:</para>
+<programlisting
+>&lt;language code="<replaceable
+>sinuKeeleKahetähelineKood</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>heliNimi</replaceable
+>" file="<replaceable
+>suhtelineAsukoht</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+<itemizedlist>
+<listitem
+><para
+><replaceable
+>sinuKeeleKahetähelineKood</replaceable
+> on, nagu nimigi ütleb, sinu keele kahetäheline kood, näiteks et eesti keele puhul.</para
+></listitem>
+<listitem
+><para
+>Iga heli puhul peab olema kirje &lt;sound&gt;. <replaceable
+>heliNimi</replaceable
+> peab vastama heli nimele, mis on määratud kindlaks mänguvälja teemas (vaata teema HOWTO-d). <replaceable
+>suhtelineAsukoht</replaceable
+> peab olema see suhtelisena antud asukoht, kuhu kavatsed helid paigutada. Üldiselt peaks see olema mingiUnikaalneAsukoht/heliNimi.vorming (kus mingiUnikaalneAsukoht võib olla näiteks sinu keele kahetäheline kood).</para
+></listitem>
+</itemizedlist>
+</listitem>
+
+<listitem
+><para
+>Kui lisad heliteema &ktuberling;i oma keele kataloogi:</para>
+<itemizedlist>
+<listitem
+><para
+>Lisa heli- ja .soundtheme-failid oma keele tõlgete kataloogi data/kdegames/ktuberling.</para
+></listitem>
+<listitem
+><para
+>Samas kataloogis peab asuma fail CMakeLists.txt, mis kirjeldab, kuidas failid paigaldada. Üldiselt peaks see välja nägema nii:</para>
+<programlisting
+>FILE(GLOB datafiles *.ogg)
+install( FILES ${datafiles} DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/<replaceable
+>sinuKeeleKahetähelineKood</replaceable
+> )
+install( FILES <replaceable
+>sinuKeeleKahetähelineKood</replaceable
+>.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+</programlisting>
+</listitem>
+</itemizedlist>
+</listitem>
+
+<listitem>
+<para
+>Kui soovid selle ainult enda jaoks paigaldada:</para>
+<itemizedlist>
+<listitem
+><para
+>Paiguta fail <replaceable
+>sinuKeeleKahetähelineKood</replaceable
+>.soundtheme asukohta `kde4-config --prefix`/share/apps/ktuberling/sounds.</para
+></listitem>
+<listitem
+><para
+>Paiguta oma helifailid asukohta `kde4-config --prefix`/share/apps/ktuberling/sounds/mingiUnikaalneAsukoht.</para
+></listitem>
+</itemizedlist>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Teavet selle kohta, kuidas käib tõlkimine &kde;s, annab <ulink url="http://l10n.kde.org/docs/translation-howto/index.html"
+>&kde; tõlkimise HOWTO</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Programmeerijad</title>
+<para
+>Õigupoolest on &ktuberling; programmeerijatele üsna hõlpsasti laiendatav.</para>
+
+<sect2 id="classes">
+<title
+>C++ klassid</title>
+
+<variablelist>
+<varlistentry>
+<term
+><classname
+>TopLevel</classname
+></term>
+<listitem>
+<para
+>Tipptaseme aken ja rakenduse baashaldus</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>PlayGround</classname
+></term>
+<listitem>
+<para
+>Mingi konkreetse mängutaseme kirjeldus</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>ToDraw</classname
+></term>
+<listitem>
+<para
+>Mingi konkreetse graafilise <quote
+>objekti</quote
+> kujutamise kirjeldus</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>SoundFactory</classname
+></term>
+<listitem>
+<para
+>Mingi konkreetse keele ja selle helide kirjeldus</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>Action</classname
+></term>
+<listitem>
+<para
+>Konkreetne kasutaja tegevus võta tagasi/tee uuesti võimalustega</para
+> </listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

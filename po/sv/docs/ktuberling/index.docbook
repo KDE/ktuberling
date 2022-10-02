@@ -1,0 +1,966 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potatismannen">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>Handbok Potatismannen</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Granskare</contrib>
+</othercredit>
+
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>Potatismannen är ett spel avsett för små barn. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Potatismannen</keyword>
+<keyword
+>spel</keyword>
+<keyword
+>lek</keyword>
+<keyword
+>konstruktör</keyword>
+<keyword
+>docka</keyword>
+<keyword
+>dekoration</keyword>
+<keyword
+>barn</keyword>
+<keyword
+>potatis</keyword>
+<keyword
+>potatis</keyword>
+<keyword
+>tågstation</keyword>
+<keyword
+>en spelare</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+<para
+>Speltyp: Lek</para>
+<para
+>Antal möjliga spelare: En</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Pizzerialekplats</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Potatismannen är ett enkelt konstruktionsspel lämpligt både för barn och vuxna. Spelets idé är baserat på en förr i tiden populär lek som gick ut på att göra dockor. En potatis utsmyckades med olika småsaker för att få den att likna en pytteliten människa. Potatismannen går mycket längre när det gäller innehållet, och lägger till ett överraskande urval av olika teman. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Hur man spelar</title>
+
+<para
+>Potatismannen är ett spel avsett för små barn. Det kan förstås också passa för vuxna som förblivit unga inombords. </para>
+
+<para
+>Det är en <quote
+>potatiseditor</quote
+>. Det betyder att du kan dra och släppa ögon, munnar, mustascher och andra delar av ansiktet och godsaker på en potatisliknande typ. Det finns andra lekplatser med olika teman, som fungerar på liknande sätt. </para>
+
+<para
+>Det finns ingen vinnare i spelet. Det enda syftet är att göra det roligaste ansiktet du kan. </para>
+
+<para
+>Potatismannen kan också <quote
+>prata</quote
+>. Den säger namnet på objekten som du drar och släpper. Den <quote
+>pratar</quote
+> ett språk som du kan välja. Du kan till och med använda den för att lära dig några nya ord på främmande språk. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Regler och tips</title>
+
+<sect1 id="mouse-operation">
+<title
+>Mushantering</title>
+
+<para
+>Det finns två områden i huvudfönstret: </para>
+
+<itemizedlist>
+<listitem
+><para
+><quote
+>Lekplatsen</quote
+>. </para
+></listitem>
+<listitem
+><para
+><quote
+>Objekt</quote
+>-området, där du väljer objekt som ska placeras på din lekplats. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Det verkliga utseendet hos spelet kan ändras beroende på vilken <quote
+>lekplats</quote
+> som är vald.</para
+></note>
+<screenshot>
+<screeninfo
+>Huvudfönstret i Potatismannen:</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Huvudfönster</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Att placera ett objekt</title>
+
+<para
+>För att dra ett objekt, flytta muspekaren till <quote
+>objekt</quote
+>-området och klicka på det. Flytta därefter muspekaren till <quote
+>lekplatsen</quote
+> och klicka igen. <note
+><para
+>Objektens storlek kan ändras medan de dras. Vissa av objekten som är för stora har skalats ner för att passa in i området med <quote
+>objekt</quote
+>.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Att flytta ett objekt</title>
+<para
+>När det väl har släppts på <quote
+>lekplatsen</quote
+>, kan ett objekt flyttas. Klicka bara på objektet för att välja, flytta det till en ny plats och klicka igen för att släppa det. När du släpper det, visas det ovanpå andra objekt som delvis dolde det. Det här tricket är användbart för att få glasögonen och ögonen riktigt placerade. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Att ta bort ett objekt</title>
+<para
+>För att ta bort ett objekt som har släppts på <quote
+>lekplatsen</quote
+>, dra det tillbaka från <quote
+>lekplatsen</quote
+> till <quote
+>objekt</quote
+>-området. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Översikt av gränssnittet </title>
+<sect1 id="the-tool-bar">
+<title
+>Verktygsraden</title>
+
+<para
+>Verktygsraden tillhandahåller knappar för de vanligaste funktionerna. </para>
+
+<table>
+<title
+>Verktygsradens knappar</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Knapp&nbsp;</entry>
+      <entry
+>Namn&nbsp;</entry>
+      <entry
+>Motsvarande meny&nbsp;</entry>
+      <entry
+>Åtgärd</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>Knappen nytt spel</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Ny</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nytt spel</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Rensar <quote
+>lekplatsen</quote
+>. Det tar bort alla delar från lekplatsen så att en ny figur kan skapas.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>Knappen ladda</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Ladda...</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Ladda...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Öppnar en befintlig <literal role="extension"
+>.tuberling</literal
+>-fil från hårddisken.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>Knappen spara</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Spara</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Spara</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Sparar din skapelse till din hemkatalog, eller till någon annan katalog på hårddisken. Filen <literal role="extension"
+>.tuberling</literal
+> sparas som en liten fil där bara positionen för objekten sparas.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>Knappen skriv ut</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Skriv ut...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Skriv ut...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Skriver ut din bild.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>Knappen ångra</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Ångra</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Ångra</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Ångrar den senaste åtgärden.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>Knappen gör om</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Gör om</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Gör om</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Gör om den senaste åtgärden.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Menyalternativen</title>
+
+<sect2>
+<title
+>Menyn Spel</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nytt</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Rensar</action
+> <quote
+>lekplatsen</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Ladda...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Öppnar en befintlig <literal role="extension"
+>.tuberling</literal
+>-fil</action
+> från hårddisken.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Spara</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Sparar</action
+> din skapelse. Potatismannen sparas till en liten fil där bara positionen för objekten sparas.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Spara som bild...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Skapar en grafikfil</action
+> som innehåller en bild av din potatisman.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Skriv ut...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Skriver ut</action
+> din bild av potatismannen.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Avslutar</action
+> Potatismannen.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Menyn Redigera</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Ångra</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ångra</action
+> den senaste placeringen av ett  <quote
+>objekt</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Gör om</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Gör om</action
+> den senaste placeringen av ett <quote
+>objekt</quote
+>. Det här menyalternativet är bara tillgängligt om du tidigare har använt <guilabel
+>Ångra</guilabel
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Kopiera </guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Kopiera</action
+> <quote
+>lekplatsen</quote
+> till klippbordet.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Menyn Visa</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Visa</guimenu
+> <guimenuitem
+>Fullskärmsläge</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Växlar det grafiska gränssnittet till fullskärmsläge.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Menyn Lekplats</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Lekplats</guimenu
+> <guimenuitem
+>Lås proportion</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Alternativet bevarar lekplatsens proportion när storleken på Potatismannens fönster ändras. När lekplatsens proportion inte motsvarar fönstret, fylls bakgrunden med den angiven i temat.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Lekplats</guimenu
+> <guimenuitem
+><replaceable
+>Lekplatsens namn</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Byter till lekplatsen</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Den innehåller lekplatser installerade på systemet. </para>
+<para
+>Potatismannen kommer ihåg lekplatsen som valdes senast nästa gång programmet startar. </para>
+</sect2>
+
+<sect2>
+<title
+>Menyn Tal</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Tal</guimenu
+> <guimenuitem
+>Inget ljud</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Stänger av ljud</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Tal</guimenu
+> <guimenuitem
+><replaceable
+>Språknamn</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Sätter på ljud och talar det valda språket</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Potatismannen kommer ihåg det här alternativet nästa gång programmet startar. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>Menyerna Inställningar och Hjälp</title>
+
+<para
+>Dessutom har Potatismannen de vanliga menyalternativen <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> i &kde;. För mer information, läs avsnitten <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s Grunder. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Vanliga frågor</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Jag vill ändra hur spelet ser ut. Kan man göra det? </para
+></question>
+ <answer
+><para
+>Ja, det kan man. Se <link linkend="theme_change"
+>följande avsnitt</link
+> i 'Översikt av gränssnittet' för detaljerad information.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan man använda tangentbordet för att spela? </para
+></question>
+ <answer
+><para
+>Nej. Spelet kan inte spelas med tangentbordet.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag har gjort en jättebra bild och vill visa den för mina vänner. Kan man spara den som en bild?</para
+></question>
+  <answer
+><para
+>Ja. Titta på <link linkend="game-save-as-picture"
+>följande avsnitt</link
+> i 'Översikt av gränssnittet' för att se hur man kan spara nuvarande session som en bild.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Tack till och licens</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - nuvarande underhåll</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - Originalidé, ursprungliga bilder och engelska ljud</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - &kde;-programmering</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - Test, råd och hjälp</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - Granskning av dokumentationen</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - Förbättring av dokumentation</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>

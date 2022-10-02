@@ -1,0 +1,990 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>Das Handbuch zu &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Korrektur</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Maren</firstname
+><surname
+>Pakura</surname
+><affiliation
+><address
+><email
+>maren@kde.org</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>2016-05-11</date>
+<releaseinfo
+>1.0.0 (Anwendungen 16.04)</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&ktuberling; ist ein Spiel für kleine Kinder. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>Spiel</keyword>
+<keyword
+>Kinderspiel</keyword>
+<keyword
+>gestalten</keyword>
+<keyword
+>Puppe</keyword>
+<keyword
+>verzieren</keyword>
+<keyword
+>Kinder</keyword>
+<keyword
+>Kartoffelknülch</keyword>
+<keyword
+>Kartoffel</keyword>
+<keyword
+>Eisenbahnstation</keyword>
+<keyword
+>ein Spieler</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Einführung</title>
+<para
+>Spieltyp: Kinderspiel</para>
+<para
+>Anzahl der Spieler: Einer</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Pizzeria-Spielfeld</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&ktuberling; ist ein einfaches Verkleidungsspiel für Kinder und jung gebliebene Erwachsene. Die Idee des Spiels stammt aus den bekannten Anziehspiel für Puppen. Eine Kartoffel wird mit verschiedenen kleinen Dingen verkleidet, damit sie einer Person ähnlich sieht. In &ktuberling; gibt es jedoch viel mehr Spielmöglichkeiten mit unterschiedlichen Designs. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Spielanleitung</title>
+
+<para
+>&ktuberling; ist ein Spiel für kleine Kinder. Aber es ist auch für Erwachsene geeignet, die jung geblieben sind. </para>
+
+<para
+>Es ist ein <quote
+>Kartoffel-Editor</quote
+>. Das bedeutet, Sie können Augen, Münder, Schnurrbärte und andere Teile des Gesichts und Extras in den Kartoffel-Mann ziehen und dort ablegen (drag and drop). Außerdem gibt es noch andere Designs als Spielplätze. </para>
+
+<para
+>In diesem Spiel gibt es keinen Gewinner. Der einzige Sinn des Spiels besteht darin, das lustigste Gesicht zu machen, das möglich ist. </para>
+
+<para
+>&ktuberling; kann auch <quote
+>sprechen</quote
+>. Das Programm <quote
+>spricht</quote
+> die Namen der Objekte, die Sie ziehen und fallenlassen. Die Sprache können Sie im Menü einstellen. Sie können also beim Spielen einige Vokabeln lernen. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Spielregeln und Tipps</title>
+
+<sect1 id="mouse-operation">
+<title
+>Maus-Funktionen</title>
+
+<para
+>Es gibt zwei Bereiche im Hauptfenster: </para>
+
+<itemizedlist>
+<listitem
+><para
+>das <quote
+>Spielfeld</quote
+>. </para
+></listitem>
+<listitem
+><para
+>das <quote
+>Objekt</quote
+>-Feld. Hier können Sie die Objekte auswählen, die Sie auf dem Spielfeld platzieren möchten. </para
+></listitem>
+</itemizedlist>
+<note
+><title
+>Hinweis:</title
+><para
+>Das Erscheinungsbild des Programms hängt vom ausgewählten <emphasis
+>Spielfeld</emphasis
+> ab.</para
+></note>
+<screenshot>
+<screeninfo
+>Das &ktuberling;-Hauptfenster:</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Hauptfenster</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Platzieren eines Objekts</title>
+
+<para
+>Um ein Objekt zu verschieben, bewegen Sie die Maus in das <quote
+>Objekte</quote
+>-Feld auf der rechten Seite. Klicken Sie mit der &LMBn; auf ein Objekt. Schieben Sie es dann in das <quote
+>Spielfeld</quote
+> und klicken Sie wieder, um es abzulegen. <note
+><title
+>Hinweis:</title
+><para
+>Die Größe eines Objekts kann sich beim Ziehen ändern. Einige große Objekte werden im Objektfeld verkleinert angezeigt.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Verschieben eines Objekts</title>
+<para
+>Wenn Sie ein Objekt im <quote
+>Spielfeld</quote
+> abgelegt haben, können Sie es dort bewegen. Klicken Sie einfach auf das Objekt, um es auszuwählen, ziehen Sie es an den neuen Platz und klicken Sie nochmal, um es loszulassen. Es wird jetzt auf anderen Objekten abgelegt, falls es vorher teilweise verdeckt war. Dieser Trick ist hilfreich, um Augen und Brille richtig zu platzieren. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Entfernen eines Objekts</title>
+<para
+>Um ein Objekt zu entfernen, das sich im <quote
+>Spielfeld</quote
+> befindet, ziehen Sie es einfach in das <quote
+>Objekt</quote
+>-Feld zurück. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Die Benutzeroberfläche </title>
+<sect1 id="the-tool-bar">
+<title
+>Die Werkzeugleiste</title>
+
+<para
+>Die Werkzeugleiste ermöglicht einen schellen Zugriff auf die am häufigsten gebrauchten Funktionen.  </para>
+
+<table>
+<title
+>Die Knöpfe in der Werkzeugleiste</title>
+<tgroup cols="4">
+
+<thead>
+<row>
+<entry
+>Knopf</entry>
+<entry
+>Name</entry>
+<entry
+>Menüeintrag</entry>
+<entry
+>Aktion</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-new.png"/>
+  </imageobject>
+	<textobject
+><phrase
+>Knopf <quote
+>Neues Spiel</quote
+></phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+  <guiicon
+>Neu</guiicon
+></entry>
+<entry>
+  <link linkend="game-new"
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Neu</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Löscht alles vom <quote
+>Spielfeld</quote
+>, sodass eine neue Dekoration geschaffen werden kann. </entry>
+</row>
+
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-open.png"/>
+  </imageobject>
+	<textobject
+><phrase
+>Knopf <quote
+>Laden</quote
+></phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry
+><guiicon
+>Laden</guiicon
+></entry>
+<entry>
+  <link linkend="game-load"
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Laden ...</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Lädt eine vorhandene Kartoffelknülch-Datei von der Festplatte. </entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-save.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Knopf <quote
+>Speichern</quote
+></phrase
+></textobject>
+  </inlinemediaobject>
+</entry>
+<entry
+><guiicon
+>Speichern</guiicon
+></entry>
+<entry>
+  <link linkend="game-save"
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Speichern</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Speichert Ihre Kreation in Ihrem persönlichen Ordner, oder, wenn Sie es wünschen, in einem anderen Ordner auf der Festplatte. Der Kartoffelknülch wird in einer kleinen Datei gespeichert, in der nur die Positionen der Objekte gespeichert werden. </entry>
+</row>
+
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="document-print.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Knopf <quote
+>Drucken</quote
+></phrase
+></textobject>
+</inlinemediaobject>
+</entry>
+<entry>
+<guiicon
+>Drucken</guiicon>
+</entry>
+<entry>
+  <link linkend="game-print"
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Drucken ...</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Druckt Ihr Bild. </entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="edit-undo.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Knopf <quote
+>Rückgängig</quote
+></phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+  <guiicon
+>Rückgängig</guiicon>
+  </entry>
+<entry>
+  <link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Rückgängig</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Macht den letzten Vorgang rückgängig.</entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="edit-redo.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Knopf <quote
+>Wiederherstellen</quote
+></phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+<guiicon
+>Wiederherstellen</guiicon>
+</entry>
+<entry>
+  <link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Wiederherstellen</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Stellt den letzten Vorgang wieder her.</entry>
+</row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Die Menüeinträge</title>
+
+<sect2>
+<title
+>Das Menü Spiel</title>
+
+<variablelist>
+
+<varlistentry id="game-new">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Neu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Löscht</action
+> das <quote
+>Spielfeld</quote
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-load">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Laden ...</guimenuitem
+> </menuchoice
+></term>
+ <listitem
+><para
+><action
+>Lädt eine existierende Kartoffelknülch-Datei</action
+> vom Laufwerk.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-save">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Speichern</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Speichert</action
+> Ihre Kreation. Der Kartoffelknülch wird in einer kleinen Datei gespeichert, wo nur die Position der Objekte gespeichert wird. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-save-as-picture">
+<term
+><menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Als Bild speichern ...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Erzeugt eine Grafikdatei</action
+>, die ein Bild von Ihrem Kartoffelknülch enthält. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-print">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Drucken ...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Druckt</action
+> Ihr Kartoffelknülch-Bild. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Beendet</action
+> &ktuberling;. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Das Menü Bearbeiten</title>
+
+<variablelist>
+
+<varlistentry id="edit-undo">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+> <guimenuitem
+>Rückgängig</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Macht die letzte <quote
+>Objekt</quote
+>-Platzierung rückgängig. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="edit-redo">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+> <guimenuitem
+>Wiederherstellen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Stellt die letzte <quote
+>Objekt</quote
+>-Platzierung wieder her. Diese Menü-Option ist erst dann aktiviert, wenn Sie vorher <guilabel
+>Rückgängig</guilabel
+> benutzt haben. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+> <guimenuitem
+>Kopieren</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Kopiert</action
+> das <quote
+>Spielfeld</quote
+> in die Zwischenablage.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Das Menü Spielfeld</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spielfeld</guimenu
+><guimenuitem
+>Seitenverhältnis beibehalten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Mit dieser Einstellung wird das Seitenverhältnis des Spielfeldes beim Ändern der Fenstergröße von &ktuberling; beibehalten. Wenn das Seitenverhältnis des Spielfeldes mit dem des Fensters nicht übereinstimmt, so wird die <emphasis
+>Freifläche</emphasis
+> des Fensters mit dem festgelegten Hintergrund gefüllt. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="theme_change">
+<term
+><menuchoice
+><guimenu
+>Spielfeld</guimenu
+> <guimenuitem
+><replaceable
+>Name des Spielfeldes</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Wechselt zu diesem Spielfeld</action
+>. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Hier sind alle Spielfelder enthalten, die auf Ihrem System installiert sind. </para>
+<para
+>&ktuberling; merkt sich das zuletzt benutzte Spielfeld für den nächsten Programmstart. </para>
+</sect2>
+
+<sect2>
+<title
+>Das Menü Sprache</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Sprache</guimenu
+><guimenuitem
+>Keine Sprachausgabe</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Schaltet</action
+> die Sprachausgabe ab.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Sprache</guimenu
+><guimenuitem
+><replaceable
+>Name der Sprache</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Schaltet</action
+> das Vorlesen der Objekte in der gewählten Sprache ein. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>&ktuberling; merkt sich die Einstellung für den nächsten Programmstart. </para>
+
+</sect2>
+
+<sect2 id="settings">
+<title
+>Das Menü Einstellungen</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Vollbildmodus</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Schaltet den Vollbildmodus</action
+> ein oder aus. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Zusätzlich hat &ktuberling; die bekannten &kde;-Einträge im Menü <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+>, weitere Informationen dazu finden Sie in den Abschnitten über die Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Einstellungen</ulink
+> und <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> der &kde;-Grundlagen. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Häufig gestellte Fragen</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Kann ich das Erscheinungsbild des Spiels ändern? </para
+></question>
+ <answer
+><para
+>Ja, wählen Sie im Menü <link linkend="theme_change"
+><guimenu
+>Spielfeld</guimenu
+></link
+> ein neues Design aus.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kann ich mit der Tastatur spielen? </para
+></question>
+ <answer
+><para
+>Nein, dieses Spiel kann nicht mit der Tastatur gespielt werden.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ich habe ein tolles Bild gemalt und möchte es meinen Freunden zeigen. Kann ich das Bild speichern?</para
+></question>
+  <answer
+><para
+>Ja, um ein Bild zu speichern, wählen Sie <link linkend="game-save-as-picture"
+> <menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Als Bild speichern ...</guimenuitem
+> </menuchoice
+></link
+> in der Menüleiste.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Danksagungen und Lizenz</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - aktueller Betreuer</para>
+</listitem>
+
+<listitem>
+<para
+>Von John Calhoun stammt die ursprüngliche Idee, die Bilder und die englischen Klänge.</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - &kde;-Programmierung.</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> hat getestet, Hinweise und Hilfe gegeben.</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> hat dieses Dokument Korrektur gelesen.</para>
+</listitem>
+
+<listitem>
+<para
+>Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - Bearbeitung der Dokumentation</para>
+</listitem>
+</itemizedlist
+> 
+
+<para
+>Übersetzung: Maren Pakura <email
+>maren@kde.org</email
+></para
+><para
+>Überarbeitung der Übersetzung: Johannes Obermayr <email
+>johannesobermayr@gmx.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>

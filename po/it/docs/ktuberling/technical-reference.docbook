@@ -1,0 +1,417 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Andrea</firstname
+><surname
+> Celli</surname
+><affiliation
+><address
+><email
+>andrea.celli@libero.it</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione tecnica</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>documentazione tecnica</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Documentazione tecnica</title>
+
+<para
+>&ktuberling; fornisce un'introduzione agevole e gratificante alla programmazione e personalizzazione in &kde;. Questa applicazione può essere estesa. Per esempio, si possono introdurre nuove scene cambiando i file grafici, senza bisogno di programmare. Aggiungendo gli appropriati file sonori, i traduttori possono mettere i commenti sonori nella propria lingua. </para>
+
+<para
+>Se crei estensioni o aggiunte al gioco, considera l'idea di inviare i tuoi contributi allo sviluppatore <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> affinché possa includerli nelle prossime versioni. </para>
+
+<sect1 id="for-artists">
+<title
+>Per i disegnatori</title>
+
+<para
+>Per creare una nuova scena di &ktuberling; devi: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Disegnare lo sfondo in formato &SVG;, per farlo dovrai: <itemizedlist>
+        <listitem
+><para
+>Dare un nome al punto dove gli oggetti possono essere trascinati sullo <quote
+>sfondo</quote
+>.</para
+></listitem>
+        <listitem
+><para
+>Dare un nome univoco a tutti gli oggetti trascinabili.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Creare un file <literal role="extension"
+>.theme</literal
+>. Che deve rispettare questo schema:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>TuoFileSVG</replaceable
+>" name="<replaceable
+>IlFileDesktop</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>NomeOggetto</replaceable
+>" sound="<replaceable
+>NomeSuono</replaceable
+>" scale="<replaceable
+>ValoreOpportuno</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>TuoFileSVG</replaceable
+> è il nome del file &SVG; che contiene il disegno.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>IlFileDesktop</replaceable
+> è il nome del file del desktop che ha il nome del tema.</para
+></listitem>
+      <listitem
+><para
+>Per ogni oggetto ti serve una voce <literal
+>&lt;object&gt;</literal
+>. <replaceable
+>NomeOggetto</replaceable
+> è il nome univoco che hai usato nel file &SVG;, <replaceable
+>NomeSuono</replaceable
+> è la voce che si sente quando trascini l'oggetto. Vedi il file <filename
+>sounds/soundthemes.HOWTO</filename
+> presente nel codice sorgente per maggiori informazioni.</para
+></listitem>
+      <listitem
+><para
+><literal
+>scale</literal
+> è opzionale e <replaceable
+>ValoreOpportuno</replaceable
+> è il fattore di scala che viene applicato all'oggetto quando viene trascinato fuori dal deposito. Se non è specificato, sarà 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Per creare un file <literal role="extension"
+>.desktop</literal
+> bisogna seguire questo schema:</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>NomeTema</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>NomeTema</replaceable
+> è il nome che identifica il tema. Verrà mostrato nel menu Scena.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Se vuoi aggiungere il tuo tema nel deposito di &ktuberling;, devi aggiungere i file <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> e <literal role="extension"
+>.desktop</literal
+> alla sezione <literal
+>FILES</literal
+> del file <filename
+>CMakeLists.txt</filename
+> nella cartella <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Se vuoi installarlo per te stesso, copia i file <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> e <literal role="extension"
+>.desktop</literal
+> all'interno della cartella <filename class="directory"
+>ktuberling/pics</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Per i traduttori</title>
+
+<para
+>Oltre all'abituale sistema dei file <literal role="extension"
+>.po</literal
+> per tradurre messaggi e richieste del programma, occorrerà localizzare anche i file sonori. </para>
+
+<para
+>Per creare un nuovo tema sonoro per &ktuberling; devi: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>Registrare i suoni su file con formato OGG Vorbis rc3.</para
+></listitem>
+  <listitem
+><para
+>Creare un file <filename
+><replaceable
+>Codice2LettereXTuaLingua</replaceable
+></filename
+>. soundtheme file, che deve avere questo schema:</para>
+<programlisting
+>&lt;language code="<replaceable
+>Codice2LettereXTuaLingua</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>NomeSuono</replaceable
+>" file="<replaceable
+>PercorsoRelativo</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>Codice2LettereXTuaLingua</replaceable
+> è il codice in due lettere che individua la tua lingua, ad esempio "it" per italiano.</para
+></listitem>
+      <listitem
+><para
+>Per ogni suono serve una riga <literal
+>&lt;sound&gt;</literal
+>. <replaceable
+>NomeSuono</replaceable
+> deve corrispondere al NomeSuono specificato nel tema della scena (vedi <filename
+>pics/themes.HOWTO</filename
+> dal codice sorgente). <replaceable
+>PercorsoRelativo</replaceable
+> deve essere il percorso relativo da seguire per trovare dove è installato il file con questo suono. Tipicamente sarà <filename
+><replaceable
+>QualcosaDiUnivoco</replaceable
+>/<replaceable
+>NomeSuono</replaceable
+>.<replaceable
+>formato</replaceable
+></filename
+> (ad esempio, <replaceable
+>QualcosaDiUnivoco</replaceable
+> potrebbe essere il codice di due lettere della tua lingua).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Se vuoi aggiungere il tuo tema sonoro a &ktuberling;:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Aggiungi i file audio e i file <literal role="extension"
+>.soundtheme</literal
+> nella cartella <filename class="directory"
+>data/kdegames/ktuberling</filename
+> delle traduzioni della tua lingua.</para
+></listitem>
+      <listitem
+><para
+>Proprio in questa cartella dovrai creare un file <filename
+>CMakeLists.txt</filename
+> che indica come installare i file. La sua forma tipica è:</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>Codice2LettereXTuaLingua</replaceable
+> )
+INSTALL( FILES <replaceable
+>Codice2LettereXTuaLingua</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Se vuoi installarlo per te stesso:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Copia il file <filename
+><replaceable
+>Codice2LettereXTuaLingua</replaceable
+>.soundtheme</filename
+> nella cartella <filename class="directory"
+>ktuberling/sounds</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>Copia i tuoi file audio nella cartella <filename class="directory"
+>ktuberling/sounds/<replaceable
+>unPercorsoUnivoco</replaceable
+></filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>Le informazioni su come utilizzare i meccanismi di traduzione per &kde; sono disponibili su <ulink url="https://l10n.kde.org/docs/translation-howto/index.html"
+>The &kde; Translation HOWTO</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Per i programmatori</title>
+<para
+>Non è molto difficile per un programmatore estendere &ktuberling;.</para>
+
+<sect2 id="classes">
+<title
+>Classi C++</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>Gestione a alto livello della finestra e del programma base.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>PlayGround</classname
+></term>
+    <listitem
+><para
+>Descrizione di uno dei livelli di gioco.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>Descrizione di uno degli <quote
+>oggetti</quote
+> grafici da disegnare.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>Descrizione di una lingua e dei suoi suoni.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>Action</classname
+></term>
+    <listitem
+><para
+>Una delle manipolazioni dell'utente sullo stack annulla/rifai.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

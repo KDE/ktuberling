@@ -1,0 +1,339 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Robert</firstname
+><surname
+>Gomułka</surname
+><affiliation
+><address
+><email
+>carramba@epf.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2006-05-05</date
+> <releaseinfo
+>0.05.01</releaseinfo
+> <keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>dokumentacja techniczna</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Dokumentacja techniczna</title>
+
+<para
+>&ktuberling; oferuje oględne i odpłacające wprowadzenie do dostrajania i programowania &kde;. Program może być rozszerzany. Na przykład, bez żadnego kodowania, nowe plansze mogą być dodawane za pomocą zmiany plików graficznych. Poprzez dodanie odpowiednich plików dźwiękowych, tłumacze mogą stworzyć dźwięki w ich ojczystym języku! </para>
+
+<para
+>Jeżeli rozszerzasz lub dodajesz coś do gry, pomyśl o przesłaniu Twoich dodatków do programisty <ulink url="mailto:aacid@kde.org"
+>Albert Astals Cid</ulink
+>, w celu włączenia w kolejnych wersjach. </para>
+
+<sect1 id="for-artists">
+<title
+>Dla artystów</title>
+
+<para
+>Aby stworzyć planszę KTuberlinga, należy: </para>
+
+<itemizedlist>
+
+<listitem>
+    <para
+>Narysować planszę w pliku SVG, gdzie znowu trzeba: <itemizedlist>
+            <listitem
+><para
+>Nazwać miejsce, gdzie obiekty mogą być przeciągane, "background".</para
+></listitem>
+            <listitem
+><para
+>Przydzielić unikalną nazwę dla każdego z obiektów, który można przesuwać.</para
+></listitem>
+        </itemizedlist>
+    </para>
+</listitem>
+
+<listitem>
+    <para
+>Stworzyć plik .theme, który ma mieć następujący schemat:</para>
+    <programlisting
+>&lt;playground gameboard="<replaceable
+>TwójPlikSVG</replaceable
+>" name="<replaceable
+>plikDesktop</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>nazwaObiektu</replaceable
+>" sound="<replaceable
+>nazwaDźwięku</replaceable
+>" scale="<replaceable
+>jakaśWartość</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+    </programlisting>
+    <itemizedlist>
+        <listitem
+><para
+><replaceable
+>TwójPlikSVG</replaceable
+> to nazwa pliku SVG zawierającego rysunek.</para
+></listitem>
+        <listitem
+><para
+><replaceable
+>plikDesktop</replaceable
+> to nazwa pliku pulpitu, który ma nazwę motywu.</para
+></listitem>
+        <listitem
+><para
+>Dla każdego obiektu potrzeba wpisu &lt;object&gt;. <replaceable
+>nazwaObiektu</replaceable
+> to unikalna nazwa, której użyto w pliku SVG, <replaceable
+>nazwaDźwięku</replaceable
+> to nazwa dźwięku, który będzie odtworzony podczas przeciągania, rzuć okiem na poradnik motywów dźwiękowych w celu uzyskania dalszych informacji.</para
+></listitem>
+        <listitem
+><para
+>scale jest opcjonalny, a <replaceable
+>jakaśWartość</replaceable
+> to współczynnik skali, użyty przy rysowaniu obiektu poza składem. Jeśli nie jest określony, równa się 1.</para
+></listitem>
+    </itemizedlist>
+</listitem>
+
+<listitem>
+    <para
+>Stworzyć plik .desktop, zgodnie z następującym schematem</para>
+    <programlisting
+>[KTuberlingTheme]
+    Name=<replaceable
+>nazwaMotywu</replaceable
+>
+    </programlisting>
+    <itemizedlist>
+        <listitem
+><para
+><replaceable
+>nazwaMotywu</replaceable
+> to nazwa określająca motyw, będzie pokazana w menu Plansza.</para
+></listitem>
+    </itemizedlist>
+</listitem>
+
+<listitem>
+    <para
+>Jeżeli dodajesz motyw do SVN-a KTuberlinga, dodaj pliki .svg, .theme, .desktop do sekcji FILES CMakeLists.txt w katalogu pics/ </para>
+</listitem>
+
+<listitem>
+    <para
+>Jeśli chcesz samemu to zainstalować, umieść pliki .svg, .theme, .desktop w `kde4-config --prefix`/share/apps/ktuberling/pics </para>
+</listitem>
+
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Dla tłumaczy</title>
+
+<para
+>Oprócz zwyczajowego mechanizmu plików <literal role="extension"
+>.po</literal
+> do tłumaczenia etykiet i tekstów zachęty, dźwięki również mogą zostać zlokalizowane. </para>
+
+<para
+>Aby stworzyć nowy motyw dźwiękowy KTuberlings, należy: </para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Zapisać pliki dźwiękowe w formacie OGG Vorbis rc3.</para
+></listitem>
+
+<listitem>
+<para
+>Stworzyć plik  <replaceable
+>DwuliterowyKodTwojegoJęzyka</replaceable
+>.soundtheme, zgodnie z następującym schematem:</para>
+<programlisting
+>&lt;language code="<replaceable
+>dwuliterowyKodJęzyka</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>nazwaDźwięku</replaceable
+>" file="<replaceable
+>względnaŚcieżka</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+<itemizedlist>
+<listitem
+><para
+><replaceable
+>dwuliterowyKodJęzyka</replaceable
+> to dwuliterowy kod Twojego języka, na przykład pl dla polskiego.</para
+></listitem>
+<listitem
+><para
+>Dla każdego dźwięku, należy dodać pozycję w pliku. <replaceable
+>NazwaDźwięku</replaceable
+> powinna być taka sama jak nazwa, określona w motywie tła (więcej informacji na ten temat w dokumentacji motywów). <replaceable
+>względnaŚcieżka</replaceable
+> powinna określać względną ścieżkę do katalogu, w którym zainstalujesz plik dźwiękowy. Zwykle będzie to coś w rodzaju: jakaśUnikalnaŚcieżka/nazwaDźwięku.format (jakaśUnikalnaŚcieżka może być na przykład dwuliterowym kodem twojego języka).</para
+></listitem>
+</itemizedlist>
+</listitem>
+
+<listitem
+><para
+>Jeśli dodajesz motyw dźwiękowy do SVN-a KTuberlinga:</para>
+<itemizedlist>
+<listitem
+><para
+>Dodaj pliki dźwiękowe i pliki .soundtheme do katalogu tłumaczeń twojego języka w data/kdegames/ktuberling.</para
+></listitem>
+<listitem
+><para
+>W tym samym katalogu, należy utworzyć plik CMakeLists.txt opisujący sposób instalacji plików, zwykle będzie miał taką zawartość:</para>
+<programlisting
+>FILE(GLOB datafiles *.ogg)
+install( FILES ${datafiles} DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/<replaceable
+>dwuliterowyKodTwojegoJęzyka</replaceable
+> )
+install( FILES <replaceable
+>dwuliterowyKodTwojegoJęzyka</replaceable
+>.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ ) 
+</programlisting>
+</listitem>
+</itemizedlist>
+</listitem>
+
+<listitem>
+<para
+>Jeśli chcesz zainstalować to dla siebie:</para>
+<itemizedlist>
+<listitem
+><para
+>Umieść plik <replaceable
+>dwuliterowyKodTwojegoJęzyka</replaceable
+>.soundtheme w katalogu: `kde4-config --prefix`/share/apps/ktuberling/sounds</para
+></listitem>
+<listitem
+><para
+>Umieść swoje pliki dźwiękowe w `kde4-config --prefix`/share/apps/ktuberling/sounds/jakaśUnikalnaŚcieżka</para
+></listitem>
+</itemizedlist>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Informacje, jak pracować z mechanizmami tłumaczeń w &kde; są dostępne w <ulink url="http://i18n.kde.org/translation-howto/index.html"
+>Poradniku tłumaczenia &kde;</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Dla programistów</title>
+<para
+>&ktuberling; tak naprawdę nie jest trudny do rozszerzenia przez programistów.</para>
+
+<sect2 id="classes">
+<title
+>klasy C++</title>
+
+<variablelist>
+<varlistentry>
+<term
+><classname
+>TopLevel</classname
+></term>
+<listitem>
+<para
+>Okno górnego poziomu i podstawowe zarządzanie programem</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>PlayGround</classname
+></term>
+<listitem>
+<para
+>Opis jednego z poziomów gry</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>ToDraw</classname
+></term>
+<listitem>
+<para
+>Opis jednego z <quote
+>obiektów</quote
+> graficznych do narysowania</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>SoundFactory</classname
+></term>
+<listitem>
+<para
+>Opis jednego z języków i jego dźwięków</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>Action</classname
+></term>
+<listitem>
+<para
+>Jedna z akcji użytkownika na stosie cofnij/ponów</para
+> </listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

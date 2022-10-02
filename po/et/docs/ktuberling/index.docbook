@@ -1,0 +1,1043 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&ktuberling;">
+  <!ENTITY package "kdegames">
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>&ktuberling;i käsiraamat</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Korrigeerija</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>2013-05-06</date>
+<releaseinfo
+>0.8.0 (&kde; 4.11)</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&ktuberling; on väikelastele mõeldud mäng. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>mäng</keyword>
+<keyword
+>lastemäng</keyword>
+<keyword
+>konstruktor</keyword>
+<keyword
+>nukk</keyword>
+<keyword
+>kaunistamine</keyword>
+<keyword
+>lapsed</keyword>
+<keyword
+>tuberling</keyword>
+<keyword
+>kartul</keyword>
+<keyword
+>raudteejaam</keyword>
+<keyword
+>üks mängija</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+<para
+>Mängu tüüp: lastemäng</para>
+<para
+>Mängijate arv: üks</para>
+<para
+>&ktuberling; on lihtne konstruktorimäng, mis sobib nii lastele kui ka täiskasvanutele. Mäng on saanud eeskuju kunagi väga menukast nuku valmistamise viisist, mille puhul kartulile lisati mitmesuguseid elemente, et see näeks välja nagu väike inimolend. &ktuberling; pakub aga palju enamat nii sisu kui ka teemade poolest. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Kuidas mängida</title>
+
+<para
+>&ktuberling; on väikestele lastele mõeldud mäng. Mõistagi võivad seda mängida ka täiskasvanud, kelles on säilinud piisavalt last. </para>
+
+<para
+>See on omamoodi <quote
+>kartuliredaktor</quote
+>.See tähendab, et sa võid lohistada silmi, suid, vuntse ning muid kehaosi ja lisajubinaid kartuliga sarnaneva mehikese peale. Lisaks sellele on aluseks võimalik võtta ka veel mitmeid asju ja kasutada erinevaid teemasid. </para>
+
+<para
+>Selles mängus võitjat ei olegi - selle ainus mõte on valmistada naljakaim tegelane, keda sa vähegi suudad ette kujutada. </para>
+
+<para
+>&ktuberling; võib ka <quote
+>kõnelda</quote
+>, täpsemalt öelda välja nende objektide nimetused, mida sa parajasti lohistad. Ta <quote
+>räägib</quote
+> just selles keeles, mida sa oled valinud, nii et sa võid seda mängu kasutada isegi mõne võõrkeelse sõna äraõppimiseks. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Reeglid ja nõuanded</title>
+
+<sect1 id="mouse-operation">
+<title
+>Hiireoperatsioonid</title>
+
+<para
+>Peaaken jaguneb kaheks: </para>
+
+<itemizedlist>
+<listitem
+><para
+><quote
+>Mängulaud</quote
+>. </para
+></listitem>
+<listitem
+><para
+><quote
+>Objektide</quote
+> ala, kus saab valida objekte, mida mängulauale asetada. </para
+></listitem>
+</itemizedlist>
+<note
+><title
+>Märkus:</title
+><para
+>Rakenduse tegelik väljanägemine sõltub sellest, milline <quote
+>mängulaud</quote
+> valida.</para
+></note>
+<screenshot>
+<screeninfo
+>&ktuberling;i peaaken</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Peaaken</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Objektide asetamine</title>
+
+<para
+>Objekti lohistamiseks vii hiirekursor <quote
+>objektide</quote
+> alale. Klõpsa elemendil, mida soovid lohistada, kuid ära lase hiirenuppu lahti, enne kui oled liigutanud hiire kohta, kuhu tahad objekti <quote
+>mängulaual</quote
+> asetada. <note
+><title
+>Märkus:</title
+><para
+>Objektide suurus võib lohistamisel muutuda. Mõned ülemäära suured objektid on skaleeritud, et need mahuks kenasti "objektide" alasse.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Objektide liigutamine</title>
+<para
+>Kui objekt on <quote
+>mängulauale</quote
+> lohistatud, saab teda seal ka edasi liigutada. Selleks klõpsa samamoodi objektil ning lohista see hiirenuppu all hoides teise kohta. Klõpsates ilmub see teiste objektide peale, kui need peaksid teda osaliselt varjama. Nii saab näiteks panna täpselt paika silmad ja prillid. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Objektide eemaldamine</title>
+<para
+><quote
+>Mängulauale</quote
+> lohistatud objekti eemaldamiseks lohista see <quote
+>mängulaualt</quote
+> tagasi <quote
+>objektide</quote
+> alasse. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Liidese tutvustus </title>
+<sect1 id="the-tool-bar">
+<title
+>Tööriistariba</title>
+
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="toolbar.png"/>
+</imageobject>
+<textobject
+><phrase
+>Tööriistariba</phrase
+></textobject>
+</mediaobject>
+
+<para
+>Tööriistaribal asuvad mõned kõige sagedamini kasutatavate funktsioonidega nupud. </para>
+
+<table>
+<title
+>Tööriistariba nupud</title>
+<tgroup cols="4">
+
+<thead>
+<row>
+<entry
+>Nupp</entry>
+<entry
+>Nimi</entry>
+<entry
+>Menüüvaste</entry>
+<entry
+>Toiming</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button-new.png"/>
+  </imageobject>
+	<textobject
+><phrase
+>Uue mängu nupp</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+  <guiicon
+>Uus</guiicon
+></entry>
+<entry>
+  <link linkend="game-new"
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Uus</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Puhastab <quote
+>mängulaua</quote
+>, kustutades seal kõik lisatud elemendid, nii et saab alustada uut kaunistamisoperatsiooni. </entry>
+</row>
+
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button-open.png"/>
+  </imageobject>
+	<textobject
+><phrase
+>Avamisnupp</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry
+><guiicon
+>Ava</guiicon
+></entry>
+<entry>
+  <link linkend="game-load"
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Ava...</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Avab olemasoleva Kartulimehe faili kettalt. </entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button-save.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Salvestamisnupp</phrase
+></textobject>
+  </inlinemediaobject>
+</entry>
+<entry
+><guiicon
+>Salvesta</guiicon
+></entry>
+<entry>
+  <link linkend="game-save"
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Salvesta</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Salvestab sinu loomingu kodukataloogi või mõnesse muusse kataloogi kettal. Kartulimees salvestatakse pisikese failina, kus on kirjas ainult objektide asend. </entry>
+</row>
+
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="button-print.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Trükkimisnupp</phrase
+></textobject>
+</inlinemediaobject>
+</entry>
+<entry>
+<guiicon
+>Trüki</guiicon>
+</entry>
+<entry>
+  <link linkend="game-print"
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Trüki...</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Trükib loodud pildi. </entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="edit-undo.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Tagasivõtmise nupp</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+  <guiicon
+>Võta tagasi</guiicon>
+  </entry>
+<entry>
+  <link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Võta tagasi</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Tühistab viimase tegevuse.</entry>
+</row>
+
+<row>
+<entry>
+  <inlinemediaobject>
+  <imageobject>
+  <imagedata format="PNG" fileref="edit-redo.png"/>
+  </imageobject>
+  <textobject
+><phrase
+>Uuestitegemise nupp</phrase
+></textobject>
+  </inlinemediaobject>
+  </entry>
+<entry>
+<guiicon
+>Tee uuesti</guiicon>
+</entry>
+<entry>
+  <link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Tee uuesti</guimenuitem
+></menuchoice>
+  </link>
+  </entry>
+<entry
+>Sooritab viimase operatsiooni uuesti.</entry>
+</row>
+
+<!--  Currently there is no HELP button on the toolbar
+<row>
+<entry>
+<inlinemediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="button-help.png"/>
+</imageobject>
+<imageobject>
+<imagedata format="EPS" fileref="button.help.eps"/>
+</imageobject>
+<textobject
+><phrase
+>Help Button</phrase
+></textobject>
+</inlinemediaobject>
+</entry>
+<entry>
+Help
+</entry>
+<entry
+>Displays this handbook.</entry>
+</row>
+-->
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Menüüelemendid</title>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Mäng</guimenu
+></title>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="menu-game.png"/>
+</imageobject>
+<textobject
+><phrase
+>Menüü <guimenu
+>Mäng</guimenu
+></phrase
+></textobject>
+</mediaobject>
+
+<variablelist>
+
+<varlistentry id="game-new">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Uus</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Puhastab</action
+> <quote
+>mängulaua</quote
+> </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-load">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Ava...</guimenuitem
+> </menuchoice
+></term>
+ <listitem
+><para
+><action
+>Avab olemasoleva Kartulimehe faili</action
+> kettalt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-save">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Salvesta</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Salvestab</action
+> sinu loomingu. Kartulimees salvestatakse väikese failina, kus on kirjas ainult objektide asend. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-save-as-picture">
+<term
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Salvesta pildina...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Loob graafikafaili</action
+>, mis sisaldab sinu loodud pilti. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-print">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Trüki...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Trükib</action
+> sinu loodud pildi. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lõpetab</action
+> &ktuberling;i töö. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Redigeerimine</guimenu
+></title>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="menu-edit.png"/>
+</imageobject>
+<textobject
+><phrase
+>Redigeerimismenüü</phrase
+></textobject>
+</mediaobject>
+
+<variablelist>
+
+<varlistentry id="edit-undo">
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Võta tagasi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Tühistab</action
+> viimase <quote
+>objekti</quote
+> asetamise operatsiooni. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="edit-redo">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Tee uuesti</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sooritab uuesti</action
+> viimase <quote
+>objekti</quote
+> asetamise. Seda saab kasutada ainult siis, kui oled varem kasutanud võimalust <guilabel
+>Võta tagasi</guilabel
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Kopeeri</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Kopeerib</action
+> <quote
+>mängulaua</quote
+> lõikepuhvrisse.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Mängulaud</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mängulaud</guimenu
+> <guimenuitem
+>Lukusta proportsioonid</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Selle valimisel säilitatakse mängulaua proportsioonid ka &ktuberling;i akna suuruse muutmisel. Kui mängulaua proportsioon ei vasta akna omale, täidetakse taust vastavalt teema seadistustele. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="theme_change">
+<term
+><menuchoice
+><guimenu
+>Mängulaud</guimenu
+> <guimenuitem
+><replaceable
+>Mängulaua nimi</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lülitub</action
+> valitud <quote
+>mängulauale</quote
+>. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Seal on näha kõik süsteemi paigaldatud mängulauad. </para>
+<para
+>&ktuberling; jätab viimati kasutatud mängulaua meelde ning laadib selle mängu järgmisel käivitamisel. </para>
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Kõne</guimenu
+></title>
+
+<!--<para>
+Please note that you need to have <command
+>&phonon;</command
+> installed
+and properly configured to be able to hear sounds.
+</para
+>-->
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Kõne</guimenu
+> <guimenuitem
+>Hääletu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lülitab helid</action
+> välja.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Kõne</guimenu
+> <guimenuitem
+><replaceable
+>Keele nimi</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lülitab sisse helid ja valitud keeles kõnelemise</action
+>. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>&ktuberling; jätab valiku meelde ning arvestab sellega mängu järgmisel käivitamisel. </para>
+
+</sect2>
+
+<sect2 id="settings">
+<title
+>Menüü <guimenu
+>Seadistused</guimenu
+></title>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="menu-settings.png"/>
+</imageobject>
+<textobject
+><phrase
+>Menüü Seadistused</phrase
+></textobject>
+</mediaobject>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Täisekraanirežiim</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lülitab täisekraanirežiimi</action
+> sisse ja välja. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Lisaks on &ktuberling;il tavapärased &kde; <guimenu
+>seadistuste</guimenu
+> ja <guimenu
+>abi</guimenu
+>menüü elemendid, mille kohta leiab rohkem teavet &kde; põhialuste käsiraamatu osadest <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menüü Seadistused</ulink
+> ja <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menüü Abi</ulink
+>. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Korduma kippuvad küsimused</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Ma soovin muuta mängu välimust. On see võimalik? </para
+></question>
+ <answer
+><para
+>Jah, muidugi. Täpsemalt kõneleb sellest osa "Liidese tutvustus" vastav <link linkend="theme_change"
+>sektsioon</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kas mängida saab ka klaviatuuri abil? </para
+></question>
+ <answer
+><para
+>Ei, klaviatuuri abil seda mängida ei saa.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ma tegin tohutult vahva pildi ja tahan seda oma sõpradega jagada. Kas seda saab ka pildina salvestada?</para
+></question>
+  <answer
+><para
+>Jah. Avatud mängulaua salvestamisest pildina kõneleb täpsemalt osa "Liidese tutvustus" vastav <link linkend="game-save-as-picture"
+>sektsioon</link
+>.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Autorid ja litsents</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - praegune hooldaja</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - algne idee, esialgsed pildid ja ingliskeelsed helid</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - &kde; programmeerimine</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - testid, nõuanded ja abi</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - dokumentatsiooni korrektuur</para>
+</listitem>
+
+<listitem>
+<para
+>Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - dokumentatsiooni täiendamine</para>
+</listitem>
+</itemizedlist
+> 
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+</book>

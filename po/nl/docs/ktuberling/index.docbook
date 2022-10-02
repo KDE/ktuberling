@@ -1,0 +1,946 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potato Guy">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>Het handboek van &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Nalezer</contrib>
+</othercredit>
+
+&Niels.Reedijk;&Rinse.Devries;&Freek.de.Kruijf; 
+
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&i18n-ktuberling; is een spel bedoeld voor kleine kinderen. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>spel</keyword>
+<keyword
+>speelgoed</keyword>
+<keyword
+>bouwer</keyword>
+<keyword
+>pop</keyword>
+<keyword
+>versieren</keyword>
+<keyword
+>kinderen</keyword>
+<keyword
+>tuberling (aardappelmannetje)</keyword>
+<keyword
+>aardappel</keyword>
+<keyword
+>treinstation</keyword>
+<keyword
+>één speler</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+<para
+>Speltype: speelgoed</para>
+<para
+>Aantal mogelijke spelers: één</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Pizzeria speelveld</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&i18n-ktuberling; is een eenvoudig opbouwspel zowel voor kinderen als volwassenen. Het idee van het spel is gebaseerd op een eens populair concept voor poppen maken. Een aardappel werd versiert met verschillende kleine dingetjes om het te laten lijken op een klein mensje. &i18n-ktuberling; echter, gaat veel verder in termen van inhoud en voegt een verbazende hoeveelheid verschillende thema's toe. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Hoe te spelen</title>
+
+<para
+>&i18n-ktuberling; is een spel bedoeld voor kleine kinderen. Uiteraard is het ook geschikt voor volwassen die jong van geest zijn gebleven. </para>
+
+<para
+>Het is een <quote
+>aardappelmannetjebewerker</quote
+>. Dit betekent dat je ogen, monden, snorren en andere dingen op een aardappelmannetje kunt plaatsen. Daarnaast zijn er andere speelvelden met verschillende thema's. </para>
+
+<para
+>Het spel kent geen winnaar. Het enige doel is om zo grappig mogelijke gezichten of situaties te maken. </para>
+
+<para
+>&i18n-ktuberling; kan ook <quote
+>praten</quote
+>. Het zal de naam van de objecten die je versleept uitspreken. Het <quote
+>spreekt</quote
+> in de taal die je hebt uitgekozen. Je kunt het programma zo ook gebruiken om een paar vreemde woorden te leren.  </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Regels en tips</title>
+
+<sect1 id="mouse-operation">
+<title
+>De muis</title>
+
+<para
+>Er bevinden zich twee gebieden in het hoofdvenster: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Het <quote
+>speelveld</quote
+>. </para
+></listitem>
+<listitem
+><para
+>Het <quote
+>objecten</quote
+>veld. Hier kunt u de objecten kiezen die je in het speelveld wilt plaatsen. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Een actueel uiterlijk van het programmascherm kan wijzigen afhankelijk van een gekozen <quote
+>speelveld</quote
+>.</para
+></note>
+<screenshot>
+<screeninfo
+>Hoofdvenster van &i18n-ktuberling;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Hoofdvenster</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Een object plaatsen</title>
+
+<para
+>Om een object te verslepen, verplaats je de muisaanwijzer naar het <quote
+>objecten</quote
+>gebied en klik erop. Versleep het dan naar het <quote
+>speelveld</quote
+> en klik opnieuw. <note
+><para
+>De grootte van de objecten kan zich wijzigen tijdens het verslepen. Sommige van de te grote objecten worden omlaag geschaald in het <quote
+>objecten</quote
+>gebied.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Een object verplaatsen</title>
+<para
+>Als u een object in het <quote
+>speelveld</quote
+> hebt geplaatst, dan kunt u het nog verplaatsen. Klik erop en sleep het naar een andere positie en klik er opnieuw op om het te laten vallen. Als je het laat vallen dan komt het bovenop andere objecten, die het eerder gedeeltelijk overlapten. Dit is handig om bijvoorbeeld de bril voor de ogen geplaatst te krijgen. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Een object verwijderen</title>
+<para
+>Om een object uit het <quote
+>speelveld</quote
+> te verwijderen sleept u het terug naar het <quote
+>objectveld</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Overzicht van het interface </title>
+<sect1 id="the-tool-bar">
+<title
+>De werkbalk</title>
+
+<para
+>De werkbalk bevat knoppen voor de meestgebruikte functies. </para>
+
+<table>
+<title
+>Werkbalkknoppen</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Knop&nbsp;</entry>
+      <entry
+>Naam&nbsp;</entry>
+      <entry
+>Bijhorende menuoptie&nbsp;</entry>
+      <entry
+>Actie</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>Knop voor nieuw spel</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Nieuw</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Wist het <quote
+>speelveld</quote
+>. Dit verwijdert alle onderdelen van het speelveld zodat er een nieuwe versiering kan worden gemaakt.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>Knop voor laden</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Laden...</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Laden...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Opent een bestaand <literal role="extension"
+>.tuberling</literal
+>-bestand op de schijf.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>Knop voor opslaan</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Opslaan</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Opslaan</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Bewaart jouw creatie in jouw persoonlijke map of in een andere map op jouw schijf. Het <literal role="extension"
+>.tuberling</literal
+> wordt opgeslagen in een klein bestandje waarin alleen de posities van de objecten zijn opgeslagen.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>Knop voor afdrukken</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Afdrukken...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afdrukken...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Drukt uw afbeelding af.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>Knop voor ongedaan maken</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Ongedaan maken</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Ongedaan maken</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Maakt de laatste handeling ongedaan.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>Knop voor opnieuw</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Opnieuw</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Opnieuw</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Voert de laatste ongedaan gemaakte handeling opnieuw uit.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>De menuopties</title>
+
+<sect2>
+<title
+>Het menu Spel</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Wist</action
+> het <quote
+>speelveld</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Laden...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Opent een bestaand <literal role="extension"
+>.tuberling</literal
+>-bestand</action
+> vanaf jouw schijf.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Opslaan</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Bewaart</action
+> uw creatie. De tuberling wordt opgeslagen in een klein bestand waar alleen de positie van de objecten in is geplaatst.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Opslaan als afbeelding...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Maakt een afbeeldingsbestand</action
+> met een plaatje van jouw tuberling.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afdrukken...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Drukt</action
+> jouw tuberling-illustratie af.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Beëindigt</action
+> &i18n-ktuberling;.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Het menu Bewerken</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Ongedaan maken</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Maakt</action
+> de laatste plaatsing van een <quote
+>object</quote
+> ongedaan.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Opnieuw</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Voert</action
+> de laatste ongedaan gemaakte verplaatsing van een <quote
+>object</quote
+> opnieuw uit. Deze menuoptie is alleen actief als u eerder <guilabel
+>Ongedaan maken</guilabel
+> hebt gebruikt.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Kopiëren</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Kopieert</action
+> het <quote
+>speelveld</quote
+> naar het klembord.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Het menu Beeld</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Volledig scherm</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Zet de modus Volledig scherm aan/uit.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Het menu Speelveld</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Speelveld</guimenu
+> <guimenuitem
+>Vergrendel de beeldverhouding</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Deze optie behoudt de beeldverhouding van het speelveld bij het veranderen van het venster van &i18n-ktuberling;. Als de beeldverhouding van het speelveld niet overeenkomt met die van het venster dan wordt de achtergrond gevuld met wat is gespecificeerd in het thema.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Speelveld</guimenu
+> <guimenuitem
+><replaceable
+>Speelveldnaam</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Schakelt om naar het speelveld</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Het zal de speelvelden bevatten die zijn geïnstalleerd in uw systeem. </para>
+<para
+>&i18n-ktuberling; onthoudt het laatst gekozen speelveld de volgende keer dat het programma wordt gestart. </para>
+</sect2>
+
+<sect2>
+<title
+>Het menu Spraak</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Spraak</guimenu
+> <guimenuitem
+>Geen geluid</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Schakelt geluid uit</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Spraak</guimenu
+> <guimenuitem
+><replaceable
+>Naam van de taal</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Schakelt geluid aan en spreekt de geselecteerde taal</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>&i18n-ktuberling; onthoudt deze instelling bij de volgende programmastart. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>De menu's Instellingen en Help</title>
+
+<para
+>Bovendien heeft &i18n-ktuberling; de gezamenlijke menu-items van &kde; <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, voor meer informatie lees de secties over de <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde;-fundamentals. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Veel gestelde vragen</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Ik wil het uiterlijk van dit spel wijzigen. Kan dat? </para
+></question>
+ <answer
+><para
+>Ja dat kan. Ga naar <link linkend="theme_change"
+>deze</link
+> sectie van 'Overzicht van het interface' voor details.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan ik het toetsenbord gebruiken om dit spel te spelen? </para
+></question>
+ <answer
+><para
+>Nee, dit spel kan niet met het toetsenbord worden gespeeld.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik heb een heel mooi plaatje gemaakt en ik wil het delen met mijn vrienden. Kan ik het opslaan als een afbeelding?</para
+></question>
+  <answer
+><para
+>Ja. Om de huidige sessie als een afbeelding op te slaan ga naar <link linkend="game-save-as-picture"
+>deze</link
+> sectie van 'Overzicht interface' voor details.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Dankbetuigingen en licentie</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - huidige onderhouder</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - oorspronkelijk idee, oorspronkelijke afbeeldingen en Engelstalige geluiden</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - &kde; programmering</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - Testen, advies en hulp</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - proeflezen van de documentatie</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - verbeteren van de documentatie</para>
+</listitem>
+</itemizedlist>
+
+&meld.fouten;&vertaling.niels;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+</book>

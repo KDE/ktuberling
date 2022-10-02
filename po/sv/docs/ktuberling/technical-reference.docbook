@@ -1,0 +1,417 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Potatismannen</keyword>
+<keyword
+>teknisk referens</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Teknisk referens</title>
+
+<para
+>Potatismannen erbjuder en mjuk och lönande inledning till anpassning och programmering av &kde;. Programmet kan utökas. Utan att koda kan till exempel nya lekplatser läggas till genom att ändra grafikfiler. Genom att lägga till lämpliga ljudfiler, kan översättare ändra ljuden till sitt modersmål! </para>
+
+<para
+>Om du utökar eller lägger till något i spelet, skicka gärna dina tillägg till utvecklaren <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> så att de kan läggas till i framtida utgåvor. </para>
+
+<sect1 id="for-artists">
+<title
+>För grafiker</title>
+
+<para
+>För att skapa en ny lekplats i Potatismannen måste du: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Rita lekplatsen i en &SVG;-fil, är du måste: <itemizedlist>
+        <listitem
+><para
+>Namnge platsen där objekt kan dras <quote
+>bakgrunden</quote
+>.</para
+></listitem>
+        <listitem
+><para
+>Namnge vart och ett av objekten som kan dras med ett unikt namn.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Skapa en <literal role="extension"
+>.theme</literal
+>-fil, som måste ha följande utseende:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>din_SVG-fil</replaceable
+>" name="<replaceable
+>skrivbordsfilen</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>objektnamn</replaceable
+>" sound="<replaceable
+>ljudnamn</replaceable
+>" scale="<replaceable
+>något_värde</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>din_SVG-fil</replaceable
+> är namnet på &SVG;-filen som innehåller grafiken.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>skrivbordsfilen</replaceable
+> är namnet på skrivbordsfilen som har samma namn som temat.</para
+></listitem>
+      <listitem
+><para
+>För varje objekt behövs posten <literal
+>&lt;object&gt;</literal
+>. <replaceable
+>Objektnamn</replaceable
+> är det unika namn som användes i &SVG;-filen. <replaceable
+>Ljudnamn</replaceable
+> är ljudnamnet som spelas när det dras, se filen <filename
+>sounds/soundthemes.HOWTO</filename
+> från källkoden för mer information.</para
+></listitem>
+      <listitem
+><para
+><literal
+>skala</literal
+> är valfri och <replaceable
+>något_värde</replaceable
+> är skalfaktorn som används när objektet ritas utanför lagret. Om den inte anges är den 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Skapa en <literal role="extension"
+>.desktop-fil</literal
+>, som måste ha följande utseende:</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>temanamn</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>temanamn</replaceable
+> är namnet som identifierar temat, och som visas i menyn Lekplats.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Om du lägger till temat i Potatismannens arkiv, lägg till <literal role="extension"
+>.svg</literal
+>-, <literal role="extension"
+>.theme</literal
+>- och <literal role="extension"
+>.desktop</literal
+>-filer i avdelningen <literal
+>FILES</literal
+> av <filename
+>CMakeLists.txt</filename
+> i katalogen <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Om du vill installera det själv, placera <literal role="extension"
+>.svg</literal
+>-, <literal role="extension"
+>.theme</literal
+>- och <literal role="extension"
+>.desktop</literal
+>-filer i <filename class="directory"
+>ktuberling/pics</filename
+> i <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>För översättare</title>
+
+<para
+>Förutom den vanliga <literal role="extension"
+>.po</literal
+>-fil mekanismen för att översätta programrubriker och promptrar, kan ljuden också anpassas. </para>
+
+<para
+>För att skapa ett nytt ljudtema för Potatismannen måste du: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>Spela in ljuden med OGG Vorbis rc3 filformat.</para
+></listitem>
+  <listitem
+><para
+>Skapa filen <filename
+><replaceable
+>ditt_språks_tvåbokstavskod</replaceable
+>.soundtheme</filename
+>, som måste ha följande utseende:</para>
+<programlisting
+>&lt;language code="<replaceable
+>ditt_språks_tvåbokstavskod</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>ljudnamn</replaceable
+>" file="<replaceable
+>relativ_sökväg</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>ditt_språks_tvåbokstavskod</replaceable
+> är koden med två bokstäver för ditt språk, till exempel sv för svenska.</para
+></listitem>
+      <listitem
+><para
+>För varje ljud behövs posten <literal
+>&lt;sound&gt;</literal
+>. <replaceable
+>ljudnamn</replaceable
+> som ska passa ihop med ljudnamn som anges för lekplatsen (se filen <filename
+>pics/themes.HOWTO</filename
+> i källkoden). <replaceable
+>relativ_sökväg</replaceable
+> är platsen där filen med ljudet ska installeras. Oftast är det <filename
+><replaceable
+>någon_unik_sökväg</replaceable
+>/<replaceable
+>ljudnamn</replaceable
+>.<replaceable
+>format</replaceable
+></filename
+> (<replaceable
+>någon_unik_sökväg</replaceable
+> kan till exempel vara språkets tvåbokstavskod).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Om du lägger till ljudtemat för Potatismannens i din språkkatalog:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Lägg till ljudfilerna och <literal role="extension"
+>.soundtheme</literal
+>-filerna i katalogen <filename class="directory"
+>data/kdegames/ktuberling</filename
+> under översättningen av ditt språk.</para
+></listitem>
+      <listitem
+><para
+>I samma katalog behövs en <filename
+>CMakeLists.txt</filename
+> som beskriver hur filerna ska installeras. Typiskt innehåller den:</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>ditt_språks_tvåbokstavskod</replaceable
+> )
+INSTALL( FILES <replaceable
+>ditt_språks_tvåbokstavskod</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Om du vill installera den själv:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Placera filen <filename
+><replaceable
+>ditt_språks_tvåbokstavskod</replaceable
+>.soundtheme</filename
+> i <filename class="directory"
+>ktuberling/sounds</filename
+> i <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>Placera dina ljudfiler i katalogen <filename class="directory"
+>ktuberling/sounds/<replaceable
+>någon_unik_sökväg</replaceable
+></filename
+> i <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>Information om hur man arbetar med översättningsmekanismen i &kde; finns tillgänglig på <ulink url="https://l10n.kde.org/docs/translation-howto/index.html"
+>&kde; Translation HOWTO</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>För programmerare</title>
+<para
+>Potatismannen är inte särskilt svår att utöka för programmerare.</para>
+
+<sect2 id="classes">
+<title
+>C++ klasser</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>Toppnivåfönster och grundläggande programhantering.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>PlayGround</classname
+></term>
+    <listitem
+><para
+>Beskrivning av en av spelets nivåer.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>Beskrivning av ett av de grafiska <quote
+>objekten</quote
+> som ska ritas.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>Beskrivning av ett av språken och dess ljud.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>Action</classname
+></term>
+    <listitem
+><para
+>En av användarens åtgärder i stacken med ångra och gör om.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

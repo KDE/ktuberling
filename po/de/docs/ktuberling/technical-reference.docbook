@@ -1,0 +1,434 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Johannes</firstname
+><surname
+>Obermayr</surname
+><affiliation
+><address
+><email
+>johannesobermayr@gmx.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-05-11</date>
+<releaseinfo
+>1.0.0 (Anwendungen 16.04)</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>Technische Referenz</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Technische Referenz</title>
+
+<para
+>&ktuberling; bietet eine sanfte und lohnende Einführung in die Anpassung und Programmierung von &kde;. &ktuberling; kann beliebig erweitert werden. So können beispielsweise neue Spielfelder ohne Programmieren durch Ändern der Grafikdateien hinzugefügt werden. Durch Hinzufügen geeigneter Audiodateien können Übersetzer die Klänge in ihre Muttersprache ändern. </para>
+
+<para
+>Sollten Erweiterungen oder Ergänzungen zum Spiel vorgenommen werden, wird um deren Übersendung an den derzeitigen Betreuer <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> zur Berücksichtigung in künftigen Versionen gebeten. </para>
+
+<sect1 id="for-artists">
+<title
+>Grafiker</title>
+
+<para
+>Zum Erstellen eines neuen <emphasis
+>Spielfeldes</emphasis
+> für &ktuberling; sind folgende Maßnahmen notwendig: </para>
+
+<itemizedlist>
+
+<listitem>
+    <para
+>Zeichnen eines <emphasis
+>Spielfeldes</emphasis
+> in einer <filename
+>*.svg</filename
+>-Datei unter Beachtung, dass <itemizedlist>
+            <listitem
+><para
+>der Ort, an den die Objekte gezogen werden, den Namen „background“ erhält.</para
+></listitem>
+            <listitem
+><para
+>jedes <emphasis
+>ziehbare</emphasis
+> Objekt einen einzigartigen Namen erhält.</para
+></listitem>
+        </itemizedlist>
+    </para>
+</listitem>
+
+<listitem>
+    <para
+>Erstellen einer <filename
+>*.theme</filename
+>-Datei mit folgendem Schema:</para>
+    <programlisting
+>&lt;playground gameboard="<replaceable
+>svg-Datei</replaceable
+>" name="<replaceable
+>desktop-Datei</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>Objektname</replaceable
+>" sound="<replaceable
+>Klangname</replaceable
+>"scale="<replaceable
+>beliebigerWert</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+    </programlisting>
+    <itemizedlist>
+        <listitem
+><para
+><replaceable
+>svg-Datei</replaceable
+> ist der Name für die <filename
+>svg</filename
+>-Datei mit den Objekten.</para
+></listitem>
+        <listitem
+><para
+><replaceable
+>desktop-Datei</replaceable
+> ist der Name der <filename
+>desktop</filename
+>-Datei, die den Namen des Designs beinhaltet.</para
+></listitem>
+        <listitem
+><para
+>Für jedes Objekt ist ein &lt;object&gt;-Eintrag erforderlich. <replaceable
+>Objektname</replaceable
+> ist der einzigartige Name innerhalb der <filename
+>svg</filename
+>-Datei und <replaceable
+>Klangname</replaceable
+> ist der Name des beim Ziehen des Objektes wiedergegebenen Klangs.</para
+></listitem>
+        <listitem
+><para
+><emphasis
+>scale</emphasis
+> ist ein zusätzlicher Wert. <replaceable
+>beliebigerWert</replaceable
+> wird dabei als Wert für die Vergrößerung des Objektes verwendet, sobald es aus dem Depot „geholt“ wird. Bei unterbliebener Festlegung wird als Wert <keycap
+>1</keycap
+> verwendet.</para
+></listitem>
+    </itemizedlist>
+</listitem>
+
+<listitem>
+    <para
+>Erstellen einer <filename
+>*.desktop</filename
+>-Datei nach folgendem Schema:</para>
+    <programlisting
+>[KTuberlingTheme]
+    Name=<replaceable
+>Designname</replaceable
+>
+    </programlisting>
+    <itemizedlist>
+        <listitem
+><para
+><replaceable
+>Designname</replaceable
+> ist der identifizierende Name des Designs und wird im Menü <guimenu
+>Spielfeld</guimenu
+> angezeigt.</para
+></listitem>
+    </itemizedlist>
+</listitem>
+
+<listitem>
+    <para
+>Beim Hochladen des Designs zum <emphasis
+>Git</emphasis
+>-Quelltextarchiv von &ktuberling; müssen die <filename
+>*.svg</filename
+>-, <filename
+>*.theme</filename
+>- und <filename
+>*.desktop</filename
+>-Datei im Abschnitt <emphasis
+>FILES</emphasis
+> der Datei <filename
+>CMakeLists.txt</filename
+> des Ordners <filename
+>pics/</filename
+> eingetragen werden. </para>
+</listitem>
+
+<listitem>
+    <para
+>Zur Verwendung auf dem lokalen System müssen die <filename
+>*.svg</filename
+>-, <filename
+>*.theme</filename
+>- und <filename
+>*.desktop</filename
+>-Datei im Ordner <filename
+>ktuberling/pics</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> vorhanden sein. </para>
+</listitem>
+
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Übersetzer</title>
+
+<para
+>Neben dem üblichen Übersetzen der <filename
+>.po</filename
+>-Dateien für die grafische Oberfläche können für &ktuberling; auch die Klänge lokalisiert werden. </para>
+
+<para
+>Zum Erstellen eines neuen Klangdesigns für &ktuberling; sind folgende Maßnahmen notwendig: </para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Die Klänge im Format <emphasis
+>OGG Vorbis rc3</emphasis
+> speichern.</para
+></listitem>
+
+<listitem>
+<para
+>Erstellen einer <filename
+><replaceable
+>de</replaceable
+>.soundtheme</filename
+>-Datei mit folgendem Schema:</para>
+<programlisting
+>&lt;language code="<replaceable
+>de</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>Klangname</replaceable
+>" file="<replaceable
+>relativerPfad</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+<itemizedlist>
+<listitem
+><para
+><replaceable
+>de</replaceable
+> wird hier und im Folgenden nur beispielhaft für Deutsch verwendet. Für andere Sprachen muss stattdessen das jeweilige Sprachenkürzel eingesetzt werden.</para
+></listitem>
+<listitem
+><para
+>Für jeden Klang ist ein &lt;sound&gt;-Eintrag erforderlich. <replaceable
+>Klangname</replaceable
+> sollte mit dem Klangnamen im <emphasis
+>Spielfeld</emphasis
+>-Design übereinstimmen. <replaceable
+>relativerPfad</replaceable
+> ist der relative Pfad zur Klangdatei und typischerweise <filename
+><replaceable
+>einzigartigerPfad</replaceable
+>/Klangname.format</filename
+> wobei <replaceable
+>einzigartigerPfad</replaceable
+> beispielsweise <replaceable
+>de</replaceable
+> sein kann.</para
+></listitem>
+</itemizedlist>
+</listitem>
+
+<listitem
+><para
+>Beim Hochladen des lokalisierten Klangdesigns in Ihren Sprachenordner müssen</para>
+<itemizedlist>
+<listitem
+><para
+>die Klang- und <filename
+>*.soundtheme</filename
+>-Dateien im Ordner <filename
+>l10n-kde4/<replaceable
+>de</replaceable
+>/data/kdegames/ktuberling</filename
+> vorliegen.</para
+></listitem>
+<listitem
+><para
+>im selben Ordner die Datei <filename
+>CMakeLists.txt</filename
+> mit der Beschreibung für die Installation nach folgendem Muster vorliegen:</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>de</replaceable
+> )
+INSTALL( FILES <replaceable
+>de</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+</listitem>
+</itemizedlist>
+</listitem>
+
+<listitem>
+<para
+>Zur Verwendung auf dem lokalen System müssen</para>
+<itemizedlist>
+<listitem
+><para
+>die <filename
+><replaceable
+>de</replaceable
+>.soundtheme</filename
+>-Datei im Ordner <filename class="directory"
+>ktuberling/sounds</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+>vorhanden sein</para
+></listitem>
+<listitem
+><para
+>die lokalisierten Klangdateien im Ordner <filename class="directory"
+>ktuberling/sounds/someUniquePath</filename
+> in<userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+> vorhanden sein.</para
+></listitem>
+</itemizedlist>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Informationen zur Arbeit mit dem Übersetzungssystem von &kde; sind in der <ulink url="http://l10n.kde.org/docs/translation-howto/index.html"
+>&kde;-Übersetzungsanleitung</ulink
+> verfügbar. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Entwickler</title>
+<para
+>Die Erweiterung von &ktuberling; durch Entwickler ist nicht wirklich schwierig.</para>
+
+<sect2 id="classes">
+<title
+>C++-Klassen</title>
+
+<variablelist>
+<varlistentry>
+<term
+><classname
+>TopLevel</classname
+></term>
+<listitem>
+<para
+>Sichtbares Fenster und grundlegende Programmverwaltung</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>PlayGround</classname
+></term>
+<listitem>
+<para
+>Beschreibung einer Spielfeldebene</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>ToDraw</classname
+></term>
+<listitem>
+<para
+>Beschreibung eines darzustellenden grafischen <emphasis
+>Objekts</emphasis
+></para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>SoundFactory</classname
+></term>
+<listitem>
+<para
+>Beschreibung einer Sprache und deren Klänge</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><classname
+>Action</classname
+></term>
+<listitem>
+<para
+>Eine der Veränderungen des Benutzers im „Rückgängig/Wiederherstellen“-Stapel</para
+> </listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

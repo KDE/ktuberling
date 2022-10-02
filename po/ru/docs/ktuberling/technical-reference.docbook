@@ -1,0 +1,431 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Кирилл</firstname
+><surname
+>Бирюков</surname
+><affiliation
+><address
+><email
+>birk@rdi-kvant.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Мария</firstname
+><surname
+>Шикунова</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода на русский</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>4 октября 2021 г.</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>техническое описание</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>Техническое описание</title>
+
+<para
+>&ktuberling; предлагает мягкое и удобное введение в программирование и настройку &kde;. Приложение возможно легко расширить. Например, возможно добавить новые игровые поля просто меняя графические файлы. Возможно также перевести звуковые файлы игры, чтобы приложение заговорило на родном языке пользователя. </para>
+
+<para
+>Если вы внесли какие-либо изменения или дополнения, вышлите их автору <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+>, и он включит их в следующие версии. </para>
+
+<sect1 id="for-artists">
+<title
+>Дизайнерам</title>
+
+<para
+>Чтобы создать новое игровое поле для &ktuberling;, необходимо: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Нарисуйте игровое поле в файле&SVG;, где требуется: <itemizedlist>
+        <listitem
+><para
+>Указать область <quote
+>фон</quote
+>, куда возможно перетаскивать предметы.</para
+></listitem>
+        <listitem
+><para
+>Указать уникальное имя для каждого элемента, который можно будет перемещать.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Создайте файл <literal role="extension"
+>.theme</literal
+>, следующий указанной ниже схеме:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>SVGфайл</replaceable
+>" name="<replaceable
+>Desktopфайл</replaceable
+>"&gt;
+&lt;object name="<replaceable
+>имяОбъекта</replaceable
+>" sound="<replaceable
+>названиеЗвука</replaceable
+>" scale="<replaceable
+>значение</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>файлSVG</replaceable
+> — имя &SVG;-файла, который содержит изображение.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>Desktopфайл</replaceable
+> — название .desktop-файла, содержащего название темы.</para
+></listitem>
+      <listitem
+><para
+>Для каждого объекта необходима запись<literal
+>&lt;object&gt;</literal
+>. <replaceable
+>имяОбъекта</replaceable
+> — уникальное имя, используемое в &SVG;-файле, <replaceable
+>названиеЗвука</replaceable
+> — название звука, который будет воспроизводиться при перетаскивании объекта. Более подробная информация содержится в файле исходного кода <filename
+>sounds/soundthemes.HOWTO</filename
+>.</para
+></listitem>
+      <listitem
+><para
+><literal
+>scale</literal
+> является необязательным параметром, а <replaceable
+>значение</replaceable
+> — это коэффициент масштабирования, используемый при прорисовке этого объекта вне рабочей области, если не указано, по умолчанию считается 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>Создайте файл <literal role="extension"
+>.desktop</literal
+>, следующий указанной ниже схеме:</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>имяТемы</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>имяТемы</replaceable
+> — это название темы, которое будет отображаться в меню игрового поля.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>При добавлении темы в репозиторий &ktuberling;, добавьте файлы <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> и <literal role="extension"
+>.desktop</literal
+> раздел <literal
+>FILES</literal
+> файла <filename
+>CMakeLists.txt</filename
+> в каталоге <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>Чтобы установить его вручную, поместите файлы <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> и <literal role="extension"
+>.desktop</literal
+> в папку <filename class="directory"
+>ktuberling/pics</filename
+> в <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>Переводчикам</title>
+
+<para
+>Локализация игры может быть осуществлена не только с помощью обычного механизма перевода меню и сообщений программ &kde; (механизма <literal role="extension"
+>.po</literal
+>-файлов), но и переводом звуков игры. </para>
+
+<para
+>Чтобы создать новую звуковую тему &ktuberling;, необходимо: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>Записать звуки в формате файлов OGG Vorbis rc3.</para
+></listitem>
+  <listitem
+><para
+>Создайте файл <filename
+><replaceable
+>двеБуквыЯзыка</replaceable
+>.soundtheme</filename
+>, следующий указанной ниже схеме:</para>
+<programlisting
+>&lt;language code="<replaceable
+>двеБуквыЯзыка</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>названиеЗвука</replaceable
+>" file="<replaceable
+>относительныйПуть</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>двеБуквыЯзыка</replaceable
+> — двухбуквенный код языка, например, ru для русского.</para
+></listitem>
+      <listitem
+><para
+>Запись <literal
+>&lt;sound&gt;</literal
+> для каждого звука. <replaceable
+>названиеЗвука</replaceable
+> должно совпадать с названием звука, указанном в теме игрового поля (подробнее: <filename
+>pics/themes.HOWTO</filename
+> в исходном коде). <replaceable
+>относительныйПуть</replaceable
+> — относительный путь, куда потребуется установить файл с этим звуком, он выглядит как <filename
+><replaceable
+>уникальныйПуть</replaceable
+>/<replaceable
+>названиеЗвука</replaceable
+>.<replaceable
+>формат</replaceable
+></filename
+> (<replaceable
+>уникальныйПуть</replaceable
+> — может быть двухбуквенным кодом языка).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>При добавлении звуковой темы в папку языка &ktuberling;:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Добавьте звуковые файлы и файлы <literal role="extension"
+>.soundtheme</literal
+> в папку с переводами в каталоге <filename class="directory"
+>data/kdegames/ktuberling</filename
+>.</para
+></listitem>
+      <listitem
+><para
+>В том же самом каталоге нужен файл <filename
+>CMakeLists.txt</filename
+>, описывающий, как установить файлы.</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>двеБуквыЯзыка</replaceable
+> )
+INSTALL( FILES <replaceable
+>двеБуквыЯзыка</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>Чтобы установить его вручную:</para>
+    <itemizedlist>
+      <listitem
+><para
+>Поместите файл <filename
+><replaceable
+>двеБуквыЯзыка</replaceable
+>.soundtheme</filename
+> в каталог <filename class="directory"
+>ktuberling/sounds</filename
+> в <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>Поместите звуковые файлы <filename class="directory"
+>ktuberling/sounds/<replaceable
+>некоторыйУникальныйПуть</replaceable
+></filename
+> folder in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>Сведения о механизме работы локализации в &kde; доступны в <ulink url="https://l10n.kde.org/docs/translation-howto/index.html"
+>The &kde; Translation HOWTO</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>Программистам</title>
+<para
+>Программисту нетрудно расширить и дополнить функциональность &ktuberling;.</para>
+
+<sect2 id="classes">
+<title
+>Классы C++</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>Окно верхнего уровня и основные функции управления программой.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>PlayGround</classname
+></term>
+    <listitem
+><para
+>Описание одного из уровней игры.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>Описание одного из выводимых графических <quote
+>объектов</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>Описание одного из языков и его звуков.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>Action</classname
+></term>
+    <listitem
+><para
+>Действие пользователя, связанное со стеком отмены/повтора.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>

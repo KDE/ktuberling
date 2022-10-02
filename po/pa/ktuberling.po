@@ -1,0 +1,302 @@
+# translation of ktuberling.po to Punjabi
+#
+# A S Alam <aalam@users.sf.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2007-01-17 11:11+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aalam@users.sf.net"
+
+#. i18n: ectx: Menu (game)
+#: ktuberlingui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr ""
+
+#. i18n: ectx: Menu (playground)
+#: ktuberlingui.rc:12
+#, kde-format
+msgid "&Playground"
+msgstr "ਪਲੇਅ-ਗਰਾਊਂਡ(&P)"
+
+#. i18n: ectx: Menu (speech)
+#: ktuberlingui.rc:17
+#, kde-format
+msgid "&Speech"
+msgstr "ਭਾਸ਼ਣ(&S)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ktuberlingui.rc:23
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#. i18n: ectx: ToolBar (gameOptions)
+#: ktuberlingui.rc:32
+#, kde-format
+msgid "Game Options"
+msgstr ""
+
+#: main.cpp:29
+#, kde-format
+msgid "KTuberling"
+msgstr ""
+
+#: main.cpp:30
+#, kde-format
+msgid "Potato game for kids"
+msgstr "ਬੱਚਿਆਂ ਲਈ ਆਲੂ ਖੇਡ"
+
+#: main.cpp:31
+#, kde-format
+msgid "(c) 1999-2009, The KTuberling Developers"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Éric Bischoff"
+msgstr ""
+
+#: main.cpp:33
+#, fuzzy, kde-format
+#| msgid "Developer"
+msgid "Former Developer"
+msgstr "ਖੋਜੀ"
+
+#: main.cpp:34
+#, kde-format
+msgid "John Calhoun"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Original concept and artwork"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Agnieszka Czajkowska"
+msgstr ""
+
+#: main.cpp:35 main.cpp:36 main.cpp:38
+#, kde-format
+msgid "New artwork"
+msgstr "ਨਵੀਂ ਕਲਾਕਾਰੀ"
+
+#: main.cpp:36
+#, kde-format
+msgid "Bas Willems"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Roger Larsson"
+msgstr ""
+
+#: main.cpp:37
+#, kde-format
+msgid "Sounds tuning"
+msgstr ""
+
+#: main.cpp:38
+#, kde-format
+msgid "Dolores Almansa"
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Potato to open"
+msgstr "ਖੋਲ੍ਹਣ ਲਈ ਆਲੂ"
+
+#: pics/layout.i18n:6
+#, kde-format
+msgctxt "NOTE TO THE TRANSLATORS"
+msgid ""
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr ""
+
+#: toplevel.cpp:163
+#, kde-format
+msgid "Error while loading the playground."
+msgstr ""
+
+#: toplevel.cpp:195
+#, kde-format
+msgid "Error while loading the sound file."
+msgstr ""
+
+#: toplevel.cpp:270
+#, kde-format
+msgid "Save &as Picture..."
+msgstr "ਚਿੱਤਰ ਵਾਂਗ ਸੰਭਾਲੋ(&a)..."
+
+#: toplevel.cpp:283
+#, kde-format
+msgid "&No Sound"
+msgstr "ਕੋਈ ਸਾਊਂਡ ਨਹੀਂ(&N)"
+
+#: toplevel.cpp:290
+#, kde-format
+msgid "&Lock Aspect Ratio"
+msgstr ""
+
+#: toplevel.cpp:328
+#, kde-format
+msgctxt "@title:window"
+msgid "Load file"
+msgstr ""
+
+#: toplevel.cpp:329 toplevel.cpp:422
+#, kde-format
+msgid "KTuberling files (%1)"
+msgstr ""
+
+#: toplevel.cpp:362
+#, kde-format
+msgid ""
+"The saved file is from an old version of KTuberling and unfortunately cannot "
+"be opened with this version."
+msgstr ""
+
+#: toplevel.cpp:366
+#, kde-format
+msgid "Could not load file."
+msgstr "ਫਾਇਲ ਲੋਡ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।"
+
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
+#, kde-format
+msgid "Could not save file."
+msgstr "ਫਾਇਲ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕੀ।"
+
+#: toplevel.cpp:474
+#, kde-format
+msgctxt "%1 is mimetype and %2 is the file extensions"
+msgid "%1 (%2)"
+msgstr ""
+
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
+msgid "Print %1"
+msgstr "%1 ਛਾਪੋ"
+
+#: toplevel.cpp:533
+#, kde-format
+msgid "Could not print picture."
+msgstr ""
+
+#: toplevel.cpp:536
+#, kde-format
+msgid "Picture successfully printed."
+msgstr ""
+
+#~ msgid "Unknown picture format."
+#~ msgstr "ਅਣਜਾਣ ਤਸਵੀਰ ਫਾਰਮੈਟ ਹੈ।"
+
+#~ msgid "Potato &Guy"
+#~ msgstr "ਆਲੂ ਮੁੰਡਾ(&G)"
+
+#, fuzzy
+#~| msgid "Potato &Guy"
+#~ msgid "Potato &Guy 2"
+#~ msgstr "ਆਲੂ ਮੁੰਡਾ(&G)"
+
+#~ msgid "Eyes"
+#~ msgstr "ਅੱਖਾਂ"
+
+#~ msgid "Eyebrows"
+#~ msgstr "ਭਰਵੱਟੇ"
+
+#~ msgid "Noses"
+#~ msgstr "ਨੱਕ"
+
+#~ msgid "Ears"
+#~ msgstr "ਕੰਨ"
+
+#~ msgid "Mouths"
+#~ msgstr "ਮੂੰਹ"
+
+#~ msgid "&Penguin"
+#~ msgstr "ਪੈਗੂਇਨ(&P)"
+
+#~ msgid "Tie"
+#~ msgstr "ਟਾਈ"
+
+#~ msgid "Hair"
+#~ msgstr "ਵਾਲ"
+
+#~ msgid "Necklaces"
+#~ msgstr "ਨੈਕਲਸ"
+
+#~ msgid "Hats"
+#~ msgstr "ਟੋਪੀ"
+
+#~ msgid "Glasses"
+#~ msgstr "ਐਨਕਾਂ"
+
+#~ msgid "Scarf"
+#~ msgstr "ਸਕਾਫ਼"
+
+#~ msgid "Fishes"
+#~ msgstr "ਮੱਛੀਆਂ"
+
+#~ msgid "Others"
+#~ msgstr "ਹੋਰ"
+
+#, fuzzy
+#~ msgid "Horse"
+#~ msgstr "ਨੱਕ"
+
+#~ msgid "&German"
+#~ msgstr "ਜਰਮਨ(&G)"
+
+#~ msgid "&English"
+#~ msgstr "ਅੰਗਰੇਜ਼ੀ(&E)"
+
+#~ msgid "&French"
+#~ msgstr "ਫਰੈਂਚ(&F)"
+
+#~ msgid "&Italian"
+#~ msgstr "ਇਤਾਲਵੀ(&I)"
+
+#~ msgid "D&utch"
+#~ msgstr "ਡੱਚ(&u)"
+
+#~ msgid "&Portuguese"
+#~ msgstr "ਪੁਰਤਗਾਲੀ(&P)"

@@ -1,0 +1,988 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potato Guy">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>Manuale di &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Revisore</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Valter</firstname
+> <surname
+>Mura</surname
+><affiliation
+><address
+><email
+>valtermura@gmail.com</email
+></address
+></affiliation
+><contrib
+> Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Andrea</firstname
+> <surname
+>Celli</surname
+><affiliation
+><address
+><email
+>andrea.celli@libero.it</email
+></address
+></affiliation
+><contrib
+> Traduzione della documentazione e dell'interfaccia grafica</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&i18n-ktuberling; è un gioco pensato per i più piccoli. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>gioco</keyword>
+<keyword
+>divertimento</keyword>
+<keyword
+>costruzioni</keyword>
+<keyword
+>pupazzi</keyword>
+<keyword
+>decorazioni</keyword>
+<keyword
+>bambini</keyword>
+<keyword
+>patatone</keyword>
+<keyword
+>patata</keyword>
+<keyword
+>stazione ferroviaria</keyword>
+<keyword
+>un giocatore</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+<para
+>Tipo di gioco: divertimento</para>
+<para
+>Numero massimo giocatori: Uno</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Scena Pizzeria</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&i18n-ktuberling; è un semplice gioco di costruzioni adatto tanto ai bambini che agli adulti. L'idea del gioco è basata su un tradizionale metodo per costruire pupazzi. Una patata veniva decorata con vari ammennicoli per renderla simile a un bambolotto. &i18n-ktuberling; va molto oltre come contenuti e offre una sorprendente varietà di temi. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Come si gioca</title>
+
+<para
+>&i18n-ktuberling; è un gioco pensato per i bambini. Naturalmente, può essere giocato da adulti che sono rimasti giovani dentro. </para>
+
+<para
+>Si tratta di un <quote
+>modificatore di patate</quote
+>. Ciò significa che puoi trascinare occhi, bocche, baffi, altre parti del viso e ornamenti, per posizionarli su un uomo-patata. Analogamente, hai a disposizione altri ambienti in cui sistemare altre cose. </para>
+
+<para
+>Non c'è un vincitore del gioco. L'unico obiettivo è quello di disegnare la faccia più divertente che ti riesce. </para>
+
+<para
+>&i18n-ktuberling; può anche <quote
+>parlare</quote
+>. Dirà i nomi degli oggetti che prendi per sistemare. <quote
+>Parlerà</quote
+> in una lingua a tua scelta. Puoi anche utilizzarlo per imparare qualche parola in lingue straniere. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Regole e suggerimenti</title>
+
+<sect1 id="mouse-operation">
+<title
+>Operazioni col mouse</title>
+
+<para
+>La finestra principale è divisa in due zone: </para>
+
+<itemizedlist>
+<listitem
+><para
+>L'area con la <quote
+>scena</quote
+>. </para
+></listitem>
+<listitem
+><para
+>Deposito degli <quote
+>Oggetti</quote
+>, dove puoi scegliere gli oggetti da disporre sulla scena. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>L'aspetto effettivo dell'applicazione può cambiare a seconda della <quote
+>scena</quote
+> selezionata.</para
+></note>
+<screenshot>
+<screeninfo
+>Finestra principale di &i18n-ktuberling;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Finestra principale</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Disporre un oggetto</title>
+
+<para
+>Per prelevare un oggetto, sposta il puntatore del mouse nel deposito degli <quote
+>oggetti</quote
+> e fai clic su di esso. Poi portalo sulla <quote
+>scena</quote
+> e fissalo con un altro clic. <note
+><para
+>La dimensione degli oggetti può variare mentre li trascini. Alcuni oggetti enormi sono stati ridotti di scala per farli entrare nel deposito degli <quote
+>oggetti</quote
+>.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Spostare un oggetto</title>
+<para
+>Una volta sistemato sulla <quote
+>scena</quote
+>, un oggetto, questo può ancora essere spostato. Basta selezionarlo con un clic e poi trascinarlo e riposizionarlo. Quando lo lasci, esso verrà posto in primo piano rispetto agli altri oggetti che lo nascondevano parzialmente. Questo trucco è utile per sistemare correttamente occhi e occhiali. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Rimuovere un oggetto</title>
+<para
+>Per rimuovere un oggetto che è stato collocato sulla <quote
+>scena</quote
+>, basta ritrascinarlo dalla <quote
+>scena</quote
+> al deposito degli <quote
+>oggetti</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Uno sguardo all'interfaccia </title>
+<sect1 id="the-tool-bar">
+<title
+>La barra degli strumenti</title>
+
+<para
+>La barra degli strumenti contiene dei pulsanti che attivano le funzioni più comuni. </para>
+
+<table>
+<title
+>Pulsanti della barra degli strumenti</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Pulsante&nbsp;</entry>
+      <entry
+>Nome&nbsp;</entry>
+      <entry
+>Equivalente nel menu&nbsp;</entry>
+      <entry
+>Azione</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>Pulsante "Nuovo gioco"</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Nuovo</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Nuovo</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Ripristina la <quote
+>scena</quote
+>. Ossia pulisce completamente il disegno, in modo che si possa creare una nuova decorazione.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>Il pulsante "Carica"</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Carica...</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Carica...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Apre un precedente file <literal role="extension"
+>.tuberling</literal
+> presente nel sistema.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>Il pulsante "Salva"</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Salva</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Salva</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Salva la tua creazione nella tua cartella personale o in qualsiasi altra del sistema. <literal role="extension"
+>.tuberling</literal
+> viene salvato su un piccolo file che contiene solo le posizioni degli oggetti.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>Pulsante "stampa"</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Stampa...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Stampa...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Stampa il tuo disegno.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>Pulsante "Annulla"</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Annulla</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Modifica</guimenu
+> <guimenuitem
+>Annulla</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Annulla l'ultima operazione</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>Pulsante "Rifai"</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Rifai</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Modifica</guimenu
+> <guimenuitem
+>Rifai</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Compie nuovamente l'ultima operazione annullata.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Le voci del menu</title>
+
+<sect2>
+<title
+>Il menu Gioco</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Nuovo</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ripulisce</action
+> la <quote
+>scena</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Carica...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Apre un file <literal role="extension"
+>.tuberling</literal
+> esistente</action
+>, caricandolo dal sistema.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Salva</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Salva</action
+> la tua creazione. L'uomo patata o il pinguino sono salvati in un piccolo file che riporta solo le posizioni degli oggetti.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Salva come immagine...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Crea un file grafico</action
+> che contiene un'immagine del tuo uomo-patata.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Stampa...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Stampa</action
+> l'immagine del tuo uomo-patata.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Esce</action
+> da &i18n-ktuberling;.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Il menu Modifica</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Modifica</guimenu
+> <guimenuitem
+>Annulla</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Annulla</action
+> l'ultima collocazione di un <quote
+>oggetto</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Modifica</guimenu
+> <guimenuitem
+>Rifai</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ripristina</action
+> l'ultima collocazione di un <quote
+>oggetto</quote
+>. Questa voce di menu è attiva solo se si è usata precedentemente l'opzione <guilabel
+>Annulla</guilabel
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Modifica</guimenu
+> <guimenuitem
+>Copia</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Copia</action
+> la <quote
+>scena</quote
+> negli appunti.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Il menu Vista</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Modalità a tutto schermo</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Passa dalla modalità a finestre a quella a schermo intero, e viceversa.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Il menu Scena</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Scena</guimenu
+> <guimenuitem
+>Blocca le proporzioni</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Questa opzione conserva l'aspetto della scena quando ridimensioni la finestra di &i18n-ktuberling;. Quando i rapporti tra le dimensioni della scena non coincidono con quelli della finestra, lo sfondo libero viene riempito con quello del tema.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Scena</guimenu
+> <guimenuitem
+><replaceable
+>Nome della scena</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Passa alla scena</action
+> indicata.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Conterrà tutte le scene installate su questo sistema. </para>
+<para
+>Al prossimo riavvio &i18n-ktuberling; si ricorderà dell'ultima scena che hai scelto e inizierà da quella. </para>
+</sect2>
+
+<sect2>
+<title
+>Il menu Voce</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Voce</guimenu
+> <guimenuitem
+>Muto</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Spegne il sonoro</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Voce</guimenu
+> <guimenuitem
+><replaceable
+>Nome della lingua</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Attiva il sonoro nella lingua che hai scelto</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Al prossimo riavvio &i18n-ktuberling; si ricorderà di questa impostazione. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>I menu Impostazioni e Aiuto</title>
+
+<para
+>Inoltre &i18n-ktuberling; ha le voci di menu <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+> comuni a tutto &kde;. Per ulteriori informazioni leggere le sezioni relative <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Impostazioni</ulink
+> e <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Aiuto</ulink
+> dei Fondamentali di &kde;. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Domande frequenti</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Vorrei cambiare l'aspetto del gioco. Posso? </para
+></question>
+ <answer
+><para
+>Certo che puoi. Segui le indicazioni <link linkend="theme_change"
+>dell'apposita sezione</link
+> di "Uno sguardo all'interfaccia" per informazioni dettagliate.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Posso giocare con la tastiera? </para
+></question>
+ <answer
+><para
+>No. Questo gioco non può essere giocato con la tastiera.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ho fatto un bellissimo disegno e voglio farlo vedere ai miei amici. Posso salvarlo in formato immagine?</para
+></question>
+  <answer
+><para
+>Sì. Per salvare la sessione corrente in formato immagine segui le indicazioni <link linkend="game-save-as-picture"
+>dell'apposita sezione</link
+> di "Uno sguardo all'interfaccia".</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - attuale sviluppatore</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - Idea originale, disegni originali e suoni inglesi</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - &kde; Programmazione</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - Prove, consigli e aiuto</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - Revisione bozze documentazione</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - Miglioramenti alla documentazione</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Traduzione della documentazione e dell'interfaccia grafica Andrea Celli <email
+>andrea.celli@libero.it</email
+></para
+><para
+>Traduzione della documentazione Valter Mura <email
+>valtermura@gmail.com</email
+></para
+><para
+>Voce dell'edizione italiana Clara Tattoni <email
+>clara.tattoni@libero.it</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>

@@ -1,0 +1,972 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "KTuberling">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>Руководство пользователя &ktuberling;</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Евгений</firstname
+> <surname
+>Трунев</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Редактор</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Кирилл</firstname
+><surname
+>Бирюков</surname
+><affiliation
+><address
+><email
+>birk@rdi-kvant.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Мария</firstname
+><surname
+>Шикунова</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода на русский</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>4 октября 2021 г.</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&i18n-ktuberling; — игра, предназначенная для малышей. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>игра</keyword>
+<keyword
+>игрушка</keyword>
+<keyword
+>конструктор</keyword>
+<keyword
+>кукла</keyword>
+<keyword
+>украшение</keyword>
+<keyword
+>дети</keyword>
+<keyword
+>tuberling</keyword>
+<keyword
+>картофелина</keyword>
+<keyword
+>железнодорожная станция</keyword>
+<keyword
+>один игрок</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Введение</title>
+<para
+>Тип игры: игрушка</para>
+<para
+>Количество игроков: один</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Игровое поле «Пиццерия»</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&i18n-ktuberling; — простой конструктор, подходящий для малышей. Идея игры основана на некогда популярной концепции изготовления кукол: картофелину украшали различными небольшими элементами, чтобы она походила на крошечного человека. &i18n-ktuberling; идёт дальше и предлагает больше разнообразных элементов и тем. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Правила игры</title>
+
+<para
+>&i18n-ktuberling; — игра, предназначенная для малышей, хотя она может понравиться и взрослым, сохранившим детскую непосредственность. </para>
+
+<para
+>По своей сути, эта игра — нечто вроде <quote
+>редактора картофелины</quote
+>. Возможно приклеивать глаза, рты, усы, другие части лица и всякие элементы на простой картофельный клубень. В игре ещё есть другие темы. </para>
+
+<para
+>В этой игре нет ни победителей ни проигравших. Единственное её предназначение — создавать забавные и весёлые лица. </para>
+
+<para
+>&i18n-ktuberling; также может <quote
+>говорить</quote
+>. Он произносит имена перетаскиваемых объектов. Он будет <quote
+>говорить</quote
+> на родном языке игрока или на английском, если звуков для необходимого языка не существует. Игру также возможно использовать для изучения иностранного языка. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Правила и советы</title>
+
+<sect1 id="mouse-operation">
+<title
+>Действия мышью</title>
+
+<para
+>В главном окне расположены две основные области: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Область <quote
+>Игровое поле</quote
+>. </para
+></listitem>
+<listitem
+><para
+>Область <quote
+>Объекты</quote
+>, где расположены элементы, которые возможно поместить на игровое поле. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Внешний вид приложения может меняться в зависимости от выбора <quote
+>игрового поля</quote
+>.</para
+></note>
+<screenshot>
+<screeninfo
+>Основное окно &i18n-ktuberling;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Основное окно</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Размещение объектов</title>
+
+<para
+>Чтобы разместить объект, наведите указатель мыши к области <quote
+>объектов</quote
+> и нажмите на объект. Перетащите его на  <quote
+>игровое поле</quote
+> и щёлкните левой кнопкой мыши ещё раз. <note
+><para
+>При изменении размера окна некоторые объекты могут изменить размер. Объекты большого размера будут уменьшены, чтобы вместиться в область <quote
+>объектов</quote
+>.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Перемещение объектов</title>
+<para
+>Объект, помещённый в область <quote
+>игрового поля</quote
+>, возможно перемещать на другое место. Для этого щёлкните на объект левой кнопкой мыши и перетащите его на другое место, а затем щёлкните левой кнопкой мыши ещё раз. При щелчке мышью по объекту он устанавливается поверх всех объектов, которые он полностью или частично закрывает. Это свойство возможно использовать, чтобы правильно разместить глаза и очки. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Удаление объекта</title>
+<para
+>Чтобы удалить объект помещённый в игровое поле, перетащите его с <quote
+>игрового поля</quote
+> обратно в область объектов. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Обзор интерфейса </title>
+<sect1 id="the-tool-bar">
+<title
+>Панель инструментов</title>
+
+<para
+>В панели инструментов расположены кнопки для наиболее часто используемых функций </para>
+
+<table>
+<title
+>Кнопки панели инструментов</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Кнопка&nbsp;</entry>
+      <entry
+>Имя&nbsp;</entry>
+      <entry
+>Эквивалент меню&nbsp;</entry>
+      <entry
+>Действие</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка новой игры</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Новая игра</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Новая</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Сбрасывает область <quote
+>игрового поля</quote
+>, удаляя с него все объекты.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка загрузки</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Загрузить...</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Загрузить...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Открывает существующий файл <literal role="extension"
+>.tuberling</literal
+> с диска.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка сохранения</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Сохранить</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Сохранить</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Сохраняет созданное произведение в домашний и любой другой каталог. Файл <literal role="extension"
+>.tuberling</literal
+> сохраняется в маленький файл, где будет сохранена определённая позиция объектов.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка печати</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Печать...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Печать...</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Печатает картинку.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка отмены</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Отменить действие</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Отменить</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Отменяет последнее действие.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>Кнопка повтора</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Повторить отменённое действие</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Повторить</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Повторяет последнее отменённое действие.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Пункты меню</title>
+
+<sect2>
+<title
+>Меню «Игра»</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Новая</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Очищает</action
+> область <quote
+>игрового поля</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Загрузить...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Открывает существующий файл <literal role="extension"
+>.tuberling</literal
+></action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Сохранить</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Сохранить</action
+> картинку. Созданное вами существо сохраняется  в небольшом файле, куда записываются только координаты составляющих его объектов.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Сохранить как изображение...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Создаёт графический файл</action
+>, содержащий изображение созданной «картофелины».</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Печать...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Печатает</action
+> изображение tuberling.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Закрывает</action
+> &i18n-ktuberling;.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Меню «Правка»</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Отменить действие</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Отменить</action
+> размещение последнего объекта.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Повторить действие</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Повторить</action
+> размещение последнего объекта.Эта опция меню будет активна только в том случае, если вы предварительно отменяли свои действия с помощью пункта меню <quote
+>Отменить действие</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Копировать</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Копирование</action
+> игрового поля в буфер обмена.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Меню «Правка»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Вид</guimenu
+> <guimenuitem
+>Полноэкранный режим</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Переводит графический интерфейс в полноэкранный режим.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Меню «Игровое поле»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Игровое поле</guimenu
+> <guimenuitem
+>Зафиксировать соотношение сторон</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Эта функция сохраняет соотношение сторон игрового поля при изменении размера окна &i18n-ktuberling;. Когда соотношение сторон игрового поля не совпадает с соотношением сторон окна, будет использоваться фон, указанный в теме.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Игровое поле</guimenu
+> <guimenuitem
+><replaceable
+>название игрового поля</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Переключает игровое поле</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Она будет содержать игровые поля, установленные в системе. </para>
+<para
+>&i18n-ktuberling;  запоминает последнее выбранное игровое поле при следующем запуске. </para>
+</sect2>
+
+<sect2>
+<title
+>Меню «Звуки»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Звуки</guimenu
+> <guimenuitem
+>Выключить</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Выключает звук</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Звуки</guimenu
+> <guimenuitem
+><replaceable
+>название языка</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Включает звук и говорит на выбранном языке</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>&i18n-ktuberling; запоминает эту функцию при следующем запуске. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>Меню «Настройка» и «Справка»</title>
+
+<para
+>В дополнение к перечисленным пунктам меню &i18n-ktuberling; имеет общие для приложений &kde;  пункты в меню <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>.  Информацию о них возможно найти в разделах документации о <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню Настройка</ulink
+> и о <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню Справка</ulink
+> Основ &kde;. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Вопросы и ответы</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Я хочу сменить внешний вид игрового поля. Как это сделать? </para
+></question>
+ <answer
+><para
+>Чтобы узнать, как сделать это, обратитесь к <link linkend="theme_change"
+>этому</link
+> разделу «Обзора интерфейса».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Можно ли пользоваться клавиатурой для игры? </para
+></question>
+ <answer
+><para
+>Нет, здесь нельзя использовать клавиатуру.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я сделал красивую картинку и хочу поделиться ей с друзьями. Как сохранить её как изображение?</para
+></question>
+  <answer
+><para
+>Чтобы узнать, как сохранить текущий сеанс как изображение, перейдите к <link linkend="game-save-as-picture"
+>этому</link
+> разделу «Обзора интерфейса».</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Авторские права и лицензия</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> — текущий сопровождающий</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun — оригинальная идея, рисунки и звуки на английском языке</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; — программирование &kde;</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> — тесты, советы и помощь</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> — чтение и редактирование документации</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; — исправление документации</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Перевод на русский — Кирилл Бирюков <email
+>birk@rdi-kvant.ru</email
+>, Мария Шикунова<email
+>translation-team@basealt.ru</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>
