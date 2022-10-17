@@ -140,7 +140,7 @@ msgstr "Dolores Almansa"
 #: main.cpp:43
 #, kde-format
 msgid "Potato to open"
-msgstr "Creïlla que s'obrirà"
+msgstr "Creïlla que s'ha d'obrir"
 
 #: pics/layout.i18n:6
 #, kde-format
