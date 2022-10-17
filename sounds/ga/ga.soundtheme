@@ -1,0 +1,18 @@
+<language code="ga">
+
+    <sound name="eye" file="ga/suil.wav" />
+    <sound name="eyebrow" file="ga/mala.wav" />
+    <sound name="nose" file="ga/sron.wav" />
+    <sound name="ear" file="ga/cluas.wav" />
+    <sound name="mouth" file="ga/beal.wav" />
+    <sound name="hat" file="ga/hata.wav" />
+    <sound name="moustache" file="ga/croimeal.wav" />
+    <sound name="bow" file="ga/cuachog.wav" />
+    <sound name="sunglasses" file="ga/speaclai-greine.wav" />
+    <sound name="spectacles" file="ga/speaclai.wav" />
+    <sound name="earring" file="ga/fainne-cluaise.wav" />
+
+    <sound name="tie" file="ga/carbhat.wav" />
+    <sound name="hair" file="ga/gruaig.wav" />
+
+</language>

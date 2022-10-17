@@ -1,0 +1,19 @@
+  <language code="sr">
+
+    <sound name="tuberling" file="sr/krompirko.ogg" />
+    <sound name="eye" file="sr/oko.ogg" />
+    <sound name="eyebrow" file="sr/obrva.ogg" />
+    <sound name="nose" file="sr/nos.ogg" />
+    <sound name="ear" file="sr/uvo.ogg" />
+    <sound name="mouth" file="sr/usta.ogg" />
+    <sound name="hat" file="sr/sesir.ogg" />
+    <sound name="moustache" file="sr/brkovi.ogg" />
+    <sound name="cigar" file="sr/cigara.ogg" />
+    <sound name="bow" file="sr/masna.ogg" />
+    <sound name="sunglasses" file="sr/naocare_za_sunce.ogg" />
+    <sound name="spectacles" file="sr/naocare.ogg" />
+    <sound name="earring" file="sr/mindjusa.ogg" />
+    <sound name="badge" file="sr/znacka.ogg" />
+    <sound name="watch" file="sr/sat.ogg" />
+
+  </language>

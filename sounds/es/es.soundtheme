@@ -1,0 +1,18 @@
+  <language code="es">
+
+    <sound name="eye" file="es/ojo.wav" />
+    <sound name="eyebrow" file="es/ceja.wav" />
+    <sound name="nose" file="es/nariz.wav" />
+    <sound name="ear" file="es/oreja.wav" />
+    <sound name="mouth" file="es/boca.wav" />
+    <sound name="hat" file="es/sombrero.wav" />
+    <sound name="moustache" file="es/bigote.wav" />
+    <sound name="bow" file="es/lazo.wav" />
+    <sound name="sunglasses" file="es/gafasdesol.wav" />
+    <sound name="spectacles" file="es/anteojos.wav" />
+    <sound name="earring" file="es/pendiente.wav" />
+
+    <sound name="tie" file="es/lazo.wav" />
+    <sound name="hair" file="es/pelo.wav" />
+
+  </language>

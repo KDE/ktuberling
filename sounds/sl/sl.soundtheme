@@ -1,0 +1,79 @@
+<language code="sl">
+
+    <sound name="ball" file="sl/ball.ogg" />
+    <sound name="bow" file="sl/bow.ogg" />
+    <sound name="coat" file="sl/coat.ogg" />
+    <sound name="ear" file="sl/ear.ogg" />
+    <sound name="earring" file="sl/earring.ogg" />
+    <sound name="eye" file="sl/eye.ogg" />
+    <sound name="eyebrow" file="sl/eyebrow.ogg" />
+    <sound name="flower" file="sl/flower.ogg" />
+    <sound name="hair" file="sl/hair.ogg" />
+    <sound name="hat" file="sl/hat.ogg" />
+    <sound name="moustache" file="sl/moustache.ogg" />
+    <sound name="mouth" file="sl/mouth.ogg" />
+    <sound name="nose" file="sl/nose.ogg" />
+    <sound name="shoe" file="sl/shoe.ogg" />
+    <sound name="shorts" file="sl/shorts.ogg" />
+    <sound name="skirt" file="sl/skirt.ogg" />
+    <sound name="spectacles" file="sl/spectacles.ogg" />
+    <sound name="stick" file="sl/stick.ogg" />
+    <sound name="sunglasses" file="sl/sunglasses.ogg" />
+    <sound name="tie" file="sl/tie.ogg" />
+    <sound name="umbrella" file="sl/umbrella.ogg" />
+    
+    <sound name="egypt_bridge" file="sl/egypt_bridge.ogg" />
+    <sound name="egypt_birds" file="sl/egypt_birds.ogg" />
+    <sound name="egypt_palmtree" file="sl/egypt_palmtree.ogg" />
+    <sound name="egypt_grass" file="sl/egypt_grass.ogg" />
+    <sound name="egypt_camel" file="sl/egypt_camel.ogg" />
+    <sound name="egypt_road" file="sl/egypt_road.ogg" />
+    <sound name="egypt_cart" file="sl/egypt_cart.ogg" />
+    <sound name="egypt_sphynx" file="sl/egypt_sphynx.ogg" />
+    <sound name="egypt_column" file="sl/egypt_column.ogg" />
+    <sound name="egypt_girl" file="sl/egypt_girl.ogg" />
+    <sound name="egypt_well" file="sl/egypt_well.ogg" />
+    <sound name="egypt_pyramid" file="sl/egypt_pyramid.ogg" />
+    <sound name="egypt_man" file="sl/egypt_man.ogg" />
+    <sound name="egypt_arch" file="sl/egypt_arch.ogg" />
+    <sound name="egypt_oasis" file="sl/egypt_oasis.ogg" />
+    <sound name="egypt_woman" file="sl/egypt_woman.ogg" />
+    <sound name="egypt_boy" file="sl/egypt_boy.ogg" />
+    <sound name="egypt_donkey" file="sl/egypt_donkey.ogg" />
+
+    <sound name="tv_car" file="sl/tv_car.ogg" />
+    <sound name="tv_cyclist" file="sl/tv_cyclist.ogg" />
+    <sound name="tv_bicycle" file="sl/tv_bicycle.ogg" />
+    <sound name="tv_train" file="sl/tv_train.ogg" />
+    
+    <sound name="moon_sign" file="sl/moon_sign.ogg" />
+    <sound name="moon_planet" file="sl/moon_planet.ogg" />
+    <sound name="moon_satellite" file="sl/moon_satellite.ogg" />
+    <sound name="moon_radar" file="sl/moon_radar.ogg" />
+    <sound name="moon_rocket" file="sl/moon_rocket.ogg" />
+    <sound name="moon_ufo" file="sl/moon_ufo.ogg" />
+    <sound name="moon_hotel" file="sl/moon_hotel.ogg" />
+    <sound name="moon_astronaut" file="sl/moon_astronaut.ogg" />
+    <sound name="moon_monster" file="sl/moon_monster.ogg" />
+    <sound name="moon_alien" file="sl/moon_alien.ogg" />
+    <sound name="moon_earth" file="sl/moon_earth.ogg" />
+    <sound name="moon_fallingstar" file="sl/moon_fallingstar.ogg" />
+    <sound name="moon_star" file="sl/moon_star.ogg" />
+    
+    <sound name="pizzeria_anchovy" file="sl/pizzeria_anchovy.ogg" />
+    <sound name="pizzeria_bacon" file="sl/pizzeria_bacon.ogg" />
+    <sound name="pizzeria_brocolli" file="sl/pizzeria_broccolli.ogg" />
+    <sound name="pizzeria_cheese" file="sl/pizzeria_cheese.ogg" />
+    <sound name="pizzeria_cucumber" file="sl/pizzeria_cucumber.ogg" />
+    <sound name="pizzeria_mushroom" file="sl/pizzeria_mushroom.ogg" />
+    <sound name="pizzeria_olive" file="sl/pizzeria_olive.ogg" />
+    <sound name="pizzeria_onion" file="sl/pizzeria_onion.ogg" />
+    <sound name="pizzeria_oregano" file="sl/pizzeria_oregano.ogg" />
+    <sound name="pizzeria_pepper" file="sl/pizzeria_pepper.ogg" />
+    <sound name="pizzeria_pepperoni" file="sl/pizzeria_pepperoni.ogg" />
+    <sound name="pizzeria_pineapple" file="sl/pizzeria_pineapple.ogg" />
+    <sound name="pizzeria_salami" file="sl/pizzeria_salami.ogg" />
+    <sound name="pizzeria_tomato" file="sl/pizzeria_tomato.ogg" />
+
+
+</language>

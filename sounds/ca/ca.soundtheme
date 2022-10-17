@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<language code="ca">
+
+  <sound name="ball" file="ca/patata_pilota.ogg"/>
+  <sound name="bow" file="ca/patata_corbati.ogg"/>
+  <sound name="coat" file="ca/patata_vestit.ogg"/>
+  <sound name="ear" file="ca/patata_orella.ogg"/>
+  <sound name="earring" file="ca/patata_arrecada.ogg"/>
+  <sound name="eyebrow" file="ca/patata_cella.ogg"/>
+  <sound name="eye" file="ca/patata_ull.ogg"/>
+  <sound name="flower" file="ca/patata_flors.ogg"/>
+  <sound name="hair" file="ca/patata_cabell.ogg"/>
+  <sound name="hat" file="ca/patata_barret.ogg"/>
+  <sound name="moustache" file="ca/patata_bigoti.ogg"/>
+  <sound name="mouth" file="ca/patata_llavis.ogg"/>
+  <sound name="nose" file="ca/patata_nas.ogg"/>
+  <sound name="shoe" file="ca/patata_sabata.ogg"/>
+  <sound name="shorts" file="ca/patata_bermudes.ogg"/>
+  <sound name="skirt" file="ca/patata_faldilla.ogg"/>
+  <sound name="spectacles" file="ca/patata_ulleres.ogg"/>
+  <sound name="stick" file="ca/patata_basto.ogg"/>
+  <sound name="sunglasses" file="ca/patata_ulleresdesol.ogg"/>
+  <sound name="tie" file="ca/patata_corbata.ogg"/>
+  <sound name="umbrella" file="ca/patata_paraigua.ogg"/>
+
+  <sound name="tux-apple" file="ca/apple.ogg" />
+  <sound name="tux-arrow" file="ca/arrow.ogg" />
+  <sound name="tux-arrows" file="ca/arrows.ogg" />
+  <sound name="tux-bow" file="ca/bow.ogg" />
+  <sound name="tux-shoot" file="ca/bow-shoot.ogg" />
+  <sound name="tux-bullseye" file="ca/bullseye.ogg" />
+  <sound name="tux-candles" file="ca/candles.ogg" />
+  <sound name="tux-fish" file="ca/fish.ogg" />
+  <sound name="tux-flask" file="ca/flask.ogg" />
+  <sound name="tux-poison" file="ca/flask-poison.ogg" />
+  <sound name="frier-tux" file="ca/Frier-Tux.ogg" />
+  <sound name="tux-goblet" file="ca/goblet.ogg" />
+  <sound name="guard-tux" file="ca/Guard-Tux.ogg" />
+  <sound name="tux-guitar" file="ca/guitar.ogg" />
+  <sound name="tux-key" file="ca/key.ogg" />
+  <sound name="kid-tux" file="ca/Kid-Tux.ogg" />
+  <sound name="tux-letter" file="ca/letter.ogg" />
+  <sound name="little-tux" file="ca/Little-Tux.ogg" />
+  <sound name="maiden-tux" file="ca/Maiden-Tux.ogg" />
+  <sound name="tux-note" file="ca/note.ogg" />
+  <sound name="tux-notes" file="ca/notes.ogg" />
+  <sound name="tux-plate" file="ca/plate.ogg" />
+  <sound name="prince-tux" file="ca/Prince-Tux.ogg" />
+  <sound name="robin-tux" file="ca/Robin-Tux.ogg" />
+  <sound name="tux-angry" file="ca/say-angry.ogg" />
+  <sound name="tux-huh" file="ca/say-huh.ogg" />
+  <sound name="tux-idea" file="ca/say-idea.ogg" />
+  <sound name="tux-laugh" file="ca/say-laugh.ogg" />
+  <sound name="tux-love" file="ca/say-love.ogg" />
+  <sound name="tux-sick" file="ca/say-sick.ogg" />
+  <sound name="tux-stare" file="ca/say-stare.ogg" />
+  <sound name="tux-what" file="ca/say-what.ogg" />
+  <sound name="tux-wow" file="ca/say-wow.ogg" />
+  <sound name="tux-zzz" file="ca/say-zzz.ogg" />
+  <sound name="sherif-tux" file="ca/Sherif-Tux.ogg" />
+  <sound name="tux-teacup" file="ca/teacup.ogg" />
+  <sound name="tux-vase" file="ca/vase.ogg" />
+  <sound name="tux-wanted" file="ca/wanted.ogg" />
+  <sound name="whitch-tux" file="ca/Whitch-Tux.ogg" />
+  <sound name="tux-fly" file="ca/white-dowe-fly.ogg" />
+  <sound name="tux-dowe" file="ca/white-dowe.ogg" />
+  
+  <sound name="pizzeria_pepper" file="ca/pizzeria_pepper.ogg" />
+  <sound name="pizzeria_pineapple" file="ca/pizzeria_pineapple.ogg" />
+  <sound name="pizzeria_olive" file="ca/pizzeria_olive.ogg" />
+  <sound name="pizzeria_tomato" file="ca/pizzeria_tomato.ogg" />
+  <sound name="pizzeria_cucumber" file="ca/pizzeria_cucumber.ogg" />
+  <sound name="pizzeria_salami" file="ca/pizzeria_salami.ogg" />
+  <sound name="pizzeria_mushroom" file="ca/pizzeria_mushroom.ogg" />
+  <sound name="pizzeria_pepperoni" file="ca/pizzeria_pepperoni.ogg" />
+  <sound name="pizzeria_oregano" file="ca/pizzeria_oregano.ogg" />
+  <sound name="pizzeria_cheese" file="ca/pizzeria_cheese.ogg" />
+  <sound name="pizzeria_onion" file="ca/pizzeria_onion.ogg" />
+  <sound name="pizzeria_brocolli" file="ca/pizzeria_brocolli.ogg" />
+  <sound name="pizzeria_anchovy" file="ca/pizzeria_anchovy.ogg" />
+  <sound name="pizzeria_bacon" file="ca/pizzeria_bacon.ogg" />
+  
+  <sound name="moon_alien" file="ca/moon_alien.ogg"/>
+  <sound name="moon_astronaut" file="ca/moon_astronaut.ogg"/>
+  <sound name="moon_earth" file="ca/moon_earth.ogg"/>
+  <sound name="moon_fallingstar" file="ca/moon_fallingstar.ogg"/>
+  <sound name="moon_hotel" file="ca/moon_hotel.ogg"/>
+  <sound name="moon_monster" file="ca/moon_monster.ogg"/>
+  <sound name="moon_moonwalker" file="ca/moon_moonwalker.ogg"/>
+  <sound name="moon_planet" file="ca/moon_planet.ogg"/>
+  <sound name="moon_radar" file="ca/moon_radar.ogg"/>
+  <sound name="moon_rocket" file="ca/moon_rocket.ogg"/>
+  <sound name="moon_satellite" file="ca/moon_satellite.ogg"/>
+  <sound name="moon_sign" file="ca/moon_sign.ogg"/>
+  <sound name="moon_star" file="ca/moon_star.ogg"/>
+  <sound name="moon_ufo" file="ca/moon_ufo.ogg"/>
+  
+  <sound name="egypt_arch" file="ca/egypt_arch.ogg"/>
+  <sound name="egypt_birds" file="ca/egypt_birds.ogg"/>
+  <sound name="egypt_boy" file="ca/egypt_boy.ogg"/>
+  <sound name="egypt_bridge" file="ca/egypt_bridge.ogg"/>
+  <sound name="egypt_camel" file="ca/egypt_camel.ogg"/>
+  <sound name="egypt_cart" file="ca/egypt_cart.ogg"/>
+  <sound name="egypt_column" file="ca/egypt_column.ogg"/>
+  <sound name="egypt_donkey" file="ca/egypt_donkey.ogg"/>
+  <sound name="egypt_girl" file="ca/egypt_girl.ogg"/>
+  <sound name="egypt_grass" file="ca/egypt_grass.ogg"/>
+  <sound name="egypt_man" file="ca/egypt_man.ogg"/>
+  <sound name="egypt_oasis" file="ca/egypt_oasis.ogg"/>
+  <sound name="egypt_palmtree" file="ca/egypt_palmtree.ogg"/>
+  <sound name="egypt_pyramid" file="ca/egypt_pyramid.ogg"/>
+  <sound name="egypt_road" file="ca/egypt_road.ogg"/>
+  <sound name="egypt_sphynx" file="ca/egypt_sphynx.ogg"/>
+  <sound name="egypt_well" file="ca/egypt_well.ogg"/>
+  <sound name="egypt_woman" file="ca/egypt_woman.ogg"/>
+
+  <sound name="xmas_angel" file="ca/xmas_angel.ogg"/>
+  <sound name="xmas_ball" file="ca/xmas_ball.ogg"/>
+  <sound name="xmas_boot" file="ca/xmas_boot.ogg"/>
+  <sound name="xmas_candle" file="ca/xmas_candle.ogg"/>
+  <sound name="xmas_comet" file="ca/xmas_comet.ogg"/>
+  <sound name="xmas_garland" file="ca/xmas_garland.ogg"/>
+  <sound name="xmas_lights" file="ca/xmas_lights.ogg"/>
+  <sound name="xmas_mistletoe" file="ca/xmas_mistletoe.ogg"/>
+  <sound name="xmas_moon" file="ca/xmas_moon.ogg"/>
+  <sound name="xmas_owl" file="ca/xmas_owl.ogg"/>
+  <sound name="xmas_present" file="ca/xmas_present.ogg"/>
+  <sound name="xmas_rabbit" file="ca/xmas_rabbit.ogg"/>
+  <sound name="xmas_reindeer" file="ca/xmas_reindeer.ogg"/>
+  <sound name="xmas_shoe" file="ca/xmas_shoe.ogg"/>
+  <sound name="xmas_snowflake" file="ca/xmas_snowflake.ogg"/>
+  <sound name="xmas_snowman" file="ca/xmas_snowman.ogg"/>
+  <sound name="xmas_star" file="ca/xmas_star.ogg"/>
+  <sound name="xmas_tree" file="ca/xmas_tree.ogg"/>
+  <sound name="xmas_turtle" file="ca/xmas_turtle.ogg"/>
+  <sound name="xmas_tux" file="ca/xmas_tux.ogg"/>
+  
+  <sound name="butterflies_body" file="ca/butterflies_body.ogg"/>
+  <sound name="butterflies_circle" file="ca/butterflies_circle.ogg"/>
+  <sound name="butterflies_circles" file="ca/butterflies_circles.ogg"/>
+  <sound name="butterflies_eye" file="ca/butterflies_eye.ogg"/>
+  <sound name="butterflies_heart" file="ca/butterflies_heart.ogg"/>
+  <sound name="butterflies_purple_shape" file="ca/butterflies_purple_shape.ogg"/>
+  <sound name="butterflies_spiral" file="ca/butterflies_spiral.ogg"/>
+  <sound name="butterflies_wing" file="ca/butterflies_wing.ogg"/>  
+
+  <sound name="robot_workshop_antenna" file="ca/robot_workshop_antenna.ogg"/>
+  <sound name="robot_workshop_arm" file="ca/robot_workshop_arm.ogg"/>
+  <sound name="robot_workshop_ball" file="ca/robot_workshop_ball.ogg"/>
+  <sound name="robot_workshop_base" file="ca/robot_workshop_base.ogg"/>
+  <sound name="robot_workshop_block" file="ca/robot_workshop_block.ogg"/>
+  <sound name="robot_workshop_body" file="ca/robot_workshop_body.ogg"/>
+  <sound name="robot_workshop_claw" file="ca/robot_workshop_claw.ogg"/>
+  <sound name="robot_workshop_eye" file="ca/robot_workshop_eye.ogg"/>
+  <sound name="robot_workshop_foot" file="ca/robot_workshop_foot.ogg"/>
+  <sound name="robot_workshop_hand" file="ca/robot_workshop_hand.ogg"/>
+  <sound name="robot_workshop_head" file="ca/robot_workshop_head.ogg"/>
+  <sound name="robot_workshop_panel" file="ca/robot_workshop_panel.ogg"/>
+  <sound name="robot_workshop_rocket" file="ca/robot_workshop_rocket.ogg"/>
+  <sound name="robot_workshop_rod" file="ca/robot_workshop_rod.ogg"/>
+  <sound name="robot_workshop_wheel" file="ca/robot_workshop_wheel.ogg"/>
+
+  <sound name="tv_accident" file="ca/tv_accident.ogg"/>
+  <sound name="tv_ball" file="ca/tv_ball.ogg"/>
+  <sound name="tv_barrier" file="ca/tv_barrier.ogg"/>
+  <sound name="tv_bicycle" file="ca/tv_bicycle.ogg"/>
+  <sound name="tv_breakdown_lorry" file="ca/tv_breakdown_lorry.ogg"/>
+  <sound name="tv_caravan" file="ca/tv_caravan.ogg"/>
+  <sound name="tv_car" file="ca/tv_car.ogg"/>
+  <sound name="tv_cyclist" file="ca/tv_cyclist.ogg"/>
+  <sound name="tv_elephant" file="ca/tv_elephant.ogg"/>
+  <sound name="tv_excavator" file="ca/tv_excavator.ogg"/>
+  <sound name="tv_fence" file="ca/tv_fence.ogg"/>
+  <sound name="tv_fireengine" file="ca/tv_fireengine.ogg"/>
+  <sound name="tv_fire" file="ca/tv_fire.ogg"/>
+  <sound name="tv_fireman" file="ca/tv_fireman.ogg"/>
+  <sound name="tv_fisherman" file="ca/tv_fisherman.ogg"/>
+  <sound name="tv_giraffe" file="ca/tv_giraffe.ogg"/>
+  <sound name="tv_guitar" file="ca/tv_guitar.ogg"/>
+  <sound name="tv_guitarist" file="ca/tv_guitarist.ogg"/>
+  <sound name="tv_house" file="ca/tv_house.ogg"/>
+  <sound name="tv_ladder" file="ca/tv_ladder.ogg"/>
+  <sound name="tv_lion" file="ca/tv_lion.ogg"/>
+  <sound name="tv_lorry" file="ca/tv_lorry.ogg"/>
+  <sound name="tv_lorry_tractor" file="ca/tv_lorry_tractor.ogg"/>
+  <sound name="tv_man" file="ca/tv_man.ogg"/>
+  <sound name="tv_mechanic" file="ca/tv_mechanic.ogg"/>
+  <sound name="tv_monkey" file="ca/tv_monkey.ogg"/>
+  <sound name="tv_path" file="ca/tv_path.ogg"/>
+  <sound name="tv_rock" file="ca/tv_rock.ogg"/>
+  <sound name="tv_school" file="ca/tv_school.ogg"/>
+  <sound name="tv_shop" file="ca/tv_shop.ogg"/>
+  <sound name="tv_smoke" file="ca/tv_smoke.ogg"/>
+  <sound name="tv_tipper" file="ca/tv_tipper.ogg"/>
+  <sound name="tv_trailer" file="ca/tv_trailer.ogg"/>
+  <sound name="tv_train" file="ca/tv_train.ogg"/>
+  <sound name="tv_tree" file="ca/tv_tree.ogg"/>
+  <sound name="tv_tunnel" file="ca/tv_tunnel.ogg"/>
+  <sound name="tv_volley_net" file="ca/tv_volley_net.ogg"/>
+  <sound name="tv_wagon" file="ca/tv_wagon.ogg"/>
+  <sound name="tv_woman" file="ca/tv_woman.ogg"/>  
+  
+</language>

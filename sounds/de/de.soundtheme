@@ -1,0 +1,80 @@
+<language code="de">
+
+    <sound name="ball" file="de/ball.ogg" />
+    <sound name="bow" file="de/bow.ogg" />
+    <sound name="coat" file="de/coat.ogg" />
+    <sound name="ear" file="de/ear.ogg" />
+    <sound name="earring" file="de/earring.ogg" />
+    <sound name="eye" file="de/eye.ogg" />
+    <sound name="eyebrow" file="de/eyebrow.ogg" />
+    <sound name="flower" file="de/flower.ogg" />
+    <sound name="hair" file="de/hair.ogg" />
+    <sound name="hat" file="de/hat.ogg" />
+    <sound name="moustache" file="de/moustache.ogg" />
+    <sound name="mouth" file="de/mouth.ogg" />
+    <sound name="nose" file="de/nose.ogg" />
+    <sound name="shoe" file="de/shoes.ogg" />
+    <sound name="shorts" file="de/shorts.ogg" />
+    <sound name="skirt" file="de/skirt.ogg" />
+    <sound name="spectacles" file="de/spectacles.ogg" />
+    <sound name="stick" file="de/stick.ogg" />
+    <sound name="sunglasses" file="de/sunglasses.ogg" />
+    <sound name="tie" file="de/tie.ogg" />
+    <sound name="umbrella" file="de/umbrella.ogg" />
+    
+    <sound name="egypt_bridge" file="de/egypt_bridge.ogg" />
+    <sound name="egypt_birds" file="de/egypt_birds.ogg" />
+    <sound name="egypt_palmtree" file="de/egypt_palmtree.ogg" />
+    <sound name="egypt_grass" file="de/egypt_grass.ogg" />
+    <sound name="egypt_camel" file="de/egypt_camel.ogg" />
+    <sound name="egypt_road" file="de/egypt_road.ogg" />
+    <sound name="egypt_cart" file="de/egypt_cart.ogg" />
+    <sound name="egypt_sphynx" file="de/egypt_sphynx.ogg" />
+    <sound name="egypt_column" file="de/egypt_column.ogg" />
+    <sound name="egypt_girl" file="de/egypt_girl.ogg" />
+    <sound name="egypt_well" file="de/egypt_well.ogg" />
+    <sound name="egypt_pyramid" file="de/egypt_pyramid.ogg" />
+    <sound name="egypt_man" file="de/egypt_man.ogg" />
+    <sound name="egypt_arch" file="de/egypt_arch.ogg" />
+    <sound name="egypt_oasis" file="de/egypt_oasis.ogg" />
+    <sound name="egypt_woman" file="de/egypt_woman.ogg" />
+    <sound name="egypt_boy" file="de/egypt_boy.ogg" />
+    <sound name="egypt_donkey" file="de/egypt_donkey.ogg" />
+
+    <sound name="tv_car" file="de/tv_car.ogg" />
+    <sound name="tv_cyclist" file="de/tv_cyclist.ogg" />
+    <sound name="tv_bicycle" file="de/tv_bicycle.ogg" />
+    <sound name="tv_train" file="de/tv_train.ogg" />
+    
+    <sound name="moon_sign" file="de/moon_sign.ogg" />
+    <sound name="moon_planet" file="de/moon_planet.ogg" />
+    <sound name="moon_satellite" file="de/moon_satellite.ogg" />
+    <sound name="moon_radar" file="de/moon_radar.ogg" />
+    <sound name="moon_moonwalker" file="de/moon_moonwalker.ogg" />
+    <sound name="moon_rocket" file="de/moon_rocket.ogg" />
+    <sound name="moon_ufo" file="de/moon_ufo.ogg" />
+    <sound name="moon_hotel" file="de/moon_hotel.ogg" />
+    <sound name="moon_astronaut" file="de/moon_astronaut.ogg" />
+    <sound name="moon_monster" file="de/moon_monster.ogg" />
+    <sound name="moon_alien" file="de/moon_alien.ogg" />
+    <sound name="moon_earth" file="de/moon_earth.ogg" />
+    <sound name="moon_fallingstar" file="de/moon_fallingstar.ogg" />
+    <sound name="moon_star" file="de/moon_star.ogg" />
+    
+    <sound name="pizzeria_anchovy" file="de/pizzeria_anchovy.ogg" />
+    <sound name="pizzeria_bacon" file="de/pizzeria_bacon.ogg" />
+    <sound name="pizzeria_brocolli" file="de/pizzeria_broccolli.ogg" />
+    <sound name="pizzeria_cheese" file="de/pizzeria_cheese.ogg" />
+    <sound name="pizzeria_cucumber" file="de/pizzeria_cucumber.ogg" />
+    <sound name="pizzeria_mushroom" file="de/pizzeria_mushroom.ogg" />
+    <sound name="pizzeria_olive" file="de/pizzeria_olive.ogg" />
+    <sound name="pizzeria_onion" file="de/pizzeria_onion.ogg" />
+    <sound name="pizzeria_oregano" file="de/pizzeria_oregano.ogg" />
+    <sound name="pizzeria_pepper" file="de/pizzeria_pepper.ogg" />
+    <sound name="pizzeria_pepperoni" file="de/pizzeria_pepperoni.ogg" />
+    <sound name="pizzeria_pineapple" file="de/pizzeria_pineapple.ogg" />
+    <sound name="pizzeria_salami" file="de/pizzeria_salami.ogg" />
+    <sound name="pizzeria_tomato" file="de/pizzeria_tomato.ogg" />
+
+
+</language>

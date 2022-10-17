@@ -1,0 +1,18 @@
+  <language code="nl">
+
+    <sound name="eye" file="nl/oog.wav" />
+    <sound name="eyebrow" file="nl/wenkbrauw.wav" />
+    <sound name="nose" file="nl/neus.wav" />
+    <sound name="ear" file="nl/oor.wav" />
+    <sound name="mouth" file="nl/mond.wav" />
+    <sound name="hat" file="nl/hoed.wav" />
+    <sound name="moustache" file="nl/snor.wav" />
+    <sound name="bow" file="nl/strik.wav" />
+    <sound name="sunglasses" file="nl/zonnebril.wav" />
+    <sound name="spectacles" file="nl/bril.wav" />
+    <sound name="earring" file="nl/oorbel.wav" />
+
+    <sound name="tie" file="nl/stropdas.wav" />
+    <sound name="hair" file="nl/haar.wav" />
+
+  </language>

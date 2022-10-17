@@ -1,0 +1,15 @@
+  <language code="fi">
+
+    <sound name="eye" file="fi/silma.wav" />
+    <sound name="eyebrow" file="fi/kulmakarva.wav" />
+    <sound name="nose" file="fi/nena.wav" />
+    <sound name="ear" file="fi/korva.wav" />
+    <sound name="mouth" file="fi/suu.wav" />
+    <sound name="hat" file="fi/hattu.wav" />
+    <sound name="moustache" file="fi/viikset.wav" />
+    <sound name="bow" file="fi/rusetti.wav" />
+    <sound name="sunglasses" file="fi/aurinkolasit.wav" />
+    <sound name="spectacles" file="fi/silmalasit.wav" />
+    <sound name="earring" file="fi/korvakoru.wav" />
+
+  </language>

@@ -1,0 +1,18 @@
+  <language code="sv">
+
+    <sound name="eye" file="sv/oga.wav" />
+    <sound name="eyebrow" file="sv/ogonbryn.wav" />
+    <sound name="nose" file="sv/nasa.wav" />
+    <sound name="ear" file="sv/ora.wav" />
+    <sound name="mouth" file="sv/mun.wav" />
+    <sound name="hat" file="sv/hatt.wav" />
+    <sound name="moustache" file="sv/mustasch.wav" />
+    <sound name="bow" file="sv/rosett.wav" />
+    <sound name="sunglasses" file="sv/solglasogon.wav" />
+    <sound name="spectacles" file="sv/glasogon.wav" />
+    <sound name="earring" file="sv/orhange.wav" />
+
+    <sound name="tie" file="sv/slips.wav" />
+    <sound name="hair" file="sv/har.wav" />
+
+  </language>

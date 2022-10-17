@@ -1,0 +1,18 @@
+  <language code="ro">
+
+    <sound name="eye" file="ro/ochi.wav" />
+    <sound name="eyebrow" file="ro/sprinceana.wav" />
+    <sound name="nose" file="ro/nas.wav" />
+    <sound name="ear" file="ro/ureche.wav" />
+    <sound name="mouth" file="ro/gura.wav" />
+    <sound name="hat" file="ro/palarie.wav" />
+    <sound name="moustache" file="ro/mustata.wav" />
+    <sound name="bow" file="ro/papion.wav" />
+    <sound name="sunglasses" file="ro/ochelari-de-soare.wav" />
+    <sound name="spectacles" file="ro/ochelari.wav" />
+    <sound name="earring" file="ro/cercel.wav" />
+
+    <sound name="tie" file="ro/cravata.wav" />
+    <sound name="hair" file="ro/par.wav" />
+
+  </language>

@@ -1,0 +1,28 @@
+<!--
+   KDE Tuberling
+   Description of the playgrounds
+   mailto:e.bischoff@noos.fr
+
+   Modify this file if you want to add new playgrounds, new sounds,
+   or modify existing ones. If you do that, don't forget to update:
+   - layout.i18n (strings that might be translated)
+   - ktuberlingui.rc (actions associated with menu items).
+-->
+    <language code="nds">
+	
+	<sound name="eye" file="nds/oog.wav" />
+	<sound name="eyebrow" file="nds/oogbro.wav" />
+	<sound name="nose" file="nds/nees.wav" />
+	<sound name="ear" file="nds/ohr.wav" />
+	<sound name="mouth" file="nds/mund.wav" />
+	<sound name="hat" file="nds/hoot.wav" />
+	<sound name="moustache" file="nds/neesboort.wav" />
+	<sound name="bow" file="nds/fleeg.wav" />
+	<sound name="sunglasses" file="nds/suennbrill.wav" />
+	<sound name="spectacles" file="nds/brill.wav" />
+	<sound name="earring" file="nds/ohrring.wav" />
+	
+	<sound name="tie" file="nds/slips.wav" />
+	<sound name="hair" file="nds/hoor.wav" />
+	
+    </language>

@@ -1,0 +1,19 @@
+  <language code="sr@ijekavianlatin">
+
+    <sound name="tuberling" file="sr@ijekavianlatin/krompirko.ogg" />
+    <sound name="eye" file="sr@ijekavianlatin/oko.ogg" />
+    <sound name="eyebrow" file="sr@ijekavianlatin/obrva.ogg" />
+    <sound name="nose" file="sr@ijekavianlatin/nos.ogg" />
+    <sound name="ear" file="sr@ijekavianlatin/uvo.ogg" />
+    <sound name="mouth" file="sr@ijekavianlatin/usta.ogg" />
+    <sound name="hat" file="sr@ijekavianlatin/sesir.ogg" />
+    <sound name="moustache" file="sr@ijekavianlatin/brkovi.ogg" />
+    <sound name="cigar" file="sr@ijekavianlatin/cigara.ogg" />
+    <sound name="bow" file="sr@ijekavianlatin/masna.ogg" />
+    <sound name="sunglasses" file="sr@ijekavianlatin/naocare_za_sunce.ogg" />
+    <sound name="spectacles" file="sr@ijekavianlatin/naocare.ogg" />
+    <sound name="earring" file="sr@ijekavianlatin/mindjusa.ogg" />
+    <sound name="badge" file="sr@ijekavianlatin/znacka.ogg" />
+    <sound name="watch" file="sr@ijekavianlatin/sat.ogg" />
+
+  </language>

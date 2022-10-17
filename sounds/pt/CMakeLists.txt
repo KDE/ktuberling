@@ -1,0 +1,4 @@
+FILE(GLOB datafiles *.wav)
+install( FILES ${datafiles} DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/pt )
+
+install( FILES pt.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )

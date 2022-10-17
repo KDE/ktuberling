@@ -1,0 +1,17 @@
+  <language code="it">
+
+    <sound name="eye" file="it/occhio.wav" />
+    <sound name="eyebrow" file="it/sopracciglio.wav" />
+    <sound name="nose" file="it/naso.wav" />
+    <sound name="ear" file="it/orecchio.wav" />
+    <sound name="mouth" file="it/bocca.wav" />
+    <sound name="hat" file="it/cappello.wav" />
+    <sound name="moustache" file="it/baffi.wav" />
+    <sound name="bow" file="it/cravattino.wav" />
+    <sound name="sunglasses" file="it/occhialidasole.wav" />
+    <sound name="spectacles" file="it/occhiali.wav" />
+    <sound name="earring" file="it/orecchino.wav" />
+    <sound name="tie" file="it/cravatta.wav" />
+    <sound name="hair" file="it/capelli.wav" />
+
+  </language>
