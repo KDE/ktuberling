@@ -1,1 +1,1 @@
-install( FILES id.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+install( FILES id.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )

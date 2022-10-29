@@ -1,4 +1,4 @@
 FILE(GLOB datafiles *.wav )
-install( FILES ${datafiles} DESTINATION  ${DATA_INSTALL_DIR}/ktuberling/sounds/fr )
+install( FILES ${datafiles} DESTINATION  ${KDE_INSTALL_DATADIR}/ktuberling/sounds/fr )
 
-install( FILES fr.soundtheme DESTINATION ${DATA_INSTALL_DIR}/ktuberling/sounds/ )
+install( FILES fr.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
