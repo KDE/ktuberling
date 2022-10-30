@@ -1,9 +1,3 @@
-include( ../../../cmake_modules/srDataMacros.cmake )
-
-# Sounds reside only in sr, because LL.soundtheme.in points there in both cases.
-file( GLOB SOUNDFILES *.ogg )
-install( FILES ${SOUNDFILES}
-         DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/sr )
-
-install_data_sr( FILES LL.soundtheme.in
-                 DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+file( GLOB datafiles *.ogg )
+install( FILES ${datafiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/sr@ijekavianlatin )
+install( FILES sr@ijekavianlatin.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds )
