@@ -11,7 +11,7 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'macOS', 'Windows']
   'require':
     'frameworks/kxmlgui': '@stable'
-    'frameworks/kwidgetaddons': '@stable'
+    'frameworks/kwidgetsaddons': '@stable'
     'frameworks/kcoreaddons': '@stable'
     'frameworks/kconfigwidgets': '@stable'
     'frameworks/kcrash': '@stable'
