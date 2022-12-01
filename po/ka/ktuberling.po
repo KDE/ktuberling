@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-26 00:42+0000\n"
-"PO-Revision-Date: 2022-11-16 14:38+0100\n"
+"PO-Revision-Date: 2022-11-30 06:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -149,6 +149,8 @@ msgid ""
 "(translate this message as \"DONE\" when you have translated\n"
 "the sounds; otherwise leave it untranslated as a reminder)"
 msgstr ""
+"ხმები ჯერ კიდევ სათარგმნია\n"
+"ტექსტი ადგილს იკავებს სტატისტიკისთვის"
 
 #: toplevel.cpp:163
 #, kde-format
