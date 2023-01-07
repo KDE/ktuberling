@@ -2,217 +2,430 @@
 <chapterinfo>
 
 <authorgroup>
-<author>
-<firstname>Éric</firstname>
-<surname>Bischoff</surname>
-</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Johannes</firstname
+><surname
+>Obermayr</surname
+><affiliation
+><address
+><email
+>johannesobermayr@gmx.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
 </authorgroup>
 
-<date>2021-10-04</date>
-<releaseinfo>KDE Gear 21.08</releaseinfo>
+<date
+>2016-05-11</date>
+<releaseinfo
+>1.0.0 (Anwendungen 16.04)</releaseinfo>
 
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>KTuberling</keyword>
-<keyword>technical reference</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>Technische Referenz</keyword>
 </keywordset>
 </chapterinfo>
 
-<title>Technical References</title>
+<title
+>Technische Referenz</title>
 
-<para>
-&ktuberling; offers a gentle and rewarding introduction to &kde; customization
-and programming.  The application can be extended.  For example, without any
-coding, new playgrounds can be added by changing the graphics files. By
-adding appropriate sound files, translators can change the sounds to their
-native tongue!
-</para>
+<para
+>&ktuberling; bietet eine sanfte und lohnende Einführung in die Anpassung und Programmierung von &kde;. &ktuberling; kann beliebig erweitert werden. So können beispielsweise neue Spielfelder ohne Programmieren durch Ändern der Grafikdateien hinzugefügt werden. Durch Hinzufügen geeigneter Audiodateien können Übersetzer die Klänge in ihre Muttersprache ändern. </para>
 
-<para><!--FIXME email alex ok?-->
-If you extend or add to the game please consider sending your additions to the
-maintainer <ulink url="mailto:alex@eyeos.org">Alex Fiestas</ulink> for
-inclusion in future releases.
-</para>
+<para
+>Sollten Erweiterungen oder Ergänzungen zum Spiel vorgenommen werden, wird um deren Übersendung an den derzeitigen Betreuer <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> zur Berücksichtigung in künftigen Versionen gebeten. </para>
 
 <sect1 id="for-artists">
-<title>For Artists</title>
+<title
+>Grafiker</title>
 
-<para>
-To create a new &ktuberling; playground you have to:
-</para>
+<para
+>Zum Erstellen eines neuen <emphasis
+>Spielfeldes</emphasis
+> für &ktuberling; sind folgende Maßnahmen notwendig: </para>
 
 <itemizedlist>
-  <listitem>
-    <para>Draw the playground in a &SVG; file, there you have to:
-      <itemizedlist>
-        <listitem><para>Name the place where items can dragged <quote>background</quote>.</para></listitem>
-        <listitem><para>Name each of the draggable items with an unique name.</para></listitem>
-      </itemizedlist>
-    </para>
-  </listitem>
 
-  <listitem>
-    <para>Create a <literal role="extension">.theme</literal> file, it has to follow this schema:</para>
-<programlisting>
-&lt;playground gameboard="<replaceable>yourSVGFile</replaceable>" name="<replaceable>theDesktopFile</replaceable>"&gt;
-&lt;object name="<replaceable>itemName</replaceable>" sound="<replaceable>soundName</replaceable>" scale="<replaceable>someValue</replaceable>" /&gt;
-...
-...
-...
-&lt;/playground&gt;
-</programlisting>
+<listitem>
+    <para
+>Zeichnen eines <emphasis
+>Spielfeldes</emphasis
+> in einer <filename
+>*.svg</filename
+>-Datei unter Beachtung, dass <itemizedlist>
+            <listitem
+><para
+>der Ort, an den die Objekte gezogen werden, den Namen „background“ erhält.</para
+></listitem>
+            <listitem
+><para
+>jedes <emphasis
+>ziehbare</emphasis
+> Objekt einen einzigartigen Namen erhält.</para
+></listitem>
+        </itemizedlist>
+    </para>
+</listitem>
+
+<listitem>
+    <para
+>Erstellen einer <filename
+>*.theme</filename
+>-Datei mit folgendem Schema:</para>
+    <programlisting
+>&lt;playground gameboard="<replaceable
+>svg-Datei</replaceable
+>" name="<replaceable
+>desktop-Datei</replaceable
+>"&gt;
+    &lt;object name="<replaceable
+>Objektname</replaceable
+>" sound="<replaceable
+>Klangname</replaceable
+>"scale="<replaceable
+>beliebigerWert</replaceable
+>" /&gt;
+    ...
+    ...
+    ...
+    &lt;/playground&gt;
+    </programlisting>
     <itemizedlist>
-      <listitem><para><replaceable>yourSVGFile</replaceable> is the name of the &SVG; file that has the drawing.</para></listitem>
-      <listitem><para><replaceable>theDesktopFile</replaceable> is the name of the desktop file that has the
-      name of the theme.</para></listitem>
-      <listitem><para>For each object you need a <literal>&lt;object&gt;</literal> entry.
-      <replaceable>itemName</replaceable> is the unique name you used on the &SVG; file,
-      <replaceable>soundName</replaceable> is the sound name that will be played when dragging it, see the
-      <filename>sounds/soundthemes.HOWTO</filename> file from source code for more information.</para></listitem>
-      <listitem><para><literal>scale</literal> is optional and <replaceable>someValue</replaceable> is the scale
-      factor that will be used when drawing this object outside the warehouse, if not specified is 1.</para></listitem>
+        <listitem
+><para
+><replaceable
+>svg-Datei</replaceable
+> ist der Name für die <filename
+>svg</filename
+>-Datei mit den Objekten.</para
+></listitem>
+        <listitem
+><para
+><replaceable
+>desktop-Datei</replaceable
+> ist der Name der <filename
+>desktop</filename
+>-Datei, die den Namen des Designs beinhaltet.</para
+></listitem>
+        <listitem
+><para
+>Für jedes Objekt ist ein &lt;object&gt;-Eintrag erforderlich. <replaceable
+>Objektname</replaceable
+> ist der einzigartige Name innerhalb der <filename
+>svg</filename
+>-Datei und <replaceable
+>Klangname</replaceable
+> ist der Name des beim Ziehen des Objektes wiedergegebenen Klangs.</para
+></listitem>
+        <listitem
+><para
+><emphasis
+>scale</emphasis
+> ist ein zusätzlicher Wert. <replaceable
+>beliebigerWert</replaceable
+> wird dabei als Wert für die Vergrößerung des Objektes verwendet, sobald es aus dem Depot „geholt“ wird. Bei unterbliebener Festlegung wird als Wert <keycap
+>1</keycap
+> verwendet.</para
+></listitem>
     </itemizedlist>
-  </listitem>
+</listitem>
 
-  <listitem>
-    <para>Create a <literal role="extension">.desktop</literal> file, it has to follow this schema:</para>
-<programlisting>
-[KTuberlingTheme]
-Name=<replaceable>themeName</replaceable>
-</programlisting>
+<listitem>
+    <para
+>Erstellen einer <filename
+>*.desktop</filename
+>-Datei nach folgendem Schema:</para>
+    <programlisting
+>[KTuberlingTheme]
+    Name=<replaceable
+>Designname</replaceable
+>
+    </programlisting>
     <itemizedlist>
-      <listitem><para><replaceable>themeName</replaceable> is the name that identifies the theme, will be shown in the
-      Playground menu.</para></listitem>
+        <listitem
+><para
+><replaceable
+>Designname</replaceable
+> ist der identifizierende Name des Designs und wird im Menü <guimenu
+>Spielfeld</guimenu
+> angezeigt.</para
+></listitem>
     </itemizedlist>
-  </listitem>
+</listitem>
 
-  <listitem>
-    <para>If you are adding the theme to &ktuberling; repository, add <literal role="extension">.svg</literal>,
-        <literal role="extension">.theme</literal>, and <literal role="extension">.desktop</literal> files to
-        <literal>FILES</literal> section of the <filename>CMakeLists.txt</filename> into the
-        <filename class="directory">pics/</filename> folder.
-    </para>
-  </listitem>
+<listitem>
+    <para
+>Beim Hochladen des Designs zum <emphasis
+>Git</emphasis
+>-Quelltextarchiv von &ktuberling; müssen die <filename
+>*.svg</filename
+>-, <filename
+>*.theme</filename
+>- und <filename
+>*.desktop</filename
+>-Datei im Abschnitt <emphasis
+>FILES</emphasis
+> der Datei <filename
+>CMakeLists.txt</filename
+> des Ordners <filename
+>pics/</filename
+> eingetragen werden. </para>
+</listitem>
 
-  <listitem>
-    <para>If you want to install it for yourself, place <literal role="extension">.svg</literal>,
-    <literal role="extension">.theme</literal>, and <literal role="extension">.desktop</literal> files into
-    the <filename class="directory">ktuberling/pics</filename> folder in
-    <userinput><command>qtpaths</command> <option>--paths GenericDataLocation</option></userinput>
-    </para>
-  </listitem>
+<listitem>
+    <para
+>Zur Verwendung auf dem lokalen System müssen die <filename
+>*.svg</filename
+>-, <filename
+>*.theme</filename
+>- und <filename
+>*.desktop</filename
+>-Datei im Ordner <filename
+>ktuberling/pics</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> vorhanden sein. </para>
+</listitem>
+
 </itemizedlist>
 
 </sect1>
 
 <sect1 id="for-translators">
-<title>For Translators</title>
+<title
+>Übersetzer</title>
 
-<para>
-Besides the usual <literal role="extension">.po</literal> files mechanism for
-translating program labels and prompts, the sounds can be localized too.
-</para>
+<para
+>Neben dem üblichen Übersetzen der <filename
+>.po</filename
+>-Dateien für die grafische Oberfläche können für &ktuberling; auch die Klänge lokalisiert werden. </para>
 
-<para>
-To create a new &ktuberling; sound theme you have to:
-</para>
+<para
+>Zum Erstellen eines neuen Klangdesigns für &ktuberling; sind folgende Maßnahmen notwendig: </para>
 
 <itemizedlist>
-  <listitem><para>Record the sounds in OGG Vorbis rc3 file format.</para></listitem>
-  <listitem><para>Create a <filename><replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme</filename>
-  file, it has to follow this schema:</para>
-<programlisting>
-&lt;language code="<replaceable>yourLanguageTwoLetterCode</replaceable>"&gt;
-&lt;sound name="<replaceable>soundName</replaceable>" file="<replaceable>relativePath</replaceable>" /&gt;
+
+<listitem
+><para
+>Die Klänge im Format <emphasis
+>OGG Vorbis rc3</emphasis
+> speichern.</para
+></listitem>
+
+<listitem>
+<para
+>Erstellen einer <filename
+><replaceable
+>de</replaceable
+>.soundtheme</filename
+>-Datei mit folgendem Schema:</para>
+<programlisting
+>&lt;language code="<replaceable
+>de</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>Klangname</replaceable
+>" file="<replaceable
+>relativerPfad</replaceable
+>" /&gt;
 ...
 ...
 ...
 &lt;/language&gt;
 </programlisting>
-    <itemizedlist>
-      <listitem><para><replaceable>yourLanguageTwoLetterCode</replaceable> is your language two
-      letter code, for example gl for Galician.</para></listitem>
-      <listitem><para>For each sound a <literal>&lt;sound&gt;</literal> entry. <replaceable>soundName</replaceable>
-      should match with the soundName specified in the playground theme (see the <filename>pics/themes.HOWTO</filename>
-      from source code). <replaceable>relativePath</replaceable> should be the relative path you are going
-      to install the file with this sound to, typically it will be
-      <filename><replaceable>someUniquePath</replaceable>/<replaceable>soundName</replaceable>.<replaceable>format</replaceable></filename>
-      (<replaceable>someUniquePath</replaceable> can be your language two letter code for example).</para></listitem>
-    </itemizedlist>
-  </listitem>
+<itemizedlist>
+<listitem
+><para
+><replaceable
+>de</replaceable
+> wird hier und im Folgenden nur beispielhaft für Deutsch verwendet. Für andere Sprachen muss stattdessen das jeweilige Sprachenkürzel eingesetzt werden.</para
+></listitem>
+<listitem
+><para
+>Für jeden Klang ist ein &lt;sound&gt;-Eintrag erforderlich. <replaceable
+>Klangname</replaceable
+> sollte mit dem Klangnamen im <emphasis
+>Spielfeld</emphasis
+>-Design übereinstimmen. <replaceable
+>relativerPfad</replaceable
+> ist der relative Pfad zur Klangdatei und typischerweise <filename
+><replaceable
+>einzigartigerPfad</replaceable
+>/Klangname.format</filename
+> wobei <replaceable
+>einzigartigerPfad</replaceable
+> beispielsweise <replaceable
+>de</replaceable
+> sein kann.</para
+></listitem>
+</itemizedlist>
+</listitem>
 
-  <listitem><para>If you are adding the sound theme to &ktuberling; in your language folder:</para>
-    <itemizedlist>
-      <listitem><para>Add the sound files and the <literal role="extension">.soundtheme</literal>
-      files into the <filename class="directory">data/kdegames/ktuberling</filename> folder of your
-      language translations.</para></listitem>
-      <listitem><para>On that very same dir you need a <filename>CMakeLists.txt</filename> file
-      describing how to install the files, typically it will be.</para>
+<listitem
+><para
+>Beim Hochladen des lokalisierten Klangdesigns in Ihren Sprachenordner müssen</para>
+<itemizedlist>
+<listitem
+><para
+>die Klang- und <filename
+>*.soundtheme</filename
+>-Dateien im Ordner <filename
+>l10n-kde4/<replaceable
+>de</replaceable
+>/data/kdegames/ktuberling</filename
+> vorliegen.</para
+></listitem>
+<listitem
+><para
+>im selben Ordner die Datei <filename
+>CMakeLists.txt</filename
+> mit der Beschreibung für die Installation nach folgendem Muster vorliegen:</para>
 <!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
-<programlisting>
-FILE( GLOB oggfiles *.ogg )
-INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable>yourLanguageTwoLetterCode</replaceable> )
-INSTALL( FILES <replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>de</replaceable
+> )
+INSTALL( FILES <replaceable
+>de</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
 </programlisting>
-      </listitem>
-    </itemizedlist>
-  </listitem>
+</listitem>
+</itemizedlist>
+</listitem>
 
-  <listitem><para>If you want to install it for yourself:</para>
-    <itemizedlist>
-      <listitem><para>Place <filename><replaceable>yourLanguageTwoLetterCode</replaceable>.soundtheme</filename>
-      file into the <filename class="directory">ktuberling/sounds</filename> folder in
-      <userinput><command>qtpaths</command> <option>--paths GenericDataLocation</option></userinput></para></listitem>
-      <listitem><para>Place your sound files into the
-      <filename class="directory">ktuberling/sounds/<replaceable>someUniquePath</replaceable></filename> folder in
-      <userinput><command>qtpaths</command> <option>--paths GenericDataLocation</option></userinput></para></listitem>
-    </itemizedlist>
-  </listitem>
+<listitem>
+<para
+>Zur Verwendung auf dem lokalen System müssen</para>
+<itemizedlist>
+<listitem
+><para
+>die <filename
+><replaceable
+>de</replaceable
+>.soundtheme</filename
+>-Datei im Ordner <filename class="directory"
+>ktuberling/sounds</filename
+> in <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+>vorhanden sein</para
+></listitem>
+<listitem
+><para
+>die lokalisierten Klangdateien im Ordner <filename class="directory"
+>ktuberling/sounds/someUniquePath</filename
+> in<userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation </option
+></userinput
+> vorhanden sein.</para
+></listitem>
+</itemizedlist>
+</listitem>
+
 </itemizedlist>
 
-<para>
-Information on how to work with the translation mechanisms in &kde; is available
-in <ulink url="https://l10n.kde.org/docs/translation-howto/index.html">The
-&kde; Translation HOWTO</ulink>.
-</para>
+<para
+>Informationen zur Arbeit mit dem Übersetzungssystem von &kde; sind in der <ulink url="http://l10n.kde.org/docs/translation-howto/index.html"
+>&kde;-Übersetzungsanleitung</ulink
+> verfügbar. </para>
 
 </sect1>
 
 <sect1 id="for-programmers">
 
-<title>For Programmers</title>
-<para>&ktuberling; isn't really difficult to extend for programmers.</para>
+<title
+>Entwickler</title>
+<para
+>Die Erweiterung von &ktuberling; durch Entwickler ist nicht wirklich schwierig.</para>
 
 <sect2 id="classes">
-<title>C++ classes</title>
+<title
+>C++-Klassen</title>
 
 <variablelist>
-  <varlistentry>
-    <term><classname>TopLevel</classname></term>
-    <listitem><para>Top-level window and basic program management.</para></listitem>
-  </varlistentry>
+<varlistentry>
+<term
+><classname
+>TopLevel</classname
+></term>
+<listitem>
+<para
+>Sichtbares Fenster und grundlegende Programmverwaltung</para>
+</listitem>
+</varlistentry>
 
-  <varlistentry>
-    <term><classname>PlayGround</classname></term>
-    <listitem><para>Description of one of the game levels.</para></listitem>
-  </varlistentry>
+<varlistentry>
+<term
+><classname
+>PlayGround</classname
+></term>
+<listitem>
+<para
+>Beschreibung einer Spielfeldebene</para
+> </listitem>
+</varlistentry>
 
-  <varlistentry>
-    <term><classname>ToDraw</classname></term>
-    <listitem><para>Description of one of the graphical <quote>objects</quote> to be
-    drawn.</para></listitem>
-  </varlistentry>
+<varlistentry>
+<term
+><classname
+>ToDraw</classname
+></term>
+<listitem>
+<para
+>Beschreibung eines darzustellenden grafischen <emphasis
+>Objekts</emphasis
+></para
+> </listitem>
+</varlistentry>
 
-  <varlistentry>
-    <term><classname>SoundFactory</classname></term>
-    <listitem><para>Description of one of the languages and its sounds.</para></listitem>
-  </varlistentry>
+<varlistentry>
+<term
+><classname
+>SoundFactory</classname
+></term>
+<listitem>
+<para
+>Beschreibung einer Sprache und deren Klänge</para
+> </listitem>
+</varlistentry>
 
-  <varlistentry>
-    <term><classname>Action</classname></term>
-    <listitem><para>One of the user's manipulation in the undo/redo stack.</para></listitem>
-  </varlistentry>
+<varlistentry>
+<term
+><classname
+>Action</classname
+></term>
+<listitem>
+<para
+>Eine der Veränderungen des Benutzers im „Rückgängig/Wiederherstellen“-Stapel</para
+> </listitem>
+</varlistentry>
 </variablelist>
 
 </sect2>
