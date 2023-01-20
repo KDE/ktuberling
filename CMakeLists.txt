@@ -9,9 +9,9 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 project(ktuberling VERSION ${RELEASE_SERVICE_VERSION})
 
 set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.91.0")
+set(KF_MIN_VERSION "5.91.0")
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
 include(KDEInstallDirs)
@@ -26,14 +26,14 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
 
 if (QT_MAJOR_VERSION EQUAL "6")
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS SvgWidgets)
 endif()
 
 if(NOT ANDROID)
-    find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+    find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
         Completion
         ConfigWidgets
         CoreAddons
