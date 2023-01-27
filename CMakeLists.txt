@@ -24,23 +24,16 @@ include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
 
 if (QT_MAJOR_VERSION EQUAL "6")
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS SvgWidgets)
 endif()
 
 if(NOT ANDROID)
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
+    find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
         Completion
         ConfigWidgets
         CoreAddons
@@ -63,7 +56,7 @@ remove_definitions(
 )
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.4
+    QT 5.15.2
     KF 5.101
 )
 
@@ -97,7 +90,7 @@ if(ANDROID)
         Qt${QT_MAJOR_VERSION}::Multimedia
         Qt${QT_MAJOR_VERSION}::Xml
         Qt${QT_MAJOR_VERSION}::Widgets
-        KF${KF_MAJOR_VERSION}::ConfigCore )
+        KF5::ConfigCore )
 
     if (QT_MAJOR_VERSION EQUAL "6")
         target_link_libraries(ktuberling_mobile Qt6::SvgWidgets)
@@ -125,12 +118,12 @@ else()
         Qt${QT_MAJOR_VERSION}::PrintSupport
         Qt${QT_MAJOR_VERSION}::Svg
         Qt${QT_MAJOR_VERSION}::Multimedia
-        KF${KF_MAJOR_VERSION}::ConfigWidgets
-        KF${KF_MAJOR_VERSION}::Completion
-        KF${KF_MAJOR_VERSION}::Crash
-        KF${KF_MAJOR_VERSION}::DBusAddons
-        KF${KF_MAJOR_VERSION}::KIOCore
-        KF${KF_MAJOR_VERSION}::XmlGui
+        KF5::ConfigWidgets
+        KF5::Completion
+        KF5::Crash
+        KF5::DBusAddons
+        KF5::KIOCore
+        KF5::XmlGui
         KF5KDEGames
     )
 
