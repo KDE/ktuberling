@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"POT-Creation-Date: 2023-01-28 00:55+0000\n"
 "PO-Revision-Date: 2009-02-26 13:00+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -59,84 +59,84 @@ msgstr "मुख्य औजार पट्टी"
 msgid "Game Options"
 msgstr ""
 
-#: main.cpp:29
+#: main.cpp:31
 #, kde-format
 msgid "KTuberling"
 msgstr "के-ट्यूबरलिंग"
 
-#: main.cpp:30
+#: main.cpp:32
 #, kde-format
 msgid "Potato game for kids"
 msgstr "लइका मन बर आलू के खेल"
 
-#: main.cpp:31
+#: main.cpp:33
 #, fuzzy, kde-format
 #| msgid "(c) 1999-2006, The KTuberling Developers"
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr "(c) 1999-2006, केट्यूबरलिंग डेवलपर"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "अलबर्ट एस्टल्स सिड"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:33
+#: main.cpp:35
 #, kde-format
 msgid "Éric Bischoff"
 msgstr "एरिक बिस्चोफ"
 
-#: main.cpp:33
+#: main.cpp:35
 #, fuzzy, kde-format
 #| msgid "Developer"
 msgid "Former Developer"
 msgstr "डेवलपर"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "John Calhoun"
 msgstr "जान कालहन"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "मूल विचार अउ कलाकृति"
 
-#: main.cpp:35
+#: main.cpp:37
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr "एग्निएस्ज्का जाकोव्स्का"
 
-#: main.cpp:35 main.cpp:36 main.cpp:38
+#: main.cpp:37 main.cpp:38 main.cpp:40
 #, kde-format
 msgid "New artwork"
 msgstr "नवा कलाकृति"
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "Bas Willems"
 msgstr "बास विलएम्स"
 
-#: main.cpp:37
+#: main.cpp:39
 #, kde-format
 msgid "Roger Larsson"
 msgstr "रोजर लार्सन"
 
-#: main.cpp:37
+#: main.cpp:39
 #, kde-format
 msgid "Sounds tuning"
 msgstr "अवाज ट्यूनिंग"
 
-#: main.cpp:38
+#: main.cpp:40
 #, kde-format
 msgid "Dolores Almansa"
 msgstr "डोलोरेस अलमान्सा"
 
-#: main.cpp:43
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "कोन वाले आलू खोलव"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"POT-Creation-Date: 2023-01-28 00:55+0000\n"
 "PO-Revision-Date: 2021-10-10 11:10+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -63,82 +63,82 @@ msgstr "Główny pasek narzędzi"
 msgid "Game Options"
 msgstr "Opcje gry"
 
-#: main.cpp:29
+#: main.cpp:31
 #, kde-format
 msgid "KTuberling"
 msgstr "KTuberling"
 
-#: main.cpp:30
+#: main.cpp:32
 #, kde-format
 msgid "Potato game for kids"
 msgstr "Gra dla dzieci \"Ziemniaczany facet\""
 
-#: main.cpp:31
+#: main.cpp:33
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr "(c) 1999-2009, Programiści KTuberling"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "Maintainer"
 msgstr "Opiekun"
 
-#: main.cpp:33
+#: main.cpp:35
 #, kde-format
 msgid "Éric Bischoff"
 msgstr "Éric Bischoff"
 
-#: main.cpp:33
+#: main.cpp:35
 #, kde-format
 msgid "Former Developer"
 msgstr "Pierwotny programista"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "John Calhoun"
 msgstr "John Calhoun"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "Pierwotna koncepcja i grafika"
 
-#: main.cpp:35
+#: main.cpp:37
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr "Agnieszka Czajkowska"
 
-#: main.cpp:35 main.cpp:36 main.cpp:38
+#: main.cpp:37 main.cpp:38 main.cpp:40
 #, kde-format
 msgid "New artwork"
 msgstr "Nowa grafika"
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "Bas Willems"
 msgstr "Bas Willems"
 
-#: main.cpp:37
+#: main.cpp:39
 #, kde-format
 msgid "Roger Larsson"
 msgstr "Roger Larsson"
 
-#: main.cpp:37
+#: main.cpp:39
 #, kde-format
 msgid "Sounds tuning"
 msgstr "Dopracowanie dźwięku"
 
-#: main.cpp:38
+#: main.cpp:40
 #, kde-format
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:43
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "Otworzyć ziemniaka"
