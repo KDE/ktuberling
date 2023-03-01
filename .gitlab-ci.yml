@@ -12,3 +12,7 @@ include:
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/freebsd-qt6.yml
       - /gitlab-templates/windows-qt6.yml
+      - /gitlab-templates/craft-android-arm32.yml
+      - /gitlab-templates/craft-android-arm64.yml
+      - /gitlab-templates/craft-android-x86-64.yml
+      - /gitlab-templates/craft-android-appbundle.yml
