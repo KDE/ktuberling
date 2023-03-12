@@ -52,7 +52,11 @@ if(NOT ANDROID)
         XmlGui
     )
 
-    find_package(KF5KDEGames 7.3.0 REQUIRED)
+    if (QT_MAJOR_VERSION STREQUAL "6")
+        find_package(KDEGames6 7.5.0 REQUIRED)
+    else()
+        find_package(KF5KDEGames 7.3.0 REQUIRED)
+    endif()
 endif()
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
@@ -121,6 +125,12 @@ else()
 
     add_executable(ktuberling ${ktuberling_SRCS})
 
+    if (QT_MAJOR_VERSION STREQUAL "6")
+        target_link_libraries(ktuberling KDEGames6)
+    else()
+        target_link_libraries(ktuberling KF5KDEGames)
+    endif()
+
     target_link_libraries(ktuberling
         Qt${QT_MAJOR_VERSION}::PrintSupport
         Qt${QT_MAJOR_VERSION}::Svg
@@ -131,7 +141,6 @@ else()
         KF${KF_MAJOR_VERSION}::DBusAddons
         KF${KF_MAJOR_VERSION}::KIOCore
         KF${KF_MAJOR_VERSION}::XmlGui
-        KF5KDEGames
     )
 
     if (QT_MAJOR_VERSION EQUAL "6")
