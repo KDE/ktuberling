@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:55+0000\n"
-"PO-Revision-Date: 2002-03-10 20:56GMT\n"
-"Last-Translator: Wolfram Diestel <wolfram@steloj.de>\n"
+"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -88,10 +88,9 @@ msgid "Éric Bischoff"
 msgstr "Éric Bischoff"
 
 #: main.cpp:35
-#, fuzzy, kde-format
-#| msgid "Developer"
+#, kde-format
 msgid "Former Developer"
-msgstr "Programinto"
+msgstr ""
 
 #: main.cpp:36
 #, kde-format
@@ -151,18 +150,14 @@ msgid ""
 msgstr ""
 
 #: toplevel.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error while loading the playground."
 msgstr ""
-"Grava eraro:\n"
-"Ne eblis legi la bildojn. Mi finas."
 
 #: toplevel.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error while loading the sound file."
 msgstr ""
-"Grava eraro:\n"
-"Ne eblis legi la bildojn. Mi finas."
 
 #: toplevel.cpp:270
 #, kde-format
@@ -170,9 +165,9 @@ msgid "Save &as Picture..."
 msgstr "Konservu &kiel bildo..."
 
 #: toplevel.cpp:283
-#, fuzzy, kde-format
+#, kde-format
 msgid "&No Sound"
-msgstr "&Sonoro"
+msgstr ""
 
 #: toplevel.cpp:290
 #, kde-format
@@ -186,10 +181,9 @@ msgid "Load file"
 msgstr ""
 
 #: toplevel.cpp:329 toplevel.cpp:422
-#, fuzzy, kde-format
-#| msgid "KTuberling"
+#, kde-format
 msgid "KTuberling files (%1)"
-msgstr "Terpomulo"
+msgstr ""
 
 #: toplevel.cpp:362
 #, kde-format
@@ -216,8 +210,7 @@ msgid "%1 (%2)"
 msgstr ""
 
 #: toplevel.cpp:526
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Presi %1"
@@ -231,100 +224,3 @@ msgstr "Ne eblis presi la bildon."
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "Bildo sukcese presita."
-
-#~ msgid "All files"
-#~ msgstr "Ĉiuj dosieroj"
-
-#~ msgid "Unknown picture format."
-#~ msgstr "Nekonata bildformato."
-
-#, fuzzy
-#~ msgid ""
-#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
-#~ "and John Calhoun.\n"
-#~ "\n"
-#~ "This program is dedicated to my daughter Sunniva."
-#~ msgstr ""
-#~ "Programo de Eric Bischoff <e.bischoff@noos.fr>\n"
-#~ "kaj John Calhoun.\n"
-#~ "\n"
-#~ "Tiu ĉi programo estas dediĉita al mia filino Sunniva."
-
-#, fuzzy
-#~ msgid "Only saving to local files is currently supported."
-#~ msgstr "Nur sekurigado al loka dosiero subtenata ĝis nun."
-
-#, fuzzy
-#~ msgid "Potato &Guy"
-#~ msgstr "Termpomulo"
-
-#, fuzzy
-#~ msgid "Potato &Guy 2"
-#~ msgstr "Termpomulo"
-
-#, fuzzy
-#~ msgid ""
-#~ "Fatal error:\n"
-#~ "Unable to load the pictures, aborting."
-#~ msgstr ""
-#~ "Grava eraro:\n"
-#~ "Ne eblis legi la bildojn. Mi finas."
-
-#~ msgid "Eyes"
-#~ msgstr "Okuloj"
-
-#, fuzzy
-#~ msgid "Eyebrows"
-#~ msgstr "Brovoj"
-
-#~ msgid "Noses"
-#~ msgstr "Nazoj"
-
-#~ msgid "Ears"
-#~ msgstr "Oreloj"
-
-#~ msgid "Mouths"
-#~ msgstr "Buŝoj"
-
-#~ msgid "Goodies"
-#~ msgstr "Aldonaĵoj"
-
-#, fuzzy
-#~ msgid "&Penguin"
-#~ msgstr "Pingvino"
-
-#~ msgid "Tie"
-#~ msgstr "Kravato"
-
-#~ msgid "Hair"
-#~ msgstr "Haroj"
-
-#~ msgid "Necklaces"
-#~ msgstr "Ĉenoj"
-
-#~ msgid "Hats"
-#~ msgstr "Ĉapeloj"
-
-#~ msgid "Glasses"
-#~ msgstr "Oklo"
-
-#~ msgid "Scarf"
-#~ msgstr "kravatopinglo"
-
-#, fuzzy
-#~ msgid "Horse"
-#~ msgstr "Nazoj"
-
-#, fuzzy
-#~ msgid ""
-#~ "*.xpm|UNIX Pixmaps (*.xpm)\n"
-#~ "*.jpg|JPEG Compressed Files (*.jpg)\n"
-#~ "*.png|Next Generation Pictures (*.png)\n"
-#~ "*.bmp|Windows Bitmaps (*.bmp)\n"
-#~ "*|All Picture Formats"
-#~ msgstr ""
-#~ "*.xpm|Uniksaj rastrobildoj (*.xpm)\n"
-#~ "*.jpg|JPEG-kunpremitaj dosieroj (*.jpg)\n"
-#~ "*.png|PNG-bildoj (*.png)\n"
-#~ "*.bmp|Vindozaj bildoj (*.bmp)\n"
-#~ "*|Ĉiuj bildformatoj"
