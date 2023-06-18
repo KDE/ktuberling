@@ -9,6 +9,7 @@
   <name xml:lang="de">Kartoffelknülch</name>
   <name xml:lang="el">Πατατάνθρωπος</name>
   <name xml:lang="en-GB">Potato Guy</name>
+  <name xml:lang="eo">Terpomulo</name>
   <name xml:lang="es">Papá patata</name>
   <name xml:lang="et">Kartulimees</name>
   <name xml:lang="eu">Patata jauna</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="de">Ein einfaches Aufbauspiel für Kinder und Erwachsene</summary>
   <summary xml:lang="el">Ένα απλό παιχνίδι κατασκευών κατάλληλο για μικρούς και για μεγάλους</summary>
   <summary xml:lang="en-GB">A simple constructor game suitable for children and adults alike</summary>
+  <summary xml:lang="eo">Simpla konstruista ludo taŭga por infanoj samkiel plenkreskuloj</summary>
   <summary xml:lang="es">Un sencillo juego de construcción apropiado tanto para niños como para adultos</summary>
   <summary xml:lang="et">Lihtne kokkupanekumäng, mis sobib nii lastele kui ka täiskasvanutele</summary>
   <summary xml:lang="eu">Eraikitzeko joko erraz bat ume eta helduentzako egokia</summary>
@@ -70,6 +72,7 @@
   <developer_name xml:lang="de">Die KTuberling-Entwickler</developer_name>
   <developer_name xml:lang="el">Οι προγραμματιτές του KTuberling</developer_name>
   <developer_name xml:lang="en-GB">The KTuberling Developers</developer_name>
+  <developer_name xml:lang="eo">La KTuberling-Evoluistoj</developer_name>
   <developer_name xml:lang="es">Los desarrolladores de KTuberling</developer_name>
   <developer_name xml:lang="et">Kartulimees</developer_name>
   <developer_name xml:lang="eu">KTuberling garatzaileak</developer_name>
