@@ -579,3 +579,5 @@ bool TopLevel::upload(const QString &src, const QUrl &target)
   eventLoop.exec(QEventLoop::ExcludeUserInputEvents);
   return success;
 }
+
+#include "moc_toplevel.cpp"

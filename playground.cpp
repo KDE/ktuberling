@@ -516,4 +516,6 @@ PlayGround::LoadError PlayGround::loadFrom(const QString &name)
   else return OtherError;
 }
 
+#include "moc_playground.cpp"
+
 /* kate: replace-tabs on; indent-width 2; */
