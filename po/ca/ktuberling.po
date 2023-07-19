@@ -231,20 +231,3 @@ msgstr "No s'ha pogut imprimir la imatge."
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "S'ha imprès la imatge amb èxit."
-
-#~ msgid "All files"
-#~ msgstr "Tots els fitxers"
-
-#~ msgid "Unknown picture format."
-#~ msgstr "Format d'imatge desconegut."
-
-#~ msgid ""
-#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
-#~ "and John Calhoun.\n"
-#~ "\n"
-#~ "This program is dedicated to my daughter Sunniva."
-#~ msgstr ""
-#~ "Un programa original d'<email address='%1'>Éric Bischoff</email>\n"
-#~ "i John Calhoun.\n"
-#~ "\n"
-#~ "Aquest programa està dedicat a la meva filla Sunniva."
