@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
   <id>org.kde.ktuberling.desktop</id>
-  <name>Potato Guy</name>
+  <name>KTuberling</name>
   <name xml:lang="ca">Home Patata</name>
   <name xml:lang="ca-valencia">Home Creïlla</name>
   <name xml:lang="cs">Bramborový chlapík</name>
