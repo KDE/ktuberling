@@ -1,6 +1,14 @@
 [Desktop Entry]
 Exec=ktuberling -qwindowtitle %c %u
 Name=KTuberling
+Name[ca]=KTuberling
+Name[ca@valencia]=KTuberling
+Name[nl]=KTuberling
+Name[sl]=KTuberling - krompirček
+Name[sv]=Potatismannen
+Name[tr]=KTuberling
+Name[uk]=KTuberling
+Name[x-test]=xxKTuberlingxx
 GenericName=Picture Game for Children
 GenericName[bs]=Igra slika za djecu
 GenericName[ca]=Joc d'imatges per a la canalla
@@ -87,7 +95,7 @@ Comment[sr@ijekavian]=Једноставна игра конструисања �
 Comment[sr@ijekavianlatin]=Jednostavna igra konstruisanja pogodna i za decu i za odrasle
 Comment[sr@latin]=Jednostavna igra konstruisanja pogodna i za decu i za odrasle
 Comment[sv]=Ett enkelt byggspel lika lämpligt för barn som vuxna
-Comment[tr]=Çocukların ve yetişkinlerin hoşlanacağı basit bir inşaat oyunu
+Comment[tr]=Çocukların ve yetişkinlerin hoşlanacağı basit bir yapım oyunu
 Comment[uk]=Проста гра-складанка для дітей та дорослих.
 Comment[x-test]=xxA simple constructor game suitable for children and adults alikexx
 Comment[zh_CN]=一个简单的建造游戏，适合儿童和成人
