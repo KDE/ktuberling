@@ -3,6 +3,7 @@ Exec=ktuberling -qwindowtitle %c %u
 Name=KTuberling
 Name[ca]=KTuberling
 Name[ca@valencia]=KTuberling
+Name[de]=Kartoffelknülch
 Name[eo]=KTuberling
 Name[eu]=KTuberling
 Name[gl]=KTuberling
