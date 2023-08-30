@@ -25,7 +25,7 @@ include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
+    set(QT_REQUIRED_VERSION "6.5.0")
     set(KF_MIN_VERSION "5.240.0")
     set(KF_MAJOR_VERSION "6")
 else()
@@ -66,10 +66,27 @@ remove_definitions(
     -DQT_NO_CAST_FROM_ASCII
 )
 
-ecm_set_disabled_deprecation_versions(
-    QT 6.4
-    KF 5.103
-)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    ecm_set_disabled_deprecation_versions(
+        QT 6.5
+        KF 5.239
+    )
+    if (NOT ANDROID)
+        ecm_set_disabled_deprecation_versions(
+            KDEGAMES 7.5
+        )
+    endif()
+else()
+    ecm_set_disabled_deprecation_versions(
+        QT 5.15.2
+        KF 5.103
+    )
+    if (NOT ANDROID)
+        ecm_set_disabled_deprecation_versions(
+            KDEGAMES 7.3
+        )
+    endif()
+endif()
 
 if(KF5DocTools_FOUND)
     add_subdirectory(doc)
