@@ -47,17 +47,9 @@ void SoundFactory::playSound(const QString &soundRef) const
   if (soundFile.isEmpty()) return;
 
   if (soundFile.startsWith(':')) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     player->setSource(QUrl("qrc" + soundFile));
-#else
-    player->setMedia(QUrl("qrc" + soundFile));
-#endif
   } else {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     player->setSource(QUrl::fromLocalFile(soundFile));
-#else
-    player->setMedia(QUrl::fromLocalFile(soundFile));
-#endif
   }
   player->play();
 }

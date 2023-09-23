@@ -8,8 +8,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(ktuberling VERSION ${RELEASE_SERVICE_VERSION})
 
-set(QT_MIN_VERSION "5.15.2")
-set(KF_MIN_VERSION "5.91.0")
+set(QT_MIN_VERSION "6.5.0")
+set(KF_MIN_VERSION "5.240.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
@@ -24,23 +24,23 @@ include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.5.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS PrintSupport Svg Widgets Xml Multimedia)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
+    Multimedia
+    PrintSupport
+    Svg
+    SvgWidgets
+    Widgets
+    Xml
+)
 
-if (QT_MAJOR_VERSION EQUAL "6")
-    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS SvgWidgets)
-endif()
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+    Config
+    I18n
+)
 
 if(NOT ANDROID)
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
         Completion
         ConfigWidgets
         CoreAddons
@@ -52,11 +52,7 @@ if(NOT ANDROID)
         XmlGui
     )
 
-    if (QT_MAJOR_VERSION STREQUAL "6")
-        find_package(KDEGames6 7.5.0 REQUIRED)
-    else()
-        find_package(KF5KDEGames 7.3.0 REQUIRED)
-    endif()
+    find_package(KDEGames6 7.5.0 REQUIRED)
 endif()
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
@@ -66,26 +62,14 @@ remove_definitions(
     -DQT_NO_CAST_FROM_ASCII
 )
 
-if (QT_MAJOR_VERSION STREQUAL "6")
+ecm_set_disabled_deprecation_versions(
+    QT 6.5
+    KF 5.239
+)
+if (NOT ANDROID)
     ecm_set_disabled_deprecation_versions(
-        QT 6.5
-        KF 5.239
+        KDEGAMES 7.5
     )
-    if (NOT ANDROID)
-        ecm_set_disabled_deprecation_versions(
-            KDEGAMES 7.5
-        )
-    endif()
-else()
-    ecm_set_disabled_deprecation_versions(
-        QT 5.15.2
-        KF 5.103
-    )
-    if (NOT ANDROID)
-        ecm_set_disabled_deprecation_versions(
-            KDEGAMES 7.3
-        )
-    endif()
 endif()
 
 if(KF5DocTools_FOUND)
@@ -113,16 +97,14 @@ if(ANDROID)
     add_executable(ktuberling_mobile ${ktuberling_mobile_SRCS})
 
     target_link_libraries(ktuberling_mobile
-        Qt${QT_MAJOR_VERSION}::Gui
-        Qt${QT_MAJOR_VERSION}::Svg
-        Qt${QT_MAJOR_VERSION}::Multimedia
-        Qt${QT_MAJOR_VERSION}::Xml
-        Qt${QT_MAJOR_VERSION}::Widgets
-        KF${KF_MAJOR_VERSION}::ConfigCore )
-
-    if (QT_MAJOR_VERSION EQUAL "6")
-        target_link_libraries(ktuberling_mobile Qt6::SvgWidgets)
-    endif()
+        KF6::ConfigCore
+        Qt6::Gui
+        Qt6::Svg
+        Qt6::Multimedia
+        Qt6::Xml
+        Qt6::Widgets
+        Qt6::SvgWidgets
+    )
 
     install(TARGETS ktuberling_mobile RUNTIME DESTINATION bin)
 
@@ -142,27 +124,19 @@ else()
 
     add_executable(ktuberling ${ktuberling_SRCS})
 
-    if (QT_MAJOR_VERSION STREQUAL "6")
-        target_link_libraries(ktuberling KDEGames6)
-    else()
-        target_link_libraries(ktuberling KF5KDEGames)
-    endif()
-
     target_link_libraries(ktuberling
-        Qt${QT_MAJOR_VERSION}::PrintSupport
-        Qt${QT_MAJOR_VERSION}::Svg
-        Qt${QT_MAJOR_VERSION}::Multimedia
-        KF${KF_MAJOR_VERSION}::ConfigWidgets
-        KF${KF_MAJOR_VERSION}::Completion
-        KF${KF_MAJOR_VERSION}::Crash
-        KF${KF_MAJOR_VERSION}::DBusAddons
-        KF${KF_MAJOR_VERSION}::KIOCore
-        KF${KF_MAJOR_VERSION}::XmlGui
+        KDEGames6
+        KF6::ConfigWidgets
+        KF6::Completion
+        KF6::Crash
+        KF6::DBusAddons
+        KF6::KIOCore
+        KF6::XmlGui
+        Qt6::PrintSupport
+        Qt6::Svg
+        Qt6::Multimedia
+        Qt6::SvgWidgets
     )
-
-    if (QT_MAJOR_VERSION EQUAL "6")
-        target_link_libraries(ktuberling Qt6::SvgWidgets)
-    endif()
 
     install(TARGETS ktuberling  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
