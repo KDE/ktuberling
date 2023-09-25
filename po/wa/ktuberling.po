@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:55+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2011-01-09 10:32+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -59,84 +59,84 @@ msgstr "Mwaisse bår ås usteyes"
 msgid "Game Options"
 msgstr ""
 
-#: main.cpp:31
+#: main.cpp:27
 #, kde-format
 msgid "KTuberling"
 msgstr "Monsieu Crompire"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "Potato game for kids"
 msgstr "Monsieu Crompire, on djeu po ls efants"
 
-#: main.cpp:33
+#: main.cpp:29
 #, fuzzy, kde-format
 #| msgid "(c) 1999-2006, The KTuberling Developers"
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr "© 1999-2006, les programeus d' Monsieu Crompire"
 
-#: main.cpp:34
+#: main.cpp:30
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:34
+#: main.cpp:30
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Éric Bischoff"
 msgstr "Éric Bischoff"
 
-#: main.cpp:35
+#: main.cpp:31
 #, fuzzy, kde-format
 #| msgid "Developer"
 msgid "Former Developer"
 msgstr "Programeu"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "John Calhoun"
 msgstr "John Calhoun"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "Idêye oridjinnåle eyet dessinaedjes"
 
-#: main.cpp:37
+#: main.cpp:33
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr "Agnieszka Czajkowska"
 
-#: main.cpp:37 main.cpp:38 main.cpp:40
+#: main.cpp:33 main.cpp:34 main.cpp:36
 #, kde-format
 msgid "New artwork"
 msgstr "Noveas dessinaedjes"
 
-#: main.cpp:38
+#: main.cpp:34
 #, kde-format
 msgid "Bas Willems"
 msgstr "Bas Willems"
 
-#: main.cpp:39
+#: main.cpp:35
 #, kde-format
 msgid "Roger Larsson"
 msgstr "Roger Larsson"
 
-#: main.cpp:39
+#: main.cpp:35
 #, kde-format
 msgid "Sounds tuning"
 msgstr "Apontiaedje des sons"
 
-#: main.cpp:40
+#: main.cpp:36
 #, kde-format
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:45
+#: main.cpp:41
 #, kde-format
 msgid "Potato to open"
 msgstr "Crompire a drovi"

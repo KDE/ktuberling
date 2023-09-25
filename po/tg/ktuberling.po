@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:55+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2005-09-23 18:23+0500\n"
 "Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
 "Language-Team: Tajik\n"
@@ -63,83 +63,83 @@ msgstr ""
 msgid "Game Options"
 msgstr ""
 
-#: main.cpp:31
+#: main.cpp:27
 #, kde-format
 msgid "KTuberling"
 msgstr "Картошка"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "Potato game for kids"
 msgstr "Бозии \"Картошка\" барои кӯдакон"
 
-#: main.cpp:33
+#: main.cpp:29
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr ""
 
-#: main.cpp:34
+#: main.cpp:30
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr ""
 
-#: main.cpp:34
+#: main.cpp:30
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Éric Bischoff"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:31
 #, fuzzy, kde-format
 #| msgid "Developer"
 msgid "Former Developer"
 msgstr "Тавлидгар"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "John Calhoun"
 msgstr ""
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "Идея ва графикаи ҳақиқӣ"
 
-#: main.cpp:37
+#: main.cpp:33
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr ""
 
-#: main.cpp:37 main.cpp:38 main.cpp:40
+#: main.cpp:33 main.cpp:34 main.cpp:36
 #, kde-format
 msgid "New artwork"
 msgstr "Сурати нав"
 
-#: main.cpp:38
+#: main.cpp:34
 #, kde-format
 msgid "Bas Willems"
 msgstr ""
 
-#: main.cpp:39
+#: main.cpp:35
 #, kde-format
 msgid "Roger Larsson"
 msgstr ""
 
-#: main.cpp:39
+#: main.cpp:35
 #, kde-format
 msgid "Sounds tuning"
 msgstr "Танзими овоз"
 
-#: main.cpp:40
+#: main.cpp:36
 #, kde-format
 msgid "Dolores Almansa"
 msgstr ""
 
-#: main.cpp:45
+#: main.cpp:41
 #, kde-format
 msgid "Potato to open"
 msgstr "Картошка барои кушодан"

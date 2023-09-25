@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:55+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2021-11-12 00:50+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -59,82 +59,82 @@ msgstr "주 도구 모음"
 msgid "Game Options"
 msgstr "게임 옵션"
 
-#: main.cpp:31
+#: main.cpp:27
 #, kde-format
 msgid "KTuberling"
 msgstr "KTuberling"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "Potato game for kids"
 msgstr "어린이용 감자 게임"
 
-#: main.cpp:33
+#: main.cpp:29
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr "(c) 1999-2009, The KTuberling Developers"
 
-#: main.cpp:34
+#: main.cpp:30
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:34
+#: main.cpp:30
 #, kde-format
 msgid "Maintainer"
 msgstr "관리자"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Éric Bischoff"
 msgstr "Éric Bischoff"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Former Developer"
 msgstr "이전 개발자"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "John Calhoun"
 msgstr "John Calhoun"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "최초 구상 및 삽화 작업"
 
-#: main.cpp:37
+#: main.cpp:33
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr "Agnieszka Czajkowska"
 
-#: main.cpp:37 main.cpp:38 main.cpp:40
+#: main.cpp:33 main.cpp:34 main.cpp:36
 #, kde-format
 msgid "New artwork"
 msgstr "새 삽화"
 
-#: main.cpp:38
+#: main.cpp:34
 #, kde-format
 msgid "Bas Willems"
 msgstr "Bas Willems"
 
-#: main.cpp:39
+#: main.cpp:35
 #, kde-format
 msgid "Roger Larsson"
 msgstr "Roger Larsson"
 
-#: main.cpp:39
+#: main.cpp:35
 #, kde-format
 msgid "Sounds tuning"
 msgstr "음성 조정 작업"
 
-#: main.cpp:40
+#: main.cpp:36
 #, kde-format
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:45
+#: main.cpp:41
 #, kde-format
 msgid "Potato to open"
 msgstr "불러올 감자"

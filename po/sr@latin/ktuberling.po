@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-12 03:24+0200\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2017-10-14 23:06+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -62,82 +62,82 @@ msgstr "Glavna traka"
 msgid "Game Options"
 msgstr "Opcije igre"
 
-#: main.cpp:34
+#: main.cpp:27
 #, kde-format
 msgid "KTuberling"
 msgstr "Krompirko"
 
-#: main.cpp:35
+#: main.cpp:28
 #, kde-format
 msgid "Potato game for kids"
 msgstr "Krompirska igra za decu"
 
-#: main.cpp:36
+#: main.cpp:29
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr "© 1999-2009, programeri Krompirka"
 
-#: main.cpp:37
+#: main.cpp:30
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Sid"
 
-#: main.cpp:37
+#: main.cpp:30
 #, kde-format
 msgid "Maintainer"
 msgstr "Održavalac"
 
-#: main.cpp:38
+#: main.cpp:31
 #, kde-format
 msgid "Éric Bischoff"
 msgstr "Erik Bišof"
 
-#: main.cpp:38
+#: main.cpp:31
 #, kde-format
 msgid "Former Developer"
 msgstr "Bivši programer"
 
-#: main.cpp:39
+#: main.cpp:32
 #, kde-format
 msgid "John Calhoun"
 msgstr "Džon Kalhun"
 
-#: main.cpp:39
+#: main.cpp:32
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "Izvorni koncept i grafika"
 
-#: main.cpp:40
+#: main.cpp:33
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr "Agnješka Čajkovska"
 
-#: main.cpp:40 main.cpp:41 main.cpp:43
+#: main.cpp:33 main.cpp:34 main.cpp:36
 #, kde-format
 msgid "New artwork"
 msgstr "Nova grafika"
 
-#: main.cpp:41
+#: main.cpp:34
 #, kde-format
 msgid "Bas Willems"
 msgstr "Bas Vilems"
 
-#: main.cpp:42
+#: main.cpp:35
 #, kde-format
 msgid "Roger Larsson"
 msgstr "Roger Larson"
 
-#: main.cpp:42
+#: main.cpp:35
 #, kde-format
 msgid "Sounds tuning"
 msgstr "Štelovanje zvukova"
 
-#: main.cpp:43
+#: main.cpp:36
 #, kde-format
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:48
+#: main.cpp:41
 #, kde-format
 msgid "Potato to open"
 msgstr "Krompir koji otvaramo"
@@ -155,44 +155,46 @@ msgid ""
 "the sounds; otherwise leave it untranslated as a reminder)"
 msgstr "GOTOVO"
 
-#: toplevel.cpp:168
+#: toplevel.cpp:163
 #, kde-format
 msgid "Error while loading the playground."
 msgstr "Greška pri učitavanju igrališta."
 
-#: toplevel.cpp:200
+#: toplevel.cpp:195
 #, kde-format
 msgid "Error while loading the sound file."
 msgstr "Greška pri učitavanju zvučnog fajla."
 
-#: toplevel.cpp:275
+#: toplevel.cpp:270
 #, kde-format
 msgid "Save &as Picture..."
 msgstr "Sačuvaj &kao sliku..."
 
-#: toplevel.cpp:288
+#: toplevel.cpp:283
 #, kde-format
 msgid "&No Sound"
 msgstr "&Bez zvuka"
 
-#: toplevel.cpp:295
+#: toplevel.cpp:290
 #, kde-format
 msgid "&Lock Aspect Ratio"
 msgstr "&Zaključaj proporciju"
 
 # >> @title:window
-#: toplevel.cpp:333
-#, kde-format
+#: toplevel.cpp:328
+#, fuzzy, kde-format
+#| msgid "Load file"
+msgctxt "@title:window"
 msgid "Load file"
 msgstr "Učitavanje fajla"
 
 # >> @item:inlistbox
-#: toplevel.cpp:334 toplevel.cpp:383
+#: toplevel.cpp:329 toplevel.cpp:422
 #, kde-format
 msgid "KTuberling files (%1)"
 msgstr "Krompirkovi fajlovi (%1)"
 
-#: toplevel.cpp:367
+#: toplevel.cpp:362
 #, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
@@ -200,35 +202,37 @@ msgid ""
 msgstr ""
 "Sačuvani fajl je iz starije verzije Krompirka i ne može se otvoriti u ovoj."
 
-#: toplevel.cpp:371
+#: toplevel.cpp:366
 #, kde-format
 msgid "Could not load file."
 msgstr "Ne mogu da učitam fajl."
 
-#: toplevel.cpp:395 toplevel.cpp:406 toplevel.cpp:413 toplevel.cpp:468
-#: toplevel.cpp:475
+#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
+#: toplevel.cpp:514
 #, kde-format
 msgid "Could not save file."
 msgstr "Ne mogu da sačuvam fajl."
 
-#: toplevel.cpp:435
+#: toplevel.cpp:474
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 # >> @title:window
-#: toplevel.cpp:487
-#, kde-format
+#: toplevel.cpp:526
+#, fuzzy, kde-format
+#| msgid "Print %1"
+msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Štampanje „%1“"
 
-#: toplevel.cpp:494
+#: toplevel.cpp:533
 #, kde-format
 msgid "Could not print picture."
 msgstr "Ne mogu da odštampam sliku."
 
-#: toplevel.cpp:497
+#: toplevel.cpp:536
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "Slika je uspešno odštampana."
