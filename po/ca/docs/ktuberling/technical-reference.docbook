@@ -390,7 +390,7 @@ INSTALL( FILES <replaceable
 ></term>
     <listitem
 ><para
->Una de les manipulacions de l'usuari a la pila de desfés/refés.</para
+>Una de les manipulacions de l'usuari a la pila de desfer/refer.</para
 ></listitem>
   </varlistentry>
 </variablelist>
