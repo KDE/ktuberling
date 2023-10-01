@@ -211,13 +211,13 @@ msgstr ""
 #: toplevel.cpp:366
 #, kde-format
 msgid "Could not load file."
-msgstr "Non se puido cargar o ficheiro."
+msgstr "Non foi posíbel cargar o ficheiro."
 
 #: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
 #: toplevel.cpp:514
 #, kde-format
 msgid "Could not save file."
-msgstr "Non se puido gardar o ficheiro."
+msgstr "Non foi posíbel gardar o ficheiro."
 
 #: toplevel.cpp:474
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "Imprimir %1"
 #: toplevel.cpp:533
 #, kde-format
 msgid "Could not print picture."
-msgstr "Non se puido imprimir a imaxe."
+msgstr "Non foi posíbel imprimir a imaxe."
 
 #: toplevel.cpp:536
 #, kde-format
