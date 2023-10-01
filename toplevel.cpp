@@ -260,11 +260,11 @@ void TopLevel::setupKAction()
   QAction *action;
 
   //Game
-  KStandardGameAction::gameNew(this, SLOT(fileNew()), actionCollection());
-  KStandardGameAction::load(this, SLOT(fileOpen()), actionCollection());
-  KStandardGameAction::save(this, SLOT(fileSave()), actionCollection());
-  KStandardGameAction::print(this, SLOT(filePrint()), actionCollection());
-  KStandardGameAction::quit(qApp, SLOT(quit()), actionCollection());
+  KStandardGameAction::gameNew(this, &TopLevel::fileNew, actionCollection());
+  KStandardGameAction::load(this, &TopLevel::fileOpen, actionCollection());
+  KStandardGameAction::save(this, &TopLevel::fileSave, actionCollection());
+  KStandardGameAction::print(this, &TopLevel::filePrint, actionCollection());
+  KStandardGameAction::quit(qApp, &QApplication::quit, actionCollection());
 
   action = actionCollection()->addAction( QStringLiteral( "game_save_picture" ));
   action->setText(i18n("Save &as Picture..."));
