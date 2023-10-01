@@ -299,7 +299,7 @@ void TopLevel::setupKAction()
 
   PlaygroundDelegate *playgroundDelegate = new PlaygroundDelegate(playgroundCombo->view());
   playgroundCombo->setItemDelegate(playgroundDelegate);
-  connect(playgroundCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &TopLevel::changeGameboardFromCombo);
+  connect(playgroundCombo, &KComboBox::currentIndexChanged, this, &TopLevel::changeGameboardFromCombo);
   QWidgetAction *widgetAction = new QWidgetAction(this);
   widgetAction->setDefaultWidget(playgroundCombo);
   actionCollection()->addAction( QStringLiteral( "playgroundSelection" ),widgetAction);
