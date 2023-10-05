@@ -130,6 +130,7 @@ else()
         KF6::Completion
         KF6::Crash
         KF6::DBusAddons
+        KF6::I18n
         KF6::KIOCore
         KF6::XmlGui
         Qt6::PrintSupport
