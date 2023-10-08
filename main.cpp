@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
   aboutData.setHomepage(QStringLiteral("https://apps.kde.org/ktuberling"));
 
   KAboutData::setApplicationData(aboutData);
+  QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("ktuberling")));
 
   KCrash::initialize();
 
@@ -58,8 +59,6 @@ int main(int argc, char *argv[])
           toplevel->open(QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath()));
 
   }
-
-  app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ktuberling")));
 
   return app.exec();
 }
