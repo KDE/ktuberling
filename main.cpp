@@ -35,11 +35,13 @@ int main(int argc, char *argv[])
   aboutData.addCredit(i18n("Roger Larsson"), i18n("Sounds tuning"), QStringLiteral("roger.larsson@norran.net"));
   aboutData.addCredit(i18n("Dolores Almansa"), i18n("New artwork"), QStringLiteral("dolores.almansa@corazondemaria.org"));
   aboutData.setHomepage(QStringLiteral("https://apps.kde.org/ktuberling"));
-  QCommandLineParser parser;
-  KAboutData::setApplicationData(aboutData);
-  KCrash::initialize();
-  parser.addPositionalArgument(QStringLiteral("tuberling-file"), i18n("Potato to open"));
 
+  KAboutData::setApplicationData(aboutData);
+
+  KCrash::initialize();
+
+  QCommandLineParser parser;
+  parser.addPositionalArgument(QStringLiteral("tuberling-file"), i18n("Potato to open"));
   aboutData.setupCommandLine(&parser);
   parser.process(app);
   aboutData.processCommandLine(&parser);
