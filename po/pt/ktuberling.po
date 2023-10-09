@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2021-10-14 15:41+0100\n"
 "Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -130,7 +130,7 @@ msgstr "Ajuste dos sons"
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:41
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "Batata a abrir"

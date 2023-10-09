@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2013-03-22 15:27+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -132,7 +132,7 @@ msgstr "ध्वनि ट्यूनिंग"
 msgid "Dolores Almansa"
 msgstr "डोलोरेस अलमान्सा"
 
-#: main.cpp:41
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "उघडण्याचा बटाटा"

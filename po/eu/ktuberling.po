@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2022-07-28 12:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -139,7 +139,7 @@ msgstr "Soinuen doitzea"
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:41
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "Irekitzeko patata"

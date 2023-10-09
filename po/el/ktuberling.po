@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2021-10-06 10:27+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -138,7 +138,7 @@ msgstr "Συντονισμός ήχων"
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:41
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "Πατάτα για άνοιγμα"

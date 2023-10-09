@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2017-05-16 07:01-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
@@ -142,7 +142,7 @@ msgstr "שיפור הצלילים"
 msgid "Dolores Almansa"
 msgstr ""
 
-#: main.cpp:41
+#: main.cpp:45
 #, kde-format
 msgid "Potato to open"
 msgstr "איזה תפוח אדמה לפתוח"
