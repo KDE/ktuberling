@@ -72,7 +72,7 @@ if (NOT ANDROID)
     )
 endif()
 
-if(KF5DocTools_FOUND)
+if(KF6DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 
@@ -167,7 +167,7 @@ install(FILES org.kde.ktuberling.appdata.xml DESTINATION ${KDE_INSTALL_METAINFOD
 ecm_qt_install_logging_categories(EXPORT KTUBERLING FILE ktuberling.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 ki18n_install(po)
-if(KF5DocTools_FOUND)
+if(KF6DocTools_FOUND)
     kdoctools_install(po)
 endif()
 
