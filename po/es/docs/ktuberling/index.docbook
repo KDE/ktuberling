@@ -132,6 +132,20 @@
 > <contrib
 >Traductora</contrib
 > </othercredit
+><othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
 > 
 
 </authorgroup>
@@ -212,13 +226,13 @@
 </imageobject>
 <textobject>
 <phrase
->Pizzería Zona de juego</phrase>
+>Zona de juego de la pizzería</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->&i18n-ktuberling; es un sencillo juego de construcción aconsejable para niños y adultos por igual. La idea del juego se basa en el popular muñeco que se monta. Se decora una patata con varios artefactos para hacerla parecer una personita. &i18n-ktuberling;, no obstante, es mucho más avanzado en términos de contenido y añade una sorprendente variedad de temas diferentes. </para>
+>&i18n-ktuberling; es un sencillo juego de construcción apropiado para niños y adultos por igual. La idea del juego se basa en el popular muñeco que se monta. Se decora una patata con varios artefactos para hacerla parecer una personita. &i18n-ktuberling;, no obstante, es mucho más avanzado en términos de contenido y añade una sorprendente variedad de temas diferentes. </para>
 </chapter>
 
 <chapter id="howto">
@@ -235,7 +249,7 @@
 >Nadie es el ganador del juego. El único propósito es construir las caras más divertidas que sea posible. </para>
 
 <para
->&i18n-ktuberling; también puede «hablar». Puede deletrear el nombre de los objetos que arrastre. Puede «hablar» en el idioma que elija. Incluso puede usarlo para aprender algo de vocabulario en idiomas extranjeros. </para>
+>&i18n-ktuberling; también puede «hablar». Puede deletrear el nombre de los objetos que arrastres. Puede «hablar» en el idioma que elijas. Incluso se puede usar para aprender algo de vocabulario en idiomas extranjeros. </para>
 </chapter>
 
 <chapter id="rules_and_tips">
@@ -256,14 +270,12 @@
 ></listitem>
 <listitem
 ><para
->Área de «Objetos», en la que puede seleccionar los objetos que se colocarán en la zona de juego. </para
+>Área de «Objetos», en la que puedes seleccionar los objetos que se colocarán en la zona de juego. </para
 ></listitem>
 </itemizedlist>
 <note
 ><para
->El aspecto real de la pantalla de la aplicación puede variar dependiendo de la <quote
->zona de juegos</quote
-> seleccionada.</para
+>El aspecto real de la pantalla de la aplicación puede variar dependiendo de la «zona de juegos» seleccionada.</para
 ></note>
 <screenshot>
 <screeninfo
@@ -284,9 +296,9 @@
 >Cómo colocar un objeto</title>
 
 <para
->Para arrastrar un objeto, mueva el puntero del ratón al área de «Objetos» y pulse sobre ella. A continuación muévalo hacia la «zona de juego» y pulse nuevamente. <note
+>Para arrastrar un objeto, mueve el puntero del ratón al área de «Objetos» y pulsa sobre ella. A continuación, muévelo hacia la «zona de juego» y pulsa otra vez. <note
 ><para
->El tamaño de los objetos puede cambiar mientras los arrastra. Algunos de los objetos sobredimensionados han sido escalados para que se ajusten al área de «objetos».</para
+>El tamaño de los objetos puede cambiar mientras los arrastras. Algunos de los objetos de mayor tamaño se han escalado para que quepan en el área de «objetos».</para
 ></note>
 </para>
 </sect2>
@@ -295,21 +307,21 @@
 <title
 >Cómo mover un objeto</title>
 <para
->Una vez colocado el objeto en la «zona de juego», es posible moverlo.  Basta con pulsarlo para seleccionarlo y poder cambiarlo de sitio. Al pulsar sobre él, el objeto se colocará por encima del resto de objetos que lo estaban ocultando parcialmente. Este truco es útil para conseguir que las gafas y los ojos se coloquen correctamente. </para>
+>Una vez colocado el objeto en la «zona de juego», se puede mover. Basta con pulsar sobre él para seleccionarlo y poder cambiarlo de sitio. Al pulsar sobre él, el objeto se colocará por encima del resto de objetos que lo estaban ocultando parcialmente. Este truco es útil para conseguir que las gafas y los ojos se coloquen correctamente. </para>
 </sect2>
 
 <sect2 id="remove-object">
 <title
 >Cómo eliminar un objeto</title>
 <para
->Para eliminar un objeto que está colocado en la «zona de juego», arrástrelo hacia la «zona de objetos». </para>
+>Para eliminar un objeto que está colocado en la «zona de juego», arrástralo hacia la «zona de objetos». </para>
 </sect2>
 </sect1>
 </chapter>
 
 <chapter id="interface">
 <title
->Visión general de la interfaz </title>
+>Vista general de la interfaz </title>
 <sect1 id="the-tool-bar">
 <title
 >La barra de herramientas</title>
@@ -342,7 +354,7 @@
 ><imagedata format="PNG" fileref="document-new.png"/></imageobject>
         <textobject
 ><phrase
->Botón de nuevo juego</phrase
+>Botón de juego nuevo</phrase
 ></textobject>
       </inlinemediaobject>
     </entry>
@@ -421,7 +433,7 @@
 ></link
 ></entry>
     <entry
->Guarda su creación en su carpeta personal, o en otra si así lo desea. Se guarda en un pequeño archivo <literal role="extension"
+>Guarda tu creación en tu carpeta personal o en otra parte, si lo prefieres. Se guarda en un pequeño archivo <literal role="extension"
 >.tuberling</literal
 > donde solo se almacena la posición de los objetos.</entry>
   </row>
@@ -452,7 +464,7 @@
 ></link
 ></entry>
     <entry
->Imprime su dibujo.</entry>
+>Imprime tu dibujo.</entry>
   </row>
 
   <row>
@@ -572,7 +584,7 @@
 >Abre un archivo <literal role="extension"
 >.tuberling</literal
 > existente</action
-> desde el disco.</para
+> en el disco.</para
 ></listitem>
   </varlistentry>
 
@@ -595,7 +607,7 @@
 ><para
 ><action
 >Guarda</action
-> la creación. Se guarda un pequeño archivo con la posición de los objetos únicamente.</para
+> tu creación. Se guarda en un pequeño archivo que solo contiene la posición de los objetos.</para
 ></listitem>
   </varlistentry>
 
@@ -605,14 +617,14 @@
 ><guimenu
 >Juego</guimenu
 ><guimenuitem
->Guardar como imagen imagen...</guimenuitem
+>Guardar como imagen...</guimenuitem
 ></menuchoice
 ></term>
     <listitem
 ><para
 ><action
 >Crea un archivo gráfico</action
-> que contiene una imagen de su creación.</para
+> que contiene una imagen de tu creación.</para
 ></listitem>
   </varlistentry>
 
@@ -635,7 +647,7 @@
 ><para
 ><action
 >Imprime</action
-> la imagen su creación.</para
+> la imagen tu creación.</para
 ></listitem>
   </varlistentry>
 
@@ -713,7 +725,7 @@
 ><para
 ><action
 >Rehace</action
-> la última ubicación de un «objeto». Esta opción se activa únicamente si previamente se ha realizado la operación <guilabel
+> la última ubicación de un «objeto». Esta opción solo está activa si previamente se ha realizado la operación <guilabel
 >Deshacer</guilabel
 >.</para
 ></listitem>
@@ -768,7 +780,7 @@
 ></term>
     <listitem
 ><para
->Conmuta la interfaz gráfica al modo a pantalla completa.</para
+>Conmuta la interfaz gráfica al modo de pantalla completa.</para
 ></listitem>
   </varlistentry>
 
@@ -792,7 +804,7 @@
 ></term>
     <listitem
 ><para
->Esta opción conserva la relación aspecto de la zona de juego cuando se varía el tamaño de la ventana de &i18n-ktuberling;. Cuando la relación de aspecto de la zona de juegos no coincide con la de la ventana, el fondo se rellena con el especificado en el tema.</para
+>Esta opción conserva la relación aspecto de la zona de juego cuando se varía el tamaño de la ventana de &i18n-ktuberling;. Cuando la relación de aspecto de la zona de juegos no coincide con la de la ventana, el fondo se rellena con el que se indica en el tema.</para
 ></listitem>
   </varlistentry>
 
@@ -810,7 +822,7 @@
     <listitem
 ><para
 ><action
->Cambia de zona de juego</action
+>Cambia a la zona de juego</action
 >.</para
 ></listitem>
   </varlistentry>
@@ -818,9 +830,9 @@
 </variablelist>
 
 <para
->Contiene las zonas de juego instaladas en su sistema. </para>
+>Contiene las zonas de juego instaladas en tu sistema. </para>
 <para
->&i18n-ktuberling; recuerda la última selección de la zona de juego la siguiente vez que arranca. </para>
+>&i18n-ktuberling; recuerda la última selección de la zona de juego la próxima vez que arranca. </para>
 </sect2>
 
 <sect2>
@@ -868,7 +880,7 @@
 </variablelist>
 
 <para
->&i18n-ktuberling; recuerda esta opción la siguiente vez que arranca. </para>
+>&i18n-ktuberling; recuerda esta opción la próxima vez que arranca. </para>
 </sect2>
 
 <sect2 id="settings">
@@ -880,9 +892,9 @@
 >Preferencias</guimenu
 > y <guimenu
 >Ayuda</guimenu
-> comunes de &kde;. Para obtener más información, consulte las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+> comunes de &kde;. Para obtener más información, consulta las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Menú «Preferencias»</ulink
-> y <ulink url="help:/fundamentals/menus.html#menus-help"
+> y el <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menú «Ayuda» </ulink
 > de «Aspectos básicos de &kde;». </para>
 
@@ -898,13 +910,13 @@
 <qandaentry>
  <question
 ><para
->Quiero cambiar el aspecto del juego ¿Puedo? </para
+>Quiero cambiar el aspecto del juego. ¿Es posible? </para
 ></question>
  <answer
 ><para
->Sí puede. Consulte <link linkend="theme_change"
+>Sí se puede. Consulta <link linkend="theme_change"
 >esta</link
-> sección en «Visión general de la interfaz» para obtener más detalles.</para
+> sección en «Vista general de la interfaz» para obtener más detalles.</para
 ></answer>
 </qandaentry>
 <qandaentry>
@@ -914,19 +926,19 @@
 ></question>
  <answer
 ><para
->No. Este juego no puede jugarse con el teclado.</para
+>No. No se puede jugar a este juego con el teclado.</para
 ></answer>
 </qandaentry>
 <qandaentry>
  <question
 ><para
->He creado un dibujo fantástico y quiero compartirla con mis amigos. ¿puedo guardarlo como una imagen?</para
+>He creado un dibujo fantástico y quiero compartirlo con mis amigos. ¿Puedo guardarlo como una imagen?</para
 ></question>
   <answer
 ><para
->Sí. Para guardar la sesión actual como una imagen consulte <link linkend="game-save-as-picture"
+>Sí. Para guardar la sesión actual como una imagen, consulta <link linkend="game-save-as-picture"
 >esta</link
-> sección en la «Visión general de la interfaz» para obtener más detalles.</para
+> sección en la «Vista general de la interfaz» para obtener más detalles.</para
 ></answer>
 </qandaentry>
 </qandaset>
@@ -946,31 +958,31 @@
 <para
 >Alex Fiestas <email
 >alex@eyeos.org</email
-> - Responsable actual</para>
+>: responsable actual.</para>
 </listitem>
 
 <listitem>
 <para
->John Calhoun: Idea e imágenes originales y sonidos en inglés.</para>
+>John Calhoun: idea e imágenes originales, sonidos en inglés.</para>
 </listitem>
 
 <listitem>
 <para
->&Eric.Bischoff; &Eric.Bischoff.mail;: Programación para &kde;.</para>
+>&Eric.Bischoff; &Eric.Bischoff.mail;: programación para &kde;.</para>
 </listitem>
 
 <listitem>
 <para
 >Fran&ccedil;ois-Xavier Duranceau <email
 >duranceau@free.fr</email
->: Pruebas, consejos y ayuda.</para>
+>: pruebas, consejos y ayuda.</para>
 </listitem>
 
 <listitem>
 <para
 >Peter Silva <email
 >peter.silva@videotron.ca</email
->: Corrección de la documentación.</para>
+>: corrección de la documentación.</para>
 </listitem>
 
 <listitem>
@@ -988,6 +1000,10 @@
 >santi@kde-es.org</email
 > y Kira J. Fernández <email
 >kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregido por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
 >.</para
 > &underFDL; &underGPL; </chapter>
 

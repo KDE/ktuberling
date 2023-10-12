@@ -5,7 +5,7 @@
 # Santiago Fernandez Sancho <santi@kde-es.org>, 2004, 2005.
 # santi <santi@kde-es.org>, 2005, 2006.
 # Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2017, 2021.
+# SPDX-FileCopyrightText: 2009, 2017, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 # Huever, 2009.
 # Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
 # Sofía Priego <spriego@darksylvania.net>, %Y.
@@ -14,29 +14,30 @@ msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:45+0000\n"
-"PO-Revision-Date: 2021-10-05 12:19+0100\n"
+"PO-Revision-Date: 2023-10-11 23:53+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-"Rafael Osuna,Pablo J. Barneo González,Pablo de Vicente,Miguel Revilla "
-"Rodríguez,Mari Cruz López Rodríguez,Lucas García,Kira J. Fernández"
+"Sofía Priego,Rafael Osuna,Pablo J. Barneo González,Pablo de Vicente,Miguel "
+"Revilla Rodríguez,Mari Cruz López Rodríguez,Lucas García,Kira J. Fernández"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"rafa@ecotelco.com,pablob@nikhef.nl,vicente@oan.es,yo@miguelrevilla.com,"
-"maricruzl@ozu.es,tanke@escomposlinux.org,kirajfdez@gmail.com"
+"spriego@darksylvania.net,rafa@ecotelco.com,pablob@nikhef.nl,vicente@oan.es,"
+"yo@miguelrevilla.com,maricruzl@ozu.es,tanke@escomposlinux.org,"
+"kirajfdez@gmail.com"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
@@ -91,7 +92,7 @@ msgstr "Albert Astals Cid"
 #: main.cpp:30
 #, kde-format
 msgid "Maintainer"
-msgstr "Encargado"
+msgstr "Responsable"
 
 #: main.cpp:31
 #, kde-format
@@ -163,12 +164,12 @@ msgstr "DONE"
 #: toplevel.cpp:163
 #, kde-format
 msgid "Error while loading the playground."
-msgstr "Error al cargar la zona de juego."
+msgstr "Ha ocurrido un error al cargar la zona de juego."
 
 #: toplevel.cpp:195
 #, kde-format
 msgid "Error while loading the sound file."
-msgstr "Error al cargar el archivo de sonido."
+msgstr "Ha ocurrido un error al cargar el archivo de sonido."
 
 #: toplevel.cpp:270
 #, kde-format
@@ -194,7 +195,7 @@ msgstr "Cargar archivo"
 #: toplevel.cpp:329 toplevel.cpp:422
 #, kde-format
 msgid "KTuberling files (%1)"
-msgstr "Archivos KTuberling (%1)"
+msgstr "Archivos de KTuberling (%1)"
 
 #: toplevel.cpp:362
 #, kde-format
@@ -202,19 +203,19 @@ msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
-"El archivo guardado se corresponde con una versión antigua de KTuberling y "
-"desafortunadamente no se puede abrir con esta versión."
+"El archivo guardado pertenece a una versión antigua de KTuberling y, "
+"lamentablemente, no se puede abrir con esta versión."
 
 #: toplevel.cpp:366
 #, kde-format
 msgid "Could not load file."
-msgstr "No se pudo cargar el archivo."
+msgstr "No se ha podido cargar el archivo."
 
 #: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
 #: toplevel.cpp:514
 #, kde-format
 msgid "Could not save file."
-msgstr "No se pudo guardar el archivo."
+msgstr "No se ha podido guardar el archivo."
 
 #: toplevel.cpp:474
 #, kde-format
@@ -231,12 +232,12 @@ msgstr "Imprimir %1"
 #: toplevel.cpp:533
 #, kde-format
 msgid "Could not print picture."
-msgstr "No se pudo imprimir la imagen."
+msgstr "No se ha podido imprimir la imagen."
 
 #: toplevel.cpp:536
 #, kde-format
 msgid "Picture successfully printed."
-msgstr "Imagen impresa con éxito."
+msgstr "La imagen se ha imprimido correctamente."
 
 #~ msgid "All files"
 #~ msgstr "Todos los archivos"
