@@ -46,8 +46,8 @@ void SoundFactory::playSound(const QString &soundRef) const
   const QString soundFile = FileFactory::locate(QLatin1String( "sounds/" ) + filesList[sound]);
   if (soundFile.isEmpty()) return;
 
-  if (soundFile.startsWith(':')) {
-    player->setSource(QUrl("qrc" + soundFile));
+  if (soundFile.startsWith(QLatin1Char(':'))) {
+    player->setSource(QUrl(QLatin1String("qrc") + soundFile));
   } else {
     player->setSource(QUrl::fromLocalFile(soundFile));
   }
@@ -64,7 +64,7 @@ void SoundFactory::registerLanguages()
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.soundtheme"));
     for (const QString &file :  fileNames)
     {
-        list <<dir + '/' + file;
+        list <<dir + QLatin1Char('/') + file;
     }
   }
 

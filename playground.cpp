@@ -322,7 +322,7 @@ void PlayGround::registerPlayGrounds()
     const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.theme"));
     for (const QString &file : fileNames)
     {
-        list << dir + '/' + file;
+        list << dir + QLatin1Char('/') + file;
     }
   }
 

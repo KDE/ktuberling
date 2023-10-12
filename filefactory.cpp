@@ -21,7 +21,7 @@ bool FileFactory::folderExists(const QString &relativePath)
 QString FileFactory::locate(const QString &relativePath)
 {
 #if defined(Q_OS_ANDROID)
-    return ":/" + relativePath;
+    return QLatin1String(":/") + relativePath;
 #else
     return QStandardPaths::locate(QStandardPaths::AppDataLocation, relativePath);
 #endif
@@ -30,7 +30,7 @@ QString FileFactory::locate(const QString &relativePath)
 QStringList FileFactory::locateAll(const QString &relativePath)
 {
 #if defined(Q_OS_ANDROID)
-    return { ":/" + relativePath };
+    return { QLatin1String(":/") + relativePath };
 #else
     return QStandardPaths::locateAll(QStandardPaths::AppDataLocation, relativePath, QStandardPaths::LocateDirectory);
 #endif

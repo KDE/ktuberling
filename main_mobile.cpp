@@ -24,7 +24,7 @@ public:
   {
     m_soundFactory = new SoundFactory(this);
     m_soundFactory->registerLanguages();
-    m_soundFactory->loadLanguage(FileFactory::locate("sounds/en.soundtheme"));
+    m_soundFactory->loadLanguage(FileFactory::locate(QStringLiteral("sounds/en.soundtheme")));
 
     QWidget *mainWidget = new QWidget();
     QHBoxLayout *lay = new QHBoxLayout(mainWidget);
@@ -35,7 +35,7 @@ public:
     m_playground->registerPlayGrounds();
     m_playground->lockAspectRatio(true);
     m_playground->setAllowOnlyDrag(true);
-    m_playground->loadPlayGround(FileFactory::locate("pics/default_theme.theme"));
+    m_playground->loadPlayGround(FileFactory::locate(QStringLiteral("pics/default_theme.theme")));
 
     QVBoxLayout *sideLayout = new QVBoxLayout();
 
@@ -44,7 +44,7 @@ public:
     const int iconWidth = screenWidth / 15;
 
     QPushButton *themesButton = new QPushButton(mainWidget);
-    themesButton->setIcon(QPixmap(":/games-config-theme.png"));
+    themesButton->setIcon(QPixmap(QStringLiteral(":/games-config-theme.png")));
     themesButton->setIconSize(QSize(iconWidth, iconWidth));
     themesButton->setFocusPolicy(Qt::NoFocus);
     QObject::connect(themesButton, &QPushButton::clicked, [this] {
@@ -52,12 +52,12 @@ public:
     });
 
     QPushButton *soundsButton = new QPushButton(mainWidget);
-    soundsButton->setIcon(QPixmap(":/audio-volume-high.png"));
+    soundsButton->setIcon(QPixmap(QStringLiteral(":/audio-volume-high.png")));
     soundsButton->setIconSize(QSize(iconWidth, iconWidth));
     soundsButton->setFocusPolicy(Qt::NoFocus);
     QObject::connect(soundsButton, &QPushButton::clicked, [this, soundsButton] {
       m_soundEnabled = !m_soundEnabled;
-      soundsButton->setIcon(QPixmap(m_soundEnabled ? ":/audio-volume-high.png" : ":/audio-volume-muted.png"));
+      soundsButton->setIcon(QPixmap(m_soundEnabled ? QStringLiteral(":/audio-volume-high.png") : QStringLiteral(":/audio-volume-muted.png")));
     });
 
     sideLayout->addWidget(themesButton);
@@ -123,7 +123,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 {
   QApplication app(argc, argv);
   QLocale::system().name(); // needed to workaround QTBUG-41385
-  app.setApplicationName("ktuberling");
+  app.setApplicationName(QStringLiteral("ktuberling"));
 
   KTuberlingMobile tuberling;
 

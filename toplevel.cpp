@@ -374,10 +374,10 @@ void TopLevel::open(const QUrl &url)
 
 static QStringList extractSuffixesFromQtPattern(const QString &qtPattern)
 {
-  static const QRegularExpression regexp(".*\\((.*)\\)");
+  static const QRegularExpression regexp(QStringLiteral(".*\\((.*)\\)"));
   const QRegularExpressionMatch match = regexp.match(qtPattern);
   if (match.hasMatch()) {
-    QStringList suffixes = match.captured(1).split(" ");
+    QStringList suffixes = match.captured(1).split(QLatin1Char(' '));
     if (!suffixes.isEmpty()) {
       for (QString &suffix : suffixes) {
         suffix = suffix.mid(1); // Remove the * from the start, we want the actual suffix
@@ -388,7 +388,7 @@ static QStringList extractSuffixesFromQtPattern(const QString &qtPattern)
   } else {
     qWarning() << "extractSuffixesFromQtPattern regexp match failed" << qtPattern;
   }
-  return { ".report_bug_please" };
+  return { QStringLiteral(".report_bug_please") };
 }
 
 static QUrl getSaveFileUrl(QWidget *w, const QString &patterns)
@@ -461,7 +461,7 @@ void TopLevel::filePicture()
   QStringList patterns;
   for(const auto &mimeName : imageWriterMimetypes)
   {
-    const QMimeType mime = mimedb.mimeTypeForName(mimeName);
+    const QMimeType mime = mimedb.mimeTypeForName(QString::fromLatin1(mimeName));
     if (mime.isValid())
     {
       QStringList suffixes;
@@ -471,7 +471,7 @@ void TopLevel::filePicture()
       }
 
       // Favor png
-      const QString pattern = i18nc("%1 is mimetype and %2 is the file extensions", "%1 (%2)", mime.comment(), suffixes.join(' '));
+      const QString pattern = i18nc("%1 is mimetype and %2 is the file extensions", "%1 (%2)", mime.comment(), suffixes.join(QLatin1Char(' ')));
       if (mimeName == "image/png")
       {
         patterns.prepend(pattern);

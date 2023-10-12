@@ -25,7 +25,9 @@ int main(int argc, char *argv[])
   KLocalizedString::setApplicationDomain("ktuberling");
 
   KAboutData aboutData( QStringLiteral("ktuberling"), i18n("KTuberling"), 
-          KTUBERLING_VERSION_STRING, i18n("Potato game for kids"), KAboutLicense::GPL,
+          QStringLiteral(KTUBERLING_VERSION_STRING),
+          i18n("Potato game for kids"),
+          KAboutLicense::GPL,
           i18n("(c) 1999-2009, The KTuberling Developers"));
   aboutData.addAuthor(i18n("Albert Astals Cid"), i18n("Maintainer"), QStringLiteral("aacid@kde.org"));
   aboutData.addAuthor(i18n("Éric Bischoff"), i18n("Former Developer"), QStringLiteral("ebischoff@nerim.net"));
