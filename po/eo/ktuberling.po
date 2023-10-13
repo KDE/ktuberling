@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2023-10-13 01:42+0000\n"
 "PO-Revision-Date: 2023-03-25 16:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -62,77 +62,77 @@ msgstr ""
 msgid "KTuberling"
 msgstr "Terpomulo"
 
-#: main.cpp:28
+#: main.cpp:29
 #, kde-format
 msgid "Potato game for kids"
 msgstr "Terpomludo por infanoj"
 
-#: main.cpp:29
+#: main.cpp:31
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
 msgstr ""
 
-#: main.cpp:30
+#: main.cpp:32
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:30
+#: main.cpp:32
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: main.cpp:31
+#: main.cpp:33
 #, kde-format
 msgid "Éric Bischoff"
 msgstr "Éric Bischoff"
 
-#: main.cpp:31
+#: main.cpp:33
 #, kde-format
 msgid "Former Developer"
 msgstr ""
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "John Calhoun"
 msgstr "John Calhoun"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "Original concept and artwork"
 msgstr "Origina koncepto kaj artaĵo"
 
-#: main.cpp:33
+#: main.cpp:35
 #, kde-format
 msgid "Agnieszka Czajkowska"
 msgstr "Agnieszka Czajkowska"
 
-#: main.cpp:33 main.cpp:34 main.cpp:36
+#: main.cpp:35 main.cpp:36 main.cpp:38
 #, kde-format
 msgid "New artwork"
 msgstr "Nova artaĵo"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "Bas Willems"
 msgstr "Bas Willems"
 
-#: main.cpp:35
+#: main.cpp:37
 #, kde-format
 msgid "Roger Larsson"
 msgstr "Roger Larsson"
 
-#: main.cpp:35
+#: main.cpp:37
 #, kde-format
 msgid "Sounds tuning"
 msgstr "Sonoradapto"
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "Dolores Almansa"
 msgstr "Dolores Almansa"
 
-#: main.cpp:45
+#: main.cpp:47
 #, kde-format
 msgid "Potato to open"
 msgstr ""
