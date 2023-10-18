@@ -14,7 +14,7 @@
 #include <KLanguageName>
 #include <KStandardAction>
 #include <KStandardShortcut>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 #include <KActionCollection>
 #include <KToggleAction>
 #include <KToggleFullScreenAction>
@@ -260,11 +260,11 @@ void TopLevel::setupKAction()
   QAction *action;
 
   //Game
-  KStandardGameAction::gameNew(this, &TopLevel::fileNew, actionCollection());
-  KStandardGameAction::load(this, &TopLevel::fileOpen, actionCollection());
-  KStandardGameAction::save(this, &TopLevel::fileSave, actionCollection());
-  KStandardGameAction::print(this, &TopLevel::filePrint, actionCollection());
-  KStandardGameAction::quit(qApp, &QApplication::quit, actionCollection());
+  KGameStandardAction::gameNew(this, &TopLevel::fileNew, actionCollection());
+  KGameStandardAction::load(this, &TopLevel::fileOpen, actionCollection());
+  KGameStandardAction::save(this, &TopLevel::fileSave, actionCollection());
+  KGameStandardAction::print(this, &TopLevel::filePrint, actionCollection());
+  KGameStandardAction::quit(qApp, &QApplication::quit, actionCollection());
 
   action = actionCollection()->addAction( QStringLiteral( "game_save_picture" ));
   action->setText(i18n("Save &as Picture..."));
