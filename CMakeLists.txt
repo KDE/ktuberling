@@ -52,7 +52,7 @@ if(NOT ANDROID)
         XmlGui
     )
 
-    find_package(KDEGames6 7.5.0 REQUIRED)
+    find_package(KDEGames6 6.0.0 REQUIRED)
 endif()
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
@@ -63,7 +63,7 @@ ecm_set_disabled_deprecation_versions(
 )
 if (NOT ANDROID)
     ecm_set_disabled_deprecation_versions(
-        KDEGAMES 7.5
+        KDEGAMES 6.0
     )
 endif()
 
