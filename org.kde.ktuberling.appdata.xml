@@ -2,6 +2,7 @@
 <component type="desktop">
   <id>org.kde.ktuberling.desktop</id>
   <name>KTuberling</name>
+  <name xml:lang="ast">KTuberling</name>
   <name xml:lang="ca">KTuberling</name>
   <name xml:lang="ca-valencia">KTuberling</name>
   <name xml:lang="cs">KTuberling</name>
