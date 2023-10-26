@@ -1,6 +1,7 @@
 [Desktop Entry]
 Exec=ktuberling -qwindowtitle %c %u
 Name=KTuberling
+Name[ast]=KTuberling
 Name[ca]=KTuberling
 Name[ca@valencia]=KTuberling
 Name[cs]=KTuberling
