@@ -159,19 +159,13 @@
 >L'&i18n-ktuberling; és un joc destinat a infants. Per descomptat, pot ser adequat per a adults que en el fons segueixen sent joves. </para>
 
 <para
->És un <quote
->editor de patates</quote
->. Això vol dir que podeu arrossegar i deixar anar els ulls, la boca, el bigoti i altres parts de la cara i delícies sobre un noi semblant a una patata. De la mateixa manera, teniu altres zones de joc amb temes diferents. </para>
+>És un «editor de patates». Això vol dir que podeu arrossegar i deixar anar els ulls, la boca, el bigoti i altres parts de la cara i delícies sobre un noi semblant a una patata. De la mateixa manera, teniu altres zones de joc amb temes diferents. </para>
 
 <para
 >En aquest joc no hi ha guanyador. L'únic propòsit és fer les cares més divertides que pugueu. </para>
 
 <para
->L'&i18n-ktuberling; també pot <quote
->parlar</quote
->. Lletrejarà el nom dels objectes que arrossegueu i deixeu anar. <quote
->Pronunciarà</quote
-> en un idioma que podeu triar. Fins i tot podreu utilitzar-lo per a aprendre una mica de vocabulari en idiomes estrangers. </para>
+>L'&i18n-ktuberling; també pot «parlar». Lletrejarà el nom dels objectes que arrossegueu i deixeu anar. «Pronunciarà» en un idioma que podeu triar. Fins i tot podreu utilitzar-lo per a aprendre una mica de vocabulari en idiomes estrangers. </para>
 </chapter>
 
 <chapter id="rules_and_tips">
@@ -188,22 +182,16 @@
 <itemizedlist>
 <listitem
 ><para
->L'àrea de <quote
->zona de joc</quote
->. </para
+>L'àrea de «zona de joc». </para
 ></listitem>
 <listitem
 ><para
->L'àrea d'<quote
->objectes</quote
->, és on seleccionareu els objectes per a col·locar-los en l'àrea de joc. </para
+>L'àrea d'«objectes», és on seleccionareu els objectes per a col·locar-los en l'àrea de joc. </para
 ></listitem>
 </itemizedlist>
 <note
 ><para
->Un aspecte real de la pantalla de l'aplicació pot canviar depenent de la <quote
->zona de joc</quote
-> seleccionada.</para
+>Un aspecte real de la pantalla de l'aplicació pot canviar depenent de la «zona de joc» seleccionada.</para
 ></note>
 <screenshot>
 <screeninfo
@@ -224,15 +212,9 @@
 >Col·locar un objecte</title>
 
 <para
->Per a arrossegar un objecte, moveu el punter del ratolí fins a l'àrea d'<quote
->objectes</quote
-> i feu-hi clic. Després, moveu-lo fins a l'àrea de <quote
->zona de joc</quote
-> i feu-hi clic de nou. <note
+>Per a arrossegar un objecte, moveu el punter del ratolí fins a l'àrea d'«objectes» i feu-hi clic. Després, moveu-lo fins a l'àrea de «zona de joc» i feu-hi clic de nou. <note
 ><para
->La mida dels objectes pot canviar mentre s'arrossega. Alguns dels objectes sobredimensionats es redueixen dins de l'àrea d'<quote
->objectes</quote
->.</para
+>La mida dels objectes pot canviar mentre s'arrossega. Alguns dels objectes sobredimensionats es redueixen dins de l'àrea d'«objectes».</para
 ></note>
 </para>
 </sect2>
@@ -241,22 +223,14 @@
 <title
 >Moure un objecte</title>
 <para
->Un cop deixat anar a l'àrea de <quote
->zona de joc</quote
->, un objecte es podrà moure. Senzillament feu clic sobre l'objecte per a seleccionar-lo, moveu-lo fins al lloc nou i feu clic de nou per a deixar-lo anar. Quan el deixeu, anirà damunt els altres objectes que seran ocultats parcialment. Aquest truc és útil per a aconseguir que les ulleres i els ulls es col·loquin correctament. </para>
+>Un cop deixat anar a l'àrea de «zona de joc», un objecte es podrà moure. Senzillament feu clic sobre l'objecte per a seleccionar-lo, moveu-lo fins al lloc nou i feu clic de nou per a deixar-lo anar. Quan el deixeu, anirà damunt els altres objectes que seran ocultats parcialment. Aquest truc és útil per a aconseguir que les ulleres i els ulls es col·loquin correctament. </para>
 </sect2>
 
 <sect2 id="remove-object">
 <title
 >Eliminar un objecte</title>
 <para
->Per a eliminar un objecte que heu deixat anar a l'àrea de <quote
->zona de joc</quote
->, arrossegueu-lo cap enrere des de l'àrea de <quote
->zona de joc</quote
-> fins a l'àrea d'<quote
->objectes</quote
->. </para>
+>Per a eliminar un objecte que heu deixat anar a l'àrea de «zona de joc», arrossegueu-lo cap enrere des de l'àrea de «zona de joc» fins a l'àrea d'«objectes». </para>
 </sect2>
 </sect1>
 </chapter>
@@ -315,9 +289,7 @@
 ></link
 ></entry>
     <entry
->Restableix l'àrea de <quote
->zona de joc</quote
->. Això netejarà totes les parts de la zona de joc, de manera que es podrà crear una decoració nova.</entry>
+>Restableix l'àrea de «zona de joc». Això netejarà totes les parts de la zona de joc, de manera que es podrà crear una decoració nova.</entry>
   </row>
 
   <row>
@@ -503,9 +475,7 @@
 ><para
 ><action
 >Esborra</action
-> l'àrea de <quote
->zona de joc</quote
->.</para
+> l'àrea de «zona de joc».</para
 ></listitem>
   </varlistentry>
 
@@ -648,9 +618,7 @@
 ><para
 ><action
 >Desfà</action
-> la darrera col·locació d'un <quote
->objecte</quote
->.</para
+> la darrera col·locació d'un «objecte».</para
 ></listitem>
   </varlistentry>
 
@@ -673,9 +641,7 @@
 ><para
 ><action
 >Refà</action
-> la darrera col·locació d'un <quote
->objecte</quote
->. Aquesta opció de menú només estarà activa si heu emprat prèviament l'acció <guilabel
+> la darrera col·locació d'un «objecte». Aquesta opció de menú només estarà activa si heu emprat prèviament l'acció <guilabel
 >Desfés</guilabel
 >.</para
 ></listitem>
@@ -700,9 +666,7 @@
 ><para
 ><action
 >Copia</action
-> l'àrea de <quote
->zona de joc</quote
-> al porta-retalls.</para
+> l'àrea de «zona de joc» al porta-retalls.</para
 ></listitem>
   </varlistentry>
 

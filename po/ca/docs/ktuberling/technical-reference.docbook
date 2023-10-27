@@ -50,9 +50,7 @@
 >Dibuixar la zona de joc en un fitxer &SVG;, aquí heu de: <itemizedlist>
         <listitem
 ><para
->Donar un nom al lloc on els elements es poden arrossegar <quote
->Fons</quote
->.</para
+>Donar un nom al lloc on els elements es poden arrossegar al «Fons».</para
 ></listitem>
         <listitem
 ><para
@@ -366,9 +364,7 @@ INSTALL( FILES <replaceable
 ></term>
     <listitem
 ><para
->Descripció d'un dels <quote
->objectes</quote
-> gràfics a dibuixar.</para
+>Descripció d'un dels «objectes» gràfics a dibuixar.</para
 ></listitem>
   </varlistentry>
 
