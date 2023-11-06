@@ -206,7 +206,7 @@ void TopLevel::playSound(const QString &ref)
 // Read options from preferences file
 void TopLevel::readOptions(QString &board, QString &language)
 {
-  KConfigGroup config(KSharedConfig::openConfig(), "General");
+  KConfigGroup config(KSharedConfig::openConfig(), QStringLiteral("General"));
 
   QString option = config.readEntry("Sound",  "on" );
   bool soundEnabled = option.indexOf(QLatin1String( "on" )) == 0;
@@ -244,7 +244,7 @@ void TopLevel::readOptions(QString &board, QString &language)
 // Write options to preferences file
 void TopLevel::writeOptions()
 {
-  KConfigGroup config(KSharedConfig::openConfig(), "General");
+  KConfigGroup config(KSharedConfig::openConfig(), QStringLiteral("General"));
   config.writeEntry("Sound", actionCollection()->action(QStringLiteral( "speech_no_sound" ))->isChecked() ? "off": "on");
 
   config.writeEntry("Gameboard", playGround->currentGameboard());

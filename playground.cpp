@@ -338,7 +338,7 @@ void PlayGround::registerPlayGrounds()
       {
         QString desktop = layoutDocument.documentElement().attribute(QStringLiteral( "desktop" ));
         KConfig c( FileFactory::locate( QLatin1String( "pics/" ) + desktop ) );
-        KConfigGroup cg = c.group("KTuberlingTheme");
+        KConfigGroup cg = c.group(QStringLiteral("KTuberlingTheme"));
         QString gameboard = layoutDocument.documentElement().attribute(QStringLiteral( "gameboard" ));
         QPixmap pixmap(200,100);
         pixmap.fill(Qt::transparent);
