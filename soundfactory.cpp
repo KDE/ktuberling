@@ -11,6 +11,7 @@
 
 #include <stdlib.h>
 
+#include <QAudioOutput>
 #include <QDir>
 #include <QDomDocument>
 #include <QFile>
@@ -25,6 +26,7 @@ SoundFactory::SoundFactory(SoundFactoryCallbacks *callbacks)
  : m_callbacks(callbacks)
 {
   player = new QMediaPlayer();
+  player->setAudioOutput(new QAudioOutput);
 }
 
 // Destructor
@@ -51,6 +53,8 @@ void SoundFactory::playSound(const QString &soundRef) const
   } else {
     player->setSource(QUrl::fromLocalFile(soundFile));
   }
+  // we need to go to 0, otherwise sounds don't play again if the soundfile hasn't changed
+  player->setPosition(0);
   player->play();
 }
 
