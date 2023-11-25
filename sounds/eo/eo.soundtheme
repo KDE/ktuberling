@@ -1,0 +1,25 @@
+<language code="eo">
+
+    <sound name="ball"       file="eo/kt_ball-pilko.ogg" />
+    <sound name="bow"        file="eo/kt_bow-banto.ogg" />
+    <sound name="coat"       file="eo/kt_coat-mantelo.ogg" />
+    <sound name="ear"        file="eo/kt_ear-orelo.ogg" />
+    <sound name="earring"    file="eo/kt_earring-orelringo.ogg" />
+    <sound name="eye"        file="eo/kt_eye-okulo.ogg" />
+    <sound name="eyebrow"    file="eo/kt_eyebrow-brovo.ogg" />
+    <sound name="flower"     file="eo/kt_flower-floro.ogg" />
+    <sound name="hair"       file="eo/kt_hair-haroj.ogg" />
+    <sound name="hat"        file="eo/kt_hat-chapelo.ogg" />
+    <sound name="moustache"  file="eo/kt_moustache-lipharoj.ogg" />
+    <sound name="mouth"      file="eo/kt_mouth-busho.ogg" />
+    <sound name="nose"       file="eo/kt_nose-nazo.ogg" />
+    <sound name="shoe"       file="eo/kt_shoe-shuo.ogg" />
+    <sound name="shorts"     file="eo/kt_shorts-pantaloneto.ogg" />
+    <sound name="skirt"      file="eo/kt_skirt-jupo.ogg" />
+    <sound name="spectacles" file="eo/kt_spectacles-okulvitroj.ogg" />
+    <sound name="stick"      file="eo/kt_stick-bastono.ogg" />
+    <sound name="sunglasses" file="eo/kt_sunglasses-sunvitroj.ogg" />
+    <sound name="tie"        file="eo/kt_tie-kravato.ogg" />
+    <sound name="umbrella"   file="eo/kt_umbrella-ombrelo.ogg" />
+
+</language>
