@@ -20,7 +20,7 @@
 #include <KToggleFullScreenAction>
 #include <KConfigGroup>
 #include <KSharedConfig>
-#include <kio/job.h>
+#include <KIO/FileCopyJob>
 
 #include <QActionGroup>
 #include <QApplication>
