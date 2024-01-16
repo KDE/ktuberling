@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 {
   QApplication app(argc, argv);
 
-  KLocalizedString::setApplicationDomain("ktuberling");
+  KLocalizedString::setApplicationDomain(QByteArrayLiteral("ktuberling"));
 
   KAboutData aboutData( QStringLiteral("ktuberling"), i18n("KTuberling"), 
           QStringLiteral(KTUBERLING_VERSION_STRING),
