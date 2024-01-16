@@ -122,6 +122,4 @@ Terminal=false
 Icon=ktuberling
 MimeType=application/x-tuberling;
 StartupNotify=true
-X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;KidsGame;
-X-DBUS-ServiceName=org.kde.ktuberling
