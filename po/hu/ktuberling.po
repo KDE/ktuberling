@@ -1,30 +1,31 @@
 #
 # Biro Szabolcs <sab@index.hu>, 1999.
 # Balázs Úr <urbalazs@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:42+0000\n"
-"PO-Revision-Date: 2012-06-12 19:37+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"PO-Revision-Date: 2024-02-08 22:06+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Bíró Szabolcs,Szántó Tamás"
+msgstr "Kiszel Kristóf"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sab@index.hu,taszanto@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
@@ -183,13 +184,12 @@ msgstr "&Rögzített képarány"
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
-msgstr ""
+msgstr "Fájl betöltése"
 
 #: toplevel.cpp:329 toplevel.cpp:422
-#, fuzzy, kde-format
-#| msgid "KTuberling files"
+#, kde-format
 msgid "KTuberling files (%1)"
-msgstr "KTuberling-fájlok"
+msgstr "KTuberling-fájlok (%1)"
 
 #: toplevel.cpp:362
 #, kde-format
@@ -215,11 +215,10 @@ msgstr "A fájl mentése nem sikerült."
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: toplevel.cpp:526
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "%1 kinyomtatása"
