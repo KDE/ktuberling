@@ -2,6 +2,7 @@
 <component type="desktop">
   <id>org.kde.ktuberling.desktop</id>
   <name>KTuberling</name>
+  <name xml:lang="ar">البطاطا ك</name>
   <name xml:lang="ast">KTuberling</name>
   <name xml:lang="ca">KTuberling</name>
   <name xml:lang="ca-valencia">KTuberling</name>
@@ -30,6 +31,7 @@
   <name xml:lang="uk">KTuberling</name>
   <name xml:lang="x-test">xxKTuberlingxx</name>
   <summary>A simple constructor game suitable for children and adults alike</summary>
+  <summary xml:lang="ar">لعبة بناء بسيطة مناسبة للأطفال والكبار على حد سواء</summary>
   <summary xml:lang="ca">Un joc de construcció senzill, adequat per a infants i també per a adults</summary>
   <summary xml:lang="ca-valencia">Un joc de construcció senzill, adequat per a infants i també per a adults</summary>
   <summary xml:lang="da">En simpelt byggeprogram til børn i alle aldre</summary>
@@ -63,6 +65,7 @@
   <summary xml:lang="x-test">xxA simple constructor game suitable for children and adults alikexx</summary>
   <summary xml:lang="zh-CN">一个简单的建造游戏，适合儿童和成人</summary>
   <developer_name>The KTuberling Developers</developer_name>
+  <developer_name xml:lang="ar">c) 1999-2009, مطورو البطاطا ك</developer_name>
   <developer_name xml:lang="ca">Els desenvolupadors del KTuberling</developer_name>
   <developer_name xml:lang="ca-valencia">Els desenvolupadors de KTuberling</developer_name>
   <developer_name xml:lang="cs">Vývojáři aplikace KTuberling</developer_name>
@@ -98,6 +101,7 @@
   <developer_name xml:lang="zh-CN">KTuberling 开发者</developer_name>
   <description>
     <p>KTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.</p>
+    <p xml:lang="ar">البطاطا ك هي لعبة إنشاء بسيطة مناسبة للأطفال والكبار على حد سواء. تعتمد فكرة اللعبة على مفهوم صنع الدمى الذي كان شائعًا في السابق.</p>
     <p xml:lang="ca">El KTuberling és un joc de construcció senzill, adequat per als infants i també per als adults. La idea del joc està basada en un concepte popular de fer un nino.</p>
     <p xml:lang="ca-valencia">KTuberling és un joc de construcció senzill, adequat per als infants i també per als adults. La idea del joc està basada en un concepte popular de fer un nino.</p>
     <p xml:lang="da">KTuberling er et simpelt påklædningsdukkespil for børn såvel som voksne. Ideen med spillet er baseret på et dukkekoncept der engang var populært.</p>
