@@ -2,13 +2,13 @@
 # Copyright (C) 2002, 2007 Free Software Foundation, Inc.
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:42+0000\n"
-"PO-Revision-Date: 2021-12-14 21:28+0400\n"
+"PO-Revision-Date: 2024-02-24 12:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,9 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Mohamed SAAD محمد سعد"
@@ -62,7 +62,7 @@ msgstr "خيارات اللعبة"
 #: main.cpp:27
 #, kde-format
 msgid "KTuberling"
-msgstr "KTuberling"
+msgstr "البطاطا ك"
 
 #: main.cpp:29
 #, kde-format
@@ -70,14 +70,14 @@ msgid "Potato game for kids"
 msgstr "لعبة البطاطا للصغار"
 
 #: main.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
-msgstr "(c) 1999-2006, The KTuberling Developers"
+msgstr "(c) 1999-2009, مطورو البطاطا ك"
 
 #: main.cpp:32
 #, kde-format
 msgid "Albert Astals Cid"
-msgstr "Albert Astals Cid"
+msgstr "البرت استالس كيد"
 
 #: main.cpp:32
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "المصين"
 #: main.cpp:33
 #, kde-format
 msgid "Éric Bischoff"
-msgstr "Éric Bischoff"
+msgstr "إريك بيشوف"
 
 #: main.cpp:33
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "المطور السابق"
 #: main.cpp:34
 #, kde-format
 msgid "John Calhoun"
-msgstr "John Calhoun"
+msgstr "جون كالهون"
 
 #: main.cpp:34
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "الفكرة الأصلية و عمل الفني"
 #: main.cpp:35
 #, kde-format
 msgid "Agnieszka Czajkowska"
-msgstr "Agnieszka Czajkowska"
+msgstr "أغنيسكا زاجكوسكا"
 
 #: main.cpp:35 main.cpp:36 main.cpp:38
 #, kde-format
@@ -117,12 +117,12 @@ msgstr "عمل فني جديد"
 #: main.cpp:36
 #, kde-format
 msgid "Bas Willems"
-msgstr "Bas Willems"
+msgstr "باس ويليمز"
 
 #: main.cpp:37
 #, kde-format
 msgid "Roger Larsson"
-msgstr "Roger Larsson"
+msgstr "روجر لارسون"
 
 #: main.cpp:37
 #, kde-format
@@ -132,7 +132,7 @@ msgstr "ضبط الأصوات"
 #: main.cpp:38
 #, kde-format
 msgid "Dolores Almansa"
-msgstr "Dolores Almansa"
+msgstr "دولوريس المانسا"
 
 #: main.cpp:47
 #, kde-format
@@ -174,7 +174,7 @@ msgstr "&بدون صوت"
 #: toplevel.cpp:290
 #, kde-format
 msgid "&Lock Aspect Ratio"
-msgstr ""
+msgstr "ا&قفل النّسبة الباعيّة"
 
 #: toplevel.cpp:328
 #, kde-format
@@ -183,17 +183,17 @@ msgid "Load file"
 msgstr "حمّل ملفًّا"
 
 #: toplevel.cpp:329 toplevel.cpp:422
-#, fuzzy, kde-format
+#, kde-format
 msgid "KTuberling files (%1)"
-msgstr "KTuberling"
+msgstr "ملفات البطاطا ك (%1)"
 
 #: toplevel.cpp:362
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
-"الملف المحفوظ من نسخة سابقة من KTuberling ، و لسوء الحظ لا يمكن فتحه بهذه "
+"الملف المحفوظ من نسخة سابقة من البطاطا ك، و لسوء الحظ لا يمكن فتحه بهذه "
 "النسخة."
 
 #: toplevel.cpp:366
