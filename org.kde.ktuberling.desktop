@@ -1,6 +1,7 @@
 [Desktop Entry]
 Exec=ktuberling -qwindowtitle %c %u
 Name=KTuberling
+Name[ar]=البطاطا ك
 Name[ast]=KTuberling
 Name[ca]=KTuberling
 Name[ca@valencia]=KTuberling
@@ -28,6 +29,7 @@ Name[tr]=KTuberling
 Name[uk]=KTuberling
 Name[x-test]=xxKTuberlingxx
 GenericName=Picture Game for Children
+GenericName[ar]=لعبة الصورة للأطفال
 GenericName[bs]=Igra slika za djecu
 GenericName[ca]=Joc d'imatges per a la canalla
 GenericName[ca@valencia]=Joc d'imatges per a la canalla
@@ -82,6 +84,7 @@ GenericName[x-test]=xxPicture Game for Childrenxx
 GenericName[zh_CN]=孩子们的游戏
 GenericName[zh_TW]=小孩的圖畫遊戲
 Comment=A simple constructor game suitable for children and adults alike
+Comment[ar]=لعبة بناء بسيطة مناسبة للأطفال والكبار على حد سواء
 Comment[ca]=Un joc de construcció senzill, adequat per a infants i també per a adults
 Comment[ca@valencia]=Un joc de construcció senzill, adequat per a infants i també per a adults
 Comment[da]=En simpelt byggeprogram til børn i alle aldre
