@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
   <id>org.kde.ktuberling.desktop</id>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name>KTuberling</name>
   <name xml:lang="ar">البطاطا ك</name>
   <name xml:lang="ast">KTuberling</name>
@@ -64,41 +67,6 @@
   <summary xml:lang="uk">Проста гра-складанка для дітей та дорослих.</summary>
   <summary xml:lang="x-test">xxA simple constructor game suitable for children and adults alikexx</summary>
   <summary xml:lang="zh-CN">一个简单的建造游戏，适合儿童和成人</summary>
-  <developer_name>The KTuberling Developers</developer_name>
-  <developer_name xml:lang="ar">c) 1999-2009, مطورو البطاطا ك</developer_name>
-  <developer_name xml:lang="ca">Els desenvolupadors del KTuberling</developer_name>
-  <developer_name xml:lang="ca-valencia">Els desenvolupadors de KTuberling</developer_name>
-  <developer_name xml:lang="cs">Vývojáři aplikace KTuberling</developer_name>
-  <developer_name xml:lang="da">KTuberling-udviklerne</developer_name>
-  <developer_name xml:lang="de">Die KTuberling-Entwickler</developer_name>
-  <developer_name xml:lang="el">Οι προγραμματιτές του KTuberling</developer_name>
-  <developer_name xml:lang="en-GB">The KTuberling Developers</developer_name>
-  <developer_name xml:lang="eo">La KTuberling-Evoluistoj</developer_name>
-  <developer_name xml:lang="es">Los desarrolladores de KTuberling</developer_name>
-  <developer_name xml:lang="et">Kartulimees</developer_name>
-  <developer_name xml:lang="eu">KTuberling garatzaileak</developer_name>
-  <developer_name xml:lang="fi">KTuberlingin kehittäjät</developer_name>
-  <developer_name xml:lang="fr">Les développeurs de KTuberling</developer_name>
-  <developer_name xml:lang="gl">Persoas desenvolvedoras de KTuberling</developer_name>
-  <developer_name xml:lang="he">מפתחי KTuberling</developer_name>
-  <developer_name xml:lang="hu">A KTuberling fejlesztői</developer_name>
-  <developer_name xml:lang="id">Pengembang KTuberling</developer_name>
-  <developer_name xml:lang="it">Gli sviluppatori di KTuberling</developer_name>
-  <developer_name xml:lang="ka">KTuberling -ის პროგრამისტები</developer_name>
-  <developer_name xml:lang="ko">KTuberling 개발자</developer_name>
-  <developer_name xml:lang="nl">De ontwikkelaars van KTuberling</developer_name>
-  <developer_name xml:lang="nn">KTuberling-utviklarane</developer_name>
-  <developer_name xml:lang="pl">Programiści KTuberling</developer_name>
-  <developer_name xml:lang="pt">A Equipa de Desenvolvimento do KTuberling</developer_name>
-  <developer_name xml:lang="pt-BR">Desenvolvedores do KTuberling</developer_name>
-  <developer_name xml:lang="ru">Разработчики KTuberling</developer_name>
-  <developer_name xml:lang="sk">Vývojári KTuberling</developer_name>
-  <developer_name xml:lang="sl">Razvijalci KTuberling</developer_name>
-  <developer_name xml:lang="sv">KTuberling-utvecklarna</developer_name>
-  <developer_name xml:lang="tr">KTuberling Geliştiricileri</developer_name>
-  <developer_name xml:lang="uk">Розробники KTuberling</developer_name>
-  <developer_name xml:lang="x-test">xxThe KTuberling Developersxx</developer_name>
-  <developer_name xml:lang="zh-CN">KTuberling 开发者</developer_name>
   <description>
     <p>KTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.</p>
     <p xml:lang="ar">البطاطا ك هي لعبة إنشاء بسيطة مناسبة للأطفال والكبار على حد سواء. تعتمد فكرة اللعبة على مفهوم صنع الدمى الذي كان شائعًا في السابق.</p>
