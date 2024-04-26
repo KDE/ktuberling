@@ -80,7 +80,14 @@ set(ktuberling_common_SRCS
    soundfactory.cpp
    filefactory.cpp
 )
-ecm_qt_declare_logging_category(ktuberling_common_SRCS HEADER ktuberling_debug.h IDENTIFIER KTUBERLING_LOG CATEGORY_NAME org.kde.kdegames.ktuberling DESCRIPTION "ktuberling (kdegames)" EXPORT KTUBERLING)
+ecm_qt_declare_logging_category(ktuberling_common_SRCS
+    HEADER ktuberling_debug.h
+    IDENTIFIER KTUBERLING_LOG
+    CATEGORY_NAME ktuberling
+    OLD_CATEGORY_NAMES org.kde.kdegames.ktuberling
+    DESCRIPTION "KTuberling game"
+    EXPORT KTUBERLING
+)
 
 if(ANDROID)
     set(ktuberling_mobile_SRCS
