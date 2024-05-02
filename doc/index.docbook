@@ -226,9 +226,9 @@ The toolbar provides buttons for the commonly used functions.
         <textobject><phrase>Load Button</phrase></textobject>
       </inlinemediaobject>
     </entry>
-    <entry><guiicon>Load...</guiicon></entry>
+    <entry><guiicon>Load…</guiicon></entry>
     <entry><link linkend="game-load"><menuchoice>
-    <guimenu>Game</guimenu> <guimenuitem>Load...</guimenuitem></menuchoice></link></entry>
+    <guimenu>Game</guimenu> <guimenuitem>Load…</guimenuitem></menuchoice></link></entry>
     <entry>Opens an existing <literal role="extension">.tuberling</literal> file from the disk.</entry>
   </row>
 
@@ -254,9 +254,9 @@ The toolbar provides buttons for the commonly used functions.
         <textobject><phrase>Print Button</phrase></textobject>
       </inlinemediaobject>
     </entry>
-    <entry><guiicon>Print...</guiicon></entry>
+    <entry><guiicon>Print…</guiicon></entry>
     <entry><link linkend="game-print"><menuchoice>
-    <guimenu>Game</guimenu> <guimenuitem>Print...</guimenuitem></menuchoice></link></entry>
+    <guimenu>Game</guimenu> <guimenuitem>Print…</guimenuitem></menuchoice></link></entry>
     <entry>Prints your picture.</entry>
   </row>
 
@@ -309,7 +309,7 @@ The toolbar provides buttons for the commonly used functions.
   <varlistentry id="game-load">
     <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo> </shortcut>
     <guimenu>Game</guimenu>
-    <guimenuitem>Load...</guimenuitem></menuchoice></term>
+    <guimenuitem>Load…</guimenuitem></menuchoice></term>
     <listitem><para><action>Opens an existing <literal role="extension">.tuberling</literal> file</action>
     from your disk.</para></listitem>
   </varlistentry>
@@ -324,7 +324,7 @@ The toolbar provides buttons for the commonly used functions.
 
   <varlistentry id="game-save-as-picture">
     <term><menuchoice><guimenu>Game</guimenu>
-    <guimenuitem>Save as Picture...</guimenuitem></menuchoice></term>
+    <guimenuitem>Save as Picture…</guimenuitem></menuchoice></term>
     <listitem><para><action>Creates a graphics file</action> containing a picture
     of your tuberling.</para></listitem>
   </varlistentry>
@@ -332,7 +332,7 @@ The toolbar provides buttons for the commonly used functions.
   <varlistentry id="game-print">
     <term><menuchoice><shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo> </shortcut>
     <guimenu>Game</guimenu>
-    <guimenuitem>Print...</guimenuitem></menuchoice></term>
+    <guimenuitem>Print…</guimenuitem></menuchoice></term>
     <listitem><para><action>Prints</action> your tuberling picture.</para></listitem>
   </varlistentry>
 
