@@ -280,14 +280,14 @@ void TopLevel::setupKAction()
   playGround->connectRedoAction(action);
 
   //Speech
-  KToggleAction *t = new KToggleAction(i18n("&No Sound"), this);
+  KToggleAction *t = new KToggleAction(i18nc("@option:check", "&No Sound"), this);
   actionCollection()->addAction( QStringLiteral( "speech_no_sound" ), t);
   connect(t, &QAction::triggered, this, &TopLevel::soundOff);
   languagesGroup->addAction(t);
 
   KStandardAction::fullScreen(this, &TopLevel::toggleFullScreen, this, actionCollection());
 
-  t = new KToggleAction(i18n("&Lock Aspect Ratio"), this);
+  t = new KToggleAction(i18nc("@option:check", "&Lock Aspect Ratio"), this);
   actionCollection()->addAction( QStringLiteral( "lock_aspect_ratio" ), t);
   connect(t, &QAction::triggered, this, &TopLevel::lockAspectRatio);
 
