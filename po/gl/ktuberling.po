@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 01:42+0000\n"
+"POT-Creation-Date: 2024-05-02 00:37+0000\n"
 "PO-Revision-Date: 2023-06-17 12:21+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -174,32 +174,38 @@ msgid "Error while loading the sound file."
 msgstr "Erro ao cargar o ficheiro de son."
 
 #: toplevel.cpp:270
-#, kde-format
-msgid "Save &as Picture..."
+#, fuzzy, kde-format
+#| msgid "Save &as Picture..."
+msgctxt "@action"
+msgid "Save as Picture…"
 msgstr "Gard&ar como imaxe…"
 
-#: toplevel.cpp:283
-#, kde-format
+#: toplevel.cpp:284
+#, fuzzy, kde-format
+#| msgid "&No Sound"
+msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "Se&n sons"
 
-#: toplevel.cpp:290
-#, kde-format
+#: toplevel.cpp:291
+#, fuzzy, kde-format
+#| msgid "&Lock Aspect Ratio"
+msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "&Fixar as proporcións"
 
-#: toplevel.cpp:328
+#: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr "Cargar un ficheiro"
 
-#: toplevel.cpp:329 toplevel.cpp:422
+#: toplevel.cpp:330 toplevel.cpp:423
 #, kde-format
 msgid "KTuberling files (%1)"
 msgstr "Ficheiros de KTuberling (%1)"
 
-#: toplevel.cpp:362
+#: toplevel.cpp:363
 #, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
@@ -208,35 +214,35 @@ msgstr ""
 "O ficheiro gardado é dunha versión anterior de KTuberling e por desgraza non "
 "pode abrirse con esta versión."
 
-#: toplevel.cpp:366
+#: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
 msgstr "Non foi posíbel cargar o ficheiro."
 
-#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
-#: toplevel.cpp:514
+#: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
+#: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
 msgstr "Non foi posíbel gardar o ficheiro."
 
-#: toplevel.cpp:474
+#: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: toplevel.cpp:526
+#: toplevel.cpp:527
 #, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Imprimir %1"
 
-#: toplevel.cpp:533
+#: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
 msgstr "Non foi posíbel imprimir a imaxe."
 
-#: toplevel.cpp:536
+#: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "Imprimiuse a imaxe correctamente."

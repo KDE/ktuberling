@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 01:42+0000\n"
+"POT-Creation-Date: 2024-05-02 00:37+0000\n"
 "PO-Revision-Date: 2021-11-12 00:50+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -162,67 +162,73 @@ msgid "Error while loading the sound file."
 msgstr "음악 파일을 불러오는 동안 오류가 발생했습니다."
 
 #: toplevel.cpp:270
-#, kde-format
-msgid "Save &as Picture..."
+#, fuzzy, kde-format
+#| msgid "Save &as Picture..."
+msgctxt "@action"
+msgid "Save as Picture…"
 msgstr "그림 파일로 저장하기(&A)..."
 
-#: toplevel.cpp:283
-#, kde-format
+#: toplevel.cpp:284
+#, fuzzy, kde-format
+#| msgid "&No Sound"
+msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "소리 없음(&N)"
 
-#: toplevel.cpp:290
-#, kde-format
+#: toplevel.cpp:291
+#, fuzzy, kde-format
+#| msgid "&Lock Aspect Ratio"
+msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "배율 잠그기(&L)"
 
-#: toplevel.cpp:328
+#: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr "파일 불러오기"
 
-#: toplevel.cpp:329 toplevel.cpp:422
+#: toplevel.cpp:330 toplevel.cpp:423
 #, kde-format
 msgid "KTuberling files (%1)"
 msgstr "KTuberling 파일 (%1)"
 
-#: toplevel.cpp:362
+#: toplevel.cpp:363
 #, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr "이 파일은 이전 버전에서 저장했기 때문에 불러올 수 없습니다."
 
-#: toplevel.cpp:366
+#: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
 msgstr "파일을 불러올 수 없습니다."
 
-#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
-#: toplevel.cpp:514
+#: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
+#: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
 msgstr "파일을 저장할 수 없습니다."
 
-#: toplevel.cpp:474
+#: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: toplevel.cpp:526
+#: toplevel.cpp:527
 #, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "%1 인쇄"
 
-#: toplevel.cpp:533
+#: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
 msgstr "그림을 인쇄할 수 없습니다."
 
-#: toplevel.cpp:536
+#: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "그림 인쇄가 성공적으로 완료되었습니다."

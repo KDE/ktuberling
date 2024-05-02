@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 01:42+0000\n"
+"POT-Creation-Date: 2024-05-02 00:37+0000\n"
 "PO-Revision-Date: 2009-06-22 16:42+0200\n"
 "Last-Translator: ivan <admin@linuxzasve.com>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -167,33 +167,38 @@ msgid "Error while loading the sound file."
 msgstr "Pogreška tijekom učitavanja zvukova."
 
 #: toplevel.cpp:270
-#, kde-format
-msgid "Save &as Picture..."
+#, fuzzy, kde-format
+#| msgid "Save &as Picture..."
+msgctxt "@action"
+msgid "Save as Picture…"
 msgstr "Spremi &kao sliku …"
 
-#: toplevel.cpp:283
-#, kde-format
+#: toplevel.cpp:284
+#, fuzzy, kde-format
+#| msgid "&No Sound"
+msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "&Bez zvuka"
 
-#: toplevel.cpp:290
+#: toplevel.cpp:291
 #, kde-format
+msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr ""
 
-#: toplevel.cpp:328
+#: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr ""
 
-#: toplevel.cpp:329 toplevel.cpp:422
+#: toplevel.cpp:330 toplevel.cpp:423
 #, fuzzy, kde-format
 #| msgid "KTuberling"
 msgid "KTuberling files (%1)"
 msgstr "KTuberling"
 
-#: toplevel.cpp:362
+#: toplevel.cpp:363
 #, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
@@ -202,36 +207,36 @@ msgstr ""
 "Spremljena datoteka je iz stare verzije KTuberlinga, te se kao takva ne može "
 "otvoriti u ovoj verziji."
 
-#: toplevel.cpp:366
+#: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
 msgstr "Nije moguće učitati datoteku."
 
-#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
-#: toplevel.cpp:514
+#: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
+#: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
 msgstr "Nije moguće spremiti datoteku"
 
-#: toplevel.cpp:474
+#: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
 msgstr ""
 
-#: toplevel.cpp:526
+#: toplevel.cpp:527
 #, fuzzy, kde-format
 #| msgid "Print %1"
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Ispiši %1"
 
-#: toplevel.cpp:533
+#: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
 msgstr "Nije moguće ispisati sliku."
 
-#: toplevel.cpp:536
+#: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "Slika je uspješno ispisana."

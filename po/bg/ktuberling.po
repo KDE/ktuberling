@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 01:42+0000\n"
+"POT-Creation-Date: 2024-05-02 00:37+0000\n"
 "PO-Revision-Date: 2007-02-22 22:19+0200\n"
 "Last-Translator: Zlatko Popov <zlatkopopov@fsa-bg.org>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
@@ -160,67 +160,72 @@ msgid "Error while loading the sound file."
 msgstr "Грешка при зареждане на аудио файлове."
 
 #: toplevel.cpp:270
-#, kde-format
-msgid "Save &as Picture..."
+#, fuzzy, kde-format
+#| msgid "Save &as Picture..."
+msgctxt "@action"
+msgid "Save as Picture…"
 msgstr "Запис &като изображение..."
 
-#: toplevel.cpp:283
-#, kde-format
+#: toplevel.cpp:284
+#, fuzzy, kde-format
+#| msgid "&No Sound"
+msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "Б&ез говор"
 
-#: toplevel.cpp:290
+#: toplevel.cpp:291
 #, kde-format
+msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr ""
 
-#: toplevel.cpp:328
+#: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr ""
 
-#: toplevel.cpp:329 toplevel.cpp:422
+#: toplevel.cpp:330 toplevel.cpp:423
 #, fuzzy, kde-format
 msgid "KTuberling files (%1)"
 msgstr "KTuberling"
 
-#: toplevel.cpp:362
+#: toplevel.cpp:363
 #, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
 
-#: toplevel.cpp:366
+#: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
 msgstr "Файлът не може да бъде зареден."
 
-#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
-#: toplevel.cpp:514
+#: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
+#: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
 msgstr "Файлът не може да бъде записан."
 
-#: toplevel.cpp:474
+#: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
 msgstr ""
 
-#: toplevel.cpp:526
+#: toplevel.cpp:527
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Печат на %1"
 
-#: toplevel.cpp:533
+#: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
 msgstr "Изображението не може да бъде отпечатано."
 
-#: toplevel.cpp:536
+#: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "Изображението е отпечатано успешно."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 01:42+0000\n"
+"POT-Creation-Date: 2024-05-02 00:37+0000\n"
 "PO-Revision-Date: 2022-11-30 06:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -163,34 +163,40 @@ msgid "Error while loading the sound file."
 msgstr "ხმის ფაილის ჩატვირთვის შეცდომა."
 
 #: toplevel.cpp:270
-#, kde-format
-msgid "Save &as Picture..."
+#, fuzzy, kde-format
+#| msgid "Save &as Picture..."
+msgctxt "@action"
+msgid "Save as Picture…"
 msgstr "&სურათად შენახვა..."
 
-#: toplevel.cpp:283
-#, kde-format
+#: toplevel.cpp:284
+#, fuzzy, kde-format
+#| msgid "&No Sound"
+msgctxt "@option:check"
 msgid "&No Sound"
 msgstr ""
 "&\n"
 "ხმის გარეშე"
 
-#: toplevel.cpp:290
-#, kde-format
+#: toplevel.cpp:291
+#, fuzzy, kde-format
+#| msgid "&Lock Aspect Ratio"
+msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "გადიდების კოეფიციენტის &დაბლოკვა"
 
-#: toplevel.cpp:328
+#: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr "ფაილის ჩატვირთვა"
 
-#: toplevel.cpp:329 toplevel.cpp:422
+#: toplevel.cpp:330 toplevel.cpp:423
 #, kde-format
 msgid "KTuberling files (%1)"
 msgstr "KTuberling -ის ფაილები (%1)"
 
-#: toplevel.cpp:362
+#: toplevel.cpp:363
 #, kde-format
 msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
@@ -199,35 +205,35 @@ msgstr ""
 "შენახული ფაილი თამაშიც ძველი ვერსიიდანაა და სამწუხაროდ ამ ვერსიაში ვერ "
 "გახსნით."
 
-#: toplevel.cpp:366
+#: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
 msgstr "ფაილის ჩატვირთვა შეუძლებელია."
 
-#: toplevel.cpp:434 toplevel.cpp:445 toplevel.cpp:452 toplevel.cpp:507
-#: toplevel.cpp:514
+#: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
+#: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
 msgstr "ფაილის შენახვა შეუძლებელია."
 
-#: toplevel.cpp:474
+#: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: toplevel.cpp:526
+#: toplevel.cpp:527
 #, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "%1-ის დაბეჭდვა"
 
-#: toplevel.cpp:533
+#: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
 msgstr "სურათის დაბეჭდვის შეცდომა."
 
-#: toplevel.cpp:536
+#: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "სურათი წარმატებით დაიბეჭდა."
