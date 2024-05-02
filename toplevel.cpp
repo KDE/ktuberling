@@ -280,7 +280,8 @@ void TopLevel::setupKAction()
   playGround->connectRedoAction(action);
 
   //Speech
-  KToggleAction *t = new KToggleAction(i18nc("@option:check", "&No Sound"), this);
+  KToggleAction *t = new KToggleAction(QIcon::fromTheme(QStringLiteral("speaker")),
+                                       i18nc("@option:check", "&No Sound"), this);
   actionCollection()->addAction( QStringLiteral( "speech_no_sound" ), t);
   connect(t, &QAction::triggered, this, &TopLevel::soundOff);
   languagesGroup->addAction(t);
