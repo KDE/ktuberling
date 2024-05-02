@@ -267,7 +267,7 @@ void TopLevel::setupKAction()
   KGameStandardAction::quit(qApp, &QApplication::quit, actionCollection());
 
   action = actionCollection()->addAction( QStringLiteral( "game_save_picture" ));
-  action->setText(i18n("Save &as Picture..."));
+  action->setText(i18nc("@action", "Save as Picture…"));
   connect(action, &QAction::triggered, this, &TopLevel::filePicture);
 
   //Edit
