@@ -331,7 +331,7 @@
     </entry>
     <entry
 ><guiicon
->Laden...</guiicon
+>Laden…</guiicon
 ></entry>
     <entry
 ><link linkend="game-load"
@@ -339,7 +339,7 @@
 ><guimenu
 >Spel</guimenu
 > <guimenuitem
->Laden...</guimenuitem
+>Laden…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -393,7 +393,7 @@
     </entry>
     <entry
 ><guiicon
->Afdrukken...</guiicon
+>Afdrukken…</guiicon
 ></entry>
     <entry
 ><link linkend="game-print"
@@ -401,7 +401,7 @@
 ><guimenu
 >Spel</guimenu
 > <guimenuitem
->Afdrukken...</guimenuitem
+>Afdrukken…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -519,7 +519,7 @@
 > <guimenu
 >Spel</guimenu
 > <guimenuitem
->Laden...</guimenuitem
+>Laden…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -561,7 +561,7 @@
 ><guimenu
 >Spel</guimenu
 > <guimenuitem
->Opslaan als afbeelding...</guimenuitem
+>Opslaan als afbeelding…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -584,7 +584,7 @@
 > <guimenu
 >Spel</guimenu
 > <guimenuitem
->Afdrukken...</guimenuitem
+>Afdrukken…</guimenuitem
 ></menuchoice
 ></term>
     <listitem

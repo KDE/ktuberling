@@ -299,13 +299,13 @@
 ><imagedata format="PNG" fileref="document-open.png"/></imageobject>
         <textobject
 ><phrase
->El botó «Carrega...»</phrase
+>El botó Carrega</phrase
 ></textobject>
       </inlinemediaobject>
     </entry>
     <entry
 ><guiicon
->Carrega...</guiicon
+>Carrega…</guiicon
 ></entry>
     <entry
 ><link linkend="game-load"
@@ -313,7 +313,7 @@
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Carrega...</guimenuitem
+>Carrega…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -361,13 +361,13 @@
 ><imagedata format="PNG" fileref="document-print.png"/></imageobject>
         <textobject
 ><phrase
->El botó «Imprimeix...»</phrase
+>El botó Imprimeix</phrase
 ></textobject>
       </inlinemediaobject>
     </entry>
     <entry
 ><guiicon
->Imprimeix...</guiicon
+>Imprimeix…</guiicon
 ></entry>
     <entry
 ><link linkend="game-print"
@@ -375,7 +375,7 @@
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Imprimeix...</guimenuitem
+>Imprimeix…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -491,7 +491,7 @@
 > <guimenu
 >Joc</guimenu
 > <guimenuitem
->Carrega...</guimenuitem
+>Carrega…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -533,7 +533,7 @@
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Desa com a imatge...</guimenuitem
+>Desa com a imatge…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -556,7 +556,7 @@
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Imprimeix...</guimenuitem
+>Imprimeix…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
