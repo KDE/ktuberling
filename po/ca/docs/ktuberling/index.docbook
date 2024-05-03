@@ -299,7 +299,7 @@
 ><imagedata format="PNG" fileref="document-open.png"/></imageobject>
         <textobject
 ><phrase
->El botó «Carrega...»</phrase
+>El botó Carrega</phrase
 ></textobject>
       </inlinemediaobject>
     </entry>
@@ -361,7 +361,7 @@
 ><imagedata format="PNG" fileref="document-print.png"/></imageobject>
         <textobject
 ><phrase
->El botó «Imprimeix...»</phrase
+>El botó Imprimeix</phrase
 ></textobject>
       </inlinemediaobject>
     </entry>
