@@ -165,22 +165,19 @@ msgid "Error while loading the sound file."
 msgstr "加载声音文件时出错。"
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "保存为图片(&A)..."
+msgstr ""
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "无声音(&S)"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "锁定长宽比(&L)"
