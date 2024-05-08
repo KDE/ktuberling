@@ -1,22 +1,22 @@
 # translation of ktuberling.po to Italian
 # Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2010 Free Software Foundation, Inc.
 # Andrea Celli <andrea.celli@libero.it>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Paolo Zamponi <feus73@gmail.com>, 2018, 2021.
+# SPDX-FileCopyrightText: 2018, 2021, 2024 Paolo Zamponi <feus73@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:42+0000\n"
-"PO-Revision-Date: 2021-11-30 18:22+0100\n"
-"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
+"PO-Revision-Date: 2024-05-07 18:08+0200\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -173,7 +173,7 @@ msgstr "&Muto"
 #: toplevel.cpp:290
 #, kde-format
 msgid "&Lock Aspect Ratio"
-msgstr "B&locca le proporzioni"
+msgstr "B&locca il rapporto d'aspetto"
 
 #: toplevel.cpp:328
 #, kde-format
