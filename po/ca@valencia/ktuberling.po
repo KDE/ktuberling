@@ -167,7 +167,7 @@ msgstr "S'ha produït un error en carregar el fitxer de sons."
 #: toplevel.cpp:270
 #, kde-format
 msgid "Save &as Picture..."
-msgstr "Anomena i gu&arda com a imatge..."
+msgstr "Anomena i gu&arda com a imatge…"
 
 #: toplevel.cpp:283
 #, kde-format
