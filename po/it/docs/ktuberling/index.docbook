@@ -361,7 +361,7 @@
     </entry>
     <entry
 ><guiicon
->Carica...</guiicon
+>Carica…</guiicon
 ></entry>
     <entry
 ><link linkend="game-load"
@@ -369,7 +369,7 @@
 ><guimenu
 >Gioco</guimenu
 > <guimenuitem
->Carica...</guimenuitem
+>Carica…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -423,7 +423,7 @@
     </entry>
     <entry
 ><guiicon
->Stampa...</guiicon
+>Stampa…</guiicon
 ></entry>
     <entry
 ><link linkend="game-print"
@@ -431,7 +431,7 @@
 ><guimenu
 >Gioco</guimenu
 > <guimenuitem
->Stampa...</guimenuitem
+>Stampa…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -549,7 +549,7 @@
 > <guimenu
 >Gioco</guimenu
 > <guimenuitem
->Carica...</guimenuitem
+>Carica…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -591,7 +591,7 @@
 ><guimenu
 >Gioco</guimenu
 > <guimenuitem
->Salva come immagine...</guimenuitem
+>Salva come immagine…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -614,7 +614,7 @@
 > <guimenu
 >Gioco</guimenu
 > <guimenuitem
->Stampa...</guimenuitem
+>Stampa…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
