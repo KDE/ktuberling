@@ -5,19 +5,20 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2008, 2009, 2010.
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
 # pan93412 <pan93412@gmail.com>, 2018.
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2018-03-24 16:52+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2024-05-10 17:18+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -163,29 +164,25 @@ msgid "Error while loading the sound file."
 msgstr "載入聲音檔時發生錯誤"
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "存成圖檔(&A)"
+msgstr "另存為圖片(&A)…"
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "關掉聲音(&S)"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "鎖定比例(&L)"
 
 #: toplevel.cpp:329
-#, fuzzy, kde-format
-#| msgid "Load file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr "載入檔案"
@@ -220,8 +217,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: toplevel.cpp:527
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "列印 %1"
