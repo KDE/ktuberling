@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potato Guy">
+
   <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % French "INCLUDE"
@@ -65,9 +67,9 @@
 </authorgroup>
 
 <date
->11-05-2016</date>
+>04-10-2021</date>
 <releaseinfo
->1.0.0 (Applications 16.04)</releaseinfo>
+>KDE Gear 21.08</releaseinfo>
 
 <copyright>
 <year
@@ -94,7 +96,7 @@
 
 <abstract>
 <para
->&ktuberling; est un jeu destiné aux jeunes enfants. </para>
+>&i18n-ktuberling; est un jeu destiné aux jeunes enfants. </para>
 </abstract>
 
 <keywordset>
@@ -146,7 +148,7 @@
 </screenshot>
 
 <para
->&ktuberling; est un jeu de construction simple, adapté pour les enfants et également pour les parents. L'idée de ce jeu est adapté à partir d'un concept de création de poupée très populaire. Une patate est re-décorée avec divers petits objets pour la faire ressembler à une personne. &ktuberling; va cependant plus loin en terme de contenu et ajoute une diversité surprenante de différents thèmes. </para>
+>&i18n-ktuberling; est un jeu de construction simple, adapté aux enfants et également pour les parents. L'idée de ce jeu est adapté d'un concept de création de poupée très populaire. Une pomme de terre est décorée avec divers petits objets pour la faire ressembler à une personne. &i18n-ktuberling; va cependant plus loin en terme de contenu et ajoute une diversité surprenante de thèmes différents. </para>
 </chapter>
 
 <chapter id="howto">
@@ -154,7 +156,7 @@
 >Comment jouer</title>
 
 <para
->&ktuberling; est un jeu conçu pour les jeunes enfants. Bien sûr, il peut être aussi joué par des adultes qui sont resté, au fond, jeunes. </para>
+>&i18n-ktuberling; est un jeu conçu pour les jeunes enfants. Bien sûr, il peut être aussi joué par des adultes qui sont resté, au fond d'eux, jeunes. </para>
 
 <para
 >C'est un <quote
@@ -165,7 +167,7 @@
 >Il n'y a pas de gagnant dans ce jeu. Le seul but est de créer des figures les plus amusantes que vous pouvez. </para>
 
 <para
->&ktuberling; peut également <quote
+>&i18n-ktuberling; peut également <quote
 >parler</quote
 >. Il prononcera le nom des objets que vous glissez et déposez. Il <quote
 >parlera</quote
@@ -198,8 +200,6 @@
 ></listitem>
 </itemizedlist>
 <note
-><title
->Remarque : </title
 ><para
 >L'aspect de l'écran d'application peut être modifié en appliquant un <quote
 >thème</quote
@@ -207,7 +207,7 @@
 ></note>
 <screenshot>
 <screeninfo
->Fenêtre principale de &ktuberling;</screeninfo>
+>Fenêtre principale de &i18n-ktuberling;</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata format="PNG" fileref="gameboard.png"/>
@@ -229,10 +229,10 @@
 > et cliquez dessus. et ensuite déplacez-le vers <quote
 >l'aire de jeu</quote
 > et cliquez encore une fois. <note
-><title
->Remarque : </title
 ><para
->La taille des objets peut être modifiée pendant le déplacement. Certain objets trop grands ont été réduits pour s'adapter à la zone d'objets.</para
+>La taille des objets peut être modifiée pendant le déplacement. Certain objets trop grands ont été réduits pour s'adapter à la zone des <quote
+>objects</quote
+>.</para
 ></note>
 </para>
 </sect2>
@@ -276,205 +276,198 @@
 >Les boutons de la barre d'outils</title>
 <tgroup cols="4">
 
-<thead>
-<row>
-<entry
->Bouton</entry>
-<entry
->Nom</entry>
-<entry
->Équivalent dans les menus</entry>
-<entry
+  <thead>
+    <row>
+      <entry
+>Bouton </entry>
+      <entry
+>Nom </entry>
+      <entry
+>Équivalent de menus </entry>
+      <entry
 >Action</entry>
-</row>
-</thead>
+    </row>
+  </thead>
 <tbody>
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-new.png"/>
-  </imageobject>
-	<textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
 ><phrase
 >Bouton Nouvelle partie</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-  <guiicon
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
 >Nouveau</guiicon
 ></entry>
-<entry>
-  <link linkend="game-new"
+    <entry
+><link linkend="game-new"
 ><menuchoice
 ><guimenu
 >Jeu</guimenu
 > <guimenuitem
 >Nouveau</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
+></menuchoice
+></link
+></entry>
+    <entry
 >Réinitialise la zone de <quote
 >jeu</quote
->. Ceci nettoie toutes les parties de l'aire de jeu afin de créer un nouveau tableau et donc une nouvelle décoration peut être créée. </entry>
-</row>
+>. Ceci nettoie toutes les parties de l'aire de jeu afin de créer un nouveau tableau et donc une nouvelle décoration peut être créée.</entry>
+  </row>
 
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-open.png"/>
-  </imageobject>
-	<textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
 ><phrase
 >Bouton Ouvrir</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry
+      </inlinemediaobject>
+    </entry>
+    <entry
 ><guiicon
->Ouvrir</guiicon
+>Charger...</guiicon
 ></entry>
-<entry>
-  <link linkend="game-load"
+    <entry
+><link linkend="game-load"
 ><menuchoice
 ><guimenu
 >Jeu</guimenu
 > <guimenuitem
 >Ouvrir...</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
->Ouvre un fichier <quote
->patate</quote
-> existant depuis le disque </entry>
-</row>
+></menuchoice
+></link
+></entry>
+    <entry
+>Ouvre un fichier existant <literal role="extension"
+>.tuberling</literal
+> depuis le disque.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-save.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
 ><phrase
 >Bouton enregistrer</phrase
 ></textobject>
-  </inlinemediaobject>
-</entry>
-<entry
+      </inlinemediaobject>
+    </entry>
+    <entry
 ><guiicon
 >Enregistrer</guiicon
 ></entry>
-<entry>
-  <link linkend="game-save"
+    <entry
+><link linkend="game-save"
 ><menuchoice
 ><guimenu
 >Jeu</guimenu
 > <guimenuitem
 >Enregistrer</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
->Enregistre votre création dans votre dossier personnel ou dans un autre dossier sur le disque. Le fichier « tuberling » est enregistré dans un petit fichier ne contenant que les positions des objets. </entry>
-</row>
+></menuchoice
+></link
+></entry>
+    <entry
+>Enregistre votre création dans votre dossier personnel ou dans un autre dossier sur le disque. Le fichier <literal role="extension"
+>.tuberling</literal
+> est enregistré dans un petit fichier ne contenant que les positions des objets.</entry>
+  </row>
 
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-print.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
 ><phrase
 >Bouton Imprimer</phrase
 ></textobject>
-</inlinemediaobject>
-</entry>
-<entry>
-<guiicon
->Imprimer</guiicon>
-</entry>
-<entry>
-  <link linkend="game-print"
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Imprimer...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
 ><menuchoice
 ><guimenu
 >Jeu</guimenu
 > <guimenuitem
 >Imprimer...</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
->Imprime votre image. </entry>
-</row>
+></menuchoice
+></link
+></entry>
+    <entry
+>Imprime votre image.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="edit-undo.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
 ><phrase
 >Bouton annuler</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-  <guiicon
->Annuler</guiicon>
-  </entry>
-<entry>
-  <link linkend="edit-undo"
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Annuler</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
 ><menuchoice
 ><guimenu
 >Édition</guimenu
 > <guimenuitem
 >Annuler</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
+></menuchoice
+></link
+></entry>
+    <entry
 >Annule la dernière opération.</entry>
-</row>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="edit-redo.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
 ><phrase
 >Bouton refaire</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-<guiicon
->Refaire</guiicon>
-</entry>
-<entry>
-  <link linkend="edit-redo"
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Refaire</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
 ><menuchoice
 ><guimenu
 >Édition</guimenu
 > <guimenuitem
 >Refaire</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
+></menuchoice
+></link
+></entry>
+    <entry
 >Refait la dernière opération.</entry>
-</row>
+  </row>
 
 </tbody>
 </tgroup>
@@ -491,11 +484,11 @@
 
 <variablelist>
 
-<varlistentry id="game-new">
-<term
+  <varlistentry id="game-new">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >N</keycap
 ></keycombo
@@ -504,23 +497,23 @@
 >Jeu</guimenu
 > <guimenuitem
 >Nouveau</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
->Réinitialise</action
-> la zone de <quote
->jeu</quote
->. </para
+>Efface</action
+> la <quote
+>zone de jeu</quote
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-load">
-<term
+  <varlistentry id="game-load">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >O</keycap
 ></keycombo
@@ -528,22 +521,24 @@
 > <guimenu
 >Jeu</guimenu
 > <guimenuitem
->Ouvrir...</guimenuitem
-> </menuchoice
+>Charger...</guimenuitem
+></menuchoice
 ></term>
- <listitem
+    <listitem
 ><para
 ><action
->Ouvrir un fichier existant « tuberling »</action
+>Ouvrir un fichier existant <literal role="extension"
+>.tuberling</literal
+></action
 > depuis votre disque.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-save">
-<term
+  <varlistentry id="game-save">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >S</keycap
 ></keycombo
@@ -552,40 +547,40 @@
 >Jeu</guimenu
 > <guimenuitem
 >Enregistrer</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Enregistre</action
 > votre création. La <quote
 >patate</quote
-> est enregistrée dans un petit fichier qui contient les positions des objets. </para
+> est enregistrée dans un petit fichier qui contient les positions des objets.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-save-as-picture">
-<term
+  <varlistentry id="game-save-as-picture">
+    <term
 ><menuchoice
 ><guimenu
 >Jeu</guimenu
 > <guimenuitem
 >Enregistrer comme image...</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Crée un fichier graphique</action
-> contenant une image de votre création. </para
+> contenant une image de votre création.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-print">
-<term
+  <varlistentry id="game-print">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >P</keycap
 ></keycombo
@@ -594,21 +589,21 @@
 >Jeu</guimenu
 > <guimenuitem
 >Imprimer...</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Imprime</action
-> votre image créée. </para
+> votre image créée.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >Q</keycap
 ></keycombo
@@ -617,18 +612,17 @@
 >Jeu</guimenu
 > <guimenuitem
 >Quitter</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Quitte</action
-> &ktuberling;. </para
+> &i18n-ktuberling;.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
-
 </sect2>
 
 <sect2>
@@ -637,11 +631,11 @@
 
 <variablelist>
 
-<varlistentry id="edit-undo">
-<term
+  <varlistentry id="edit-undo">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >Z</keycap
 ></keycombo
@@ -650,34 +644,34 @@
 >Édition</guimenu
 > <guimenuitem
 >Annuler</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Annule</action
 > le dernier <quote
 >objet</quote
-> placé. </para
+> placé.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="edit-redo">
-<term
+  <varlistentry id="edit-redo">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
->&Ctrl;&Maj; <keycap
+><keycombo action="simul"
+>&Ctrl; &Maj;<keycap
 >Z</keycap
 ></keycombo
 > </shortcut
 > <guimenu
->Éditer</guimenu
+>Édition</guimenu
 > <guimenuitem
 >Refaire</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Refait</action
@@ -685,15 +679,15 @@
 >d'objet</quote
 >. Ce menu optionnel n'est actif que si vous avez au préalable utilisé <guilabel
 >Annuler</guilabel
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >C</keycap
 ></keycombo
@@ -702,9 +696,9 @@
 >Édition</guimenu
 > <guimenuitem
 >Copier</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Copie</action
@@ -712,10 +706,39 @@
 >jeu</quote
 > dans le presse-papiers.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
+</sect2>
 
+<sect2>
+<title
+>Le menu « Affichage »</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Affichage</guimenu
+> <guimenuitem
+>Mode Plein écran</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Bascule l'interface graphique en mode « Plein écran ».</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
 </sect2>
 
 <sect2>
@@ -724,44 +747,44 @@
 
 <variablelist>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><guimenu
 >Aire de jeu</guimenu
 > <guimenuitem
 >Verrouillez le ratio d'affichage</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
->Cette option préserve le ratio d'aspect de l'aire de jeu lors du re-dimensionnement de la fenêtre de &ktuberling;. Quand le ratio ne correspond pas à une fenêtre, l'arrière-plan est rempli avec celui spécifié dans le thème. </para
+>Cette option préserve le ratio d'aspect de la zone de jeu lors du re-dimensionnement de la fenêtre de &i18n-ktuberling;. Quand ce ration ne correspond pas à celle de la fenêtre, l'arrière-plan est rempli avec celui spécifié dans le thème.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="theme_change">
-<term
+  <varlistentry id="theme_change">
+    <term
 ><menuchoice
 ><guimenu
 >Aire de jeu</guimenu
 > <guimenuitem
 >Nom de l'aire de jeu</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Se déplace vers l'aire de jeu</action
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
 
 <para
 >Contient l'aire de jeu installée sur votre système. </para>
 <para
->&ktuberling; se souvient de la dernière aire de jeu au prochain démarrage. </para>
+>&i18n-ktuberling; se rappelle de la dernière zone de jeu sélectionnée au prochain démarrage. </para>
 </sect2>
 
 <sect2>
@@ -770,80 +793,52 @@
 
 <variablelist>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><guimenu
 >Paroles</guimenu
 > <guimenuitem
 >Pas de son</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Éteint le son</action
 >.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><guimenu
 >Paroles</guimenu
 > <guimenuitem
 >Nom de la langue</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Active le son et parle la langue sélectionnée</action
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
 
 <para
->&ktuberling; se souvient de cette option au prochain démarrage. </para>
-
+>&i18n-ktuberling; se rappelle de cette option au prochain démarrage. </para>
 </sect2>
 
 <sect2 id="settings">
 <title
->Le menu « Configuration »</title>
-
-<variablelist>
-
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-> <keycombo action="simul"
->&Ctrl;&Maj;<keycap
->F</keycap
-></keycombo
-> </shortcut
-> <guimenu
->Configuration</guimenu
-> <guimenuitem
->Mode plein écran</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
->Affiche ou cache <action
->le mode plein écran</action
->. </para
-></listitem>
-</varlistentry>
-
-</variablelist>
+>Les menus « Configuration » et « Aide »</title>
 
 <para
->De plus, &ktuberling; possède des éléments communs de menu de &kde; <guimenu
+>De plus, &i18n-ktuberling; possède des éléments de menus communs de &kde; <guimenu
 >Configuration</guimenu
 > et <guimenu
 >Aide</guimenu
@@ -942,10 +937,9 @@
 
 <listitem>
 <para
->Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - amélioration de la documentation</para>
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - Amélioration de la documentation</para>
 </listitem>
-</itemizedlist
-> 
+</itemizedlist>
 
 <para
 >Traduction française par &BenoitCosandier; et &StanislasZeller;..</para
