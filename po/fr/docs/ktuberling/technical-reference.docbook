@@ -8,13 +8,13 @@
 > <surname
 >Bischoff</surname
 > </author>
-&traducteurBenoitCosandier;&traducteurStanislasZeller; 
+&traducteurBenoitCosandier;&traducteurStanislasZeller; &traducteurXavierBesnard; 
 </authorgroup>
 
 <date
->11-05-2016</date>
+>04-10-2021</date>
 <releaseinfo
->1.0.0 (Applications 16.04)</releaseinfo>
+>KDE Gear 21.08</releaseinfo>
 
 <keywordset>
 <keyword
@@ -45,32 +45,35 @@
 >Pour créer une nouvelle aire de jeu &ktuberling;, vous devez :  </para>
 
 <itemizedlist>
-
-<listitem>
+  <listitem>
     <para
->Dessiner l'aire de jeu dans un fichier SVG, vous devez :  <itemizedlist>
-            <listitem
+>Dessiner l'aire de jeu dans un fichier au format « SVG », vous devez :  <itemizedlist>
+        <listitem
 ><para
->Saisir un nom d'emplacement où les éléments sont déposés en « arrière plan »,</para
+>Nommer l'emplacement où les éléments sont déposés en <quote
+>background</quote
+>.</para
 ></listitem>
-            <listitem
+        <listitem
 ><para
 >Saisir un titre pour chaque élément à déposer avec un nom unique,</para
 ></listitem>
-        </itemizedlist>
+      </itemizedlist>
     </para>
-</listitem>
+  </listitem>
 
-<listitem>
+  <listitem>
     <para
->Créer un fichier de thème, il doit suivre ce schéma : </para>
-    <programlisting
->&lt;Aire de jeu= « <replaceable
+>Créer un fichier <literal role="extension"
+>.theme</literal
+>. Il doit suivre ce schéma : </para>
+<programlisting
+>&lt;Zone de jeu= « <replaceable
 >Votre-Fichier-SVG</replaceable
 > » nom=« <replaceable
->Votre-Fichier.desktop</replaceable
+>Votre-Fichier.bureau</replaceable
 > » &gt;
-    &lt;nom de l'objet= « <replaceable
+&lt;nom de l'objet= « <replaceable
 >Nom-Objet</replaceable
 > » son=« <replaceable
 >Nom-Du-Son</replaceable
@@ -81,74 +84,97 @@
     ...
     ...
     &lt;/playground&gt;
-    </programlisting>
+</programlisting>
     <itemizedlist>
-        <listitem
+      <listitem
 ><para
 ><replaceable
 >Votre-Fichier-SVG</replaceable
-> est le nom du fichier qui a été dessiné.</para
+> est le nom du fichier au format « SVG » ayant été dessiné.</para
 ></listitem>
-        <listitem
+      <listitem
 ><para
 ><replaceable
 >Votre-Fichier.desktop</replaceable
 > est le nom du fichier desktop qui a le nom du thème.</para
 ></listitem>
-        <listitem
+      <listitem
 ><para
->Chaque objet doit correspondre à une entrée &lt;objet&gt;. <replaceable
+>Pour chaque objet, vous devez faire une correspondance avec une entrée &lt;objet&gt;. <replaceable
 >Nom-Objet</replaceable
-> est la dénomination unique que vous utilisez sur un fichier SVG, <replaceable
+> est la dénomination unique que vous utilisez pour un fichier « SVG », <replaceable
 >Nom-Du-Son</replaceable
-> est le nom du son que vous jouerez quand vous le déplacerez. Veuillez consulter la page consacrée aux thèmes sonores pour plus d'informations.</para
+> est le nom du son que vous jouerez quand vous le déplacerez. Veuillez consulter le fichier <filename
+>sounds/soundthemes.HOWTO</filename
+> à partir du code source pour plus d'informations sur les thèmes sonores.</para
 ></listitem>
-        <listitem
+      <listitem
 ><para
->La réduction est optionnelle et la <replaceable
->Valeur</replaceable
-> est le facteur de réduction qui sera utilisé quand dessinerez un objet en dehors de la zone. Si non-spécifié, la valeur est de 1.</para
+><literal
+>L'échelle</literal
+> est optionnelle et la <replaceable
+>valeur fournie</replaceable
+> est le facteur d'échelle qui sera utilisé quand vous dessinerez un objet en dehors de la zone. Si ce paramètre est non défini, la valeur par défaut est de 1.</para
 ></listitem>
     </itemizedlist>
-</listitem>
+  </listitem>
 
-<listitem>
+  <listitem>
     <para
->Créer un fichier .desktop, cela suit ce schéma : </para>
-    <programlisting
+>Créer un fichier <literal role="extension"
+>.desktop</literal
+>. Il doit suivre ce schéma : </para>
+<programlisting
 >[KTuberlingTheme]
-    Nom=<replaceable
->Nom-Du-Thème</replaceable
+Name=<replaceable
+>Nom-du-thème</replaceable
 >
-    </programlisting>
+</programlisting>
     <itemizedlist>
-        <listitem
+      <listitem
 ><para
 ><replaceable
 >Nom-Du-Thème</replaceable
 > est le nom qui identifie le thème qui sera affiché dans le menu de l'aire de jeu.</para
 ></listitem>
     </itemizedlist>
-</listitem>
+  </listitem>
 
-<listitem>
+  <listitem>
     <para
->Si vous ajoutez un thème au dépôt de &ktuberling;, ajoutez les fichiers « .svg », « .theme » et « .desktop » à la section « FICHIERS » du fichier « CMakeLists.txt » dans le dossier « pics/ directory ». </para>
-</listitem>
+>Si vous ajoutez un thème au dépôt de &ktuberling;, veuillez ajouter les fichiers avec les extensions <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> et <literal role="extension"
+>.desktop</literal
+> à la section <literal
+>FICHIERS</literal
+> du fichier <filename
+>CMakeLists.txt</filename
+> dans le dossier <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
 
-<listitem>
+  <listitem>
     <para
->Si vous voulez l'installer par vous même, veuillez placer les fichiers « .svg », «  .theme» et « .desktop » dans <filename class="directory"
+>Si vous voulez l'installer par vous même, veuillez placer les fichiers avec les extensions <literal role="extension"
+>.svg</literal
+>, <literal role="extension"
+>.theme</literal
+> et <literal role="extension"
+>.desktop</literal
+> dans le dossier <filename class="directory"
 >ktuberling/pics</filename
-> dans <userinput
+> grâce à la commande <userinput
 ><command
 >qtpaths</command
 > <option
 >--paths GenericDataLocation</option
 ></userinput
-> </para>
-</listitem>
-
+>. </para>
+  </listitem>
 </itemizedlist>
 
 </sect1>
@@ -166,97 +192,121 @@
 >Pour créer un nouveau thème de son pour &ktuberling;, vous devez :  </para>
 
 <itemizedlist>
-
-<listitem
+  <listitem
 ><para
->Enregistrer les sons dans le format OGG Vorbis rc3</para
+>Enregistrer les sons dans le format « OGG Vorbis rc3 ».</para
 ></listitem>
-
-<listitem>
-<para
->Créer un fichier .soundtheme <replaceable
->Votre-Langue-Avec-Deux-Lettres</replaceable
->, cela suit le schéma : </para>
+  <listitem
+><para
+>Créer un fichier <filename
+><replaceable
+>Code-de-votre-langue-deux-lettres</replaceable
+>.soundtheme</filename
+>. Cela doit suivre ce schéma : </para>
 <programlisting
->&lt;code langue=« <replaceable
+>&lt;code langue= « <replaceable
 >Votre-Langue-En-Deux-Lettres</replaceable
 > »&gt;
-&lt;nom du son=« <replaceable
+&lt;nom du son= « <replaceable
 >Nom-Du-Son</replaceable
-> » fichier=« <replaceable
+> » fichier= « <replaceable
 >Emplacement-Relatif</replaceable
-> » /&gt;
+> » /&gt;
 ...
 ...
 ...
 &lt;/langue&gt;
 </programlisting>
-<itemizedlist>
-<listitem
+    <itemizedlist>
+      <listitem
 ><para
 ><replaceable
 >Votre-Langue-En-Deux-Lettres</replaceable
 > représente votre langue d'un code de deux lettres. Par exemple, fr pour Français.</para
 ></listitem>
-<listitem
+      <listitem
 ><para
->Pour chaque son une entrée &lt;sound&gt; <replaceable
+>Pour chaque son il y a une entrée <literal
+>&lt;son&gt;</literal
+>. <replaceable
 >Nom-Du-Son</replaceable
-> doit correspondre avec le nom du son spécifié dans l'aire de jeu (voir la page consacrée aux thèmes). <replaceable
+> doit correspondre avec le nom du son spécifié dans l'aire de jeu (Veuillez consulter la page <filename
+>pics/themes.HOWTO</filename
+> à partir du code source). <replaceable
 >Emplacement-Relatif</replaceable
-> doit être l'emplacement relatif où vous installez le fichier avec le son, typiquement cela sera emplacement/du/Nom-Du-Son.format (emplacement peut être le code à deux lettres de votre langue par exemple).</para
+> doit être l'emplacement relatif où vous installez le fichier avec le son, typiquement cela sera <filename
+><replaceable
+>Emplacement-Unique</replaceable
+>/<replaceable
+>Nom-Son</replaceable
+>. Le <replaceable
+>format</replaceable
+></filename
+> (<replaceable
+>Emplacement-Unique</replaceable
+> peut être le code à deux lettres de votre langue par exemple).</para
 ></listitem>
-</itemizedlist>
-</listitem>
+    </itemizedlist>
+  </listitem>
 
-<listitem
+  <listitem
 ><para
 >Si vous ajoutez le thème de son à &ktuberling; dans votre dossier de langues : </para>
-<itemizedlist>
-<listitem
+    <itemizedlist>
+      <listitem
 ><para
->Ajoutez des fichiers sonores et les fichiers .soundtheme au dossier data/kdegames/ktuberling de votre langue de traduction.</para
+>Ajoutez des fichiers de sons et les fichiers <literal role="extension"
+>.soundtheme</literal
+> dans votre dossier <filename class="directory"
+>data/kdegames/ktuberling</filename
+> pour vos traductions de langues.</para
 ></listitem>
-<listitem
+      <listitem
 ><para
->dans le même dossier, vous avez besoin d'un fichier CMakeLists.txt décrivant comment installer ces fichiers, typiquement cela sera</para>
+>Dans le même dossier, vous avez besoin d'un fichier <filename
+>CMakeLists.txt</filename
+> décrivant comment installer ces fichiers, cela de façon classique.</para>
 <!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
 <programlisting
 >FILE( GLOB oggfiles *.ogg )
 INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
->yourLanguageTwoLetterCode</replaceable
+>Votre-Langue-En-Deux-Lettres</replaceable
 > )
 INSTALL( FILES <replaceable
->yourLanguageTwoLetterCode</replaceable
+>Votre-Langue-En-Deux-Lettres</replaceable
 >.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
 </programlisting>
-</listitem>
-</itemizedlist>
-</listitem>
+      </listitem>
+    </itemizedlist>
+  </listitem>
 
-<listitem>
-<para
+  <listitem
+><para
 >Si vous voulez l'installer vous même : </para>
-<itemizedlist>
-<listitem
+    <itemizedlist>
+      <listitem
 ><para
->Placer le fichier <replaceable
->VotreLangageCodeDeuxLettres</replaceable
->.soundtheme dans <filename class="directory"
+>Placer le fichier <filename
+><replaceable
+>Code-de-votre-langue-deux-lettres</replaceable
+>.soundtheme</filename
+> dans le dossier <filename class="directory"
 >ktuberling/sounds</filename
-> dans <userinput
+> dans la commande <userinput
 ><command
 >qtpaths</command
 > <option
->--paths GenericDataLocation </option
+>--paths GenericDataLocation</option
 ></userinput
-></para
+>.</para
 ></listitem>
-<listitem
+      <listitem
 ><para
->Placer les fichiers de sons dans <filename class="directory"
->ktuberling/sounds/someUniquePath</filename
-> dans <userinput
+>Placer vos fichiers de sons dans le dossier <filename class="directory"
+>ktuberling/sounds/<replaceable
+>Emplacement-unique</replaceable
+></filename
+> dans la commande <userinput
 ><command
 >qtpaths</command
 > <option
@@ -264,14 +314,13 @@ INSTALL( FILES <replaceable
 ></userinput
 ></para
 ></listitem>
-</itemizedlist>
-</listitem>
-
+    </itemizedlist>
+  </listitem>
 </itemizedlist>
 
 <para
 >Des informations sur la façon dont fonctionnent les mécanismes de traduction dans &kde; sont disponible à l'adresse <ulink url="http://i18n.kde.org/translation-howto/index.html"
->The &kde; translation HOWTO</ulink
+>Le guide pratique de la traduction dans &kde;</ulink
 >. </para>
 
 </sect1>
@@ -288,62 +337,62 @@ INSTALL( FILES <replaceable
 >Classes C++</title>
 
 <variablelist>
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><classname
->TopLevel</classname
+>Niveau supérieur</classname
 ></term>
-<listitem>
-<para
->Gestion du programme principal et de la fenêtre principale.</para>
-</listitem>
-</varlistentry>
+    <listitem
+><para
+>Gestion de la fenêtre principale et du programme de base.</para
+></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><classname
->PlayGround</classname
+>Aire de jeu</classname
 ></term>
-<listitem>
-<para
+    <listitem
+><para
 >Description d'un des niveaux du jeu.</para
-> </listitem>
-</varlistentry>
+></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><classname
->ToDraw</classname
+>A-Dessiner</classname
 ></term>
-<listitem>
-<para
->Description d'un des <quote
+    <listitem
+><para
+>Description de l'un des <quote
 >objets</quote
 > graphiques à dessiner.</para
-> </listitem>
-</varlistentry>
+></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><classname
->SoundFactory</classname
+>Fabrique-de-sons</classname
 ></term>
-<listitem>
-<para
->Description d'une des langues et de ses sons.</para
-> </listitem>
-</varlistentry>
+    <listitem
+><para
+>Description de l'une des langues et de ses sons.</para
+></listitem>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><classname
 >Action</classname
 ></term>
-<listitem>
-<para
->Une des manipulations de l'utilisateur, rangée dans la pile annuler/refaire.</para
-> </listitem>
-</varlistentry>
+    <listitem
+><para
+>Une des manipulations de l'utilisateur, rangée dans la pile « Annuler / refaire ».</para
+></listitem>
+  </varlistentry>
 </variablelist>
 
 </sect2>
