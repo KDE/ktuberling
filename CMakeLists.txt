@@ -58,8 +58,8 @@ endif()
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_HEADER ktuberling_version.h)
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.5
-    KF 6.0
+    QT 6.7
+    KF 6.4
 )
 if (NOT ANDROID)
     ecm_set_disabled_deprecation_versions(
