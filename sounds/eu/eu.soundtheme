@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<language code="eu">
+  <sound name="ball" file="eu/patata_baloia.ogg"/>
+  <sound name="bow" file="eu/patata_tximeleta-begizta.ogg"/>
+  <sound name="coat" file="eu/patata_jaka.ogg"/>
+  <sound name="ear" file="eu/patata_belarria.ogg"/>
+  <sound name="earring" file="eu/patata_belarritakoa.ogg"/>
+  <sound name="eyebrow" file="eu/patata_bekaina.ogg"/>
+  <sound name="eye" file="eu/patata_begia.ogg"/>
+  <sound name="flower" file="eu/patata_loreak.ogg"/>
+  <sound name="hair" file="eu/patata_ilea.ogg"/>
+  <sound name="hat" file="eu/patata_kapela.ogg"/>
+  <sound name="moustache" file="eu/patata_bibotea.ogg"/>
+  <sound name="mouth" file="eu/patata_ahoa.ogg"/>
+  <sound name="nose" file="eu/patata_sudurra.ogg"/>
+  <sound name="shoe" file="eu/patata_zapata.ogg"/>
+  <sound name="shorts" file="eu/patata_prakamotzak.ogg"/>
+  <sound name="skirt" file="eu/patata_gona.ogg"/>
+  <sound name="spectacles" file="eu/patata_betaurrekoak.ogg"/>
+  <sound name="stick" file="eu/patata_makila.ogg"/>
+  <sound name="sunglasses" file="eu/patata_eguzkibetaurrekoak.ogg"/>
+  <sound name="tie" file="eu/patata_gorbata.ogg"/>
+  <sound name="umbrella" file="eu/patata_aterkia.ogg"/>
+
+  <sound name="tux-apple" file="eu/tux_sagarra.ogg" />
+  <sound name="tux-arrow" file="eu/tux_gezia.ogg" />
+  <sound name="tux-arrows" file="eu/tux_geziak.ogg" />
+  <sound name="tux-bow" file="eu/tux_arkua.ogg" />
+  <sound name="tux-shoot" file="eu/tux_arku-jaurtiketa.ogg" />
+  <sound name="tux-bullseye" file="eu/tux_itua.ogg" />
+  <sound name="tux-candles" file="eu/tux_kandelak.ogg" />
+  <sound name="tux-fish" file="eu/tux_arraina.ogg" />
+  <sound name="tux-flask" file="eu/tux_flaskoa.ogg" />
+  <sound name="tux-poison" file="eu/tux_pozoi-flaskoa.ogg" />
+  <sound name="frier-tux" file="eu/tux_Tux-frailea.ogg" />
+  <sound name="tux-goblet" file="eu/tux_kopa.ogg" />
+  <sound name="guard-tux" file="eu/tux_Tux-guardia.ogg" />
+  <sound name="tux-guitar" file="eu/tux_gitarra.ogg" />
+  <sound name="tux-key" file="eu/tux_giltza.ogg" />
+  <sound name="kid-tux" file="eu/tux_Tux-ahurra.ogg" />
+  <sound name="tux-letter" file="eu/tux_gutuna.ogg" />
+  <sound name="little-tux" file="eu/tux_Tux-txikia.ogg" />
+  <sound name="maiden-tux" file="eu/tux_Tux-dontzeila.ogg" />
+  <sound name="tux-note" file="eu/tux_nota.ogg" />
+  <sound name="tux-notes" file="eu/tux_notak.ogg" />
+  <sound name="tux-plate" file="eu/tux_platera.ogg" />
+  <sound name="prince-tux" file="eu/Tux-printzea.ogg" />
+  <sound name="robin-tux" file="eu/tux_Robin-Tux.ogg" />
+  <sound name="tux-angry" file="eu/tux_esan-haserre.ogg" />
+  <sound name="tux-huh" file="eu/tux_esan-huh.ogg" />
+  <sound name="tux-idea" file="eu/esan-burutazioa.ogg" />
+  <sound name="tux-laugh" file="eu/tux_esan-parra.ogg" />
+  <sound name="tux-love" file="eu/tux_esan-maitasuna.ogg" />
+  <sound name="tux-sick" file="eu/tux_esan-gaixo.ogg" />
+  <sound name="tux-stare" file="eu/tux_esan-harritu-begirada.ogg" />
+  <sound name="tux-what" file="eu/tux_esan-zer.ogg" />
+  <sound name="tux-wow" file="eu/tux_esan-wow.ogg" />
+  <sound name="tux-zzz" file="eu/tux_esan-zurrunga.ogg" />
+  <sound name="sherif-tux" file="eu/tux_Tux-Sherifa.ogg" />
+  <sound name="tux-teacup" file="eu/tux_te-katilua.ogg" />
+  <sound name="tux-vase" file="eu/tux_loreontzia.ogg" />
+  <sound name="tux-wanted" file="eu/tux_bilatua.ogg" />
+  <sound name="whitch-tux" file="eu/tux_Tux-sorgina.ogg" />
+  <sound name="tux-fly" file="eu/tux_uso-zuria-hegan.ogg" />
+  <sound name="tux-dowe" file="eu/tux_uso-zuria.ogg" />
+  
+  <sound name="pizzeria_pepper" file="eu/pizzeria_piperra.ogg" />
+  <sound name="pizzeria_pineapple" file="eu/pizzeria_pina.ogg" />
+  <sound name="pizzeria_olive" file="eu/pizzeria_oliba.ogg" />
+  <sound name="pizzeria_tomato" file="eu/pizzeria_tomatea.ogg" />
+  <sound name="pizzeria_cucumber" file="eu/pizzeria_luzokerra.ogg" />
+  <sound name="pizzeria_salami" file="eu/pizzeria_salamia.ogg" />
+  <sound name="pizzeria_mushroom" file="eu/pizzeria_perretxikoa.ogg" />
+  <sound name="pizzeria_pepperoni" file="eu/pizzeria_pepperonia.ogg" />
+  <sound name="pizzeria_oregano" file="eu/pizzeria_oreganoa.ogg" />
+  <sound name="pizzeria_cheese" file="eu/pizzeria_gazta.ogg" />
+  <sound name="pizzeria_onion" file="eu/pizzeria_tipula.ogg" />
+  <sound name="pizzeria_brocolli" file="eu/pizzeria_brokolia.ogg" />
+  <sound name="pizzeria_anchovy" file="eu/pizzeria_antxoa.ogg" />
+  <sound name="pizzeria_bacon" file="eu/pizzeria_hirugiarrea.ogg" />
+  
+  <sound name="moon_alien" file="eu/ilargia_aliena.ogg"/>
+  <sound name="moon_astronaut" file="eu/ilargia_astronauta.ogg"/>
+  <sound name="moon_earth" file="eu/ilargia_lurra.ogg"/>
+  <sound name="moon_fallingstar" file="eu/ilargia_izar-iheskorra.ogg"/>
+  <sound name="moon_hotel" file="eu/ilargia_hotela.ogg"/>
+  <sound name="moon_monster" file="eu/ilargia_munstroa.ogg"/>
+  <sound name="moon_moonwalker" file="eu/ilargia_ilargiibltaria.ogg"/>
+  <sound name="moon_planet" file="eu/ilargia_planeta.ogg"/>
+  <sound name="moon_radar" file="eu/ilargia_radarra.ogg"/>
+  <sound name="moon_rocket" file="eu/ilargia_suziria.ogg"/>
+  <sound name="moon_satellite" file="eu/ilargia_satelitea.ogg"/>
+  <sound name="moon_sign" file="eu/ilargia_seinalea.ogg"/>
+  <sound name="moon_star" file="eu/ilargia_izarra.ogg"/>
+  <sound name="moon_ufo" file="eu/ilargia_ohe.ogg"/>
+  
+  <sound name="egypt_arch" file="eu/egipto_arkua.ogg"/>
+  <sound name="egypt_birds" file="eu/egipto_txoriak.ogg"/>
+  <sound name="egypt_boy" file="eu/egipto_mutila.ogg"/>
+  <sound name="egypt_bridge" file="eu/egipto_zubia.ogg"/>
+  <sound name="egypt_camel" file="eu/egipto_gamelua.ogg"/>
+  <sound name="egypt_cart" file="eu/egipto_gurdia.ogg"/>
+  <sound name="egypt_column" file="eu/egipto_zutabea.ogg"/>
+  <sound name="egypt_donkey" file="eu/egipto_astoa.ogg"/>
+  <sound name="egypt_girl" file="eu/egipto_neska.ogg"/>
+  <sound name="egypt_grass" file="eu/egipto_belarra.ogg"/>
+  <sound name="egypt_man" file="eu/egipto_gizona.ogg"/>
+  <sound name="egypt_oasis" file="eu/egipto_oasia.ogg"/>
+  <sound name="egypt_palmtree" file="eu/egipto_palmondoa.ogg"/>
+  <sound name="egypt_pyramid" file="eu/egipto_piramidea.ogg"/>
+  <sound name="egypt_road" file="eu/egipto_bidea.ogg"/>
+  <sound name="egypt_sphynx" file="eu/egypt_esfingea.ogg"/>
+  <sound name="egypt_well" file="eu/egipto_putzua.ogg"/>
+  <sound name="egypt_woman" file="eu/egipto_emakumea.ogg"/>
+
+  <sound name="xmas_angel" file="eu/gabonak_aingerua.ogg"/>
+  <sound name="xmas_ball" file="eu/gabonak_bola.ogg"/>
+  <sound name="xmas_boot" file="eu/gabonak_bota.ogg"/>
+  <sound name="xmas_candle" file="eu/gabonak_kandela.ogg"/>
+  <sound name="xmas_comet" file="eu/gabonak_kometa.ogg"/>
+  <sound name="xmas_garland" file="eu/gabonak_girlanda.ogg"/>
+  <sound name="xmas_lights" file="eu/gabonak_argiak.ogg"/>
+  <sound name="xmas_mistletoe" file="eu/gabonak_mihura.ogg"/>
+  <sound name="xmas_moon" file="eu/gabonak_ilargia.ogg"/>
+  <sound name="xmas_owl" file="eu/gabonak_hontza.ogg"/>
+  <sound name="xmas_present" file="eu/gabonak_oparia.ogg"/>
+  <sound name="xmas_rabbit" file="eu/gabonak_untxia.ogg"/>
+  <sound name="xmas_reindeer" file="eu/gabonak_elur-oreina.ogg"/>
+  <sound name="xmas_shoe" file="eu/gabonak_zapata.ogg"/>
+  <sound name="xmas_snowflake" file="eu/gabonak_elur-maluta.ogg"/>
+  <sound name="xmas_snowman" file="eu/gabonak_elur-panpina.ogg"/>
+  <sound name="xmas_star" file="eu/gabonak_izarra.ogg"/>
+  <sound name="xmas_tree" file="eu/gabonak_zuhaitza.ogg"/>
+  <sound name="xmas_turtle" file="eu/gabonak_dortoka.ogg"/>
+  <sound name="xmas_tux" file="eu/gabonak_tux.ogg"/>
+  
+  <sound name="butterflies_body" file="eu/tximeletak_gorputza.ogg"/>
+  <sound name="butterflies_circle" file="eu/tximeletak_zirkulua.ogg"/>
+  <sound name="butterflies_circles" file="eu/tximeletak_zirkuluak.ogg"/>
+  <sound name="butterflies_eye" file="eu/tximeletak_begia.ogg"/>
+  <sound name="butterflies_heart" file="eu/tximeletak_bihotza.ogg"/>
+  <sound name="butterflies_purple_shape" file="eu/tximeletak_forma_morea.ogg"/>
+  <sound name="butterflies_spiral" file="eu/tximeletak_espirala.ogg"/>
+  <sound name="butterflies_wing" file="eu/tximeletak_hegala.ogg"/>
+
+  <sound name="robot_workshop_antenna" file="eu/robot_lantegia_antena.ogg"/>
+  <sound name="robot_workshop_arm" file="eu/robot_lantegia_besoa.ogg"/>
+  <sound name="robot_workshop_ball" file="eu/robot_lantegia_bola.ogg"/>
+  <sound name="robot_workshop_base" file="eu/robot_lantegia_oinarria.ogg"/>
+  <sound name="robot_workshop_block" file="eu/robot_lantegia_blokea.ogg"/>
+  <sound name="robot_workshop_body" file="eu/robot_lantegia_gorputza.ogg"/>
+  <sound name="robot_workshop_claw" file="eu/robot_lantegia_atzaparra.ogg"/>
+  <sound name="robot_workshop_eye" file="eu/robot_lantegia_begia.ogg"/>
+  <sound name="robot_workshop_foot" file="eu/robot_lantegia_hanga.ogg"/>
+  <sound name="robot_workshop_hand" file="eu/robot_lantegia_eskua.ogg"/>
+  <sound name="robot_workshop_head" file="eu/robot_lantegia_burua.ogg"/>
+  <sound name="robot_workshop_panel" file="eu/robot_lantegia_panela.ogg"/>
+  <sound name="robot_workshop_rocket" file="eu/robot_lantegia_suziria.ogg"/>
+  <sound name="robot_workshop_rod" file="eu/robot_lantegia_haga.ogg"/>
+  <sound name="robot_workshop_wheel" file="eu/robot_lantegia_gurpila.ogg"/>
+
+  <sound name="tv_accident" file="eu/tb_istripua.ogg"/>
+  <sound name="tv_ball" file="eu/tb_baloia.ogg"/>
+  <sound name="tv_barrier" file="eu/tb_hesia.ogg"/>
+  <sound name="tv_bicycle" file="eu/tb_bizikleta.ogg"/>
+  <sound name="tv_breakdown_lorry" file="eu/tb_garabi-autoa.ogg"/>
+  <sound name="tv_caravan" file="eu/tb_karabana.ogg"/>
+  <sound name="tv_car" file="eu/tb_autoa.ogg"/>
+  <sound name="tv_cyclist" file="eu/tb_txirrindularia.ogg"/>
+  <sound name="tv_elephant" file="eu/tb_elefantea.ogg"/>
+  <sound name="tv_excavator" file="eu/tb_hondeamakina.ogg"/>
+  <sound name="tv_fence" file="eu/tb_hesia.ogg"/>
+  <sound name="tv_fireengine" file="eu/tb_suhiltzaileen-kamioia.ogg"/>
+  <sound name="tv_fire" file="eu/tb_sua.ogg"/>
+  <sound name="tv_fireman" file="eu/tb_suhiltzailea.ogg"/>
+  <sound name="tv_fisherman" file="eu/tb_arrantzalea.ogg"/>
+  <sound name="tv_giraffe" file="eu/tb_lepoluzea.ogg"/>
+  <sound name="tv_guitar" file="eu/tb_gitarra.ogg"/>
+  <sound name="tv_guitarist" file="eu/tb_gitarjolea.ogg"/>
+  <sound name="tv_house" file="eu/tb_etxea.ogg"/>
+  <sound name="tv_ladder" file="eu/tb_eskailera.ogg"/>
+  <sound name="tv_lion" file="eu/tb_lehoi.ogg"/>
+  <sound name="tv_lorry" file="eu/tb_kamioia.ogg"/>
+  <sound name="tv_lorry_tractor" file="eu/tb_kamioi-traktore.ogg"/>
+  <sound name="tv_man" file="eu/tb_gizona.ogg"/>
+  <sound name="tv_mechanic" file="eu/tb_mekanikaria.ogg"/>
+  <sound name="tv_monkey" file="eu/tb_tximinoa.ogg"/>
+  <sound name="tv_path" file="eu/tb_bidea.ogg"/>
+  <sound name="tv_rock" file="eu/tb_harkaitza.ogg"/>
+  <sound name="tv_school" file="eu/tb_ikastetxea.ogg"/>
+  <sound name="tv_shop" file="eu/tb_denda.ogg"/>
+  <sound name="tv_smoke" file="eu/tb_kea.ogg"/>
+  <sound name="tv_tipper" file="eu/tb_iraulki-kamioia.ogg"/>
+  <sound name="tv_trailer" file="eu/tb_trailerra.ogg"/>
+  <sound name="tv_train" file="eu/tb_trena.ogg"/>
+  <sound name="tv_tree" file="eu/tb_zuhaitza.ogg"/>
+  <sound name="tv_tunnel" file="eu/tb_tunela.ogg"/>
+  <sound name="tv_volley_net" file="eu/tb_bolei-sarea.ogg"/>
+  <sound name="tv_wagon" file="eu/tb_bagoia.ogg"/>
+  <sound name="tv_woman" file="eu/tb_emakumea.ogg"/>
+</language>
