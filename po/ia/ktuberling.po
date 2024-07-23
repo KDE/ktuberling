@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktuberling package.
 #
-# SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2024-05-02 12:29+0200\n"
+"PO-Revision-Date: 2024-07-22 11:41+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,7 +38,7 @@ msgstr "&Joco"
 #: ktuberlingui.rc:12
 #, kde-format
 msgid "&Playground"
-msgstr ""
+msgstr "&Parco de amusamento"
 
 #. i18n: ectx: Menu (speech)
 #: ktuberlingui.rc:17
@@ -66,12 +66,12 @@ msgstr "KTuberling"
 #: main.cpp:29
 #, kde-format
 msgid "Potato game for kids"
-msgstr ""
+msgstr "Joco de Patata per pusillos"
 
 #: main.cpp:31
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
-msgstr ""
+msgstr "(c) 1999-2009, Le Disveloppatores de  KTuberling "
 
 #: main.cpp:32
 #, kde-format
@@ -101,7 +101,7 @@ msgstr "John Calhoun"
 #: main.cpp:34
 #, kde-format
 msgid "Original concept and artwork"
-msgstr ""
+msgstr "Concepto e illustration original"
 
 #: main.cpp:35
 #, kde-format
@@ -111,7 +111,7 @@ msgstr "Agnieszka Czajkowska"
 #: main.cpp:35 main.cpp:36 main.cpp:38
 #, kde-format
 msgid "New artwork"
-msgstr ""
+msgstr "Nove Illustration"
 
 #: main.cpp:36
 #, kde-format
@@ -126,7 +126,7 @@ msgstr "Roger Larsson"
 #: main.cpp:37
 #, kde-format
 msgid "Sounds tuning"
-msgstr ""
+msgstr "Adaptation de sonos"
 
 #: main.cpp:38
 #, kde-format
@@ -136,7 +136,7 @@ msgstr "Dolores Almansa"
 #: main.cpp:47
 #, kde-format
 msgid "Potato to open"
-msgstr ""
+msgstr "Patata a aperir"
 
 #: pics/layout.i18n:6
 #, kde-format
@@ -149,22 +149,28 @@ msgid ""
 "(translate this message as \"DONE\" when you have translated\n"
 "the sounds; otherwise leave it untranslated as a reminder)"
 msgstr ""
+"Le traductores ha le opportunitate de traducer le\n"
+"sonos parlate in le joco.\n"
+"Vide le section de reterentia technic in le documentation1n de KTuberling "
+"per plus information sur conmo facer illo.\n"
+"(traduce iste message como \"FACITE\" quando tu ha traducite\n"
+"le sonos: alteremente lassalo non traducite como memento)"
 
 #: toplevel.cpp:163
 #, kde-format
 msgid "Error while loading the playground."
-msgstr ""
+msgstr "Error durante que il incargava le parco de amusamento."
 
 #: toplevel.cpp:195
 #, kde-format
 msgid "Error while loading the sound file."
-msgstr ""
+msgstr "Error durante que il incargava le file de sono."
 
 #: toplevel.cpp:270
 #, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr ""
+msgstr "Salveguarda como pictura..."
 
 #: toplevel.cpp:284
 #, kde-format
@@ -187,7 +193,7 @@ msgstr "Carga File"
 #: toplevel.cpp:330 toplevel.cpp:423
 #, kde-format
 msgid "KTuberling files (%1)"
-msgstr ""
+msgstr "Files de KTuberling (%1)"
 
 #: toplevel.cpp:363
 #, kde-format
@@ -195,6 +201,8 @@ msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
+"Le file salveguardate es ex un vetere version de KTuberling e "
+"infortunatemente nonpote esser aperite con iste version."
 
 #: toplevel.cpp:367
 #, kde-format
@@ -222,9 +230,9 @@ msgstr "Imprime %1"
 #: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
-msgstr ""
+msgstr "Non poteva imprimer pictura"
 
 #: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
-msgstr ""
+msgstr "Pictura imprimite con successo."
