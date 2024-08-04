@@ -202,7 +202,7 @@ msgid ""
 "be opened with this version."
 msgstr ""
 "Le file salveguardate es ex un vetere version de KTuberling e "
-"infortunatemente nonpote esser aperite con iste version."
+"infortunatemente non pote esser aperite con iste version."
 
 #: toplevel.cpp:367
 #, kde-format
