@@ -169,21 +169,18 @@ msgstr "Feil ved lasting av lydfila."
 
 #: toplevel.cpp:270
 #, fuzzy, kde-format
-#| msgid "Save &as Picture..."
 msgctxt "@action"
 msgid "Save as Picture…"
 msgstr "Lagre &som bilde …"
 
 #: toplevel.cpp:284
 #, fuzzy, kde-format
-#| msgid "&No Sound"
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "&Ingen lyd"
 
 #: toplevel.cpp:291
 #, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "&Lås høyde/breddeforhold"
