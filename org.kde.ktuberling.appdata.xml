@@ -70,6 +70,7 @@
   <summary xml:lang="uk">Проста гра-складанка для дітей та дорослих.</summary>
   <summary xml:lang="x-test">xxA simple constructor game suitable for children and adults alikexx</summary>
   <summary xml:lang="zh-CN">一个简单的建造游戏，适合儿童和成人</summary>
+  <summary xml:lang="zh-TW">適合小孩與大人們的簡單遊戲</summary>
   <description>
     <p>KTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.</p>
     <p xml:lang="ar">البطاطا ك هي لعبة إنشاء بسيطة مناسبة للأطفال والكبار على حد سواء. تعتمد فكرة اللعبة على مفهوم صنع الدمى الذي كان شائعًا في السابق.</p>
@@ -105,6 +106,7 @@
     <p xml:lang="tr">Çocuklar ve yetişkinler için bir yapım oyunudur. Oyunun ana temeli, bir zamanlar çok popüler olan bir oyuncak bebek yapımıdır.</p>
     <p xml:lang="uk">«Картопляний хлопець» — проста гра-складанка для дітей та дорослих. Ідею гри запозичено із колись популярної гри у створення ляльок.</p>
     <p xml:lang="x-test">xxKTuberling a simple constructor game suitable for children and adults alike. The idea of the game is based around a once popular doll making concept.xx</p>
+    <p xml:lang="zh-TW">KTuberling 是一個適合小孩與大人們的簡單建造遊戲。這個遊戲的概念奠基於一個曾經紅極一時的玩偶製作概念之上。</p>
   </description>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
