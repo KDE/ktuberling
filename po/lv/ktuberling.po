@@ -4,31 +4,34 @@
 # Maris Nartiss <maris.kde@gmail.com>, 2006, 2009.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Einars Sprugis <einars8@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2010-04-24 21:39+0300\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-08-28 10:47+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andris Maziks, Viesturs Zarins, Einārs Sprūģis"
+msgstr "Andris Maziks, Viesturs Zarins, Einārs Sprūģis, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "andris.m@delfi.lv, viesturs.zarins@mi.lu.lv, einars8@gmail.com"
+msgstr ""
+"andris.m@delfi.lv, viesturs.zarins@mi.lu.lv, einars8@gmail.com, toms."
+"trasuns@posteo.net"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
@@ -58,7 +61,7 @@ msgstr "Galvenā rīkjosla"
 #: ktuberlingui.rc:32
 #, kde-format
 msgid "Game Options"
-msgstr ""
+msgstr "Spēles opcijas"
 
 #: main.cpp:27
 #, kde-format
@@ -73,7 +76,7 @@ msgstr "Kartupeļu spēle bērniem"
 #: main.cpp:31
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
-msgstr "(c) 1999-2009, KTuberling izstrādātāji"
+msgstr "(c) 1999—2009, „KTuberling“ izstrādātāji"
 
 #: main.cpp:32
 #, kde-format
@@ -163,22 +166,19 @@ msgid "Error while loading the sound file."
 msgstr "Kļūda ielādējot skaņas failu."
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Saglabāt kā &attēlu..."
+msgstr "Saglabāt kā attēlu…"
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "&Bez skaņas"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "&Fiksēt malu attiecību"
@@ -187,13 +187,12 @@ msgstr "&Fiksēt malu attiecību"
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
-msgstr ""
+msgstr "Ielādēt datni"
 
 #: toplevel.cpp:330 toplevel.cpp:423
-#, fuzzy, kde-format
-#| msgid "KTuberling files"
+#, kde-format
 msgid "KTuberling files (%1)"
-msgstr "KTuberling faili"
+msgstr "„KTuberling“ datnes (%1)"
 
 #: toplevel.cpp:363
 #, kde-format
@@ -201,29 +200,28 @@ msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
-"Saglabātais fails ir no vecas KTuberling versijas un diemžēl nav izmantojams "
-"ar šo versiju."
+"Saglabātā datne ir no vecas „KTuberling“ versijas un diemžēl nav izmantojama "
+"šajā versijā."
 
 #: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
-msgstr "Neizdevās ielādēt failu."
+msgstr "Neizdevās ielādēt datni."
 
 #: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
 #: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
-msgstr "Neizdevās saglabāt failu."
+msgstr "Neizdevās saglabāt datni."
 
 #: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: toplevel.cpp:527
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Drukāt %1"
