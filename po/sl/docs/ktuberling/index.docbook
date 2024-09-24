@@ -1,0 +1,966 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potato Guy">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Slovenian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>&ktuberling; Priročnik</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Recenzent</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Matjaž</firstname
+><surname
+>Jeran</surname
+><affiliation
+><address
+><email
+>matjaz.jeran@amis.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>04.10.2021</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&i18n-ktuberling; je igra namenjena majhnim otrokom. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KTuberling</keyword>
+<keyword
+>igra</keyword>
+<keyword
+>igrača</keyword>
+<keyword
+>konstruktor</keyword>
+<keyword
+>lutka</keyword>
+<keyword
+>okrasitev</keyword>
+<keyword
+>otroci</keyword>
+<keyword
+>gomoljanje</keyword>
+<keyword
+>krompir</keyword>
+<keyword
+>železniška postaja</keyword>
+<keyword
+>en igralec</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Uvod</title>
+<para
+>Vrsta igre: Igrača</para>
+<para
+>Število možnih igralcev: en</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Pizzeria Igrišče</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&i18n-ktuberling; je preprosta konstruktorska igra, primerna za otroke in odrasle. Ideja igre temelji na nekoč priljubljenem konceptu izdelave lutk. Krompir je bil okrašen z različnimi majhnimi artefakti, da bi bil bolj podoben majhnemu človeku. &i18n-ktuberling; vendar gre veliko dlje v smislu vsebine in dodaja presenetljivo raznolikost različnih tem. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Kako igrati</title>
+
+<para
+>&i18n-ktuberling; je igra namenjena majhnim otrokom. Seveda je lahko primeren za odrasle, ki so ostali mladi po srcu. </para>
+
+<para
+>Je <quote
+>urejevalnik krompirja</quote
+>. To pomeni, da lahko povlečete in spustite oči, usta, brke in druge dele obraza ter dobrote na krompirju podobnega tipa. Podobno imate druga igrišča z različnimi temami. </para>
+
+<para
+>V igri ni zmagovalca. Edini namen je narediti čim bolj smešne obraze. </para>
+
+<para
+>&i18n-ktuberling; lahko tudi <quote
+>govori</quote
+>. Izpisalo bo ime predmetov, ki jih povlečete in spustite. <quote
+>Govoril bo</quote
+> v jeziku, ki ga lahko izberete. Uporabite ga lahko celo za učenje delčka besedišča v tujih jezikih. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Pravila in nasveti</title>
+
+<sect1 id="mouse-operation">
+<title
+>Delovanje miške</title>
+
+<para
+>V glavnem oknu sta dve področji: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Območje <quote
+>Igrišče</quote
+>. </para
+></listitem>
+<listitem
+><para
+>Območje <quote
+>Predmeti</quote
+>, kjer izberete predmete, ki jih želite postaviti na svoje igrišče. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Dejanski videz zaslona aplikacije se lahko spremeni glede na izbrano <quote
+>igrišče</quote
+>.</para
+></note>
+<screenshot>
+<screeninfo
+>Glavno okno &i18n-ktuberling;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>Glavno okno</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>Postavitev predmeta</title>
+
+<para
+>Če želite povleči predmet, premaknite kazalec miške na območje <quote
+>predmetov</quote
+> in kliknite nanj. Nato ga premaknite na <quote
+>igrišče</quote
+> in znova kliknite. <note
+><para
+>Velikost predmetov se lahko med vlečenjem spreminja. Nekateri preveliki predmeti so bili pomanjšani za prileganje v območju <quote
+>predmetov</quote
+>.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>Premikanje predmeta</title>
+<para
+>Ko predmet spustite v <quote
+>igrišče</quote
+>, ga lahko premaknete. Preprosto kliknite na predmet, da ga izberete, premaknete na novo mesto in znova kliknete, da ga spustite. Ko ga spustite, gre na druge predmete, ki so ga delno skrivali. Ta trik je uporaben za pravilno namestitev očal in oči. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>Odstranjevanje predmeta</title>
+<para
+>Če želite odstraniti predmet, ki je bil padel v območje <quote
+>igrišče</quote
+>, ga povlecite nazaj iz območja <quote
+>igrišče</quote
+> v območje <quote
+>predmetov</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>Pregled vmesnika </title>
+<sect1 id="the-tool-bar">
+<title
+>Orodna vrstica</title>
+
+<para
+>V orodni vrstici so gumbi za pogosto uporabljene funkcije. </para>
+
+<table>
+<title
+>Gumbi orodne vrstice</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>Gumb&nbsp;</entry>
+      <entry
+>Ime&nbsp;</entry>
+      <entry
+>Enakovreden meni&nbsp;</entry>
+      <entry
+>Dejavnost</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>Gumb za novo igro</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Nova</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>Igra</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Ponastavi območje <quote
+>igrišče</quote
+>. S tem očistite vse dele igrišča, da lahko ustvarite novo dekoracijo.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>Gumb za nalaganje</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Naloži…</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>Igra</guimenu
+> <guimenuitem
+>Naloži…</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Odpre obstoječo datoteko <literal role="extension"
+>.tuberling</literal
+> z diska.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>Gumb Shrani</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Shrani</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>Igra</guimenu
+> <guimenuitem
+>Shrani</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Shrani vaše ustvarjanje v domačo mapo ali v drugo mapo na disku. <literal role="extension"
+>.tuberling</literal
+> se shrani v majhno datoteko, kjer so shranjeni le položaji predmetov.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>Gumb Natisni</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Natisni…</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>Igra</guimenu
+> <guimenuitem
+>Natisni…</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Natisne vašo sliko.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>Gumb za razveljavitev</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Razveljavi</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Razveljavi</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Razveljavi zadnjo operacijo.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>Gumb za ponovitev</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Ponovi</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Ponovi</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Ponovno izvede zadnjo operacijo.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>Elementi menija</title>
+
+<sect2>
+<title
+>Meni igre</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Počisti</action
+> območje <quote
+>igrišča</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Naloži…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Odpre obstoječo datoteko <literal role="extension"
+>.tuberling</literal
+></action
+> z vašega diska.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Shrani</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Shrani</action
+> vašo kreacijo. Tuberling se shrani v majhno datoteko, kjer so shranjeni le položaji predmetov.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>Igra</guimenu
+> <guimenuitem
+>Shrani kot sliko…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ustvari grafično datoteko</action
+>, ki vsebuje sliko vašega tuberlinga.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Natisni…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Natisne</action
+> vašo sliko gomoljev.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Zapri</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Zapri</action
+> &i18n-ktuberling;.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Meni Urejanje</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Razveljavi</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Razveljavi</action
+> zadnjo postavitev <quote
+>predmeta</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Ponovi</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ponovno naredi</action
+> zadnjo postavitev <quote
+>predmeta</quote
+>. Ta možnost menija je aktivna le, če ste že uporabili <guilabel
+>Razveljavi</guilabel
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Kopiraj</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Kopiraj</action
+> območje <quote
+>igrišča</quote
+> na odložišče.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Meni Pogled</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Pogled</guimenu
+> <guimenuitem
+>Celozaslonski način</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Preklopi grafični vmesnik v celozaslonski način.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>Meni igrišča</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Igrišče</guimenu
+> <guimenuitem
+>Zakleni razmerje stranic</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Ta možnost ohrani razmerje stranic igrišča pri spreminjanju velikosti &i18n-ktuberling; okna. Če se razmerje stranic igrišča ne ujema z razmerjem stranic okna, se ozadje zapolni s tistim, ki je določeno v temi.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>Igrišče</guimenu
+> <guimenuitem
+><replaceable
+>Ime igrišča</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Preklopi na igrišče</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>Vseboval bo igrišča, nameščena v vašem sistemu. </para>
+<para
+>&i18n-ktuberling; si zapomni zadnje izbrano igrišče ob naslednjem zagonu. </para>
+</sect2>
+
+<sect2>
+<title
+>Meni Govor</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Govor</guimenu
+> <guimenuitem
+>Brez zvoka</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Izklopi zvok</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>Govor</guimenu
+> <guimenuitem
+><replaceable
+>Ime jezika</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Vklopi zvok in govori izbrani jezik</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>&i18n-ktuberling; si zapomni to možnost ob naslednjem zagonu. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>Meniji Nastavitve in Pomoč</title>
+
+<para
+>Dodatno &i18n-ktuberling; ima skupno &kde; Elemente menija <guimenu
+>Nastavitve</guimenu
+> in <guimenu
+>Pomoč</guimenu
+>, za več informacij preberite razdelke o <ulink url="help:/fundamentals/menus.html#menus-settings"
+>meniju z nastavitvami</ulink
+> in <ulink url="help:/fundamentals/menus.html#menus-help"
+>meni Pomoč</ulink
+> v &kde; Osnove. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Pogosto zastavljena vprašanja</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Želim spremeniti videz te igre. Ali lahko? </para
+></question>
+ <answer
+><para
+>Da, lahko. Za podrobnosti glejte <link linkend="theme_change"
+>ta</link
+> razdelek »Pregled vmesnika«.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ali lahko uporabljam tipkovnico za igranje te igre? </para
+></question>
+ <answer
+><para
+>Ne. Te igre ni mogoče igrati s tipkovnico.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Naredil sem odlično sliko in jo želim deliti s prijatelji. Ali jo lahko shranim kot sliko?</para
+></question>
+  <answer
+><para
+>Da. Če želite shraniti trenutno sejo kot sliko, glejte <link linkend="game-save-as-picture"
+>ta</link
+> razdelek 'Pregled vmesnika' za podrobnosti.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>Zasluge in licenca</title>
+
+<para
+>&ktuberling;</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - trenutni vzdrževalec</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - Izvirna ideja, izvirne slike in angleški zvoki</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - &kde; Programiranje</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - Testi, nasveti in pomoč</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - Lektoriranje dokumentacije</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - Izboljšanje dokumentacije</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Prevod: Matjaž Jeran<email
+>matjaz.jeran@amis.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>
