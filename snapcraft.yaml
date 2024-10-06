@@ -16,6 +16,11 @@ apps:
     command: usr/bin/ktuberling
     plugs:
       - audio-record
+environment:
+  ALSA_CONFIG_PATH: "/snap/kf6-core22/current/etc/asound.conf"
+layout:
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib:
+    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib
 slots:
   session-dbus-interface:
     interface: dbus
@@ -39,6 +44,11 @@ parts:
     source-type: local
     build-packages:
       - libpulse0
+    stage-packages:
+      - libpulse0
+      - libasound2
+      - libasound2-plugins
+      - libasound2-data
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
