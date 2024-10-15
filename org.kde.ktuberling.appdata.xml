@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
-  <id>org.kde.ktuberling.desktop</id>
+  <id>org.kde.ktuberling</id>
   <developer id="org.kde">
     <name translate="no">KDE</name>
   </developer>
@@ -155,9 +155,14 @@
   <project_group>KDE</project_group>
   <update_contact>kde-edu@kde.org</update_contact>
   <launchable type="desktop-id">org.kde.ktuberling.desktop</launchable>
+  <categories>
+    <category>Game</category>
+    <category>KidsGame</category>
+  </categories>
   <provides>
     <binary>ktuberling</binary>
   </provides>
+  <url type="vcs-browser">https://invent.kde.org/games/ktuberling</url>
   <custom>
     <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.ktuberling</value>
   </custom>
