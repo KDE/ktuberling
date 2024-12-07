@@ -74,11 +74,11 @@ endif()
 ########### next target ###############
 
 set(ktuberling_common_SRCS
-   action.cpp
-   playground.cpp
-   todraw.cpp
-   soundfactory.cpp
-   filefactory.cpp
+   action.cpp action.h
+   playground.cpp playground.h
+   todraw.cpp todraw.h
+   soundfactory.cpp soundfactory.h
+   filefactory.cpp filefactory.h
 )
 ecm_qt_declare_logging_category(ktuberling_common_SRCS
     HEADER ktuberling_debug.h
@@ -115,8 +115,8 @@ else()
     set(ktuberling_SRCS
         ${ktuberling_common_SRCS}
         main.cpp
-        toplevel.cpp
-        playgrounddelegate.cpp
+        toplevel.cpp toplevel.h
+        playgrounddelegate.cpp playgrounddelegate.h
 
         ktuberling.qrc
     )
