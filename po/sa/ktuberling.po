@@ -1,72 +1,60 @@
-# translation of ktuberling.po to galician
-# tradución do ktuberling.po a galego
+# Sanskrit translations for ktuberling package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktuberling package.
+# Kali <EMAIL@ADDRESS>, 2024.
 #
-#
-#
-# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
-# Iván Seoane Pardo <talivan.ivan@gmail.com>, 2006.
-# Xabi G. Feal <xabigf@gmx.net>, 2006.
-# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008.
-# Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2009.
-# Marce Villarino <mvillarino@kde-espana.es>, 2012.
-# Xosé <xosecalvo@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 22:29+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
-"Language: gl\n"
+"PO-Revision-Date: 2024-12-13 19:09+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-"Iván Seoane, mvillarino, Adrián Chaves Fernández, Sara Barreiro Riveiro "
-"(voz), Miguel Solla (voz)"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"talivan.ivan@gmail.com, mvillarino@users.sourceforge.net, adrian@chaves.io,,"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
 #, kde-format
 msgid "&Game"
-msgstr "&Partida"
+msgstr "&क्रीडा"
 
 #. i18n: ectx: Menu (playground)
 #: ktuberlingui.rc:12
 #, kde-format
 msgid "&Playground"
-msgstr "&Zona de xogo"
+msgstr "&क्रीडाङ्गणम्"
 
 #. i18n: ectx: Menu (speech)
 #: ktuberlingui.rc:17
 #, kde-format
 msgid "&Speech"
-msgstr "&Fala"
+msgstr "&भाषणम्‌"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: ktuberlingui.rc:23
 #, kde-format
 msgid "Main Toolbar"
-msgstr "Barra de ferramentas principal"
+msgstr "मुख्य साधनपट्टी"
 
 #. i18n: ectx: ToolBar (gameOptions)
 #: ktuberlingui.rc:32
 #, kde-format
 msgid "Game Options"
-msgstr "Opcións do xogo"
+msgstr "गेम विकल्प"
 
 #: main.cpp:27
 #, kde-format
@@ -76,42 +64,42 @@ msgstr "KTuberling"
 #: main.cpp:29
 #, kde-format
 msgid "Potato game for kids"
-msgstr "Xogo da pataca para cativos"
+msgstr "बालकानां कृते आलूक्रीडा"
 
 #: main.cpp:31
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
-msgstr "© 1999-2009, os desenvolvedores de KTuberling"
+msgstr "(ग) 1999-2009, द केट्यूबरलिंग डेवलपर्स"
 
 #: main.cpp:32
 #, kde-format
 msgid "Albert Astals Cid"
-msgstr "Albert Astals Cid"
+msgstr "अल्बर्ट एस्टल्स सिड"
 
 #: main.cpp:32
 #, kde-format
 msgid "Maintainer"
-msgstr "Mantedor"
+msgstr "परिपालकः"
 
 #: main.cpp:33
 #, kde-format
 msgid "Éric Bischoff"
-msgstr "Éric Bischoff"
+msgstr "एरिक बिशॉफ्"
 
 #: main.cpp:33
 #, kde-format
 msgid "Former Developer"
-msgstr "Desenvolvedor orixinal"
+msgstr "पूर्व विकासक"
 
 #: main.cpp:34
 #, kde-format
 msgid "John Calhoun"
-msgstr "John Calhoun"
+msgstr "जॉन् कैलहौन्"
 
 #: main.cpp:34
 #, kde-format
 msgid "Original concept and artwork"
-msgstr "Concepto orixinal e traballo plástico"
+msgstr "मौलिक अवधारणा एवं कलाकृति"
 
 #: main.cpp:35
 #, kde-format
@@ -121,36 +109,33 @@ msgstr "Agnieszka Czajkowska"
 #: main.cpp:35 main.cpp:36 main.cpp:38
 #, kde-format
 msgid "New artwork"
-msgstr "Novo traballo plástico"
+msgstr "नवीन कलाकृति"
 
 #: main.cpp:36
 #, kde-format
 msgid "Bas Willems"
-msgstr "Bas Willems"
+msgstr "बास विलेम्स"
 
 #: main.cpp:37
 #, kde-format
 msgid "Roger Larsson"
-msgstr "Roger Larsson"
+msgstr "रोजर् लार्सन्"
 
 #: main.cpp:37
 #, kde-format
 msgid "Sounds tuning"
-msgstr "Axuste de sons"
+msgstr "ध्वनिः ट्यूनिङ्ग्"
 
 #: main.cpp:38
 #, kde-format
 msgid "Dolores Almansa"
-msgstr "Dolores Almansa"
+msgstr "डोलोरेस् अल्मान्सा"
 
 #: main.cpp:47
 #, kde-format
 msgid "Potato to open"
-msgstr "Pataca a abrir"
+msgstr "आलू उद्घाटयितुं"
 
-# skip-rule: trasno-leave, trasno-audio, trasno-sound
-# Sound files contributed by Miguel Solla, with the voice of his young daughter, Miss Sara Barreiro Riveiro.
-#
 #: pics/layout.i18n:6
 #, kde-format
 msgctxt "NOTE TO THE TRANSLATORS"
@@ -161,46 +146,46 @@ msgid ""
 "documentation for more information on how to do that.\n"
 "(translate this message as \"DONE\" when you have translated\n"
 "the sounds; otherwise leave it untranslated as a reminder)"
-msgstr "DONE"
+msgstr ""
 
 #: toplevel.cpp:163
 #, kde-format
 msgid "Error while loading the playground."
-msgstr "Erro ao cargar a zona de xogo."
+msgstr "क्रीडाङ्गणं लोड् कुर्वन् त्रुटिः।"
 
 #: toplevel.cpp:195
 #, kde-format
 msgid "Error while loading the sound file."
-msgstr "Erro ao cargar o ficheiro de son."
+msgstr "ध्वनिसञ्चिकां लोड् कुर्वन् त्रुटिः ।"
 
 #: toplevel.cpp:270
 #, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Gardar como imaxe…"
+msgstr ""
 
 #: toplevel.cpp:284
 #, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
-msgstr "Se&n sons."
+msgstr ""
 
 #: toplevel.cpp:291
 #, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
-msgstr "&Fixar as proporcións."
+msgstr ""
 
 #: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
-msgstr "Cargar un ficheiro"
+msgstr ""
 
 #: toplevel.cpp:330 toplevel.cpp:423
 #, kde-format
 msgid "KTuberling files (%1)"
-msgstr "Ficheiros de KTuberling (%1)"
+msgstr "KTuberling सञ्चिकाः (%1) ."
 
 #: toplevel.cpp:363
 #, kde-format
@@ -208,55 +193,38 @@ msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
-"O ficheiro gardado é dunha versión anterior de KTuberling e por desgraza non "
-"pode abrirse con esta versión."
+"रक्षिता सञ्चिका KTuberling इत्यस्य पुरातनसंस्करणात् अस्ति तथा च दुर्भाग्येन एतेन संस्करणेन सह "
+"उद्घाटयितुं न शक्यते ।"
 
 #: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
-msgstr "Non foi posíbel cargar o ficheiro."
+msgstr "सञ्चिकां लोड् कर्तुं न शक्तवान्।"
 
 #: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
 #: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
-msgstr "Non foi posíbel gardar o ficheiro."
+msgstr "सञ्चिकां रक्षितुं न शक्तवान्।"
 
 #: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: toplevel.cpp:527
 #, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
-msgstr "Imprimir %1"
+msgstr ""
 
 #: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
-msgstr "Non foi posíbel imprimir a imaxe."
+msgstr "चित्रं मुद्रयितुं न शक्तवान्।"
 
 #: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
-msgstr "Imprimiuse a imaxe correctamente."
-
-#~ msgid "All files"
-#~ msgstr "Todos os ficheiros"
-
-#~ msgid "Unknown picture format."
-#~ msgstr "Formato de imaxe descoñecido."
-
-#~ msgid ""
-#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
-#~ "and John Calhoun.\n"
-#~ "\n"
-#~ "This program is dedicated to my daughter Sunniva."
-#~ msgstr ""
-#~ "Un programa orixinal de <email address='%1'>Éric Bischoff</email>\n"
-#~ "e John Calhoun.\n"
-#~ "\n"
-#~ "Este programa está adicado á miña filla Sunniva."
+msgstr "चित्रं सफलतया मुद्रितम्।"
