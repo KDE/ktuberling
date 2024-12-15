@@ -3,28 +3,31 @@
 # This file is distributed under the same license as the ktuberling package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-14 01:10+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
@@ -147,6 +150,12 @@ msgid ""
 "(translate this message as \"DONE\" when you have translated\n"
 "the sounds; otherwise leave it untranslated as a reminder)"
 msgstr ""
+"अनुवादकानां कृते अनुवादस्य अवसरः अस्ति\n"
+"क्रीडायां उक्ताः ध्वनयः।\n"
+"ktuberling's इत्यस्मिन् तकनीकीसन्दर्भविभागं पश्यन्तु\n"
+"तत् कथं कर्तव्यमिति अधिकसूचनार्थं दस्तावेजीकरणं।\n"
+"(अनुवादं कृत्वा एतत् सन्देशं \"DONE\" इति अनुवादयन्तु\n"
+"ध्वनयः; अन्यथा स्मरणार्थं अननुवादं त्यजन्तु)"
 
 #: toplevel.cpp:163
 #, kde-format
@@ -162,25 +171,25 @@ msgstr "ध्वनिसञ्चिकां लोड् कुर्वन�
 #, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr ""
+msgstr "चित्ररूपेण रक्षन्तु..."
 
 #: toplevel.cpp:284
 #, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
-msgstr ""
+msgstr "&न ध्वनिः"
 
 #: toplevel.cpp:291
 #, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
-msgstr ""
+msgstr "&लॉक आस्पेक्ट रेशियो"
 
 #: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
-msgstr ""
+msgstr "सञ्चिकां लोड् कुर्वन्तु"
 
 #: toplevel.cpp:330 toplevel.cpp:423
 #, kde-format
@@ -211,13 +220,13 @@ msgstr "सञ्चिकां रक्षितुं न शक्तवा
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2) २."
 
 #: toplevel.cpp:527
 #, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
-msgstr ""
+msgstr "%1 मुद्रयन्तु"
 
 #: toplevel.cpp:534
 #, kde-format
