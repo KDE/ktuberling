@@ -70,20 +70,20 @@
 <programlisting
 >&lt;Zone de jeu= « <replaceable
 >Votre-Fichier-SVG</replaceable
-> » nom=« <replaceable
+> » nom= « <replaceable
 >Votre-Fichier.bureau</replaceable
 > » &gt;
 &lt;nom de l'objet= « <replaceable
 >Nom-Objet</replaceable
-> » son=« <replaceable
+> » son= « <replaceable
 >Nom-Du-Son</replaceable
 > » échelle= « <replaceable
 >Valeur</replaceable
 > » &gt;
-    ...
-    ...
-    ...
-    &lt;/playground&gt;
+  ..
+  ...
+  ...
+  &lt;/playground&gt;
 </programlisting>
     <itemizedlist>
       <listitem
