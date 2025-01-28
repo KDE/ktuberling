@@ -2,14 +2,14 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS/Qt6', 'Android']
-  'require':
+ - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS/Qt6', 'Android']
+   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
 
-- 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS/Qt6']
-  'require':
+ - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS/Qt6']
+   'require':
     'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kwidgetsaddons': '@latest-kf6'
     'frameworks/kcoreaddons': '@latest-kf6'
@@ -22,4 +22,4 @@ Dependencies:
     'games/libkdegames': '@same'
 
 Options:
-  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
+ require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
