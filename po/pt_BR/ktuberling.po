@@ -10,20 +10,21 @@
 # Eliana Megumi Habiro Boaglio <eliana.habiro@gmail.com>, 2008.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2017, 2021.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2016.
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2021-10-05 17:19-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"PO-Revision-Date: 2025-02-05 23:56-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -177,22 +178,19 @@ msgid "Error while loading the sound file."
 msgstr "Erro ao carregar os arquivos de som."
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Salvar &como imagem..."
+msgstr "Salvar &como imagem…"
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "S&em som"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "B&loquear proporção"
