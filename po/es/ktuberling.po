@@ -1,20 +1,20 @@
-# translation of ktuberling.po to Español
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2002, 2003.
-# Lucas Garcia <tanke@escomposlinux.org>, 2003.
-# Rafael Osuna <rosuna@wol.es>, 2003, 2004.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2004, 2005.
-# santi <santi@kde-es.org>, 2005, 2006.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
+# Spanish translations for ktuberling.po package.
+# Copyright (C) 2002-2025 This file is copyright:
+# This file is distributed under the same license as the ktuberling package.
+#
+# SPDX-FileCopyrightText: 2002, 2003 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2003 Lucas Garcia <tanke@escomposlinux.org>
+# SPDX-FileCopyrightText: 2003, 2004 Rafael Osuna <rosuna@wol.es>
+# SPDX-FileCopyrightText: 2004, 2005, 2006, 2007, 2008 Santiago Fernández Sancho <santi@kde-es.org>
 # SPDX-FileCopyrightText: 2009, 2017, 2021, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Huever, 2009.
-# Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
-# Sofía Priego <spriego@darksylvania.net>, %Y.
+# SPDX-FileCopyrightText: 2010 Kira J. Fernandez <kirajfdez@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-02 00:37+0000\n"
-"PO-Revision-Date: 2024-05-02 17:57+0100\n"
+"PO-Revision-Date: 2025-04-25 12:25+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -175,7 +175,7 @@ msgstr "Ha ocurrido un error al cargar el archivo de sonido."
 #, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Guardar como imagen..."
+msgstr "Guardar como imagen…"
 
 #: toplevel.cpp:284
 #, kde-format
@@ -241,20 +241,3 @@ msgstr "No se ha podido imprimir la imagen."
 #, kde-format
 msgid "Picture successfully printed."
 msgstr "La imagen se ha imprimido correctamente."
-
-#~ msgid "All files"
-#~ msgstr "Todos los archivos"
-
-#~ msgid "Unknown picture format."
-#~ msgstr "Formato gráfico desconocido."
-
-#~ msgid ""
-#~ "A program original by <email address='%1'>Éric Bischoff</email>\n"
-#~ "and John Calhoun.\n"
-#~ "\n"
-#~ "This program is dedicated to my daughter Sunniva."
-#~ msgstr ""
-#~ "Un programa original de <email address='%1'>Éric Bischoff </email>\n"
-#~ "y John Calhoun.\n"
-#~ "\n"
-#~ "Este programa está dedicado a mi hija Sunniva."
