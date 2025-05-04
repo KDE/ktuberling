@@ -29,8 +29,8 @@ msgstr ""
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-"Iván Seoane, mvillarino, Adrián Chaves Fernández, Sara Barreiro Riveiro "
-"(voz), Miguel Solla (voz)"
+"Iván Seoane, mvillarino, Adrián Chaves, Sara Barreiro Riveiro (voz), Miguel "
+"Solla (voz)"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
