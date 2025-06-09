@@ -59,7 +59,7 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KTUBERLING VERSION_
 
 ecm_set_disabled_deprecation_versions(
     QT 6.9.0
-    KF 6.14.0
+    KF 6.15.0
 )
 if (NOT ANDROID)
     ecm_set_disabled_deprecation_versions(
