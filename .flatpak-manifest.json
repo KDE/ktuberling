@@ -2,7 +2,7 @@
     "id": "org.kde.ktuberling",
     "branch": "master",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "command": "ktuberling",
     "rename-icon": "ktuberling",
