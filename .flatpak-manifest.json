@@ -6,7 +6,9 @@
     "sdk": "org.kde.Sdk",
     "command": "ktuberling",
     "rename-icon": "ktuberling",
-    "tags": ["nightly"],
+    "tags": [
+        "nightly"
+    ],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--share=ipc",
@@ -17,25 +19,36 @@
     ],
     "modules": [
         {
-            "config-opts": [ "-DENABLE_TESTING=OFF" ],
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
             "name": "libkdegames",
             "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/kde/libkdegames.git" } ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/kde/libkdegames.git"
+                }
+            ],
             "modules": [
                 {
-                    "config-opts": [ "-DENABLE_TESTING=OFF" ],
+                    "config-opts": [
+                        "-DENABLE_TESTING=OFF"
+                    ],
                     "name": "openal",
                     "buildsystem": "cmake-ninja",
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/kcat/openal-soft.git",
-                            "tag": "1.23.1",
+                            "type": "archive",
+                            "url": "https://github.com/kcat/openal-soft/archive/refs/tags/1.24.3.tar.gz",
+                            "sha256":"7e1fecdeb45e7f78722b776c5cf30bd33934b961d7fd2a11e0494e064cc631ce",
                             "x-checker-data": {
-                                "type": "git",
-                                "tag-pattern": "^([\\d.]+)$"
-                            },
-                            "commit": "d3875f333fb6abe2f39d82caca329414871ae53b"
+                                "type": "anitya",
+                                "project-id": 8172,
+                                "stable-only": true,
+                                "url-template": "https://github.com/kcat/openal-soft/archive/refs/tags/$version.tar.gz"
+                            }
+
                         }
                     ]
                 }
