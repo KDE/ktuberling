@@ -17,6 +17,11 @@
         "--socket=pulseaudio",
         "--device=dri"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig"
+    ],
     "modules": [
         {
             "config-opts": [
