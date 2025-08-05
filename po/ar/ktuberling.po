@@ -81,7 +81,7 @@ msgstr "البرت استالس كيد"
 #: main.cpp:32
 #, kde-format
 msgid "Maintainer"
-msgstr "المصين"
+msgstr "الصائن"
 
 #: main.cpp:33
 #, kde-format
