@@ -186,7 +186,7 @@ Name=<replaceable
 <para
 >A més del mecanisme habitual dels fitxers <literal role="extension"
 >.po</literal
->, per a traduir els nivells i les indicacions del programa, els sons també es poden localitzar. </para>
+>, per a traduir els nivells i els indicadors del programa, els sons també es poden localitzar. </para>
 
 <para
 >Per a crear un tema nou de so del &ktuberling;, heu de: </para>
