@@ -80,7 +80,7 @@
 > <firstname
 >Rafael</firstname
 > <surname
->Rosuna</surname
+>Osuna</surname
 > <affiliation
 ><address
 ><email
@@ -389,7 +389,7 @@
     </entry>
     <entry
 ><guiicon
->Cargar...</guiicon
+>Cargar…</guiicon
 ></entry>
     <entry
 ><link linkend="game-load"
@@ -397,7 +397,7 @@
 ><guimenu
 >Juego</guimenu
 ><guimenuitem
-> Cargar...</guimenuitem
+> Cargar…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -451,7 +451,7 @@
     </entry>
     <entry
 ><guiicon
->Imprimir...</guiicon
+>Imprimir…</guiicon
 ></entry>
     <entry
 ><link linkend="game-print"
@@ -459,7 +459,7 @@
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Imprimir...</guimenuitem
+>Imprimir…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -575,7 +575,7 @@
 > <guimenu
 >Juego</guimenu
 > <guimenuitem
->Cargar...</guimenuitem
+>Cargar…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -617,7 +617,7 @@
 ><guimenu
 >Juego</guimenu
 ><guimenuitem
->Guardar como imagen...</guimenuitem
+>Guardar como imagen…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -640,7 +640,7 @@
 > <guimenu
 >Juego</guimenu
 > <guimenuitem
->Imprimir...</guimenuitem
+>Imprimir…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -996,6 +996,8 @@
 >traducciones@rociogallego.com</email
 >, Rafael Osuna <email
 >rosuna@wol.es</email
+>, Miguel Revilla Rodríguez <email
+>yo@miguelrevilla.com</email
 >, Santiago Fernández <email
 >santi@kde-es.org</email
 > y Kira J. Fernández <email
