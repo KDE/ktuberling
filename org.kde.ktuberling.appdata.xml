@@ -165,7 +165,7 @@
   <url type="vcs-browser">https://invent.kde.org/games/ktuberling</url>
   <custom>
     <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.ktuberling</value>
-    <value key="KDE::supporters">Élodie and Thibault;Alexandru Traistaru</value>
+    <value key="KDE::supporters">.</value>
   </custom>
   <releases>
     <release version="25.08.2" date="2025-10-09"/>
