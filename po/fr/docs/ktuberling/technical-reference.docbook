@@ -186,7 +186,7 @@ Name=<replaceable
 <para
 >À coté de l'habituel mécanisme utilisé sur les fichiers <literal role="extension"
 >.po</literal
-> pour traduire les chaînes du programme, les sons peuvent être également localisés. </para>
+> pour traduire les chaines du programme, les sons peuvent être également localisés. </para>
 
 <para
 >Pour créer un nouveau thème de son pour &ktuberling;, vous devez :  </para>
