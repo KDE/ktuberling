@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Senhor Cabeça de Batata">
+
   <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Brazilian-Portuguese "INCLUDE"
@@ -79,9 +81,9 @@
 </authorgroup>
 
 <date
->11/05/2016</date>
+>04/10/2021</date>
 <releaseinfo
->1.0.0 (Applications 16.04)</releaseinfo>
+>KDE Gear 21.08</releaseinfo>
 
 <copyright>
 <year
@@ -108,7 +110,7 @@
 
 <abstract>
 <para
->&ktuberling; é um jogo para crianças pequenas. </para>
+>&i18n-ktuberling; é um jogo para crianças pequenas. </para>
 </abstract>
 
 <keywordset>
@@ -160,7 +162,7 @@
 </screenshot>
 
 <para
->O &ktuberling; é um jogo simples de construção para crianças e adultos. A ideia do jogo é baseada num conceito antigo de criação de bonecos. Uma batata era decorada com diversos objetos pequenos para que se parecesse mais com uma pessoa pequena. O &ktuberling; contudo vai mais além, no que compete ao conteúdo, e adiciona uma grande variedade de diferentes temas. </para>
+>O &i18n-ktuberling; é um jogo simples de construção para crianças e adultos. A ideia do jogo é baseada num conceito antigo de criação de bonecos. Uma batata era decorada com diversos objetos pequenos para que se parecesse mais com uma pessoa pequena. O &i18n-ktuberling; contudo vai mais além, no que compete ao conteúdo, e adiciona uma grande variedade de diferentes temas. </para>
 </chapter>
 
 <chapter id="howto">
@@ -168,7 +170,7 @@
 >Como jogar</title>
 
 <para
->O &ktuberling; é um jogo vocacionado para crianças pequenas. Obviamente, também poderá ser adequado para os adultos que ainda tenham um coração de criança. </para>
+>O &i18n-ktuberling; é um jogo vocacionado para crianças pequenas. Obviamente, também poderá ser adequado para os adultos que ainda tenham um coração de criança. </para>
 
 <para
 >É um <quote
@@ -179,7 +181,7 @@
 >Não existe nenhum vencedor para o jogo. O único intuito é fazer os rostos mais engraçados que conseguir. </para>
 
 <para
->O &ktuberling; também poderá <quote
+>O &i18n-ktuberling; também poderá <quote
 >falar</quote
 >. Ele irá pronunciar os nomes dos objetos que você arrasta e solta. Ele irá <quote
 >falar</quote
@@ -212,8 +214,6 @@
 ></listitem>
 </itemizedlist>
 <note
-><title
->Nota:</title
 ><para
 >A aparência atual da tela do aplicativo poderá mudar de acordo com o <quote
 >cenário</quote
@@ -221,7 +221,7 @@
 ></note>
 <screenshot>
 <screeninfo
->Janela principal do &ktuberling;</screeninfo>
+>Janela principal do &i18n-ktuberling;</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata format="PNG" fileref="gameboard.png"/>
@@ -243,10 +243,10 @@
 > e clique no objeto que deseja arrastar. Então mova-o para á área do <quote
 >cenário</quote
 > e clique novamente. <note
-><title
->Nota:</title
 ><para
->O tamanho dos objetos poderá mudar durante o arrastamento. Alguns dos objetos aumentados foram ajustados para caber na área de "objetos".</para
+>O tamanho dos objetos poderá mudar durante o arrastamento. Alguns dos objetos aumentados foram ajustados para caber na área de <quote
+>objetos</quote
+>.</para
 ></note>
 </para>
 </sect2>
@@ -290,203 +290,198 @@
 >Botões da barra de ferramentas</title>
 <tgroup cols="4">
 
-<thead>
-<row>
-<entry
->Botão</entry>
-<entry
->Nome</entry>
-<entry
->Equivalente no menu</entry>
-<entry
+  <thead>
+    <row>
+      <entry
+>Botão&nbsp;</entry>
+      <entry
+>Nome&nbsp;</entry>
+      <entry
+>Equivalente no menu&nbsp;</entry>
+      <entry
 >Ação</entry>
-</row>
-</thead>
+    </row>
+  </thead>
 <tbody>
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-new.png"/>
-  </imageobject>
-	<textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
 ><phrase
 >Botão de novo jogo</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-  <guiicon
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
 >Novo</guiicon
 ></entry>
-<entry>
-  <link linkend="game-new"
+    <entry
+><link linkend="game-new"
 ><menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
 >Novo</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
+></menuchoice
+></link
+></entry>
+    <entry
 >Limpa o <quote
 >cenário</quote
->. Isto tira todas as peças para fora da área de jogo para que possa criar uma nova decoração. </entry>
-</row>
+>. Isto tira todas as peças para fora da área de jogo para que possa criar uma nova decoração.</entry>
+  </row>
 
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-open.png"/>
-  </imageobject>
-	<textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
 ><phrase
 >Botão carregar</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry
+      </inlinemediaobject>
+    </entry>
+    <entry
 ><guiicon
->Carregar</guiicon
+>Carregar…</guiicon
 ></entry>
-<entry>
-  <link linkend="game-load"
+    <entry
+><link linkend="game-load"
 ><menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
->Carregar...</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
->Abre um arquivo existente do aplicativo a partir do disco. </entry>
-</row>
+>Carregar…</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Abre um arquivo <literal role="extension"
+>.tuberling</literal
+> existente do aplicativo a partir do disco.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-save.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
 ><phrase
 >Botão salvar</phrase
 ></textobject>
-  </inlinemediaobject>
-</entry>
-<entry
+      </inlinemediaobject>
+    </entry>
+    <entry
 ><guiicon
 >Salvar</guiicon
 ></entry>
-<entry>
-  <link linkend="game-save"
+    <entry
+><link linkend="game-save"
 ><menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
 >Salvar</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
->Salva a sua criação na sua pasta pessoal, ou noutra pasta em seu disco. O boneco é salvo num pequeno arquivo onde somente as posições dos objetos são gravados. </entry>
-</row>
+></menuchoice
+></link
+></entry>
+    <entry
+>Salva a sua criação na sua pasta pessoal, ou noutra pasta em seu disco. O <literal role="extension"
+>.tuberling</literal
+> é salvo num pequeno arquivo onde somente as posições dos objetos são gravados.</entry>
+  </row>
 
-
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="document-print.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
 ><phrase
 >Botão imprimir</phrase
 ></textobject>
-</inlinemediaobject>
-</entry>
-<entry>
-<guiicon
->Imprimir</guiicon>
-</entry>
-<entry>
-  <link linkend="game-print"
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Imprimir...</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
 ><menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
->Imprimir...</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
->Imprime a sua imagem. </entry>
-</row>
+>Imprimir…</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>Imprime a sua imagem.</entry>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="edit-undo.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
 ><phrase
 >Botão desfazer</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-  <guiicon
->Desfazer</guiicon>
-  </entry>
-<entry>
-  <link linkend="edit-undo"
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Desfazer</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
 ><menuchoice
 ><guimenu
 >Editar</guimenu
 > <guimenuitem
 >Desfazer</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
+></menuchoice
+></link
+></entry>
+    <entry
 >Desfaz a última operação.</entry>
-</row>
+  </row>
 
-<row>
-<entry>
-  <inlinemediaobject>
-  <imageobject>
-  <imagedata format="PNG" fileref="edit-redo.png"/>
-  </imageobject>
-  <textobject
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
 ><phrase
 >Botão refazer</phrase
 ></textobject>
-  </inlinemediaobject>
-  </entry>
-<entry>
-<guiicon
->Refazer</guiicon>
-</entry>
-<entry>
-  <link linkend="edit-redo"
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>Refazer</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
 ><menuchoice
 ><guimenu
 >Editar</guimenu
 > <guimenuitem
 >Refazer</guimenuitem
-></menuchoice>
-  </link>
-  </entry>
-<entry
+></menuchoice
+></link
+></entry>
+    <entry
 >Refaz a última operação.</entry>
-</row>
+  </row>
 
 </tbody>
 </tgroup>
@@ -503,11 +498,11 @@
 
 <variablelist>
 
-<varlistentry id="game-new">
-<term
+  <varlistentry id="game-new">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >N</keycap
 ></keycombo
@@ -516,23 +511,23 @@
 >Jogo</guimenu
 > <guimenuitem
 >Novo</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Limpa</action
 > o <quote
 >cenário</quote
-> </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-load">
-<term
+  <varlistentry id="game-load">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >O</keycap
 ></keycombo
@@ -540,22 +535,24 @@
 > <guimenu
 >Jogo</guimenu
 > <guimenuitem
->Carregar...</guimenuitem
-> </menuchoice
+>Carregar…</guimenuitem
+></menuchoice
 ></term>
- <listitem
+    <listitem
 ><para
 ><action
->Abre um arquivo com um boneco</action
+>Abre um arquivo <literal role="extension"
+>.tuberling</literal
+> existente</action
 > a partir do seu disco.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-save">
-<term
+  <varlistentry id="game-save">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >S</keycap
 ></keycombo
@@ -564,38 +561,38 @@
 >Jogo</guimenu
 > <guimenuitem
 >Salvar</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Salva</action
-> a sua criação. O boneco é gravado num pequeno arquivo onde somente a posição dos objetos é que é gravada. </para
+> a sua criação. O boneco é gravado num pequeno arquivo onde somente a posição dos objetos é que é gravada.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-save-as-picture">
-<term
+  <varlistentry id="game-save-as-picture">
+    <term
 ><menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
->Salvar como imagem...</guimenuitem
-> </menuchoice
+>Salvar como imagem…</guimenuitem
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Cria um arquivo gráfico</action
-> que contém uma imagem do seu boneco. </para
+> que contém uma imagem do seu boneco.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="game-print">
-<term
+  <varlistentry id="game-print">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >P</keycap
 ></keycombo
@@ -603,22 +600,22 @@
 > <guimenu
 >Jogo</guimenu
 > <guimenuitem
->Imprimir...</guimenuitem
-> </menuchoice
+>Imprimir…</guimenuitem
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Imprime</action
-> a imagem do seu boneco. </para
+> a imagem do seu boneco.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >Q</keycap
 ></keycombo
@@ -627,18 +624,17 @@
 >Jogo</guimenu
 > <guimenuitem
 >Sair</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Sai</action
-> do &ktuberling;. </para
+> do &i18n-ktuberling;.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
-
 </sect2>
 
 <sect2>
@@ -647,11 +643,11 @@
 
 <variablelist>
 
-<varlistentry id="edit-undo">
-<term
+  <varlistentry id="edit-undo">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >Z</keycap
 ></keycombo
@@ -660,23 +656,23 @@
 >Editar</guimenu
 > <guimenuitem
 >Desfazer</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Desfaz</action
 > a última colocação de <quote
 >objetos</quote
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="edit-redo">
-<term
+  <varlistentry id="edit-redo">
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;&Shift; <keycap
 >Z</keycap
 ></keycombo
@@ -685,9 +681,9 @@
 >Editar</guimenu
 > <guimenuitem
 >Refazer</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Refaz</action
@@ -695,15 +691,15 @@
 >objeto</quote
 >. Esta opção do menu só estará ativa se você tiver usado anteriormente o <guilabel
 >Desfazer</guilabel
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >C</keycap
 ></keycombo
@@ -712,9 +708,9 @@
 >Editar</guimenu
 > <guimenuitem
 >Copiar</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Copia</action
@@ -722,10 +718,39 @@
 >cenário</quote
 > para a área de transferência.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
+</sect2>
 
+<sect2>
+<title
+>Menu Exibir</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Exibir</guimenu
+> <guimenuitem
+>Modo de tela cheia</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>Comuta o modo de tela cheia na interface gráfica.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
 </sect2>
 
 <sect2>
@@ -734,23 +759,23 @@
 
 <variablelist>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><guimenu
 >Cenário</guimenu
 > <guimenuitem
 >Bloquear proporção</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
->Esta opção mantém as proporções do cenário ao dimensionar a janela do &ktuberling;. Quando as proporções não corresponderem às da janela, o fundo é preenchido com o indicado no tema. </para
+>Esta opção mantém as proporções do cenário ao dimensionar a janela do &i18n-ktuberling;. Quando as proporções não corresponderem às da janela, o fundo é preenchido com o indicado no tema.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry id="theme_change">
-<term
+  <varlistentry id="theme_change">
+    <term
 ><menuchoice
 ><guimenu
 >Cenário</guimenu
@@ -758,22 +783,22 @@
 ><replaceable
 >Nome do cenário</replaceable
 ></guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Muda para o cenário</action
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
 
 <para
 >Irá conter os cenários instalados no seu sistema. </para>
 <para
->O &ktuberling; lembrará do último cenário escolhido da próxima vez que iniciar. </para>
+>O &i18n-ktuberling; lembrará do último cenário escolhido da próxima vez que iniciar. </para>
 </sect2>
 
 <sect2>
@@ -782,25 +807,25 @@
 
 <variablelist>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><guimenu
 >Fala</guimenu
 > <guimenuitem
 >Desligar som</guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Desliga o som</action
 >.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
-<varlistentry>
-<term
+  <varlistentry>
+    <term
 ><menuchoice
 ><guimenu
 >Fala</guimenu
@@ -808,60 +833,32 @@
 ><replaceable
 >Nome da Língua</replaceable
 ></guimenuitem
-> </menuchoice
+></menuchoice
 ></term>
-<listitem
+    <listitem
 ><para
 ><action
 >Ativa o som e fala a língua selecionada</action
->. </para
+>.</para
 ></listitem>
-</varlistentry>
+  </varlistentry>
 
 </variablelist>
 
 <para
->O &ktuberling; recordará esta opção da próxima vez que for iniciado. </para>
-
+>O &i18n-ktuberling; recordará esta opção da próxima vez que for iniciado. </para>
 </sect2>
 
 <sect2 id="settings">
 <title
->Menu Configurações</title>
-
-<variablelist>
-
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-> <keycombo action="simul"
->&Ctrl;&Shift;<keycap
->F</keycap
-></keycombo
-> </shortcut
-> <guimenu
->Configurações</guimenu
-> <guimenuitem
->Modo de tela inteira</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->Comuta (liga ou desliga)</action
-> o modo de tela inteira. </para
-></listitem>
-</varlistentry>
-
-</variablelist>
+>Menus Configurações e Ajuda</title>
 
 <para
->O &ktuberling; possui os itens de menu normais do &kde; para a <guimenu
+>O &i18n-ktuberling;  possui os itens dos menus <guimenu
 >Configurações</guimenu
 > e <guimenu
 >Ajuda</guimenu
->; para mais informações, leia as seções sobre o <ulink url="help:/fundamentals/menus.html#menus-settings"
+>, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Menu Configurações</ulink
 > e o <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menu Ajuda</ulink
@@ -956,10 +953,9 @@
 
 <listitem>
 <para
->Paul Ahlquist &Paul.E.Ahlquist.Jr.mail; - melhorias na documentação</para>
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - Melhorias na documentação</para>
 </listitem>
-</itemizedlist
-> 
+</itemizedlist>
 
 <para
 >Tradução de Marcus Gama <email
