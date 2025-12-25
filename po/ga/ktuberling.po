@@ -2,20 +2,22 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the ktuberling package.
 # Kevin Scannell <kscanne@gmail.com>, 2009.
+# SPDX-FileCopyrightText: 2025 Charlotte <altronic25@protonmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdegames/ktuberling.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2004-12-03 14:52-0500\n"
-"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
-"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-12-24 09:56+0000\n"
+"Last-Translator: Charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -161,22 +163,19 @@ msgid "Error while loading the sound file."
 msgstr "Earráid agus an comhad fuaime á luchtú."
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Sábháil m&ar Phictiúr..."
+msgstr "Sábháil mar Phictiúr..."
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "Ga&n Fuaim"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "&Cuir an Cóimheas Treoíochta Faoi Ghlas"
@@ -185,13 +184,12 @@ msgstr "&Cuir an Cóimheas Treoíochta Faoi Ghlas"
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
-msgstr ""
+msgstr "Lódáil comhad"
 
 #: toplevel.cpp:330 toplevel.cpp:423
-#, fuzzy, kde-format
-#| msgid "KTuberling files"
+#, kde-format
 msgid "KTuberling files (%1)"
-msgstr "Comhaid KTuberling"
+msgstr "Comhaid KTuberling (%1)"
 
 #: toplevel.cpp:363
 #, kde-format
@@ -217,11 +215,10 @@ msgstr "Níorbh fhéidir an comhad a shábháil."
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: toplevel.cpp:527
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Priontáil %1"
