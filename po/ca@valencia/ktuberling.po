@@ -157,12 +157,12 @@ msgstr "FET"
 #: toplevel.cpp:163
 #, kde-format
 msgid "Error while loading the playground."
-msgstr "S'ha produït un error en carregar la zona de joc."
+msgstr "S'ha produït un error mentre es carregava la zona de joc."
 
 #: toplevel.cpp:195
 #, kde-format
 msgid "Error while loading the sound file."
-msgstr "S'ha produït un error en carregar el fitxer de sons."
+msgstr "S'ha produït un error mentre es carregava el fitxer de sons."
 
 #: toplevel.cpp:270
 #, kde-format
