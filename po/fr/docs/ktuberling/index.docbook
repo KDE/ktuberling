@@ -722,7 +722,7 @@
 ><menuchoice
 ><shortcut
 ><keycombo action="simul"
->&Ctrl;&Shift;<keycap
+>&Ctrl; &Maj;<keycap
 >F</keycap
 ></keycombo
 > </shortcut
