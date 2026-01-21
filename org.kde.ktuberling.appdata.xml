@@ -22,6 +22,7 @@
   <name xml:lang="he">KTuberling</name>
   <name xml:lang="hu">KTuberling</name>
   <name xml:lang="ia">KTuberling</name>
+  <name xml:lang="is">KTuberling</name>
   <name xml:lang="it">KTuberling</name>
   <name xml:lang="ka">KTuberling</name>
   <name xml:lang="ko">KTuberling</name>
@@ -56,6 +57,7 @@
   <summary xml:lang="hu">Egyszerű építőjátéknak gyerekeknek és felnőtteknek egyaránt</summary>
   <summary xml:lang="ia">Un simple joco constructor convenibile per infantes e adultos equalmente</summary>
   <summary xml:lang="id">Sebuah permainan konstruktor yang sederhana cocok untuk anak-anak dan dewasa juga</summary>
+  <summary xml:lang="is">Einfaldur byggingaleikur sem hentar börnum jafnt sem fullorðnum</summary>
   <summary xml:lang="it">Un semplice gioco di costruzioni adatto sia ai bambini, sia agli adulti</summary>
   <summary xml:lang="ka">მარტივი კონსტრუქტორის თამაში ბავშვებისთვის და მათთან გათანაბრებული პირებისთვის</summary>
   <summary xml:lang="ko">어린이와 어른 모두가 좋아하는 그림 그리기 게임</summary>
@@ -94,6 +96,7 @@
     <p xml:lang="hu">A KTuberling egy egyszerű építőjátéknak gyerekeknek és felnőtteknek egyaránt. A játék ötlete egy egykor népszerű babakészítési koncepción alapul.</p>
     <p xml:lang="ia">Un simple joco constructor convenibile per infantes e adultos equalmente.  Le idea del joco es basate  sur le concepto un vice popular de facer pupa.</p>
     <p xml:lang="id">KTuberling adalah permainan yang sederhana cocok untuk anak-anak dan dewasa juga. Gagasan permainan ini adalah berdasarkan pada konsep pembuatan boneka yang dahulu pernah populer. </p>
+    <p xml:lang="is">KTuberling er einfaldur byggingaleikur sem hentar börnum jafnt sem fullorðnum. Hugmyndin að leiknum er byggð á brúðugerðaraðferð sem eitt sinn var vinsæl.</p>
     <p xml:lang="it">Ktuberling è un semplice gioco di costruzioni adatto tanto ai bambini che agli adulti. L'idea del gioco è basata su un tradizionale metodo per costruire pupazzi.</p>
     <p xml:lang="ka">KTuberling მარტივი კონსტრუქტორის თამაშია როგორც ბავშვებისთვის, ასევე დიდებისთვისაც. თამაშის იდეა ოდესღაც პოპულარული თოჯინის შექმნის კონცეფციას ეყრდნობა.</p>
     <p xml:lang="ko">감자돌이는 어린이와 어른 모두가 좋아하는 그림 그리기 게임입니다. 게임의 아이디어는 인형놀이에서 따 왔습니다.</p>
