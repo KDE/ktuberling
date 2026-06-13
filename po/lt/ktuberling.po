@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2011-11-28 16:48+0200\n"
+"PO-Revision-Date: 2026-06-12 14:58+0300\n"
 "Last-Translator: Donatas G. <dgvirtual@akl.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andrius Štikonas, Donatas Glodenis"
+msgstr "Andrius Štikonas, Donatas Glodenis, Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "andrius@stikonas.eu, dgvirtual@akl.lt"
+msgstr "andrius@stikonas.eu, dgvirtual@akl.lt, <>"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
@@ -37,7 +37,7 @@ msgstr "Žai&dimas"
 #: ktuberlingui.rc:12
 #, kde-format
 msgid "&Playground"
-msgstr "&Aikštelė"
+msgstr "Ž&aidimo aikštelė"
 
 #. i18n: ectx: Menu (speech)
 #: ktuberlingui.rc:17
@@ -49,7 +49,7 @@ msgstr "Įga&rsinimas"
 #: ktuberlingui.rc:23
 #, kde-format
 msgid "Main Toolbar"
-msgstr "Pagrindinė įrankinė"
+msgstr "Pagrindinė įrankių juosta"
 
 #. i18n: ectx: ToolBar (gameOptions)
 #: ktuberlingui.rc:32
@@ -70,7 +70,7 @@ msgstr "Bulvinio vyruko žaidimas vaikams"
 #: main.cpp:31
 #, kde-format
 msgid "(c) 1999-2009, The KTuberling Developers"
-msgstr "(c) 1999-2009, KTuberling programuotojai"
+msgstr "(c) 1999–2009, KTuberling plėtotojai"
 
 #: main.cpp:32
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "Éric Bischoff"
 #: main.cpp:33
 #, kde-format
 msgid "Former Developer"
-msgstr "Ankstesnis programuotojas"
+msgstr "Ankstesnis plėtotojas"
 
 #: main.cpp:34
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "John Calhoun"
 #: main.cpp:34
 #, kde-format
 msgid "Original concept and artwork"
-msgstr "Koncepcija ir pirmieji piešiniai"
+msgstr "Pradinis sumanymas ir iliustracijos"
 
 #: main.cpp:35
 #, kde-format
@@ -110,7 +110,7 @@ msgstr "Agnieszka Czajkowska"
 #: main.cpp:35 main.cpp:36 main.cpp:38
 #, kde-format
 msgid "New artwork"
-msgstr "Nauji piešiniai"
+msgstr "Naujos iliustracijos"
 
 #: main.cpp:36
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "Roger Larsson"
 #: main.cpp:37
 #, kde-format
 msgid "Sounds tuning"
-msgstr "Garso derinimas"
+msgstr "Garsų derinimas"
 
 #: main.cpp:38
 #, kde-format
@@ -135,7 +135,7 @@ msgstr "Dolores Almansa"
 #: main.cpp:47
 #, kde-format
 msgid "Potato to open"
-msgstr "Atverti bulvę"
+msgstr "Bulvė, kurią atverti"
 
 #: pics/layout.i18n:6
 #, kde-format
@@ -152,7 +152,7 @@ msgstr ""
 #: toplevel.cpp:163
 #, kde-format
 msgid "Error while loading the playground."
-msgstr "Klaida įkeliant aikštelę."
+msgstr "Klaida įkeliant žaidimo aikštelę."
 
 #: toplevel.cpp:195
 #, kde-format
@@ -160,37 +160,33 @@ msgid "Error while loading the sound file."
 msgstr "Klaida įkeliant garso failą."
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Įrašyti paveikslėlį &kaip..."
+msgstr "Įrašyti paveikslą kaip…"
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "&Be garso"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
-msgstr "&Fiksuoti proporcijas"
+msgstr "&Užrakinti proporcijas"
 
 #: toplevel.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Load file"
-msgstr ""
+msgstr "Įkelti failą"
 
 #: toplevel.cpp:330 toplevel.cpp:423
-#, fuzzy, kde-format
-#| msgid "KTuberling files"
+#, kde-format
 msgid "KTuberling files (%1)"
-msgstr "KTuberling failai"
+msgstr "KTuberling failai (%1)"
 
 #: toplevel.cpp:363
 #, kde-format
@@ -198,29 +194,28 @@ msgid ""
 "The saved file is from an old version of KTuberling and unfortunately cannot "
 "be opened with this version."
 msgstr ""
-"Įrašytas failas yra iš senos KTuberling versijos, ir, deja, negali būti su "
-"šia versija atidarytas."
+"Įrašytas failas yra iš senos KTuberling versijos ir, deja, negali būti "
+"atvertas naudojant šią versiją."
 
 #: toplevel.cpp:367
 #, kde-format
 msgid "Could not load file."
-msgstr "Nepavyksta įkelti failo."
+msgstr "Nepavyko įkelti failo."
 
 #: toplevel.cpp:435 toplevel.cpp:446 toplevel.cpp:453 toplevel.cpp:508
 #: toplevel.cpp:515
 #, kde-format
 msgid "Could not save file."
-msgstr "Nepavyko išsaugoti failo."
+msgstr "Nepavyko įrašyti failo."
 
 #: toplevel.cpp:475
 #, kde-format
 msgctxt "%1 is mimetype and %2 is the file extensions"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: toplevel.cpp:527
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Spausdinti %1"
@@ -228,12 +223,12 @@ msgstr "Spausdinti %1"
 #: toplevel.cpp:534
 #, kde-format
 msgid "Could not print picture."
-msgstr "Nepavyko išspausdinti paveikslėlio."
+msgstr "Nepavyko spausdinti paveikslo."
 
 #: toplevel.cpp:537
 #, kde-format
 msgid "Picture successfully printed."
-msgstr "Paveikslėlis sėkmingai išspausdintas."
+msgstr "Paveikslas sėkmingai išspausdintas."
 
 #~ msgid "All files"
 #~ msgstr "Visi failai"
