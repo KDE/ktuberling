@@ -45,15 +45,14 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/kcat/openal-soft/archive/refs/tags/1.24.3.tar.gz",
-                            "sha256":"7e1fecdeb45e7f78722b776c5cf30bd33934b961d7fd2a11e0494e064cc631ce",
+                            "url": "https://github.com/kcat/openal-soft/archive/refs/tags/1.25.2.tar.gz",
+                            "sha256": "fb27e5839aa11f0e5b9d33756965291fad5d6909ab928ea1f796f4a1a6877894",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8172,
                                 "stable-only": true,
                                 "url-template": "https://github.com/kcat/openal-soft/archive/refs/tags/$version.tar.gz"
                             }
-
                         }
                     ]
                 }
