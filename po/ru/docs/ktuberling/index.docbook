@@ -254,7 +254,7 @@
 <para
 >Чтобы разместить объект, наведите указатель мыши к области <quote
 >объектов</quote
-> и нажмите на объект. Перетащите его на  <quote
+> и нажмите на объект. Перетащите его на <quote
 >игровое поле</quote
 > и щёлкните левой кнопкой мыши ещё раз. <note
 ><para
@@ -326,7 +326,7 @@
     </entry>
     <entry
 ><guiicon
->Новая игра</guiicon
+>Начать игру</guiicon
 ></entry>
     <entry
 ><link linkend="game-new"
@@ -334,7 +334,7 @@
 ><guimenu
 >Игра</guimenu
 > <guimenuitem
->Новая</guimenuitem
+>Начать игру</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -357,7 +357,7 @@
     </entry>
     <entry
 ><guiicon
->Загрузить...</guiicon
+>Загрузить…</guiicon
 ></entry>
     <entry
 ><link linkend="game-load"
@@ -365,7 +365,7 @@
 ><guimenu
 >Игра</guimenu
 > <guimenuitem
->Загрузить...</guimenuitem
+>Загрузить…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -419,7 +419,7 @@
     </entry>
     <entry
 ><guiicon
->Печать...</guiicon
+>Печать…</guiicon
 ></entry>
     <entry
 ><link linkend="game-print"
@@ -427,7 +427,7 @@
 ><guimenu
 >Игра</guimenu
 > <guimenuitem
->Печать...</guimenuitem
+>Печать…</guimenuitem
 ></menuchoice
 ></link
 ></entry>
@@ -520,7 +520,7 @@
 > <guimenu
 >Игра</guimenu
 > <guimenuitem
->Новая</guimenuitem
+>Начать игру</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -541,11 +541,11 @@
 >&Ctrl;<keycap
 >O</keycap
 ></keycombo
-></shortcut
+> </shortcut
 > <guimenu
 >Игра</guimenu
 > <guimenuitem
->Загрузить...</guimenuitem
+>Загрузить…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -577,7 +577,7 @@
 ><para
 ><action
 >Сохранить</action
-> картинку. Созданное вами существо сохраняется  в небольшом файле, куда записываются только координаты составляющих его объектов.</para
+> картинку. Созданное вами существо сохраняется в небольшом файле, куда записываются только координаты составляющих его объектов.</para
 ></listitem>
   </varlistentry>
 
@@ -587,7 +587,7 @@
 ><guimenu
 >Игра</guimenu
 > <guimenuitem
->Сохранить как изображение...</guimenuitem
+>Сохранить как картинку…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -610,7 +610,7 @@
 > <guimenu
 >Игра</guimenu
 > <guimenuitem
->Печать...</guimenuitem
+>Печать…</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -688,15 +688,17 @@
 > <guimenu
 >Правка</guimenu
 > <guimenuitem
->Повторить действие</guimenuitem
+>Вернуть</guimenuitem
 ></menuchoice
 ></term>
     <listitem
 ><para
 ><action
->Повторить</action
-> размещение последнего объекта.Эта опция меню будет активна только в том случае, если вы предварительно отменяли свои действия с помощью пункта меню <quote
->Отменить действие</quote
+>Возвращает</action
+> последнее отменённое размещение <quote
+>объекта</quote
+>. Этот пункт меню доступен, только если перед этим использовалась команда <guilabel
+>Отменить</guilabel
 >.</para
 ></listitem>
   </varlistentry>
@@ -802,7 +804,7 @@
 <para
 >Она будет содержать игровые поля, установленные в системе. </para>
 <para
->&i18n-ktuberling;  запоминает последнее выбранное игровое поле при следующем запуске. </para>
+>&i18n-ktuberling; запоминает последнее выбранное игровое поле при следующем запуске. </para>
 </sect2>
 
 <sect2>
@@ -817,7 +819,7 @@
 ><guimenu
 >Звуки</guimenu
 > <guimenuitem
->Выключить</guimenuitem
+>Отключить звук</guimenuitem
 ></menuchoice
 ></term>
     <listitem
@@ -858,11 +860,11 @@
 >Меню «Настройка» и «Справка»</title>
 
 <para
->В дополнение к перечисленным пунктам меню &i18n-ktuberling; имеет общие для приложений &kde;  пункты в меню <guimenu
+>В дополнение к перечисленным пунктам меню &i18n-ktuberling; имеет общие для приложений &kde; пункты в меню <guimenu
 >Настройка</guimenu
 > и <guimenu
 >Справка</guimenu
->.  Информацию о них возможно найти в разделах документации о <ulink url="help:/fundamentals/menus.html#menus-settings"
+>. Информацию о них возможно найти в разделах документации о <ulink url="help:/fundamentals/menus.html#menus-settings"
 >меню Настройка</ulink
 > и о <ulink url="help:/fundamentals/menus.html#menus-help"
 >меню Справка</ulink
