@@ -4,13 +4,14 @@
 # Bojan Bozovic <bole89@infosky.net>, 2003.
 # Slobodan Simic <slsimic@gmail.com>, 2005, 2007, 2009.
 # Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2010.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktuberling\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2017-10-14 23:06+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-05 01:57+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -25,12 +26,14 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Милош Пузовић,Часлав Илић,Слободан Симић"
+msgstr "Милош Пузовић,Часлав Илић,Слободан Симић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "m.puzovic@etoncollege.org.uk,caslav.ilic@gmx.net,slsimic@gmail.com"
+msgstr ""
+"m.puzovic@etoncollege.org.uk,caslav.ilic@gmx.net,slsimic@gmail.com,"
+"nemhirsl@gmail.com"
 
 #. i18n: ectx: Menu (game)
 #: ktuberlingui.rc:9
@@ -166,30 +169,26 @@ msgid "Error while loading the sound file."
 msgstr "Грешка при учитавању звучног фајла."
 
 #: toplevel.cpp:270
-#, fuzzy, kde-format
-#| msgid "Save &as Picture..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as Picture…"
-msgstr "Сачувај &као слику..."
+msgstr "Сачувај као слику…"
 
 #: toplevel.cpp:284
-#, fuzzy, kde-format
-#| msgid "&No Sound"
+#, kde-format
 msgctxt "@option:check"
 msgid "&No Sound"
 msgstr "&Без звука"
 
 #: toplevel.cpp:291
-#, fuzzy, kde-format
-#| msgid "&Lock Aspect Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Lock Aspect Ratio"
 msgstr "&Закључај пропорцију"
 
 # >> @title:window
 #: toplevel.cpp:329
-#, fuzzy, kde-format
-#| msgid "Load file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load file"
 msgstr "Учитавање фајла"
@@ -227,8 +226,7 @@ msgstr "%1 (%2)"
 
 # >> @title:window
 #: toplevel.cpp:527
-#, fuzzy, kde-format
-#| msgid "Print %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print %1"
 msgstr "Штампање „%1“"
