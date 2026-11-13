@@ -1,0 +1,966 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ktuberling "Potato Guy">
+
+  <!ENTITY technical.reference SYSTEM "technical-reference.docbook">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="ktuberling" lang="&language;">
+<bookinfo>
+<title
+>دليل لعبة البطاطا ك</title>
+<authorgroup>
+
+<author
+><firstname
+>Éric</firstname
+><surname
+>Bischoff</surname
+> <affiliation
+><address
+>&Eric.Bischoff.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Paul</firstname
+><othername
+>E.</othername
+><surname
+>Ahlquist</surname
+><lineage
+>Jr.</lineage
+> <affiliation
+><address
+>&Paul.E.Ahlquist.Jr.mail;</address
+></affiliation>
+</author>
+
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>مُراجِع</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>ترس كيدي 21.08</releaseinfo>
+
+<copyright>
+<year
+>1999</year
+><year
+>2000</year
+><year
+>2002</year
+><year
+>2006</year>
+<holder
+>&Eric.Bischoff;</holder>
+</copyright>
+
+<copyright>
+<year
+>2001</year>
+<holder
+>&Paul.E.Ahlquist.Jr;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>البطاطا ك هي لعبة مخصصة للأطفال الصغار. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>البطاطا ك</keyword>
+<keyword
+>لعبة</keyword>
+<keyword
+>لعبة</keyword>
+<keyword
+>منشئ</keyword>
+<keyword
+>دمية</keyword>
+<keyword
+>تزيين</keyword>
+<keyword
+>أطفال</keyword>
+<keyword
+>تيوبرلينغ</keyword>
+<keyword
+>بطاطا</keyword>
+<keyword
+>محطة قطار</keyword>
+<keyword
+>لاعب واحد</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+<para
+>نوع اللعبة: لعبة</para>
+<para
+>عدد اللاعبين الممكنين: واحد</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ktuberling-pizzeria.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>ملعب مطعم البيتزا</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>البطاطا ك هي لعبة إنشاء بسيطة مناسبة للأطفال والكبار على حد سواء. تعتمد فكرة اللعبة على مفهوم صنع الدمى الذي كان شائعًا في الماضي. حيث تُزيّن حبة بطاطا بأدوات صغيرة متنوعة لجعلها تبدو كشخص صغير. ومع ذلك، تذهب البطاطا ك إلى أبعد من ذلك بكثير من حيث المحتوى وتضيف تنوعًا مذهلًا من السمات المختلفة. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>كيف تلعب</title>
+
+<para
+>البطاطا ك هي لعبة مخصصة للأطفال الصغار. بالطبع، قد تكون مناسبة للبالغين الذين ظلوا صغارًا في القلب. </para>
+
+<para
+>إنه <quote
+>محرر البطاطا</quote
+>. هذا يعني أنه يمكنك سحب وإسقاط العيون، الأفواه، الشوارب، وأجزاء أخرى من الوجه والأشياء الجيدة على شخصية تشبه البطاطس. بالمثل، لديك ملاعب أخرى بمواضيع مختلفة. </para>
+
+<para
+>لا يوجد فائز في اللعبة. الغرض الوحيد هو صنع أطرف الوجوه التي تستطيع. </para>
+
+<para
+>تستطيع البطاطا ك أيضًا أن <quote
+>تتحدث</quote
+>. حيث ستنطق أسماء الأشياء التي تسحبها وتفلتها. وسيكون هذا <quote
+>التحدث</quote
+> باللغة التي تختارها. يمكنك حتى استخدامها لتعلم بعض المفردات بلغات أجنبية. </para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>القواعد والنصائح</title>
+
+<sect1 id="mouse-operation">
+<title
+>التشغيل بالفأرة</title>
+
+<para
+>هناك منطقتان في النافذة الرئيسة: </para>
+
+<itemizedlist>
+<listitem
+><para
+>منطقة <quote
+>الملعب</quote
+>. </para
+></listitem>
+<listitem
+><para
+>منطقة <quote
+>الأشياء</quote
+>، حيث تختار الأشياء لوضعها في ملعبك. </para
+></listitem>
+</itemizedlist>
+<note
+><para
+>قد يتغير المظهر الفعلي لشاشة التطبيق بناءً على <quote
+>الملعب</quote
+> المختار.</para
+></note>
+<screenshot>
+<screeninfo
+>النافذة الرئيسة لِـ البطاطا ك</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="gameboard.png"/>
+</imageobject>
+<textobject
+><phrase
+>النافذة الرئيسة</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="place-object">
+<title
+>وضع كائن</title>
+
+<para
+>لسحب كائن، حرك مؤشر الفأرة إلى منطقة <quote
+>الأشياء</quote
+> وانقر عليه. ثم حركه إلى منطقة <quote
+>الملعب</quote
+> وانقر مرة أخرى. <note
+><para
+>قد يتغير حجم الكائنات أثناء السحب. لُوئمت بعض الكائنات الكبيرة جدًا لكي تناسب منطقة <quote
+>الأشياء</quote
+>.</para
+></note>
+</para>
+</sect2>
+
+<sect2 id="move-object">
+<title
+>تحريك كائن</title>
+<para
+>بمجرد إفلات الكائن في منطقة <quote
+>الملعب</quote
+>، يمكن تحريكه. فقط انقر على الكائن لتحديده، ثم حركه إلى المكان الجديد وانقر مرة أخرى لإفلاته. عند إفلاته، يوضع فوق الكائنات الأخرى التي كانت تخفيه جزئيًا. تفيد هذه الحيلة في وضع النظارات والعيون بشكل صحيح. </para>
+</sect2>
+
+<sect2 id="remove-object">
+<title
+>إزالة كائن</title>
+<para
+>لإزالة كائن أُفلت في منطقة <quote
+>الملعب</quote
+>، اسحبه عائدًا من منطقة <quote
+>الملعب</quote
+> إلى منطقة <quote
+>الأشياء</quote
+>. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="interface">
+<title
+>نظرة عامة على الواجهة </title>
+<sect1 id="the-tool-bar">
+<title
+>شريط الأدوات</title>
+
+<para
+>يوفر شريط الأدوات أزرارًا للوظائف الشائعة الاستخدام. </para>
+
+<table>
+<title
+>أزرار شريط الأدوات</title>
+<tgroup cols="4">
+
+  <thead>
+    <row>
+      <entry
+>الزر&nbsp;</entry>
+      <entry
+>الاسم&nbsp;</entry>
+      <entry
+>ما يعادله في القائمة&nbsp;</entry>
+      <entry
+>الإجراء</entry>
+    </row>
+  </thead>
+<tbody>
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-new.png"/></imageobject>
+        <textobject
+><phrase
+>زر لعبة جديدة</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>جديد</guiicon
+></entry>
+    <entry
+><link linkend="game-new"
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>جديدة</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>يُصفر منطقة <quote
+>الملعب</quote
+>. حيث يُنظف كل أجزاء الملعب لتتمكن من إنشاء زينة جديدة.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-open.png"/></imageobject>
+        <textobject
+><phrase
+>زر التحميل</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>حمّل...</guiicon
+></entry>
+    <entry
+><link linkend="game-load"
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>حمّل…</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>يفتح ملف <literal role="extension"
+>.tuberling</literal
+> موجودًا من القرص.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-save.png"/></imageobject>
+        <textobject
+><phrase
+>زر الحفظ</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>احفظ</guiicon
+></entry>
+    <entry
+><link linkend="game-save"
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>احفظ</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>يحفظ ما أنشأته في مجلدك المنزلي، أو في مجلد آخر على قرصك. يُحفظ ملف <literal role="extension"
+>.tuberling</literal
+> كملف صغير تُخزن فيه مواقع الكائنات فقط.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="document-print.png"/></imageobject>
+        <textobject
+><phrase
+>زر الطباعة</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>اطبع…</guiicon
+></entry>
+    <entry
+><link linkend="game-print"
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>اطبع…</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>يطبع صورتك.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-undo.png"/></imageobject>
+        <textobject
+><phrase
+>زر التراجع</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>تراجع</guiicon
+></entry>
+    <entry
+><link linkend="edit-undo"
+><menuchoice
+><guimenu
+>حرر</guimenu
+> <guimenuitem
+>تراجع</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>يتراجع عن العملية الأخيرة.</entry>
+  </row>
+
+  <row>
+    <entry>
+      <inlinemediaobject>
+        <imageobject
+><imagedata format="PNG" fileref="edit-redo.png"/></imageobject>
+        <textobject
+><phrase
+>زر الإعادة</phrase
+></textobject>
+      </inlinemediaobject>
+    </entry>
+    <entry
+><guiicon
+>كرّر</guiicon
+></entry>
+    <entry
+><link linkend="edit-redo"
+><menuchoice
+><guimenu
+>حرر</guimenu
+> <guimenuitem
+>أعد</guimenuitem
+></menuchoice
+></link
+></entry>
+    <entry
+>يعيد تنفيذ العملية الأخيرة.</entry>
+  </row>
+
+</tbody>
+</tgroup>
+</table>
+</sect1>
+
+<sect1 id="the-menu-items">
+<title
+>عناصر القائمة</title>
+
+<sect2>
+<title
+>قائمة اللعبة</title>
+
+<variablelist>
+
+  <varlistentry id="game-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>جديد</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يمسح</action
+> منطقة <quote
+>الملعب</quote
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>حمّل…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يفتح ملف <literal role="extension"
+>.tuberling</literal
+> موجودًا</action
+> من قرصك.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>احفظ</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يحفظ</action
+> ما أنشأته. حيث تُحفظ الشخصية في ملف صغير تُخزن فيه مواقع الكائنات فقط.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-save-as-picture">
+    <term
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>احفظ كصورة…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>ينشئ ملف رسوميات</action
+> يحتوي على صورة لشخصيتك.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-print">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>اطبع…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يطبع</action
+> صورة شخصيتك.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يُنهي</action
+> البطاطا ك.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>قائمة حرر</title>
+
+<variablelist>
+
+  <varlistentry id="edit-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>حرر</guimenu
+> <guimenuitem
+>تراجع</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يتراجع</action
+> عن وضع <quote
+>الكائن</quote
+> الأخير.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="edit-redo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>حرر</guimenu
+> <guimenuitem
+>أعد</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يعيد</action
+> وضع <quote
+>الكائن</quote
+> الأخير. لا يُفعّل خيار القائمة هذا إلا إذا استخدمت <guilabel
+>تراجع</guilabel
+> مسبقًا.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>حرر</guimenu
+> <guimenuitem
+>انسخ</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>ينسخ</action
+> منطقة <quote
+>الملعب</quote
+> إلى الحافظة.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>قائمة عرض</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>وضع ملء الشاشة</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>يبدل الواجهة الرسومية إلى وضع ملء الشاشة.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+</sect2>
+
+<sect2>
+<title
+>قائمة الملعب</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>ملعب</guimenu
+> <guimenuitem
+>قفل نسبة العرض إلى الارتفاع</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+>يحافظ هذا الخيار على نسبة العرض إلى الارتفاع للملعب عند تغيير حجم نافذة البطاطا ك. وعندما لا تتطابق نسبة العرض إلى الارتفاع للملعب مع النافذة، تُملأ الخلفية بالخلفية المحددة في السمة.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="theme_change">
+    <term
+><menuchoice
+><guimenu
+>ملعب</guimenu
+> <guimenuitem
+><replaceable
+>اسم الملعب</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>ينتقل إلى الملعب</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>سيحتوي على الملاعب المثبتة في حاسوبك. </para>
+<para
+>تتذكر البطاطا ك آخر ملعب اختير عند تشغيلها في المرة القادمة. </para>
+</sect2>
+
+<sect2>
+<title
+>قائمة النطق</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>نطق</guimenu
+> <guimenuitem
+>بلا صوت</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يعطل الصوت</action
+>.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><guimenu
+>نطق</guimenu
+> <guimenuitem
+><replaceable
+>اسم اللغة</replaceable
+></guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يفعل الصوت وينطق باللغة المختارة</action
+>.</para
+></listitem>
+  </varlistentry>
+
+</variablelist>
+
+<para
+>تتذكر البطاطا ك هذا الخيار عند تشغيلها في المرة القادمة. </para>
+</sect2>
+
+<sect2 id="settings">
+<title
+>قائمتا الإعدادات والمساعدة</title>
+
+<para
+>بالإضافة إلى ذلك، تحتوي البطاطا ك على عناصر قائمتي <guimenu
+>الإعدادات</guimenu
+> و<guimenu
+>المساعدة</guimenu
+> الشائعة في كيدي، لمزيد من المعلومات اقرأ الأقسام المتعلقة بـ <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و <ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> في أساسيات كيدي. </para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>الأسئلة المتكررة</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>أريد تغيير شكل اللعبة. هل يمكنني ذلك؟ </para
+></question>
+ <answer
+><para
+>نعم تستطيع. راجع <link linkend="theme_change"
+>هذا</link
+> القسم من 'نظرة عامة على الواجهة' للحصول على التفاصيل.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>هل يمكنني استخدام لوحة المفاتيح للعب هذه اللعبة؟ </para
+></question>
+ <answer
+><para
+>لا. لا يمكن لعب هذه اللعبة باستخدام لوحة المفاتيح.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>لقد صنعت صورة رائعة وأريد مشاركتها مع أصدقائي. هل يمكنني حفظها كصورة؟</para
+></question>
+  <answer
+><para
+>نعم. لحفظ الجلسة الحالية كصورة راجع <link linkend="game-save-as-picture"
+>هذا</link
+> القسم من 'نظرة عامة على الواجهة' للحصول على التفاصيل.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+&technical.reference;
+
+<chapter id="credits_license">
+<title
+>الحقوق والترخيص</title>
+
+<para
+>البطاطا ك</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Alex Fiestas <email
+>alex@eyeos.org</email
+> - المداوم الحالي</para>
+</listitem>
+
+<listitem>
+<para
+>John Calhoun - الفكرة الأصلية، الصور الأصلية والأصوات الإنجليزية</para>
+</listitem>
+
+<listitem>
+<para
+>&Eric.Bischoff; &Eric.Bischoff.mail; - برمجة كيدي</para>
+</listitem>
+
+<listitem>
+<para
+>Fran&ccedil;ois-Xavier Duranceau <email
+>duranceau@free.fr</email
+> - اختبارات، نصيحة ومساعدة</para>
+</listitem>
+
+<listitem>
+<para
+>Peter Silva <email
+>peter.silva@videotron.ca</email
+> - تدقيق التوثيق لغويًا</para>
+</listitem>
+
+<listitem>
+<para
+>&Paul.E.Ahlquist.Jr; &Paul.E.Ahlquist.Jr.mail; - تحسين التوثيق</para>
+</listitem>
+</itemizedlist>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>
