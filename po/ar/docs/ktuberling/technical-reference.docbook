@@ -1,0 +1,417 @@
+<chapter id="technical-reference">
+<chapterinfo>
+
+<authorgroup>
+<author
+><firstname
+>Éric</firstname
+> <surname
+>Bischoff</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2021-10-04</date>
+<releaseinfo
+>ترس كيدي 21.08</releaseinfo>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>البطاطا ك</keyword>
+<keyword
+>مرجع تقني</keyword>
+</keywordset>
+</chapterinfo>
+
+<title
+>المراجع التقنية</title>
+
+<para
+>توفر البطاطا ك مقدمة لطيفة ومجزية لتخصيص وبرمجة كيدي. يمكن توسيع التطبيق؛ فعلى سبيل المثال، ومن دون أي برمجية، يمكن إضافة ملاعب جديدة عبر تغيير ملفات الرسوميات. وبإضافة ملفات صوتية مناسبة، يستطيع المترجمون تغيير الأصوات إلى لغتهم الأم! </para>
+
+<para
+>إذا قمت بتوسيع اللعبة أو الإضافة إليها، يرجى التفكير في إرسال إضافاتك إلى المداوم <ulink url="mailto:alex@eyeos.org"
+>Alex Fiestas</ulink
+> لإدراجها في الإصدارات المستقبلية. </para>
+
+<sect1 id="for-artists">
+<title
+>للفنانين</title>
+
+<para
+>لإنشاء ملعب جديد في البطاطا ك، عليك القيام بما يلي: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>ارسم الملعب في ملف SVG، وهناك يجب عليك: <itemizedlist>
+        <listitem
+><para
+>تسمية المكان الذي يمكن سحب العناصر إليه باسم <quote
+>background</quote
+>.</para
+></listitem>
+        <listitem
+><para
+>تسمية كل عنصر من العناصر القابلة للسحب باسم فريد.</para
+></listitem>
+      </itemizedlist>
+    </para>
+  </listitem>
+
+  <listitem>
+    <para
+>أنشئ ملف <literal role="extension"
+>.theme</literal
+>، ويجب أن يتبع هذا المخطط:</para>
+<programlisting
+>&lt;playground gameboard="<replaceable
+>yourSVGFile</replaceable
+>" name="<replaceable
+>theDesktopFile</replaceable
+>"&gt;
+&lt;object name="<replaceable
+>itemName</replaceable
+>" sound="<replaceable
+>soundName</replaceable
+>" scale="<replaceable
+>someValue</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/playground&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>yourSVGFile</replaceable
+> هو اسم ملف SVG الذي يحتوي على الرسم.</para
+></listitem>
+      <listitem
+><para
+><replaceable
+>theDesktopFile</replaceable
+> هو اسم ملف سطح المكتب الذي يحتوي على اسم السمة.</para
+></listitem>
+      <listitem
+><para
+>لكل كائن، تحتاج إلى مدخلة <literal
+>&lt;object&gt;</literal
+>. حيث <replaceable
+>itemName</replaceable
+> هو الاسم الفريد المستخدم في ملف SVG، و <replaceable
+>soundName</replaceable
+> هو اسم الصوت الذي سيعمل عند سحبه، انظر ملف <filename
+>sounds/soundthemes.HOWTO</filename
+> من التعليمات البرمجية المصدر لمزيد من المعلومات.</para
+></listitem>
+      <listitem
+><para
+><literal
+>scale</literal
+> اختياري و <replaceable
+>someValue</replaceable
+> هو عامل القياس الذي سيُستخدم عند رسم هذا الكائن خارج المستودع، وإذا لم يُحدد فإنه يكون 1.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>أنشئ ملف <literal role="extension"
+>.desktop</literal
+>، ويجب أن يتبع هذا المخطط:</para>
+<programlisting
+>[KTuberlingTheme]
+Name=<replaceable
+>themeName</replaceable
+>
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>themeName</replaceable
+> هو الاسم الذي يحدد السمة، وسيظهر في قائمة الملعب.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem>
+    <para
+>إذا كنت تضيف السمة إلى مستودع البطاطا ك، فأضف ملفات <literal role="extension"
+>.svg</literal
+> و <literal role="extension"
+>.theme</literal
+> و <literal role="extension"
+>.desktop</literal
+> إلى قسم <literal
+>FILES</literal
+> في ملف <filename
+>CMakeLists.txt</filename
+> داخل مجلد <filename class="directory"
+>pics/</filename
+>. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>إذا أردت تثبيتها لنفسك، فضع ملفات <literal role="extension"
+>.svg</literal
+> و <literal role="extension"
+>.theme</literal
+> و <literal role="extension"
+>.desktop</literal
+> داخل مجلد <filename class="directory"
+>ktuberling/pics</filename
+> في المسار <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+> </para>
+  </listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="for-translators">
+<title
+>للمترجمين</title>
+
+<para
+>إلى جانب آلية ملفات <literal role="extension"
+>.po</literal
+> المعتادة لترجمة لصائق ومطالبات البرنامج، يمكن أيضًا توطين الأصوات. </para>
+
+<para
+>لإنشاء تشكيلة أصوات جديدة في البطاطا ك، عليك القيام بما يلي: </para>
+
+<itemizedlist>
+  <listitem
+><para
+>سجل الأصوات بتنسيق ملف OGG Vorbis rc3.</para
+></listitem>
+  <listitem
+><para
+>أنشئ ملف <filename
+><replaceable
+>yourLanguageTwoLetterCode</replaceable
+>.soundtheme</filename
+> ويجب أن يتبع هذا المخطط:</para>
+<programlisting
+>&lt;language code="<replaceable
+>yourLanguageTwoLetterCode</replaceable
+>"&gt;
+&lt;sound name="<replaceable
+>soundName</replaceable
+>" file="<replaceable
+>relativePath</replaceable
+>" /&gt;
+...
+...
+...
+&lt;/language&gt;
+</programlisting>
+    <itemizedlist>
+      <listitem
+><para
+><replaceable
+>yourLanguageTwoLetterCode</replaceable
+> هو رمز لغتك المكون من حرفين، على سبيل المثال ar للعربية.</para
+></listitem>
+      <listitem
+><para
+>لكل صوت مدخلة <literal
+>&lt;sound&gt;</literal
+>. يجب أن يتطابق <replaceable
+>soundName</replaceable
+> مع اسم الصوت المحدد في سمة الملعب (انظر <filename
+>pics/themes.HOWTO</filename
+> من الكود المصدري). أما <replaceable
+>relativePath</replaceable
+> فيجب أن يكون المسار النسبي الذي ستثبت ملف الصوت فيه، وعادة ما يكون <filename
+><replaceable
+>someUniquePath</replaceable
+>/<replaceable
+>soundName</replaceable
+>.<replaceable
+>format</replaceable
+></filename
+> (ويمكن أن يكون <replaceable
+>someUniquePath</replaceable
+> هو رمز لغتك المكون من حرفين مثلًا).</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>إذا كنت تضيف تشكيلة الأصوات إلى البطاطا ك في مجلد لغتك:</para>
+    <itemizedlist>
+      <listitem
+><para
+>أضف ملفات الصوت وملفات <literal role="extension"
+>.soundtheme</literal
+> إلى مجلد <filename class="directory"
+>data/kdegames/ktuberling</filename
+> الخاص بترجمات لغتك.</para
+></listitem>
+      <listitem
+><para
+>في المجلد نفسه، تحتاج إلى ملف <filename
+>CMakeLists.txt</filename
+> يصف كيفية تثبيت الملفات، وعادة ما يكون محتواه كالتالي.</para>
+<!--FIXME l10n-kf5/*/data/kdegames/ktuberling/CMakeLists.txt has DATA_INSTALL_DIR, has this to be changed?-->
+<programlisting
+>FILE( GLOB oggfiles *.ogg )
+INSTALL( FILES ${oggfiles} DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/<replaceable
+>yourLanguageTwoLetterCode</replaceable
+> )
+INSTALL( FILES <replaceable
+>yourLanguageTwoLetterCode</replaceable
+>.soundtheme DESTINATION ${KDE_INSTALL_DATADIR}/ktuberling/sounds/ )
+</programlisting>
+      </listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+>إذا أردت تثبيتها لنفسك:</para>
+    <itemizedlist>
+      <listitem
+><para
+>ضع ملف <filename
+><replaceable
+>yourLanguageTwoLetterCode</replaceable
+>.soundtheme</filename
+> في مجلد <filename class="directory"
+>ktuberling/sounds</filename
+> داخل <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+      <listitem
+><para
+>ضع ملفات الصوت في مجلد <filename class="directory"
+>ktuberling/sounds/<replaceable
+>someUniquePath</replaceable
+></filename
+> داخل <userinput
+><command
+>qtpaths</command
+> <option
+>--paths GenericDataLocation</option
+></userinput
+></para
+></listitem>
+    </itemizedlist>
+  </listitem>
+</itemizedlist>
+
+<para
+>تتوفر معلومات حول كيفية العمل مع آليات الترجمة في كيدي في <ulink url="https://l10n.kde.org/docs/translation-howto/index.html"
+>دليل كيفية ترجمة كيدي</ulink
+>. </para>
+
+</sect1>
+
+<sect1 id="for-programmers">
+
+<title
+>للمبرمجين</title>
+<para
+>ليس من الصعب حقًا توسيع البطاطا ك من قبل المبرمجين.</para>
+
+<sect2 id="classes">
+<title
+>كائنات سي++</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><classname
+>TopLevel</classname
+></term>
+    <listitem
+><para
+>نافذة المستوى الأعلى وإدارة البرنامج الأساسية.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ساحة اللعب</classname
+></term>
+    <listitem
+><para
+>وصف لأحد مستويات اللعبة.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>ToDraw</classname
+></term>
+    <listitem
+><para
+>وصف لأحد <quote
+>الكائنات</quote
+> الرسومية المطلوب رسمها.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>SoundFactory</classname
+></term>
+    <listitem
+><para
+>وصف لإحدى اللغات وأصواتها.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><classname
+>الإجراء</classname
+></term>
+    <listitem
+><para
+>إحدى عمليات تلاعب المستخدم في مكدس التراجع/الإعادة.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+</sect2>
+
+</sect1>
+</chapter>
