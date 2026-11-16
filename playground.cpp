@@ -30,6 +30,8 @@
 #include "filefactory.h"
 #include "todraw.h"
 
+#include <utility>
+
 static const char *saveGameTextScaleTextMode = "KTuberlingSaveGameV2";
 static const char *saveGameTextTextMode = "KTuberlingSaveGameV3";
 static const char *saveGameText = "KTuberlingSaveGameV4";
@@ -326,7 +328,7 @@ void PlayGround::registerPlayGrounds()
     }
   }
 
-  QMultiMap<QString, QPair<QString, QPixmap>> sortedByName;
+  QMultiMap<QString, std::pair<QString, QPixmap>> sortedByName;
 
   for(const QString &theme : std::as_const(list))
   {
@@ -343,7 +345,7 @@ void PlayGround::registerPlayGrounds()
         QPixmap pixmap(200,100);
         pixmap.fill(Qt::transparent);
         playGroundPixmap(gameboard,pixmap);
-        sortedByName.insert(cg.readEntry("Name"), QPair<QString, QPixmap>(theme, pixmap));
+        sortedByName.insert(cg.readEntry("Name"), std::pair<QString, QPixmap>(theme, pixmap));
       }
     }
   }
