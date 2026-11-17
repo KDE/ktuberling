@@ -135,7 +135,7 @@
     <p xml:lang="zh-TW">KTuberling 是一個適合小孩與大人們的簡單建造遊戲。這個遊戲的概念奠基於一個曾經紅極一時的玩偶製作概念之上。</p>
   </description>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-2.0-or-later</project_license>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=ktuberling</url>
   <url type="donation">https://www.kde.org/community/donations/?app=ktuberling&amp;source=appdata</url>
   <url type="help">https://docs.kde.org/?application=ktuberling</url>
@@ -185,6 +185,7 @@
     <binary>ktuberling</binary>
   </provides>
   <url type="vcs-browser">https://invent.kde.org/games/ktuberling</url>
+  <url type="contribute">https://community.kde.org/Get_Involved</url>
   <custom>
     <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.ktuberling</value>
     <value key="KDE::supporters">.</value>
