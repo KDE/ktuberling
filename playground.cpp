@@ -25,6 +25,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPagedPaintDevice>
+#include <QSet>
 
 #include "action.h"
 #include "filefactory.h"
