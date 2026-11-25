@@ -47,7 +47,7 @@ public:
     themesButton->setIcon(QPixmap(QStringLiteral(":/games-config-theme.png")));
     themesButton->setIconSize(QSize(iconWidth, iconWidth));
     themesButton->setFocusPolicy(Qt::NoFocus);
-    QObject::connect(themesButton, &QPushButton::clicked, [this] {
+    QObject::connect(themesButton, &QPushButton::clicked, themesButton, [this] {
       m_themesWidget->showFullScreen();
     });
 
@@ -55,7 +55,7 @@ public:
     soundsButton->setIcon(QPixmap(QStringLiteral(":/audio-volume-high.png")));
     soundsButton->setIconSize(QSize(iconWidth, iconWidth));
     soundsButton->setFocusPolicy(Qt::NoFocus);
-    QObject::connect(soundsButton, &QPushButton::clicked, [this, soundsButton] {
+    QObject::connect(soundsButton, &QPushButton::clicked, soundsButton, [this, soundsButton] {
       m_soundEnabled = !m_soundEnabled;
       soundsButton->setIcon(QPixmap(m_soundEnabled ? QStringLiteral(":/audio-volume-high.png") : QStringLiteral(":/audio-volume-muted.png")));
     });
@@ -92,7 +92,7 @@ public:
     // TODO this should be scrollable
     // TODO use the pixmap
     QPushButton *pb = new QPushButton(menuText);
-    QObject::connect(pb, &QPushButton::clicked, [this, boardFile] {
+    QObject::connect(pb, &QPushButton::clicked, pb, [this, boardFile] {
       m_playground->loadPlayGround(boardFile);
       m_themesWidget->hide();
     });
